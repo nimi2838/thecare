@@ -1,12 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="main.css">
     <title>메인페이지</title>
 </head>
+
 <body>
-    
+
+
+    <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb">
+            <div class="icon-box flex">
+                <div class="icon login">
+                    <div class="img-box">login</div>
+                    login
+                </div>
+                <div class="icon join">
+                    <div class="img-box">join</div>
+                    join
+                </div>
+                <div class="icon cart">
+                    <div class="img-box">cart</div>
+                    cart
+                </div>
+            </div>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search-box flex flex-jc-end">
+                검색
+            </div>
+            
+        </div>
+        <div class="line"></div>
+
+        
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="guide.html">시술안내</a>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="review.html">전후사진</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/banner01.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        미국 FDA 승인 <br>
+                        비침습적 이중탄력 리프팅 <br>
+                        THE CARE 울쎄라
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/banner02.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        미국 FDA 승인 <br>
+                        비침습적 이중탄력 리프팅 <br>
+                        THE CARE 울쎄라
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/banner03.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        미국 FDA 승인 <br>
+                        비침습적 이중탄력 리프팅 <br>
+                        THE CARE 울쎄라
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true // 버튼 클릭 여부
+            },
+            keyboard: true
+        });
+
+        // swiper-pagination-bullet-active
+    </script>
+
 </body>
+
 </html>
