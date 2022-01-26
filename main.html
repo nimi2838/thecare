@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="main.css">
+
     <title>메인페이지</title>
 </head>
 
@@ -14,21 +18,35 @@
 
 
     <div class="top-wrap">
-        <div class="top-box1 flex flex-jc-sb">
-            <div class="icon-box flex">
-                <div class="icon login">
-                    <div class="img-box">login</div>
-                    login
-                </div>
-                <div class="icon join">
-                    <div class="img-box">join</div>
-                    join
-                </div>
-                <div class="icon cart">
-                    <div class="img-box">cart</div>
-                    cart
-                </div>
-            </div>
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
             <div class="logo-box flex flex-jc-c">
                 <div class="img-box">
                     <a href="main.html">
@@ -37,13 +55,34 @@
                 </div>
             </div>
             <div class="search-box flex flex-jc-end">
-                검색
+                <div class="icon flex">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <a href="searchform" class="btn_search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
             </div>
-            
+
         </div>
         <div class="line"></div>
 
-        
+
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
@@ -131,8 +170,55 @@
         <div class="swiper-pagination"></div>
     </div>
 
+
+    <div class="slider-box-1">
+        <div class="slick">
+            <div class="item">
+                
+                <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
+            </div>
+            <div class="item">
+                
+                <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
+            </div>
+            <div class="item">
+                
+                <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
+            </div>
+            <div class="item">
+                
+                <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
+            </div>
+            <div class="item">
+                
+                <div class="bg" style="background-image:url(img/doctor_list_thum06.png);"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -146,8 +232,29 @@
                 el: ".swiper-pagination",
                 clickable: true // 버튼 클릭 여부
             },
+            autoplay: true,
+            autoplaySpeed: 5000,
             keyboard: true
         });
+
+
+        function SliderBox1__init() {
+            $('.slider-box-1 > .slick').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                // arrows:true,
+                prevArrow:".slider-box-1 > .arrows > .btn-left",
+                nextArrow:".slider-box-1 > .arrows > .btn-right"
+            });
+        }
+
+        $(function () {
+            SliderBox1__init();
+        });
+
 
         // swiper-pagination-bullet-active
     </script>
