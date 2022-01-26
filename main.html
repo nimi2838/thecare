@@ -143,24 +143,24 @@
             <div class="swiper-slide">
                 <img src="img/banner02.jpg" alt="">
                 <div class="text-1">
-                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <h1>THE CARE <br> DESIGN <span>LIFTING</span></h1>
                     <p>THE CARE DERMATOLOGY CLINIC</p>
                     <div>
-                        미국 FDA 승인 <br>
-                        비침습적 이중탄력 리프팅 <br>
-                        THE CARE 울쎄라
+                        시대를 관통하는 <br>
+                        자연스러운 아름다움 <br>
+                        더케어로 완성하다
                     </div>
                 </div>
             </div>
             <div class="swiper-slide">
                 <img src="img/banner03.jpg" alt="">
                 <div class="text-1">
-                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <h1>THE CARE <br> BRIGHT <span>SKIN</span></h1>
                     <p>THE CARE DERMATOLOGY CLINIC</p>
                     <div>
-                        미국 FDA 승인 <br>
-                        비침습적 이중탄력 리프팅 <br>
-                        THE CARE 울쎄라
+                        잡티없이 깨끗한 <br>
+                        도자기 피부, <br>
+                        피부에 조명을 켜다. 시그널72
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
                     <div class="bg1"></div>
                 </div>
             </div>
-            
+
             <div class="item">
                 <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
                 <div class="name">
@@ -257,6 +257,9 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -284,8 +287,8 @@
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 // arrows:true,
-                prevArrow:".slider-box-1 > .arrows > .btn-left",
-                nextArrow:".slider-box-1 > .arrows > .btn-right"
+                prevArrow: ".slider-box-1 > .arrows > .btn-left",
+                nextArrow: ".slider-box-1 > .arrows > .btn-right"
             });
         }
 
@@ -293,7 +296,26 @@
             SliderBox1__init();
         });
 
-        
+
+//         gsap.to('body', {
+//   scrollTrigger:{
+//     start:'top 0',
+//     end:'top 800px',
+//     trigger:'.top-box2',
+//     markers: true,
+//     pin:true
+//   },
+// });
+
+gsap.to('.top-wrap > .top-box2', {
+  scrollTrigger:{
+    trigger:'.top-wrap',
+    start:'top -98px',
+    scrub:true,
+    markers:true
+  },height:'67px',textalign:'center',top:'0',position:'fixed',background:'white'
+});
+
 
 
         // swiper-pagination-bullet-active

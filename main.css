@@ -232,19 +232,23 @@ a {
 
 
 
-
-
 .top-wrap>.top-box2 {
   margin: 0px auto;
-  ;
-  width: 1280px;
+  width: 100%;
   font-size: 16px;
   color: #707070;
+  background:white;
+  /* position: fixed;
+  top: 119px;
+  left: 0;
+  z-index: 100;
+  background: white; */
+  z-index: 100;
 }
 
 
 .top-wrap>.top-box2>ul>li {
-  padding: 23px 96px;
+  padding: 23px 95.5px;
   position: relative;
 }
 
@@ -339,34 +343,11 @@ a {
   /* object-fit: cover; */
 }
 
-.swiper-slide>a {
-  color: rgba(212, 195, 174, 0.9);
-  background: rgb(60, 40, 0);
-  border-radius: 25px;
-  position: absolute;
-  top: 63%;
-  left: 19%;
-  transform: translateX(-2px);
-  padding: 10px 50px;
-  font-size: 20px;
-}
-
-.swiper-slide>.more1 {
-  top: 63%;
-  left: 22%;
-  transform: translateX(2px);
-}
-
-
-.swiper-slide>a:hover {
-  background-color: rgba(212, 195, 174, 0.9);
-  color: rgb(60, 40, 0);
-}
 
 .swiper-slide>.text-1 {
   position: absolute;
   top: 30%;
-  left: 20%;
+  left: 15%;
   transform: translate(-30%, -20%);
   text-align: start;
 }
@@ -374,8 +355,10 @@ a {
 .swiper-slide>.text-1>h1 {
   font-family: 'HeirofLightRegular';
   color: #444;
-  font-size: 40px;
+  font-size: 60px;
   letter-spacing: 0.08em;
+  padding-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .swiper-slide>.text-1>h1>span {
@@ -387,12 +370,15 @@ a {
 .swiper-slide>.text-1>p {
   font-size: 18px;
   color: #444;
-  margin-top: -10px;
+  margin-top: 5px;
   font-family: 'HeirofLightRegular';
 }
 
 .swiper-slide>.text-1>div {
+  margin-top: 50px;
   color: #fff;
+  font-size: 27px;
+  font-family: 'YESMyoungjo-Regular';
 }
 
 .swiper .swiper-button-next {
@@ -423,7 +409,7 @@ a {
 }
 
 .swiper .swiper-pagination-bullet-active {
-  background: fff;
+  background: #fff;
   opacity: 100%;
 }
 
@@ -452,16 +438,16 @@ a {
 }
 
 .slider-box-1 > p {
-  font-size: 35px;
+  font-size: 45px;
   text-align: center;
-  margin: 50px 0;
+  margin: 100px 0 80px;
 }
 
 
 .slider-box-1 > .arrows > .btn-right {
   position: absolute;
   z-index:99;
-  top: 35%;
+  top: 45%;
   left: 96%;
   cursor:pointer;
 }
@@ -469,7 +455,7 @@ a {
 .slider-box-1 > .arrows > .btn-left {
   position: absolute;
   z-index:99;
-  top: 35%;
+  top: 45%;
   left: 1%;
   cursor:pointer;
 }
@@ -517,7 +503,7 @@ a {
 .slider-box-1 > .slick .item:hover .name > .bg1 {
   width: 105px;
   height: 17px;
-  background: chartreuse;
+  background: #ffeded;
   transition:width .5s, background-color .5s;
   position: absolute;
   top: 10px;
