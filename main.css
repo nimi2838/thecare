@@ -41,6 +41,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 노말라이즈 */
 body,
 ul,
@@ -120,7 +127,7 @@ a {
 .line {
   width: 100%;
   height: 1px;
-  background: #707070;
+  background: #ccc;
   z-index: 10;
   display: block;
 }
@@ -433,12 +440,12 @@ a {
 
 .slider-box-1 {
   width: 90%;
-  margin:80px auto 50px;
+  margin:200px auto 100px;
   position:relative;
 }
 
 .slider-box-1 > p {
-  font-size: 45px;
+  font-size: 50px;
   text-align: center;
   margin: 100px 0 80px;
 }
@@ -527,3 +534,30 @@ a {
   color: black;
   border: 1px solid #9f9f9f;
 } */
+
+.mini-ban{
+  width: 100%;
+  height: 600px;
+  background: url("img/mini_ban1.jpg");
+  margin-top: 200px;
+}
+
+
+.mini-ban > .text-box {
+  text-align: center;
+  z-index: 100;
+  padding-top: 140px;
+  color: #ffeded;
+  font-family: 'GowunDodum-Regular';
+}
+
+.mini-ban > .text-box > i  {
+  font-size: 43px;
+  font-family: ;
+} 
+
+.mini-ban > .text-box > p  {
+  margin-top: 60px;
+  font-size: 23px;
+  line-height: 60px;
+}
