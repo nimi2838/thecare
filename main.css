@@ -691,11 +691,19 @@ a {
   transition: visibility 0.6s, opacity 0.6s;
 }
 
-
-.cross-box {
-  
+.cross-wrap{
+  position: relative;
 }
 
+.cross-wrap > .cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.cross-wrap > .cross > .img-box {
+  width: 70%; 
+}
 
 
 
