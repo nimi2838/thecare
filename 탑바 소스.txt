@@ -1,0 +1,108 @@
+  <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search-box flex flex-jc-end">
+                <div class="icon flex">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <a href="searchform" class="btn_search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="guide.html">시술안내</a>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="review.html">전후사진</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
