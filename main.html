@@ -176,13 +176,13 @@
         <div class="slick">
 
             <div class="item">
-               <a href="about_2.html">
-                <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
-                <div class="name">
-                    조정석 원장
-                    <div class="bg1"></div>
-                </div>
-               </a>
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
+                    <div class="name">
+                        조정석 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
             </div>
 
             <div class="item">
@@ -198,40 +198,40 @@
             <div class="item">
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
-                <div class="name">
-                    조정석 원장
-                    <div class="bg1"></div>
-                </div>
+                    <div class="name">
+                        조정석 원장
+                        <div class="bg1"></div>
+                    </div>
                 </a>
             </div>
 
             <div class="item">
-               <a href="about_2.html">
-                <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
-                <div class="name">
-                    조정석 원장
-                    <div class="bg1"></div>
-                </div>
-               </a>
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
+                    <div class="name">
+                        조정석 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
             </div>
 
             <div class="item">
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
-                <div class="name">
-                    조정석 원장
-                    <div class="bg1"></div>
-                </div>
+                    <div class="name">
+                        조정석 원장
+                        <div class="bg1"></div>
+                    </div>
                 </a>
             </div>
 
             <div class="item">
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
-                <div class="name">
-                    조정석 원장
-                    <div class="bg1"></div>
-                </div>
+                    <div class="name">
+                        조정석 원장
+                        <div class="bg1"></div>
+                    </div>
                 </a>
             </div>
 
@@ -252,7 +252,7 @@
             <i>About, The Care <br>
                 The Care의 생각</i>
             <p>고객이 바라는 최상의 아름다움의 완성, 피부 완성이 곧 美의 완성이라는 신념으로<br>
-            고객의 젊음을 간직한 아름다운 비전과 함께 프리미엄 디에이징을 추구합니다.</p>
+                고객의 젊음을 간직한 아름다운 비전과 함께 프리미엄 디에이징을 추구합니다.</p>
         </div>
     </div>
 
@@ -315,7 +315,20 @@
         </div>
 
     </div>
-    
+
+
+<div class="cross-wrap">
+    <div class="cross">
+        <div class="img-box">
+            <img src="img/main-company-inpomation.jpg" alt="">
+        </div>
+        <div class="text-box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate labore distinctio minus officiis aut doloremque at odio harum voluptas asperiores, reiciendis eius, modi tempora illum quod ipsam consequuntur quos quis.
+        </div>
+    </div>
+</div>
+
+
 
     <br><br><br><br><br><br><br><br><br><br><br>
 
@@ -341,7 +354,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -368,6 +381,20 @@
                 pauseOnHover: false,
                 slidesToShow: 3,
                 slidesToScroll: 3,
+                responsive: [{
+                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }],
+
                 // arrows:true,
                 prevArrow: ".slider-box-1 > .arrows > .btn-left",
                 nextArrow: ".slider-box-1 > .arrows > .btn-right"
@@ -379,27 +406,29 @@
         });
 
 
-//         gsap.to('body', {
-//   scrollTrigger:{
-//     start:'top 0',
-//     end:'top 800px',
-//     trigger:'.top-box2',
-//     markers: true,
-//     pin:true
-//   },
-// });
+        //         gsap.to('body', {
+        //   scrollTrigger:{
+        //     start:'top 0',
+        //     end:'top 800px',
+        //     trigger:'.top-box2',
+        //     markers: true,
+        //     pin:true
+        //   },
+        // });
 
-gsap.to('.top-wrap > .top-box2', {
-  scrollTrigger:{
-    trigger:'.top-wrap',
-    start:'top -98px',
-    scrub:true
-  },height:'72px',textalign:'center',top:'0',position:'fixed',background:'#fff',borderBottom:'1px solid #ccc'
-});
-
-
-
-        // swiper-pagination-bullet-active
+        gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '72px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
     </script>
 
 </body>
