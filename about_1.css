@@ -521,7 +521,7 @@ padding-bottom: 50px;
 /* thecare_vidio */
 .thecare_vidio{
   width: 100%;
-  height: 600px;
+  height: 700px;
   overflow: hidden;
 
   margin-top: 1800px;
@@ -558,7 +558,7 @@ padding-bottom: 50px;
   position: absolute;
   z-index: 5;
   text-align: center;
-  top: 20px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
@@ -579,22 +579,26 @@ padding-bottom: 50px;
 .thecare_vidio_img{
   width: 32%;
   display: inline-block;
-  position: absolute;
+  position: relative;
   top: 250px;
-  left: 40px;
+  left: 10%;
  
 
 }
 
 
 .thecare_vidio_img > img {
- 
-  margin-left: 20px;
+  position: absolute;
   border-radius: 50%;
+  width: 50%;
 }
 
 .thecare_vidio_img_txt{
+  position: absolute;
   text-align: center;
+  margin-top: 51%;
+  left: 13%;
+  color: #fff;
 }
 
 
@@ -741,6 +745,22 @@ padding-bottom: 50px;
 .philosophy > .inner{ 
   width: 100%;
 }
+
+/* thecare_vidio */
+.thecare_vidio{
+  height: 650px;
+}
+.thecare_vidio > .inner{
+  width: 100%;
+}
+.thecare_vidio_img_txt{
+
+  margin-top: 53%;
+  left: 7%;
+ 
+}
+
+
 
   }
   
@@ -893,6 +913,14 @@ padding-bottom: 50px;
 
      /*intro*/
 
+     .intro {
+      width: 100%;
+      height:700px;
+      margin-top: 500px;
+      background-color: #fff;
+    
+    }
+
   .pink_box{
     width:49%;
   }
@@ -948,17 +976,47 @@ font-size: 16px;
 
 }
 .philosophy_txt > h1 {
-  font-size: 33px;
+  font-size: 32px;
 }
 
 .philosophy_txt > i{
   font-size: 66px;
 
 }
-
-.philosophy_txt > p {
-  font-size: 16px;
+.philosophy_txt > br {
+  display: none;
 }
+.philosophy_txt > p {
+  font-size: 17px;
+}
+
+/* thecare_vidio */
+.thecare_vidio{
+  height: 510px;
+
+  margin-top: 1200px;
+}
+.thecare_vidio > .inner{
+  width: 100%;
+}
+.thecare_vidio_txt > h1 {
+  font-size: 47px;
+  font-weight: lighter;
+
+
+}
+
+.thecare_vidio_txt > p {
+  font-size: 15px;
+
+}
+
+
+.thecare_vidio_img_txt{
+  left: 5%;
+
+}
+
   
   }
   
@@ -1196,7 +1254,36 @@ font-size: 16px;
 }
 
 .philosophy_txt > p {
-  font-size: 14px;
+  font-size: 12px;
+}
+
+
+/* thecare_vidio */
+.thecare_vidio{
+  height: 390px;
+
+  margin-top: 800px;
+}
+.thecare_vidio > .inner{
+  width: 100%;
+}
+.thecare_vidio_txt > h1 {
+  font-size: 30px;
+}
+
+.thecare_vidio_txt > p {
+  font-size: 12px;
+
+}
+
+.thecare_vidio_img{
+  top: 170px;
+}
+
+.thecare_vidio_img_txt{
+  left: 5%;
+  font-size: 10px;
+
 }
 
   }
