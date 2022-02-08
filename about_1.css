@@ -41,6 +41,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 노말라이즈 */
 body,
 ul,
@@ -93,6 +100,10 @@ a {
   justify-content: end;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .bg-blue {
   background-color: blue;
 }
@@ -120,7 +131,7 @@ a {
 .line {
   width: 100%;
   height: 1px;
-  background: #707070;
+  background: #ccc;
   z-index: 10;
   display: block;
 }
@@ -135,10 +146,11 @@ a {
 }
 
 .top-wrap>.top-box1>.icon-box>.icon {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 15px ;
   text-align: center;
   float: left;
   display: flex;
+  font-family: 'GowunDodum-Regular';
 }
 
 .top-wrap>.top-box1>.icon-box>.cart {
@@ -161,7 +173,7 @@ a {
   display: flex;
   width: 1px;
   height: 50px;
-  background: #707070;
+  background:#707070;
   margin: 1px 0 0 15px;
 }
 
@@ -184,7 +196,7 @@ a {
   margin-bottom: 2px;
 }
 
-.top-wrap>.top-box1>.search-box>.icon>a>.img-box {
+.top-wrap>.top-box1>.search-box>.icon> a > .img-box {
   width: 36px;
 }
 
@@ -195,24 +207,24 @@ a {
 
 
 
-.top-wrap>.top-box1>.search-box>.icon input {
-  width: 0;
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  transition: width .3s, border-bottom-color .3s;
-  background-color: transparent;
-  color: #707070;
-  margin-right: 10px;
-  padding: 10px;
-  display: block;
-  box-sizing: border-box;
+.top-wrap>.top-box1>.search-box > .icon  input {
+  width:0;
+  padding:0;
+  margin:0;
+  outline:0;
+  border:0;
+  border-bottom:1px solid transparent;
+  transition:width .3s, border-bottom-color .3s;
+  background-color:transparent;
+  color:#707070;
+  margin-right:10px;
+  padding:10px;
+  display:block;
+  box-sizing:border-box;
 }
 
-.top-wrap>.top-box1>.search-box:hover>.icon input {
-  width: 170px;
+.top-wrap>.top-box1>.search-box:hover > .icon  input {
+  width:170px;
   border-bottom-color: #707070;
 }
 
@@ -235,20 +247,21 @@ a {
 .top-wrap>.top-box2 {
   margin: 0px auto;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   color: #707070;
-  background: white;
+  background:white;
   /* position: fixed;
   top: 119px;
   left: 0;
   z-index: 100;
   background: white; */
   z-index: 100;
+  font-family: 'GowunDodum-Regular';
 }
 
 
 .top-wrap>.top-box2>ul>li {
-  padding: 23px 95.5px;
+  padding: 23px 95px;
   position: relative;
 }
 
@@ -302,6 +315,7 @@ a {
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
+
 
 
 
