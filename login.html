@@ -126,13 +126,27 @@
     <div class = "login_main">
         <div class = "inner">
             <div class = "login_box">
-                <h1>로그인</h1>
+                <h1>LOGIN</h1>
                 <input type="text" name="id" value="" required="true"
-                style="padding:1.2rem; font-size:1.2rem; margin-bottom:0.5rem;" 
-                size="20" placeholder="아이디" onkeyup="fn_press_han(this);">
+                style="padding:18px; font-size:16px; margin-bottom:0.5rem;" 
+                size="20" placeholder="ID" onkeyup="fn_press_han(this);">
                 <input type="password" name="pw" value="" required="true" 
-                style="padding:1.2rem; font-size:1.2rem; margin-bottom:0.5rem;" 
-                size="20" placeholder="비밀번호" autocomplete="true" onkeydown="onEnterSubmit()">
+                style="padding:18px; font-size:16px; margin-bottom:0.5rem;" 
+                size="20" placeholder="PW" autocomplete="true" onkeydown="onEnterSubmit()">
+
+               
+                    <a href="javascript:login_check()"><button type="submit"  class="login_btn" style= "cursor: pointer;">로그인</button></a>
+                    
+
+                    <div class = "login_3menu" >
+                        <ul class = "shc" style="margin-top:30px;">
+                          <li> <button style="background:#fff; border:0; cursor: pointer;"><a href="">회원가입</a></button></li>
+                          <li> | </li>
+                          <li><button style="background:#fff; border:0; cursor: pointer;"><a href="">아이디 찾기</a></button></li>
+                          <li> | </li>
+                          <li><button style="background:#fff; border:0; cursor: pointer;"><a href="">비밀번호 찾기</a></button></li>
+                        </ul>
+                       </div>
 
         </div>
     </div>

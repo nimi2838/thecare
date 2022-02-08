@@ -123,6 +123,8 @@ a {
 
 
 
+
+
 .top-wrap>.top-box1 {
   margin: 20px auto 15px;
   width: 1280px;
@@ -261,8 +263,9 @@ a {
 
 
 .top-wrap>.top-box2>ul>li {
-  padding: 23px 95px;
+  padding: 23px 95.5px;
   position: relative;
+  transition: all .4s;
 }
 
 .top-wrap>.top-box2>ul>li:hover {
@@ -270,20 +273,20 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li>div {
-  display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 10;
 }
 
 /* .top-wrap > .top-box2 > ul>li:hover> div */
 .top-wrap>.top-box2>ul>li:hover>div {
-  display: block;
+  visibility: visible;
   position: absolute;
   left: 0%;
   margin-top: 23px;
   background: white;
   width: 100%-50px;
-
+  transition: all .4s;
 }
 
 /* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
@@ -291,16 +294,13 @@ a {
   width: 255px;
   padding: 25px 0;
   text-align: center;
+  transition: all .4s;
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
   background: #ffeded;
 }
 
-.top-wrap>.top-box2>ul>li:hover>div>ul>li:first-child:hover {
-  border-top: 1px solid white;
-  padding: 24px 0 25px 0;
-}
 
 /* 
 .top-wrap > .top-box2 > ul>li> div > ul > li:after{
@@ -315,7 +315,6 @@ a {
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-
 
 
 
