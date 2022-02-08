@@ -662,7 +662,6 @@ a {
 }
 
 .card-wrap >.card_box > .card > .bg{
-  display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -672,7 +671,7 @@ a {
     text-align: center;
     opacity: 0;
     visibility: hidden;
-    transition: background-color 5s, transform 5s, opacity .5s, visibility .5s, display .5s;
+    transition: all .5s;
 }
 
 .card-wrap >.card_box > .card > .bg > .view {
@@ -685,15 +684,12 @@ a {
   color: white;
   padding: 10px 20px;
   z-index: 101;
-  transition: background-color 5s, transform 5s, opacity .5s, visibility .5s, display .5s;
 }
 
 .card-wrap >.card_box > .card:hover > .bg {
   background:rgba(0, 0, 0, 0.4);
-  display: block;
   visibility: visible;
   opacity: 100%;
-  transition: background-color 5s, transform 5s, opacity .5s, visibility .5s, display .5s;
 }
 
 /* 
