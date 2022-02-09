@@ -352,7 +352,7 @@ a {
 }
 
 
-input[type="text"],input[type="password"]{
+.form{
   width: 300px;
   text-align:left;
   margin: 0 auto;
@@ -503,7 +503,9 @@ input[type="text"],input[type="password"]{
 	.card-wrap >.card_box > .card {
 	  height: 350px;
 	}
-	
+	.login_main > .inner {
+        width: 100%;
+    }
   
   }
   
@@ -604,6 +606,10 @@ input[type="text"],input[type="password"]{
 		font-size: 20px;
 		padding: 5px 15px;
 	}
+	.login_main > .inner {
+        width: 100%;
+    }
+  
   
   }
   
@@ -715,5 +721,9 @@ input[type="text"],input[type="password"]{
 		font-size: 20px;
 		padding: 5px 15px;
 	}
+	.login_main > .inner {
+        width: 100%;
+    }
+  
   
   }

@@ -317,91 +317,54 @@ a {
   
 
 
-/* 회원가입 */
+/* 찾기 */
 
-.join_main{
+.find_main{
     width: 100%;
 	
 	padding-top: 50px;
-	padding-bottom: 70px;
+	
     background-color: #FFEEEE;
 }
-.join_main > .inner {
+.find_main > .inner {
 	width: 1180px;
 	margin: 0 auto;
 	position: relative;
 }
 
-.join_box{
+.find_box{
     background-color: #fff;
 	width: 400px;
-	height: 800px;
+	height: 400px;
 	margin: 0 auto;
-	
+	margin-bottom: 70px;
 	border-radius: 15px;
-    position: relative;
 	
 }
 
-.join_box > h1 {
+.find_box > h1 {
 	text-align: center;
 	font-weight:bold;
 	color: #4D4D4D;
-	padding-top: 60px;
+	padding-top: 50px;
 	padding-bottom: 20px;
-    
 	
 }
-.td_img img{
-  cursor: pointer;
-    
-    }
 
-input[type="text"],input[type="password"]{
-  
-  margin-left: 30px;
+
+.form{
+  width: 300px;
   text-align:left;
+  margin: 0 auto;
   outline: none;
-  display:inline-block;
-  border: 0;
-  border-bottom: 1px solid #ACA6A6;
-  margin-top: 5px;
-  padding:8px;
-  font-size:15px; 
-  margin-bottom:0.5rem;
-  
-  }
-
-  select{
-      width: 150px;
-     height: 40px;
-      border: 1px solid #ACA6A6;
-  }
-  .call{
-    width: 80px;
-    margin-left: 30px;
+  display:block;
+  border-radius: 10px;
+  border: 1px solid #ACA6A6;
+  margin-top: 20px;
 
   }
 
-  .checkimg{
-      position: absolute;
-      left: 261px;
-  }
-  .btn{
-    line-height: 36px;
-    height: 35px;
-    bordeR: 1px solid #f52334;
-      color: #f52334;
-      padding: 0;
-      min-width: 135px;
-      width: 15%;
-      margin-left: 2%;
-      cursor: pointer;
-      background-color: #fff;
-  }
-
-
-  .join_btn{
+  .find_btn{
 	width:340px;
 	text-align: center;
 	margin: 0 auto;
@@ -415,16 +378,14 @@ input[type="text"],input[type="password"]{
 	display:block;
 	padding: 5px 0;
 	border:0;
-	margin-top: 40px;
+	margin-top: 20px;
 	transition: 0.3s;
 
   }
 
-  .join_btn:hover{
+  .find_btn:hover{
 	background: #FFB2AC;
   }
-
-
 
 
 /* footer */
@@ -527,10 +488,11 @@ input[type="text"],input[type="password"]{
 	.card-wrap >.card_box > .card {
 	  height: 350px;
 	}
-	
-    .join_main > .inner {
+
+    .find_main > .inner {
         width: 100%;
     }
+	
   
   }
   
@@ -632,7 +594,7 @@ input[type="text"],input[type="password"]{
 		padding: 5px 15px;
 	}
 
-    .join_main > .inner {
+    .find_main > .inner {
         width: 100%;
     }
   
@@ -746,7 +708,8 @@ input[type="text"],input[type="password"]{
 		font-size: 20px;
 		padding: 5px 15px;
 	}
-    .join_main > .inner {
+
+    .find_main > .inner {
         width: 100%;
     }
   
