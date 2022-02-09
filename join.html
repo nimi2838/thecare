@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="join.css" />
+  <title>회원가입</title>
+</head>
+<body>
+    <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search-box flex flex-jc-end">
+                <div class="icon flex">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <a href="searchform" class="btn_search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="guide.html">시술안내</a>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="review.html">전후사진</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class = "join_main">
+        <div class = "inner">
+            <div class = "join_box">
+                <h1>JOIN</h1>
+                <form name="newMem" method=post action=insertMemberResult.jsp>
+                    <table class="table" style="font-size:10pt; margin-top:30px;">
+        
+                       <tr>
+                          
+                          <td>
+                             <div class="td_img flex flex-ai-c">
+                             <input type=text name="id" 
+                             size="20" placeholder="아이디">
+                                <a href="javascript:checkID()" class = "checkimg">
+                                   <img src="img/check.png">
+                                </a>
+                             </div>
+                          </td>
+                       </tr>
+                       <tr>
+                          
+                          <td><input type=password name="pw" 
+                            size="35" placeholder="비밀번호" ></td>
+                       </tr>
+                       
+                       <tr>
+                          <td><input type=text name="name" size=35 placeholder="이름"></td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <input type=text name=joomin1 size=10 placeholder="주민등록번호" style="display: inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             -
+                             <input type=text name=joomin2 size=13 style="display: inline;margin: 0;margin-left: 15px;">
+                          </td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <input type=text name=birthyy size=1  style="display: inline;">년
+                             <input type=text name=birthmm size=1 style="display: inline;margin: 0;">월
+                             <input type=text name=birthdd size=1  style="display: inline;margin: 0;">일
+                             <input type=radio name=solar value="양력" style="margin-left: 15px;"  checked>양력
+                             <input type=radio name=solar value="음력">음력
+                          </td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <input type=text name=email1 size=10 placeholder="이메일"> &nbsp;&nbsp;&nbsp;&nbsp;@ &nbsp;&nbsp;&nbsp;&nbsp;
+                             <select name=email2>
+                                <option value="naver" selected>naver.com
+                                <option value="hanmail">hanmail.net
+                                <option value="daum">daum.net
+                                <option value="nate">nate.com
+                                <option value="gmail">gmail.com
+                                <option value="icloud">icloud.com
+                             </select>
+                          </td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <span class="pbox">
+                             <select class="call" name=phone1>
+                                <option value="010" selected>010
+                                <option value="011">011
+                                <option value="016">016
+                                <option value="017">017
+                                <option value="018">018
+                                <option value="019">019
+                             </select>
+                          </span> &nbsp;&nbsp;&nbsp;-
+                             <input type=text name=phone2 size=5 style="margin: 0; margin-left: 15px;"> &nbsp;&nbsp;&nbsp;-
+                             <input type=text name=phone3 size=5 style="margin: 0; margin-left: 15px;">
+                          </td>
+                       </tr>
+                       <tr>
+                          <td style= "padding-top:7px;"><input type="text" name="zipcode" size="17" placeholder="주소" readonly> 
+                             <input type="button" class="btn" value="우편번호 검색"
+                              onClick="zipCheck()" style="margin-bottom: 10px;"><br>
+                              
+                             <input type="text" name="address1" size="35" readonly style="margin-bottom: 10px;"><br>
+                             <input type="text" name="address2" size="25">&nbsp;(상세주소입력)</td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <input type=radio name=sex value="여자" style="margin-left: 30px;">여자
+                             <input type=radio name=sex value="남자">남자
+                          </td>
+                       </tr>
+        
+                    </table>
+                   
+                   <button type="submit"  class="join_btn" value= "회원가입" onClick="checkValue()" style= "cursor: pointer;" >회원가입</button></a>
+                    </div>
+                    </form>
+                 </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo.png" width = "150" alt="" style="margin-bottom: 20px;">
+          <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+        </p>
+          <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912
+        </p>
+          <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
+     </div> 
+</body>
+</html>
