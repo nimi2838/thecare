@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sub_1.css">
+    <title>상세화면</title>
+</head>
+
+<body>
+
+
+    <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search-box flex flex-jc-end">
+                <div class="icon flex">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <a href="searchform.html" class="btn_search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="guide.html">시술안내</a>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="review.html">전후사진</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="sub_con_box ">
+        <div class="sub_con flex">
+            <div class="sub_text1">
+                <h1>사각턱보톡스</h1>
+                <p>발달된 턱 근육을 줄여 갸름한 V라인으로</p>
+                <div class="price">
+                    <span>19,000</span>원 부터
+                </div>
+                <hr>
+                <div class="tag">
+                    #일상생활바로가능 #간편한주사시술
+                    #10분내외 #다른시술과병행가능
+                </div>
+            </div>
+            
+            <div class="sub_text2">
+                <div class="option">
+                    <div>시술선택</div>
+                    <select>
+                        <option value="턱보톡스 50유닛 (보톨렉스)">턱보톡스 50유닛 (보톨렉스)</option>
+                        <option value="턱보톡스 50유닛 (수입-엘레간,제모인)">턱보톡스 50유닛 (수입-엘레간,제모인)</option>
+                    </select>
+                </div>
+                <div class="price-box flex">
+                    <div>총 금액</div>
+                    <div class="price1">
+                        <span>0</span>원
+                    </div>
+                    <p>부가세 10% 별도</p>
+                </div>
+                <div class="btn-box">
+                    <a href="cart.html">장바구니 담기</a>
+                    <a href="cart.html">시술 예약하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- 탑바 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+    <script>
+        // gsap.to('.top-wrap > .top-box2', {
+        //     scrollTrigger: {
+        //         trigger: '.top-wrap',
+        //         start: 'top -98px',
+        //         scrub: true
+        //     },
+        //     height: '72px',
+        //     textalign: 'center',
+        //     top: '0',
+        //     position: 'fixed',
+        //     background: '#fff',
+        //     borderBottom: '1px solid #ccc'
+        // });
+
+
+        let = 0
+
+        $(function () {
+            $(".plz li").on("click", function () {
+                no = $(this).index() + 1;
+                $(".plz li ").show();
+                $('.plz li ').removeClass('on');
+                $(this).addClass('on');
+
+                $(".ne").hide();
+                if ($('.ne').css('display') == 'none') {
+                    $(".ne" + no).show();
+                } else {
+                    $(".ne").hide();
+                }
+
+
+
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
