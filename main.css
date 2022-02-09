@@ -1205,6 +1205,35 @@ a {
 
 
 
+/* footer */
+
+.footer {
+  width: 100%;
+  padding: 50px 0;
+  background: rgb(56, 56, 56);
+  
+}
+
+
+.footer > .text{
+  color: white;
+  text-align: center;
+
+}
+
+.footer > .text1 {
+  padding-top: 20px;
+}
+
+
+.footer > .text > p {
+  font-size: 14px;
+}
+
+
+
+
+
 
 
 
@@ -1477,6 +1506,34 @@ a {
    width: 480px;
    height: 500px;
  }
+
+
+    /* footer */
+
+.footer {
+  width: 100%;
+  position: relative;
+  padding: 50px 0;
+  background: rgb(56, 56, 56);
+  margin-top: 150px;
+  z-index: 99;
+}
+
+
+.footer > .text{
+  color: white;
+  text-align: center;
+
+}
+
+.footer > .text1 {
+  padding-top: 20px;
+}
+
+
+.footer > .text > p {
+  font-size: 14px;
+}
  
 
 
