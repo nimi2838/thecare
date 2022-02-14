@@ -1,4 +1,4 @@
-  <div class="top-wrap">
+ <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
             <ul class="icon-box">
                 <li class="icon login">
@@ -38,7 +38,7 @@
             <div class="search-box flex flex-jc-end">
                 <div class="icon flex">
                     <input type="text" placeholder="검색어를 입력해주세요.">
-                    <a href="searchform" class="btn_search">
+                    <a href="searchform.html" class="btn_search">
                         <div class="img-box">
                             <img src="img/Search_thin_icon.png" alt="">
                         </div>
@@ -78,7 +78,13 @@
                     </div>
                 </li>
                 <li class="menu">
-                    <a href="guide.html">시술안내</a>
+                    <a>시술안내</a>
+                    <div>
+                        <ul>
+                            <li><a href="guide.html">시술안내</a></li>
+                            <li><a href="review.html">전후사진</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="menu">
                     <a>시술예약</a>
@@ -90,8 +96,9 @@
                         </ul>
                     </div>
                 </li>
+                
                 <li class="menu">
-                    <a href="review.html">전후사진</a>
+                    <a href="custom.html">맞춤시술</a>
                 </li>
                 <li class="menu">
                     <a>커뮤니티</a>
