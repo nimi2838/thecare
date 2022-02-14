@@ -668,24 +668,42 @@ a {
 
 
   @media (min-width: 1051px) and ( max-width:1300px) {
-    .inner{width:100%;}
-    .content{padding: 120px 40px;}   
+    .inner{width:100%;} 
+    .wrap{justify-content: space-around;}
     #review .box{width : 22.75%;}
+    #review .box .info{height: 70%;}
+    #review .box .info .review_title{font-size: medium;}
+    #review .box .info .review_title-2{font-size: medium;}
+
+    .about-ban > .text-box {padding-top: 15%;}
   }
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
-    .content{padding: 80px 40px;}   
-    #review .box{width : 30.5%; }
-  }
-  
-  
-  @media (min-width: 600px) and ( max-width:850px) {
-  }
-  @media (min-width: 500px) and ( max-width:600px) {
-    .content{padding: 60px 20px;}  
-    #review .box{width : 100%;}
+    .inner{width:100%;} 
+    .wrap{justify-content: space-around;}
+    #review .box{width : 22.75%;}
+    #review .box .info{height: 70%;}
+    #review .box .info .review_title{font-size: small;}
+    #review .box .info .review_title-2{font-size: small;}
 
+    #review .box .info >.review_txt {font-size: small; line-height: 90px;}
+
+    
+    .about-ban > .text-box {padding-top: 15%;}
+  }
+  
+  
+  @media (min-width: 500px) and ( max-width:850px) {
+    .inner{width:100%;} 
+    .wrap{justify-content: space-around; margin-bottom: 0px;}
+    #review .box{width : 60%; margin-bottom: 100px;}
+    #review .box .info{height: 77%;}
+
+    #review .box .info >.review_txt {font-size: small; line-height: 90px;}
+
+    
+    .about-ban > .text-box {padding-top: 15%;}
   }
 
 

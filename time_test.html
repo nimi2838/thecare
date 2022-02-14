@@ -123,6 +123,7 @@
     </div>
 
     <script type="text/javascript">
+        
         var today = new Date();
         function buildCalendar(){
           var row = null
@@ -164,6 +165,9 @@
         
                 opener.document.getElementById("date").value = clickedYMD;
                 self.close();
+
+                
+                
             }
             
         
@@ -185,7 +189,7 @@
         }
         
         function prevCalendar(){
-            today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
+            today = new Date(today.cvr(), today.getMonth()-1, today.getDate());
             buildCalendar();
         }
         
@@ -193,14 +197,12 @@
             today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
             buildCalendar();
         }
+        
 
-        $(".date").each(function(index){ // 오늘 날짜 표시
-                    if(nowYear==date.getFullYear() && nowMonth==date.getMonth() && $(".date").eq(index).text()==date.getDate()) {
-                        $(".date").eq(index).addClass('colToday');
-                    }
-                }) 
-            
-            buildCalendar();
+        
+
+
+        
 
 
         
@@ -210,6 +212,7 @@
 
 
         <body>
+            <h1>날짜 선택</h1>
         <table id="calendar">
                 <tr>
                     <td ><label onclick="prevCalendar()"> ◀ </label></td>
@@ -227,6 +230,123 @@
                 </tr>
                 <script type="text/javascript">buildCalendar();</script>
             </table>
+
+
+            <h1>시간 선택</h1>
+
+            <section class="ContactReserveForm_ContRight " alt="시간선택">
+                <h2 alt="예약 시간">시간 선택</h2>
+                <div class="BookingTimeArea" alt="예약시간">
+                                            
+                    <ul class="List">
+                        
+                                                    <li title="예약불가">
+                            <label class="Time_Impossible"><p><strong>10:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1030" title="예약가능" onclick="ableTimeCheckApply('1030','10:30','11:00');setSubject('N','');">
+                            <label><p><strong>10:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1100" title="예약가능" onclick="ableTimeCheckApply('1100','11:00','11:30');setSubject('N','');">
+                            <label><p><strong>11:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1130" title="예약가능" onclick="ableTimeCheckApply('1130','11:30','12:00');setSubject('N','');">
+                            <label><p><strong>11:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1200" title="예약가능" onclick="ableTimeCheckApply('1200','12:00','12:30');setSubject('N','');">
+                            <label><p><strong>12:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1230" title="예약가능" onclick="ableTimeCheckApply('1230','12:30','13:00');setSubject('N','');">
+                            <label><p><strong>12:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li title="예약불가">
+                            <label class="Time_Impossible"><p><strong>13:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li title="예약불가">
+                            <label class="Time_Impossible"><p><strong>13:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li title="예약불가">
+                            <label class="Time_Impossible"><p><strong>14:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1430" title="예약가능" onclick="ableTimeCheckApply('1430','14:30','15:00');setSubject('N','');">
+                            <label><p><strong>14:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1500" title="예약가능" onclick="ableTimeCheckApply('1500','15:00','15:30');setSubject('N','');">
+                            <label><p><strong>15:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1530" title="예약가능" onclick="ableTimeCheckApply('1530','15:30','16:00');setSubject('N','');">
+                            <label><p><strong>15:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1600" title="예약가능" onclick="ableTimeCheckApply('1600','16:00','16:30');setSubject('N','');">
+                            <label><p><strong>16:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1630" title="예약가능" onclick="ableTimeCheckApply('1630','16:30','17:00');setSubject('N','');">
+                            <label><p><strong>16:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1700" title="예약가능" onclick="ableTimeCheckApply('1700','17:00','17:30');setSubject('N','');">
+                            <label><p><strong>17:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1730" title="예약가능" onclick="ableTimeCheckApply('1730','17:30','18:00');setSubject('N','');">
+                            <label><p><strong>17:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1800" title="예약가능" onclick="ableTimeCheckApply('1800','18:00','18:30');setSubject('N','');">
+                            <label><p><strong>18:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1830" title="예약가능" onclick="ableTimeCheckApply('1830','18:30','19:00');setSubject('N','');">
+                            <label><p><strong>18:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1900" title="예약가능" onclick="ableTimeCheckApply('1900','19:00','19:30');setSubject('N','');">
+                            <label><p><strong>19:00</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li id="1930" title="예약가능" onclick="ableTimeCheckApply('1930','19:30','20:00');setSubject('N','');">
+                            <label><p><strong>19:30</strong></p></label>
+                        </li>
+                        
+                        
+                                                    <li title="예약불가">
+                            <label class="Time_Impossible"><p><strong>20:00</strong></p></label>
+                        </li>
+                        
+                                                </ul>
+                </div>
+            </section>
 
 
            
