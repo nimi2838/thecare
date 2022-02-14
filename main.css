@@ -289,7 +289,7 @@ a {
 
 /* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
 .top-wrap>.top-box2>ul>li:hover>div>ul>li {
-  width: 255px;
+  width: 256px;
   padding: 25px 0;
   text-align: center;
   transition: all .4s;
@@ -334,6 +334,7 @@ a {
 
 .swiper {
   height: auto;
+  margin-top: 1.3px;
 }
 
 .swiper-slide {
@@ -1205,7 +1206,6 @@ a {
 
 
 
-<<<<<<< Updated upstream
 /* footer */
 
 .footer {
@@ -1235,8 +1235,7 @@ a {
 
 
 
-=======
->>>>>>> Stashed changes
+
 
 
 
@@ -1509,8 +1508,6 @@ a {
    width: 480px;
    height: 500px;
  }
-<<<<<<< Updated upstream
-
 
     /* footer */
 
@@ -1538,8 +1535,6 @@ a {
 .footer > .text > p {
   font-size: 14px;
 }
-=======
->>>>>>> Stashed changes
  
 
 
