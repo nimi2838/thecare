@@ -633,23 +633,28 @@ a {
   }
 
   
-.inner{width:1300px; margin: 0 auto;} 
+.inner{width:1261px; margin: 0 auto;} 
 .content{width:100%; padding: 100px 0;}
 .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;}
 
-.content .title{margin: 0 0 60px; text-align: center; font: bold 28px 'inherit'; color: #ccc;}
+.tit {width: 100%; height: 200px; text-align: center; padding-bottom: 30px; border-bottom: 1px solid #cecece;}
+.tit>h4 {font-size: large; color: #8e6441;}
+.tit>span {font-size: 30px; color: #333;}
+.tit>p {color: #333; margin-top: 50px;}
 
-.table { width: 100%; margin: 0 auto;}
-.table > thead {height: 50px; font: 18px 'inherit'; background-color: #f0f0f0; }
-.table > thead th {border-top: 1px solid #797979; border-bottom: 1px solid #797979;}
+.txt{width: 70%;  margin: 0 auto; padding: 100px 0;}
+.txt img{margin: 0 auto; width: 100%; }
+.txt >p {text-align: center; line-height: 30px; font-size: 16px; padding-top: 50px;
+    /* text-align: left; */
+}
 
-.table > tbody { font: 16px 'inherit';  }
-.table > tbody:hover {background-color: #f7f7f7;}
-
-.table #gong>tr >td {text-align: center; border-bottom: 1px solid #ccc; color: #303030;}
-
-#gong > tr {height: 10px;}
-#gong > tr> .je {font-weight: bold; color: #303030;}
+.wow {width: 100%; border-top: 1px solid #cecece;}
+.mok{
+    width: 100px; margin: 0 auto; height: 40px; text-align: center;
+    margin-top: 100px; line-height: 40px;
+    border: 1px solid #cecece; font-size: 15px; background-color: #fff;
+}
+.mok:hover{background-color: #f7f7f7;}
 
 
 
@@ -665,7 +670,6 @@ a {
   .inner{width:100%;} 
   .wrap{justify-content: space-around;}
   
-  .table { width: 100%; margin: 0 30px;}
 
   .about-ban > .text-box {padding-top: 15%;}
 }
@@ -674,10 +678,6 @@ a {
 @media (min-width: 500px) and ( max-width:850px) {
   .inner{width:100%;} 
   .wrap{justify-content: space-around; margin-bottom: 0px;}
-  .table { width: 100%; margin: 0 30px;}
-  .table>thead>tr>th:nth-of-type(2){width: 400px;}
-.table > thead {height: 50px; font: 15px 'inherit'; background-color: #f0f0f0; }
-.table > tbody { font: 14px 'inherit';  }
 
   .about-ban > .text-box {padding-top: 15%;}
 }
