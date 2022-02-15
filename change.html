@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="change.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>예약확인/변경/취소</title>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search-box flex flex-jc-end">
+                <div class="icon flex">
+                    <input type="text" placeholder="검색어를 입력해주세요.">
+                    <a href="searchform.html" class="btn_search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a>시술안내</a>
+                    <div>
+                        <ul>
+                            <li><a href="guide.html">시술안내</a></li>
+                            <li><a href="review.html">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu">
+                    <a href="custom.html">맞춤시술</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="content_wrap1">
+        <div class="content_box">
+            <h1>예약 확인/변경/취소</h1>
+            <hr>
+
+
+
+            <div class="switch-box">
+                <h3 onClick="expandcontent('sc1')">
+                    <div class="time">
+                        2022-01-13 14:00
+                    </div>
+                    <div class="text2 text21">예약완료</div>
+                    <div class="btn_detail">
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                </h3>
+
+                <div id="sc1" class="switchcontent flex">
+
+                    <div class="text3">
+                        <div class="name">고객명</div>
+                        <div class="phone">연락처</div>
+                        <div class="time">예약시간</div>
+                        <div class="request">요청사항</div>
+예약시술명
+총 예약금액
+                    </div>
+                    <div class="text4">
+                        홍길동
+010-1234-1234
+14:00
+상담없이 바로 시술 진행하고 싶습니다.
+사각턱보톡스 5회
+12,900원 (부가세 별도)
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="switch-box">
+                <h3 onClick="expandcontent('sc2')" class="flex flex-ai-c">
+                    <div class="num">
+                        02
+                    </div>
+                    <div class="text2">[생산] 먹고 남은 음식은 재냉동/냉동 해도 되나요?</div>
+                </h3>
+
+                <div id="sc2" class="switchcontent">
+                    <div class="text3">
+                        제품에 표시되어있는 유통기한 내에 섭취하셔야 하며 가열하셨다면 바로 드셔야 합니다.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="btn-num flex flex-jc-c"> 1</div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+            </p>
+            <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전화번호 : 02-517-0912
+            </p>
+            <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        var enablepersist = "on"
+        var collapseprevious = "yes"
+
+        if (document.getElementById) {
+            document.write('<style type="text/css">')
+            document.write('.switchcontent{display:none;}')
+            document.write('</style>')
+        }
+
+        function getElementbyClass(classname) {
+            ccollect = new Array()
+            var inc = 0
+            var alltags = document.all ? document.all : document.getElementsByTagName("*")
+            for (i = 0; i < alltags.length; i++) {
+                if (alltags[i].className == classname)
+                    ccollect[inc++] = alltags[i]
+            }
+        }
+
+        function contractcontent(omit) {
+            var inc = 0
+            while (ccollect[inc]) {
+                if (ccollect[inc].id != omit)
+                    ccollect[inc].style.display = "none"
+                inc++
+            }
+        }
+
+        function expandcontent(cid) {
+            if (typeof ccollect != "undefined") {
+                if (collapseprevious == "yes")
+                    contractcontent(cid)
+                document.getElementById(cid).style.display = (document.getElementById(cid).style.display != "block") ?
+                    "block" : "none"
+            }
+        }
+
+        function revivecontent() {
+            contractcontent("omitnothing")
+            selectedItem = getselectedItem()
+            selectedComponents = selectedItem.split("|")
+            for (i = 0; i < selectedComponents.length - 1; i++)
+                document.getElementById(selectedComponents[i]).style.display = "block"
+        }
+
+
+
+        function get_cookie(Name) {
+            var search = Name + "="
+            var returnvalue = "";
+            if (document.cookie.length > 0) {
+                offset = document.cookie.indexOf(search)
+                if (offset != -1) {
+                    offset += search.length
+                    end = document.cookie.indexOf(";", offset);
+                    if (end == -1) end = document.cookie.length;
+                    returnvalue = unescape(document.cookie.substring(offset, end))
+                }
+            }
+            return returnvalue;
+        }
+
+
+
+        function getselectedItem() {
+            if (get_cookie(window.location.pathname) != "") {
+                selectedItem = get_cookie(window.location.pathname)
+                return selectedItem
+            } else
+                return ""
+        }
+
+
+
+        function saveswitchstate() {
+            var inc = 0,
+                selectedItem = ""
+            while (ccollect[inc]) {
+                if (ccollect[inc].style.display == "block")
+                    selectedItem += ccollect[inc].id + "|"
+                inc++
+            }
+            document.cookie = window.location.pathname + "=" + selectedItem
+
+        }
+
+
+
+        function do_onload() {
+            getElementbyClass("switchcontent")
+            if (enablepersist == "on" && typeof ccollect != "undefined")
+                revivecontent()
+        }
+
+
+
+
+        if (window.addEventListener)
+            window.addEventListener("load", do_onload, false)
+        else if (window.attachEvent)
+            window.attachEvent("onload", do_onload)
+        else if (document.getElementById)
+            window.onload = do_onload
+
+        if (enablepersist == "on" && document.getElementById)
+            window.onunload = saveswitchstate
+
+
+
+
+
+
+			 function keyword_check(){
+
+			  if(document.search.keyword.value==''){  
+
+			  alert('검색어를 입력하세요');
+
+			  document.search.keyword.focus(); 
+
+			  return false; 
+
+			  }
+
+			  else return true;
+
+			 }
+
+
+    </script>
+
+
+</body>
+
+</html>
