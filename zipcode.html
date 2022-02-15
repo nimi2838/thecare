@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="zipcode.css" />
+  <title>우편번호찾기</title>
+</head>
+<body>
+    <div class="post-search" style="width: 544px; height: 710px;">
+        <h1>
+            <div class="title">우편번호 찾기</div>
+        </h1>
+    
+        <form id="search-form" onsubmit="return false">
+            <input id="address_search_name" name="address_search_name" type="text" placeholder="검색어(도로명,지번,건물명)를 입력해주세요">
+            <input class="button" type="button" value="검색" onclick="getPostCode();">
+        </form>
+    
+        <div class="post-search-tip">
+            <h2>TIP</h2>
+            <p>아래와 같이 검색하면 더욱 정확한 결과가 검색됩니다.</p>
+            <dl>
+                <dt>도로명 + 건물번호</dt>
+                <dd>예) 영동대로 513, 제주 첨단로 242</dd>
+            </dl>
+            <dl>
+                <dt>지역명(동/리) + 번지</dt>
+                <dd>예) 삼성동 25, 제주 영평동 2181</dd>
+            </dl>
+            <dl>
+                <dt>지역명(동/리) + 건물명(아파트명)</dt>
+                <dd>예) 분당 주공, 삼성동 코엑스</dd>
+            </dl>
+        </div>
+    
+        <div class="search-over">
+            <span>검색어에 아래와 같은 조합을 입력하면 더욱 정확한 결과가 검색됩니다.</span><br>
+            <span class="ex">'도로명+건물번호', '지역명+지번', '지역명+건물명(아파트명)'</span>
+        </div>
+    
+        <div class="search-empty">
+            <strong class="error-message">검색된 결과가 없습니다.</strong>
+            <p>검색어에 잘못된 철자가 없는지, 정확한 주소인지 다시 한번 확인해 주세요.</p>
+            <div class="box">
+                <h2>TIP</h2>
+                <ul>
+                    <li>지번주소(동/읍/면), 도로명, 건물명(아파트)을 확인해주세요.</li>
+                    <li>일부 신축건물, 신도시의 경우 일시적으로 검색이 되지 않을 수 있습니다.</li>
+                    <li>도로명 주소를 모르실 경우 <a href="http://www.juso.go.kr" target="_blank">www.juso.go.kr</a> 에서 확인 가능합니다.</li>
+                    <li>동명으로 검색시 법정동명으로 검색하셔야 합니다.<br>(행정동명으로는 검색이 되지 않습니다.)</li>
+                </ul>
+            </div>
+        </div>
+    
+        <form name="addressConfirm" id="addressConfirm" method="post" action="postcode_bridge.php">
+            <input type="hidden" name="gubun" value="zonecode^|^address^|^zipcode">
+            <input type="hidden" name="s_type" value="road">
+            <input type="hidden" name="road_address" value="">
+            <input type="hidden" name="zonecode" value="">
+            <div class="search-result"></div>
+        </form>
+    
+        <div class="pagination_wrap"><nav><ul class="pagination pagination-sm"></ul></nav></div>
+    
+    </div>
+    
+    
+    <script src="/admin/gd_share/script/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(top.document).find('html, body').css({'overflow': '', 'position': ''});
+            $('.post-search').css('width', $(window).width());
+            $('.post-search').css('height', $(window).height());
+            $(window).resize(function() {
+                $('.post-search').css('width', $(window).width());
+                $('.post-search').css('height', $(window).height());
+            });
+        });
+    
+        $("#address_search_name").keydown(function(key) {
+            if (key.keyCode == 13) {
+                getPostCode();
+            }
+        });
+    
+        function getPostCode() {
+            var data = {
+                'keyword' : $("#address_search_name").val()
+            };
+            var page;           // 페이지
+            var pageCnt = 15;   // 페이지당 출력수
+            var lastPage;       // 마지막 페이지
+    
+            if (data['keyword'] == '') {
+                $(".post-search-tip").hide();
+                $('.error-message').text('검색어를 입력해주세요.');
+                $(".search-result").hide();
+                $(".search-over").hide();
+                $(".search-empty").show();
+                return;
+            }
+            if(data['keyword'].length == 1 || !checkSearchedWord(data['keyword'])) {
+                $(".post-search-tip").hide();
+                $('.error-message').text('검색어를 다시 입력해주세요.');
+                $(".search-result").hide();
+                $(".search-over").hide();
+                $(".search-empty").show();
+                return;
+            }
+    
+            // 검색 결과 초기화
+            $(".search-result").empty();
+            $('.pagination_wrap .pagination').empty();
+    
+            $.ajax({
+                url : './postcode_search_ps.php',
+                data : data,
+                type : 'POST',
+                success : function(data) {
+                    $(".post-search-tip").hide();
+                    var data = JSON.parse(data);
+                    $('.post-search').css('width', $(window).width());
+                    $('.post-search').css('height', $(window).height());
+    
+                    if (data['resultData']['codeData']['code'] == '1' || data['resultData']['addressData'].length == 0) {    // 검색 내용없음
+                        $(".search-result").hide();
+                        $(".search-over").hide();
+                        var message = "검색된 결과가 없습니다.";
+                        if(data['resultData']['codeData']['code'] == '1') {
+                            var errorCode =  data['resultData']['codeData']['detailCode'];
+                            var code = ['G0005','G0006','G0007','G0008','G0009','G0010'];
+                            if(code.indexOf(errorCode) > -1) {
+                                message = '검색어를 다시 입력해주세요.';
+                            } else if(errorCode == 'E0003') {
+                                message = '검색어를 입력해주세요.';
+                            } else if(errorCode == 'G0004') {
+                                message = '시도명으로는 검색이 불가합니다.';
+                            }
+                        }
+                        $('.error-message').text(message);
+                        $(".search-empty").show();
+                    }
+                    else {
+                        if (data['resultData']['addressData'].length > 30) {
+                            $(".search-over").show();
+                        }
+                        else {
+                            $(".search-over").hide();
+                        }
+                        $(".search-empty").hide();
+    
+                        lastPage = Math.ceil(data['resultData']['addressData'].length/pageCnt);
+    
+                        var table = $('<div class="ul_wrap"><ul></ul></div>');
+                        for (var i=1; i<=data['resultData']['addressData'].length; i++) {
+                            makeRow(table, data['resultData']['addressData'][i-1]);
+    
+                            if (i%pageCnt == 0 || data['resultData']['addressData'].length == i) {
+                                if (i < pageCnt) {
+                                    page = 1;
+                                }
+                                else {
+                                    page = Math.ceil(i/pageCnt);
+                                }
+                                table.attr('id', page);
+                                var row = $('<div></div>');
+                                var prevPage = '<a href="javascript:void(0);" onclick="prevPage('+page+')"> <b><</b> </a>';
+                                var nextPage = ' <a href="javascript:void(0);" onclick="nextPage('+page+')"> <b>></b> </a>';
+    
+                                if (page == 1) {
+                                    prevPage = '';
+                                }
+    
+                                if (page == lastPage) {
+                                    nextPage = '';
+                                }
+                                var td = $('<div></div>').addClass('page').html(prevPage +'<b>'+page+'</b> / '+lastPage + nextPage);
+                                row.append(td);
+                                table.append(row);
+    
+    
+                                $('.search-result').append(table);
+                                table = $('<div class="ul_wrap"><ul></ul></div>');
+                            }
+    
+                            // 2페이지부터 숨김처리
+                            if (page > 1) {
+                                $("#"+page).hide();
+                            }
+                        }
+    
+                        $(".search-result").show();
+                    }
+                },
+                error : function() {
+                }
+            });
+        }
+    
+        function makeRow(table, data) {
+            var address = '<li>';
+            address += '<dl class="road">';
+            address += '<dt><span>도로명</span></dt>';
+            address += '<dd data-address="' + data['roadAddress'] + '" data-zonecode="' + data['zoneCode'] + '" data-type="roadAddress" class="address">' + data['roadAddress'] + '</dd>';
+            address += '</dl>';
+            address += '<dl class="ground">';
+            address += '<dt><span>지&nbsp;&nbsp;&nbsp;번</span></dt>';
+            address += '<dd data-address="' + data['roadAddress'] + '" data-zonecode="' + data['zoneCode'] + '" data-type="groundAddress" class="address">' + data['groundAddress'] + '</dd>';
+            address += '</dl>';
+            address += '<span>' + data['zoneCode'] + '</span>';
+            address += '</li>';
+    
+            table.find('ul').append($(address));
+        }
+    
+        function nextPage(page) {
+            var nextPage = page+1;
+            $("#"+page).hide();
+            $("#"+nextPage).show();
+            $('html').scrollTop(0);
+        }
+    
+        function prevPage(page) {
+            var prevPage = page-1;
+            $("#"+page).hide();
+            $("#"+prevPage).show();
+            $('html').scrollTop(0);
+        }
+        function checkSearchedWord(str){
+            if(str.length >0){
+                //특수문자 제거
+                var expText = /[%=><\[\]]/ ;
+                if(expText.test(str) == true){
+                    return false;
+                }
+    
+                //특정문자열(sql예약어의 앞뒤공백포함) 제거
+                var sqlArray = [
+                    //sql 예약어
+                    "OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC", "UNION", "FETCH", "DECLARE", "TRUNCATE"
+                ];
+                var regex ;
+                str = str.toUpperCase();
+                for(var i=0; i<sqlArray.length; i++){
+                    regex = new RegExp(sqlArray[i]) ;
+                    if (regex.test(str)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    
+        $(document).on('click','.address', function () {
+            $("input[name=road_address]").val($(this).data('address'));
+            $("input[name=zonecode]").val($(this).data('zonecode'));
+            $("#addressConfirm").submit();
+        });
+    </script>
+    
+    </body>

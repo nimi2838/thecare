@@ -1,0 +1,218 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+
+@font-face {
+  font-family: 'HeirofLightRegular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeirofLightBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YESMyoungjo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YESMyoungjo-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 노말라이즈 */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.con {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-1-0-0 {
+  flex: 1 0 0;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.flex-ai-sb {
+  align-items: stretch;
+}
+
+.flex-as-c {
+  align-self: center;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-jc-end {
+  justify-content: end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.block {
+  display: block;
+}
+
+.img-box>img {
+  width: 100%;
+  display: block;
+}
+
+/* zipcode */
+.post-search{
+    width: 544px;
+    height: 710px;
+}
+.post-search > h1{
+    height: 50px;
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #393b3f;
+
+}
+
+.post-search .title{
+    padding: 13px 0px 13px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.post-search #search-form {
+    position: relative;
+    clear: both;
+    padding: 30px 20px 0px 20px;
+}
+
+.post-search #address_search_name {
+    width: 100%;
+    height: 46px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #fa2828;
+    outline: none;
+    padding: 0 85px 0 15px;
+    box-sizing: border-box;
+    background-color: #fff!important;
+    -webkit-appearance: none;
+    
+}
+
+.post-search input.button {
+    position: absolute;
+    left:473px;
+    top: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #fa2828;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+    height: 46px;
+    line-height: 44px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+.post-search h2 {
+    font-size: 18px;
+    color: #fa2828;
+    margin: 0;
+    letter-spacing: 0;
+}
+
+.post-search p {
+    font-size: 14px;
+    color: #8a8a8a;
+    margin: 5px 0 24px 0;
+}
+.post-search .post-search-tip {
+    margin: 20px 20px 0px 20px;
+    padding: 35px 20px 30px 20px;
+    background-color: #fff;
+    letter-spacing: -0.5px;
+}
+.post-search .search-over {
+    padding: 15px 20px 0px 20px;
+    letter-spacing: -0.5px;
+    display: none;
+}
+.post-search .search-empty {
+    padding: 15px 20px 0px 20px;
+    letter-spacing: -0.5px;
+    display: none;
+}
+.post-search .post-search-tip dl dt {
+    padding: 7px 0px 7px 0px;
+    font-size: 15px;
+    color: #222;
+    font-weight: bold;
+    background: url(/admin/gd_share/img/share/icon_dot.png) no-repeat left 8px;
+    padding: 0 0 0 12px;
+
+}
