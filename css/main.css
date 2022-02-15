@@ -560,7 +560,7 @@ a {
 .mini-ban{
   width: 100%;
   height: 450px;
-  background: url("img/mini_ban1.jpg");
+  background: url("../img/mini_ban1.jpg");
   margin-top: 150px;
 }
 
@@ -587,7 +587,7 @@ a {
 
 
 .card-wrap {
-  background: url("img/main_sub_bg.jpg");
+  background: url("../img/main_sub_bg.jpg");
   background-size: cover;
   padding: 200px 0;
 }
@@ -607,31 +607,31 @@ a {
 
 .card-wrap >.card_box > .card1 {
   width: 59%;
-  background: url("img/main_program_01.jpg");
+  background: url("../img/main_program_01.jpg");
   margin-right: 2%;
   background-size: cover;
 }
 
 .card-wrap > .card_box > .card2 {
   width: 39%;
-  background: url("img/main_program_02.jpg");
+  background: url("../img/main_program_02.jpg");
   background-size: cover;
 }
 
 .card-wrap > .card_box > .card3 {
-  background: url("img/main_program_03.jpg");
+  background: url("../img/main_program_03.jpg");
   margin-right: 2%;
   background-size: cover;
 }
 
 .card-wrap > .card_box > .card4 {
-  background: url("img/main_program_04.jpg");
+  background: url("../img/main_program_04.jpg");
   margin-right: 2%;
   background-size: cover;
 }
 
 .card-wrap > .card_box > .card5 {
-  background: url("img/main_program_05.jpg");
+  background: url("../img/main_program_05.jpg");
   background-size: cover;
 }
 
