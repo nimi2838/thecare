@@ -1,4 +1,4 @@
- <div class="top-wrap">
+    <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
             <ul class="icon-box">
                 <li class="icon login">
@@ -35,19 +35,49 @@
                     </a>
                 </div>
             </div>
-            <div class="search-box flex flex-jc-end">
-                <div class="icon flex">
-                    <input type="text" placeholder="검색어를 입력해주세요.">
-                    <a href="searchform.html" class="btn_search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
-                        </div>
-                    </a>
-                </div>
+            <div class="search_wrap">
+                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                    method="get" action="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                    <td class="icon">
+                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                    </td>
+                    <td class="schBtn">
+                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                    </td>
+                    <!-- <a href="searchform.html" class="btn_search">
+                            <div class="img-box">
+                                <img src="img/Search_thin_icon.png" alt="">
+                            </div>
+                        </a> -->
+                </form>
+            </div>
 
 
 
-                <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+
+
+
+            <!-- 
+                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
+					<td class="search">
+					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
+					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
+					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
+					   box-shadow: none;">
+					  </td>
+					<td class="schBtn" style="top: 0; left: 10px;">
+					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
+					style="position: absolute;top: 49%;
+					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
+					</td>  
+					</form> -->
+
+
+
+
+
+
+            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
                     <div class="search-form form flex flex-ai-c">
                       <input type="text" placeholder="검색어를 입력해주세요.">
                       <a href="#" class="btn-type-1 btn-search">
@@ -58,7 +88,6 @@
                     </div>
                   </div> -->
 
-            </div>
 
         </div>
         <div class="line"></div>
@@ -96,7 +125,7 @@
                         </ul>
                     </div>
                 </li>
-                
+
                 <li class="menu">
                     <a href="custom.html">맞춤시술</a>
                 </li>
@@ -113,3 +142,123 @@
             </ul>
         </div>
     </div>
+
+자바스크립트 소스
+
+ <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+
+
+    <!-- Initialize Swiper -->
+
+    <!-- 3. 실행 스크립트 -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true // 버튼 클릭 여부
+            },
+            autoplay: true,
+            autoplaySpeed: 5000,
+            keyboard: true
+        });
+
+
+        function SliderBox1__init() {
+            $('.slider-box-1 > .slick').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [{
+                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }],
+
+                // arrows:true,
+                prevArrow: ".slider-box-1 > .arrows > .btn-left",
+                nextArrow: ".slider-box-1 > .arrows > .btn-right"
+            });
+        }
+
+        $(function () {
+            SliderBox1__init();
+        });
+
+
+        function SliderBox2__init() {
+            $('.slider-box-2 > .slick').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // responsive: [{
+                //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                //     settings: {
+                //         slidesToShow: 2,
+                //         slidesToScroll: 2
+                //     }
+                // }, {
+                //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                //     settings: {
+                //         slidesToShow: 1,
+                //         slidesToScroll: 1
+                //     }
+                // }],
+
+                // arrows:true,
+                prevArrow: ".slider-box-2 > .arrows > .btn-left",
+                nextArrow: ".slider-box-2 > .arrows > .btn-right"
+            });
+        }
+
+        $(function () {
+            SliderBox2__init();
+        });
+
+
+        //         gsap.to('body', {
+        //   scrollTrigger:{
+        //     start:'top 0',
+        //     end:'top 800px',
+        //     trigger:'.top-box2',
+        //     markers: true,
+        //     pin:true
+        //   },
+        // });
+
+        gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '60px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+    </script>
