@@ -131,6 +131,18 @@
 
 
 
+    <section>
+		<div class="art ">
+			  <div class="art1_big">
+				  <div class="close">
+					  <p class="art1_big_close">X</p>
+				  </div>
+ 
+			  </div>
+        </div>
+	</section>
+
+
 
     
     <section id="welcome" class="content">
@@ -141,10 +153,21 @@
                 </div>
             <div class="wrap">
                 <div class="box">
+                    <div class="event_img">
                     <img src="img/event02.jpg" alt="">
+                    <div class="bg"></div>
+                    </div>
+                    
+            <div class="art1_big art1_big1">
+                <p class="art1_big_close">닫기</p>
+                <div>
+                    <img src="img/event02.jpg" alt="">
+                </div>
+            </div>
+
                     <div class="event_txt">
                         <a href="#">
-                            <h2 >새해 임인년 호랑이 이벤트! </h2>
+                            <h2 >새해 임인년 호랑이 이벤트! </h2> 
                             <p>2022-01-01 ~ 2022-03-31</p>
                         </a>
                     </div>
@@ -152,7 +175,11 @@
                 </div>
 
                 <div class="box">
-                    <img src="img/event01.jpg" alt="">
+                    <div class="event_img">
+                        <img src="img/event01.jpg" alt="">
+                        <div class="bg"></div></a>
+                    </div>
+
                     <div class="event_txt">
                         <a href="#">
                             <h2 >가정의 달 이벤트!</h2>
@@ -162,7 +189,11 @@
                 </div>
 
                 <div class="box">
+                    <div class="event_img">
                     <img src="img/event03.jpg" alt="">
+                    <div class="bg"></div>
+                    </div>
+
                     <div class="event_txt">
                         <a href="#">
                             <h2 >코로나 극복 이벤트!</h2>
@@ -172,7 +203,11 @@
                 </div>
 
                 <div class="box">
+                    <div class="event_img">
                     <img src="img/event04.jpg" alt="">
+                    <div class="bg"></div>
+                    </div>
+
                     <div class="event_txt">
                         <a href="#">
                             <h2 >여름 이벤트!</h2>
@@ -269,6 +304,57 @@ scrub:true
 
 
     // swiper-pagination-bullet-active
+
+
+
+
+$(function() {
+    // 메뉴들을 클릭하면 
+    $("nav div").on("click", function() {
+        no=$(this).index()+1;
+        $(".art").hide();
+        // .art3, .art4 등 나오게 하기
+        $(".art"+no).show();
+    });
+    // 그림을 클릭하면
+    $(".art1_box li").on("click", function() {
+        no=$(this).index()+1;
+        $(".art1_big").hide();
+        $(".art1_big"+no).show();
+    })
+    // 닫기를 누르면 사진이 안 보이게
+    $(".art1_big_close").on("click", function() {
+        $(".art1_big").hide();
+    })
+})
+
+var no;
+
+	$(function() {
+				   
+		$(".icon-search").on("click", function() {
+		$(".art").css("display","block");
+		no=$(this).index()+1;
+		$(".art1_big").fadeIn({
+			});
+
+		})
+
+		$(".art1_big_close").on("click", function() {
+			$(".art").css("display","none");
+		$(".art1_big").fadeOut();
+			})
+		})
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
