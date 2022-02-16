@@ -286,7 +286,7 @@ a {
   
   .top-wrap>.top-box2>ul>li {
     width: 256px;
-    padding: 23px 0px;
+    padding: 20px 0px;
     position: relative;
     transition: all .4s;
   
@@ -307,7 +307,7 @@ a {
     visibility: visible;
     position: absolute;
     left: 0%;
-    margin-top: 23px;
+    margin-top: 20px;
     background: white;
     width: 100%;
     transition: all .4s;
@@ -316,7 +316,7 @@ a {
   /* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
   .top-wrap>.top-box2>ul>li:hover>div>ul>li {
     width: 100%;
-    padding: 23px 0;
+    padding: 20px 0;
     text-align: center;
     transition: all .4s;
   }
@@ -769,7 +769,7 @@ a {
     
     
     .top-wrap>.top-box2>ul>li {
-      padding: 23px 0px;
+      padding: 20px 0px;
     
     }
 
@@ -995,7 +995,7 @@ a {
 	}
   
 	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 45px;
+	  padding: 20px 45px;
 	} 
 	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
 	  width: 154.8px;
@@ -1463,7 +1463,7 @@ a {
 	}
   
 	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 25px;
+	  padding: 20px 25px;
 	} 
 	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
 	  width: 114.8px;
