@@ -265,6 +265,7 @@ a {
   z-index: 100;
   font-family: 'ChosunSg';
   text-align: center;
+  height: 60px;
 }
 
 .top-wrap>.top-box2>ul {

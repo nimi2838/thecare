@@ -263,6 +263,7 @@ a {
 
 
 
+
   .top-wrap>.top-box2 {
     margin: 0px auto;
     width: 100%;
@@ -272,6 +273,7 @@ a {
     z-index: 100;
     font-family: 'ChosunSg';
     text-align: center;
+    height: 60px;
   }
   
   .top-wrap>.top-box2>ul {
@@ -324,6 +326,7 @@ a {
   .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
     border: none;
   }
+  
   
 
 
