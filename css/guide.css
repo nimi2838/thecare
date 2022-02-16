@@ -134,43 +134,41 @@ a {
 
 
 
-
-
 .top-wrap>.top-box1 {
     margin: 20px auto 15px;
     width: 1280px;
-}
-
-.line {
+  }
+  
+  .line {
     width: 100%;
     height: 1px;
     background: #ccc;
     z-index: 10;
     display: block;
-}
-
-.top-wrap>.top-box1>div,
-.icon-box {
+  }
+  
+  .top-wrap>.top-box1>div,
+  .icon-box {
     width: 33.3%;
-}
-
-.top-wrap>.top-box1>.icon-box {
+  }
+  
+  .top-wrap>.top-box1>.icon-box {
     float: left;
-}
-
-.top-wrap>.top-box1>.icon-box>.icon {
-    padding: 0 0 0 15px;
+  }
+  
+  .top-wrap>.top-box1>.icon-box>.icon {
+    padding: 0 0 0 15px ;
     text-align: center;
     float: left;
     display: flex;
     font-family: 'ChosunSg';
-}
-
-.top-wrap>.top-box1>.icon-box>.cart {
+  }
+  
+  .top-wrap>.top-box1>.icon-box>.cart {
     padding: 0 15px 0 15px;
-}
-
-/* .top-wrap>.top-box1>.icon-box>.login {
+  }
+  
+  /* .top-wrap>.top-box1>.icon-box>.login {
     background: red;
   }
   
@@ -181,16 +179,16 @@ a {
   .top-wrap>.top-box1>.icon-box>.cart {
     background: green;
   } */
-
-.top-wrap>.top-box1>.icon-box>.icon>.line-icon {
+  
+  .top-wrap>.top-box1>.icon-box>.icon>.line-icon {
     display: flex;
     width: 1px;
     height: 50px;
-    background: #707070;
+    background:#707070;
     margin: 1px 0 0 15px;
-}
-
-/* .top-wrap>.top-box1>.icon-box>.icon:after {
+  }
+  
+  /* .top-wrap>.top-box1>.icon-box>.icon:after {
     content: "";
     display: inline-block;
     width: 1px;
@@ -198,18 +196,18 @@ a {
     margin: -10px 40px;
     background:#707070;
   } */
-
-.top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
+  
+  .top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
     width: 31px;
     margin-bottom: 4px;
-}
-
-.top-wrap>.top-box1>.icon-box>.cart>a>.img-box {
+  }
+  
+  .top-wrap>.top-box1>.icon-box>.cart>a>.img-box {
     width: 33px;
     margin-bottom: 2px;
-}
-
-.top-wrap>.top-box1>.logo-box>.img-box>a>img {
+  }
+  
+  .top-wrap>.top-box1>.logo-box>.img-box>a>img {
     width: 150px;
   }
   
@@ -248,22 +246,18 @@ a {
   }
   
   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .top-wrap>.top-box2 {
     margin: 0px auto;
     width: 100%;
@@ -326,6 +320,8 @@ a {
   .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
     border: none;
   }
+  
+  
   
   
 
