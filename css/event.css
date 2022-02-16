@@ -645,24 +645,64 @@ a {
   #welcome .box .title{text-align: left; }
 
   
+
+  section {
+    width: 100%; height: 800px; position: relative;
+}
+section article {
+    width: 100%; height: 100%; 
+    position: absolute; top: 0; left: 0;
+    background: white; 
+    /* art1보이게 하려고 일단 다 없애기 */
+    display: none;
+}
+.art1 .art1_box {
+    width: 80%; height: 200px; border: 1px solid black;
+    margin: 50px auto; 
+    /* 자동으로 옆으로 배치되게 플로트같은 개념 */
+    display: flex; 
+    /* 마진 같은 개념으로 사이 띄워주기 */
+    justify-content: space-between;
+}
+.art1 .art1_box li {
+    width: 15%; height: 100%; border: 1px solid black;
+    position: relative; 
+    /* 넘친걸 안 보이게 하겠다 탑100으로 해서 넘쳤음 */
+    overflow: hidden; cursor: pointer;
+}
+.art1 .art1_box li:hover::after {
+    top: 0;
+}
+
+/* 사진을 호버하면 크게보기 문구 생기는 거 */
+.art1 .art1_box li:after {
+    content: "크게보기"; 
+    position: absolute; top: 100%; left: 0; 
+    width: 100%; height: 100%; background: rgba(126, 109, 98, 0.486);
+    text-align: center; line-height: 200px;
+    color: white; transition: all 0.5s;
+}
+
+/* 큰 사진 */
 .art1 .art1_big {
-  position: absolute; width: 100%; height: 100%;
-  background: rgba(90, 90, 90, 0.808); top: 0; left: 0;
-  /* 안 보이게하기 */
-  display: none;
+    position: absolute; width: 100%; height: 100%;
+    background: rgba(90, 90, 90, 0.808); top: 0; left: 0;
+    /* 안 보이게하기 */
+    display: none;
 }
 .art1 .art1_big div {
-  margin: 100px auto; width: 60%; height: 500px;
+    margin: 100px auto; width: 60%; height: 500px;
 }
 .art1 .art1_big div img {
-  width: 100%; height: 100%;
+    width: 100%; height: 100%;
 }
 /* 닫기 */
 .art1 .art1_big p {
-  width: 60%; height: 50px;
-  margin: 50px auto; text-align: right;
-  color: white; cursor: pointer;
+    width: 60%; height: 50px;
+    margin: 50px auto; text-align: right;
+    color: white; cursor: pointer;
 }
+.art1 { display: block;}
 
   
   @media (min-width: 1051px) and ( max-width:1300px) {
