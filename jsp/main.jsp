@@ -1,0 +1,673 @@
+<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>메인페이지</title>
+</head>
+
+<body>
+
+
+    <div class="top-wrap">
+        <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.html">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.html">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.html">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            <div class="logo-box flex flex-jc-c">
+                <div class="img-box">
+                    <a href="main.jsp">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="search_wrap">
+                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                    method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                    <td class="icon">
+                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                    </td>
+                    <td class="schBtn">
+                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                    </td>
+                    <!-- <a href="searchform.html" class="btn_search">
+                            <div class="img-box">
+                                <img src="img/Search_thin_icon.png" alt="">
+                            </div>
+                        </a> -->
+                </form>
+            </div>
+
+
+
+
+
+
+            <!-- 
+                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
+					<td class="search">
+					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
+					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
+					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
+					   box-shadow: none;">
+					  </td>
+					<td class="schBtn" style="top: 0; left: 10px;">
+					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
+					style="position: absolute;top: 49%;
+					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
+					</td>  
+					</form> -->
+
+
+
+
+
+
+            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+                    <div class="search-form form flex flex-ai-c">
+                      <input type="text" placeholder="검색어를 입력해주세요.">
+                      <a href="#" class="btn-type-1 btn-search">
+                        <div class="img-box">
+                            <img src="img/Search_thin_icon.png" alt="">
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+
+        </div>
+        <div class="line"></div>
+
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>회사소개</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.html">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.html">더케어 의료진</a></li>
+                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a>시술안내</a>
+                    <div>
+                        <ul>
+                            <li><a href="guide.jsp">시술안내</a></li>
+                            <li><a href="review.html">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a>시술예약</a>
+                    <div>
+                        <ul>
+                            <li><a href="reservation.html">시술예약</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.html">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu">
+                    <a href="custom.html">맞춤시술</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="qna.html">1:1문의</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/banner01.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        미국 FDA 승인 <br>
+                        비침습적 이중탄력 리프팅 <br>
+                        THE CARE 울쎄라
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/banner02.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> DESIGN <span>LIFTING</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        시대를 관통하는 <br>
+                        자연스러운 아름다움 <br>
+                        더케어로 완성하다
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/banner03.jpg" alt="">
+                <div class="text-1">
+                    <h1>THE CARE <br> BRIGHT <span>SKIN</span></h1>
+                    <p>THE CARE DERMATOLOGY CLINIC</p>
+                    <div>
+                        잡티없이 깨끗한 <br>
+                        도자기 피부, <br>
+                        피부에 조명을 켜다. 시그널72
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <div class="slider-box-1">
+        <p>DOCTORS</p>
+        <div class="slick">
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="about_2.html">
+                    <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
+                    <div class="name">
+                        <span>조정석</span> 원장
+                        <div class="bg1"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="arrows">
+            <div class="btn-right">
+                <img src="icon/doc_right.png" alt="">
+            </div>
+            <div class="btn-left">
+                <img src="icon/doc_left.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mini-ban">
+        <div class="text-box">
+            <i>About, The Care <br>
+                The Care의 생각</i>
+            <p>고객이 바라는 최상의 아름다움의 완성, 피부 완성이 곧 美의 완성이라는 신념으로<br>
+                고객의 젊음을 간직한 아름다운 비전과 함께 프리미엄 디에이징을 추구합니다.</p>
+        </div>
+    </div>
+
+
+    <div class="card-wrap">
+
+        <div class="card_box card_box1 flex flex-jc-c">
+            <a href="about_1.html" class="card1 card">
+                <div class="text-box">
+                    <h1>THE CARE</h1>
+                    <p>더케어가 어쩌고저쩌고</p>
+                </div>
+                <div class="bg">
+                    <div class="view">VIEW</div>
+                </div>
+            </a>
+
+            <a href="#" class="card2 card">
+                <div class="text-box">
+                    <h1>울쎄라 리프팅</h1>
+                    <p>울쎄라를 더욱 강하게</p>
+                </div>
+                <div class="bg">
+                    <div class="view">VIEW</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="card_box card_box2 flex  flex-jc-c">
+            <a href="#" class="card3 card">
+                <div class="text-box">
+                    <h1>써마지 FLX</h1>
+                    <p>콜라겐 재생 고주파 리프팅</p>
+                </div>
+                <div class="bg">
+                    <div class="view">VIEW</div>
+                </div>
+            </a>
+
+            <a href="#" class="card4 card">
+                <div class="text-box">
+                    <h1>동안 & 필러</h1>
+                    <p>트렌디한 감각과
+                        디자인</p>
+                </div>
+                <div class="bg">
+                    <div class="view">VIEW</div>
+                </div>
+            </a>
+
+            <a href="#" class="card5 card">
+                <div class="text-box">
+                    <h1>브라이트닝</h1>
+                    <p>피부본연의 아름다움</p>
+                </div>
+                <div class="bg">
+                    <div class="view">VIEW</div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="mini-banner">
+        <div class="mini-box mini-1">
+            <div class="img-box">
+                <img src="img/main-company-inpomation.jpg" alt="">
+            </div>
+        </div>
+        <div class="mini-box mini-2">
+            <div class="text-box">
+                <h1>
+                    탄력중심, <br>
+                    첨단 안티에이징 시술.
+                </h1>
+                개개인에 맞는 프로그램을 구성하여 피부과 전문의가
+                피부 건강을 고려한 알맞은 시술을 진행합니다.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="guide">VIEW</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content-f flex">
+
+        <div class="before-box">
+            <h1>BEFORE & AFTER</h1>
+            <p>고객님의 전후모습</p>
+            <div class="slider-box-2">
+
+                <div class="slick">
+                    <div class="item">
+                        <a href="review.html">
+                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <i class="fas fa-chevron-circle-right arr"></i>
+                            <div class="bg2" style="background-image:url(img/main-after-01.png);"></div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="review.html">
+                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <i class="fas fa-chevron-circle-right arr"></i>
+                            <div class="bg2" style="background-image:url(img/main-after-02.png);"></div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="review.html">
+                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <i class="fas fa-chevron-circle-right arr"></i>
+                            <div class="bg2" style="background-image:url(img/main-after-03.png);"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="arrows">
+                    <div class="btn-right">
+                        <img src="img/bef_right_icon.png" alt="">
+                    </div>
+                    <div class="btn-left">
+                        <img src="img/bef_left_icon.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="noti-box">
+            <h1>EVENT</h1>
+            <p>고객님의 전후모습</p>
+            <ul>
+                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="map_wrap">
+        <div class="bg_box flex">
+            <div class="bg_box1"></div>
+            <div class="bg_box2"></div>
+        </div>
+        <div class="map_box">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2719577905823!2d127.02316621491029!3d37.501503435608285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158e9c7640f%3A0xaa22996c3b700d95!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDqsJXrgqjrjIDroZwgNDM5!5e0!3m2!1sko!2skr!4v1644303822867!5m2!1sko!2skr"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+
+        </div>
+
+        <div class="text_box">
+            <h1>THE CARE</h1>
+            <div class="text flex">
+
+                <div class="text1">
+                    <p class="p1">주소</p>
+                    <p class="p2">진로시간안내</p><br><br><br><br><br>
+                    <p class="p3">주차안내</p>
+                </div>
+
+                <div class="text2">
+                    <p class="p4">
+                        서울특별시 서초구 강남대로 439 ( 멀티빌딩 9층 )
+                    </p>
+
+                    <p class="p5">
+                        월 화 목 금 : AM 10:00 ~ PM 08:00<br>
+                        수 요 일 : PM 02:00 ~ PM08:00<br>
+                        토 요 일 : AM 10:00 ~ PM 03:00<br>
+                        점심시간 : PM 01:00 ~ PM 02:00<br>
+                        일요일, 공휴일 휴진<br>
+                        토요일 점심시간 없음.
+                    </p>
+
+                    <p class="p6">
+                        병원 건물 주차장 주차 가능<br>
+                        · 건물 내부 주차장 (30분 무료 / 2000cc급 승용차 가능)<br>
+                        · 외부 건물 주차장 (지점 문의)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+            </p>
+            <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전화번호 : 02-517-0912
+            </p>
+            <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+
+
+    <!-- Initialize Swiper -->
+
+    <!-- 3. 실행 스크립트 -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true // 버튼 클릭 여부
+            },
+            autoplay: true,
+            autoplaySpeed: 5000,
+            keyboard: true
+        });
+
+
+        function SliderBox1__init() {
+            $('.slider-box-1 > .slick').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [{
+                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }],
+
+                // arrows:true,
+                prevArrow: ".slider-box-1 > .arrows > .btn-left",
+                nextArrow: ".slider-box-1 > .arrows > .btn-right"
+            });
+        }
+
+        $(function () {
+            SliderBox1__init();
+        });
+
+
+        function SliderBox2__init() {
+            $('.slider-box-2 > .slick').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // responsive: [{
+                //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                //     settings: {
+                //         slidesToShow: 2,
+                //         slidesToScroll: 2
+                //     }
+                // }, {
+                //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                //     settings: {
+                //         slidesToShow: 1,
+                //         slidesToScroll: 1
+                //     }
+                // }],
+
+                // arrows:true,
+                prevArrow: ".slider-box-2 > .arrows > .btn-left",
+                nextArrow: ".slider-box-2 > .arrows > .btn-right"
+            });
+        }
+
+        $(function () {
+            SliderBox2__init();
+        });
+
+
+        //         gsap.to('body', {
+        //   scrollTrigger:{
+        //     start:'top 0',
+        //     end:'top 800px',
+        //     trigger:'.top-box2',
+        //     markers: true,
+        //     pin:true
+        //   },
+        // });
+
+        gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '60px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+
+
+
+ function keyword_check(){
+
+			  if(document.search.keyword.value==''){ 
+
+			  alert('검색어를 입력하세요');
+
+			  document.search.keyword.focus(); 
+
+			  return false; 
+
+			  }
+
+			  else return true;
+
+			 }
+
+
+
+
+
+function search_form()
+		{
+			var frm = document.search;
+			frm.action = "search.jsp";
+			frm.submit();
+		}
+
+
+
+
+    </script>
+
+</body>
+
+</html>
