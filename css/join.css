@@ -389,7 +389,20 @@ input[type="text"],input[type="password"]{
     margin-left: 30px;
 
   }
-
+.checkbtn{
+  margin-bottom: 10px;
+  line-height: 36px; 
+  height: 35px; 
+  border: 1px solid #777;
+  color: #777; 
+  padding: 0; 
+  min-width: 114px;
+  width: 13%; 
+  margin-left: 2%; 
+  cursor: pointer; 
+  background-color: #fff; 
+  font-size : 12px"
+}
   
   .btn{
     line-height: 36px;
@@ -440,6 +453,8 @@ input[type="text"],input[type="password"]{
 
   .join_btn:hover{
 	background: #FFB2AC;
+
+  color: #ACA6A6;
   }
 
 
