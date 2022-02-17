@@ -161,14 +161,17 @@
     </div>
 
 
-    <div id="overlay" onclick="off()">
-        <div id="event_pic">
-            <img src="img/event02.jpg" alt="">
-        </div>
-        <div id="text">호랑이 이벤트</div>
-      </div>
-    
 
+
+
+
+    <div class="modal">
+        <button>&times;</button>
+        <div class="modalBox">
+            <img src="" alt="">
+            <p></p>
+        </div>
+    </div>
     
     <section id="welcome" class="content">
         <div class="inner">
@@ -177,12 +180,13 @@
                     <p>이 벤 트</p>
                 </div>
 
-
             <div class="wrap">
-                <div class="box" onclick="on()">
+                
+                <div class="box">
                     <div class="event_img">
-                    <img src="img/event02.jpg" alt="">
-                    <div class="bg"></div>
+                        <img src="img/event0.jpg" alt="">
+                        <div class="bg"></div>
+                        <p>미피겠네</p>
                     </div>
                     
 
@@ -195,10 +199,11 @@
                     
                 </div>
 
-                <div class="box"  onclick="on()">
+                <div class="box" >
                     <div class="event_img">
-                        <img src="img/event01.jpg" alt="">
+                        <img src="img/event1.jpg" alt="">
                         <div class="bg"></div></a>
+                        <p>핖ㄹ러</p>
                     </div>
 
                     <div class="event_txt">
@@ -209,10 +214,11 @@
                     </div>
                 </div>
 
-                <div class="box" onclick="on()">
+                <div class="box">
                     <div class="event_img">
-                    <img src="img/event03.jpg" alt="">
-                    <div class="bg"></div>
+                        <img src="img/event2.jpg" alt="">
+                        <div class="bg"></div>
+                        <p>보톡스</p>
                     </div>
 
                     <div class="event_txt">
@@ -223,10 +229,11 @@
                     </div>
                 </div>
 
-                <div class="box" onclick="on()">
+                <div class="box">
                     <div class="event_img">
-                    <img src="img/event04.jpg" alt="">
-                    <div class="bg"></div>
+                        <img src="img/event3.jpg" alt="">
+                        <div class="bg"></div>
+                        <p>주사</p>
                     </div>
 
                     <div class="event_txt">
@@ -327,17 +334,30 @@ scrub:true
     // swiper-pagination-bullet-active
 
 
-    function on() {
-  document.getElementById("overlay").style.display = "block";
-}
+    $(function(){
+        $(".event_img").click(function(){
+            $(".modal").show();
+            var imgSrc = $(this).children("img").attr("src");
+            $(".modalBox img").attr("src", imgSrc);
+            
+            var imgTit =  $(this).children("p").text();
+            $(".modalBox p").text(imgTit);
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}
-
-
-
-
+            
+        });
+        
+        $(".modal button").click(function(){
+            $(".modal").hide();
+        });
+        
+        $(".modal").click(function (e) {
+        if (e.target.className != "modal") {
+          return false;
+        } else {
+          $(".modal").hide();
+        }
+        });
+    });
 
 
 
