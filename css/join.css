@@ -390,10 +390,7 @@ input[type="text"],input[type="password"]{
 
   }
 
-  .checkimg{
-      position: absolute;
-      left: 261px;
-  }
+  
   .btn{
     line-height: 36px;
     height: 35px;
