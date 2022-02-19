@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/test.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</head>
+<body>
+        <article class="big art1">
+
+            <ul class="event_box">
+                <li>
+                    <img src="img/event0.jpg" alt="">
+                    새해 임인년 호랑이 이벤트!
+                </li>
+                <li>
+                    <img src="img/event1.jpg" alt="">
+                    가정의 달 이벤트!
+                </li>
+                <li>
+                    <img src="img/event2.jpg" alt="">
+                    코로나 극복 이벤트!
+                </li>
+                <li>
+                    <img src="img/event3.jpg" alt="">
+                    여름 이벤트!
+                </li>
+            </ul>
+            <ul class="event_box">
+                <li>
+                    <img src="img/event0.jpg" alt="">
+                    새해 임인년 호랑이 이벤트!
+                </li>
+                <li>
+                    <img src="img/event1.jpg" alt="">
+                    가정의 달 이벤트!
+                </li>
+                <li>
+                    <img src="img/event2.jpg" alt="">
+                    코로나 극복 이벤트!
+                </li>
+                <li>
+                    <img src="img/event3.jpg" alt="">
+                    여름 이벤트!
+                </li>
+            </ul>
+
+            <!-- 팝업창 -->
+            <div class="art1_big art1_big1">
+                <p class="art1_big_close">X</p>
+                <div class="modal">
+                    <img src="img/event0.jpg" alt="">
+                    <div class="info">
+                        <img src="img/event-0.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art1_big art1_big2">
+                <p class="art1_big_close">X</p>
+                <div class="modal">
+                    <img src="img/event1.jpg" alt="">
+                    <div class="info">
+                        <img src="img/event-0.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art1_big art1_big3">
+                <p class="art1_big_close">X</p>
+                <div class="modal">
+                    <img src="img/event2.jpg" alt="">
+                    <div class="info">
+                        <img src="img/event-0.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art1_big art1_big4">
+                <p class="art1_big_close">X</p>
+                <div class="modal">
+                    <img src="img/event3.jpg" alt="">
+                    <div class="info">
+                        <img src="img/event-0.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+
+    <script>
+let no;
+$(function() {
+    $(".event_box li").on("click", function() {
+        no=$(this).index()+1;
+        $(".art1_big").hide();
+        $(".art1_big"+no).show();
+    })
+
+    $(".art1_big_close").on("click", function() {
+        $(".art1_big").hide();
+    })
+});
+    </script>
+</body>
+</html>

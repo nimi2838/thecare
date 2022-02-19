@@ -165,14 +165,6 @@
 
 
 
-    <div class="modal">
-        <button>&times;</button>
-        <div class="modalBox">
-            <img src="" alt="">
-            <p></p>
-        </div>
-    </div>
-    
     <section id="welcome" class="content">
         <div class="inner">
                 <div class="event">
@@ -182,14 +174,12 @@
 
             <div class="wrap">
                 
-                <div class="box">
+                
+                <div class="box box1">
                     <div class="event_img">
                         <img src="img/event0.jpg" alt="">
                         <div class="bg"></div>
-                        <p>미피겠네</p>
                     </div>
-                    
-
                     <div class="event_txt">
                         <a href="#">
                             <h2 >새해 임인년 호랑이 이벤트! </h2> 
@@ -199,13 +189,11 @@
                     
                 </div>
 
-                <div class="box" >
+                <div class="box box2" >
                     <div class="event_img">
                         <img src="img/event1.jpg" alt="">
                         <div class="bg"></div></a>
-                        <p>핖ㄹ러</p>
                     </div>
-
                     <div class="event_txt">
                         <a href="#">
                             <h2 >가정의 달 이벤트!</h2>
@@ -214,13 +202,11 @@
                     </div>
                 </div>
 
-                <div class="box">
+                <div class="box box3">
                     <div class="event_img">
                         <img src="img/event2.jpg" alt="">
                         <div class="bg"></div>
-                        <p>보톡스</p>
                     </div>
-
                     <div class="event_txt">
                         <a href="#">
                             <h2 >코로나 극복 이벤트!</h2>
@@ -229,13 +215,11 @@
                     </div>
                 </div>
 
-                <div class="box">
+                <div class="box box4">
                     <div class="event_img">
                         <img src="img/event3.jpg" alt="">
                         <div class="bg"></div>
-                        <p>주사</p>
                     </div>
-
                     <div class="event_txt">
                         <a href="#">
                             <h2 >여름 이벤트!</h2>
@@ -243,12 +227,60 @@
                         </a>
                     </div>
                 </div>
+
+
                 
             </div>
             
+            <article class="art1">
+                    <!-- 팝업창 -->
+                <div class="art1_big art1_big1">
+                    <p class="art1_big_close">X</p>
+                    <div class="modal">
+                        <img src="img/event0.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-0.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big2">
+                    <p class="art1_big_close">X</p>
+                    <div class="modal">
+                        <img src="img/event1.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-0.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big3">
+                    <p class="art1_big_close">X</p>
+                    <div class="modal">
+                        <img src="img/event2.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-0.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big4">
+                    <p class="art1_big_close">X</p>
+                    <div class="modal">
+                        <img src="img/event3.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-0.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+        </article>
         </div>
     </section>
 
+
+
+
+    
 
 
     <div class="footer flex flex-jc-c">
@@ -334,33 +366,29 @@ scrub:true
     // swiper-pagination-bullet-active
 
 
-    $(function(){
-        $(".event_img").click(function(){
-            $(".modal").show();
-            var imgSrc = $(this).children("img").attr("src");
-            $(".modalBox img").attr("src", imgSrc);
-            
-            var imgTit =  $(this).children("p").text();
-            $(".modalBox p").text(imgTit);
+    let no;
 
-            
-        });
-        
-        $(".modal button").click(function(){
-            $(".modal").hide();
-        });
-        
-        $(".modal").click(function (e) {
-        if (e.target.className != "modal") {
+
+$(function() {
+    $("#welcome .wrap > .box").on("click", function() {
+        no=$(this).index()+1;
+        $("#welcome .inner .art1_big").hide();
+        $("#welcome .art1_big"+no).show();
+    })
+
+    $(".art1_big_close").on("click", function() {
+        $("#welcome .inner .art1_big").hide();
+    })
+    
+});
+
+$(".art1 .art1_big").click(function (e) {
+        if (e.target.className != ".modal") {
           return false;
         } else {
           $(".modal").hide();
         }
         });
-    });
-
-
-
 
 
 </script>

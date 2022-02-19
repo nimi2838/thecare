@@ -607,10 +607,6 @@ a {
   .inner{width:1200px; margin: 0 auto;} 
   .content{width:100%; padding-bottom: 100px ; }
   .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;}
-  
-
-  
-
 
   .inner .event{
       text-align: center; color: rgb(105, 105, 105);
@@ -644,34 +640,37 @@ a {
   #welcome .box .title{text-align: left; }
 
 
-  .modal {
-    display: none; z-index: 500; width: 100%; height: 100vh;
-    position: fixed; top: 0; left: 0;
-    background-color: rgba(0, 0, 0, 0.788);
-  }
-  
-  .modal button {
-    position: absolute; top: 10%; right: 10%;
-    background: transparent; border: 0;
-    color: #e0e0e0; font-size: 70px;
-    cursor: pointer;
-  }
-  
-  .modalBox {
-    position: relative; top: 20%; left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: #ffffff;
-    width: 30%; height: 30%; text-align: center;
-  }
-  
-  .modalBox img {width: 100%;}
-  
-  .modalBox p {
-    color: #333333; background-color: rgb(243, 243, 243);
-    font-size: 20px; padding-top: 0; height: 30%;
-  }
-  
-  
+.art1 .art1_big {
+    position: fixed; width: 100%; height: 100vh;
+    background: rgba(37, 37, 37, 0.808); top: 0; left: 0;
+    display: none; z-index: 100;
+}
+
+
+.art1 .art1_big .modal {
+    margin: 0 auto; width: 35%; 
+}
+
+.art1 .art1_big .modal img {
+    width: 100%; padding-top: 13%;
+}
+.art1 .art1_big div>.info {
+	width: 100%; height: 100%; margin-top: 0;
+}
+.art1 .art1_big div>.info >img { width: 100%; padding-top: 0px; height: 50%;}
+
+.art1_big_close {
+    font-size: 30px;
+    position: absolute; top: 7%; right: 30%;
+    cursor: pointer; color: #ccc;
+
+}
+
+
+
+
+.art1 { display: block;}
+
 
 
 
