@@ -387,7 +387,7 @@ a {
     font-weight: 900;
     font-size: 170px;
     margin-top: 35px;
-    color : #b6b6b6;
+    color : #bbbbbb;
 
 }
 
@@ -395,15 +395,17 @@ a {
     position: absolute;
     display: inline-block;
     top: 140px;
-    margin-left: 280px;
+    margin-left: 220px;
+   
     
     
     
 }
 .my_info_text > h1 {
     display : block;
-    color: #636363;
+    color: #333333;
     font-weight: bold;
+    font-size: 30px;
 }
 
 
@@ -411,6 +413,7 @@ a {
     text-decoration: underline #777;
     color: #777;
     margin-top: 20px;
+    font-size: 19px;
 }
 
 .my_point{
@@ -706,9 +709,7 @@ a {
         }
 
 
-        .my_info{
-            position: absolute;
-        }
+        
 
 .my_info> i {
     font-size: 130px;
@@ -718,7 +719,7 @@ a {
 .my_info_text{
     
     top: 250px;
-    margin-left:0px;
+    margin-left:25px;
     text-align: center;
     
     
@@ -737,44 +738,44 @@ a {
 .my_point{
     position: absolute;
    
-    display: contents;
-    margin-left: 240px;
-    margin-top: 5px;
+    
+    margin-left:200px;
+    margin-top: 40px;
    
     
    
 }
  
 .my_point > h1 {
-    padding-left: 90px;
-    font-size: 20px;
+    padding-left: 50px;
+    font-size: 30px;
    
 }
 
 .my_point > p {
-    padding-left: 90px;
+    padding-left:50px;
     margin-top: 45px;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .my_coupon{
     position: absolute;
-    display: contents;
-    margin-left: 530px;
-    margin-top: 5px;
+    
+    margin-left: 360px;
+    margin-top: 40px;
     
 
 }
 
 .my_coupon > h1 {
-    padding-left: 80px;
-    font-size: 18px;
+    padding-left: 44px;
+    font-size: 30px;
     
 }
 
 .my_coupon > p {
-    padding-left: 80px;
-    font-size: 18px;
+    padding-left: 44px;
+    font-size: 22px;
     
 }
 
