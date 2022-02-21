@@ -215,14 +215,14 @@ else{
                 <h1>LOGIN</h1>
 				 <form name="login" method="post" action="loginOk.jsp" target=_parent> 
                 <input type="text" class = "form" name="id" value="" required="true"
-                style="padding:18px; font-size:16px; margin-bottom:0.5rem;" 
+                style="width: 300px;padding:18px; font-size:16px; margin-bottom:0.5rem;" 
                 size="20" placeholder="ID" onkeyup="fn_press_han(this);">
                 <input type="password" class = "form" name="pw" value="" required="true" 
-                style="padding:18px; font-size:16px; margin-bottom:0.5rem;" 
+                style="width: 300px;padding:18px; font-size:16px; margin-bottom:0.5rem;" 
                 size="20" placeholder="PW" autocomplete="true" onkeydown="onEnterSubmit()">
 
               
-                    <a href="javascript:login_check()"><button type="submit"  class="login_btn" style= "cursor: pointer;">로그인</button></a>
+                    <a href="javascript:login_check()"><button type="submit"  class="login_btn" style= "width: 300px; cursor: pointer;">로그인</button></a>
                     
 
                     <div class = "login_3menu" >
