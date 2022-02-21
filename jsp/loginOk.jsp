@@ -71,7 +71,7 @@ else{
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon join">
-                    <a href="join.jsp">
+                    <a href="mypage.jsp">
                         <div class="img-box" style= "margin-left: 8px;">
                             <img src="img/join_icon.png" alt="">
                         </div>
