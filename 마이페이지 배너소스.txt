@@ -13,7 +13,7 @@ html 소스 (탑바부터 마이페이지 배너까지)
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/mypage.css" />
-  <title>회원정보변경</title>
+  <title>회원정보 변경</title>
 </head>
 <body>
     <div class="top-wrap">
@@ -337,7 +337,7 @@ html 소스 (탑바부터 마이페이지 배너까지)
         </body>
         </html>
         
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 css 소스 (탑바부터 마이페이지배너까지)
 
@@ -867,81 +867,6 @@ a {
 
 
 
-@media (min-width: 1301px) and  ( max-width:1920px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 1280px;
-	}
-  
-  }
-  
-  
-  
-  
-  
-  @media (min-width: 1051px) and ( max-width:1300px) {
-	/* 탑바 */
-	
-  .top-wrap>.top-box1 {
-    width: 95%;
-  }
-
-  .top-wrap>.top-box2>ul>li {
-    padding: 23px 0px;
-  
-  }
-
-   /* 마이페이지 */
-
-  .mypage_banner > .inner {
-    width: 80%;
-    }
-
-    .my_info_text{
-       
-        margin-left: 230px;
-        
-        
-        
-    }
-    .my_point{
-        margin-left: 45%;
-    }
-
-    .my_coupon{
-        margin-left: 75%;
-    }
-
-    .my_point > h1 {
-        
-        padding-left: 76px;
-        
-    }
-    
-    .my_point > p {
-        
-        padding-left:76px;
-        
-    }
-
-    .my_coupon > h1 {
-        
-        padding-left: 80px;
-       
-        
-    }
-    
-    .my_coupon > p {
-        
-        padding-left: 80px;
-        
-    }
-
-  
-  
-  }
-  
-  
   @media (min-width: 851px) and ( max-width:1050px) {
 	
 /* 탑바 */
@@ -1022,7 +947,14 @@ a {
     
 }
 
+.mypage_title > .inner{
+    width: 100%;
 
+}
+.mypage_title > .inner{
+    width: 80%;
+
+}
 
 
 }
@@ -1120,6 +1052,11 @@ a {
     padding-left: 44px;
     font-size: 22px;
     
+}
+
+.mypage_title > .inner{
+    width: 80%;
+
 }
 
   

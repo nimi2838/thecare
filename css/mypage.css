@@ -593,6 +593,10 @@ a {
         padding-left: 80px;
         
     }
+    .mypage_title > .inner{
+        width: 80%;
+    
+    }
 
   
   
@@ -679,7 +683,14 @@ a {
     
 }
 
+.mypage_title > .inner{
+    width: 100%;
 
+}
+.mypage_title > .inner{
+    width: 80%;
+
+}
 
 
 }
@@ -777,6 +788,11 @@ a {
     padding-left: 44px;
     font-size: 22px;
     
+}
+
+.mypage_title > .inner{
+    width: 80%;
+
 }
 
   

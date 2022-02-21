@@ -360,7 +360,7 @@ a {
 
 
 .form{
-  width: 280px;
+  width: 300px;
   text-align:left;
   margin: 0 auto;
   outline: none;
@@ -373,7 +373,7 @@ a {
   }
 
   .login_btn{
-	width:320px;
+	width:300px;
 	text-align: center;
 	margin: 0 auto;
 	background: #fde4e4;
