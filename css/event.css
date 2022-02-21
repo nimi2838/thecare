@@ -648,38 +648,40 @@ a {
 
 
 .art1 .art1_big .modal {
-    margin: 0 auto; width: 35%; 
+    margin: 0 auto; width: 35%; height: 100%;
 }
 
 .art1 .art1_big .modal img {
     width: 100%; padding-top: 13%;
 }
 .art1 .art1_big div>.info {
-	width: 100%; height: 100%; margin-top: 0;
+	width: 100%; margin-top: 0;
 }
 .art1 .art1_big div>.info >img { width: 100%; padding-top: 0px; height: 50%;}
 
 .art1_big_close {
-    font-size: 30px;
-    position: absolute; top: 7%; right: 30%;
-    cursor: pointer; color: #ccc;
-
+    font-size: 50px;
+    position: absolute; top: 5%; right: 29%;
+    cursor: pointer; color: #fff;
 }
 
 
-
-
-.art1 { display: block;}
-
-
-
-
-  
   @media (min-width: 1051px) and ( max-width:1300px) {
     .inner{width:100%;} 
     .wrap{justify-content: space-around;}
     #welcome .inner .event >h1 { font: bold 50px 'inherit'; margin-bottom: 0; }
     #welcome .inner .event >p{ font:  20px 'inherit';margin-bottom: 50px;}
+	.art1 .art1_big .modal {
+		margin: 0 auto; width: 45%; height: 100%;
+	}
+	.art1 .art1_big .modal img {
+		width: 100%; padding-top: 23%;
+	}
+	.art1_big_close {
+		font-size: 40px;
+		position: absolute; top: 9%; right: 23%;
+		cursor: pointer; color: #fff;
+	}
     
   #welcome .box:hover > .bg{height: 78%;}
   }
@@ -691,6 +693,19 @@ a {
     #welcome .inner .event >h1 { font: bold 50px 'inherit'; margin-bottom: 0; }
     #welcome .inner .event >p{ font:  18px 'inherit';margin-bottom: 50px;}
     #welcome .box:hover > .bg{height: 73%;}
+	
+	.art1 .art1_big .modal {
+		margin: 0 auto; width: 53%; height: 100%;
+	}
+	.art1 .art1_big .modal img {
+		width: 100%; padding-top: 33%;
+	}
+	.art1_big_close {
+		font-size: 35px;
+		position: absolute; top: 15%; right: 18%;
+		cursor: pointer; color: #fff;
+	}
+    
   }
   
   
@@ -701,6 +716,18 @@ a {
     #welcome .inner .event >p{ font:  18px 'inherit';margin-bottom: 50px;}
     #welcome .box .event_txt{font-size: small;}
     #welcome .box:hover > .bg{height: 30%;}
+	
+	.art1 .art1_big .modal {
+		margin: 0 auto; width: 70%; height: 100%;
+	}
+	.art1 .art1_big .modal img {
+		width: 100%; padding-top: 50%;
+	}
+	.art1_big_close {
+		font-size: 35px;
+		position: absolute; top: 22%; right: 7%;
+		cursor: pointer; color: #fff;
+	}
   }
 
 
