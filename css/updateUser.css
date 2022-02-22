@@ -236,13 +236,11 @@ a {
   padding:10px;
   display:block;
   box-sizing:border-box;
-  border-radius: 0;
 }
 
 .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
   width:170px;
   border-bottom-color: #707070;
-  border-radius: 0;
 }
 
 
@@ -320,65 +318,219 @@ a {
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-  
-  
 
 
-/* 로그인 */
 
-.login_main{
-  width: 100%;
-	
-	padding-top: 70px;
-	padding-bottom: 40px;
+/* 마이페이지 배너 */
+
+.mypage_banner{
+    width: 100%;
+    height: 360px;
     background-color: #FFEEEE;
-}
-.login_main > .inner {
-	width: 1180px;
-	margin: 0 auto;
-	position: relative;
+    
 }
 
-.login_box{
+.mypage_banner > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
+}
+.tit{
+    width: 50%;
+    display: inline-block;
+    
+}
+
+
+
+.tit > h2 {
+    color: #333333;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.moon1_1{
+    width: 50%;
+    position: absolute;
+    text-align: right;
+    color: #333333;
+    margin-top: 30px;
+}
+
+.moon1_1 > h3 {
+    display: inline;
+}
+
+.btn1_1 {
+    width: 6px;
+    height: 4px;
     background-color: #fff;
-	width: 400px;
-	height: 430px;
-	margin: 0 auto;
-	margin-bottom: 70px;
-	border-radius: 15px;
-	
-}
+    display: inline;
+    padding: 5px;
+    
 
-.login_box > h1 {
-	text-align: center;
-	font-weight:bold;
-	color: #4D4D4D;
-	padding-top: 60px;
-	padding-bottom: 20px;
-	
-}
-
-
-.form{
-  width: 300px;
-  text-align:left;
-  margin: 0 auto;
-  outline: none;
-  display:block;
-  border-radius: 10px;
-  border: 1px solid #ACA6A6;
-  margin-top: 10px;
   
+   
 
+}
+
+.moon1_1 > .btn1_1 > a {
+    font-size: 16px;
+    padding: 50px 10px;
+
+
+}
+
+
+.my_info> i {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 170px;
+    margin-top: 35px;
+    color : #bbbbbb;
+
+}
+
+.my_info_text{
+    position: absolute;
+    display: inline-block;
+    top: 140px;
+    margin-left: 220px;
+   
+    
+    
+    
+}
+.my_info_text > h1 {
+    display : block;
+    color: #333333;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.my_info_text > a {
+    text-decoration: underline #777;
+    color: #777;
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+.my_point{
+    position: absolute;
+    display: inline-block;
+    top: 90px;
+    margin-left: 550px;
+    text-align: center;
+    border-left: 2px solid #777;
+    margin-top: 5px;
+    
+}
+ 
+.my_point > h1 {
+    font-size: 45px;
+    padding-left: 120px;
+    color: #333333;
+}
+
+.my_point > p {
+    font-size: 30px;
+    padding-left: 120px;
+    margin-top: 45px;
+}
+
+.my_coupon{
+    position: absolute;
+    display: inline-block;
+    top: 90px;
+    margin-left: 900px;
+    text-align: center;
+    border-left: 2px solid #777;
+    margin-top: 5px;
+    
+
+}
+
+.my_coupon > h1 {
+    font-size: 45px;
+    padding-left: 80px;
+    color: #333;
+    
+}
+
+.my_coupon > p {
+    font-size: 30px;
+    padding-left: 80px;
+    margin-top: 45px;
+}
+
+.moon1_1{
+    display: inline;
+    float: right;
+}
+.mypage_title{
+    width: 100%;
+    margin-top: 90px;
+}
+
+.mypage_title > .inner{
+    width: 1180px;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+input[type="text"],input[type="password"]{
+    border: 1px solid #d6d2d2;
+    text-align: center;
+    outline: none;
+    height: 35px;
+   
+  }
+  
+  .table td{
+   
+    padding-bottom: 30px;
+   
+    
+  }
+  
+  .td_tit{
+  width:300px;
+    font-size: 16px;
+    margin-right: 100px;
+  }
+  
+  .td_img img{
+  margin-left:10px;
+  }
+  
+  .btn{
+    line-height: 46px;
+    height: 48px;
+    bordeR: 1px solid #f52334;
+      color: #f52334;
+      padding: 0;
+      min-width: 135px;
+      width: 15%;
+      margin-left: 2%;
+      cursor: pointer;
+      background-color: #fff;
+  }
+  
+  select{
+    border-color:#d6d2d2;
+    height: 35px;
   }
 
-  .login_btn{
-	width:300px;
+  .up_btn{
+	width:340px;
 	text-align: center;
 	margin: 0 auto;
 	background: #fde4e4;
 	border-radius: 10px; 
 	font: bold 18px/44px 'ChosunSg';
+	
 	color: #4D4D4D;
 	text-align: center;
 	text-decoration: none;
@@ -386,31 +538,18 @@ a {
 	display:block;
 	padding: 5px 0;
 	border:0;
-	margin-top: 10px;
+	margin-top: 40px;
 	transition: 0.3s;
-
 
   }
 
-  .login_btn:hover{
+  .up_btn:hover{
 	background: #FFB2AC;
+
   color: #fff;
   }
 
 
-  .login_3menu{
- 
-	margin: 0 auto;
-  }
-  
-  .shc{
-	text-align: center;
-	
-  }
-  .shc  li{
-   
-	display: inline;
-  }
 
 
 /* footer */
@@ -419,7 +558,7 @@ a {
     width: 100%;
     padding: 50px 0;
     background: rgb(56, 56, 56);
-	
+    
     
   }
   
@@ -438,10 +577,7 @@ a {
   .footer > .text > p {
     font-size: 14px;
   }
-
-
-
-
+  
 
 
 
@@ -462,6 +598,7 @@ a {
 	.top-wrap>.top-box1 {
 	  width: 1280px;
 	}
+  
   }
   
   
@@ -470,57 +607,262 @@ a {
   
   @media (min-width: 1051px) and ( max-width:1300px) {
 	/* 탑바 */
-	.top-wrap>.top-box1 {
-		width: 95%;
-	  }
 	
-	  .top-wrap>.top-box2>ul>li {
-		padding: 23px 0px;
-	  
-	  }
-	
-	.login_main > .inner {
-        width: 100%;
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 23px 0px;
+  
+  }
+
+   /* 마이페이지 */
+
+  .mypage_banner > .inner {
+    width: 80%;
     }
+
+    .my_info_text{
+       
+        margin-left: 230px;
+        
+        
+        
+    }
+    .my_point{
+        margin-left: 45%;
+    }
+
+    .my_coupon{
+        margin-left: 75%;
+    }
+
+    .my_point > h1 {
+        
+        padding-left: 76px;
+        
+    }
+    
+    .my_point > p {
+        
+        padding-left:76px;
+        
+    }
+
+    .my_coupon > h1 {
+        
+        padding-left: 80px;
+       
+        
+    }
+    
+    .my_coupon > p {
+        
+        padding-left: 80px;
+        
+    }
+    .mypage_title > .inner{
+        width: 80%;
+    
+    }
+
+  
   
   }
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-		width: 95%;
-	  }
 	
-	  .top-wrap>.top-box2>ul>li {
-		padding: 20px 0px;
-	  } 
-		
-	
-	.login_main > .inner {
-        width: 100%;
-    }
-  
-  
+/* 탑바 */
+
+
+  .top-wrap>.top-box1 {
+    width: 95%;
   }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 20px 0px;
+  } 
+  
+
+/* 마이페이지 */
+
+.mypage_banner > .inner {
+    width: 80%;
+    } 
+
+
+.my_info> i {
+    font-size: 130px;
+    margin-top: 25px;
+}
+
+.my_info_text{
+    
+    top: 250px;
+    margin-left:20px;
+    text-align: center;
+    
+    
+    
+}
+.my_info_text > h1 {
+    font-size: 20px;
+}
+
+
+.my_info_text > a {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.my_point{
+    
+    margin-left: 240px;
+    margin-top: 5px;
+    
+}
+ 
+.my_point > h1 {
+    padding-left: 90px;
+}
+
+.my_point > p {
+    padding-left: 90px;
+    margin-top: 45px;
+}
+
+.my_coupon{
+   
+    margin-left: 530px;
+    margin-top: 5px;
+    
+
+}
+
+.my_coupon > h1 {
+    padding-left: 80px;
+    
+    
+}
+
+.my_coupon > p {
+    padding-left: 80px;
+    
+}
+
+.mypage_title > .inner{
+    width: 100%;
+
+}
+.mypage_title > .inner{
+    width: 80%;
+
+}
+
+
+}
+    
+  
   
   
   @media (min-width: 500px) and ( max-width:850px) {
 	/* 탑바 */
-	.top-wrap>.top-box1 {
-		width: 95%;
-	  }
-	
-	  .top-wrap>.top-box2 {
-		font-size: 16px;
-	  }
-	
-	  .top-wrap>.top-box2>ul>li {
-		padding: 22px 0px;
-	  } 
-	  .login_main > .inner {
-        width: 100%;
-    }
-  
+	 .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2 {
+    font-size: 16px;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 22px 0px;
+  } 
+
+
+    /* 마이페이지 */ 
+
+    .mypage_banner > .inner {
+        width: 80%;
+        }
+
+
+        
+
+.my_info> i {
+    font-size: 130px;
+    margin-top: 25px;
+}
+
+.my_info_text{
+    
+    top: 250px;
+    margin-left:25px;
+    text-align: center;
+    
+    
+    
+}
+.my_info_text > h1 {
+    font-size: 20px;
+}
+
+
+.my_info_text > a {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.my_point{
+    position: absolute;
+   
+    
+    margin-left:200px;
+    margin-top: 40px;
+   
+    
+   
+}
+ 
+.my_point > h1 {
+    padding-left: 50px;
+    font-size: 30px;
+   
+}
+
+.my_point > p {
+    padding-left:50px;
+    margin-top: 45px;
+    font-size: 22px;
+}
+
+.my_coupon{
+    position: absolute;
+    
+    margin-left: 360px;
+    margin-top: 40px;
+    
+
+}
+
+.my_coupon > h1 {
+    padding-left: 44px;
+    font-size: 30px;
+    
+}
+
+.my_coupon > p {
+    padding-left: 44px;
+    font-size: 22px;
+    
+}
+
+.mypage_title > .inner{
+    width: 80%;
+
+}
+
   
   }

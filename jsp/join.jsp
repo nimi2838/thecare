@@ -297,7 +297,7 @@ else{
         
                     </table>
                    
-                   <button type="submit"  class="join_btn" value= "회원가입" onClick="checkValue()" style= "cursor: pointer;" >회원가입</button></a>
+                   <button type="submit"  class="join_btn" value= "회원가입" onClick="checkValue()" style= "cursor: pointer;" >회원가입</button>
                     </div>
                     </form>
                  </div>

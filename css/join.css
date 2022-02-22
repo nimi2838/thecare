@@ -402,7 +402,7 @@ input[type="text"],input[type="password"]{
   margin-left: 2%; 
   cursor: pointer; 
   background-color: #fff; 
-  font-size : 12px"
+  font-size : 12px;
 }
   
   .btn{
@@ -455,7 +455,7 @@ input[type="text"],input[type="password"]{
   .join_btn:hover{
 	background: #FFB2AC;
 
-  color: #ACA6A6;
+  color: #fff;
   }
 
 
