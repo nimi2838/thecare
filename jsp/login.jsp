@@ -234,6 +234,7 @@ else{
                           <li><button style="background:#fff; border:0; cursor: pointer;"><a href="">비밀번호 찾기</a></button></li>
                         </ul>
                        </div>
+                 </form>
             </div>
         </div>
     </div>

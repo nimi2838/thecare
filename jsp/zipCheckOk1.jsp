@@ -2,14 +2,14 @@
 <%@ page import="java.sql.*" %>
 
 <script language="javascript">
-	function sendAddress(zip,s,g,d)
+	function sendAddressq(zip,s,g,d)
 	{
-		//시도 구군 동을 합한 주소
+		
 		var address =s + " " + g + " " + d;
-		 // opener:   open()함수를 호출했던 상위(부모) 윈도우 객체를 의미함
-		opener.document.newMem.zipcode.value=zip;
-        opener.document.newMem.address1.value=address;
-		opener.document.newMem.address2.focus();
+		 
+		opener.document.newMem1.zipcode.value=zip;
+        opener.document.newMem1.address1.value=address;
+		opener.document.newMem1.address2.focus();
 		window.close();
 	}
 </script>
@@ -26,7 +26,7 @@
 
 	String dongName = request.getParameter("dong");   
 	String jsql = "select * from cl_zipcodet where dong like '%" + dongName + "%' ";  
-	                                                       //  따옴표사용이 어떻게 사용되었는지 주의해서 볼 것!
+	                                                      
 	PreparedStatement 	pstmt = con.prepareStatement(jsql);
 	ResultSet rs = pstmt.executeQuery();
 %>
@@ -40,7 +40,7 @@
             <div class="title">우편번호 찾기</div>
         </h1>
   
-   <form name="zipForm" method="post" action="zipCheckOk.jsp">
+   <form name="zipForm" method="post" action="zipCheckOk1.jsp">
    <input id="address_search_name" name="dong" type="text" placeholder="검색어(도로명,지번,건물명)를 입력해주세요">
             <input class="button" type="button" value="검색" onclick= "dongCheck();">
         </form>
@@ -66,7 +66,7 @@
 			if(bunji==null)  bunji = "";    // 번지값이 null 이면 빈칸으로 출력되도록
 %> 
 	  <tr>
-		 <td width=80 style = "color: blue;"><a href="javascript:sendAddress('<%=zipcode%>','<%=sido%>','<%=gugun%>','<%=dong%>','<%=bunji%>')"><font size=2><%=zipcode%></font></a></td>
+		 <td width=80 style = "color: blue;"><a href="javascript:sendAddressq('<%=zipcode%>','<%=sido%>','<%=gugun%>','<%=dong%>','<%=bunji%>')"><font size=2><%=zipcode%></font></a></td>
 		  <td width=80><font size=2><%=sido%></font></td>
 		  <td width=120><font size=2><%=gugun%></font></td>
 		  <td width=280><font size=2><%=dong%></font></td>
@@ -89,7 +89,7 @@
 		 } // while문 닫음
 %>
 	</table>  
-	<p><a href="zipCheck.jsp">다시 입력</a>
+	<p><a href="zipCheck1.jsp">다시 입력</a>
    </center>
   </body>
 </html>
