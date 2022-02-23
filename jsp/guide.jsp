@@ -126,10 +126,10 @@ else{
                     <a>회사소개</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">더케어란?</a>
+                            <li><a href="about_1.jsp">더케어란?</a>
                             </li>
-                            <li><a href="about_2.html">더케어 의료진</a></li>
-                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                            <li><a href="about_2.jsp">더케어 의료진</a></li>
+                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
                         </ul>
                     </div>
                 </li>
@@ -138,7 +138,7 @@ else{
                     <div>
                         <ul>
                             <li><a href="guide.jsp">시술안내</a></li>
-                            <li><a href="review.html">전후사진</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
@@ -146,23 +146,23 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.html">시술예약</a></li>
-                            <li><a href="change.html">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.html">최근본시술</a></li>
+                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
                 
                 <li class="menu">
-                    <a href="custom.html">맞춤시술</a>
+                    <a href="custom.jsp">맞춤시술</a>
                 </li>
                 <li class="menu">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="qna.html">1:1문의</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="qna.jsp">1:1문의</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -214,6 +214,10 @@ else{
                 <div class="row">
 
                     <div class="box">
+					<%
+	Cookie cookie_prdno1 = new Cookie("prdNo","tox01");
+	response.addCookie(cookie_prdno1);
+%>
                         <a href="sub_1.jsp?prdNo=tox01">
                             <div class="name">사각턱 보톡스</div>
                             <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
@@ -222,6 +226,10 @@ else{
                     </div>
 
                     <div class="box">
+					<%
+	Cookie cookie_prdno2 = new Cookie("prdNo","tox02");
+	response.addCookie(cookie_prdno2);
+%>
                         <a href="sub_1.jsp?prdNo=tox02">
                             <div class="name">주름 보톡스</div>
                             <p>표정주름과 탄력을 개선하는 더모톡신 </p>
@@ -234,6 +242,10 @@ else{
                 <div class="row flex">
 
                     <div class="box">
+					<%
+	Cookie cookie_prdno3 = new Cookie("prdNo","tox03");
+	response.addCookie(cookie_prdno3);
+%>
                         <a href="sub_1.jsp?prdNo=tox03">
                             <div class="name">다한증 보톡스</div>
                             <p>손/발/겨드랑이를 뽀송뽀송하게! </p>

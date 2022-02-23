@@ -179,6 +179,11 @@ else{
 
 	
 <%
+
+
+
+
+
 try {
  	 String DB_URL="jdbc:mysql://localhost:3306/care";  
      String DB_ID="skin";  
@@ -215,6 +220,9 @@ try {
 				while(rs.next()) {
 
 
+
+
+
 					String pno =  rs.getString("prdNo");	
 					String name =  rs.getString("prdName");
 					String memo =  rs.getString("prdMemo");
@@ -231,7 +239,18 @@ try {
 					String effectmemo1 = rs.getString("effectmemo1");
 					String effectmemo2 = rs.getString("effectmemo2");
 
+
+					
+//				Cookie cook = new Cookie(pno,URLEncoder.encode(name,"euc-kr"));
+	//			cook.setMaxAge(60*60);
+	//			response.addCookie(cook);
+
 				%>
+
+					<%
+	Cookie cookie_prdno = new Cookie("prdNo",pno);
+	response.addCookie(cookie_prdno);
+%>
 
                 <h1><%=name%></h1>
                 <p><%=memo%></p>
@@ -351,6 +370,8 @@ try {
 				</form>
 				
 				<%
+
+					
 			}
 					%>
 
