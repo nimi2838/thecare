@@ -13,12 +13,14 @@ try {
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
 		String ctNo = session.getId(); 
+
 		String prdNo = request.getParameter("prdNo");
 		
 
-		String jsql1 = "select * from cart where prdNo=?";
+		String jsql1 = "select * from cart where ctNo = ? and prdNo=?";
       PreparedStatement pstmt1 = con.prepareStatement(jsql1);
-	  pstmt1.setString(1, prdNo);
+	  pstmt1.setString(1, ctNo);
+	  pstmt1.setString(2, prdNo);
 
       ResultSet rs1 = pstmt1.executeQuery(); 
 	  rs1.next();

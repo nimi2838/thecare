@@ -189,6 +189,7 @@ try {
 	
 	request.setCharacterEncoding("euc-kr");
 
+	String ctNo = session.getId(); 
 	String no = request.getParameter("prdNo");  
 
 	String jsql = "select * from surgery where prdNo = ?";   
@@ -318,9 +319,10 @@ try {
 
 					<%
 
-				String jsql3 = "select * from cart where prdNo = ?";
+				String jsql3 = "select * from cart where ctNo =? and prdNo = ?";
 		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, no);
+		pstmt3.setString(1, ctNo);
+		pstmt3.setString(2, no);
 		ResultSet rs3 = pstmt3.executeQuery(); 
 		
 
