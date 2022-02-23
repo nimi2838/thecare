@@ -53,13 +53,14 @@
                 </div>
             </div>
             <div class="search_wrap">
-                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end" method="get"
+                    action="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
                     <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요.">
                     </td>
                     <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()"
+                            style="width: 30px; height: 30px;">
                     </td>
                     <!-- <a href="searchform.html" class="btn_search">
                             <div class="img-box">
@@ -105,7 +106,7 @@
                         </ul>
                     </div>
                 </li>
-                
+
                 <li class="menu">
                     <a href="custom.html">맞춤시술</a>
                 </li>
@@ -144,11 +145,30 @@
             <div class="sub_text2">
                 <div class="option flex">
                     <div>시술선택</div>
-                    <select>
-                        <option value="턱보톡스 50유닛 (보톨렉스)">턱보톡스 50유닛 (보톨렉스)</option>
-                        <option value="턱보톡스 50유닛 (수입-엘레간,제모인)">턱보톡스 50유닛 (수입-엘레간,제모인)</option>
-                    </select>
+
+                    <form name="form1">
+                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
+                            <tr>
+                                <td>시술 옵션
+                                    <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div id="Div">
+                            <ul>
+                                <li><input type='checkbox'
+                                    name='checkbox' 
+                                    value='헤어라인(구레나룻포함,면적에따라 비용추가)'/> 헤어라인(구레나룻포함,면적에따라 비용추가)</li>
+                                <li> <input type='checkbox' 
+                                    name='checkbox' 
+                                    value='손 발/겨드랑이 50유닛 (국산)' /> 손 발/겨드랑이 50유닛 (국산)</li>
+                            </ul>
+                            <div><input type="button" value="확인" onClick="multiSelect('CLOSE'); getCheckboxValue();"></div>
+                        </div>
+                    </form>
                 </div>
+                <div id='result'></div>
                 <div class="price-wrap">
                     <div class="price-box flex flex-jc-sb">
                         <div>총 금액</div>
@@ -212,7 +232,7 @@
                 </div>
 
             </div>
-            
+
 
 
 
@@ -223,7 +243,7 @@
 
     <div class="sub_con_box2">
         <div class="sub_con2">
-            
+
             <p>RECOMMEND TO CUSTOMERS BELOW</p>
             <h1>이런 분께 추천합니다.</h1>
 
@@ -237,7 +257,7 @@
                 <div class="con_box2">
                     <h6>POINT 2</h6>
                     <hr>
-                    <p>작고 부드러운 얼굴선을  <br>
+                    <p>작고 부드러운 얼굴선을 <br>
                         원하는 분</p>
                 </div>
                 <div class="con_box2">
@@ -256,7 +276,7 @@
 
     <div class="sub_con_box3">
         <div class="sub_con3">
-            
+
             <p>EFFECTIVENESS AND RECOMMENDED PERIOD</p>
             <h1>효과 및 권장주기</h1>
 
@@ -276,11 +296,11 @@
                     <span>2</span>
                     <p>
                         6~8개월에 걸쳐 서서히 원래 사이즈로 되돌아오게 되므로
-지속적인 효과를 원한다면 4~5개월 주기로 재시술을 권장드립니다.
+                        지속적인 효과를 원한다면 4~5개월 주기로 재시술을 권장드립니다.
                     </p>
                 </li>
 
-                
+
             </ul>
 
 
@@ -290,12 +310,12 @@
 
     <div class="sub_con_box4">
         <div class="sub_con4">
-            
+
             <div class="con_box1">
                 <p>CAUTIONS</p>
-            <h1>주의사항</h1>
-            <div>관리만큼이나 셀프케어도 효과에 큰 영향을 줍니다. <br>
-                주의사항을 꼼꼼히 읽은 후, 잘 지켜주세요.</div>
+                <h1>주의사항</h1>
+                <div>관리만큼이나 셀프케어도 효과에 큰 영향을 줍니다. <br>
+                    주의사항을 꼼꼼히 읽은 후, 잘 지켜주세요.</div>
             </div>
 
             <ul class="con_box2">
@@ -335,7 +355,7 @@
 
 
 
-    
+
 
 
 
@@ -344,7 +364,7 @@
 
 
     <!-- 탑바 -->
-    
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -393,7 +413,7 @@
         });
 
 
-        
+
 
         gsap.to('.top-wrap > .top-box2', {
             scrollTrigger: {
@@ -410,7 +430,30 @@
         });
 
 
-        
+        function multiSelect(value) {
+            if (value == "OPEN") Div.style.visibility = "visible", value == "CLOSE";
+            else if (value == "CLOSE") Div.style.visibility = "hidden";
+            else Div.style.visibility = "hidden";
+        };
+
+
+        function getCheckboxValue()  {
+  // 선택된 목록 가져오기
+  const query = 'input[name="checkbox"]:checked';
+  const selectedEls = 
+      document.querySelectorAll(query);
+  
+  // 선택된 목록에서 value 찾기
+  let result = '';
+  selectedEls.forEach((el) => {
+    result += el.value + ' ';
+  });
+  
+  // 출력
+  document.getElementById('result').innerText
+    = result;
+}
+
     </script>
 
 

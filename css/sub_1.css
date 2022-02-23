@@ -392,13 +392,61 @@ a {
     margin-left: 28px;
 }
 
-.sub_con > .sub_text2 > .option select {
+.sub_con > .sub_text2 > .option  > form {
+    padding: 10px 0;
+    border:1px solid #ecd8d8;
+    margin: -2% 0 0 48.5%;
+    font-size: 16px;
+}
+
+.sub_con > .sub_text2 > .option  > form td {
+    text-align: center;
+    position: relative;
+    width: 200px;
+}
+
+
+.sub_con > .sub_text2 > .option  > form ul { 
+    overflow-x: hidden;
+    text-align: center;
+    font-size: 15px;
+ }
+
+ .sub_con > .sub_text2 > .option  > form ul li {
+    padding: 15px 0 0;
+ }
+
+
+.sub_con > .sub_text2 > .option  > form #Div {
+    position:absolute;
+    visibility:hidden;
+    font-size:12px;
+    text-align: center;
+    background: white;
+    border: 1px solid #ecd8d8;
+    margin: 10px 0 0;
+    width: 200px;
+}
+
+.sub_con > .sub_text2 > .option  > form #Div > div {
+    padding: 15px 0 10px;
+    text-align: center;
+}
+
+.sub_con > .sub_text2 > .option  > form #Div > div input {
+    border: 1px solid #ecd8d8;
+    background: white;
+    padding: 3px 8px;
+}
+
+
+/* .sub_con > .sub_text2 > .option form {
     font-size: 18px;
     padding: 10px 0;
     margin: -2% 0 0 24.5%;
     outline: none;
     border: 1px solid #ecd8d8;
-}
+} */
 
 .sub_con > .sub_text2 > .price-wrap {
     margin: 25px 0 0;
@@ -821,7 +869,7 @@ a {
         margin-left: 18px;
     }
     
-    .sub_con > .sub_text2 > .option select {
+    .sub_con > .sub_text2 > .option form {
         font-size: 18px;
         padding: 10px 0;
         margin: -2% 0 0 18%;
@@ -1030,7 +1078,7 @@ a {
         margin-left: 0px;
     }
     
-    .sub_con > .sub_text2 > .option select {
+    .sub_con > .sub_text2 > .option form {
         font-size: 18px;
         padding: 10px 0;
         margin: 3% 0 0 0%;
