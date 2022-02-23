@@ -61,7 +61,7 @@
   .survery-btn {
     position: absolute; right: 50px; bottom: 30px;
     width: 230px; height: 55px; line-height: 55px; color: #fff; 
-    background-color: #ff8484; border: none;
+    background-color: #ff9a9a; border: none;
     font-size: 18px; border-radius: 25px; font-weight: bold;
     box-shadow: 0px 5px 10px 0 rgba(51, 51, 51, 0.315);
     cursor: pointer; display: flex; justify-content:center;
@@ -71,10 +71,10 @@
 a > .close-test {
   position: absolute; right: -35px; top: -35px;
   width: 65px; height: 65px; border-radius: 100%;
-  background-color: rgb(250, 250, 250); border: 1px solid rgb(226, 226, 226);
+  background-color: rgb(252, 252, 252); border: 1px solid rgb(226, 226, 226);
   font-size: 30px; font-weight: bold; text-align: center;
   line-height: 60px; 
-  box-shadow: 0px 3px 5px 0 rgba(51, 51, 51, 0.315);
+  box-shadow: 0px 3px 5px 0 rgba(155, 155, 155, 0.315);
 }
 a > .close-test >img {width: 15px; height: 15px;}
 
