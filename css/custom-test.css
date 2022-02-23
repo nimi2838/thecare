@@ -36,33 +36,33 @@
     padding-bottom: 40px; width: 85%;
   }
   .survery-test > .qna-wrap {width: 80%; padding-left: 50px;}
-  .survery-test > .qna-wrap >li {padding-top: 25px; font-size: 20px; }
+  .survery-test > .qna-wrap >li {padding-top: 28px; font-size: 21px; }
   #text {background-color: red;}
   .survery-test > .qna-wrap >li label >span {padding-left: 10px; }
 
 
   input[type=checkbox] {display: none;}
   input[type="checkbox"] + label {
-    display: inline-block; width: 20px; height: 20px;
+    display: inline-block; width: 17px; height: 17px;
     cursor: pointer; background:url(../img/test-nocheck.png) no-repeat center;
-    background-size: 20px 20px;
+    background-size: 17px 17px;
     margin-right: 10px;
     
   }
  input[type="checkbox"]:checked + label {
   background:url(../img/test-check.png) no-repeat center; 
-  background-size: 20px 20px;
+  background-size: 17px 17px;
 }
  
   .survery-btn {
     position: absolute; right: 50px; bottom: 30px;
-    width: 230px; height: 55px; line-height: 50px; color: #fff; 
+    width: 230px; height: 55px; line-height: 55px; color: #fff; 
     background-color: #ffbebe; border: none;
-    font-size: 18px; border-radius: 23px; font-weight: bold;
+    font-size: 18px; border-radius: 25px; font-weight: bold;
     box-shadow: 0px 5px 10px 0 rgba(51, 51, 51, 0.315);
-    cursor: pointer;
+    cursor: pointer; display: flex; justify-content:center;
   } 
-  .survery-btn >img {margin-top: 10px;}
+.ssang {padding-top: 5px; padding-left: 10px;}
 
 
   @media (min-width: 1051px) and ( max-width:1300px) {
