@@ -235,13 +235,12 @@ a {
   margin-right:10px;
   padding:10px;
   display:block;
-  box-sizing:border-box; border-radius: 0;
+  box-sizing:border-box;
 }
 
 .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
   width:170px;
   border-bottom-color: #707070;
-  border-radius: 0;
 }
 
 
@@ -319,145 +318,51 @@ a {
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-
-
-
-
   
+  /* 날짜 달력 */
 
-
-/* 찾기 */
-
-.find_main{
-    width: 100%;
-	
-	padding-top: 50px;
-  padding-bottom: 40px;
-    background-color: #FFEEEE;
+  table {
+    clear: both;
 }
-.find_main > .inner {
-	width: 1180px;
-	margin: 0 auto;
-	position: relative;
+th {
+    height: 50px;
+    width: 70px;
+   
 }
-
-.find_box{
-    background-color: #fff;
-	width: 400px;
-	height: 400px;
-	margin: 0 auto;
-	margin-bottom: 70px;
-	border-radius: 15px;
-	
-}
-
-.find_box > h1 {
-	text-align: center;
-	font-weight:bold;
-	color: #4D4D4D;
-	padding-top: 50px;
-	padding-bottom: 20px;
-	
-}
-
-
-.form{
-  width: 300px;
-  text-align:left;
-  margin: 0 auto;
-  outline: none;
-  display:block;
-  border-radius: 10px;
-  border: 1px solid #ACA6A6;
-  margin-top: 20px;
-
-  }
-
-  .find_btn{
-	width:300px;
-	text-align: center;
-	margin: 0 auto;
-	background: #fde4e4;
-	border-radius: 10px; 
-	font: bold 18px/44px 'ChosunSg';
-	color: #4D4D4D;
-	text-align: center;
-	text-decoration: none;
-	outline: 0;
-	display:block;
-	padding: 5px 0;
-	border:0;
-	margin-top: 20px;
-	transition: 0.3s;
-
-  }
-
-  .find_btn:hover{
-	background: #FFB2AC;
-  color: #fff;
-  }
-
-  .find_2menu{
- 
-    margin: 0 auto;
-    }
-    
-    .shc{
+td {
     text-align: center;
-    
-    }
-    .shc  li{
-     
-    display: inline;
-    }
+    height: 50px;
+    width: 70px;
+    background-color: #FFFDC5;  
+}
+input {
+    height: 50px;
+    width: 70px;
+    border: none;
+    background-color:  orange;
+    font-size: 30px;
+}
+.year_mon{
+    font-size: 25px;
+}
+.colToday{
+    background-color: #FFA07A;
+}
   
   
-
-
-/* footer */
-
-.footer {
-    width: 100%;
-    padding: 50px 0;
-    background: rgb(56, 56, 56);
-	
-    
-  }
   
   
-  .footer > .text{
-    color: white;
-    text-align: center;
-  
-  }
-  
-  .footer > .text1 {
-    padding-top: 20px;
-  }
   
   
-  .footer > .text > p {
-    font-size: 14px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
 @media (min-width: 1301px) and  ( max-width:1920px) {
 	/* 탑바 */
 	.top-wrap>.top-box1 {
@@ -471,18 +376,16 @@ a {
   
   @media (min-width: 1051px) and ( max-width:1300px) {
 	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 0px;
-	} 
 	
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
 
-    .find_main > .inner {
-        width: 100%;
-    }
+  .top-wrap>.top-box2>ul>li {
+    padding: 23px 0px;
+  
+  }
+  
 	
   
   }
@@ -491,38 +394,29 @@ a {
   @media (min-width: 851px) and ( max-width:1050px) {
 	/* 탑바 */
 	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 20px 0px;
-	} 
-	
+    width: 95%;
+  }
 
-    .find_main > .inner {
-        width: 100%;
-    }
-  
+  .top-wrap>.top-box2>ul>li {
+    padding: 20px 0px;
+  } 
+	
   }
   
   
   @media (min-width: 500px) and ( max-width:850px) {
 	/* 탑바 */
-	.top-wrap>.top-box1 {
-		width: 95%;
-	  }
+	 .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2 {
+    font-size: 16px;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 22px 0px;
+  } 
 	
-	  .top-wrap>.top-box2 {
-		font-size: 16px;
-	  }
-	
-	  .top-wrap>.top-box2>ul>li {
-		padding: 22px 0px;
-	  } 
-		
-	
-    .find_main > .inner {
-        width: 100%;
-    }
   
   }

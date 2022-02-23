@@ -332,7 +332,7 @@ a {
     width: 100%;
 	
 	padding-top: 50px;
-  padding-bottom: 40px;
+  
     background-color: #FFEEEE;
 }
 .find_main > .inner {
@@ -344,7 +344,7 @@ a {
 .find_box{
     background-color: #fff;
 	width: 400px;
-	height: 400px;
+	height: 380px;
 	margin: 0 auto;
 	margin-bottom: 70px;
 	border-radius: 15px;
@@ -374,7 +374,7 @@ a {
   }
 
   .find_btn{
-	width:300px;
+	width:340px;
 	text-align: center;
 	margin: 0 auto;
 	background: #fde4e4;
@@ -396,22 +396,6 @@ a {
 	background: #FFB2AC;
   color: #fff;
   }
-
-  .find_2menu{
- 
-    margin: 0 auto;
-    }
-    
-    .shc{
-    text-align: center;
-    
-    }
-    .shc  li{
-     
-    display: inline;
-    }
-  
-  
 
 
 /* footer */
