@@ -41,22 +41,24 @@
     padding-bottom: 40px; width: 85%;
   }
   .survery-test > .qna-wrap {width: 80%; padding-left: 50px;}
-  .survery-test > .qna-wrap >li {padding-top: 28px; font-size: 21px; }
-  .survery-test > .qna-wrap >li label >span {padding-left: 10px; }
+  .survery-test > .qna-wrap >li {padding-top: 30px; font-size: 20px; }
 
-
-  input[type=checkbox] {display: none;}
-  input[type="checkbox"] + label {
-    display: inline-block; width: 17px; height: 17px;
-    cursor: pointer; background:url(../img/test-nocheck.png) no-repeat center;
-    background-size: 17px 17px;
-    margin-right: 10px;
-    
+  input[type=checkbox] {width: 27px; height: 27px; display: none;}
+  .label-checkbox {
+    position: relative; display: inline-block; font-size: 20px; color: #333;
+    padding-left: 44px; line-height: 20px;
   }
- input[type="checkbox"]:checked + label {
-  background:url(../img/test-check.png) no-repeat center; 
-  background-size: 17px 17px;
-}
+  .label-checkbox .input-checkbox+span{
+    position: absolute; left: 0; top: 50%; margin-top: -12px;
+    width: 27px; height: 27px;
+    background:url(../img/test-nocheck.png) no-repeat center;
+    background-size: 27px; background-position: 50% 50%;
+  }
+  .label-checkbox .input-checkbox:checked+span{
+    background:url(../img/test-check.png) no-repeat center; 
+    background-size: 27px; background-position: 50% 50%;
+  }
+
  
   .survery-btn {
     position: absolute; right: 50px; bottom: 30px;
@@ -79,17 +81,20 @@ a > .close-test {
 a > .close-test >img {width: 15px; height: 15px;}
 
   @media (min-width: 1051px) and ( max-width:1300px) {
+    .survery-content> .survery-inner>.survery-test > h2 {width: 80%;}
 
   }
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
     .survery-content> .survery-inner {width: 60%; }
+    .survery-content> .survery-inner>.survery-test > h2 {width: 82%;}
   }
   
   
   @media (min-width: 500px) and ( max-width:850px) {
     .survery-content> .survery-inner {width: 80%; }
+    .survery-content> .survery-inner>.survery-test > h2 {width: 77%;}
 
   }
 
