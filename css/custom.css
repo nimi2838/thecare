@@ -60,6 +60,7 @@
 	font-style: normal;
   }
   
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
   /* 노말라이즈 */
   body,
   ul,

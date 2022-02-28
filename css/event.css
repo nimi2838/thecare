@@ -12,6 +12,7 @@ body {
   padding: 0;
 }
 
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
 
 
 @font-face {

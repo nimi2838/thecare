@@ -1,5 +1,6 @@
 * {list-style: none;}
   
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
   html,
   body {
 	height: 100%;

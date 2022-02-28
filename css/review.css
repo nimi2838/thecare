@@ -4,6 +4,7 @@ body {
   height: 100%;
 }
 
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
 body {
   font-family: 'ChosunSg';
   font-size: 14px;
