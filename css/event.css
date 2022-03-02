@@ -733,8 +733,8 @@ a {
       text-align: center; color: rgb(105, 105, 105);
       padding-top: 50px; padding-bottom: 50px;
 }
-#welcome .inner .event >h1 { font: bold 60px 'inherit'; margin-bottom: 0; }
-#welcome .inner .event >p{ font:  25px 'inherit';margin-bottom: 50px;}
+#welcome .inner .event >h1 {font-weight: bold; font-size: 60px; margin-bottom: 0; }
+#welcome .inner .event >p{ font-size:  25px ; margin-bottom: 50px;}
 
   #welcome .box{width: 45%; margin-bottom: 100px; 
   position: relative; overflow: hidden;}
@@ -743,7 +743,7 @@ a {
 
   #welcome .box:hover .event_img> img{transform:scale(1.05);}
   #welcome .box .event_txt {
-    font: 14px 'inherit'; color: #333;
+    font-size: 15px ; color: #333;
   }
   #welcome .box >.event_img>p {display: none;}
   #welcome .box >.event_img> .bg{

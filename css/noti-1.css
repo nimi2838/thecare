@@ -408,7 +408,7 @@ a {
   .about-ban > .text-box {
     text-align: center;
     z-index: 100;
-    padding-top: 8%;
+    padding-top: 120px;
     color: #fff;
     
   }
@@ -461,7 +461,6 @@ a {
 @media (min-width: 1051px) and ( max-width:1300px) {
   .inner{width:100%;} 
   .wrap{justify-content: space-around;}
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
 
@@ -470,7 +469,6 @@ a {
   .wrap{justify-content: space-around;}
   
 
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
 
@@ -478,7 +476,6 @@ a {
   .inner{width:100%;} 
   .wrap{justify-content: space-around; margin-bottom: 0px;}
 
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
   

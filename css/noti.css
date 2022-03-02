@@ -418,7 +418,7 @@ a {
   .about-ban > .text-box {
     text-align: center;
     z-index: 100;
-    padding-top: 8%;
+    padding-top: 120px;
     color: #fff;
     
   }
@@ -446,13 +446,13 @@ a {
 .content{width:100%; padding: 100px 0;}
 .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;}
 
-.content .title{margin: 0 0 60px; text-align: center; font: bold 28px 'inherit'; color: #ccc;}
+.content .title{margin: 0 0 60px; text-align: center;font-weight: bold; font-size: 28px; color: #ccc;}
 
 .table { width: 100%; margin: 0 auto;}
-.table > thead {height: 50px; font: 18px 'inherit'; background-color: #f0f0f0; }
+.table > thead {height: 50px; font-size: 18px; background-color: #f0f0f0; }
 .table > thead th {border-top: 1px solid #797979; border-bottom: 1px solid #797979;}
 
-.table > tbody { font: 16px 'inherit';  }
+.table > tbody { font-size: 16px;  }
 .table > tbody:hover {background-color: #f7f7f7;}
 
 .table #gong>tr >td {text-align: center; border-bottom: 1px solid #ccc; color: #303030;}
@@ -466,7 +466,6 @@ a {
 @media (min-width: 1051px) and ( max-width:1300px) {
   .inner{width:100%;} 
   .wrap{justify-content: space-around;}
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
 
@@ -476,7 +475,6 @@ a {
   
   .table { width: 100%; margin: 0 30px;}
 
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
 
@@ -488,7 +486,6 @@ a {
 .table > thead {height: 50px; font: 15px 'inherit'; background-color: #f0f0f0; }
 .table > tbody { font: 14px 'inherit';  }
 
-  .about-ban > .text-box {padding-top: 15%;}
 }
 
   
