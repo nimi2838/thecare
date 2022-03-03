@@ -177,7 +177,7 @@ else{
                     <a>시술안내</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술안내</a></li>
+                            <li><a href="guide.jsp">시술비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
@@ -186,7 +186,7 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="reservation.jsp">예약하기</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>

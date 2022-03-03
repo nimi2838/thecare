@@ -157,10 +157,10 @@ else{
                     <a>회사소개</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">더케어란?</a>
+                            <li><a href="about_1.jsp">더케어란?</a>
                             </li>
-                            <li><a href="about_2.html">더케어 의료진</a></li>
-                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                            <li><a href="about_2.jsp">더케어 의료진</a></li>
+                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
                         </ul>
                     </div>
                 </li>
@@ -168,8 +168,8 @@ else{
                     <a>시술안내</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술안내</a></li>
-                            <li><a href="review.html">전후사진</a></li>
+                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
@@ -177,22 +177,22 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.html">시술예약</a></li>
-                            <li><a href="change.html">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.html">최근본시술</a></li>
+                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a href="custom.html">맞춤시술</a>
+                    <a href="custom.jsp">맞춤시술</a>
                 </li>
                 <li class="menu">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="qna.html">1:1문의</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="qna.jsp">1:1문의</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>

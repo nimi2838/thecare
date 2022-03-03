@@ -137,7 +137,7 @@ else{
                     <a>시술안내</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술안내</a></li>
+                            <li><a href="guide.jsp">시술비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
@@ -146,7 +146,7 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="reservation.jsp">예약하기</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
@@ -214,11 +214,8 @@ else{
                 <div class="row">
 
                     <div class="box">
-					<%
-	Cookie cookie_prdno1 = new Cookie("prdNo","tox01");
-	response.addCookie(cookie_prdno1);
-%>
-                        <a href="sub_1.jsp?prdNo=tox01">
+                      <a href="sub_1.jsp?prdNo=tox01">
+						<!-- <a href='sub_1.jsp?prdNo=tox01' onclick="top.frame1.location='in_view.jsp?prdNo=tox01';"> -->
                             <div class="name">사각턱 보톡스</div>
                             <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
                             <div class="price"><span>19,000</span>원 부터</div>
@@ -226,10 +223,6 @@ else{
                     </div>
 
                     <div class="box">
-					<%
-	Cookie cookie_prdno2 = new Cookie("prdNo","tox02");
-	response.addCookie(cookie_prdno2);
-%>
                         <a href="sub_1.jsp?prdNo=tox02">
                             <div class="name">주름 보톡스</div>
                             <p>표정주름과 탄력을 개선하는 더모톡신 </p>
@@ -242,10 +235,6 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-					<%
-	Cookie cookie_prdno3 = new Cookie("prdNo","tox03");
-	response.addCookie(cookie_prdno3);
-%>
                         <a href="sub_1.jsp?prdNo=tox03">
                             <div class="name">다한증 보톡스</div>
                             <p>손/발/겨드랑이를 뽀송뽀송하게! </p>
@@ -254,6 +243,7 @@ else{
                     </div>
 
                     <div class="box">
+				
                         <a href="sub_1.jsp?prdNo=tox04">
                             <div class="name">바디 보톡스</div>
                             <p>부위 : 종아리/승모근/허벅지/팔뚝 </p>

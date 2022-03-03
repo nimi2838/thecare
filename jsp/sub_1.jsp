@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@page import="java.util.Date" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>상세화면</title>
+	<title>상세화면</title>
 </head>
 
 <%
    String myid = (String)session.getAttribute("sid");         
    
 
-   				int total = 0;
+   		int total = 0;
 %>
 
 
@@ -140,7 +141,7 @@ else{
                     <a>시술안내</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술안내</a></li>
+                            <li><a href="guide.jsp">시술비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
@@ -149,7 +150,7 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="reservation.jsp">예약하기</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
@@ -182,7 +183,7 @@ else{
 
 
 
-
+		
 
 try {
  	 String DB_URL="jdbc:mysql://localhost:3306/care";  
@@ -196,6 +197,31 @@ try {
 
 	String ctNo = session.getId(); 
 	String no = request.getParameter("prdNo");  
+	Date now = new Date();
+
+	String jsql5 = "select * from newview where ctNo =? and prdNo =?;";   
+	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+	pstmt5.setString(1, ctNo);
+	pstmt5.setString(2, no);
+
+	ResultSet rs5 = pstmt5.executeQuery();
+
+	if ( rs5.next()){
+
+	} else {
+
+
+// DELETE FROM newview WHERE DATE_SUB(NOW(), INTERVAL -1 MINUTE) > added_time; 
+			String jsql4 = "insert into newview (ctNo, prdNo, added_time) values (?,?,now())";
+			PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+			pstmt4.setString(1,ctNo);
+			pstmt4.setString(2,no);
+
+
+
+			pstmt4.executeUpdate();
+	}
+		
 
 	String jsql = "select * from surgery where prdNo = ?";   
 	PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -247,10 +273,6 @@ try {
 
 				%>
 
-					<%
-	Cookie cookie_prdno = new Cookie("prdNo",pno);
-	response.addCookie(cookie_prdno);
-%>
 
                 <h1><%=name%></h1>
                 <p><%=memo%></p>
