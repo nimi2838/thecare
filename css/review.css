@@ -642,24 +642,27 @@ a {
   display: flex; flex-flow: row;
     position:absolute; left:0; top:0; 
     width: 100%; height: 245px; 
-    background-color: rgba(0, 0, 0, 0.836);
+    background-color: rgba(80, 80, 80, 0.932);
     display: flex; flex-direction: column; 
     opacity: 1; transition: 0.5s;
 }
 #review .box .info .review_title{
   position:absolute; left:13%; top:25%; 
-  text-align: center; font:  20px 'inehrit'; color: white;
+  font-weight: bold; font-size: 20px;
+  text-align: center; color: rgb(255, 255, 255);
 }
 #review .box .info .review_title-2{
   position:absolute; right:13%; top:25%; 
-  text-align: center; font:  20px 'inehrit'; color: white;
+  font-weight: bold; font-size: 20px;
+  text-align: center; color: rgb(255, 255, 255);
 }
 
 #review .box .info:hover{opacity: 0;}
 
 #review .box > .review_txt {
-  width: 100%; height: 90px; background-color: #F1F1F1;
-  font: bold 20px 'inehrit'; color: #636363; text-align: center; line-height: 90px;
+  width: 100%; height: 90px; background-color: #ffe7e7;
+  font-weight: bold; font-size: 18px; color: rgb(87, 87, 87); 
+  text-align: center; line-height: 90px;
 }
 
 
