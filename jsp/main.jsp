@@ -111,49 +111,12 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
 
 
 
 
-
-
-            <!-- 
-                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-					<td class="search">
-					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
-					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
-					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
-					   box-shadow: none;">
-					  </td>
-					<td class="schBtn" style="top: 0; left: 10px;">
-					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
-					style="position: absolute;top: 49%;
-					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
-					</td>  
-					</form> -->
-
-
-
-
-
-
-            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
-                    <div class="search-form form flex flex-ai-c">
-                      <input type="text" placeholder="검색어를 입력해주세요.">
-                      <a href="#" class="btn-type-1 btn-search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
-                        </div>
-                      </a>
-                    </div>
-                  </div> -->
 
 
         </div>
@@ -163,39 +126,32 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
-                    <div>
-                        <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
-                        </ul>
-                    </div>
+                    <a href="about_1.jsp">더케어란?</a>
+                </li>
+				<li class="menu">
+                    <a href="custom.jsp">TC 진단</a>
                 </li>
                 <li class="menu">
-                    <a>시술안내</a>
+                    <a>시술</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
+                
                 <li class="jsp">
                     <a>커뮤니티</a>
                     <div>

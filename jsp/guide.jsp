@@ -123,15 +123,11 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
-                    <div>
-                        <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
-                        </ul>
-                    </div>
+                    <a href="about_1.jsp">더케어란?</a>
+                </li>
+				
+                <li class="menu">
+                    <a href="custom.jsp">TC 진단</a>
                 </li>
                 <li class="menu">
                     <a>시술안내</a>
@@ -146,16 +142,13 @@ else{
                     <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
                 
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
                 <li class="menu">
                     <a>커뮤니티</a>
                     <div>

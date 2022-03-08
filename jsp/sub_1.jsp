@@ -509,6 +509,21 @@ try {
     </div>
 
 
+	<div class="sub_con_box2_1">
+        <div class="sub_con2_1">
+            
+            <p>RECOMMEND TO CUSTOMERS BELOW</p>
+            <h1>이런 분께 추천합니다.</h1>
+
+            <div class="con_wrap2_1">
+                <div class="img-box" style="width:1000px;">
+                    <img src="img/yytest.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
