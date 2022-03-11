@@ -724,13 +724,12 @@ padding-bottom: 50px;
 #doctor .title{
     font: bold 40px 'inherit'; text-align: center; color: #333;
 }
-#doctor .title2{
-    font:  20px 'inherit'; margin: 30px 0 70px; text-align: center; color: #707070;
-}
 #doctor .box{
     position:relative; width: 270px;  border-radius: 3px; border: 1px solid #aaaaaa;
-    transition: 0.3s;
+    transition: 0.3s; margin-bottom: 100px;
 }
+
+#doctor .box:last-child {border: 1px solid #fff;}
 #doctor .box img{
     width: 100%; display: block;
 }
@@ -741,7 +740,7 @@ padding-bottom: 50px;
     background-color: rgba(255, 126, 132, 0.521); z-index: -1;
 }
 #doctor .box .info{
-    position:absolute; left:0; top:110%; width: 100%; height:100%; 
+    position:absolute; left:0; top:105%; width: 100%; 
     display: flex; flex-direction: column; justify-content: space-between; align-items:center;
 }
 #doctor .box .info .doctor_name{
@@ -752,85 +751,31 @@ padding-bottom: 50px;
 }
 
 
-#doctor .box2{
-    position:relative; width: 270px;  border-radius: 3px; border: 1px solid #aaaaaa;
-    transition: 0.3s;
-}
-#doctor .box2:last-child {border: 1px solid #fff;}
-#doctor .box2 img{
-    width: 100%; display: block;
-}
-#doctor .box2 .info .bg1{transition: 0.5s;}
-#doctor .box2:hover .info .bg1 { 
-    width: 100px; height: 15px; 
-    position:absolute; top: 12px;
-    background-color: rgba(255, 126, 132, 0.521); z-index: -1;
-}
-#doctor .box2 .info{
-    position:absolute; left:0; top:360px; width: 100%;
-    display: flex; flex-direction: column; justify-content: space-between; align-items:center;
-}
-#doctor .box2 .info .doctor_name{
-    margin: 0 0 0px; font:  24px; color: #333;
-}
-#doctor .box2 .info .doctor_name>span {
-    font: bold 20px 'inehrit'; color: #333;
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #doctor .box{width : 33.5%; margin-bottom: 10%;}
+  #doctor .box .info{margin-top: 0%;}
+  #doctor .box2{width : 33.5%; margin-bottom: 10%;}
+  #doctor .box2 .info{margin-top: 0%;}
 }
 
 
-@media (min-width: 1051px) and ( max-width:1300px){
-    #doctor .box{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box .info{margin-top: 0%;}
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 0%;}
-}
-@media (min-width: 900px) and ( max-width:1300px){
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 40%;}
-}
-@media (min-width: 940px) and ( max-width:1060px){
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 10%;}
+@media (min-width: 851px) and ( max-width:1050px) {
+  #doctor .box{width : 33.5%; margin-bottom: 10%;}
+  #doctor .box2{width : 33.5%; margin-bottom: 10%;}
+  #doctor .box2 .info{margin-top: 7%;}
+  
 }
 
-@media (min-width: 851px) and ( max-width:1050px){
-    
-    #doctor .box{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box .info{margin-top: 30%;}
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 30%;}
-}
-@media (min-width: 912px) and ( max-width:1058px){
-    
-    #doctor .box{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box .info{margin-top: 10%;}
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 40%;}
-}
-@media (min-width: 770px) and ( max-width:800px){
-    
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 20%;}
-}
-@media (min-width: 743px) and ( max-width:969px){
-    
-    #doctor .box{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box .info{margin-top: 5%;}
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 7%;}
-}
-@media (min-width: 610px) and ( max-width:700px){
-    
-    #doctor .box2{width : 33.5%; margin-bottom: 10%;}
-    #doctor .box2 .info{margin-top: 10%;}
+
+@media (min-width: 500px) and ( max-width:850px) {
+  #doctor .box{width : 50%; margin-bottom: 20%;}
+  #doctor .box .info{margin-top: 3%; }
+  #doctor .box2{width : 50%; margin-bottom: 20%;}
+  #doctor .box2 .info{margin-top: 20%; }
 }
 
-@media (min-width: 500px) and ( max-width:750px){
-    #doctor .box{width : 50%; margin-bottom: 20%;}
-    #doctor .box .info{margin-top: 3%; }
-    #doctor .box2{width : 50%; margin-bottom: 20%;}
-    #doctor .box2 .info{margin-top: 20%; }
-}
 
 
 
@@ -855,7 +800,7 @@ padding-bottom: 50px;
 
 #welcome .inner{width:80%; margin: 0 auto;} 
 .content{width:100%; padding: 0px 0;}
-.wrap{display:flex; justify-content: space-between;}
+.wrap{display:flex; }
 .content .title{margin-top: 60px; margin-bottom: 50px; margin-left: 10px;
     font: bold 28px 'inherit'; color: #333;}
 
