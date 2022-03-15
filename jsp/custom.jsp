@@ -1,4 +1,5 @@
-
+<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +14,26 @@
   <link rel="stylesheet" href="css/custom.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
-  <title>ë§žì¶¤ì‹œìˆ </title>
+  <title>¸ÂÃã½Ã¼ú</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
+
+<%
+   String myid = (String)session.getAttribute("sid");         
+%>
+
 <body>
     
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
+            
+  <%
+   if(myid == null) {
+
+%>
             <ul class="icon-box">
                 <li class="icon login">
-                    <a href="login.html">
+                    <a href="login.jsp">
                         <div class="img-box">
                             <img src="img/login_icon.png" alt="">
                         </div>
@@ -31,7 +42,7 @@
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon join">
-                    <a href="join.html">
+                    <a href="join.jsp">
                         <div class="img-box">
                             <img src="img/join_icon.png" alt="">
                         </div>
@@ -40,7 +51,7 @@
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon cart">
-                    <a href="cart.html">
+                    <a href="cart.jsp">
                         <div class="img-box">
                             <img src="img/cart_icon.png" alt="">
                         </div>
@@ -48,21 +59,58 @@
                     </a>
                 </li>
             </ul>
+			<%
+}
+else{
+%>
+
+	<ul class="icon-box">
+                <li class="icon login">
+                    <a href="logout.jsp">
+                        <div class="img-box" style= "margin-left: 3px;">
+                            <img src="img/logout_icon.png" alt="">
+                        </div>
+                        logout
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="mypage.jsp">
+                        <div class="img-box" style= "margin-left: 8px;">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        mypage
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.jsp">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+
+<%
+}
+%>
             <div class="logo-box flex flex-jc-c">
                 <div class="img-box">
-                    <a href="main.html">
+                    <a href="main.jsp">
                         <img src="img/logo.png" alt="">
                     </a>
                 </div>
             </div>
             <div class="search_wrap">
                 <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                    method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
                     <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." >
+                        <input class="form" name="keyword" type="text" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." >
                     </td>
                     <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="ê²€ìƒ‰" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        <input type="image" src="img/Search_thin_icon.png" alt="°Ë»ö" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
                     <!-- <a href="searchform.html" class="btn_search">
                             <div class="img-box">
@@ -72,43 +120,6 @@
                 </form>
             </div>
 
-
-
-
-
-
-            <!-- 
-                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-					<td class="search">
-					  <input class="form" type="text"  name="keyword" placeholder="ê²€ìƒ‰" style="position: absolute;top: 50%;
-					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
-					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
-					   box-shadow: none;">
-					  </td>
-					<td class="schBtn" style="top: 0; left: 10px;">
-					<input  type="image" src="img-1/schBtn.png" alt="ê²€ìƒ‰" onsubmit="search_form()"
-					style="position: absolute;top: 49%;
-					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
-					</td>  
-					</form> -->
-
-
-
-
-
-
-            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
-                    <div class="search-form form flex flex-ai-c">
-                      <input type="text" placeholder="ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.">
-                      <a href="#" class="btn-type-1 btn-search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
-                        </div>
-                      </a>
-                    </div>
-                  </div> -->
-
-
         </div>
         <div class="line"></div>
 
@@ -116,46 +127,46 @@
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>íšŒì‚¬ì†Œê°œ</a>
+                    <a>È¸»ç¼Ò°³</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">ë”ì¼€ì–´ëž€?</a>
+                            <li><a href="about_1.jsp">´õÄÉ¾î¶õ?</a>
                             </li>
-                            <li><a href="about_2.html">ë”ì¼€ì–´ ì˜ë£Œì§„</a></li>
-                            <li><a href="about_3.html">ë”ì¼€ì–´ ì˜¤ì‹œëŠ”ê¸¸</a></li>
+                            <li><a href="about_2.jsp">´õÄÉ¾î ÀÇ·áÁø</a></li>
+                            <li><a href="about_3.jsp">´õÄÉ¾î ¿À½Ã´Â±æ</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>ì‹œìˆ ì•ˆë‚´</a>
+                    <a>½Ã¼ú¾È³»</a>
                     <div>
                         <ul>
-                            <li><a href="guide.html">ì‹œìˆ ê°€ê²©</a></li>
-                            <li><a href="review.html">ì „í›„ì‚¬ì§„</a></li>
+                            <li><a href="guide.jsp">½Ã¼ú¾È³»</a></li>
+                            <li><a href="review.jsp">ÀüÈÄ»çÁø</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>ì‹œìˆ ì˜ˆì•½</a>
+                    <a>½Ã¼ú¿¹¾à</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.html">ì˜ˆì•½í•˜ê¸°</a></li>
-                            <li><a href="change.html">ì˜ˆì•½í™•ì¸/ë³€ê²½/ì·¨ì†Œ</a></li>
-                            <li><a href="new_view.html">ìµœê·¼ë³¸ì‹œìˆ </a></li>
+                            <li><a href="reservation.jsp">½Ã¼ú¿¹¾à</a></li>
+                            <li><a href="change.jsp">¿¹¾àÈ®ÀÎ/º¯°æ/Ãë¼Ò</a></li>
+                            <li><a href="new_view.jsp">ÃÖ±Ùº»½Ã¼ú</a></li>
                         </ul>
                     </div>
                 </li>
-
+                
                 <li class="menu">
-                    <a href="custom.html">ë§žì¶¤ì‹œìˆ </a>
+                    <a href="custom.jsp">¸ÂÃã½Ã¼ú</a>
                 </li>
                 <li class="menu">
-                    <a>ì»¤ë®¤ë‹ˆí‹°</a>
+                    <a>Ä¿¹Â´ÏÆ¼</a>
                     <div>
                         <ul>
-                            <li><a href="noti.html">ê³µì§€ì‚¬í•­</a></li>
-                            <li><a href="qna.html">1:1ë¬¸ì˜</a></li>
-                            <li><a href="event.html">ì´ë²¤íŠ¸</a></li>
+                            <li><a href="noti.jsp">°øÁö»çÇ×</a></li>
+                            <li><a href="qna.jsp">1:1¹®ÀÇ</a></li>
+                            <li><a href="event.jsp">ÀÌº¥Æ®</a></li>
                         </ul>
                     </div>
                 </li>
@@ -166,15 +177,16 @@
 
 
 
+
     <section id="welcome" class="content">
         <header>
         <div class="inner">
                 <div class="header-content">
-                    <h2>í”¼ë¶€íƒ€ìž…ì„ <br>
-                        ì•Œê³ ì‹¶ìœ¼ì‹ ê°€ìš”?</h2>
-                    <p>ë‚˜ì˜ í”¼ë¶€íƒ€ìž…ì„ ì•Œì•„ë³´ì„¸ìš”!<br>
-                        ê´€ë¦¬ë²•ì„ ì¶”ì²œí•´ë“œë¦´ê²Œìš”</p>
-                    <a href="custom-test.html">ì§€ê¸ˆ ì‹œìž‘í•˜ê¸°
+                    <h2>ÇÇºÎÅ¸ÀÔÀ» <br>
+                        ¾Ë°í½ÍÀ¸½Å°¡¿ä?</h2>
+                    <p>³ªÀÇ ÇÇºÎÅ¸ÀÔÀ» ¾Ë¾Æº¸¼¼¿ä!<br>
+                        °ü¸®¹ýÀ» ÃßÃµÇØµå¸±°Ô¿ä</p>
+                    <a href="custom-test.html">Áö±Ý ½ÃÀÛÇÏ±â
                     </a>
                 </div>
         </div>
@@ -185,7 +197,7 @@
 
 <div class="question">
     <div class="swiper mySwiper">
-        <h2>í”¼ë¶€ê´€ë¦¬í•˜ê¸° íž˜ë“œì‹œì£ ?</h2>
+        <h2>ÇÇºÎ°ü¸®ÇÏ±â Èûµå½ÃÁÒ?</h2>
 
         <div class="swiper-wrapper">
 
@@ -193,9 +205,9 @@
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-1.png" alt="" >
-                        <h2>ë¡œì…˜ì„ ë°œë¼ë„<br>
-                            í”¼ë¶€ë‹¹ê¹€ì´ ëŠê»´ì ¸ìš”.</h2>
-                        <p>ì •**ë‹˜, 21ì„¸ , ëŒ€í•™ìƒ </p>
+                        <h2>·Î¼ÇÀ» ¹ß¶óµµ<br>
+                            ÇÇºÎ´ç±èÀÌ ´À²¸Á®¿ä.</h2>
+                        <p>Á¤**´Ô, 21¼¼ , ´ëÇÐ»ý </p>
                     </div>
                 </div>
             </div>
@@ -204,9 +216,9 @@
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-2.png" alt="" width="60px" height="60px">
-                        <h2>ìš”ì¦˜ ë§ˆìŠ¤í¬ë¡œ ì¸í•´<br>
-                            í”¼ë¶€ê°€ ë’¤ì§‘ì–´ì ¸ì„œ ì†ìƒí•´ìš”.</h2>
-                        <p>ì´**ë‹˜, 25ì„¸ , ëŒ€í•™ìƒ </p>
+                        <h2>¿äÁò ¸¶½ºÅ©·Î ÀÎÇØ<br>
+                            ÇÇºÎ°¡ µÚÁý¾îÁ®¼­ ¼Ó»óÇØ¿ä.</h2>
+                        <p>ÀÌ**´Ô, 25¼¼ , ´ëÇÐ»ý </p>
                     </div>
                 </div>
             </div>
@@ -215,9 +227,9 @@
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-3.png" alt="" width="60px" height="60px">
-                        <h2>í™”ìž¥ì„ í•˜ê³  ë‚˜ì„œ ì‹œê°„ì´ ì§€ë‚˜ë©´<br>
-                            ì–¼êµ´ì— ìœ ë¶„ê¸°ê°€ ë§Žì•„ì ¸ìš”.</h2>
-                        <p>ê¹€**ë‹˜, 28ì„¸ , ì§ìž¥ì¸  </p>
+                        <h2>È­ÀåÀ» ÇÏ°í ³ª¼­ ½Ã°£ÀÌ Áö³ª¸é<br>
+                            ¾ó±¼¿¡ À¯ºÐ±â°¡ ¸¹¾ÆÁ®¿ä.</h2>
+                        <p>±è**´Ô, 28¼¼ , Á÷ÀåÀÎ  </p>
                     </div>
                 </div>
             </div>
@@ -235,22 +247,22 @@
 
         <div class="wrap">
             <div class="thank">
-            <h3>ì´ì  , ê´œì°®ì•„ìš”.</h3>
+            <h3>ÀÌÁ¨, ±¦Âú¾Æ¿ä.</h3>
             <div>
                 <ul>
                     <li class="test">
                         <h1 >01</h1>
                         <img class="animate__animated animate__flash animate__delay-2s"  src="img/custom-1.png" alt="" width="80px" height="80px" >
-                        <h2>ë§žì¶¤ì„¤ë¬¸</h2>
-                        <p>ë”± 3ë¶„! ê°„ë‹¨í•˜ê²Œ ì²´í¬í•˜ê³ <br>
-                            ë‚´ ê³ ë¯¼ì— ë§žëŠ” í”¼ë¶€íƒ€ìž… ì°¾ê¸° </p>
+                        <h2>¸ÂÃã¼³¹®</h2>
+                        <p>µü 3ºÐ! °£´ÜÇÏ°Ô Ã¼Å©ÇÏ°í<br>
+                            ³» °í¹Î¿¡ ¸Â´Â ÇÇºÎÅ¸ÀÔ Ã£±â </p>
                     </li>
                     <li class="test">
                         <h1>02</h1>
                         <img class="animate__animated animate__shakeX animate__delay-2s" src="img/custom-2.png" alt="" width="80px" height="80px">
-                        <h2>ê´€ë¦¬ë²•</h2>
-                        <p>í”¼ë¶€íƒ€ìž…ì— ë§žëŠ” ê´€ë¦¬ë²•ìœ¼ë¡œ<br>
-                         ì›í•˜ëŠ” í”¼ë¶€ ê°€ì§€ê¸° </p>
+                        <h2>°ü¸®¹ý</h2>
+                        <p>ÇÇºÎÅ¸ÀÔ¿¡ ¸Â´Â °ü¸®¹ýÀ¸·Î<br>
+                         ¿øÇÏ´Â ÇÇºÎ °¡Áö±â </p>
                     </li>
                 </ul>
             </div>
@@ -262,11 +274,12 @@
 
 <div class="start">
     <div class="wrapper">
-        <h1>ë§žì¶¤ì„¤ë¬¸ìœ¼ë¡œ<br>
-            í”¼ë¶€íƒ€ìž…ì„ ì•Œì•„ë³´ì„¸ìš”.</h1>
-        <a href="custom-test.html">ì§€ê¸ˆ ì‹œìž‘í•˜ê¸°</a>
+        <h1>¸ÂÃã¼³¹®À¸·Î<br>
+            ÇÇºÎÅ¸ÀÔÀ» ¾Ë¾Æº¸¼¼¿ä.</h1>
+        <a href="custom-test.html">Áö±Ý ½ÃÀÛÇÏ±â</a>
     </div>
 </div>
+
 
 
 
@@ -277,9 +290,9 @@
     <div class="footer flex flex-jc-c">
         <div class="text">
             <img src="./img/logo.png" width = "150" alt="" style="margin-bottom: 20px;">
-          <p class = "text1">ìƒí˜¸ëª… : ë”ì¼€ì–´í”¼ë¶€ê³¼ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ì£¼ì†Œ : ì„œìš¸íŠ¹ë³„ì‹œ ì„œì´ˆêµ¬ ê°•ë‚¨ëŒ€ë¡œ 439 ( ë©€í‹°ë¹Œë”© 4ì¸µ )
+          <p class = "text1">»óÈ£¸í : ´õÄÉ¾îÇÇºÎ°ú &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ÁÖ¼Ò : ¼­¿ïÆ¯º°½Ã ¼­ÃÊ±¸ °­³²´ë·Î 439 ( ¸ÖÆ¼ºôµù 4Ãþ )
         </p>
-          <p>ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ëŒ€í‘œìž : ë´‰ì¡°ìœ¨ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ì „í™”ë²ˆí˜¸ : 02-517-0912
+          <p>»ç¾÷ÀÚµî·Ï¹øÈ£ : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ´ëÇ¥ÀÚ : ºÀÁ¶À² &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ÀüÈ­¹øÈ£ : 02-517-0912
         </p>
           <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
         </div>
@@ -308,7 +321,7 @@
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true // ë²„íŠ¼ í´ë¦­ ì—¬ë¶€
+            clickable: true // ¹öÆ° Å¬¸¯ ¿©ºÎ
         },
         autoplay: true,
         autoplaySpeed: 5000,

@@ -123,23 +123,28 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a href="about_1.jsp">더케어란?</a>
-                </li>
-				
-                <li class="menu">
-                    <a href="custom.jsp">TC 진단</a>
-                </li>
-                <li class="menu">
-                    <a>시술안내</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a href="custom.jsp">피부타입체크</a>
+                </li>
+                <li class="menu">
+                    <a>시술</a>
+                    <div>
+                        <ul>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
                             <li><a href="reservation.jsp">바로예약</a></li>
@@ -148,13 +153,14 @@ else{
                         </ul>
                     </div>
                 </li>
+
                 
-                <li class="menu">
+                <li class="jsp">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
+                            <li><a href="qna.jsp">더 소통</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -173,25 +179,16 @@ else{
             <h1>카테고리</h1>
             <ul class="plz">
                 <li class="on">
-                    <p>보톡스</p>
-                </li>
-                <li>
-                    <p>윤곽/필러</p>
-                </li>
-                <li>
-                    <p>레이저리프팅</p>
-                </li>
-                <li>
-                    <p>색소</p>
-                </li>
-                <li>
                     <p>스킨케어</p>
                 </li>
                 <li>
-                    <p>체형</p>
+                    <p>안면케어</p>
                 </li>
                 <li>
-                    <p>제모</p>
+                    <p>페이스라인</p>
+                </li>
+                <li>
+                    <p>바디라인</p>
                 </li>
             </ul>
 
@@ -206,20 +203,21 @@ else{
 
                 <div class="row">
 
-                    <div class="box">
-                      <a href="sub_1.jsp?prdNo=tox01">
-						<!-- <a href='sub_1.jsp?prdNo=tox01' onclick="top.frame1.location='in_view.jsp?prdNo=tox01';"> -->
-                            <div class="name">사각턱 보톡스</div>
-                            <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
-                            <div class="price"><span>19,000</span>원 부터</div>
+
+					<div class="box">
+                        <a href="sub_1.jsp?prdNo=sk05">
+                            <div class="name">여드름케어</div>
+                            <p>여드름 압출이 포함된 스킨케어</p>
+                            <div class="price"><span>70,000</span>원 부터</div>
                         </a>
                     </div>
 
+					
                     <div class="box">
-                        <a href="sub_1.jsp?prdNo=tox02">
-                            <div class="name">주름 보톡스</div>
-                            <p>표정주름과 탄력을 개선하는 더모톡신 </p>
-                            <div class="price"><span>30,000</span>원 부터</div>
+                        <a href="sub_1.jsp?prdNo=sk06">
+                            <div class="name">아쿠아필</div>
+                            <p>저자극 모공청소 ! 착한 수분필링</p>
+                            <div class="price"><span>29,000</span>원 부터</div>
                         </a>
                     </div>
 
@@ -235,12 +233,11 @@ else{
                         </a>
                     </div>
 
-                    <div class="box">
-				
-                        <a href="sub_1.jsp?prdNo=tox04">
-                            <div class="name">바디 보톡스</div>
-                            <p>부위 : 종아리/승모근/허벅지/팔뚝 </p>
-                            <div class="price"><span>99,000</span>원 부터</div>
+					<div class="box">
+                        <a href="sub_1.jsp?prdNo=col01">
+                            <div class="name">클라리티</div>
+                            <p>주근깨 / 잡티 / 홍조를 개선하는 더케어만의 시그니처 색소 프로그램 </p>
+                            <div class="price"><span>200,000</span>원 부터</div>
                         </a>
                     </div>
 
@@ -250,28 +247,9 @@ else{
 
             </div>
 
-            <!-- 다이어트 -->
             <div class="ne ne2">
 
-                <div class="row flex">
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=fil01">
-                            <div class="name">윤곽주사</div>
-                            <p>미운 볼살, 턱밑살 이젠 안녕! </p>
-                            <div class="price"><span>50,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=fil02">
-                            <div class="name">조각주사</div>
-                            <p>고농도로 업그레이드된 얼굴지방분해주사</p>
-                            <div class="price"><span>300,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                </div>
+                
 
                 <div class="row flex">
 
@@ -290,6 +268,23 @@ else{
                             <div class="price"><span>140,000</span>원 부터</div>
                         </a>
                     </div>
+
+					
+
+
+                </div>
+
+				<div class="row">
+
+
+					<div class="box">
+                        <a href="sub_1.jsp?prdNo=sk05">
+                            <div class="name">입술/입꼬리필러</div>
+                            <p>화사한 미소를 위한 입술/입꼬리필러</p>
+                            <div class="price"><span>59,000</span>원 부터</div>
+                        </a>
+                    </div>
+
                 </div>
 
 
@@ -300,18 +295,31 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-                        <a href="sub_1.jsp?prdNo=las01">
-                            <div class="name">써마지 FLX</div>
-                            <p>[정품 팁 확인] 고주파 에너지로 탄력UP]</p>
-                            <div class="price"><span>1,000,,000</span>원 부터</div>
+                      <a href="sub_1.jsp?prdNo=tox01">
+                            <div class="name">사각턱 보톡스</div>
+                            <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
+                            <div class="price"><span>19,000</span>원 부터</div>
                         </a>
                     </div>
 
                     <div class="box">
-                        <a href="sub_1.jsp?prdNo=las02">
-                            <div class="name">울쎄라</div>
-                            <p>[정품인증서제공] 오리지널 초음파 리프팅 </p>
-                            <div class="price"><span>690,000</span>원 부터</div>
+                        <a href="sub_1.jsp?prdNo=fil01">
+                            <div class="name">윤곽주사</div>
+                            <p>미운 볼살, 턱밑살 이젠 안녕! </p>
+                            <div class="price"><span>50,000</span>원 부터</div>
+                        </a>
+                    </div>
+
+                </div>
+
+				<div class="row flex">
+
+
+                    <div class="box">
+                        <a href="sub_1.jsp?prdNo=fil02">
+                            <div class="name">조각주사</div>
+                            <p>고농도로 업그레이드된 얼굴지방분해주사</p>
+                            <div class="price"><span>300,000</span>원 부터</div>
                         </a>
                     </div>
 
@@ -326,98 +334,29 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-                        <a href="sub_1.jsp?prdNo=col01">
-                            <div class="name">클라리티</div>
-                            <p>주근깨 / 잡티 / 홍조를 개선하는 더케어만의 시그니처 색소 프로그램 </p>
-                            <div class="price"><span>200,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=col02">
-                            <div class="name">레이저토닝</div>
-                            <p>진피까지 도달하는 색소 레이저 </p>
-                            <div class="price"><span>60,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                </div>
-
-                
-
-
-            </div>
-
-
-            <div class="ne ne5">
-
-                <div class="row flex">
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk01">
-                            <div class="name">물광/꿀광주사</div>
-                            <p>고농도 히알루론산을 주입하는 보습솔루션</p>
-                            <div class="price"><span>350,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk02">
-                            <div class="name">NCTF 동안치료</div>
-                            <p>스킨부스팅을 위한 최적의 테라피 </p>
-                            <div class="price"><span>90,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="row flex">
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk03">
-                            <div class="name">시그널72/아기주사</div>
-                            <p>성장인자와 재생성분으로 피부 개선!</p>
-                            <div class="price"><span>150,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk04">
-                            <div class="name">알라딘 필링</div>
-                            <p>천연미세침으로 피부고민 개선 </p>
+				
+                        <a href="sub_1.jsp?prdNo=tox04">
+                            <div class="name">바디 보톡스</div>
+                            <p>부위 : 종아리/승모근/허벅지/팔뚝 </p>
                             <div class="price"><span>99,000</span>원 부터</div>
                         </a>
                     </div>
 
-                </div>
 
-                <div class="row flex">
 
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk05">
-                            <div class="name">여드름관리/재생관리</div>
-                            <p>여드름 압출이 포함된 스킨케어</p>
-                            <div class="price"><span>70,000</span>원 부터</div>
-                        </a>
-                    </div>
 
                     <div class="box">
-                        <a href="sub_1.jsp?prdNo=sk06">
-                            <div class="name">아쿠아필</div>
-                            <p>저자극 모공청소 ! 착한 수분필링</p>
-                            <div class="price"><span>29,000</span>원 부터</div>
+                        <a href="sub_1.jsp?prdNo=col02">
+                            <div class="name">엣지 주사</div>
+                            <p>발목/부유방 지방분해 </p>
+                            <div class="price"><span>290,000</span>원 부터</div>
                         </a>
                     </div>
 
                 </div>
 
 
-            </div>
-
-
-            <div class="ne ne6">
-
-                <div class="row flex">
+				<div class="row flex">
 
                     <div class="box">
                         <a href="sub_1.jsp?prdNo=bo01">
@@ -436,62 +375,17 @@ else{
                     </div>
 
                 </div>
-
                 
-
-
-            </div>
-
-
-            <div class="ne ne7">
-
-                <div class="row flex">
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=wax01">
-                            <div class="name">얼굴제모(여성),(남성)</div>
-                            <p>깔끔한 인상을 위한 선택</p>
-                            <div class="price"><span>50,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=wax02">
-                            <div class="name">바디제모(여성)</div>
-                            <p>여름 옷도 자신있게</p>
-                            <div class="price"><span>30,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="row flex">
-
-                    <div class="box">
-                        <a href="sub_1.jsp?prdNo=wax03">
-                            <div class="name">바디제모(남성)</div>
-                            <p>1인실 프라이빗 제모 </p>
-                            <div class="price"><span>60,000</span>원 부터</div>
-                        </a>
-                    </div>
-
-
-                </div>
-
+            </div> 
+<!-- row -->
 
             </div>
-
-            
-
-
-
-
-
-
+<!-- ne -->
 
         </div>
-
+<!-- about1 -->
     </div>
+	<!-- 카테로리박스 -->
 
 
     <div class="footer flex flex-jc-c">

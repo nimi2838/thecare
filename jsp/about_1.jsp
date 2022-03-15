@@ -122,47 +122,52 @@ else{
         <div class="line"></div>
 
 
-        <div class="top-box2">
+ <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="qna.jsp">더 소통</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술안내</a>
+                    <a>시술</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
-                <li class="menu">
+
+                
+                <li class="jsp">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -319,11 +324,72 @@ else{
                     </h1>
                     <br>
                     <p>진심을 담은 치료로 당신의 피부 밸런스를 지켜드리는
-                        플렉스 피부과 입니다.</p>
+                        더케어 입니다.</p>
                 </div>
 
             </div>
         </div>
+
+		
+    <section id="doctor" class="content">
+        <div class="inner">
+            <h2 class="title">의 료 진</h2>
+            <p class="title2" style="text-align:center; margin:20px 0 0 30px;">The Care Dermatologist</p>
+            <div class="wrap">
+                <div class="box">
+                    <img src="img/doctor_list_thum02.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum03.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum04.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum05.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum06.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum07.png" alt="">
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/doctor_list_thum08.png" alt=""> 
+                    <div class="info">
+                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <div class="bg1"></div>
+                    </div>
+                </div>
+                <div class="box">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
         <div class="philosophy">
@@ -420,221 +486,11 @@ else{
                 </div>
             </div>
         </div>
+		</div>
     
     
-    <section id="doctor" class="content">
-        <div class="inner">
-            <h2 class="title">의 료 진</h2>
-            <p class="title2">The Care Dermatologist</p>
-            <div class="wrap">
-                <div class="box">
-                    <img src="img/doctor_list_thum02.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum03.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum04.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum05.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="wrap2">
-                <div class="box2">
-                    <img src="img/doctor_list_thum06.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box2">
-                    <img src="img/doctor_list_thum07.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box2">
-                    <img src="img/doctor_list_thum08.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
-                    </div>
-                </div>
-                <div class="box2">
-                </div>
-            </div>
-
-            
-        </div>
-    </section>
 
 
-    
-    <section id="welcome" class="content">
-        <div class="inner">
-            <div class="title">본점 둘러보기</div>
-            <div class="wrap">
-    <div class="swiper mySwiper">
-        
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <h1>1F 데스크, 대기실</h1>
-                        <p>The Care 1층 대기실에서 접수 및 진료안내를 받으실 수 있습니다.</p>
-                    </div>
-                    <div class="img-1">
-                        <img src="img/thecare-info1.jpg" alt="" width="460px" height="300px" >
-                    </div>
-                    <div class="img-2">
-                        <img src="img/thecare-info2.jpg" alt="" width="1000px" height="600px">
-                            <p>1F Desk, Waiting Room</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <h1>2F 수면마취, 제모 시술 </h1>
-                        <p>The Care 본점 2층에서는 수면 마취, 제모 시술을 받아보실 수 있습니다.</p>
-                    </div>
-                    <div class="img-1">
-                        <img src="img/thecare-info3.jpg" alt="" width="460px" height="300px" >
-                    </div>
-                    <div class="img-2">
-                        <img src="img/thecare-info4.jpg" alt="" width="1000px" height="600px">
-                        <p>2F Sleep anesthesia, Hair removal</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <h1>3F 보톡스, 필러, 레이저 시술실</h1>
-                        <p>The Care 본점 3층은 보톡스, 필러, 레이저 시술실입니다.</p>
-                    </div>
-                    <div class="img-1">
-                        <img src="img/thecare-info5.jpg" alt="" width="460px" height="300px" >
-                    </div>
-                    <div class="img-2">
-                        <img src="img/thecare-info6.jpg" alt="" width="1000px" height="600px">
-                        <p>3F Botox, Filler, Laser Room</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <h1>4F 보톡스, 필러, 레이저 시술실</h1>
-                        <p>The Care 본점 4층은 보톡스, 필러, 레이저 시술실입니다.</p>
-                    </div>
-                    <div class="img-1">
-                        <img src="img/thecare-info7.jpg" alt="" width="460px" height="300px" >
-                    </div>
-                    <div class="img-2">
-                        <img src="img/thecare-info8.jpg" alt="" width="1000px" height="600px">
-                        <p>4F Botox, Filler, Laser Room</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <h1>5F 두피탈모케어, 스파시설</h1>
-                        <p>The Care 본점 5층은 두피케어&스파시설이 마련되어 있습니다.</p>
-                    </div>
-                    <div class="img-1">
-                        <img src="img/thecare-info9.jpg" alt="" width="460px" height="300px" >
-                    </div>
-                    <div class="img-2">
-                        <img src="img/thecare-info10.jpg" alt="" width="1000px" height="600px">
-                        <p>5F Hair, loss care, Spa</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-
-    </div>
-</div>
-</div>
-</section>
-
-
-
-
- <div class="map_wrap">
-    <div class="bg_box flex">
-        <div class="bg_box1"></div>
-        <div class="bg_box2"></div>
-    </div>
-    <div class="map_box">
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2719577905823!2d127.02316621491029!3d37.501503435608285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158e9c7640f%3A0xaa22996c3b700d95!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDqsJXrgqjrjIDroZwgNDM5!5e0!3m2!1sko!2skr!4v1644303822867!5m2!1sko!2skr"style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-
-
-    </div>
-
-    <div class="text_box">
-        <h1>THE CARE</h1>
-        <div class="text flex">
-
-            <div class="text1">
-                <p class="p1">주소</p>
-                <p class="p2">진로시간안내</p><br><br><br><br><br>
-                <p class="p3">주차안내</p>
-            </div>
-
-            <div class="text2">
-                <p class="p4">
-                    서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
-                </p>
-
-                <p class="p5">
-                    월 화 목 금 : AM 10:00 ~ PM 08:00<br>
-                    수 요 일 : PM 02:00 ~ PM08:00<br>
-                    토 요 일 : AM 10:00 ~ PM 03:00<br>
-                    점심시간 : PM 01:00 ~ PM 02:00<br>
-                    일요일, 공휴일 휴진<br>
-                    토요일 점심시간 없음.
-                </p>
-
-                <p class="p6">
-                    병원 건물 주차장 주차 가능<br>
-                    · 건물 내부 주차장 (30분 무료 / 2000cc급 승용차 가능)<br>
-                    · 외부 건물 주차장 (지점 문의)
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-</div>
 
 
     <div class="footer flex flex-jc-c">
