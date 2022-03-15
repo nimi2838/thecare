@@ -12,7 +12,19 @@ body {
   padding: 0;
 }
 
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Mujinjang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Mujinjang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'ChosunSg';
@@ -350,6 +362,7 @@ a {
   height: 100%;
   box-sizing: border-box;
   position: relative;
+  
 }
 
 .swiper-slide img {
@@ -363,47 +376,164 @@ a {
 
 .swiper-slide>.text-1 {
   position: absolute;
-  top: 25%;
+  top: 40%;
   left: 15%;
   transform: translate(-30%, -20%);
   text-align: start;
 }
 
-.swiper-slide>.text-1>h1 {
-  font-family: 'HeirofLightRegular';
+
+.swiper-slide>.text-2 {
+  position: absolute;
+  top: 52%;
+  left: 73%;
+  transform: translate(-30%, -20%);
+  text-align: start;
+}
+
+
+.swiper-slide>.text-2>h1 {
   color: #444;
-  font-size: 60px;
   letter-spacing: 0.08em;
   padding-bottom: 0;
   margin-bottom: 0px;
+  font-size: 40px;
+}
+
+.swiper-slide>.text-2>p {
+  font-size: 28px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.swiper-slide>.text-1>h1 {
+  color: #444;
+  letter-spacing: 0.08em;
+  padding-bottom: 0;
+  margin-bottom: 0px;
+  font-size: 40px;
 }
 
 .swiper-slide>.text-1>h1>span {
-  font-family: 'HeirofLightBold';
   font-weight: bold;
   color: #222;
 }
 
 .swiper-slide>.text-1>p {
-  font-size: 18px;
+  font-size: 28px;
   color: #444;
-  margin-top: 5px;
-  font-family: 'HeirofLightRegular';
+  margin-top: 20px;
 }
 
-.swiper-slide>.text-1>div {
+
+ .swiper-slide1>.text-1{
+    font-family: 'KCC-eunyoung';
+ }
+
+.swiper-slide1>.text-2>h1{
+   font-family: 'LeferiPoint-BlackA';
+ }
+
+ .swiper-slide1>.text-2>p{
+    font-family: 'KCC-eunyoung';
+ }
+
+
+@font-face {
+    font-family: 'KCC-eunyoung';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LeferiPoint-BlackA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.swiper-slide2>.text-1>h1{
+    font-family: 'KCC-eunyoung';
+ }
+
+ .swiper-slide2>.text-1>p{
+    font-family: 'KCC-eunyoung';
+ }
+
+.swiper-slide2>.text-1 h1 span{
+  font-family: 'LeferiPoint-BlackA';
+ }
+ 
+
+
+
+@font-face {
+     font-family: 'S-CoreDream-8Heavy';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.swiper-slide3>.text-1 h1{
+    font-family: 'S-CoreDream-8Heavy';
+ }
+
+.swiper-slide3>.text-1 > div{
+ font-family: 'BBTreeCB';
+ margin-top:30px;
+ font-size: 48px;
+ margin-left:10px;
+ }
+
+ 
+
+@font-face {
+    font-family: 'KoPubDotumMedium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.swiper-slide4>.text-1>h3{
+    font-family: 'BBTreeCB';
+ }
+
+ .swiper-slide4>.text-1>h1{
+        font-family: 'S-CoreDream-8Heavy';
+ }
+
+.swiper-slide4>.text-1>div {
+  font-family: 'BBTreeCB';
+ }
+ 
+
+
+/* .swiper-slide>.text-1>div {
   margin-top: 80px;
   color: #fff;
   font-size: 27px;
   font-family: 'YESMyoungjo-Regular';
   line-height: 40px;
 }
-
+ */
 .swiper .swiper-button-next {
   color: #f2f2f2;
   font-weight: 500;
   font-size: 12px;
   padding: 0 30px;
+  left: 90%;
+  right:auto;
 }
 
 .swiper .swiper-button-prev {
@@ -411,7 +541,9 @@ a {
   font-weight: 500;
   opacity: 100%;
   font-size: 12px;
-  padding: 0 30px
+  padding: 0 30px;
+  right: 90%;
+  left:auto;
 }
 
 .swiper .swiper-pagination-bullet {
@@ -450,7 +582,7 @@ a {
 /* 슬라이더 */
 
 .slider-box-1 {
-  width: 90%;
+  width: 80%;
   margin:200px auto 100px;
   position:relative;
 }
@@ -502,15 +634,16 @@ a {
   position:absolute;
   top:0;
   left:0;
-  width:80%;
-  height:80%;
+  width:70%;
+  height:70%;
+  margin:0 0 0 45px;
   background-position:center;
   background-size:cover;
 }
 
 .slider-box-1 > .slick .item .name {
   position: absolute;
-  top: 85%;
+  top: 78%;
   left: 33%;
   font-size: 23px;
 }

@@ -126,10 +126,22 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a href="about_1.jsp">더케어란?</a>
+                    <a>더 케어란</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
                 </li>
 				<li class="menu">
-                    <a href="custom.jsp">TC 진단</a>
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="qna.jsp">더 소통</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="menu">
                     <a>시술</a>
@@ -157,7 +169,6 @@ else{
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -168,42 +179,64 @@ else{
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="img/banner01.jpg" alt="">
-                <div class="text-1">
-                    <h1>THE CARE <br> DOUBLE <span>DUAL</span></h1>
-                    <p>THE CARE DERMATOLOGY CLINIC</p>
-                    <div>
-                        미국 FDA 승인 <br>
-                        비침습적 이중탄력 리프팅 <br>
-                        THE CARE 울쎄라
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="img/banner02.jpg" alt="">
-                <div class="text-1">
-                    <h1>THE CARE <br> DESIGN <span>LIFTING</span></h1>
-                    <p>THE CARE DERMATOLOGY CLINIC</p>
-                    <div>
-                        시대를 관통하는 <br>
-                        자연스러운 아름다움 <br>
-                        더케어로 완성하다
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
+            
+            <div class="swiper-slide  swiper-slide1">
                 <img src="img/banner03.jpg" alt="">
-                <div class="text-1">
-                    <h1>THE CARE <br> BRIGHT <span>SKIN</span></h1>
-                    <p>THE CARE DERMATOLOGY CLINIC</p>
-                    <div>
-                        잡티없이 깨끗한 <br>
-                        도자기 피부, <br>
-                        피부에 조명을 켜다. 시그널72
+                <div class="text-1"  style="position: absolute;
+  top: 25%;
+  left: 15%;
+  transform: translate(-30%, -20%);
+  text-align: start;">
+                    <h1 style="font-size:45px; margin:0; font-weight:600;">여드름 흉터관리</h1>
+                    <p style="font-size:45px; margin:-3px 0 0 0;font-weight:600;">아직도 피부 표면만 치료하고 계신가요 ?</p>
+                    
+                </div>
+
+				<div class="text-2">
+                        <p style="font-size:50px; margin:0;">피부 겉과 속을 모두 치료하는!</p>
+						<h1 style="font-size:70px; margin:10px 0 0; color:#555;">여드름 케어</h1>
                     </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide2">
+                <img src="img/banner02.jpg" alt="">
+                <div class="text-1" style="  position: absolute;  top: 38%;
+  left: 60%;
+  transform: translate(-30%, -20%);
+  text-align: start; font-size: 30px; text-align:end; color: #af83b8;">
+                    <h1 style="font-size:40px; margin-top: 10px;padding: 10px 0; font-weight: 300;color: #684070;">수술없이 슬림한 얼굴라인<br> <span style="font-size:70px; line-height: 130px;color: #52205c;">윤곽주사</span></h1>
+                    <p style="font-size:45px; margin:-35px 0 0;color: #684070;">놀라운 효과 지금 바로 느껴보세요!</p>
                 </div>
             </div>
+
+			 <div class="swiper-slide swiper-slide3" style="color: #ff8290;">
+                <img src="img/banner01.jpg" alt="">
+                <div class="text-1" style=" position: absolute;
+  top: 33%;
+  left: 69%;
+  transform: translate(-30%, -20%);
+  text-align: start;  "> 
+                    <h1 style="font-size: 70px;
+	color: #ff8290; ">아쿠아필링</h1>
+					<div style="text-align:center;">
+					노폐물은 제거하고! <br> 수분은 채우고!
+				</div>
+                </div>
+				
+            </div>
+
+			<div class="swiper-slide swiper-slide4" style="background:#ccc;">
+                <img src="img/banner04.jpg" alt="">
+                <div class="text-1" style="position: absolute; top: 37%; left: 24%; transform: translate(-30%, -20%); text-align: start;">
+                    <h3 style="font-size: 48px; margin:0 0 0 5px; font-weight:300;">나를 위한 선택 !</h3>
+					<h1 style="font-size: 100px; padding: 0; margin: 0px 0 15px;">하이코</h1>
+                    <div style="font-size: 35px; padding: 0px 0 0; margin:0 0 0 5px; ">
+                        과정은 <span>간단</span>하지만 결과는 <span>확실</span>하게! <br>
+						더케어의 <span>핵심기술력</span>입니다.
+						</div>
+                </div>
+            </div>
+
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -219,7 +252,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>김철수</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -229,7 +262,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>강건희</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -239,7 +272,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -249,7 +282,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>김영희</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -259,7 +292,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>최은혜</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -269,7 +302,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
                     <div class="name">
-                        <span>조정석</span> 원장
+                        <span>박정우</span> 원장
                         <div class="bg1"></div>
                     </div>
                 </a>
@@ -303,7 +336,7 @@ else{
             <a href="about_1.html" class="card1 card">
                 <div class="text-box">
                     <h1>THE CARE</h1>
-                    <p>더케어가 어쩌고저쩌고</p>
+                    <p>진심을 담은 치료로<br> 당신의 피부 밸런스를 지켜드리는 더케어 입니다.</p>
                 </div>
                 <div class="bg">
                     <div class="view">VIEW</div>
@@ -312,8 +345,8 @@ else{
 
             <a href="#" class="card2 card">
                 <div class="text-box">
-                    <h1>울쎄라 리프팅</h1>
-                    <p>울쎄라를 더욱 강하게</p>
+                    <h1>여드름케어</h1>
+                    <p>여드름 자국까지 완벽하게</p>
                 </div>
                 <div class="bg">
                     <div class="view">VIEW</div>
@@ -324,8 +357,8 @@ else{
         <div class="card_box card_box2 flex  flex-jc-c">
             <a href="#" class="card3 card">
                 <div class="text-box">
-                    <h1>써마지 FLX</h1>
-                    <p>콜라겐 재생 고주파 리프팅</p>
+                    <h1>걸그룹주사</h1>
+                    <p>워너비 몸매가 될 수 있는 보톡스</p>
                 </div>
                 <div class="bg">
                     <div class="view">VIEW</div>
@@ -334,7 +367,7 @@ else{
 
             <a href="#" class="card4 card">
                 <div class="text-box">
-                    <h1>동안 & 필러</h1>
+                    <h1>필러</h1>
                     <p>트렌디한 감각과
                         디자인</p>
                 </div>
@@ -391,25 +424,25 @@ else{
                 <div class="slick">
                     <div class="item">
                         <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <div class="bg1" style="background-image:url(img/main-before-01.jpg);"></div>
                             <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-01.png);"></div>
+                            <div class="bg2" style="background-image:url(img/main-after-01.jpg);"></div>
                         </a>
                     </div>
 
                     <div class="item">
                         <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <div class="bg1" style="background-image:url(img/main-before-02.jpg);"></div>
                             <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-02.png);"></div>
+                            <div class="bg2" style="background-image:url(img/main-after-02.jpg);"></div>
                         </a>
                     </div>
 
                     <div class="item">
                         <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before.png);"></div>
+                            <div class="bg1" style="background-image:url(img/main-before-03.jpg);"></div>
                             <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-03.png);"></div>
+                            <div class="bg2" style="background-image:url(img/main-after-03.jpg);"></div>
                         </a>
                     </div>
 
@@ -541,7 +574,7 @@ else{
                 el: ".swiper-pagination",
                 clickable: true // 버튼 클릭 여부
             },
-            autoplay: true,
+           // autoplay: true,
             autoplaySpeed: 5000,
             keyboard: true
         });
