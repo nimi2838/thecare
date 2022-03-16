@@ -393,7 +393,8 @@ else{
 
 
     <div class="mini-banner">
-        <div class="mini-box mini-1">
+        <div class="mini-box mini-1" style="">
+		<div style="width: 900px; height:500px; top:-30px; left:-30px; position: absolute; background: #FF9a9a; z-index:-10;"></div>
             <div class="img-box">
                 <img src="img/main-company-inpomation.jpg" alt="">
             </div>
@@ -401,13 +402,13 @@ else{
         <div class="mini-box mini-2">
             <div class="text-box">
                 <h1>
-                    탄력중심, <br>
-                    첨단 안티에이징 시술.
-                </h1>
-                개개인에 맞는 프로그램을 구성하여 피부과 전문의가
-                피부 건강을 고려한 알맞은 시술을 진행합니다.
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="guide">VIEW</a>
+                    질환별 맞춤 레이저 보유
+				</h1>
+                <p>
+				숙련된 피부과 전문의와 첨단 장비의 만남으로<br>
+				환자분이 편안하고 생생한 변화가 느껴지는 치료를 제공합니다.
+				</p>
+				<a href="guide">VIEW</a>
             </div>
         </div>
     </div>

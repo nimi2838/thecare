@@ -275,7 +275,7 @@ else{
                                                                 </h1>
                                                             </div>
                                                             <div class="small_text">
-
+																
                                                                 유행을 따라잡는 아름다움엔 유통기한이 있습니다. <br>
                                                                 본연의 아름다움으로 빛의 시그니처를 선사하겠습니다.
                                                             </div>
@@ -334,55 +334,64 @@ else{
     <section id="doctor" class="content">
         <div class="inner">
             <h2 class="title">의 료 진</h2>
-            <p class="title2" style="text-align:center; margin:20px 0 0 30px;">The Care Dermatologist</p>
+            <p class="title2" style="text-align:center; margin: 30px 0 80px; font-size:20px;">The Care Dermatologist</p>
             <div class="wrap">
                 <div class="box">
                     <img src="img/doctor_list_thum02.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <h3 class="doctor_name"><span>김철수</span> 원장
                         <div class="bg1"></div>
+						</h3>
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum03.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
+                        <h3 class="doctor_name"><span>강건희</span> 원장
+						<div class="bg1"></div>
+						</h3>
+                        
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum04.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
+                        <h3 class="doctor_name"><span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
+						<div class="bg1"></div>
+						</h3>
+                        
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum05.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
+                        <h3 class="doctor_name"><span>김영희</span> 원장
+						<div class="bg1"></div>
+						</h3>
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum06.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
+                        <h3 class="doctor_name"><span>송찬호</span> 원장
+						<div class="bg1"></div>
+						</h3>
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum07.png" alt="">
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
-                        <div class="bg1"></div>
+                        <h3 class="doctor_name"><span>최은혜</span> 원장
+						<div class="bg1"></div>
+						</h3>
                     </div>
                 </div>
                 <div class="box">
                     <img src="img/doctor_list_thum08.png" alt=""> 
                     <div class="info">
-                        <h3 class="doctor_name"><span>장겨울</span> 원장</h3>
+                        <h3 class="doctor_name"><span>박정우</span> 원장
                         <div class="bg1"></div>
+						</h3>
                     </div>
                 </div>
                 <div class="box">

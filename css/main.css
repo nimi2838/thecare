@@ -862,27 +862,49 @@ a {
 
 .mini-2 {
   position: absolute;
-  top: 45%;
-  left: 40%; 
-  width: 53%;
-  height: 130%;
-  background: #E9CACA;
-  z-index: -10;
+  top: 70%;
+  left: 50%; 
+  width: 820px;
+  height: 450px;
+  background: #fff;
+  border: 1px solid #ff9a9a;
+  z-index: 50;
 } 
 
 .mini-2 > .text-box {
-  left: 40%;
-  position: absolute;
-  width: 45%;
-  padding: 50px 50px 0;
-  color: #fff;
+  width: 720px;
+  height: 290px;
+  padding: 80px 50px;
   line-height: 30px;
   font-size: 16px;
+  text-align:center;
 }
 
 .mini-2 > .text-box > h1 {
+  background: #ff9a9a;
+  font-size: 45px;
+  color:#fff;
+  padding: 15px 0;
+  margin: 0 50px;
+}
+
+.mini-2 > .text-box > p {
   line-height: 48px;
-  font-size: 30px;
+  font-size: 27px;
+  padding:20px 0 25px;
+}
+
+
+.mini-2 > .text-box > a {
+  font-size: 25px;
+  border: 1px solid #ff9a9a;
+padding: 10px 40px;
+transition: all .4s;
+}
+
+.mini-2 > .text-box > a:hover{
+background:#ff9a9a;
+color:#fff;
 }
 
 
