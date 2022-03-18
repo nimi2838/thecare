@@ -131,7 +131,6 @@ a {
 }
 
 
-
 .top-wrap>.top-box1 {
   margin: 20px auto 15px;
   width: 1280px;
@@ -275,14 +274,14 @@ a {
 
 .top-wrap>.top-box2>ul>li {
   width: 256px;
-  padding: 20px 0px;
+  padding: 21px 0px;
   position: relative;
   transition: all .4s;
 
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #ffeded;
+  background: #f5eeff;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -296,7 +295,7 @@ a {
   visibility: visible;
   position: absolute;
   left: 0%;
-  margin-top: 20px;
+  margin-top: 22px;
   background: white;
   width: 100%;
   transition: all .4s;
@@ -311,14 +310,13 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #ffeded;
+  background: #f5eeff;
 }
 
 
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-
 
 
 

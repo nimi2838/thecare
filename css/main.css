@@ -243,7 +243,7 @@ a {
   border-bottom:1px solid transparent;
   transition:width .3s, border-bottom-color .3s;
   background-color:transparent;
-  color:#707070;
+  color:#999;
   margin-right:10px;
   padding:10px;
   display:block;
@@ -252,7 +252,7 @@ a {
 
 .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
   width:170px;
-  border-bottom-color: #707070;
+  border-bottom-color: #999;
 }
 
 
@@ -271,8 +271,9 @@ a {
 .top-wrap>.top-box2 {
   margin: 0px auto;
   width: 100%;
-  font-size: 18px;
-  color: #707070;
+  font-size: 19px;
+  font-weight:bold;
+  color: #9c9c9c;
   background:white;
   z-index: 100;
   font-family: 'ChosunSg';
@@ -286,15 +287,16 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li {
-  width: 256px;
-  padding: 20px 0px;
+  /* width: 256px; */
+  width: 326px;
+  padding: 21px 0px;
   position: relative;
   transition: all .4s;
 
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #ffeded;
+  background: #f5eeff;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -308,7 +310,7 @@ a {
   visibility: visible;
   position: absolute;
   left: 0%;
-  margin-top: 20px;
+  margin-top: 22px;
   background: white;
   width: 100%;
   transition: all .4s;
@@ -323,7 +325,7 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #ffeded;
+  background: #f5eeff;
 }
 
 
@@ -583,16 +585,17 @@ a {
 
 .slider-box-1 {
   width: 80%;
-  margin:200px auto 100px;
+  margin:150px auto 70px;
   position:relative;
 }
 
 .slider-box-1 > p {
   font-size: 50px;
   text-align: center;
-  margin: 100px 0 80px;
+  margin: 0px 0 50px;
   font-family: 'GowunDodum-Regular';
   font-weight: bold;
+  color: #3d3d3d;
 }
 
 
@@ -643,9 +646,15 @@ a {
 
 .slider-box-1 > .slick .item .name {
   position: absolute;
-  top: 78%;
+  top: 75%;
   left: 33%;
   font-size: 23px;
+}
+
+.slider-box-1 > .slick .item .name p {
+	margin: 10px 0;
+	font-size:17px;
+	text-align:center;
 }
 
 .slider-box-1 > .slick .item .name span {
@@ -661,10 +670,10 @@ a {
 .slider-box-1 > .slick .item:hover .name > .bg1 {
   width: 125px;
   height: 20px;
-  background: pink;
+  background: #ede0ff;
   transition:width .5s, background-color .5s;
   position: absolute;
-  top: 13px;
+  top: 43px;
   z-index: -1;
 }
 
@@ -695,23 +704,26 @@ a {
 
 
 .mini-ban > .text-box {
+	width:100%;
   text-align: center;
   z-index: 100;
   padding-top: 80px;
   color: #ffeded;
-  font-family: 'GowunDodum-Regular';
   
 }
 
-.mini-ban > .text-box > i  {
-  font-size: 43px;
-  font-weight: bold;
-} 
+.mini-ban > .text-box > div {
+	position: relative;
+	}
 
-.mini-ban > .text-box > p  {
-  margin-top: 60px;
-  font-size: 23px;
-  line-height: 60px;
+.mini-ban > .text-box > div > p  {
+position: absolute;
+left: 55%;
+  margin-top: 150px;
+  font-size: 45px;
+  line-height: 80px;
+  color:#ff7d7d;
+  font-weight: bold;
 }
 
 
@@ -840,12 +852,12 @@ a {
 .mini-banner {
   position: relative;
   margin-bottom: 100px;
-  width: 100%;
+  width: 70%;
   height: 400px;
 }
 
 .mini-box {
-  width: 60%;
+  width: 70%;
   position: relative;
   margin-top: 150px;
 }
@@ -857,32 +869,32 @@ a {
 .mini-1 {
   position: absolute;
   top: 0;
-  left: 10%; 
+  left: 26%; 
 }
 
 .mini-2 {
   position: absolute;
   top: 70%;
-  left: 50%; 
-  width: 820px;
-  height: 450px;
+  left: 65%; 
+  width: 750px;
+  height: 410px;
   background: #fff;
-  border: 1px solid #ff9a9a;
+  border: 1px solid #e6bfff;
   z-index: 50;
 } 
 
 .mini-2 > .text-box {
-  width: 720px;
-  height: 290px;
-  padding: 80px 50px;
+  width: 690px;
+  height: 310px;
+  padding: 50px 30px;
   line-height: 30px;
   font-size: 16px;
   text-align:center;
 }
-
+/* f5eeff */
 .mini-2 > .text-box > h1 {
-  background: #ff9a9a;
-  font-size: 45px;
+  background: #f5eeff;
+  font-size: 40px;
   color:#fff;
   padding: 15px 0;
   margin: 0 50px;
@@ -890,20 +902,20 @@ a {
 
 .mini-2 > .text-box > p {
   line-height: 48px;
-  font-size: 27px;
+  font-size: 25px;
   padding:20px 0 25px;
 }
 
 
 .mini-2 > .text-box > a {
   font-size: 25px;
-  border: 1px solid #ff9a9a;
+  border: 1px solid #e6bfff;
 padding: 10px 40px;
 transition: all .4s;
 }
 
 .mini-2 > .text-box > a:hover{
-background:#ff9a9a;
+background:#e6bfff;
 color:#fff;
 }
 
@@ -915,7 +927,7 @@ color:#fff;
 
  .content-f {
    margin: 600px auto 100px;
-   background: #F1E8E8;
+   background: #eeddff;
    padding: 50px 100px;
  }
 

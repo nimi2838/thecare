@@ -8,8 +8,45 @@ CREATE TABLE soption (
 );
 
 
-INSERT INTO soption VALUES ('tox01','sa1','턱보톡스 50유닛(보툴렉스)',50000);
-INSERT INTO soption VALUES ('tox01','sa2','턱보톡스 50유닛(수입-엘레간,제오민)',135000);
+INSERT INTO soption VALUES ('sk02','yu1','여드름관리 1회',70000);
+INSERT INTO soption VALUES ('sk02','yu2','여드름관리 3회',180000);
+
+
+INSERT INTO soption VALUES ('sk01','aq1','아쿠아필 1회',29000);
+INSERT INTO soption VALUES ('sk01','aq2','아쿠아필 3회',69000);
+
+
+INSERT INTO soption VALUES ('sk03','cl1','클라리티 1회',200000);
+INSERT INTO soption VALUES ('sk03','cl2','클라리티 3회',530000);
+
+
+INSERT INTO soption VALUES ('sk04','da1','손 발/겨드랑이 50유닛 (국산)',70000);
+INSERT INTO soption VALUES ('sk04','da2','헤어라인(구레나룻포함,면적에따라 비용추가)',120000);
+INSERT INTO soption VALUES ('sk04','da3','기타부위(코/인중 등),면적에따라 비용추가',50000);
+
+
+
+INSERT INTO soption VALUES ('fa01','fa1','국산필러 1cc',150000);
+INSERT INTO soption VALUES ('fa01','fa2','애교필러 (국산)',190000);
+INSERT INTO soption VALUES ('fa01','fa3','눈밑필러(수입)',350000);
+
+
+
+INSERT INTO soption VALUES ('fa02','hi1','하이코',140000);
+INSERT INTO soption VALUES ('fa02','hi2','하이코필러(콧대실+코필러 1회 용량제한없이',290000);
+
+INSERT INTO soption VALUES ('fa03','lip1','입술필러(국산)',59000);
+INSERT INTO soption VALUES ('fa03','lip2','입술+입꼬리 필러',190000);
+
+
+
+
+
+INSERT INTO soption VALUES ('li01','sa1','턱보톡스 50유닛(보툴렉스)',19000);
+INSERT INTO soption VALUES ('li01','sa2','턱보톡스 50유닛(수입-엘레간,제오민)',89000);
+
+
+
 
 
 INSERT INTO soption VALUES ('tox02','ju1','미간/바깥눈가/안쪽눈가/콧등 (부위당/국산)',30000);
@@ -18,9 +55,6 @@ INSERT INTO soption VALUES ('tox02','ju3','턱라인 탄력보톡스',100000);
 INSERT INTO soption VALUES ('tox02','ju4','얼굴아래쪽(모공+자갈턱+턱라인/국산)',160000);
 
 
-INSERT INTO soption VALUES ('tox03','da1','손 발/겨드랑이 50유닛 (국산)',90000);
-INSERT INTO soption VALUES ('tox03','da2','헤어라인(구레나룻포함,면적에따라 비용추가)',180000);
-INSERT INTO soption VALUES ('tox03','da3','기타부위(코/인중 등),면적에따라 비용추가',50000);
 
 
 
@@ -38,15 +72,9 @@ INSERT INTO soption VALUES ('fil02','jo2','조각주사 3회',750000);
 
 
 
-INSERT INTO soption VALUES ('fil03','fa1','국산필러 1cc',150000);
-INSERT INTO soption VALUES ('fil03','fa2','애교필러 (국산)',190000);
-INSERT INTO soption VALUES ('fil03','fa3','눈밑필러(수입)',350000);
 
 
 
-
-INSERT INTO soption VALUES ('fil04','hi1','하이코',140000);
-INSERT INTO soption VALUES ('fil04','hi2','하이코필러(콧대실+코필러 1회 용량제한없이',290000);
 
 
 INSERT INTO soption VALUES ('las01','fl1','써마지FLX 300샷',1000000);
@@ -61,9 +89,6 @@ INSERT INTO soption VALUES ('las02','ul3','울쎄라 300샷+턱라인 데모톡�
 
 
 
-INSERT INTO soption VALUES ('col01','cl1','클라리티 1회',200000);
-INSERT INTO soption VALUES ('col01','cl2','클라리티 3회',530000);
-INSERT INTO soption VALUES ('col01','cl3','클라리티프로그램 5주',720000);
 
 
 
@@ -87,12 +112,6 @@ INSERT INTO soption VALUES ('sk03','si2','시그널72/아기주사 3회',400000)
 INSERT INTO soption VALUES ('sk04','al1','알라딘필링',99000);
 
 
-INSERT INTO soption VALUES ('sk05','yu1','여드름관리 1회',70000);
-INSERT INTO soption VALUES ('sk05','yu2','재생관리 1회',90000);
-
-
-INSERT INTO soption VALUES ('sk06','aq1','아쿠아필 1회',29000);
-INSERT INTO soption VALUES ('sk06','aq2','아쿠아필 3회',79000);
 
 
 INSERT INTO soption VALUES ('bo01','gr1','걸그룹주사 2주(1부위)',400000);

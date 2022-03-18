@@ -533,7 +533,7 @@ a {
     }
   
     .top-wrap>.top-box2>ul>li {
-      padding: 23px 0px;
+      padding: 20px 0px;
     
     }
 
@@ -570,29 +570,29 @@ a {
   
   
 
-  @media (min-width: 851px) and ( max-width:1050px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
-  
-    .top-wrap>.top-box2>ul>li {
-      padding: 20px 0px;
-    } 
+@media (min-width: 851px) and ( max-width:1050px) {
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 20px 0px;
+  } 
 }
   
   
-@media (min-width: 500px) and ( max-width:850px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
+  @media (min-width: 500px) and ( max-width:850px) {
+	/* 탑바 */
+	.top-wrap>.top-box1 {
+	  width: 95%;
+	}
   
-    .top-wrap>.top-box2 {
-      font-size: 16px;
-    }
-  
-    .top-wrap>.top-box2>ul>li {
-      padding: 22px 0px;
-    } 
+	.top-wrap>.top-box2>ul>li {
+	  padding: 20px 25px;
+	} 
+	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
+	  width: 114.8px;
+	}
 
     .categori_box {
         display: block;

@@ -138,37 +138,38 @@ else{
                     <a>피부타입</a>
 					<div>
                         <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-                            <li><a href="qna.jsp">더 소통</a></li>
+                            <li><a href="custom.jsp"> 체크</a></li>
+							<li><a href="custom.jsp">더 체크</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술</a>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
                             <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <li class="menu">
-                    <a>예약</a>
+                    <a>케어원해</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">바로예약</a></li>
+							<li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.jsp">최근본시술</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
 
                 
                 <li class="jsp">
-                    <a>커뮤니티</a>
+                    <a>소통원해</a>
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -177,11 +178,24 @@ else{
         </div>
     </div>
 
+	<div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+		<a href="new_view.jsp" alt="최근 본 시술">
+	<div  style="border-radius:50%;z-index:150; width:60px;height:60px; margin-bottom: 10px;">
+			<img src="img/clock.png">
+		</div>
+		</a>
+		<a href="#" alt="맨 위로">
+		<div  style="border-radius:50%;z-index:150; width:60px;height:60px;">
+			<img src="img/up.png">
+		</div>
+		</a>
+	</div>
+
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             
             <div class="swiper-slide  swiper-slide1">
-                <img src="img/banner03.jpg" alt="">
+                <img src="img/banner01.jpg" alt="">
                 <div class="text-1"  style="position: absolute;
   top: 25%;
   left: 15%;
@@ -210,14 +224,14 @@ else{
             </div>
 
 			 <div class="swiper-slide swiper-slide3" style="color: #ff8290;">
-                <img src="img/banner01.jpg" alt="">
+                <img src="img/banner03.jpg" alt="">
                 <div class="text-1" style=" position: absolute;
   top: 33%;
   left: 69%;
-  transform: translate(-30%, -20%);
-  text-align: start;  "> 
+					transform: translate(-30%, -20%);
+					  text-align: start;  "> 
                     <h1 style="font-size: 70px;
-	color: #ff8290; ">아쿠아필링</h1>
+						color: #ff8290; ">아쿠아필링</h1>
 					<div style="text-align:center;">
 					노폐물은 제거하고! <br> 수분은 채우고!
 				</div>
@@ -225,17 +239,6 @@ else{
 				
             </div>
 
-			<div class="swiper-slide swiper-slide4" style="background:#ccc;">
-                <img src="img/banner04.jpg" alt="">
-                <div class="text-1" style="position: absolute; top: 37%; left: 24%; transform: translate(-30%, -20%); text-align: start;">
-                    <h3 style="font-size: 48px; margin:0 0 0 5px; font-weight:300;">나를 위한 선택 !</h3>
-					<h1 style="font-size: 100px; padding: 0; margin: 0px 0 15px;">하이코</h1>
-                    <div style="font-size: 35px; padding: 0px 0 0; margin:0 0 0 5px; ">
-                        과정은 <span>간단</span>하지만 결과는 <span>확실</span>하게! <br>
-						더케어의 <span>핵심기술력</span>입니다.
-						</div>
-                </div>
-            </div>
 
         </div>
         <div class="swiper-button-next"></div>
@@ -252,6 +255,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
                     <div class="name">
+						<p>보톡스 전문</p>
                         <span>김철수</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -262,6 +266,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
                     <div class="name">
+					<p>보톡스 전문</p>
                         <span>강건희</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -272,6 +277,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
                     <div class="name">
+					<p>체형 전문</p>
                         <span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -282,6 +288,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
                     <div class="name">
+					<p>필러 전문</p>
                         <span>김영희</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -292,6 +299,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
                     <div class="name">
+					<p>레이저 전문</p>
                         <span>최은혜</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -302,6 +310,7 @@ else{
                 <a href="about_2.html">
                     <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
                     <div class="name">
+					<p>피부 전문</p>
                         <span>박정우</span> 원장
                         <div class="bg1"></div>
                     </div>
@@ -321,12 +330,14 @@ else{
 
 
     <div class="mini-ban">
-        <div class="text-box">
-            <i>About, The Care <br>
-                The Care의 생각</i>
-            <p>고객이 바라는 최상의 아름다움의 완성, 피부 완성이 곧 美의 완성이라는 신념으로<br>
-                고객의 젊음을 간직한 아름다운 비전과 함께 프리미엄 디에이징을 추구합니다.</p>
-        </div>
+        <a href="custom.jsp" class="text-box">
+            <div>
+				<p>
+				내 피부타입이 궁금하다면?<br>
+				테스트를 통해 알아보세요!
+				</p>
+			</div>
+        </a>
     </div>
 
 
@@ -394,7 +405,7 @@ else{
 
     <div class="mini-banner">
         <div class="mini-box mini-1" style="">
-		<div style="width: 900px; height:500px; top:-30px; left:-30px; position: absolute; background: #FF9a9a; z-index:-10;"></div>
+		<div style="width: 750px; height:410px; top:-30px; left:-30px; position: absolute; background: #e6bfff; z-index:-10;"></div>
             <div class="img-box">
                 <img src="img/main-company-inpomation.jpg" alt="">
             </div>
@@ -575,7 +586,7 @@ else{
                 el: ".swiper-pagination",
                 clickable: true // 버튼 클릭 여부
             },
-           // autoplay: true,
+           autoplay: true,
             autoplaySpeed: 5000,
             keyboard: true
         });
@@ -661,7 +672,7 @@ else{
                 start: 'top -98px',
                 scrub: true
             },
-            height: '60px',
+            height: '61px',
             textalign: 'center',
             top: '0',
             position: 'fixed',
