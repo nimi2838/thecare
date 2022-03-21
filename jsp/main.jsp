@@ -330,14 +330,14 @@ else{
 
 
     <div class="mini-ban">
-        <a href="custom.jsp" class="text-box">
+        <div class="text-box">
             <div>
 				<p>
 				내 피부타입이 궁금하다면?<br>
 				테스트를 통해 알아보세요!
-				</p>
+				</p><a href="custom-test.jsp">TEST</a>
 			</div>
-        </a>
+        </div>
     </div>
 
 
