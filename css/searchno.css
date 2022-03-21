@@ -154,11 +154,7 @@ a {
 }
 
 .top-wrap>.top-box1>.icon-box>.icon {
-<<<<<<< HEAD
   padding: 0 0 0 15px;
-=======
-  padding: 0 0 0 15px ;
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
   text-align: center;
   float: left;
   display: flex;
@@ -185,11 +181,7 @@ a {
   display: flex;
   width: 1px;
   height: 50px;
-<<<<<<< HEAD
   background: #707070;
-=======
-  background:#707070;
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
   margin: 1px 0 0 15px;
 }
 
@@ -218,11 +210,7 @@ a {
 
 
 
-<<<<<<< HEAD
 .top-wrap>.top-box1>.search_wrap>.search-box>.schBtn>input[type=image] {
-=======
-.top-wrap>.top-box1> .search_wrap >.search-box > .schBtn >input[type=image]  {
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
   width: 30px;
   height: 30px;
 }
@@ -233,7 +221,6 @@ a {
 
 
 
-<<<<<<< HEAD
 .top-wrap>.top-box1>.search_wrap>.search-box .form {
   width: 0;
   padding: 0;
@@ -252,26 +239,6 @@ a {
 
 .top-wrap>.top-box1>.search_wrap>.search-box:hover .form {
   width: 170px;
-=======
-.top-wrap>.top-box1> .search_wrap > .search-box .form {
-  width:0;
-  padding:0;
-  margin:0;
-  outline:0;
-  border:0;
-  border-bottom:1px solid transparent;
-  transition:width .3s, border-bottom-color .3s;
-  background-color:transparent;
-  color:#707070;
-  margin-right:10px;
-  padding:10px;
-  display:block;
-  box-sizing:border-box;
-}
-
-.top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
-  width:170px;
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
   border-bottom-color: #707070;
 }
 
@@ -293,11 +260,7 @@ a {
   width: 100%;
   font-size: 18px;
   color: #707070;
-<<<<<<< HEAD
   background: white;
-=======
-  background:white;
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
   z-index: 100;
   font-family: 'ChosunSg';
   text-align: center;
@@ -357,18 +320,14 @@ a {
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.search_wrap {
-=======
 .search_wrap1 {
->>>>>>> 7ff9b4277cf48b9c90117693be149b0adaff2e86
   width: 100%;
   margin-bottom: 100px;
 }
 
+
 .search_box {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   font-size: 18px;
   box-sizing: border-box;
@@ -376,7 +335,7 @@ a {
   margin-bottom: 30px;
 }
 
-.search_box > .search1 {
+.search_box .search1 {
   padding: 20px 50px;
 }
 
@@ -415,18 +374,6 @@ a {
   font-weight: bold;
   border-radius: 5px;
 }
-<<<<<<< HEAD
-=======
-  
-  
-  
-  
-  
-  
-  
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
-=======
->>>>>>> 7ff9b4277cf48b9c90117693be149b0adaff2e86
 
 
 
@@ -434,10 +381,6 @@ a {
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7ff9b4277cf48b9c90117693be149b0adaff2e86
 
 
 
@@ -466,279 +409,6 @@ a {
   
   .top-wrap>.top-box2>ul>li {
     padding: 23px 0px;
-<<<<<<< HEAD
-=======
-@media (min-width: 1301px) and  ( max-width:1920px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 1280px;
-	}
-  }
-  
-  
-  
-  
-  
-  @media (min-width: 1051px) and ( max-width:1300px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 70px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 204.5px;
-	}
-	.swiper-slide>.text-1 {
-	  left: 18%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 45px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 14px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 25px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 500px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-	.card-wrap {
-	  padding: 100px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 350px;
-	}
-	
-  
-  }
-  
-  
-  @media (min-width: 851px) and ( max-width:1050px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 45px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 154.8px;
-	}
-	.swiper-slide>.text-1 {
-	  top: 24%;
-	  left: 20%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 35px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 12px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 20px;
-	  margin-top: 30px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	}
-	.slider-box-1 > p {
-	  font-size: 35px;
-	  margin: 50px auto 30px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 400px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-  
-	.mini-ban{
-	  height: 350px;
-	  margin-top: 100px;
-	  background-size: cover;
-	}
-	
-	
-	.mini-ban > .text-box {
-	  padding-top: 55px;
-	}
-	
-	.mini-ban > .text-box > i  {
-	  font-size: 38px;
-	  font-weight: bold;
-	} 
-	
-	.mini-ban > .text-box > p  {
-	  margin-top: 40px;
-	  font-size: 18px;
-	  line-height: 40px;
-	}
-  
-  
-	.card-wrap {
-	  padding: 80px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 200px;
-	}
-  
-	.card-wrap >.card_box > .card > .text-box {
-	  position: absolute;
-	  top: 50%;
-	  left: 10%;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > h1 {
-	  margin-bottom: 20px;
-	  font-size: 23px;
-	  font-weight: 600;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > p {
-	  font-size: 14px;
-	}
-  
-	.card-wrap >.card_box > .card > .bg > .view {
-		font-size: 20px;
-		padding: 5px 15px;
-	}
-  
-  }
-  
-  
-  @media (min-width: 500px) and ( max-width:850px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 25px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 114.8px;
-	}
-	.swiper-slide>.text-1 {
-	  top: 24%;
-	  left: 20%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 25px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 12px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 18px;
-	  margin-top: 30px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	  width: 80%;
-	}
-	.slider-box-1 > p {
-	  font-size: 35px;
-	  margin: 50px auto 30px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 400px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-  
-	.slider-box-1 > .slick .item .bg {
-	  background-size:contain;
-	  background-repeat: no-repeat;
-	}
-  
-	.mini-ban{
-	  height: 300px;
-	  margin-top: 100px;
-	  background-size: cover;
-	}
-	
-	
-	.mini-ban > .text-box {
-	  padding-top: 55px;
-	}
-	
-	.mini-ban > .text-box > i  {
-	  font-size: 33px;
-	  font-weight: bold;
-	} 
-	
-	.mini-ban > .text-box > p  {
-	  margin-top: 30px;
-	  font-size: 16px;
-	  line-height: 30px;
-	}
-  
-  
-	.card-wrap {
-	  padding: 80px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 200px;
-	}
-  
-	.card-wrap >.card_box > .card > .text-box {
-	  position: absolute;
-	  top: 50%;
-	  left: 10%;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > h1 {
-	  margin-bottom: 5px;
-	  font-size: 23px;
-	  font-weight: 600;
-	}
-  
-	.card-wrap >.card_box2 {
-	  margin-top: 15px;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > p {
-	  font-size: 14px;
-	  margin-top: 8px;
-	}
-  
-	.card-wrap >.card_box > .card > .bg > .view {
-		font-size: 20px;
-		padding: 5px 15px;
-	}
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
-=======
->>>>>>> 7ff9b4277cf48b9c90117693be149b0adaff2e86
   
   }
 
@@ -774,15 +444,6 @@ a {
   .top-wrap>.top-box2>ul>li {
     padding: 22px 0px;
   } 
-=======
-  
-  
-  
-  
-  
-  
-  
->>>>>>> 7aee5140c575952fb59ba441bd059e0513757050
 
 
 }
@@ -792,6 +453,7 @@ a {
 .about-ban {
   width: 100%;
   height: 300px;
+  margin: 0 auto;
 }
 
 
@@ -801,7 +463,7 @@ a {
   padding-top: 80px;
   color: #333;
   font-family: 'GowunDodum-Regular';
-
+margin: 0 auto;
 }
 
 .about-ban>.text-box>span {
@@ -816,6 +478,7 @@ a {
   line-height: 100px;
 }
 
+
 .about-ban>.text-box>p {
   margin-top: 30px;
   font-size: 20px;
@@ -825,6 +488,42 @@ a {
 .about-ban>.text-box>hr {
   width: 10%;
 }
+
+
+
+
+.about-ban1 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.about-ban1>.text-box1 {
+	width:80%
+  padding-top: 80px;
+  color: #333;
+  font-family: 'GowunDodum-Regular';
+margin:0 auto;
+}
+
+
+.about-ban1>.text-box1> p {
+	font-size: 35px;
+  font-weight: bold;
+  padding: 0 10%;
+  margin: 50px 0 0;
+  }
+
+
+  .about-ban1>.text-box1>hr {
+  width: 80%;
+  margin: 30px auto 50px;
+}
+
+
+
+
+
 
 
 
