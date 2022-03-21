@@ -160,44 +160,49 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="qna.jsp">더 소통</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술안내</a>
+                    <a>시술</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술안내</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
-                <li class="menu">
+
+                
+                <li class="jsp">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -341,47 +346,53 @@ else{
         <div class="line"></div>
 
 
-        <div class="top-box2">
+
+ <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="qna.jsp">더 소통</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술안내</a>
+                    <a>시술</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
-                <li class="menu">
+
+                
+                <li class="jsp">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
