@@ -337,7 +337,7 @@ a {
 
 .sub_con_box {
     width: 100%;
-    background: #faf5f5;
+    background: #fdfaff;
 }
 
 .sub_con {
@@ -369,7 +369,7 @@ a {
 }
 
 .sub_con > .sub_text1 > .price span{
-    color: #ff5151;
+    color: red;
     font-size: 32px;
     font-weight: bold;
 }
@@ -394,22 +394,23 @@ a {
 
 .sub_con > .sub_text2 > .option  > form {
     padding: 10px 0;
-    border:1px solid #ecd8d8;
-    margin: -2% 0 0 48.5%;
+    border:1px solid #e6e6fa;
+    margin: -2% 0 0 30.5%;
     font-size: 16px;
+	background: white;
 }
 
 .sub_con > .sub_text2 > .option  > form td {
     text-align: center;
     position: relative;
-    width: 200px;
+    width: 300px;
 }
 
 
 .sub_con > .sub_text2 > .option  > form ul { 
     overflow-x: hidden;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
  }
 
  .sub_con > .sub_text2 > .option  > form ul li {
@@ -423,9 +424,9 @@ a {
     font-size:12px;
     text-align: center;
     background: white;
-    border: 1px solid #ecd8d8;
-    margin: 10px 0 0;
-    width: 200px;
+    border: 1px solid #e6e6fa;
+    margin: 9px 0 0;
+    width:300px;
 }
 
 .sub_con > .sub_text2 > .option  > form #Div > div {
@@ -434,19 +435,11 @@ a {
 }
 
 .sub_con > .sub_text2 > .option  > form #Div > div input {
-    border: 1px solid #ecd8d8;
+    border: 1px solid #e6e6fa;
     background: white;
     padding: 3px 8px;
 }
 
-
-/* .sub_con > .sub_text2 > .option form {
-    font-size: 18px;
-    padding: 10px 0;
-    margin: -2% 0 0 24.5%;
-    outline: none;
-    border: 1px solid #ecd8d8;
-} */
 
 .sub_con > .sub_text2 > .price-wrap {
     margin: 25px 0 0;
@@ -466,28 +459,30 @@ a {
 
 
 
-.sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span {
+.sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span input {
     color: #ffbb61;
     font-size: 28px;
     font-weight: 600;
 }
 
-.sub_con > .sub_text2 > .btn-box {
+.sub_con > .sub_text2 .btn-box {
     margin: 50px 0 0 19%;
 }
 
-.sub_con > .sub_text2 > .btn-box > a{
+.sub_con > .sub_text2  .btn-box > a{
     padding: 20px 55px;
     background: #ffffff;
-    border: 1px solid #ffc6c6;
-    color: #ff9090;
+    border: 1px solid #dab9ff;
+    color: #dab9ff;
     border-radius: 5px;
+	font-weight: bold;
 }
 
-.sub_con > .sub_text2 > .btn-box > a:last-child{
-    background: #ffa5a5;
+.sub_con > .sub_text2  .btn-box > a:last-child{
+    background: #dab9ff;
     margin-left: 3%;
     color: #ffffff;
+	font-weight: bold;
 }
 
 
@@ -495,7 +490,7 @@ a {
 
 .sub_con_box1 {
     width: 100%;
-    padding: 200px 0;
+    padding: 100px 0;
 }
 
 
@@ -504,6 +499,22 @@ a {
     margin: 0 auto;
     text-align: center;
 }
+
+.sub_con_box1 > .sub_con1 > .detail > ul > li > .text > span {
+	position: relative;
+}
+
+.sub_con_box1 > .sub_con1 > .detail > ul > li > .text > span::after {
+	content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: red;
+    left: 120%;
+    top: 5%;
+}
+
 
 .sub_con_box1 > .sub_con1 > p {
     font-size: 16px;
@@ -529,14 +540,14 @@ a {
 
 .sub_con_box1 > .sub_con1 > .con_wrap1 {
     width: 70%;
-    margin: 100px auto;
+    margin: 100px auto 100px;
 }
 
 .sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1 {
     width: 200px;
     height: 200px;
     padding: 35px 20px 5px 20px;
-    background: #faf5f5;
+    background: #fdfaff;
     border-radius: 50%;
 }
 
@@ -557,8 +568,7 @@ a {
 
 .sub_con_box2 {
     width: 100%;
-    padding: 200px 0;
-    background: #faf5f5;
+    padding: 100px 0;
 }
 
 
@@ -597,13 +607,13 @@ a {
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2 > h6 {
     font-size: 20px;
     margin: 0;
-    color: #ff5151;
+    color: #6c34a7;
     font-weight: bold;
 }
 
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2 > hr {
     margin: 10px 85px 50px;
-    border: 1px solid #ff5151;
+    border: 1px solid #6c34a7;
 
 }
 
@@ -620,7 +630,7 @@ a {
     position: absolute;
     width: 1px;
     height: 50px;
-    background: #ffa5a5;
+    background: #6c34a7;
     left: -50%;
     top: 65%;
 }
@@ -629,12 +639,118 @@ a {
     display: none;
 }
 
+.sub_con_box2-1 {
+width: 70%;
+margin: 100px auto;
+}
+
+.sub_box_wrap2-1 {
+    background: #fdfaff;
+	padding: 80px 0;
+margin: 50px auto;
+}
+
+.sub_con_box2-1 > .sub_con2-1 {
+width: 100%;
+margin-top: 100px;
+}
+
+.sub_con_box2-1 > p {
+    font-size: 18px;
+    color: #CB9F76;
+    margin: 0;
+    font-weight: bold;
+    padding: 8px 0;
+	text-align: center;
+}
+
+.sub_con_box2-1  > h1 {
+    font-size: 43px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+	text-align: center;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box {
+	padding: 30px 50px; 
+	font-size: 20px;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > div {
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: bolder;
+	color: #6c34a7;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0;
+	margin: 0;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .line-box {
+	position: relative;
+	width: 25px;
+	height: 145px;
+	left: 10px;
+}
+
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .line-box > .line1 {
+	content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #6c34a7;
+    left: 0%;
+    top: 0%;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .line-box > .line2 {
+	content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background: #6c34a7;
+    left: 11px;
+    top: 45px;
+	transform: rotate(-45deg);
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .line-box > .line3 {
+	content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background: #6c34a7;
+    left: 11px;
+    top: 66px;
+	transform: rotate(45deg);
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .line-box > .line4 {
+	content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #6c34a7;
+    left: 0%;
+    top: 92px;
+}
+
 
 
 
 .sub_con_box3 {
     width: 100%;
-    padding: 200px 0;
+    padding: 100px 0;
+	background: #fdfaff;
 }
 
 
@@ -677,16 +793,41 @@ a {
 }
 
 .sub_con_box3 > .sub_con3 > ul li span {
-    margin: 30px 10px 30px 0;
+    margin: 15px 10px 15px 0;
     padding: 7px 15px;
-    background: #ecd8d8;
+    background: #ccc;
 }
 
 .sub_con_box3 > .sub_con3 > ul li:last-child {
     margin-right: 0;
 }
 
+.sub_con_box5 {
+    width: 100%;
+    padding: 200px 0;
+}
 
+.sub_con_box5 > .sub_con5 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.sub_con_box5 > .sub_con5 > p {
+    font-size: 16px;
+    color: #CB9F76;
+    padding: 8px 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.sub_con_box5 > .sub_con5 > h1 {
+    font-size: 43px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
 
 
 
@@ -694,7 +835,7 @@ a {
 .sub_con_box4 {
     width: 100%;
     padding: 200px 0;
-    background: #faf5f5;
+    background: #fdfaff;
 }
 
 
@@ -809,9 +950,11 @@ a {
     .top-wrap>.top-box1 {
       width: 95%;
     }
+  
+    
     
     .top-wrap>.top-box2>ul>li {
-      padding: 23px 0px;
+      padding: 20px 0px;
     
     }
 
@@ -902,7 +1045,7 @@ a {
         margin-top: 0;
     }
     
-    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span {
+    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span input {
         color: #ffbb61;
         font-size: 28px;
         font-weight: 600;
@@ -986,6 +1129,20 @@ a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* footer */
 
 .footer {
@@ -1016,14 +1173,18 @@ a {
   }
   
   
-@media (min-width: 851px) and ( max-width:1050px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
+  @media (min-width: 851px) and ( max-width:1050px) {
+	/* 탑바 */
+	.top-wrap>.top-box1 {
+	  width: 95%;
+	}
   
-    .top-wrap>.top-box2>ul>li {
-      padding: 20px 0px;
-    } 
+	.top-wrap>.top-box2>ul>li {
+	  padding: 20px 45px;
+	} 
+	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
+	  width: 154.8px;
+	}
 
 
     .sub_con {
@@ -1112,7 +1273,7 @@ a {
         margin-top: 0;
     }
     
-    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span {
+    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span input {
         color: #ffbb61;
         font-size: 28px;
         font-weight: 600;
@@ -1480,18 +1641,18 @@ a {
   }
   
   
-@media (min-width: 500px) and ( max-width:850px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
+  @media (min-width: 500px) and ( max-width:850px) {
+	/* 탑바 */
+	.top-wrap>.top-box1 {
+	  width: 95%;
+	}
   
-    .top-wrap>.top-box2 {
-      font-size: 16px;
-    }
-  
-    .top-wrap>.top-box2>ul>li {
-      padding: 22px 0px;
-    } 
+	.top-wrap>.top-box2>ul>li {
+	  padding: 20px 25px;
+	} 
+	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
+	  width: 114.8px;
+	}
 
 
 
@@ -1548,7 +1709,7 @@ a {
         margin-left: 0px;
     }
     
-    .sub_con > .sub_text2 > .option select {
+    .sub_con > .sub_text2 > .option form {
         font-size: 18px;
         padding: 10px 0;
         margin: 3% 0 0 0%;
@@ -1582,7 +1743,7 @@ a {
         margin-top: 0;
     }
     
-    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span {
+    .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span input {
         color: #ffbb61;
         font-size: 28px;
         font-weight: 600;

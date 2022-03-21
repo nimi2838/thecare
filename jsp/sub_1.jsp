@@ -124,56 +124,59 @@ else{
         <div class="line"></div>
 
 
-        <div class="top-box2">
+ <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="qna.jsp">더 소통</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술안내</a>
+                    <a>시술</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>시술예약</a>
+                    <a>예약</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
+                            <li><a href="reservation.jsp">바로예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="new_view.jsp">최근본시술</a></li>
                         </ul>
                     </div>
                 </li>
+
                 
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
-                <li class="menu">
+                <li class="jsp">
                     <a>커뮤니티</a>
                     <div>
                         <ul>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-
 
 
 
@@ -438,6 +441,8 @@ try {
                 <%=info%>
             </p>
 
+			
+
             <div class="con_wrap1 flex flex-jc-sb">
 
                 <div class="con_box1">
@@ -473,12 +478,131 @@ try {
                 </div>
 
             </div>
+
+
+
+			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
+				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
+				<img src ="img/sub_con1.png" style="width:85%;">
+				</div>
+				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
+					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								붉고 큰 화농성 여드름이 20개 이상,<br>
+								중등도의 진행성 흉터가 있는 상태
+								</p>
+							</div>
+						</div>
+					</li>
+					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								누적된 자국, 색소침착, 흉터가 많고<br>
+								새로 올라온 여드름이 혼재된 상태
+								</p>
+							</div>
+						</div>
+					</li>
+<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								최근 3개월 이상의 치료에 효과가 없고<br>
+								치료 종료후 1주일 안에 재발하는 상태
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
             
 
 
 
         </div>
     </div>
+
+
+
+	
+
+<div class="sub_box_wrap2-1">
+	<div class="sub_con_box2-1">
+				<p>PROCEDURE PROCESS</p>
+				<h1>시술과정</h1>
+		<div class="sub_con2-1">
+			<div class="con2-1 flex flex-jc-c">
+							<div class="box">
+							<div>STEP 1</div>
+							<p>맞춤상담</p>
+							</div>
+								<div class="line-box">
+									<div class="line1"></div>
+									<div class="line2"></div>
+									<div class="line3"></div>
+									<div class="line4"></div>
+								</div>
+							<div class="box">
+							<div>STEP 2</div>
+							<p>자가세안</p>
+							</div>
+								<div class="line-box">
+									<div class="line1"></div>
+									<div class="line2"></div>
+									<div class="line3"></div>
+									<div class="line4"></div>
+								</div>
+							<div class="box">
+							<div>STEP 3</div>
+							<p>압출+염증주사</p>
+							</div>
+							<div class="line-box">
+									<div class="line1"></div>
+									<div class="line2"></div>
+								<div class="line3"></div>
+								<div class="line4"></div>
+						</div>
+				<div class="box">
+						<div>STEP 4</div>
+					<p>기기관리</p>
+					</div>
+						<div class="line-box">
+							<div class="line1"></div>
+							<div class="line2"></div>
+							<div class="line3"></div>
+							<div class="line4"></div>
+						</div>
+					<div class="box">
+						<div>STEP 5</div>
+					<p>모델링팩</p>
+					</div>
+					<div class="line-box">
+							<div class="line1"></div>
+							<div class="line2"></div>
+							<div class="line3"></div>
+							<div class="line4"></div>
+						</div>
+					<div class="box">
+						<div>STEP 6</div>
+					<p>마무리</p>
+					</div>
+				</div>
+		</div>
+
+	</div>
+
+
+</div>
+
 
 
 
@@ -509,7 +633,7 @@ try {
     </div>
 
 
-	<div class="sub_con_box2_1">
+<!-- 	<div class="sub_con_box2_1">
         <div class="sub_con2_1">
             
             <p>RECOMMEND TO CUSTOMERS BELOW</p>
@@ -522,9 +646,7 @@ try {
             </div>
         </div>
     </div>
-
-
-
+ -->
 
 
     <div class="sub_con_box3">
@@ -560,14 +682,65 @@ try {
     </div>
 
 
+	    <div class="sub_con_box5">
+        <div class="sub_con5">
+
+			<p>PROCEDURE QUESTIONS</p>
+            <h1>시술 Q&A</h1>
+
+            <div class="con_box1">
+                <p></p>
+				<h1>주의사항</h1>
+				<div>관리만큼이나 셀프케어도 효과에 큰 영향을 줍니다. <br>
+					주의사항을 꼼꼼히 읽은 후, 잘 지켜주세요.
+				</div>
+            </div>
+
+            <ul class="con_box2">
+                <li>
+                    시술 후 세안 및 화장은 2~3시간 뒤부터 가능합니다.
+                </li>
+
+                <li>
+                    시술 후 3~7일 동안 가급적 과음, 사우나/찜질방 출입, 열탕목욕, 격한 운동은 피해주는 것이 좋습니다.
+                </li>
+
+                <li>
+                    시술 부위를 심하게 문지르거나 자극을 주는건 피해주시는게 좋습니다.<br>
+                    <span>(심한 마사지나 경락은 한 달 동안은 피해주세요)</span>
+                </li>
+
+                <li>
+                    시술 후 너무 질기거나 딱딱한 음식은 효과 유지기간이 짧아 질 수 있으므로 가급적 피해주는 것이 좋습니다.
+                </li>
+
+                <li>
+                    피부 상태에 따라 멍과 붓기는 발생할 수 있으나 미약한 정도이며, 곧 완화됩니다.
+                </li>
+
+                <li>
+                    시술 후 해당부위 뻐근함이 느껴질 수 있으나 일시적 현상이므로 염려하지 않으셔도 됩니다.
+                </li>
+
+            </ul>
+
+
+
+        </div>
+
+    </div>
+
+
+
     <div class="sub_con_box4">
         <div class="sub_con4">
             
             <div class="con_box1">
                 <p>CAUTIONS</p>
-            <h1>주의사항</h1>
-            <div>관리만큼이나 셀프케어도 효과에 큰 영향을 줍니다. <br>
-                주의사항을 꼼꼼히 읽은 후, 잘 지켜주세요.</div>
+				<h1>주의사항</h1>
+				<div>관리만큼이나 셀프케어도 효과에 큰 영향을 줍니다. <br>
+					주의사항을 꼼꼼히 읽은 후, 잘 지켜주세요.
+				</div>
             </div>
 
             <ul class="con_box2">
