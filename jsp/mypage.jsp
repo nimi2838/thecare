@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/updateUser.css" />
+  <link rel="stylesheet" href="css/mypage.css" />
   
 
   <title>회원정보 변경</title>
@@ -161,41 +161,46 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어란</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.jsp">더케어 의료진</a></li>
-                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술안내</a>
+				<li class="menu">
+                    <a>피부타입</a>
+					<div>
+                        <ul>
+                            <li><a href="custom.jsp">더 체크</a></li>
+							<li><a href="custom.jsp">더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">시술가격</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li> -->
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+							<li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술예약</a>
-                    <div>
-                        <ul>
-                            <li><a href="reservation.jsp">예약하기</a></li>
-                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.jsp">최근본시술</a></li>
-                        </ul>
-                    </div>
-                </li>
 
-                <li class="menu">
-                    <a href="custom.jsp">맞춤시술</a>
-                </li>
+                
                 <li class="jsp">
-                    <a>커뮤니티</a>
+                    <a>소통원해</a>
                     <div>
                         <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
@@ -224,7 +229,7 @@ try {
 
 	ResultSet rs = pstmt.executeQuery();
 	rs.next();
-
+    String name = rs.getString("uName");
 	String Point = rs.getString("Point");
 	String Coupon = rs.getString("Coupon");
 
@@ -262,18 +267,18 @@ try {
                 </div>
 
                 <div class = "my_info_text">
-                    <h1>사용자 님</h1>
+                    <h1><%=name%> 님</h1>
                     <a href="updateUser.jsp?id=<%=myid%>">회원정보 변경</a>
                 </div>
 
                 <div class = "my_point">
                   <h1>Point</h1>
-                    <p><b style = "color: #ff8181;"><%=Point%></b> p</p>
+                    <p><b style = "color: #b580ff"><%=Point%></b> p</p>
                 </div>
 
                 <div class = "my_coupon">
                     <h1>Coupon</h1>
-                    <p><b style = "color: #ff8181;"><%=cnt%></b>장</p>
+                    <p><b style = "color: #b580ff"><%=cnt%></b>장</p>
                 </div>
 
                
