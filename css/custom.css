@@ -389,7 +389,7 @@
 
 
 
-  .content{width:100%;height: 100%; }
+  .content{width:100%;height: 90%; }
   .inner{width:60%; margin: 0 auto; position: relative;} 
 
   #welcome header {width: 100%; height: 100%;background: url('../img/custom-bg.jpg') no-repeat center; background-size: cover;}
@@ -405,8 +405,8 @@
 
 
 	
-.question { background-color: #FFF5EE; width: 100%; height: 607px; position: relative;}
-.swiper {height: auto; width: 60%;margin: 0 auto; padding-top: 60px;}
+.question { background-color: #FFF5EE; width: 100%; height: 507px; position: relative;}
+.swiper {height: auto; width: 60%;margin: 0 auto; padding-top: 30px;}
 
   .swiper>h2 {text-align: center;}
 
@@ -439,9 +439,9 @@
 	opacity: 100%;
   }
   .wrap{width: 80%; height: 100%; margin: 0 auto;}
-  #fine .inner { width: 100%; height: 800px;}
+  #fine .inner { width: 100%; height: 700px;}
   #fine .wrap .thank> h3{text-align: center; font-size: 25px; margin: 0 auto; padding-top: 100px;}
-  #fine .wrap .thank> div{margin-top: 100px;}
+  #fine .wrap .thank> div{margin-top: 60px;}
   #fine .wrap .thank> div >ul{display: flex; justify-content: space-around; }
   #fine .wrap .thank> div >ul >li {width: 600px; height: 400px; margin: 0 auto; text-align: center;}
   #fine .wrap .thank> div >ul .test h1{font-size: 50px; font-weight: bold;}

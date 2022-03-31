@@ -442,7 +442,7 @@ a {
   }
 
   
-.inner{width:1300px; margin: 0 auto;} 
+.inner{width:1170px; margin: 0 auto;} 
 .content{width:100%; padding: 100px 0;}
 .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;}
 
