@@ -296,8 +296,8 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  /* background: #f5eeff; */
-  color: #9869d4;
+  background: #ffeeee;
+  color: #d46969;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -326,8 +326,8 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #f5eeff;
-  color: #9869d4;
+  background: #ffeeee;
+  /* color: #9869d4; */
 
 }
 
