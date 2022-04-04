@@ -135,7 +135,7 @@
   }
   
   
-  
+
   .top-wrap>.top-box1 {
 	margin: 20px auto 15px;
 	width: 1280px;
@@ -169,19 +169,7 @@
   .top-wrap>.top-box1>.icon-box>.cart {
 	padding: 0 15px 0 15px;
   }
-  
-  /* .top-wrap>.top-box1>.icon-box>.login {
-	background: red;
-  }
-  
-  .top-wrap>.top-box1>.icon-box>.join {
-	background: blue;
-  }
-  
-  .top-wrap>.top-box1>.icon-box>.cart {
-	background: green;
-  } */
-  
+
   .top-wrap>.top-box1>.icon-box>.icon>.line-icon {
 	display: flex;
 	width: 1px;
@@ -190,15 +178,7 @@
 	margin: 1px 0 0 15px;
   }
   
-  /* .top-wrap>.top-box1>.icon-box>.icon:after {
-	content: "";
-	display: inline-block;
-	width: 1px;
-	height: 50px;
-	margin: -10px 40px;
-	background:#707070;
-  } */
-  
+
   .top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
 	width: 31px;
 	margin-bottom: 4px;
@@ -235,7 +215,7 @@
 	border-bottom:1px solid transparent;
 	transition:width .3s, border-bottom-color .3s;
 	background-color:transparent;
-	color:#707070;
+	color:#999;
 	margin-right:10px;
 	padding:10px;
 	display:block;
@@ -244,7 +224,7 @@
   
   .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
 	width:170px;
-	border-bottom-color: #707070;
+	border-bottom-color: #999;
   }
   
   
@@ -263,8 +243,9 @@
   .top-wrap>.top-box2 {
 	margin: 0px auto;
 	width: 100%;
-	font-size: 18px;
-	color: #707070;
+	font-size: 19px;
+	font-weight:bold;
+	color: #9c9c9c;
 	background:white;
 	z-index: 100;
 	font-family: 'ChosunSg';
@@ -278,15 +259,17 @@
   }
   
   .top-wrap>.top-box2>ul>li {
-	width: 256px;
-	padding: 20px 0px;
+	/* width: 256px; */
+	width: 326px;
+	padding: 21px 0px;
 	position: relative;
 	transition: all .4s;
   
   }
   
   .top-wrap>.top-box2>ul>li:hover {
-	background: #ffeded;
+	/* background: #f5eeff; */
+	color: #9869d4;
   }
   
   .top-wrap>.top-box2>ul>li>div {
@@ -300,7 +283,7 @@
 	visibility: visible;
 	position: absolute;
 	left: 0%;
-	margin-top: 20px;
+	margin-top: 22px;
 	background: white;
 	width: 100%;
 	transition: all .4s;
@@ -315,7 +298,9 @@
   }
   
   .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-	background: #ffeded;
+	background: #f5eeff;
+	color: #9869d4;
+  
   }
   
   
@@ -389,6 +374,198 @@
 
 
 
+
+	#my_skill {width: 100%;height: 50px;}
+
+
+	.wrap {margin: 0 auto;}
+	.content{width:100%;}
+	.inner{width:1170px; margin: 0 auto;} 
+	.survery {  width: 100%; height: 100%;  padding: 1px 0 0px; background-color: rgb(221, 221, 221);}
+	.survery .inner {
+		position: relative; border-radius: 15px; width: 75%;
+	  height: 800px; margin: 0 auto;  background: #fff;
+		box-shadow: 0px 2px 3px 0 rgba(51, 51, 51, 0.315); margin-top: 80px;
+	}
+	.makde {width: 50%; height: 50px; margin: 0 auto; padding-top: 50px;}
+  
+	.wrap > h1{text-align: center; font-weight: bold; color:#ff6e6e; font-size: 35px;}
+  
+	.survery-test{margin-top: 80px; height: 90%; margin: 0px 100px; }
+	
+	.survery-test .qestion {
+	  height: 100px; border-top: 1px solid rgb(92, 92, 92); border-bottom: 1px solid #ccc; 
+	  display: flex; margin-top: 30px; 
+	}
+	.qestion > h1 {margin-left: 40px; margin: 0 ; width: 100px; line-height: 100px; color: #494949;}
+	.qestion > p {
+	  margin: 0; width: 600px; font-size: 20px; line-height: 100px; font-weight: bold;
+	  color: #494949;
+	}
+  
+  
+	.qna-wrap {padding: 0; width: 100%; display: flex; height: 80%; margin-top: 30px;}
+	.qna-wrap > li {
+	  margin-right: 50px; margin: 0 auto; }
+	.qna-wrap > li:hover {color: #ff6e6e; font-weight: bold; }
+  
+	.qna-wrap > li > .img {border-radius: 100%;
+	  border: 2px solid #6B6B6B;  width: 215px; height: 215px; margin-top: 40px; border-radius: 100%; width: 215px; height: 215px; }
+	.qna-wrap > li > .img:hover {border: 2px solid #ff6e6e; transition: 0.3s; cursor: pointer;}
+	.qna-wrap > li > .img > img {margin-left: 24%; margin-top: 18%;}
+	.qna-wrap > li > p {text-align: center; font-size: 18px; margin-top: 20px;}
+  
+
+
+
+
+
+
+	.check1-1 {position: relative;} 
+        .check1-1 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0;  
+        }
+        .check1-1 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-1 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-1 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/9-1.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-1 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/9-1on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-2 {position: relative;} 
+        .check1-2 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-2 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-2 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-2 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/9-2.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-2 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/9-2on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-3 {position: relative;} 
+        .check1-3 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-3 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-3 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-3 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/9-3.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-3 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/9-3on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-4 {position: relative;} 
+        .check1-4 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-4 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+            
+        } 
+        .check1-4 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-4 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/9-4.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-4 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/9-4on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+
+
+
+
+
+  
+	/* input[type=checkbox] {width: 215px; height: 215px; display: none;}
+	.label-checkbox {
+	  position: relative; display: inline-block; font-size: 20px; color: #333;
+	  padding-left: 44px; line-height: 20px;
+	}
+	.label-checkbox .input-checkbox+span{
+	  position: absolute; left: 0; top: 50%; margin-top: -12px;
+	  width: 27px; height: 27px;
+	  background:url(../img/test-nocheck.png) no-repeat center;
+	  background-size: 27px; background-position: 50% 50%;
+	}
+	.label-checkbox .input-checkbox:checked+span{
+	  background:url(../img/test-check.png) no-repeat center; 
+	  background-size: 27px; background-position: 50% 50%;
+	} */
+  
+  
+	.button {text-align: center; margin-top: 30px;}
+	.survery-btn {
+	  text-align: center; margin: 0 auto;
+	  width: 100%; height: 55px; line-height: 55px; border: none;
+	  font-size: 18px; border-radius: 10px; font-weight: bold;
+	  /* box-shadow: 2px 3px 10px 0 rgba(119, 119, 119, 0.315); */
+	  cursor: pointer; 
+	} 
+	.button .prev {width: 150px; height: 55px; color: #7c7c7c; background-color: #FFE4E4;}
+	.button .next {width: 150px; height: 55px; color: white; background: #FF7E7E; margin-left: 30px;}
+	.button .prev:hover {background: #ffffff; border: 2px solid #FF7E7E; transition: 0.3s; line-height: 55px;}
+	.button .next:hover {background: #ffa6a6; transition: 0.3s;}
+  
+  a > .close-test {
+	position: absolute; right: -35px; top: -35px;
+	width: 65px; height: 65px; border-radius: 100%;
+	background-color: rgb(252, 252, 252); border: 1px solid rgb(226, 226, 226);
+	font-size: 30px; font-weight: bold; text-align: center;
+	line-height: 60px; 
+	box-shadow: 0px 3px 5px 0 rgba(155, 155, 155, 0.315);
+  }
+  a > .close-test >img {width: 15px; height: 15px;}
+  
+
+
+/* 
   .content{width:100%;height: 90%; }
   .inner{width:60%; margin: 0 auto; position: relative;} 
 
@@ -457,7 +634,7 @@
 	text-align: center; font-weight: bold; font-size: 18px;
 	margin-top: 100px;
 	box-shadow: 0px 5px 10px 0 rgba(51, 51, 51, 0.315);
-}
+} */
 
 .animate__shakeX{
 	--animate-duration: 5s;
@@ -487,7 +664,7 @@
   
   
   @media (min-width: 500px) and ( max-width:850px) {
-    .inner{width:100%;} 
+    /* .inner{width:100%;} 
     .wrap{justify-content: space-around; margin-bottom: 0px;}
 	#welcome .header-content {width: 100%; margin-left: 50px;}
 	#welcome .header-content  h2 {font-size: 45px; color: #333; font-weight:bolder; line-height: 60px; margin: 0 auto;}
@@ -506,7 +683,7 @@
 	#fine .wrap .thank> div >ul .test h2{font-size: 30px; font-weight: bold; margin-bottom: 0px;}
 	#fine .wrap .thank> div >ul .test p{font-size: 16px; line-height: 20px; }
 
-	.start > .wrapper h1{font-size: 30px; font-weight: bold; line-height: 50px; padding-bottom: 50px; margin-top: 0;}
+	.start > .wrapper h1{font-size: 30px; font-weight: bold; line-height: 50px; padding-bottom: 50px; margin-top: 0;} */
 
   }
 

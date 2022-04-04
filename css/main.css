@@ -573,17 +573,20 @@ a {
 #best .inner >.tab> li .menu {
   padding: 10px 60px; font-size: 18px; font-weight: bold; border-radius: 50px;
 }
-#best .inner .tab li .menu1{border: 2px solid #B582DC; border-radius: 50px;}
-#best .inner .tab li .menu2{border: 2px solid #A1CDFF; border-radius: 50px;}
-#best .inner .tab li .menu3{border: 2px solid #FFA1A1; border-radius: 50px;}
+#best .inner .tab li .menu1{border: 3px solid #B582DC; border-radius: 50px;}
+#best .inner .tab li .menu2{border: 3px solid #A1CDFF; border-radius: 50px;}
+#best .inner .tab li .menu3{border: 3px solid #FFA1A1; border-radius: 50px;}
+#best .inner .tab li .menu1:hover {transition: 0.5s; background: #f6eeff;}
+#best .inner .tab li .menu2:hover {transition: 0.5s; background: #ecf3ff;}
+#best .inner .tab li .menu3:hover {transition: 0.5s; background: #ffecec;}
 
 #best .panel .mini {display: flex; margin-top: 50px;}
 #best .panel .mini h1 {margin: 10px 10px 0 50px; font-size: 35px; font-weight: bold;}
 
 #best .con {width: 100%; background-color: #f7f2ff; margin-top: 30px; padding-top: 40px; padding-bottom: 10px;}
-#best .gender { background-color: #f7f2ff; }
-#best .man { background-color: #eff6ff; }
-#best .woman { background-color: #ffefef; }
+#best .gender { background-color: #fbf8ff; border-radius: 20px;}
+#best .man { background-color: #f4f8ff;  border-radius: 20px;}
+#best .woman { background-color: #fff2f2;  border-radius: 20px;}
 
 #best .yeo > img{border-radius: 50%; width: 250px; height: 250px;}
 
@@ -784,24 +787,28 @@ left: 60.5%;
   background: url("../img/img1.jpg");
   margin-right: 2%; width: 24%;
   background-size: cover;color: white;
+  border-radius: 150px 150px 0 0;
 }
 
 .card-wrap > .card_box > .card2 {
   background: url("../img/img2.jpg");
   margin-right: 2%; width: 24%;
   background-size: cover;color: white;
+  border-radius: 150px 150px 0 0;
 }
 
 .card-wrap > .card_box > .card3 {
   background: url("../img/img3.jpg");
   margin-right: 2%; width: 24%;
   background-size: cover;color: white;
+  border-radius: 150px 150px 0 0;
 }
 
 .card-wrap > .card_box > .card4 {
   background: url("../img/img4.jpg");
   margin-right: 2%; width: 24%;
   background-size: cover;color: white;
+  border-radius: 150px 150px 0 0;
 }
 
 
@@ -835,7 +842,7 @@ left: 60.5%;
 
 .card-wrap >.card_box > .card > .bg{
     position: absolute;
-    top: 0;
+    top: 0; border-radius: 150px 150px 0 0;
     left: 0;
     z-index: 2;
     width: 100%;
@@ -1018,7 +1025,7 @@ color:#fff;
   width: 500px;
   height: 250px;
   position:relative;
-  outline:0;
+  outline:0; border-radius: 30px;
   background: rgb(247, 241, 253);
   margin: 0 auto;
 }
@@ -1077,7 +1084,7 @@ color:#fff;
 }
 
 .noti-box > ul {
-  margin-top: 25px;
+  margin-top: 25px; border-radius: 30px;
   background: rgb(247, 241, 253);
   padding: 30px 0;
 }

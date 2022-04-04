@@ -55,7 +55,7 @@
                 <div class="logo-box flex flex-jc-c">
                     <div class="img-box">
                         <a href="main.html">
-                            <img src="img/logo.png" alt="">
+                            <img src="img/logogo.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -86,13 +86,13 @@
                         <a>더 케어</a>
                         <div>
                             <ul>
-                                <li><a href="about_1.html">관리란</a></li>
+                                <li><a href="about_1.html">케어 라이프</a></li>
                                 <li><a href="about_3.html">오시는길</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="menu">
-                        <a>피부타입</a>
+                        <a>더 궁금해</a>
                         <div>
                             <ul>
                                 <li><a href="custom.html">더 체크</a></li>
@@ -116,8 +116,8 @@
                         <a>소통원해</a>
                         <div>
                             <ul>
+                                <li><a href="qna.html">기록장</a></li>
                                 <li><a href="noti.html">공지사항</a></li>
-                                <li><a href="qna.html">1:1문의</a></li>
                                 <li><a href="event.html">이벤트</a></li>
                             </ul>
                         </div>
@@ -127,8 +127,8 @@
         </div>
     
         <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-            <a href="#" alt="맨 위로">
-                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+            <a href="" alt="맨 위로">
+                <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
@@ -149,13 +149,10 @@
                 </div>
     
                 <div class="swiper-slide swiper-slide2">
-                    <img src="img/banner02.jpg" alt="">
+                    <img src="img/banner04.jpg" alt="">
                 </div>
     
-                 <div class="swiper-slide swiper-slide3" style="color: #ff8290;">
-                    <img src="img/banner03.jpg" alt="">
-                    
-                </div>
+                
     
     
             </div>
@@ -387,7 +384,7 @@
                     <p>
                     내 피부타입이 궁금하다면?<br>
                     테스트를 통해 알아보세요!
-                    </p><a href="custom-test.jsp">TEST</a>
+                    </p><a href="custom.html">TEST</a>
                 </div>
             </div>
         </div>
@@ -598,6 +595,14 @@
     
         <!-- 3. 실행 스크립트 -->
         <script>
+
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 
             $('#best .tab>li>a').on('click', function(e){
               e.preventDefault();
