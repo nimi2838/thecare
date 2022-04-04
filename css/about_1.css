@@ -385,8 +385,8 @@ a {
   left: 37%; 
  }
 #box_356824_obj_mask_2{
-  left:40%; 
-  margin-top: 55px;  
+  left:50%; 
+  margin-top: 250px;  
   width:100%;  
   position:relative; 
   z-index:2;
@@ -435,7 +435,7 @@ a {
 /* philosophy */
 .philosophy{
   height: 100%;
-  margin-top: 150px;
+  margin-top:300px;
   background-image: url(../img/about-bg1.jpg);
   background-size:auto;
   background-repeat: no-repeat;
@@ -573,6 +573,38 @@ padding-bottom: 50px;
   color: #fff;
   font-size: 22px;
 }
+
+/* pyo */
+
+.cleansing{
+  width: 100%;
+  margin-bottom: 150px;
+  margin-top: 150px;
+  background-color: #fff;
+
+}
+
+.cleansing > .inner {
+  width: 1180px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.pyo{
+  width: 50%;
+  float: left;
+  
+}
+
+.pyo_txt{
+  width: 35%;
+  float: right;
+  text-align: left;
+  font-size: 16px;
+  margin-top : 100px;
+  
+}
+
 
 
 
