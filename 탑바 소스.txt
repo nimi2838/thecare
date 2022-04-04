@@ -1,152 +1,331 @@
-    <div class="top-wrap">
-        <div class="top-box1 flex flex-jc-sb flex-ai-c">
-            <ul class="icon-box">
-                <li class="icon login">
-                    <a href="login.html">
-                        <div class="img-box">
-                            <img src="img/login_icon.png" alt="">
-                        </div>
-                        login
-                    </a>
-                    <div class="line-icon"></div>
-                </li>
-                <li class="icon join">
-                    <a href="join.html">
-                        <div class="img-box">
-                            <img src="img/join_icon.png" alt="">
-                        </div>
-                        join
-                    </a>
-                    <div class="line-icon"></div>
-                </li>
-                <li class="icon cart">
-                    <a href="cart.html">
-                        <div class="img-box">
-                            <img src="img/cart_icon.png" alt="">
-                        </div>
-                        cart
-                    </a>
-                </li>
-            </ul>
-            <div class="logo-box flex flex-jc-c">
-                <div class="img-box">
-                    <a href="main.html">
-                        <img src="img/logo.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="search_wrap">
-                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-                    <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
-                    </td>
-                    <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
-                    </td>
-                    <!-- <a href="searchform.html" class="btn_search">
+    
+<div class="top-wrap">
+            <div class="top-box1 flex flex-jc-sb flex-ai-c">
+    
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
                             <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
+                                <img src="img/login_icon.png" alt="">
                             </div>
-                        </a> -->
-                </form>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="cart.jsp">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+      
+                <div class="logo-box flex flex-jc-c">
+                    <div class="img-box">
+                        <a href="main.html">
+                            <img src="img/logogo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        </td>
+                    </form>
+                </div>
+    
+    
+    
+    
+    
+    
             </div>
-
-
-
-
-
-
-            <!-- 
-                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-					<td class="search">
-					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
-					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
-					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
-					   box-shadow: none;">
-					  </td>
-					<td class="schBtn" style="top: 0; left: 10px;">
-					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
-					style="position: absolute;top: 49%;
-					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
-					</td>  
-					</form> -->
-
-
-
-
-
-
-            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
-                    <div class="search-form form flex flex-ai-c">
-                      <input type="text" placeholder="검색어를 입력해주세요.">
-                      <a href="#" class="btn-type-1 btn-search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
+            <div class="line"></div>
+    
+    
+            <div class="top-box2">
+                <ul class="flex flex-jc-c">
+                    <li class="menu">
+                        <a>더 케어</a>
+                        <div>
+                            <ul>
+                                <li><a href="about_1.html">케어 라이프</a></li>
+                                <li><a href="about_3.html">오시는길</a></li>
+                            </ul>
                         </div>
-                      </a>
-                    </div>
-                  </div> -->
-
-
+                    </li>
+                    <li class="menu">
+                        <a>더 궁금해</a>
+                        <div>
+                            <ul>
+                                <li><a href="custom.html">더 체크</a></li>
+                                <li><a href="themore.html">더 모어</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu">
+                        <a>케어원해</a>
+                        <div>
+                            <ul>
+                                <li><a href="guide.html">안내/비용</a></li>
+                                <li><a href="change.html">예약확인/변경/취소</a></li>
+                                <li><a href="review.html">전후사진</a></li>
+                            </ul>
+                        </div>
+                    </li>
+    
+                    
+                    <li class="jsp">
+                        <a>소통원해</a>
+                        <div>
+                            <ul>
+                                <li><a href="qna.html">기록장</a></li>
+                                <li><a href="noti.html">공지사항</a></li>
+                                <li><a href="event.html">이벤트</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-           <div class="line"></div>
-
-
-        <div class="top-box2">
-            <ul class="flex flex-jc-c">
-                <li class="menu">
-                    <a>더 케어란</a>
-                    <div>
-                        <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
-                            <li><a href="about_3.jsp">오시는길</a></li>
-                        </ul>
-                    </div>
-                </li>
-				<li class="menu">
-                    <a>피부타입</a>
-					<div>
-                        <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
-                        </ul>
-                    </div>
-                </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
-                <li class="menu">
-                    <a>케어원해</a>
-                    <div>
-                        <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                
-                <li class="jsp">
-                    <a>소통원해</a>
-                    <div>
-                        <ul>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+    
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a href="#" alt="맨 위로">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
         </div>
-    </div>
+    
+
+
+CSS 소스
+
+.top-wrap>.top-box1 {
+  margin: 20px auto 15px;
+  width: 1280px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  z-index: 10;
+  display: block;
+}
+
+.top-wrap>.top-box1>div,
+.icon-box {
+  width: 33.3%;
+}
+
+.top-wrap>.top-box1>.icon-box {
+  float: left;
+}
+
+.top-wrap>.top-box1>.icon-box>.icon {
+  padding: 0 0 0 15px ;
+  text-align: center;
+  float: left;
+  display: flex;
+  font-family: 'ChosunSg';
+}
+
+.top-wrap>.top-box1>.icon-box>.cart {
+  padding: 0 15px 0 15px;
+}
+
+/* .top-wrap>.top-box1>.icon-box>.login {
+  background: red;
+}
+
+.top-wrap>.top-box1>.icon-box>.join {
+  background: blue;
+}
+
+.top-wrap>.top-box1>.icon-box>.cart {
+  background: green;
+} */
+
+.top-wrap>.top-box1>.icon-box>.icon>.line-icon {
+  display: flex;
+  width: 1px;
+  height: 50px;
+  background:#707070;
+  margin: 1px 0 0 15px;
+}
+
+/* .top-wrap>.top-box1>.icon-box>.icon:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  margin: -10px 40px;
+  background:#707070;
+} */
+
+.top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
+  width: 31px;
+  margin-bottom: 4px;
+}
+
+.top-wrap>.top-box1>.icon-box>.cart>a>.img-box {
+  width: 33px;
+  margin-bottom: 2px;
+}
+
+.top-wrap>.top-box1>.logo-box>.img-box>a>img {
+  width: 150px;
+}
+
+
+
+.top-wrap>.top-box1> .search_wrap >.search-box > .schBtn >input[type=image]  {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+
+
+.top-wrap>.top-box1> .search_wrap > .search-box .form {
+  width:0;
+  padding:0;
+  margin:0;
+  outline:0;
+  border:0;
+  border-bottom:1px solid transparent;
+  transition:width .3s, border-bottom-color .3s;
+  background-color:transparent;
+  color:#999;
+  margin-right:10px;
+  padding:10px;
+  display:block;
+  box-sizing:border-box;
+}
+
+.top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
+  width:170px;
+  border-bottom-color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-wrap>.top-box2 {
+  margin: 0px auto;
+  width: 100%;
+  font-size: 19px;
+  font-weight:bold;
+  color: #9c9c9c;
+  background:white;
+  z-index: 100;
+  font-family: 'ChosunSg';
+  text-align: center;
+  height: 60px;
+}
+
+.top-wrap>.top-box2>ul {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.top-wrap>.top-box2>ul>li {
+  /* width: 256px; */
+  width: 326px;
+  padding: 21px 0px;
+  position: relative;
+  transition: all .4s;
+
+}
+
+.top-wrap>.top-box2>ul>li:hover {
+  /* background: #f5eeff; */
+  color: #9869d4;
+}
+
+.top-wrap>.top-box2>ul>li>div {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+}
+
+/* .top-wrap > .top-box2 > ul>li:hover> div */
+.top-wrap>.top-box2>ul>li:hover>div {
+  visibility: visible;
+  position: absolute;
+  left: 0%;
+  margin-top: 22px;
+  background: white;
+  width: 100%;
+  transition: all .4s;
+}
+
+/* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
+.top-wrap>.top-box2>ul>li:hover>div>ul>li {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  transition: all .4s;
+}
+
+.top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
+  background: #f5eeff;
+  color: #9869d4;
+
+}
+
+
+.top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 자바스크립트 소스

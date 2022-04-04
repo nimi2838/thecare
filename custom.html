@@ -18,6 +18,8 @@
 </head>
 <body>
     
+    
+
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
@@ -81,20 +83,20 @@
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">스토리</a></li>
+                            <li><a href="about_1.html">케어 라이프</a></li>
                             <li><a href="about_3.html">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
                     <div>
                         <ul>
-                            <li><a href="custom.html"> 체크</a></li>
                             <li><a href="custom.html">더 체크</a></li>
+                            <li><a href="themore.html">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -114,8 +116,8 @@
                     <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="qna.html">기록장</a></li>
                             <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="qna.html">1:1문의</a></li>
                             <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
@@ -124,10 +126,108 @@
         </div>
     </div>
 
+    <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+        <a href="#" alt="맨 위로">
+            <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                <img src="img/up.png" width="50px" height="50px">
+            </div>
+        </a>
+        <a href="new_view.jsp" alt="최근 본 시술">
+            <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                    <img src="img/clock.png" width="50px" height="50px">
+                    <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+            </div>
+        </a>
+    </div>
 
 
+    <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+        <a href="#" alt="맨 위로">
+            <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                <img src="img/up.png" width="50px" height="50px">
+            </div>
+        </a>
+        <a href="new_view.jsp" alt="최근 본 시술">
+            <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                    <img src="img/clock.png" width="50px" height="50px">
+                    <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+            </div>
+        </a>
+    </div>
 
-    <section id="welcome" class="content">
+
+    <div class="survery content">
+        <div class="inner">
+            <div class="makde">
+                <a href="#"><img src="img/back.png" alt="" ></a>
+                <!-- 여기는 막대 
+                여기는 퍼센트 넣어야 함-->
+            </div>
+            <form action="">
+            <div class="wrap">
+                <h1>피부타입 자가진단</h1>
+                
+                    <div class="survery-test">
+                        <div class="qestion">
+                            <h1>Q1</h1>
+                            <p>세안 후 기초 제품을 바르지 않으면 피부 상태는 어떤가요?</p>
+                        </div>
+                        <ul class="qna-wrap">
+                            <li>
+                                <div class="check1-1"> 
+                                    <input type="checkbox" id="q1-1"> 
+                                    <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-2"> 
+                                    <input type="checkbox" id="q1-2"> 
+                                    <label for="q1-2"><p>심하게 당긴다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-3"> 
+                                    <input type="checkbox" id="q1-3"> 
+                                    <label for="q1-3"><p>조금 당긴다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-4"> 
+                                    <input type="checkbox" id="q1-4"> 
+                                    <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
+                                </div>
+                            </li>
+                        </ul>
+
+                            <a href="main.html">
+                                <div class="close-test">
+                                    <img src="img/test-close.png" alt="">
+                                </div>
+                            </a>
+                    </div>
+                
+            </div>
+            <div class="button">
+                <button class="survery-btn prev">이전</button>
+                <button class="survery-btn next">다음</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <script>
+        $('#best .tab>li>a').on('click', function(e){
+              e.preventDefault();
+              $('#best .panel').hide();
+              $(this).next('.panel').show();
+            });
+
+            $('#best .tab>li>a').first().trigger('click');
+
+    </script>
+
+
+    <!-- <section id="welcome" class="content">
         <header>
         <div class="inner">
                 <div class="header-content">
@@ -227,7 +327,7 @@
             피부타입을 알아보세요.</h1>
         <a href="custom-test.html">지금 시작하기</a>
     </div>
-</div>
+</div> -->
 
 
 

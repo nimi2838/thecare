@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <title>체크박스</title>
+    <style>
+
+        .gather {display: flex; justify-content: space-around; background-color: #f2f2f2;}
+
+        .check1-1 {position: relative;} 
+        .check1-1 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0;  
+        }
+        .check1-1 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-1 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-1 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(img/9-1.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-1 input[type="checkbox"]:checked + label:before { 
+            background-image: url(img/9-1on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-2 {position: relative;} 
+        .check1-2 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-2 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-2 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-2 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(img/9-2.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-2 input[type="checkbox"]:checked + label:before { 
+            background-image: url(img/9-2on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-3 {position: relative;} 
+        .check1-3 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-3 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-3 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-3 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(img/9-3.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-3 input[type="checkbox"]:checked + label:before { 
+            background-image: url(img/9-3on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-4 {position: relative;} 
+        .check1-4 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-4 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+            color: #ff6e6e;
+        } 
+        .check1-4 input[type="checkbox"] + label > p {font-size: 20px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-4 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 215px;  background-size: cover; height: 215px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(img/9-4.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-4 input[type="checkbox"]:checked + label:before { 
+            background-image: url(img/9-4on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+
+<div class="gather">
+    <div class="check1-1"> 
+        <input type="checkbox" id="q1-1"> 
+        <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
+    </div>
+    <div class="check1-2"> 
+        <input type="checkbox" id="q1-2"> 
+        <label for="q1-2"><p>심하게 당긴다</p> </label> 
+    </div>
+    <div class="check1-3"> 
+        <input type="checkbox" id="q1-3"> 
+        <label for="q1-3"><p>조금 당긴다</p> </label> 
+    </div>
+    <div class="check1-4"> 
+        <input type="checkbox" id="q1-4"> 
+        <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
+    </div>
+</div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const skillGragh = document.querySelector( '#my_skill' );
+
+function skillUp() {
+   skillGragh.value = '80';
+}
+
+const resetValue = document.querySelector('#my_skill').value = '20';
+
+function reset() {
+    skillGragh.value = resetValue
+}
+    </script>
+</body>
+</html>

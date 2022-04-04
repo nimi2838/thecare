@@ -336,17 +336,37 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-
-.content{width:100%;margin-top: 100px;}
+.content{width:100%; padding-top: 100px; padding-bottom: 100px; }
 .inner{width:1170px; margin: 0 auto;} 
+#tip .title {position: relative; margin: 0 auto; text-align: center;}
+#tip .title > h1 {font-size: 35px; color: #4e4e4e;}
+
+#tip .title > .title-img {position: absolute; top: -50px; left: 360px;}
+#tip .title > .title-imgs {position: absolute; top: -50px; right: 360px;}
+
+
+#tip .title .sun { 
+  margin: 0 auto; margin-bottom: 100px;
+  width: 250px; height: 130px; border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc; text-align: center; font-size: 25px;
+}
+#tip .title .sun > h4 {margin: 0;}
+
+#tip .cont {width: 90%; height: 440px; margin: 0 auto; text-align: center; }
+#tip .cont > img {margin: 0 auto;}
+#tip .cont > .cont-txt {margin-top: 30px;}
+#tip .cont > .cont-txt > p {font-size: 20px; color: #4e4e4e; font-weight: bold; line-height: 30px;}
+
+#tip .conts {
+  display: flex; width: 80%; height: 340px; margin: 100px auto; text-align: center; }
+#tip .conts > .conts-txt {width: 50%; margin-top: 30px;}
+#tip .conts > .conts-txt > p {font-size: 20px; color: #4e4e4e; font-weight: bold; line-height: 30px;}
+
+
+
+
+
+#mbti {background-color: #FFFAF6;}
 #mbti .wrap .con {width: 100%; height: 200px; margin-bottom: 30px;}
 #mbti .wrap .con > h2 {text-align: center; font-size: 30px; color: #4e4e4e;}
 
@@ -375,24 +395,53 @@ a {
 
 .wrap {margin: 0 auto;}
 #type .inner >h2 {text-align: center; font-size: 35px; font-weight: bold; margin-bottom: 50px;}
-#type .inner > p {margin-left: 120px; font-size: 18px; font-weight: bold; margin-top: 0;}
+#type .inner > p {margin-left: 120px; font-size: 16px; font-weight: bold; margin-top: 0; color: #333;}
 #type .tab{
     position: relative; width: 40%; height: 500px; 
     display: flex; flex-wrap: wrap; margin-left: 120px;
 }
-#type .tab>li{}
-#type .tab>li .menu {margin-right: 10px; background: pink; height: 115px; width: 220px;}
+#type .tab>li .menu {margin-right: 10px; height: 115px; width: 220px;}
+#type .tab>li .menu1, #type .tab>li .menu2 {background-color: #FFCCCC; border-radius: 20px;} 
+#type .tab>li .menu3, #type .tab>li .menu4 {background-color: #FF9A9A; border-radius: 20px;} 
+#type .tab>li .menu5, #type .tab>li .menu6 {background-color: #9FB5FF; border-radius: 20px;} 
+#type .tab>li .menu7, #type .tab>li .menu8 {background-color: #C5D8FF; border-radius: 20px;} 
+
+#type .tab>li .menu1:hover {transition: 0.4s; border: 3px solid #FFCCCC; background-color: #ffe8e8; color: #4e4e4e;}
+#type .tab>li .menu2:hover {transition: 0.4s; border: 3px solid #FFCCCC; background-color: #ffe8e8; color: #4e4e4e;} 
+#type .tab>li .menu3:hover {transition: 0.4s; border: 3px solid #FF9A9A; background-color: #ffe8e8; color: #4e4e4e;}
+#type .tab>li .menu4:hover {transition: 0.4s; border: 3px solid #FF9A9A; background-color: #ffe8e8; color: #4e4e4e;} 
+#type .tab>li .menu5:hover {transition: 0.4s; border: 3px solid #9FB5FF; background-color: #eff2ff; color: #4e4e4e;}
+#type .tab>li .menu6:hover {transition: 0.4s; border: 3px solid #9FB5FF; background-color: #eff2ff; color: #4e4e4e;} 
+#type .tab>li .menu7:hover {transition: 0.4s; border: 3px solid #C5D8FF; background-color: #eef3ff; color: #4e4e4e;}
+#type .tab>li .menu8:hover {transition: 0.4s; border: 3px solid #C5D8FF; background-color: #f1f5ff; color: #4e4e4e;} 
+
 #type .tab>li>a{
-  display: block;font-size: 40px; font-weight: bold; text-align: center;
-  line-height: 115px; color: white; letter-spacing: 15px;
+  display: block; font-size: 50px; font-weight: bold; text-align: center;
+  line-height: 115px; color: white; letter-spacing: 10px;
 }
 #type .tab>li>.panel{
     position: absolute; right: -480px; top: 0px; height: 490px;
-    border: 1px solid red; width: 100%; 
+    border: 2px solid rgb(194, 194, 194); width: 100%; 
 }
+
+#type .tab>li>.panel >.type-img > img {margin-left: 100px;}
+#type .tab>li>.panel >.type-txt {
+  width: 90%; margin: 0 auto;  font-size: 18px; font-weight: bold; line-height: 30px;
+}
+
 #type .inner >.tab> li .menu {
   padding: 10px 60px; font-size: 18px; font-weight: bold; border-radius: 50px;
 }
+
+
+#choice {background-color: #FFFAF6;}
+#choice .title {text-align: center; margin-bottom: 50px;}
+#choice .title > h1 {font-size: 35px;}
+#choice .title p {font-size: 18px; line-height: 30px;}
+
+#choice .conts {display: flex; align-items: center;}
+#choice .conts-txt {margin-left: 100px; width: 70%;}
+#choice .conts-txt p{font-size: 18px; line-height: 30px;}
 
 
 /* footer */
