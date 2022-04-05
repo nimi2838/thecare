@@ -12,7 +12,19 @@ body {
   padding: 0;
 }
 
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Mujinjang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Mujinjang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'ChosunSg';
@@ -129,7 +141,6 @@ a {
   width: 100%;
   display: block;
 }
-
 
 
 
@@ -286,7 +297,7 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #f5eeff;
+  background: #ffeeee;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -315,13 +326,22 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #f5eeff;
+  background: #ffeeee;
+  /* color: #9869d4; */
+
 }
 
 
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
+
+
+
+
+
+
+
 
 
   
