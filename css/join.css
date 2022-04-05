@@ -144,6 +144,7 @@ a {
 
 
 
+
 .top-wrap>.top-box1 {
   margin: 20px auto 15px;
   width: 1280px;
@@ -296,7 +297,7 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #f5eeff;
+  background: #ffeeee;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -325,13 +326,21 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #f5eeff;
+  background: #ffeeee;
+  /* color: #9869d4; */
+
 }
 
 
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
+
+
+
+
+
+
 
 
 
@@ -350,7 +359,7 @@ a {
    
 	padding-top: 50px;
 	padding-bottom: 70px;
-    background-color: #f5eeff
+    background-color: #fff0f2;
     ;
     
 }
@@ -456,7 +465,7 @@ input[type="text"],input[type="password"]{
 	width:340px;
 	text-align: center;
 	margin: 0 auto;
-	background-color: #f5eeff;
+	background-color: #fff0f2;
 	border-radius: 10px; 
 	font: bold 18px/44px 'ChosunSg';
 	
@@ -473,7 +482,7 @@ input[type="text"],input[type="password"]{
   }
 
   .join_btn:hover{
-	background: #e4d1ff;
+	background: #f89fa8;
   ;
 
   color: #fff;

@@ -19,11 +19,13 @@
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
 <body>
-<div class="top-wrap">
+
+
+    <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
 
-                        	  <%
+                             <%
    if(myid == null) {
 
 %>
@@ -55,12 +57,12 @@
                     </a>
                 </li>
             </ul>
-			<%
+         <%
 }
 else{
 %>
 
-	<ul class="icon-box">
+   <ul class="icon-box">
                 <li class="icon login">
                     <a href="logout.jsp">
                         <div class="img-box" style= "margin-left: 3px;">
@@ -108,49 +110,12 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
 
 
 
 
-
-
-            <!-- 
-                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-					<td class="search">
-					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
-					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
-					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
-					   box-shadow: none;">
-					  </td>
-					<td class="schBtn" style="top: 0; left: 10px;">
-					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
-					style="position: absolute;top: 49%;
-					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
-					</td>  
-					</form> -->
-
-
-
-
-
-
-            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
-                    <div class="search-form form flex flex-ai-c">
-                      <input type="text" placeholder="검색어를 입력해주세요.">
-                      <a href="#" class="btn-type-1 btn-search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
-                        </div>
-                      </a>
-                    </div>
-                  </div> -->
 
 
         </div>
@@ -160,20 +125,20 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-				<li class="menu">
-                    <a>피부타입</a>
-					<div>
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
+                     <li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -190,7 +155,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+                     <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -202,8 +167,8 @@ else{
                     <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -211,6 +176,20 @@ else{
             </ul>
         </div>
     </div>
+
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 <%
@@ -309,6 +288,26 @@ window.location = 'login.jsp';
 
     <!-- 3. 실행 스크립트 -->
     <script>
+	gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '61px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+
+	const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
         var swiper = new Swiper(".mySwiper", {
             cssMode: true,
             navigation: {

@@ -16,16 +16,16 @@
 </head>
 
 <%
-   String myid = (String)session.getAttribute("sid"); 
-   %>
-
+   String myid = (String)session.getAttribute("sid");                                                                           
+%>
 <body>
 
 
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-            
-  <%
+
+
+                             <%
    if(myid == null) {
 
 %>
@@ -57,12 +57,12 @@
                     </a>
                 </li>
             </ul>
-			<%
+         <%
 }
 else{
 %>
 
-	<ul class="icon-box">
+   <ul class="icon-box">
                 <li class="icon login">
                     <a href="logout.jsp">
                         <div class="img-box" style= "margin-left: 3px;">
@@ -73,7 +73,7 @@ else{
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon join">
-                    <a href="join.jsp">
+                    <a href="mypage.jsp">
                         <div class="img-box" style= "margin-left: 8px;">
                             <img src="img/join_icon.png" alt="">
                         </div>
@@ -110,63 +110,64 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
+
+
+
+
+
 
         </div>
         <div class="line"></div>
 
 
- <div class="top-box2">
+        <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-				<li class="menu">
-                    <a>피부타입</a>
-					<div>
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-                            <li><a href="qna.jsp">더 소통</a></li>
+                     <li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술</a>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
                             <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <li class="menu">
-                    <a>예약</a>
+                    <a>케어원해</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">바로예약</a></li>
+                     <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.jsp">최근본시술</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
 
                 
                 <li class="jsp">
-                    <a>커뮤니티</a>
+                    <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
@@ -176,15 +177,28 @@ else{
         </div>
     </div>
 
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 
 
-    <div class="boxsize moduleWrap fnloadContent poRel box_module_box_add" id="box_module_box_add_356823"
+  <div class="boxsize moduleWrap fnloadContent poRel box_module_box_add" id="box_module_box_add_356823"
         style="z-index:0;overflow:hidden;">
 
 
-        <div style="position: absolute; top: 66.3%; left: 50%; width:100%; height:100%; z-index:-100;
+        <div style="position: absolute; top: 65.5%; left: 50%; width:100%; height:100%; z-index:-100;
         -webkit-transform: translateX(-50%) translateY(-50%);-moz-transform: translateX(-50%) translateY(-50%);
         -ms-transform: translateX(-50%) translateY(-50%);-o-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%); ">
@@ -246,38 +260,29 @@ else{
                                                         class="box_356824_obj_mask_0 dispinb maskObject ">
 
 
-                                                        <div class="imgs">
-                                                            <img src="img/about_1-banner_logo.png">
-                                                        </div>
+                                                        
 
 
 
 
                                                         <div id="box_356824_obj_mask_1"
                                                             class="box_356824_obj_mask_1 dispinb maskObject ">
-                                                            <svg id="mask_356824_svg_1" class="mask_356824_svg_1"
-                                                                width="1" height="55" viewBox="0 0 1 55" fill=""
-                                                                stroke="" stroke-width="">
-                                                                <line class="" transform="translate(0.5)" fill="#fff"
-                                                                    stroke="#fff" savefill="#fff" savestroke="#fff"
-                                                                    stroke-width="1" style="fill: #fff;  " x1="0" y1="0"
-                                                                    x2="0" y2="55"></line>
-                                                            </svg>
+                                                            
                                                         </div>
                                                         <div id="box_356824_obj_mask_2"
                                                             class="box_356824_obj_mask_2 dispinb maskObject ">
                                                             <div>
-                                                                <h1 id="mask_subject" class="posRel zindex0">당신은 자연스러울 때
-                                                                    가장 아름답습니다.</h1>
+                                                                <h1 id="mask_subject" class="posRel zindex0">20대 관리 지금부터 차근차근 해봐요.</h1>
                                                             </div>
                                                             <div>
-                                                                <h1 id="mask_content" class="posRel zindex0">THE CARE
+                                                                <h1 id="mask_content" class="posRel zindex0">CARE LIFE
                                                                 </h1>
                                                             </div>
                                                             <div class="small_text">
-																
-                                                                유행을 따라잡는 아름다움엔 유통기한이 있습니다. <br>
-                                                                본연의 아름다움으로 빛의 시그니처를 선사하겠습니다.
+
+                                                                '자신만의 자연스러운 아름다움', '진정한 아름다움'을 <br>
+                                                                찾아드리는 꿈의 여정을 함께 이루어 드리겠습니다.
+                                                                
                                                             </div>
 
 
@@ -310,101 +315,15 @@ else{
             <script></script>
         </div>
     </div>
-
-    <div class="intro">
-        <div class="inner">
-            <div class="pink_box"></div>
-            <div class="building"><img src="img/building-out.png"></div>
-            <div class="intro_left">
-
-                <div class=intro_txt>
-
-                    <h1>지금의 트렌드와 시대를 관통하는 클래식.</h1>
-                    <p>둘 사이에서 자연스러운 밸런스가 중요한 가치가 된 시대입니다.</p>
-                    </h1>
-                    <br>
-                    <p>진심을 담은 치료로 당신의 피부 밸런스를 지켜드리는
-                        더케어 입니다.</p>
-                </div>
-
-            </div>
-        </div>
-
+    
 		
-    <section id="doctor" class="content">
-        <div class="inner">
-            <h2 class="title">의 료 진</h2>
-            <p class="title2" style="text-align:center; margin: 30px 0 80px; font-size:20px;">The Care Dermatologist</p>
-            <div class="wrap">
-                <div class="box">
-                    <img src="img/doctor_list_thum02.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>김철수</span> 원장
-                        <div class="bg1"></div>
-						</h3>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum03.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>강건희</span> 원장
-						<div class="bg1"></div>
-						</h3>
-                        
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum04.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
-						<div class="bg1"></div>
-						</h3>
-                        
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum05.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>김영희</span> 원장
-						<div class="bg1"></div>
-						</h3>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum06.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>송찬호</span> 원장
-						<div class="bg1"></div>
-						</h3>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum07.png" alt="">
-                    <div class="info">
-                        <h3 class="doctor_name"><span>최은혜</span> 원장
-						<div class="bg1"></div>
-						</h3>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/doctor_list_thum08.png" alt=""> 
-                    <div class="info">
-                        <h3 class="doctor_name"><span>박정우</span> 원장
-                        <div class="bg1"></div>
-						</h3>
-                    </div>
-                </div>
-                <div class="box">
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
 
         <div class="philosophy">
             <div class="inner">
                 <div class="philosophy_title">
-                    <img src="img/about_1-banner_logo.png" width="60">
+                    
                     <h1>THE CARE Philosophy</h1>
                 </div>
                 <div class="philosophy_3menu">
@@ -496,7 +415,98 @@ else{
             </div>
         </div>
 		</div>
-    
+    <div class = "cleansing">
+            <div class = "inner">
+                <h1 style = "text-align: center;">피부관리 필요성, 언제부터 느끼나?</h1>
+                <div class = "pyo">
+                    <img src="img/pyo.png">
+                    </div>
+                <div class = "pyo_txt">
+                <p>더케어가 설문 조사한 결과 일반적으로 피부노화가 진행되는 시기가 25세 이후임에도 불구하고 
+                    20세에서 24세의 시기에 관리의 필요성을 느꼈다는 답이 가장 많이 나왔다. 
+                   <br>이어 ‘25세~29세’라는 대답이 34.5%(10표), <br>‘30세~34세’라는 대답이 3,4%(1표)로 집계됐다.
+                </p></div>
+
+            </div>
+        </div>
+     
+
+        <div class = "box_5">
+            <div class = "inner">
+                <h1 style = "text-align: center;">복합적인 요소를 고려한 맞춤 관리</h1>
+               <div class="boxs">
+
+                    <div class = "box_5_1">
+                        <div class="box_tit">
+                            <h1>유전</h1>
+                        </div>
+                        <div class="bg">
+                            <div class = "box_box">
+                                <p>선천적인 부분은 피부의 컨디션과 시간에 따른 변화에 상당한 영향을 끼칩니다. 
+                                    예를 들어, 가족 구성원들의 모공이 넓은 편이라면, 자신의 모공도 넓을 수 있습니다. 이러한 생물학적 요인은 통제할 수 없지만 건강한 피부를 유지하기 위해 최대한 노력할 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "box_5_2">
+                        <div class="box_tit">
+                        <h1>환경</h1>
+                    </div>
+                    <div class="bg">
+                        <div class = "box_box">
+                            <p>냉난방이 잘 되는 공간, 온도가 너무 높거나 너무 낮은 장소 혹은 공기가 탁한 곳에 오래 있으면 
+                                피부가 건조해지거나 칙칙해지며 노폐물이 쌓일 수 있습니다. 
+                                덥고 습한 환경도 피부에 악영향을 미칠 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class = "box_5_3">
+                        <div class="box_tit">
+                            <h1>계절의 변화</h1>
+                        </div>
+                        <div class="bg">
+                            <div class = "box_box">
+                                <p>예를 들어, 여행을 자주 하는 사람은 날씨의 급격한 변화로 인해 피부가 건조해집니다. 
+                                    계절이 변하고 알레르기 반응이 나타날지라도 피부는 서서히 반응합니다. 
+                                    더케어는 피부 관리에서 현재뿐 아니라 다가오는 계절까지 고려하는 스킨 케어가 가장 효과적이라는 사실을 알게 되었습니다. 
+                                    더운 날씨에는 햇빛을 피해 피부를 보호하고 가벼운 하이드레이터로 수분을 공급해야 합니다. 
+                                    추운 날씨에는 비타민이 풍부한 음식을 섭취하고 날카로운 바람에 대비하여 보호막을 제공하는 크림을 바를지 고민할 필요가 있습니다.</p>
+                            </div>
+                        </div>
+                </div>
+                <div class="boxss">
+                    <div class = "box_5_4">
+                        <div class="box_tit">
+                            <h1>여행</h1>
+                        </div>
+                        <div class="bg">
+                            <div class = "box_box">
+                                <p>근사한 곳 어디를 가더라도 여행은 피부에 상당한 영향을 줄 수 있고,
+                                     극심한 기후 변화로도 피부는 쉽게 변화합니다. 여행 중에는 보습에 특별히 신경을 쓰고 
+                                    여행지의 기온과 환경 차이를 고려해 피부를 관리해보세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "box_5_5">
+                        <div class="box_tit">
+                        <h1 style = "color: rgb(101, 101, 101);">라이프스타일</h1>
+                    </div>
+                    <div class="bg">
+                        <div class = "box_box">
+                            <p>생활 습관과 관련한 다양한 요인은 피부의 건강에 영향을 끼칩니다. 
+                                이러한 요인에는 수면 부족, 스트레스, 흡연 및 알코올 같은 물질의 과다 섭취가 있으며 
+                                그 결과 피부톤이 칙칙해지기도 하고 피부 트러블이 자주 발생할 수 있습니다. 
+                                가능하면 신선한 재료로 집에서 요리한 음식을 드시고 물도 많이 드시는 것이 좋습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          
+            </div>
+        </div>
     
 
 
@@ -504,7 +514,7 @@ else{
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <img src="./img/logo_ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
             <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
@@ -526,6 +536,26 @@ else{
 
     <!-- 3. 실행 스크립트 -->
     <script>
+	gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '61px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+		const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
         var swiper = new Swiper(".mySwiper", {
             cssMode: true,
             navigation: {
