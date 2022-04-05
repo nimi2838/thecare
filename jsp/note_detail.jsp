@@ -325,7 +325,7 @@ else{
         
                                     <img src="img/bok.png" alt="">
                                     <input type="hidden" name="in_name">
-                                작성자</td>
+                                봉조율</td>
                             </tr>
 							<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
                     

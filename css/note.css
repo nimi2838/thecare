@@ -340,12 +340,14 @@ a {
 
 
 .note_box {
-    width: 70%;
+    width: 60%;
     margin: 50px auto 0;
 }
 
 .note_box > h1 {
     margin-bottom: 50px;
+	text-align: center;
+	font-size: 35px;
 }
 
 .note_box > .con_box {

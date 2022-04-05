@@ -204,10 +204,10 @@ else{
             <div class="text-box">
 
                 <div class="text1">
-                    <h3>제목</h3>
+                    <h3>윤곽주사 아프네요,,</h3>
                     <div class="icon-box">
                         <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+                           방금 맞고왔는데 아프긴 하지만 벌써 이뻐보이네요
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@ else{
                         <i class="fa-solid fa-comment"></i>
                     </div>
                     <div class="cnt">
-                        99+
+                        0
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@ else{
          <a href="note_detail.jsp" class="con_box">
 
             <div class="img-box">
-                <img src="img/dsn.png" alt="">
+                <img src="img/osn.png" alt="">
             </div>
 
             <div class="text-box">
@@ -250,7 +250,7 @@ else{
                         <i class="fa-solid fa-comment"></i>
                     </div>
                     <div class="cnt">
-                        99+
+                        4
                     </div>
                 </div>
             </div>
@@ -262,16 +262,16 @@ else{
           <a href="note_detail.jsp" class="con_box">
 
             <div class="img-box">
-                <img src="img/osn.png" alt="">
+                <img src="img/dsn.png" alt="">
             </div>
 
             <div class="text-box">
 
                 <div class="text1">
-                    <h3>dkz</h3>
+                    <h3>손에 땀 이제 안녕</h3>
                     <div class="icon-box">
                         <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+                            손발에 땀이 많아 불편했는데 다한증 보톡스 맞고 훨 나아짐 강추!
                         </div>
                     </div>
                 </div>
@@ -281,7 +281,7 @@ else{
                         <i class="fa-solid fa-comment"></i>
                     </div>
                     <div class="cnt">
-                        99+
+                        1
                     </div>
                 </div>
             </div>
@@ -298,10 +298,10 @@ else{
             <div class="text-box">
 
                 <div class="text1">
-                    <h3>제목</h3>
+                    <h3>사각턱 개빡침ㅡㅡ</h3>
                     <div class="icon-box">
                         <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+                            제목 곧 내용 (ㅈㄱㄴ)
                         </div>
                     </div>
                 </div>
@@ -311,7 +311,7 @@ else{
                         <i class="fa-solid fa-comment"></i>
                     </div>
                     <div class="cnt">
-                        99+
+                        5
                     </div>
                 </div>
             </div>
