@@ -876,7 +876,7 @@ left: 60.5%;
 .card-wrap >.card_box > .card:hover > .bg {
   background:rgba(0, 0, 0, 0.555);
   visibility: visible;
-  opacity: 100%; 
+  opacity: 100%;   
 }
 
 
