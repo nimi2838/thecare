@@ -8,12 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/note.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/note_detail.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>메인페이지</title>
 </head>
-<body>
-
 <%
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
@@ -191,142 +189,188 @@ else{
             </a>
         </div>
 
-    <div class="note_box">
-
-        <h1>시술 기록장</h1>
-
-        <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/dsp.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
+    <div class="detail_wrap">
+        <div class="detail_box">
+            <div class="user_box">
+        
+                <div class="user1 flex">
                     <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
+        						<img src="img/osn.png" alt="">
                     </div>
-                    <div class="cnt">
-                        99+
+                    <div class="text">
+                        <h2>코쟁이</h2>
+                        <p>2022-03-30</p>
                     </div>
-                </div>
-            </div>
-            
-        </a>
-        <hr>
-
-
-
-
-         <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/dsn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>하이코 전후차이 ㅜㅜ</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            4개월차고 하이코 했는데 원래 코 끝이 높아지고 복코 좀 개선하려는 게 제 수술 목적이었는데 친구들 마다 콧대가 좀 높아진거 말고는 전코랑 차이가 없다고 하고
-                        </div>
+                    <div class="like">
+                        <img src="img/heart.png">
                     </div>
                 </div>
-
-                <div class="text2">
+        
+                <div class="user2 flex">
+                    <div class="item">
+                        #코필러
+                    </div>
+                    <div class="item">
+                        #붓기
+                    </div>
+                    <div class="item">
+                        #보톡스
+                    </div>
+                </div>
+        
+                <div class="img-wrap flex">
+                    <div class="img-box img1">
+        						<img src="img/note5.jpg">
+                    </div>
                     <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
+        						<img src="img/note6.jpg">
                     </div>
-                    <div class="cnt">
-                        99+
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        <hr>
-
-
-          <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/osn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>dkz</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
+                    <div class="img-box last">
+        						<img src="img/note7.jpg">
                     </div>
                 </div>
             </div>
-            
-        </a><hr>
-		
-		
-		  <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/orn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
-                        </div>
-                    </div>
+        
+            <div class="note">
+                <div class="title">
+                    하이코 전후차이 ㅜㅜ
                 </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
-                    </div>
+                <div class="body">
+                    4개월차고 하이코 했는데 원래 코 끝이 높아지고 복코 좀 개선하려는 게 제 수술 목적이었는데 친구들 마다 콧대가 좀 높아진거 말고는 전코랑 차이가 없다고 하고 진짜 친한 친구는 예전코에서 살짝 코 끝이 더 도톰해지고 내려온 느낌이래요 ㅠㅠ 원래 코끝이 옆에서 봤을 때 있는 편이라 더 도톰해진건지 붓기인지 ㅜㅜ 
+        					하이코 붓기 언제까지 빠지나요 ?? ㅠㅠ 코 어떤지 봐주세요 더 빠질까요 ㅜ ㅜ
                 </div>
             </div>
-            
-        </a>
-    </div>
+        
+            <hr>
+        
+            <div class="price">
+                <h1>시술 비용</h1>
+            </div>
+        
+        			<hr>
+        
+            <div class="comment">
+                <h1>댓글</h1>
+        
+        
+        				<table class="com_list">
+        					<tr bgcolor='ffffff'>
+        						<td>
+        						<div class="img-box"><img src="img/dsp.png"></div>
+        						</td>
+        
+        						<td>
+        						<div class="com_title">까탈이</div>
+        						<div>붓기 빠지면 이쁘겠네요!</div>
+        						</td>
+        									  
+        						<td>
+        						<div align="end" class="day">2022-03-30</div>
+        						</td>
+        					</tr>  	
+        				</table>
 
-<!--     <input type="file" id="inputImage">
-    
-    <button id="sendButton">보내기</button>
-      
-    <img src="" class="uploadImage"> -->
+        
+        
+        				<table class="com_list">
+        					<tr bgcolor='ffffff'>
+        						<td>
+        						<div class="img-box"><img src="img/drp.png"></div>
+        						</td>
+        
+        						<td>
+        						<div class="com_title">다욧</div>
+        						<div>붓기인 거 같아요 !</div>
+        						</td>
+        									  
+        						<td>
+        						<div align="end" class="day">2022-04-02</div>
+        						</td>
+        					</tr>  	
+        				</table>
+        
 
+        
+        				<table class="com_list">
+        					<tr bgcolor='ffffff'>
+        						<td>
+        						<div class="img-box"><img src="img/dsn.png"></div>
+        						</td>
+        
+        						<td>
+        						<div class="com_title">당근이 조하</div>
+        						<div>이쁘시네요</div>
+        						</td>
+        									  
+        						<td>
+        						<div align="end" class="day">2022-04-05</div>
+        						</td>
+        					</tr>  	
+        				</table>
+        					
+        
+        
+        
+        
+        				<hr>
+        
+        
+                <form method="post" action="board-write-process.jsp" name="input" class="write_com">
+             
+                     <table border="0" cellspacing="2" cellpadding="3">
+                    
+                            <tr class="user-view">
+                                <td class="flex flex-ai-c">
+                                <input type="hidden" name="idx" value="idx">
+        
+                                    <img src="img/bok.png" alt="">
+                                    <input type="hidden" name="in_name">
+                                작성자</td>
+                            </tr>
+							<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+                    
+                            <tr class="com_wrap">
+                                <td class="td1">
+                                    <textarea rows="12" cols="210"name="in_content" style="outline: none;"> 댓글을 입력해주세요.</textarea>
+                                </td>
+                                <td>
+                                    <div class="btn"> 
+                                        <input type="button" name="write_submit" value="등   록" OnClick="in_check()" 
+                                        class="btn1"
+                                        style="background: white; border: 1px solid #1f628e; padding: 102px 15px; ">
+                                    </div>
+                                </td>
+                            </tr> 	 
+                            <tr>    
+                                    <td colspan="2"> 
+                                    
+                                    </td>
+                                </tr>
+                      
+                      </table>
+                      <input type="hidden" name="step" value="step">
+                      <input type="hidden" name="mid" value="mid">
+                      <input type="hidden" name="rnum" value="rnum">  
+             
+             
+                      
+             
+                  
+                   </form>
+        
+        
+        
+        
+        
+                </div> <!-- comment -->
+        
+        
+        
+        
+            </div>
+        </div>
 
-			 <div class="footer flex flex-jc-c">
+		 <div class="footer flex flex-jc-c">
         <div class="text">
             <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
@@ -340,9 +384,7 @@ else{
 
 
 
-
-
-     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
@@ -420,5 +462,9 @@ else{
 
         </script>
 
-    </body>
+		
+
+
+</body>
+
 </html>

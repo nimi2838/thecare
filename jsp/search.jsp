@@ -17,13 +17,14 @@
 <%
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
-
-
 <body>
+
+
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-            
-  <%
+
+
+                        	  <%
    if(myid == null) {
 
 %>
@@ -71,7 +72,7 @@ else{
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon join">
-                    <a href="join.jsp">
+                    <a href="mypage.jsp">
                         <div class="img-box" style= "margin-left: 8px;">
                             <img src="img/join_icon.png" alt="">
                         </div>
@@ -108,13 +109,14 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
+
+
+
+
+
+
 
         </div>
         <div class="line"></div>
@@ -123,45 +125,51 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.html">더케어 의료진</a></li>
-                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술안내</a>
-                    <div>
+				<li class="menu">
+                    <a>더 궁금해</a>
+					<div>
                         <ul>
-                            <li><a href="guide.jsp">시술비용</a></li>
-                            <li><a href="review.html">전후사진</a></li>
+                            <li><a href="custom.jsp">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술예약</a>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.html">예약하기</a></li>
-                            <li><a href="change.html">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.html">최근본시술</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li> -->
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+							<li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a href="custom.html">맞춤시술</a>
-                </li>
-                <li class="menu">
-                    <a>커뮤니티</a>
+
+                
+                <li class="jsp">
+                    <a>소통원해</a>
                     <div>
                         <ul>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="qna.html">1:1문의</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="note.jsp">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -169,7 +177,19 @@ else{
         </div>
     </div>
 
-
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 <%
  try{
@@ -183,7 +203,7 @@ else{
 	request.setCharacterEncoding("euc-kr");
 	String keyword = request.getParameter("keyword");    
 
-    String jsql = "SELECT * FROM surgery WHERE titleinfo LIKE '%" + keyword + "%'; ";   
+    String jsql = "SELECT * FROM surgery WHERE skey LIKE '%"+keyword+"%';";   
 	PreparedStatement pstmt  = con.prepareStatement(jsql);
 
 	ResultSet rs = pstmt.executeQuery();
@@ -227,20 +247,18 @@ else{
 			String pno =  rs.getString("prdNo");	
 			String name =  rs.getString("prdName");	
 			String  price =  rs.getString("startprice");
-			String memo =  rs.getString("prdMemo");	
 %>
 
 
         <div class="search_box">
             <div class="search1">
                 <h2><%=name%></h2>
-                <p><%=memo%></p>
             </div>
             <div class="search2">
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
-                <a href="sub_1.jsp?prdNo=<%=pno%>" class="btn">상세보기</a>
+                <a href="sub_<%=pno%>.jsp?prdNo=<%=pno%>" class="btn">상세보기</a>
             </div>
         </div>
 
