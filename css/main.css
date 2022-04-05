@@ -144,6 +144,7 @@ a {
 
 
 
+
 .top-wrap>.top-box1 {
   margin: 20px auto 15px;
   width: 1280px;
@@ -297,7 +298,6 @@ a {
 
 .top-wrap>.top-box2>ul>li:hover {
   background: #ffeeee;
-  color: #d46969;
 }
 
 .top-wrap>.top-box2>ul>li>div {

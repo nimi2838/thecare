@@ -126,20 +126,20 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
 				<li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
 					<div>
                         <ul>
-                            <li><a href="custom.jsp"> 체크</a></li>
-							<li><a href="custom.jsp">더 체크</a></li>
+                            <li><a href="custom.jsp">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -168,8 +168,8 @@ else{
                     <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -178,251 +178,310 @@ else{
         </div>
     </div>
 
-	<div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-		<a href="new_view.jsp" alt="최근 본 시술">
-	<div  style="border-radius:50%;z-index:150; width:60px;height:60px; margin-bottom: 10px;">
-			<img src="img/clock.png">
-		</div>
-		</a>
-		<a href="#" alt="맨 위로">
-		<div  style="border-radius:50%;z-index:150; width:60px;height:60px;">
-			<img src="img/up.png">
-		</div>
-		</a>
-	</div>
-
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            
-            <div class="swiper-slide  swiper-slide1">
-                <img src="img/banner01.jpg" alt="">
-                <div class="text-1"  style="position: absolute;
-  top: 25%;
-  left: 15%;
-  transform: translate(-30%, -20%);
-  text-align: start;">
-                    <h1 style="font-size:45px; margin:0; font-weight:600;">여드름 흉터관리</h1>
-                    <p style="font-size:45px; margin:-3px 0 0 0;font-weight:600;">아직도 피부 표면만 치료하고 계신가요 ?</p>
-                    
-                </div>
-
-				<div class="text-2">
-                        <p style="font-size:50px; margin:0;">피부 겉과 속을 모두 치료하는!</p>
-						<h1 style="font-size:70px; margin:10px 0 0; color:#555;">여드름 케어</h1>
-                    </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide2">
-                <img src="img/banner02.jpg" alt="">
-                <div class="text-1" style="  position: absolute;  top: 38%;
-  left: 60%;
-  transform: translate(-30%, -20%);
-  text-align: start; font-size: 30px; text-align:end; color: #af83b8;">
-                    <h1 style="font-size:40px; margin-top: 10px;padding: 10px 0; font-weight: 300;color: #684070;">수술없이 슬림한 얼굴라인<br> <span style="font-size:70px; line-height: 130px;color: #52205c;">윤곽주사</span></h1>
-                    <p style="font-size:45px; margin:-35px 0 0;color: #684070;">놀라운 효과 지금 바로 느껴보세요!</p>
-                </div>
-            </div>
-
-			 <div class="swiper-slide swiper-slide3" style="color: #ff8290;">
-                <img src="img/banner03.jpg" alt="">
-                <div class="text-1" style=" position: absolute;
-  top: 33%;
-  left: 69%;
-					transform: translate(-30%, -20%);
-					  text-align: start;  "> 
-                    <h1 style="font-size: 70px;
-						color: #ff8290; ">아쿠아필링</h1>
-					<div style="text-align:center;">
-					노폐물은 제거하고! <br> 수분은 채우고!
-				</div>
-                </div>
-				
-            </div>
-
-
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-    <div class="slider-box-1">
-        <p>DOCTORS</p>
-        <div class="slick">
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
-                    <div class="name">
-						<p>보톡스 전문</p>
-                        <span>김철수</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
-                    <div class="name">
-					<p>보톡스 전문</p>
-                        <span>강건희</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
-                    <div class="name">
-					<p>체형 전문</p>
-                        <span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
-                    <div class="name">
-					<p>필러 전문</p>
-                        <span>김영희</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
-                    <div class="name">
-					<p>레이저 전문</p>
-                        <span>최은혜</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="about_2.html">
-                    <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
-                    <div class="name">
-					<p>피부 전문</p>
-                        <span>박정우</span> 원장
-                        <div class="bg1"></div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-        <div class="arrows">
-            <div class="btn-right">
-                <img src="icon/doc_right.png" alt="">
-            </div>
-            <div class="btn-left">
-                <img src="icon/doc_left.png" alt="">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="mini-ban">
-        <div class="text-box">
-            <div>
-				<p>
-				내 피부타입이 궁금하다면?<br>
-				테스트를 통해 알아보세요!
-				</p><a href="custom-test.jsp">TEST</a>
-			</div>
-        </div>
-    </div>
-
-
-    <div class="card-wrap">
-
-        <div class="card_box card_box1 flex flex-jc-c">
-            <a href="about_1.html" class="card1 card">
-                <div class="text-box">
-                    <h1>THE CARE</h1>
-                    <p>진심을 담은 치료로<br> 당신의 피부 밸런스를 지켜드리는 더케어 입니다.</p>
-                </div>
-                <div class="bg">
-                    <div class="view">VIEW</div>
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
-
-            <a href="#" class="card2 card">
-                <div class="text-box">
-                    <h1>여드름케어</h1>
-                    <p>여드름 자국까지 완벽하게</p>
-                </div>
-                <div class="bg">
-                    <div class="view">VIEW</div>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
 
-        <div class="card_box card_box2 flex  flex-jc-c">
-            <a href="#" class="card3 card">
-                <div class="text-box">
-                    <h1>걸그룹주사</h1>
-                    <p>워너비 몸매가 될 수 있는 보톡스</p>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide  swiper-slide1">
+                    <img src="img/banner01.jpg" alt="">
+    
                 </div>
-                <div class="bg">
-                    <div class="view">VIEW</div>
+    
+                <div class="swiper-slide swiper-slide2">
+                    <img src="img/banner04.jpg" alt="">
                 </div>
-            </a>
-
-            <a href="#" class="card4 card">
-                <div class="text-box">
-                    <h1>필러</h1>
-                    <p>트렌디한 감각과
-                        디자인</p>
-                </div>
-                <div class="bg">
-                    <div class="view">VIEW</div>
-                </div>
-            </a>
-
-            <a href="#" class="card5 card">
-                <div class="text-box">
-                    <h1>브라이트닝</h1>
-                    <p>피부본연의 아름다움</p>
-                </div>
-                <div class="bg">
-                    <div class="view">VIEW</div>
-                </div>
-            </a>
+    
+                
+    
+    
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
 
-    </div>
+	         <section id="best" class="content">
+            <div class="inner">
+                <div class="title">
+                    <h2>THE CARE 추천</h2>
+                    <p>20대 남녀가 받고 싶어하는 시술은?</p>
+                </div>
+                <div class="wrap">
+                    <ul class="tab">
+                        <li>
+                            <a href="#" class="menu menu1">공통</a>
+                            <div class="panel ">
+                                <div class="mini">
+                                    <h1>TOP 3</h1>
+                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                </div>
+                                <div class="con gender">
+                                    <ul>
+                                        <li>
+                                            <div class="top top1">
+                                                <a href="sub_1.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>1위</p>
+                                                <h4>여드름 케어</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top1">
+                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>2위</p>
+                                                <h4>아쿠아 필</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top1">
+                                                <a href="sub_9.jsp?prdNo=li02" class="yeo" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>3위</p>
+                                                <h4>윤곽 주사</h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="menu menu2">남자</a>
+                            <div class="panel ">
+                                <div class="mini">
+                                    <h1>TOP 3</h1>
+                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                </div>
+                                <div class="con man">
+                                    <ul>
+                                        <li>
+                                            <div class="top top2">
+                                                <a href="sub_1.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>1위</p>
+                                                <h4>여드름 케어</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top2">
+                                                <a href="sub_9.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>2위</p>
+                                                <h4>윤곽 주사</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top2">
+                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>3위</p>
+                                                <h4>아쿠아 필</h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="menu menu3">여자</a>
+                            <div class="panel ">
+                                <div class="mini">
+                                    <h1>TOP 3</h1>
+                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                </div>
+                                <div class="con woman">
+                                    <ul>
+                                        <li>
+                                            <div class="top top3">
+                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>1위</p>
+                                                <h4>아쿠아 필</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top3">
+                                                <a href="sub_9.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>2위</p>
+                                                <h4>윤곽 주사</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="top top3">
+                                                <a href="sub_8.jsp?prdNo=li01" class="yeo"><img src="img/best-sa.png" alt=""></a>
+                                            </div>
+                                            <div class="txt">
+                                                <p>3위</p>
+                                                <h4>사각턱 보톡스</h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p>20대 남녀에게 설문조사한 결과를 바탕으로 제작하였습니다.</p>
+            </div>
+        </section>
 
 
 
-
-    <div class="mini-banner">
-        <div class="mini-box mini-1" style="">
-		<div style="width: 750px; height:410px; top:-30px; left:-30px; position: absolute; background: #e6bfff; z-index:-10;"></div>
-            <div class="img-box">
-                <img src="img/main-company-inpomation.jpg" alt="">
+     <div class="slider-box-1">
+            <h4>DOCTORS</h4>
+            <p>의료진</p>
+            <div class="slick">
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
+                        <div class="name">
+                            <p>보톡스 전문</p>
+                            <span>김철수</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
+                        <div class="name">
+                        <p>보톡스 전문</p>
+                            <span>강건희</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
+                        <div class="name">
+                        <p>체형 전문</p>
+                            <span>이&nbsp;&nbsp;&nbsp;훈</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
+                        <div class="name">
+                        <p>필러 전문</p>
+                            <span>김영희</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
+                        <div class="name">
+                        <p>레이저 전문</p>
+                            <span>최은혜</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="item">
+                    <a href="about_2.html">
+                        <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
+                        <div class="name">
+                        <p>피부 전문</p>
+                            <span>박정우</span> 원장
+                            <div class="bg1"></div>
+                        </div>
+                    </a>
+                </div>
+    
             </div>
         </div>
-        <div class="mini-box mini-2">
+    
+    
+        <div class="mini-ban">
             <div class="text-box">
-                <h1>
-                    질환별 맞춤 레이저 보유
-				</h1>
-                <p>
-				숙련된 피부과 전문의와 첨단 장비의 만남으로<br>
-				환자분이 편안하고 생생한 변화가 느껴지는 치료를 제공합니다.
-				</p>
-				<a href="guide">VIEW</a>
+                <div>
+                    <p>
+                    내 피부타입이 궁금하다면?<br>
+                    테스트를 통해 알아보세요!
+                    </p><a href="custom-test.jsp">TEST</a>
+                </div>
             </div>
         </div>
-    </div>
+
+
+	<div class="card-wrap">
+            <div class="cardtt">
+                <h1>SEASONS</h1>
+                <h4>계절마다 필요한 시술</h4>
+            </div>
+            
+            <div class="card_box card_box1 flex ">
+                <a href="#" class="card1 card">
+                    <div class="text-box">
+                        <h1>SPRING</h1>
+                        <p>봄</p>
+                    </div>
+                    <div class="bg">
+                        <div class="view">GO</div>
+                    </div>
+                </a> 
+
+                <a href="#" class="card2 card">
+                    <div class="text-box">
+                        <h1>SUMMER</h1>
+                        <p>여름</p>
+                    </div>
+                    <div class="bg">
+                        <div class="view">GO</div>
+                    </div>
+                </a>
+    
+                <a href="#" class="card3 card">
+                    <div class="text-box">
+                        <h1>FALL</h1>
+                        <p>가을</p>
+                    </div>
+                    <div class="bg">
+                        <div class="view">GO</div>
+                    </div>
+                </a>
+    
+                <a href="#" class="card4 card">
+                    <div class="text-box">
+                        <h1>WINTER</h1>
+                        <p>겨울</p>
+                    </div>
+                    <div class="bg">
+                        <div class="view">GO</div>
+                    </div>
+                </a>
+            </div>
+        </div>'
 
 
 
@@ -576,85 +635,95 @@ else{
 
     <!-- 3. 실행 스크립트 -->
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true // 버튼 클릭 여부
-            },
-           autoplay: true,
-            autoplaySpeed: 5000,
-            keyboard: true
-        });
 
 
-        function SliderBox1__init() {
-            $('.slider-box-1 > .slick').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                responsive: [{
-                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }, {
-                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }],
-
-                // arrows:true,
-                prevArrow: ".slider-box-1 > .arrows > .btn-left",
-                nextArrow: ".slider-box-1 > .arrows > .btn-right"
+            $('#best .tab>li>a').on('click', function(e){
+              e.preventDefault();
+              $('#best .panel').hide();
+              $(this).next('.panel').show();
             });
-        }
 
-        $(function () {
-            SliderBox1__init();
-        });
+            $('#best .tab>li>a').first().trigger('click');
 
 
-        function SliderBox2__init() {
-            $('.slider-box-2 > .slick').slick({
-                autoplay: true,
+            var swiper = new Swiper(".mySwiper", {
+                cssMode: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true // 버튼 클릭 여부
+                },
+               autoplay: true,
                 autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                // responsive: [{
-                //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 2,
-                //         slidesToScroll: 2
-                //     }
-                // }, {
-                //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 1,
-                //         slidesToScroll: 1
-                //     }
-                // }],
-
-                // arrows:true,
-                prevArrow: ".slider-box-2 > .arrows > .btn-left",
-                nextArrow: ".slider-box-2 > .arrows > .btn-right"
+                keyboard: true
             });
-        }
-
-        $(function () {
-            SliderBox2__init();
-        });
-
+    
+    
+            function SliderBox1__init() {
+                $('.slider-box-1 > .slick').slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    pauseOnHover: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    responsive: [{
+                        breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    }, {
+                        breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }],
+    
+                    // arrows:true,
+                    prevArrow: ".slider-box-1 > .arrows > .btn-left",
+                    nextArrow: ".slider-box-1 > .arrows > .btn-right"
+                });
+            }
+    
+            $(function () {
+                SliderBox1__init();
+            });
+    
+    
+            function SliderBox2__init() {
+                $('.slider-box-2 > .slick').slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    pauseOnHover: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    // responsive: [{
+                    //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
+                    //     settings: {
+                    //         slidesToShow: 2,
+                    //         slidesToScroll: 2
+                    //     }
+                    // }, {
+                    //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
+                    //     settings: {
+                    //         slidesToShow: 1,
+                    //         slidesToScroll: 1
+                    //     }
+                    // }],
+    
+                    // arrows:true,
+                    prevArrow: ".slider-box-2 > .arrows > .btn-left",
+                    nextArrow: ".slider-box-2 > .arrows > .btn-right"
+                });
+            }
+    
+            $(function () {
+                SliderBox2__init();
+            });
 
         //         gsap.to('body', {
         //   scrollTrigger:{
@@ -708,6 +777,15 @@ function search_form()
 			frm.action = "search.jsp";
 			frm.submit();
 		}
+
+
+		const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 
 
 

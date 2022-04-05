@@ -13,315 +13,260 @@
   <link rel="stylesheet" href="css/rez.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script type="text/javascript">
+	let calenderChoiceDate; // 칼렌다의 날자를 저장하는 전역변수
+	document.addEventListener("DOMContentLoaded", function() {
+		buildCalendar();
+		init();
+	});
+	var btns = document.getElementsByClassName("btns");
 
-    document.addEventListener("DOMContentLoaded", function() {
-        buildCalendar();
-    });
+	var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
+	var date = new Date(); // @param 전역 변수, today의 Date를 세어주는 역할
 
+	function checkTime(obj) { // 00:00
+		var time = obj.innerHTML
 
-    var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
-    var date = new Date();  // @param 전역 변수, today의 Date를 세어주는 역할
+		var getTime = time.substring(0, 2); // 시간(hh)부분만 저장 
+		var getMinuts = time.substring(3, time.length); // 분(mm)부분만 저장
 
-    /**
-     * @brief   이전달 버튼 클릭
-     */
-    function prevCalendar() {
-        this.today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-        buildCalendar();    // @param 전월 캘린더 출력 요청
-    }
+		var currentDate = new Date();
 
-    /**
-     * @brief   다음달 버튼 클릭
-     */
-    function nextCalendar() {
-        this.today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-        buildCalendar();    // @param 명월 캘린더 출력 요청
-    }
+		calenderChoiceDate.setHours(getTime)
+		calenderChoiceDate.setMinutes(getMinuts)
+		var compareDate = new Date(calenderChoiceDate);
 
-    /**
-     * @brief   캘린더 오픈
-     * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
-     */
-    function buildCalendar() {
+		return compareDate < currentDate
+	}
 
-        let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-        let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+	function handleClick(event) {
+		var time = this.innerHTML; // 'hh:mm' 형태로 값이 들어온다 
+		console.log(time)
 
-        let tbCalendar = document.querySelector(".scriptCalendar > tbody");
+		if (checkTime(this)) {
+			this.style.backgroundColor = "#dddddd";
 
+		} else {
+			if (event.target.classList[1] === "clicked") {
+				event.target.classList.remove("clicked");
+			} else {
+				for (var i = 0; i < btns.length; i++) {
 
- 
+					btns[i].classList.remove("clicked");
+				}
 
-        document.getElementById("calYear").innerText = today.getFullYear();                                  // @param YYYY월
-        document.getElementById("calMonth").innerText = autoLeftPad((today.getMonth() + 1), 2);   // @param MM월
-
-
-        // @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
-        while(tbCalendar.rows.length > 0) {
-            tbCalendar.deleteRow(tbCalendar.rows.length - 1);
-        }
-
-
-
-        // @param 첫번째 개행
-        let row = tbCalendar.insertRow();
-
-
-
-        // @param 날짜가 표기될 열의 증가값
-        let dom = 1;
-
-        // @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
-        //               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
-        let daysLength = (Math.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7) - doMonth.getDay();
-
-        // @param 달력 출력
-
-
- 
-        // @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
-        for(let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
-
-            let column = row.insertCell();
-
-            // @param 평일( 전월일과 익월일의 데이터 제외 )
-            if(Math.sign(day) == 1 && lastDate.getDate() >= day) {
-            column.style.color = "#000000";
-			
-
-                // @param 평일 날짜 데이터 삽입
-
-                column.innerText = autoLeftPad(day, 2);
-
-
-
-                // @param 일요일인 경우
-                if(dom % 7 == 1) {
-                    column.style.color = "#FF4D4D";
-                }
-
-                // @param 토요일인 경우
-                if(dom % 7 == 0) {
-                    column.style.color = "#4D4DFF";
-                    row = tbCalendar.insertRow();   // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
-                }
-
-            }
-
-            // @param 평일 전월일과 익월일의 데이터 날짜변경
-            else {
-                let exceptDay = new Date(doMonth.getFullYear(), doMonth.getMonth(), day);
-                column.innerText = autoLeftPad(exceptDay.getDate(), 2);
-                column.style.color = "#b4b4b4";
-            }
-
-            // @brief   전월, 명월 음영처리
-            // @details 현재년과 선택 년도가 같은경우
-            if(today.getFullYear() == date.getFullYear()) {
-
-                // @details 현재월과 선택월이 같은경우
-                if(today.getMonth() == date.getMonth()) {
-
-                    // @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
-                    if(date.getDate() > day && Math.sign(day) == 1) {
-                        column.style.color = "#b4b4b4";
-                    }
-
-                    // @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
-                    else if(date.getDate() < day && lastDate.getDate() >= day) {
-                        column.style.backgroundColor = "#FFFFFF";
-						
-                        column.style.cursor = "pointer";
-                        column.onclick = function(){ calendarChoiceDay(this); }
-                    }
-
-                    // @details 현재일인 경우
-                    else if(date.getDate() == day) {
-                        column.style.backgroundColor = "#f5eeff";
-						
-                        column.style.cursor = "pointer";
-                        column.onclick = function(){ calendarChoiceDay(this);}
-                    }
-
-                // @details 현재월보다 이전인경우
-                } else if(today.getMonth() < date.getMonth()) {
-                    if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
-                        column.style.color = "#b4b4b4";
-                    }
-                }
-
-                // @details 현재월보다 이후인경우
-                else {
-                    if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
-                        column.style.backgroundColor = "#FFFFFF";
-                        column.style.cursor = "pointer";
-                        column.onclick = function(){ calendarChoiceDay(this); }
-                    }
-                }
-            }
-
-            // @details 선택한년도가 현재년도보다 작은경우
-            else if(today.getFullYear() < date.getFullYear()) {
-                if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
-                    column.style.color = "#b4b4b4";
-                }
-            }
-
-            // @details 선택한년도가 현재년도보다 큰경우
-            else {
-                if(Math.sign(day) == 1 && day <= lastDate.getDate()) {
-                    column.style.backgroundColor = "#FFFFFF";
-                    column.style.cursor = "pointer";
-                    column.onclick = function(){ calendarChoiceDay(this); }
-                }
-            }
-
-
-
-            dom++;
-
-        }
-    }
-
-    /**
-     * @brief   날짜 선택
-     * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
-     */
-    function calendarChoiceDay(column) {
-    //-
-	console.log(event.target);
-    console.log(event.target.classList);
-	//
-        // @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
-        if(document.getElementsByClassName("choiceDay")[0]) {
-
-            document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
-			
-
-            document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");
-        
+				event.target.classList.add("clicked");
+			}
 		}
-	
+	}
 
-        // @param 선택일 체크 표시
-		column.style.backgroundColor = "#e4d1ff";
-		
+	function init() {
+		for (var i = 0; i < btns.length; i++) {
+			if (checkTime(btns[i])) {
+				btns[i].style.backgroundColor = "#dddddd";
+			}
+			btns[i].addEventListener("click", handleClick);
+		}
+	}
 
+	/**
+	 * @brief   이전달 버튼 클릭
+	 */
+	function prevCalendar() {
+		this.today = new Date(today.getFullYear(), today.getMonth() - 1, today
+				.getDate());
+		buildCalendar(); // @param 전월 캘린더 출력 요청
+	}
 
-        // @param 선택일 클래스명 변경
+	/**
+	 * @brief   다음달 버튼 클릭
+	 */
+	function nextCalendar() {
+		this.today = new Date(today.getFullYear(), today.getMonth() + 1, today
+				.getDate());
+		buildCalendar(); // @param 명월 캘린더 출력 요청
+	}
 
-        column.classList.add("choiceDay");
-    }
+	/**
+	 * @brief   캘린더 오픈
+	 * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
+	 */
+	function buildCalendar() {
 
-    /**
-     * @brief   숫자 두자릿수( 00 ) 변경
-     * @details 자릿수가 한지라인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
-     * @param   num     앞에 0을 붙일 숫자 값
-     * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
-     */
-    function autoLeftPad(num, digit) {
-        if(String(num).length < digit) {
-            num = new Array(digit - String(num).length + 1).join("0") + num;
-        }
-        return num;
+		let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+		let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
-    }
+		let tbCalendar = document.querySelector(".scriptCalendar > tbody");
 
-function timeConstraint(optTime) {
-
-		
-
-		const toDay = new Date();
-
-		const toYear = toDay.getFullYear().toString();
-
-		
-
-		// getMonth()의 경우 0 ~ 11의 값을 출력하기에 기본적으로 항상 +1을 해서 한달을 더하지만
-
-		// 해당 예제에서는 그대로의 값을 필요로 하기에 +1을 하지 않는다.
-
-		// const toMonth = (toDay.getMonth() + 1).toString();
-
-      	const toMonth = toDay.getMonth().toString();
-
-      	
-
-      	const toDate = toDay.getDate().toString();
-
-      	
-
-      	/* 
-
-      	 * 현재 시간(Hour)과 분(Minute)은 사용하지 않는다.
-
-      	 * const toHour = toDay.getHours().toString();
-
-      	 * const toMinute = toDay.getMinutes().toString();
-
-      	 */
-
-      	
-
-		const toSecond = toDay.getSeconds().toString();
-
-	
-
-		lastTimeConstraint(toYear, toMonth, toDate, toSecond, function(lastDay) {
-
-
-
-			if(lastDay.getTime() > toDay.getTime()) { 
-
+		document.getElementById("calYear").innerText = today.getFullYear(); // @param YYYY월
+		document.getElementById("calMonth").innerText = autoLeftPad((today
+				.getMonth() + 1), 2); // @param MM월
+		// 전역변수에 날자를 셋팅한다.
+		calenderChoiceDate = today;
 				
+		// @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
+		while (tbCalendar.rows.length > 0) {
+			tbCalendar.deleteRow(tbCalendar.rows.length - 1);
+		}
 
-				const choHour = optTime.substring(0, 2);
+		// @param 첫번째 개행
+		let row = tbCalendar.insertRow();
 
-				const choMinute = optTime.substring(2, 4);	
+		// @param 날짜가 표기될 열의 증가값
+		let dom = 1;
 
-				
+		// @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
+		//               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
+		let daysLength = (Math
+				.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7)
+				- doMonth.getDay();
 
-				const optDay = new Date(toYear, toMonth, toDate, choHour, choMinute, toSecond);
+		// @param 달력 출력
+		// @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
+		for (let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
 
-			
+			let column = row.insertCell();
 
-				if(optDay.getTime() < toDay.getTime()) {
+			// @param 평일( 전월일과 익월일의 데이터 제외 )
+			if (Math.sign(day) == 1 && lastDate.getDate() >= day) {
 
-					alert("선택하신 시간은 경과하여\n예약을 진행 할 수 없습니다.");
+				// @param 평일 날짜 데이터 삽입
 
-					document.getElementById("choiceTime").options[0].selected = true;
+				column.innerText = autoLeftPad(day, 2);				
 
-					return;
+				// @param 일요일인 경우
+				if (dom % 7 == 1) {
+					column.style.color = "#FF4D4D";
+				}
 
-				} else {
-
-					alert("선택하신 시간으로\n예약이 진행됩니다.");
-
-					return;
-
+				// @param 토요일인 경우
+				if (dom % 7 == 0) {
+					column.style.color = "#4D4DFF";
+					row = tbCalendar.insertRow(); // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
 				}
 
 			}
 
+			// @param 평일 전월일과 익월일의 데이터 날짜변경
 			else {
-
-				alert("금일 예약가능한 시간이 모두 지났습니다.\n내일 다시 예약하여 주시기 바랍니다.");
-
-				document.getElementById("choiceTime").options[0].selected = true;
-
-				return;
-
+				let exceptDay = new Date(doMonth.getFullYear(), doMonth
+						.getMonth(), day);
+				column.innerText = autoLeftPad(exceptDay.getDate(), 2);
+				column.style.color = "#A9A9A9";
 			}
 
-		});
+			// @brief   전월, 명월 음영처리
+			// @details 현재년과 선택 년도가 같은경우
+			if (today.getFullYear() == date.getFullYear()) {
 
+				// @details 현재월과 선택월이 같은경우
+				if (today.getMonth() == date.getMonth()) {
+
+					// @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
+					if (date.getDate() > day && Math.sign(day) == 1) {
+						column.style.backgroundColor = "#E5E5E5";
+					}
+
+					// @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
+					else if (date.getDate() < day && lastDate.getDate() >= day) {
+						column.style.backgroundColor = "#FFFFFF";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+
+					// @details 현재일인 경우
+					else if (date.getDate() == day) {
+						column.style.backgroundColor = "#FFFFE6";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+
+					// @details 현재월보다 이전인경우
+				} else if (today.getMonth() < date.getMonth()) {
+					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+						column.style.backgroundColor = "#E5E5E5";
+					}
+				}
+
+				// @details 현재월보다 이후인경우
+				else {
+					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+						column.style.backgroundColor = "#FFFFFF";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+				}
+			}
+
+			// @details 선택한년도가 현재년도보다 작은경우
+			else if (today.getFullYear() < date.getFullYear()) {
+				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+					column.style.backgroundColor = "#E5E5E5";
+				}
+			}
+
+			// @details 선택한년도가 현재년도보다 큰경우
+			else {
+				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+					column.style.backgroundColor = "#FFFFFF";
+					column.style.cursor = "pointer";
+					column.onclick = function() {
+						calendarChoiceDay(this);
+					}
+				}
+			}
+
+			dom++;
+
+		}
 	}
 
+	/**
+	 * @brief   날짜 선택
+	 * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
+	 */
+	function calendarChoiceDay(column) {
 
+		calenderChoiceDate.setDate(column.innerHTML)
+		for (var i = 0; i < btns.length; i++) {
+			if (checkTime(btns[i])) {
+				btns[i].style.backgroundColor = "#dddddd";
+			}else{
+				btns[i].style.backgroundColor = "";
+			}
+		}
+		// @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
+		if (document.getElementsByClassName("choiceDay")[0]) {
+			document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
+			document.getElementsByClassName("choiceDay")[0].classList
+					.remove("choiceDay");
+		}
 
-	
+		// @param 선택일 체크 표시
+		column.style.backgroundColor = "#FF9999";
+
+		// @param 선택일 클래스명 변경
+		column.classList.add("choiceDay");
+	}
+
+	/**
+	 * @brief   숫자 두자릿수( 00 ) 변경
+	 * @details 자릿수가 한자리인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
+	 * @param   num     앞에 0을 붙일 숫자 값
+	 * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
+	 */
+	function autoLeftPad(num, digit) {
+		if (String(num).length < digit) {
+			num = new Array(digit - String(num).length + 1).join("0") + num;
+		}
+		return num;
+	}
 </script>
-
   <title>시술예약</title>
 </head>
 
@@ -528,7 +473,7 @@ else{
 
 <div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">시술예약</h1></div>
 <div class="no_box" style="width:max-content; margin: 20px auto 150px;">
-        <div class="icon" style="width: max-content; margin: 0 auto; padding-top: 100px;">
+        <div class="icon" style="width: max-content; margin: 0 auto; padding-top: 180px;">
 		<i class="fa-solid fa-circle-exclamation" style="font-size:150px; color: #999999; margin:0 auto 50px;"></i>
 		</div>
 		<p class="title" style="text-align:center; font-size: 30px; font-weight:bold; color:#c5c5c5; margin:0 0 100px;">장바구니에 담긴 시술이 없습니다.</p>
@@ -650,69 +595,7 @@ else{
  
 
 
-<script>
 
-
-
-   var btns = document.getElementsByClassName("btns");
-   function checkTime(obj){  // 00:00
-		var time = obj.innerHTML;
-        
-		var getTime = time.substring(0, 2); // 시간(hh)부분만 저장 
-		var getMinuts = time.substring(3, time.length); // 시간(hh)부분만 저장
-
-        
-		var currentDate = new Date();
-		
-		var year = currentDate.getFullYear();
-		var month = currentDate.getMonth();
-		var day = currentDate.getDate();
-		var compareDate = new Date(year, month, day, getTime, getMinuts);
-		
-		
-		return compareDate < currentDate
-		
-			
-	}
-       
-      function handleClick(event) {
-		  var time = this.innerHTML; // 'hh:mm' 형태로 값이 들어온다 
-		  console.log(time)
-
-			
-			
-
-        if (checkTime(this)) {
-			this.style.backgroundColor = "#dddddd";
-		} else {
-			if (event.target.classList[1] === "clicked") {
-				
-				event.target.classList.remove("clicked");
-				
-			} else {
-				for (var i = 0; i < btns.length; i++) {
-                 btns[i].classList.remove("clicked");
-				}
-
-				event.target.classList.add("clicked");
-			}
-		}
-	}
-
-	function init() {
-
-		for (var i = 0; i < btns.length; i++) {
-			if(checkTime(btns[i])){
-				btns[i].style.backgroundColor = "#dddddd";
-			}
-			
-			btns[i].addEventListener("click", handleClick);
-			
-		}
-	}
-    init();
-
-					</script>
 					<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
 
 					
