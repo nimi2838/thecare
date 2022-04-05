@@ -34,7 +34,7 @@ INSERT INTO soption VALUES ('fa01','fa3','눈밑필러(수입)',199000);
 
 
 INSERT INTO soption VALUES ('fa02','hi1','하이코',99000);
-INSERT INTO soption VALUES ('fa02','hi2','하이코필러(콧대실+코필러 1회 용량제한없이)',139000);
+INSERT INTO soption VALUES ('fa02','hi2','콧대실+코필러 1회 용량제한없이',139000);
 
 INSERT INTO soption VALUES ('fa03','lip1','입술필러(국산)',59000);
 INSERT INTO soption VALUES ('fa03','lip2','입술+입꼬리 필러',149000);
