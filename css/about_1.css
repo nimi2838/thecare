@@ -469,7 +469,7 @@ padding-bottom: 50px;
   position: relative;
 }
 .philosophy_3menu > img{
-  width: 90%; margin: 0 auto;
+  width: 100%; margin: 0 auto;
  height: 500px;
 }
 .philosophy_txt{
@@ -672,7 +672,7 @@ padding-bottom: 50px;
 }
 
 .box_5_1:hover> .bg{
-  background:rgba(0, 0, 0, 0.4);
+  background:rgba(0, 0, 0, 0.6);
   visibility: visible;
   opacity: 100%; 
   z-index: 101;
@@ -715,7 +715,7 @@ padding-bottom: 50px;
 }
 
 .box_5_2:hover> .bg{
-  background:rgba(0, 0, 0, 0.4);
+  background:rgba(0, 0, 0, 0.6);
   visibility: visible;
   opacity: 100%; 
   z-index: 101;
@@ -758,7 +758,7 @@ padding-bottom: 50px;
 }
 
 .box_5_3:hover> .bg{
-  background:rgba(0, 0, 0, 0.4);
+  background:rgba(0, 0, 0, 0.6);
   visibility: visible;
   opacity: 100%; 
   z-index: 101;
@@ -766,9 +766,9 @@ padding-bottom: 50px;
 }
 
 .box_box > p{
-  font-size: 16px;
-  padding: 10px 30px;
-  line-height: 30px;
+  font-size: 18px;
+  padding: 15px 35px;
+  line-height: 33px;
   text-align: left;
 }
 
@@ -811,7 +811,7 @@ padding-bottom: 50px;
 }
 
 .box_5_4:hover> .bg{
-  background:rgba(0, 0, 0, 0.4);
+  background:rgba(0, 0, 0, 0.6);
   visibility: visible;
   opacity: 100%; 
   z-index: 101;
@@ -855,7 +855,7 @@ padding-bottom: 50px;
 }
 
 .box_5_5:hover> .bg{
-  background:rgba(0, 0, 0, 0.4);
+  background:rgba(0, 0, 0, 0.6);
   visibility: visible;
   opacity: 100%; 
   z-index: 101;

@@ -425,6 +425,7 @@ a {
     text-align: center;
     position: relative;
     width: 300px;
+	font-size: 17px;
 }
 
 .tab1 td {
@@ -605,8 +606,8 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
 	position: absolute;
 	top: -1%;
 	left: 8%;
-	width: 305px;
-	height: 305px;
+	width: 290px;
+	height: 290px;
 	border-radius: 50%;
 	background: #fff0f2;
 	z-index:-1;

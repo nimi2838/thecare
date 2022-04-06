@@ -4,7 +4,6 @@ body {
   height: 100%;
 }
 
-::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
 body {
   font-family: 'ChosunSg';
   font-size: 14px;
@@ -13,6 +12,19 @@ body {
   padding: 0;
 }
 
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mujinjang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Mujinjang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'ChosunSg';
@@ -232,7 +244,7 @@ a {
   border-bottom:1px solid transparent;
   transition:width .3s, border-bottom-color .3s;
   background-color:transparent;
-  color:#707070;
+  color:#999;
   margin-right:10px;
   padding:10px;
   display:block;
@@ -241,7 +253,7 @@ a {
 
 .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
   width:170px;
-  border-bottom-color: #707070;
+  border-bottom-color: #999;
 }
 
 
@@ -260,8 +272,9 @@ a {
 .top-wrap>.top-box2 {
   margin: 0px auto;
   width: 100%;
-  font-size: 18px;
-  color: #707070;
+  font-size: 19px;
+  font-weight:bold;
+  color: #9c9c9c;
   background:white;
   z-index: 100;
   font-family: 'ChosunSg';
@@ -275,15 +288,16 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li {
-  width: 256px;
-  padding: 20px 0px;
+  /* width: 256px; */
+  width: 326px;
+  padding: 21px 0px;
   position: relative;
   transition: all .4s;
 
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #ffeded;
+  background: #ffeeee;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -297,7 +311,7 @@ a {
   visibility: visible;
   position: absolute;
   left: 0%;
-  margin-top: 20px;
+  margin-top: 22px;
   background: white;
   width: 100%;
   transition: all .4s;
@@ -312,14 +326,15 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #ffeded;
+  background: #ffeeee;
+  /* color: #9869d4; */
+
 }
 
 
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-
 
 
   

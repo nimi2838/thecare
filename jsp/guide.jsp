@@ -131,13 +131,13 @@ else{
                     <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">관리란</a></li>
+                            <li><a href="about_1.jsp">케어라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
 				<li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
@@ -319,7 +319,7 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-                      <a href="sub_8.jsp?prdNo=li01">
+                      <a href="sub_li01.jsp?prdNo=li01">
                             <div class="name">사각턱 보톡스</div>
                             <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
                             <div class="price"><span>19,000</span>원 부터</div>
