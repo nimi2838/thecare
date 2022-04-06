@@ -108,55 +108,74 @@
         <div class="line"></div>
 
 
-        <div class="top-box2">
+                <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>회사소개</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.html">더케어란?</a>
-                            </li>
-                            <li><a href="about_2.html">더케어 의료진</a></li>
-                            <li><a href="about_3.html">더케어 오시는길</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술안내</a>
-                    <div>
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
                         <ul>
-                            <li><a href="guide.html">시술가격</a></li>
-                            <li><a href="review.html">전후사진</a></li>
+                            <li><a href="custom.jsp">더 체크</a></li>
+                     <li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술예약</a>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.html">예약하기</a></li>
-                            <li><a href="change.html">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.html">최근본시술</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li> -->
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+                     <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="menu">
-                    <a href="custom.html">맞춤시술</a>
-                </li>
-                <li class="menu">
-                    <a>커뮤니티</a>
+                
+                <li class="jsp">
+                    <a>소통원해</a>
                     <div>
                         <ul>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="qna.html">1:1문의</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="note.jsp">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 
@@ -179,7 +198,7 @@
                     <thead>
                     <tr>
                         <th>번호</th>
-                        <th style="width: 65%;">제목</th>
+                        <th style="width: 70%;">제목</th>
                         <th>작성자</th>
                         <th>등록일</th>
                     </tr>
@@ -249,5 +268,93 @@
     
 
 
+    
+
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '61px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+    var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true // 버튼 클릭 여부
+        },
+        autoplay: true,
+        autoplaySpeed: 5000,
+        keyboard: true
+    });
+
+
+    function SliderBox1__init() {
+        $('.slider-box-1 > .slick').slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            // arrows:true,
+            prevArrow: ".slider-box-1 > .arrows > .btn-left",
+            nextArrow: ".slider-box-1 > .arrows > .btn-right"
+        });
+    }
+
+    $(function () {
+        SliderBox1__init();
+    });
+
+
+//         gsap.to('body', {
+//   scrollTrigger:{
+//     start:'top 0',
+//     end:'top 800px',
+//     trigger:'.top-box2',
+//     markers: true,
+//     pin:true
+//   },
+// });
+
+gsap.to('.top-wrap > .top-box2', {
+scrollTrigger:{
+trigger:'.top-wrap',
+start:'top -98px',
+scrub:true
+},height:'60px',textalign:'center',top:'0',position:'fixed',background:'white'
+});
+
+
+
+    // swiper-pagination-bullet-active
+</script>
 </body>
 </html>
