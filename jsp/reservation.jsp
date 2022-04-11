@@ -485,8 +485,8 @@ else{
 
 <hr>
 
-<form name="res" method=post action=reservationResult.jsp >
-<table class="scriptCalendar" style = "float: left;"  >
+<form name="res" method=post action = reservationResult.jsp>
+<table class="scriptCalendar" style = "float: left;">
     <thead > 
         <tr>
             <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td>
