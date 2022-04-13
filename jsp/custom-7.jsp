@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/custom-7.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
   <title>맞춤시술</title>
@@ -192,6 +195,52 @@ else{
                 </div>
             </a>
         </div>
+		<%
+
+
+
+
+	
+	request.setCharacterEncoding("euc-kr");
+
+
+
+
+	String aa6 = request.getParameter("aa6");
+
+		
+try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+	
+
+	
+	 String jsql1 = "INSERT INTO test (uId, testNo, YN) VALUES (?,?,?)";	
+
+	 PreparedStatement pstmt1  = con.prepareStatement(jsql1);
+	 pstmt1.setString(1,myid);
+	 pstmt1.setString(2,"no"+6);
+	 pstmt1.setString(3,aa6);
+	
+
+
+
+	pstmt1.executeUpdate();
+
+	 
+	
+
+	     
+ %>
+
+	 
 
 
     <div class="survery content">
@@ -201,43 +250,43 @@ else{
                 <!-- 여기는 막대 
                 여기는 퍼센트 넣어야 함-->
 				<div>
-	<progress value="1" max="100" id="lb"></progress>
+	<progress value="68" max="100" id="lb"></progress>
 </div>
             </div>
 
 			
-            <form action="custom-2.jsp" method= post>
-            <div class="wrap">
+            <form action="custom-8.jsp" method=post>
+             <div class="wrap">
                 <h1>피부타입 자가진단</h1>
                 
                     <div class="survery-test">
                         <div class="qestion">
-                            <h1>Q1</h1>
-                            <p>세안 후 기초 제품을 바르지 않으면 피부 상태는 어떤가요?</p>
+                            <h1>Q7</h1>
+                            <p>몸에 작은 갈색 점이나 주근깨가 있나요?</p>
                         </div>
                         <ul class="qna-wrap">
                             <li>
                                 <div class="check1-1"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
-                                    <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
+                                    <input type="checkbox" id="q1-1" name = "aa7" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <label for="q1-1"><p>없다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-2"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-2" onclick = "clickCheck(this)"> 
-                                    <label for="q1-2"><p>심하게 당긴다</p> </label> 
+                                    <input type="checkbox" id="q1-2" name = "aa7" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <label for="q1-2"><p>1~5개 정도 있다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-3"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-3" onclick = "clickCheck(this)"> 
-                                    <label for="q1-3"><p>조금 당긴다</p> </label> 
+                                    <input type="checkbox" id="q1-3" name = "aa7" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <label for="q1-3"><p>6~15개 정도 있다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-4"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-4" onclick = "clickCheck(this)"> 
-                                    <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
+                                    <input type="checkbox" id="q1-4" name = "aa7" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <label for="q1-4"><p>16개 이상으로 있다</p> </label> 
                                 </div>
                             </li>
                         </ul>
@@ -263,8 +312,8 @@ else{
 <!--             </div> -->
            
             <div class="button">
-               
-                <button class="survery-btn next" >다음</button>
+                <input type = "button" class="survery-btn prev" value="이전" onClick="history.go(-1)">
+                <button class="survery-btn next">다음</button>
             </div> 
         </form>
         </div>
@@ -272,13 +321,19 @@ else{
 
 
 
+<%
+    
 
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
 
 
     <script>
 
-	 
- function clickCheck(target) {	
+
+function clickCheck(target) {	
 	 
 
 	
@@ -288,25 +343,23 @@ else{
 
 
 
-    
-
-
-
-	
-
-	
-
-
-
+ 
 
 }
+function back(){
 
+     
+
+    history.back(); // 방법1
+
+    
+
+}
 
  
 
 
 	
-
 
 
 

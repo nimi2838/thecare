@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*" %>
 <html lang="en">
 
 <head>
@@ -10,14 +10,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/custom-finish.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
   <title>맞춤시술</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-
-  <%
+<%
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
 <body>
@@ -192,55 +191,93 @@ else{
                 </div>
             </a>
         </div>
+	<%
 
+
+
+
+	
+	request.setCharacterEncoding("euc-kr");
+
+
+
+
+	String aa9 = request.getParameter("aa9");
+
+		
+try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+	
+
+	
+	 String jsql1 = "INSERT INTO test (uId, testNo, YN) VALUES (?,?,?)";	
+
+	 PreparedStatement pstmt1  = con.prepareStatement(jsql1);
+	 pstmt1.setString(1,myid);
+	 pstmt1.setString(2,"no"+9);
+	 pstmt1.setString(3,aa9);
+	
+
+
+
+	pstmt1.executeUpdate();
+
+	 
+	
+
+	     
+ %>
+
+
+    
 
     <div class="survery content">
         <div class="inner">
-            <div class="makde">
-             
-                <!-- 여기는 막대 
-                여기는 퍼센트 넣어야 함-->
-				<div>
-	<progress value="1" max="100" id="lb"></progress>
-</div>
-            </div>
-
-			
-            <form action="custom-2.jsp" method= post>
+            <h1>피부타입 자가진단 결과</h1>
             <div class="wrap">
-                <h1>피부타입 자가진단</h1>
-                
                     <div class="survery-test">
-                        <div class="qestion">
-                            <h1>Q1</h1>
-                            <p>세안 후 기초 제품을 바르지 않으면 피부 상태는 어떤가요?</p>
+                        <div class="title">
+                            <p>당신의 피부 타입은 &nbsp;<span>OSP</span></p>
                         </div>
-                        <ul class="qna-wrap">
-                            <li>
-                                <div class="check1-1"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
-                                    <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
-                                </div>
-                            </li>
-                            <li>
-                                <div class="check1-2"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-2" onclick = "clickCheck(this)"> 
-                                    <label for="q1-2"><p>심하게 당긴다</p> </label> 
-                                </div>
-                            </li>
-                            <li>
-                                <div class="check1-3"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-3" onclick = "clickCheck(this)"> 
-                                    <label for="q1-3"><p>조금 당긴다</p> </label> 
-                                </div>
-                            </li>
-                            <li>
-                                <div class="check1-4"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-4" onclick = "clickCheck(this)"> 
-                                    <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
-                                </div>
-                            </li>
-                        </ul>
+
+                        <div class="title-txt">
+                            <img src="img/osp.png" alt="">
+                            <h1>영원히 고통받는 총체적 난국 복어
+                        </div>
+
+                        <div class="sarp">
+                            <h4># 민감</h4>
+                            <h4># 색소침착</h4>
+                            <h4># 여드름</h4>
+                        </div>
+
+                        <div class="finish-txt">
+                            <h1>OSP(민감한 악지성)의 피부는 어떤 타입인가요?</h1><br>
+                            <p>건조하고 민감하며 색소 침착된(주름이 없는) 피부에는 <br>일반적으로 여드름 발진이 있고 
+                                피부 발진과 자극이 자주 있습니다.<br>
+                                피부의 보호 장벽은 불행히도 약하고 그 결과 피부 발진과 탈수에 더 취약해집니다. <br>
+                                태양 노출로 인해 얼굴에 검은 반점이 생길 수 있습니다. <br>
+                                이 피부 타입은 피부 색소 침착이 증가하여 다른 타입에 비해 주름이 생기는 경향이 적고<br>
+                                피부 보호에 도움이 됩니다.
+                            </p>
+                        </div>
+                        <h1>함께하면 좋은 시술추천</h1>
+                        <div class="chu">
+                            <div class="chu-img">
+                                <img src="img/chu.png" alt="" width="180px" height="180px">
+                            </div>
+                            <div class="chu-txt">
+                                <p><span>여드름 케어</span> - 여드름 진정 및 흉터 지우기</p>
+                            </div>
+                        </div>
 
                             <a href="main.html">
                                 <div class="close-test">
@@ -250,187 +287,19 @@ else{
                     </div>
                 
             </div>
-
-
-			 
-                
-                   
-           
             <!-- 임시 버튼 -->
-<!--             <div class="button"> -->
-<!--                 <a href="main.html" class="prev">이전</a> -->
-<!--                 <a href="custom-2.html" class="next">다음</a> -->
-<!--             </div> -->
-           
             <div class="button">
-               
-                <button class="survery-btn next" >다음</button>
-            </div> 
-        </form>
+                <a href="main.html" class="next">끝내기</a>
+            </div>
+            <!-- 찐 버튼 -->
+            <!-- <div class="button">
+                <button class="survery-btn prev">이전</button>
+                <button class="survery-btn next">다음</button>
+            </div> -->
         </div>
     </div>
-
-
-
-
-
-
-    <script>
-
-	 
- function clickCheck(target) {	
-	 
-
-	
-    document.querySelectorAll(`input[type=checkbox]`)
-        .forEach(el => el.checked = false);
-	target.checked = true;
-
-
-
-    
-
-
-
-	
-
-	
-
-
-
-
-}
-
 
  
-
-
-	
-
-
-
-
-function reset() {
-    skillGragh.value = resetValue
-}
-        $('#best .tab>li>a').on('click', function(e){
-              e.preventDefault();
-              $('#best .panel').hide();
-              $(this).next('.panel').show();
-            });
-
-            $('#best .tab>li>a').first().trigger('click');
-
-    </script>
-
-
-    <!-- <section id="welcome" class="content">
-        <header>
-        <div class="inner">
-                <div class="header-content">
-                    <h2>피부타입을 <br>
-                        알고싶으신가요?</h2>
-                    <p>나의 피부타입을 알아보세요!<br>
-                        관리법을 추천해드릴게요</p>
-                    <a href="custom-test.html">지금 시작하기
-                    </a>
-                </div>
-        </div>
-    </header>
-    </section>
-
-
-
-<div class="question">
-    <div class="swiper mySwiper">
-        <h2>피부관리하기 힘드시죠?</h2>
-
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <img src="img/custom-icon-1.png" alt="" >
-                        <h2>로션을 발라도<br>
-                            피부당김이 느껴져요.</h2>
-                        <p>정**님, 21세 , 대학생 </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <img src="img/custom-icon-2.png" alt="" width="60px" height="60px">
-                        <h2>요즘 마스크로 인해<br>
-                            피부가 뒤집어져서 속상해요.</h2>
-                        <p>이**님, 25세 , 대학생 </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="in">
-                    <div class="text-1">
-                        <img src="img/custom-icon-3.png" alt="" width="60px" height="60px">
-                        <h2>화장을 하고 나서 시간이 지나면<br>
-                            얼굴에 유분기가 많아져요.</h2>
-                        <p>김**님, 28세 , 직장인  </p>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-</div>
-
-
-
-<section id="fine" >
-    <div class="inner">
-
-        <div class="wrap">
-            <div class="thank">
-            <h3>이젠, 괜찮아요.</h3>
-            <div>
-                <ul>
-                    <li class="test">
-                        <h1 >01</h1>
-                        <img class="animate__animated animate__flash animate__delay-2s"  src="img/custom-1.png" alt="" width="80px" height="80px" >
-                        <h2>맞춤설문</h2>
-                        <p>딱 3분! 간단하게 체크하고<br>
-                            내 고민에 맞는 피부타입 찾기 </p>
-                    </li>
-                    <li class="test">
-                        <h1>02</h1>
-                        <img class="animate__animated animate__shakeX animate__delay-2s" src="img/custom-2.png" alt="" width="80px" height="80px">
-                        <h2>관리법</h2>
-                        <p>피부타입에 맞는 관리법으로<br>
-                         원하는 피부 가지기 </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-
-<div class="start">
-    <div class="wrapper">
-        <h1>맞춤설문으로<br>
-            피부타입을 알아보세요.</h1>
-        <a href="custom-test.html">지금 시작하기</a>
-    </div>
-</div> -->
-
-
-
-
-    
-
 
     <div class="footer flex flex-jc-c">
         <div class="text">
@@ -449,6 +318,13 @@ function reset() {
 
 
 
+<%
+    
+
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -473,20 +349,6 @@ gsap.to('.top-wrap > .top-box2', {
   borderBottom: '1px solid #ccc'
 });
 
-    var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true // 버튼 클릭 여부
-        },
-        autoplay: true,
-        autoplaySpeed: 5000,
-        keyboard: true
-    });
 
 
     function SliderBox1__init() {
@@ -507,15 +369,7 @@ gsap.to('.top-wrap > .top-box2', {
     });
 
 
-//         gsap.to('body', {
-//   scrollTrigger:{
-//     start:'top 0',
-//     end:'top 800px',
-//     trigger:'.top-box2',
-//     markers: true,
-//     pin:true
-//   },
-// });
+
 
 gsap.to('.top-wrap > .top-box2', {
 scrollTrigger:{
@@ -527,32 +381,6 @@ scrub:true
 
 
 
-    // swiper-pagination-bullet-active
-
-
-    let no;
-
-
-$(function() {
-    $("#welcome .wrap > .box").on("click", function() {
-        no=$(this).index()+1;
-        $("#welcome .inner .art1_big").hide();
-        $("#welcome .art1_big"+no).show();
-    })
-
-    $(".art1_big_close").on("click", function() {
-        $("#welcome .inner .art1_big").hide();
-    })
-    
-});
-
-$(".art1 .art1_big").click(function (e) {
-        if (e.target.className != ".modal") {
-          return false;
-        } else {
-          $(".modal").hide();
-        }
-});
 
 
 </script>
