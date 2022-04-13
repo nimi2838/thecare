@@ -128,7 +128,8 @@ else{
         </div>
         <div class="line"></div>
 
-        <div class="top-box2">
+
+         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
@@ -144,7 +145,7 @@ else{
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -173,7 +174,7 @@ else{
                     <a>소통원해</a>
                     <div>
                         <ul>
-                            <li><a href="qna.jsp">기록장</a></li>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
@@ -183,19 +184,19 @@ else{
         </div>
     </div>
 
-	<div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-		<a href="new_view.jsp" alt="최근 본 시술">
-	<div  style="border-radius:50%;z-index:150; width:60px;height:60px; margin-bottom: 10px;">
-			<img src="img/clock.png">
-		</div>
-		</a>
-		<a href="#" alt="맨 위로">
-		<div  style="border-radius:50%;z-index:150; width:60px;height:60px;">
-			<img src="img/up.png">
-		</div>
-		</a>
-	</div>
-
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 	
@@ -268,6 +269,7 @@ try {
 
 
 
+
 					String pno =  rs.getString("prdNo");	
 					String name =  rs.getString("prdName");
 					String price =  rs.getString("startprice");	
@@ -304,7 +306,7 @@ try {
 
 					
 
-                    <form name="form1">
+                    <div class="form1">
                         <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
                           <tr>
                            <td>시술 옵션
@@ -313,44 +315,97 @@ try {
                           </tr>
                         </table>
                    
-                        <div id="Div" style="padding: 10px 0 0 0;">
+                        <div id="Div" style="padding: 10px 0 0 0; display: none; ">
 						
-							<form name="form">
+							<form name="form" method="post" >
 							<%
 						String jsql1 = "select * from soption where prdNo = ?";   
 				PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 				pstmt1.setString(1, no);
-
+				
 				ResultSet rs1 = pstmt1.executeQuery();
-
+				
+				String noArray[] = new String[5];
+				int priceArray[] = new int[5];
+				int j=0;
 			while(rs1.next()) {	
 				
 				String opname = rs1.getString("opName");
+
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
-		
+
+				noArray[j] = opno;
+				priceArray[j] = opprice;
+				
+
 						%>
 
-
+									
 									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 									<tbody>
-											<td><input name="chkbox" type="checkbox" value="<%=opprice%>"  id="<%=opno%>" onClick="itemSum(this.form);"></td>
+											<td><input name="chkbox[]" type="checkbox" value="<%=opprice%>"  onClick="itemSum(this.form);">
+											<input type="checkbox" name="chk[]" value="<%=opprice%>" onClick="itemSum(this.form);" />
+											<input type="hidden" name="field_a[]" value="<%=opno%>" />
+											<input type="hidden" name="field_b[]" value="<%=opprice%>" />
+											
+											</td>
 											<td><%=opname%>      </td>
 												<td><%=opprice%></td>
 										  </tbody>
 									</table>
 
+
+<script language="javascript">
+						
+			//			getElementById('chk3');
+			// 			querySelector('#chk1');
+			//			getElementByName('chkbox');
+						 
+			//			 var array = noArray[<%=j%>];
+			//			let example1 = document.getElementById('noArray['+<%=j%>+']');
+			//			let example2 = document.getElementById('priceArray['+<%=j%>+']');
+			//			
+			//			function example_1() {
+					//	if(example1.checked == true) {
+					//		example1.checked = true;
+					//		example2.checked = true;
+					//		}
+					//	if(example1.checked == false) {
+					//			example1.checked = false;
+					//		example2.checked = false;
+					//		}
+						   
+			//			}
+
+			  if (document.getElementById("noArray")[j].value=50000)	{
+										document.getElementById("noArray")[j].value = "yun1";
+									} 
+									else if (document.getElementById("noArray")[j].value=110000) {
+										document.getElementById("noArray")[j].value = "yun2";
+									} 
+
+
+					   </script>
+
+					
 									<%
+
+j++;
+
 			}
 
 				%>
+
+					
 												<td><input name="total_sum" id="sell3" type="hidden" readonly></td>
+												<input type=hidden name = prdNo value="<%=no%>">
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();"></div>
                         </div>
 						
-                       </form>
+                       </div>
 
                 </div>
 
@@ -378,106 +433,163 @@ try {
 
 
 
-				
-
-<script language="javascript">
-
-				function itemSum(frm)
-				{
-				   var sum = 0;
-				   var count = frm.chkbox.length;
-				   for(var i=0; i < count; i++ ){
-					   if( frm.chkbox[i].checked == true ){
-						sum += parseInt(frm.chkbox[i].value);
-					   }
-				   }
-				   frm.total_sum.value = sum;
-				}
 
 				
 
-				function call() {
-				const sell3 = document.getElementById('sell3').value;
-                  document.getElementById("result").value = sell3;
-            };
+			<script language="javascript">
+							
 
-			
-        function multiSelect(value){
-        if(value=="OPEN") {
-			Div.style.visibility="visible";
-        }else  {
-			Div.style.visibility="hidden";
-			$('#txt_getChkList').attr('style', "display:inline-block;width: 490px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
-	
-			}
-        };
-
+							function itemSum(frm)
+							{
+							   var sum = 0;
+							   var count = frm.chk.length;
+							   for(var i=0; i < count; i++ ){
+								   if( frm.chk[i].checked == true ){
+									sum += parseInt(frm.chk[i].value);
+								   }
+							   }
+							   frm.total_sum.value = sum;
 
 		
 
+								
+							}
 
-	var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
-	$(document).ready(function() {
+							
 
-		$("input[name=chkbox]").change(function() {
-			// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
-			if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
-			putCheckList();
-		});
+							function call() {
+							const sell3 = document.getElementById('sell3').value;
+//var num = 100000; console.log(num.toLocaleString())
 
-		$("#btn_showChkList").click(function() {
-//			if(peopleArr.length == 0) {
-//				$("#txt_getChkList").val("");
-//				alert("체크된 항목이 없습니다.");
-//				return;
-//			}
 
-			var str = "";
-			for (var i = 0; i < peopleArr.length; i++) {
-				str +=  peopleArr[i].name + peopleArr[i].age + "\n";
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementById("result").value = sell3;
+							
+
+							
+
+
+							 
+								
+								
+
+			//				if (document.getElementById("opprice[0]").value= '50000')
+			//				{
+			//					document.getElementById("opprice[0]").value = "yun1";
+			//				} else if (document.getElementById("opprice[1]").value = '110000')
+			//				{
+			//					document.getElementById("opprice[1]").value = "yun2";
+			//				}
+
+
+						
+
+						};
+
+						
+					function multiSelect(value){
+					if(value=="OPEN") {
+						Div.style.visibility="visible";
+						Div.style.display="inline-block";
+					}else  {
+						Div.style.visibility="hidden";
+						Div.style.display="none";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 490px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+
+							    
+
+				
+						}
+					};
+
+
+					
+
+
+				var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
+				$(document).ready(function() {
+
+					$("input[name=chkbox]").change(function() {
+						// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
+				//		if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
+						putCheckList();
+					});
+
+					$("#btn_showChkList").click(function() {
+			//			if(peopleArr.length == 0) {
+			//				$("#txt_getChkList").val("");
+			//				alert("체크된 항목이 없습니다.");
+			//				return;
+			//			}
+
+						var str = "";
+						for (var i = 0; i < peopleArr.length; i++) {
+							str +=  peopleArr[i].name + peopleArr[i].age + "\n";
+						}
+
+						$("#txt_getChkList").val(str);
+
+					}); 
+				});
+
+
+				function putCheckList() {
+				peopleArr = new Array();
+				var idxArr = new Array();
+
+				$("input[name=chkbox]:checked").each(function() {
+					idxArr.push($("input[name=chkbox]").index(this));
+				});
+
+				for (var i = 0; i < idxArr.length; i++) {
+					var obj = new Object();
+					obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
+					obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
+					peopleArr.push(obj);
+				}
+
 			}
 
-			$("#txt_getChkList").val(str);
-
-		}); 
-    });
 
 
-	function putCheckList() {
-	peopleArr = new Array();
-	var idxArr = new Array();
 
-	$("input[name=chkbox]:checked").each(function() {
-		idxArr.push($("input[name=chkbox]").index(this));
-	});
 
-	for (var i = 0; i < idxArr.length; i++) {
-		var obj = new Object();
-		obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
-		obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
-		peopleArr.push(obj);
-	}
 
+function _submit(f)
+{
+    //같이 보낼 값 정리
+        for (i=0; i<f.elements['chk[]'].length; i++)
+        {
+            if (f.elements['chk[]'][i].checked==false)
+            {
+                f.elements['field_a[]'][i].disabled=true;
+                f.elements['field_b[]'][i].disabled=true;
+            }
+        }
+    return true;
 }
 
-</script>
+			</script>
 
 
 
 
 
 
-				<form name= product method="post">
-				<input type=hidden name = prdNo value="<%=no%>">
                 <div class="btn-box">
+				<%
 
-					<%
+
 
 				String jsql3 = "select * from cart where ctNo =? and prdNo = ?";
-		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, ctNo);
-		pstmt3.setString(2, no);
-		ResultSet rs3 = pstmt3.executeQuery(); 
+
+						PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+						pstmt3.setString(1, ctNo);
+						pstmt3.setString(2, pno);
+
+						ResultSet rs3 = pstmt3.executeQuery(); 
 		
 
 		if(rs3.next())   
@@ -492,17 +604,16 @@ try {
 		else  
 		{
 			%>
-
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
+					<input type="submit" name="Submit" id="button" value="Submit" onClick="inCart1()"/>
+<!-- 					<a href="#" onClick=inCart1()>장바구니 담기</a> -->
 
 				<%
 		} 
 				%>
 
 				
-			<a href="cart.html">시술 예약하기</a>
+			<a href="reservation.jsp">시술 예약하기</a>
                 </div>
-				</form>
 				
 				<%
 
@@ -516,14 +627,6 @@ try {
     </div>
 
 
-	<%
-			String jsql2 = "select * from surgery where prdNo = ?";   
-				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setString(1, no);
-
-				ResultSet rs2 = pstmt2.executeQuery();
-				rs2.next();
-		%>
 
 
 
@@ -914,6 +1017,9 @@ catch(Exception e) {
 
     <script>
 
+
+
+
         let = 0
 
         $(function () {
@@ -984,9 +1090,10 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-			var frm1 = document.product;
-			frm1.action = "incart.jsp";
+			var frm1 = document.form;
+			frm1.action = "incart1.jsp";
 			frm1.submit();
+
 		}
 
 

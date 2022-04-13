@@ -445,18 +445,19 @@ j++;
 								   }
 							   }
 							   frm.total_sum.value = sum;
-								
+
 							}
 
 							
 
 							function call() {
 							const sell3 = document.getElementById('sell3').value;
+							var num = sell3;
 
 		//					const cn1 = n1.toString()
 		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 //				.toLocaleString('en')
-							  document.getElementById("result").value = sell3;
+							  document.getElementById("result").value = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 							
 
 							
@@ -1065,7 +1066,7 @@ catch(Exception e) {
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.form;
-			frm1.action = "incart1.jsp";
+			frm1.action = "test2.jsp";
 			frm1.submit();
 
 		}

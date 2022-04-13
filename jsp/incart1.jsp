@@ -62,7 +62,6 @@
 
 %>
 	<script>
-			alert('장바구니에 해당 상품을 담았습니다.');
 			location.href="cart.jsp"
 			</script>
 	<%

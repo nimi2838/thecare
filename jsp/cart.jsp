@@ -22,7 +22,6 @@
 
 <%
    String myid = (String)session.getAttribute("sid");         
-   
 
 %>
 
@@ -279,7 +278,7 @@ try {
 			
         <div class="search_box">
             <div class="search1">
-			<a href="sub_1.jsp?prdNo=<%=prdNo%>" class="search_a">
+			<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
                 <h2><%=name%></h2>
                 <p><%=opname%></p>
 				</a>
@@ -288,7 +287,7 @@ try {
                 <div class="price">
                     <span><%=opprice%></span>원
                 </div>
-				<a href="deletecart.jsp?prdNo=<%=prdNo%>,opNo=<%=opNo%>" class="btn" style="border: none; background:none;">삭제</a>
+				<a href=deletecart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">삭제</a>
             </div>
         </div>
 			

@@ -498,7 +498,7 @@ var sum = 0;
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 490px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
 
 							    
 
@@ -578,8 +578,7 @@ var sum = 0;
 					<a href="#" onClick=inCart1()>장바구니 담기</a>
 			
 
-				
-			<a href="reservation.jsp">시술 예약하기</a>
+				<a href="#" onClick=rez()>시술 예약하기</a>
                 </div>
 				
 				<%
@@ -1078,6 +1077,14 @@ catch(Exception e) {
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.form;
+			frm1.submit();
+
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.form;
+			action "reservation.jsp";
 			frm1.submit();
 
 		}

@@ -18,7 +18,7 @@ try {
 		String opNo = request.getParameter("opNo");
 		
 
-		String jsql1 = "select * from cart where ctNo = ? and prdNo=? and opNo=?";
+		String jsql1 = "select * from gocart where ctNo = ? and prdNo=? and opNo=?";
       PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 	  pstmt1.setString(1, ctNo);
 	  pstmt1.setString(2, prdNo);
@@ -31,7 +31,7 @@ try {
 
 
 
-					 String jsql = "delete from cart where ctNo=? and prdNo = ? and opNo = ?";   
+					 String jsql = "delete from gocart where ctNo=? and prdNo = ? and opNo = ?";   
 					PreparedStatement pstmt = con.prepareStatement(jsql);
 					pstmt.setString(1, ctNo);
 					pstmt.setString(2, prdNo);
@@ -42,7 +42,7 @@ try {
 					
 
 
-	response.sendRedirect("cart.jsp");    
+	response.sendRedirect("reservation.jsp");    
     } catch (Exception e) {
       out.println(e);
 }
