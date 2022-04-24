@@ -12,7 +12,6 @@
 	String ctNo = session.getId(); 
 
 	
-	String prdNo = request.getParameter("prdNo");
 		
 		String[] chk = request.getParameterValues("chk[]");
 		String[] field_a = request.getParameterValues("field_a[]");
@@ -40,10 +39,22 @@
 			
 			for(int i=0; i<chk.length; i++){
 
+
+			String jsql3 = "delete from cart where ctNo=? and prdNo = ? and opNo = ?";   
+					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+					pstmt3.setString(1, ctNo);
+					pstmt3.setString(2, chk[i]);
+					pstmt3.setString(3, field_a[i]);
+					
+					pstmt3.executeUpdate();
+
+
+
+
 				String jsql7= "SELECT * FROM gocart WHERE ctNo=? and prdNo =? and opNo =?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, ctNo);
-			pstmt7.setString(2,prdNo);
+			pstmt7.setString(2,chk[i]);
 			pstmt7.setString(3,field_a[i]);
 
 			ResultSet rs7 = pstmt7.executeQuery(); 
@@ -54,7 +65,7 @@
 					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 					pstmt2.setString(1,Integer.toString(oNum));
 					pstmt2.setString(2,ctNo);
-					pstmt2.setString(3,prdNo);
+					pstmt2.setString(3,chk[i]);
 					pstmt2.setString(4,field_a[i]);
 
 					pstmt2.executeUpdate();

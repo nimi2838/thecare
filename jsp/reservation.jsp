@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 <html lang="ko">
 
 <head>
@@ -12,12 +13,25 @@
   <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/rez.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
  <script src="cal.js"></script>
   <title>시술예약</title>
-</head>
+  
+<script>
 
+
+
+
+
+
+    </script>
+</head>
 <%
-   String myid = (String)session.getAttribute("sid");                                                                           
+DecimalFormat df = new DecimalFormat("###,###");
+%>
+<%
+   String myid = (String)session.getAttribute("sid");         
+   
 %>
 <body>
 <div class="top-wrap">
@@ -204,6 +218,7 @@ else{
 			ResultSet rs5 = pstmt5.executeQuery(); 
 			while(rs5.next()){
 			
+			String merchant_uid = rs5.getString("merchant_uid"); 
 			String opNo = rs5.getString("opNo"); 
 			String prdNo = rs5.getString("prdNo"); 
 
@@ -242,7 +257,7 @@ else{
             </div>
             <div class="search2">
                 <div class="price">
-                    <span><%=opprice%></span>원
+                    <span><%=df.format(opprice) %></span>원
                 </div>
 				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">삭제</a>
             </div>
@@ -282,7 +297,9 @@ else{
 <hr>
 
 
-<form name="res" method=post action = reservationResult.jsp>
+
+
+<form name="res" method=post action="kakaoPay_test.jsp">
 <table class="scriptCalendar" style = "float: left;">
     <thead > 
         <tr>
@@ -404,7 +421,7 @@ int point2 = 0;
 
 					int point = rs6.getInt("Point"); 
 
-total2= total - point2;
+total2= total;
 %>
 
 					<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
@@ -418,9 +435,50 @@ total2= total - point2;
 					
 					
 					<table class="table" style="font-size:10pt; margin-top:30px; width: 100%;  ">
+ 					<tr style="margin: 0 auto;">
+						<td class = "td_tit">
+						선택 요일/시간 : 
+						  <input type="text" name="day1" id="day1" style="width: 95px; cursor: hand;" readonly>
+						<input type="text" name="date" id="date" style="width: 58px; margin-left: 10px; cursor: hand;" readonly>
+
+						<%
+
+
+String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
+			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+			pstmt2.setString(1, ctNo);
+
+			ResultSet rs2 = pstmt2.executeQuery(); 
+			rs2.next();
+			
+			String opNo1 = rs2.getString("opNo"); 
+			String prdNo1 = rs2.getString("prdNo"); 
+
+			String jsql7= "SELECT * FROM gocart WHERE prdNo=?";
+			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
+			pstmt7.setString(1, prdNo1);
+
+			ResultSet rs7 = pstmt7.executeQuery(); 
+			while(rs7.next()){
+				String opNo2 = rs2.getString("opNo"); 
+
+	
+%>
+
+						<input type="hidden" name="opno" value="<%=opNo2%>">
+						<input type="hidden" name="prdno" value="<%=prdNo1%>">
+
+
+						<%
+			}
+							%>
+
+
+						  </td>
+						
+					</tr>
 					                    
 					<tr>
-
                           <td class = "td_tit">
 						  이름 : <input type="text" name="name" class="name" style = "margin-left: 75px;">
 						  </td>
@@ -450,7 +508,7 @@ total2= total - point2;
 					   <tr>
 					  
                              <td class = "td_tit">
-							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3"></textarea> 
+							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="font-size:16px; padding: 5px; outline:none; resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3">없음</textarea> 
 							 </td>
                           
                        </tr>
@@ -459,48 +517,230 @@ total2= total - point2;
 
 				<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc; margin: 30px 0;" ><h1 style = "font-size: 33px;">가격 정보</h1></div>
 
+
+
 				<table class="price-wrap">
 					<tr>
 									<td>구매금액</td>
 									<td colspan="2" class="margin1"><input type='text' name='sell1' id='sell1' value="<%=total%>">원</td>
 					</tr>
-					<tr>
+
+					<%
+						if (point > 0){
+						%>
+
+
+					<tr id="poN">
 									<td>적립금 사용</td>
 
 									<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>
-									<td class="margin3"><span id="result"><input type="text" id="sell3" value="<%=point2%>"></span>원
-									<input type = "button" class="btn_Point" onclick='call();' value="사용"></td>
-<!-- this.onclick=null; -->
-						<script>
-//								$("#sell5").on("propertychange change keyup paste input", function() {
-//							var currentVal = $(this).val();
-//							if(currentVal == oldVal) {
-//							} 
-//						});
-						</script>
+									<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>"></span>원
+									<input type = "button" class="btn_Point" id="btn_Point" onclick='call();' value="사용">
+									<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
 
 					</tr>
-					<tr>
+
+					<tr id="poY" style="visibility: hidden; display:none;">
+									<td>적립금 사용</td>
+
+									<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>
+									<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>" readonly style="background:#ccc;"></span>원
+									<input type = "button" class="btn_Point" id="btn_Point" value="사용">
+									<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
+
+					</tr>
+
+
+					<%
+					if (total > 30000) {	
+					%>
+
+
+					<tr id="couN">
 									<td>보유 쿠폰</td>
-									<td id="coupon"  class="margin4" colspan="2">
-										<select name="searchYear" id="coupon">
-												<option value="2017">2017</option>
-												<option value="2018">2018</option>
-												<option value="2019">2019</option>
-										</select>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();">
+											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
+									<%
+//											String jsql10 = "select * from user where uId = ?";   
+//										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+//										pstmt10.setString(1,myid);
+//
+//										ResultSet rs10 = pstmt10.executeQuery();
+//										rs10.next();
+//										String Coupon = rs10.getString("Coupon"); 
+//
+//
+//										String jsql11 = "select * from coupon";   
+//										PreparedStatement pstmt11 = con.prepareStatement(jsql11);
+//
+//										ResultSet rs11 = pstmt11.executeQuery();
+//										rs11.next();
+//										
+//										String cNo1 = rs11.getString("cNo");
+//
+//
+//										String jsql12 = "SELECT * FROM user WHERE Coupon LIKE '%"+cNo1+"%'";   
+//										PreparedStatement pstmt12 = con.prepareStatement(jsql12);
+//
+//										ResultSet rs12 = pstmt12.executeQuery();
+//										while(rs12.next()) {
+//										
+
+
+										String jsql1 = "select * from coupon";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										while(rs1.next()) {
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+										<%
+										}
+										
+						//				}
+										%>
+											</select>
 
 									</td>
 					</tr>
+
+					<tr id="couY" style="visibility: hidden; display:none;">
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();" style="background: #ccc;">
+											<option value="0"> [ 적립금과 동시 사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					} else {
+						
+					%>
+
+						<tr >
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();">
+											<option value="0"> [ 구매금액 3만원 이하사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					}
+					%>
+
+
+
+					<%
+					} else {
+					%>
+
+						<tr id="poN">
+										<td>적립금 사용</td>
+
+										<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>`
+										<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>" readonly style="background:#ccc;"></span>원
+										<input type = "button" class="btn_Point" id="btn_Point" onclick='point_null();' value="사용">
+										<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
+
+						</tr>
+
+						<%
+					if (total > 30000) {	
+					%>
+
+
+					<tr>
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call2();">
+											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
+									<%
+										String jsql1 = "select * from coupon ";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+
+										ResultSet rs1 = pstmt1.executeQuery();
+										while(rs1.next()) {
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+										<%
+										}
+										%>
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					} else {
+						
+					%>
+
+						<tr >
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call2();">
+											<option value="0"> [ 구매금액 3만원 이하사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					}
+					%>
+
+				
+
+					<% }
+					%>
+					
+					
+
 					<tr>
 									<td>총 결제금액</td>
-									<td class="margin5" colspan="2"><input name='sell4' id='sell4' type='text' value="<%=total2%>" style = "color: red;">원</td>
+									<td class="margin5" colspan="2">
+									<input name='sell4' id='sell4' type='text' value="<%=df.format(total2)%>" readonly style = "color: red;">
+									<input name='sell6' id='sell6' type='hidden' value="<%=total2%>"readonly>원</td>
 					</tr>
+
+					<!-- df.format(total2) -->
 					
 					
 
 				</table>
 
+
+
+
+
+
+
 				<script>
+
 
 				  function point_null() {
                 alert("보유한 포인트가 없습니다.");
@@ -513,14 +753,26 @@ total2= total - point2;
                     document.getElementById("result").innerText = sell3;
              }
 // location.reload();
-				
-							function call() {
-								window.location.href + "#sell5";
-								
-							   var se3=document.getElementById('sell3').value;
-							   var se5=document.getElementById('sell5').value;
+							
+			//				$("#sell4").read(
 
-									if (parseInt(se3) > parseInt(se5))
+
+	//							window.onload=function(){
+	//
+	//									var sel4 = document.getElementById('sell4').value;
+	//									document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+	//							}
+	//
+							function call() {  
+								
+							   var se3=document.getElementById('sell3').value;// 사용 포인트
+							   var se5=document.getElementById('sell5').value;  // 보유 포인트
+							   // sell1  구매금액
+							   // sell4 계산 후 금액
+								
+								document.getElementById("sell5").value= <%=point%>;
+
+									if (parseInt(se3) > <%=point%>)
 								   {
 									  alert("포인트를 사용할 수 없습니다" );
 
@@ -534,21 +786,87 @@ total2= total - point2;
 
 										document.getElementById('sell4').value =parseInt(document.getElementById('sell1').value) - parseInt(document.getElementById('sell3').value);
 
+
 									  document.getElementById('sell5').value = parseInt(document.getElementById('sell5').value) - parseInt(document.getElementById('sell3').value);
 
 
-									  const sell3 = document.getElementById('sell3').value;
+
+
+										const sell3 = document.getElementById('sell3').value;
 										document.getElementById("sell3").value= sell3;
+
+										var sel4 = document.getElementById('sell4').value;
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+//document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
 										
+
+										
+
+										document.getElementById("couN").style="display: none; visibility:hidden;"
+										document.getElementById("couY").style="display: table-row; visibility:visibility;"
+
 									   }
+
 								   }
+
+							}
+
+							function call1() {  
+										
+										document.getElementById("sell4").value= <%=total2%>;
+
+										document.getElementById('sell4').value = parseInt(document.getElementById('sell4').value) -
+										parseInt(document.getElementById('coupon').value);
+
+										const sell4 = document.getElementById('sell4').value;
+										var sel4 = sell4;
+//										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+
+										document.getElementById("poN").style="display: none; visibility:hidden;"
+										document.getElementById("poY").style="display: table-row; visibility:visibility;"
+
+							}
+
+							function call2() {  
+										
+										document.getElementById("sell4").value= <%=total2%>;
+
+										document.getElementById('sell4').value = parseInt(document.getElementById('sell4').value) -
+										parseInt(document.getElementById('coupon').value);
+
+										const sell4 = document.getElementById('sell4').value;
+										var sel4 = sell4;
+//										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+
+
+							}
+
+							function re() {  
+
+										document.getElementById("poN").style="display: table-row; visibility:visibility;"
+										document.getElementById("poY").style="display:none; visibility:hidden;"
+
+										
+										document.getElementById("couN").style="display: table-row; visibility:visibility;"
+										document.getElementById("couY").style="display: none; visibility:hidden;"
+										
+										document.getElementById("sell5").value= <%=point%>;
+										document.getElementById("sell4").value= <%=total2%>;
+										document.getElementById("sell3").value= 0;
+										
 
 							}
 
 
 				</script>
 
- <button type="submit"  class="rez_btn" value= "예약" onClick="checkValue()" style= "cursor: pointer;" >예약</button>
+ <button class="rez_btn" value= "예약" onclick="request()" style= "cursor: pointer;" >예약</button>
 </form>
 </div>
 </div>
@@ -589,7 +907,15 @@ total2= total - point2;
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
         
-        
+        <script>
+		function request()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.res;
+			frm1.action = "kakaoPay_test.jsp"
+			frm1.submit();
+
+		}
+		</script>
         
         </body>
         </html>

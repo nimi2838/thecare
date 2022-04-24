@@ -25,9 +25,7 @@ try {
 	  pstmt1.setString(3, opNo);
 
       ResultSet rs1 = pstmt1.executeQuery(); 
-	  rs1.next();
-
-
+	  if (rs1.next()) {
 
 
 
@@ -38,6 +36,8 @@ try {
 					pstmt.setString(3, opNo);
 					
 					pstmt.executeUpdate();
+
+	  }
 
 					
 

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
+<%@ page import="java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,11 @@
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<title>상세화면</title>
+
 </head>
+<%
+DecimalFormat df = new DecimalFormat("###,###");
+%>
 
 <%
    String myid = (String)session.getAttribute("sid");         
@@ -145,7 +150,7 @@ else{
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -174,7 +179,7 @@ else{
                     <a>소통원해</a>
                     <div>
                         <ul>
-                            <li><a href="qna.jsp">기록장</a></li>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
@@ -197,6 +202,7 @@ else{
                 </div>
             </a>
         </div>
+
 
 	
 <%
@@ -285,7 +291,7 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>발단된 턱 근육을 줄여 갸름한 V라인으로</p>
+                <p>여드름 압출이 포함된 스킨케어</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
@@ -305,8 +311,8 @@ try {
 
 					
 
-                      <form name="form1">
-                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
+                    <div class="form1">
+                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN'); td1();">
                           <tr>
                            <td>시술 옵션
                             <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
@@ -314,44 +320,67 @@ try {
                           </tr>
                         </table>
                    
-                        <div id="Div" style="padding: 10px 0 0 0;">
+                        <div id="Div" style="padding: 10px 0 0 0; display: none; ">
+
+
+
 						
-							<form name="form">
+							<form name="form" method="post" onsubmit="_submit(this); " >
+
+							
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
+									<tbody>
+
 							<%
 						String jsql1 = "select * from soption where prdNo = ?";   
 				PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 				pstmt1.setString(1, no);
-
+				
 				ResultSet rs1 = pstmt1.executeQuery();
-
+				
 			while(rs1.next()) {	
 				
 				String opname = rs1.getString("opName");
+
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
-		
+
+				
+
 						%>
 
+									<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-									<tbody>
-											<td width="50"><input name="chkbox" type="checkbox" value="<%=opprice%>"  id="<%=opno%>" onClick="itemSum(this.form);"></td>
-											<td><%=opname%>      </td>
-												<td><%=opprice%></td>
-										  </tbody>
-									</table>
+											</td>
+											<td class="td2" style=""><%=opname%>                                          </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+										  </tr>
 
+
+					
 									<%
+
 			}
 
 				%>
-												<td><input name="total_sum" id="sell3" type="hidden" readonly></td>
+					</tbody>
+									</table>
+
+					
+												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
+												<input type=hidden name = prdNo value="<%=no%>">
+												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
-                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();"></div>
+                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
+							</div>
                         </div>
 						
-                       </form>
+                       </div>
 
                 </div>
 
@@ -364,7 +393,7 @@ try {
 
 				<div>
 				<!-- <input type="text" id="txt_getChkList" style="width: 500px; height:100px; outline:none; border: 0; background: none; font-size: 20px; padding:20px 30px; "> -->
-				<textarea spellcheck = "false" id="txt_getChkList" style="display: none;"></textarea>
+				<textarea spellcheck = "false" id="txt_getChkList" style="display: none; text-align: right;"></textarea>
 				</div>
 
                 <div class="price-wrap">
@@ -379,132 +408,191 @@ try {
 
 
 
+
 				
 
-<script language="javascript">
+			<script language="javascript">
 
-				function itemSum(frm)
+
+				function td1() {
+							const td3 = document.getElementByClass('td3').innerText;
+							var num = td3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementByClass("td3").innerText = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+			function _submit(f)
 				{
-				   var sum = 0;
-				   var count = frm.chkbox.length;
-				   for(var i=0; i < count; i++ ){
-					   if( frm.chkbox[i].checked == true ){
-						sum += parseInt(frm.chkbox[i].value);
-					   }
-				   }
-				   frm.total_sum.value = sum;
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b'][i].disabled=true;
+							}
+						}
+					}
+					return true;
 				}
 
-				
+var sum = 0;
+        function calc(){ 
+            a = document.getElementsByClassName("chk");
+            for(i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    sum += parseInt(a[i].value);
+                }
+            }
+            document.getElementById("sell3").value = sum;
+            sum = 0;
+        }
 
-				function call() {
-				const sell3 = document.getElementById('sell3').value;
-                  document.getElementById("result").value = sell3;
-            };
+
+
+
+							function call() {
+							const sell3 = document.getElementById('sell3').value;
+							var num = sell3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementById("result").value = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+
+						
+					function multiSelect(value){
+					if(value=="OPEN") {
+						Div.style.visibility="visible";
+						Div.style.display="inline-block";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+					}else  {
+						Div.style.visibility="hidden";
+						Div.style.display="none";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+							    
+
+				
+						}
+					};
+
+
+					
+
+
+				var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
+				$(document).ready(function() {
+
+					$("input[class=chk]").change(function() {
+						// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
+				//		if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
+						putCheckList();
+					});
+
+					$("#btn_showChkList").click(function() {
+			//			if(peopleArr.length == 0) {
+			//				$("#txt_getChkList").val("");
+			//				alert("체크된 항목이 없습니다.");
+			//				return;
+			//			}
+
+						var str = "";
+						for (var i = 0; i < peopleArr.length; i++) {
+							str +=  peopleArr[i].name + peopleArr[i].age + "\n";
+						}
+
+						$("#txt_getChkList").val(str);
+
+					}); 
+				});
+
+
+				function putCheckList() {
+				peopleArr = new Array();
+				var idxArr = new Array();
+
+
+				$("input[class=chk]:checked").each(function() {
+					idxArr.push($("input[class=chk]").index(this));
+				});
+
+				for (var i = 0; i < idxArr.length; i++) {
+					var obj = new Object();
+					obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
+					obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
+					peopleArr.push(obj);
+				}
+
+			}
 
 			
-        function multiSelect(value){
-        if(value=="OPEN") {
-			Div.style.visibility="visible";
-        }else  {
-			Div.style.visibility="hidden";
-			$('#txt_getChkList').attr('style', "display:inline-block;width: 497px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
-	
-			}
-        };
+		//					if (document.getElementById("noArray[0]").value= '50000')
+		//					{
+		//						document.getElementById("noArray[0]").value = "yun1";
+		//					} else if (document.getElementById("noArray[1]").value = '110000')
+		//					{
+		//						document.getElementById("noArray[1]").value = "yun2";
+		//					}
 
 
-		
-
-
-	var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
-	$(document).ready(function() {
-
-		$("input[name=chkbox]").change(function() {
-			// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
-			if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
-			putCheckList();
-		});
-
-		$("#btn_showChkList").click(function() {
-//			if(peopleArr.length == 0) {
-//				$("#txt_getChkList").val("");
-//				alert("체크된 항목이 없습니다.");
-//				return;
-//			}
-
-			var str = "";
-			for (var i = 0; i < peopleArr.length; i++) {
-				str +=  peopleArr[i].name + peopleArr[i].age + "\n";
-			}
-
-			$("#txt_getChkList").val(str);
-
-		}); 
-    });
-
-
-	function putCheckList() {
-	peopleArr = new Array();
-	var idxArr = new Array();
-
-	$("input[name=chkbox]:checked").each(function() {
-		idxArr.push($("input[name=chkbox]").index(this));
-	});
-
-	for (var i = 0; i < idxArr.length; i++) {
-		var obj = new Object();
-		obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
-		obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
-		peopleArr.push(obj);
-	}
-
-}
-
-</script>
+			</script>
 
 
 
 
+<%
+	String jsql2= "SELECT * FROM user WHERE uId=?";
+					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+					pstmt2.setString(1, myid);
 
-				<form name= product method="post">
-				<input type=hidden name = prdNo value="<%=no%>">
+					ResultSet rs2 = pstmt2.executeQuery(); 
+					
+					
+					if(rs2.next()) {
+
+	%>
+
                 <div class="btn-box">
 
-					<%
 
-				String jsql3 = "select * from cart where ctNo =? and prdNo = ?";
-		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, ctNo);
-		pstmt3.setString(2, no);
-		ResultSet rs3 = pstmt3.executeQuery(); 
-		
+					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
+			
 
-		if(rs3.next())   
-		{		         
-			%>
-
-			<a href="#" onClick=cart1()>장바구니 담기</a>
-
-
+				<a href="#" onClick=rez()>시술 예약하기</a>
+                </div>
+				
 				<%
-		}
-		else  
-		{
-			%>
-
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
-
-				<%
-		} 
+					} else {
 				%>
 
-				
-			<a href="cart.html">시술 예약하기</a>
+					 <div class="btn-box">
+
+
+					<a href="#" onClick=login()>장바구니 담기</a>
+			
+
+				<a href="#" onClick=login()>시술 예약하기</a>
                 </div>
-				</form>
-				
-				<%
+
+					<%
+				} //if-else 아이디 유무
 
 					
 			}
@@ -518,13 +606,14 @@ try {
 
 
 
+
     <div class="sub_con_box1">
         <div class="sub_con1">
 
             <p> WHAT IS IT?</p>
-            <h1>사각턱보톡스란 ?</h1>
+            <h1>여드름치료란 ?</h1>
             <p class="memo" style="line-height: 30px;">
-                클로스트리디움 보튤리늄 톡신이 주성분으로, 부피가 큰 근육의 사이즈를 감소시켜 슬림한 라인을 만들어주는 시술입니다.
+                [여드름관리] 압출+염증주사 - 기기관리 - 모델링팩 <br>[재생관리] 기기관리 - 진정마스크 - 재생광선 - 모델링팩
             </p>
 
 
@@ -535,7 +624,7 @@ try {
                         <img src="img/time.png" alt="">
                     </div>
                     <h2>시술시간</h2>
-                    <p>5 - 10분 이내</p>
+                    <p>30 - 40분</p>
                 </div>
 
                 <div class="con_box1">
@@ -543,7 +632,7 @@ try {
                         <img src="img/injection.png" alt="">
                     </div>
                     <h2>마취여부</h2>
-                    <p>스프레이마취</p>
+                    <p>없음</p>
                 </div>
 
                 <div class="con_box1 con_box_11">
@@ -559,63 +648,55 @@ try {
                         <img src="img/downtime.png" alt="">
                     </div>
                     <h2>유지기간</h2>
-                    <p>6 - 8개월</p>
+                    <p>2 - 3주</p>
                 </div>
 
             </div>
 
 
 
-				<div class="detail8">
-				
-					<div class="sub2 flex">
-
-						<div class="sub_con1">
-								<img src="img/sub_img07.jpg">
-							<div class="text-box">
-								<h2>메디톡신 보톡스</h2>
-								<p>안전성이 검증된 국내 NO.1 보톡스</p>
-								<div>
-									메디톡신은 국내 KFDA와 미국 FDA의 승인을 
-									획득하여 의약품으로의 안정성과 유효성을 검증받았으며,
-									간단한 시술로 종아리, 사각턱, 얼굴 리프팅에
-									효과적이면서 합리적인 가격으로 큰 효과를 얻을 수 있습니다.
-								</div>
+			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
+				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
+				<img src ="img/sub_con1.png" style="width:85%;">
+				</div>
+				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
+					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								붉고 큰 화농성 여드름이 20개 이상,<br>
+								중등도의 진행성 흉터가 있는 상태
+								</p>
 							</div>
 						</div>
-
-						<div class="sub_con2">
-								<img src="img/sub_img08.jpg">
-							<div class="text-box">
-								<h2>엘러간 보톡스</h2>
-								<p>미국 FDA에서 승인받은 최초의 보톡스</p>
-								<div>
-									미국 FDA에서 미용목적 치료제로 최초 승인을 받은 제품으로
-									지속력 및 안전성이 널리 알려진 보톡스입니다.
-									점유율이나 인지도가 가장 높고 안전성이 우수하며
-									사각턱 시술에 가장 좋은 효과를 보입니다.
-								</div>
+					</li>
+					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								누적된 자국, 색소침착, 흉터가 많고<br>
+								새로 올라온 여드름이 혼재된 상태
+								</p>
 							</div>
 						</div>
-
-						<div class="sub_con3">
-								<img src="img/sub_img09.jpg">
-							<div class="text-box">
-								<h2>제오민 보톡스</h2>
-								<p>내성을 최소화한 보톡스</p>
-								<div>
-									제오민이란 독일 멀츠사의 프리미엄 보톡스로,
-									새로운 정제기술들이 구조면에서 불필요하게
-									포함하고 있던 복합 단백질을 없앤 순수 보툴리늄 톡신입니다.
-									내성을 최소화했기 때문에 재시술 시에도 효과가 저하되는 것을 방지할 수 있습니다.
-								</div>
+					</li>
+<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+						<div class="text flex">
+							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
+							<div>
+								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
+								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								최근 3개월 이상의 치료에 효과가 없고<br>
+								치료 종료후 1주일 안에 재발하는 상태
+								</p>
 							</div>
 						</div>
-					
-					</div>
-					
-				</div> <!-- 디테일8 닫기 -->
-
+					</li>
+				</ul>
 			</div>
             
 
@@ -656,7 +737,7 @@ try {
 								</div>
 							<div class="box">
 							<div>STEP 3</div>
-							<p>스프레이마취</p>
+							<p>압출+염증주사</p>
 							</div>
 							<div class="line-box">
 									<div class="line1"></div>
@@ -666,7 +747,7 @@ try {
 						</div>
 				<div class="box">
 						<div>STEP 4</div>
-					<p>보톡스 주입</p>
+					<p>기기관리</p>
 					</div>
 						<div class="line-box">
 							<div class="line1"></div>
@@ -676,12 +757,18 @@ try {
 						</div>
 					<div class="box">
 						<div>STEP 5</div>
-					<p>마무리</p>
+					<p>모델링팩</p>
 					</div>
+					<div class="line-box">
 							<div class="line1"></div>
 							<div class="line2"></div>
 							<div class="line3"></div>
 							<div class="line4"></div>
+						</div>
+					<div class="box">
+						<div>STEP 6</div>
+					<p>마무리</p>
+					</div>
 				</div>
 		</div>
 
@@ -703,17 +790,17 @@ try {
                 <div class="con_box2">
                     <h6>POINT 1</h6>
                     <hr>
-                    <p>사각턱으로 얼굴이 크고 각져보이는 분</p>
+                    <p>피지가 과도해 압출이 필요한 분</p>
                 </div>
                 <div class="con_box2">
                     <h6>POINT 2</h6>
                     <hr>
-                    <p>작고 부드러운 얼굴선을 원하는 분</p>
+                    <p>외부환경 등으로 자극받은 피부에 진정과 재생이 필요한 분</p>
                 </div>
                 <div class="con_box2">
                     <h6>POINT 3</h6>
                     <hr>
-                    <p>일상생활에 지장없이 간편하게 V라인을 갖고 싶은 분</p>
+                    <p>피지가 과도해 압출이 필요한 분</p>
                 </div>
             </div>
         </div>
@@ -744,21 +831,21 @@ try {
             <h1>효과 및 권장주기</h1>
 
             <div class="img-box">
-                <img src="img/sub_effect08.gif" alt="">
+                <img src="img/sub_effect01.gif" alt="">
             </div>
 
             <ul class="flex flex-jc-c">
                 <li class="flex">
                     <span>1</span>
-                    <p style="margin:35px 0; line-height:25px;">
-                       시술 2주 후부터 서서히 줄어들기 시작하며 6~8주 내 최대 효과를 확인할 수 있습니다.
+                    <p style="margin:20px 0; line-height:25px;">
+                        일반적으로 1주 간격으로 진행되며 꾸준한 권리를 권장합니다
                     </p>
                 </li>
 
                 <li class="flex">
                     <span>2</span>
-                    <p style="margin:35px 0; line-height:25px;">
-                       6~8개월에 걸쳐 서서히 원래 사이즈로 되돌아오게 되므로 지속적인 효과를 원한다면 4~5개월 주기로 재시술을 권장드립니다.
+                    <p style="margin:20px 0; line-height:25px;">
+                       개인의 상태에 따라 효과 및 권장 주기는 다를 수 있습니다.
                     </p>
                 </li>
 
@@ -779,11 +866,11 @@ try {
             <div class="qna_list">
 				<div class="qna_item">
 					<div class="ques">
-						Q. 내성 걱정될 때 어떤 제품이 좋을까요?
+						Q. 홈케어랑 어떤 부분이 차이가 있나요?
 					</div>
 
 					<div class="answer">
-						내성이 걱정되시면 결합 단백질이 없는 제품을 권장해 드립니다. 안정성 면에서는 오랜 기간 동안 전 세계적으로 사용된 독일 멀츠사의 제오민을 추천드립니다.
+						더케어에서는 청결하게 소독된 관리 기구와 피부관리 전문 인력이 고객님의 피부 상태를 꼼꼼하게 체크하여 2차 염증이 발생하지 않도록 압출 및 재생 관리를 해주고 있습니다. 아직 압출 준비가 되어있지 않은 여드름을 억지로 짜게 되면 오히려 덧나고 색소침착이 생길 수 있기 때문에 내 피부 상태가 어떠한지 스스로 판단하기 어렵다면 가급적 내원하셔서 관리 받는 것을 권장합니다.
 					</div>
 				</div>
 			</div>
@@ -792,12 +879,11 @@ try {
 			<div class="qna_list">
 				<div class="qna_item">
 					<div class="ques">
-						Q. 사각턱톡신과 윤곽주사의 차이점은 뭔가요?
+						Q. 좁쌀 여드름과 화농성 여드름은 어떻게 구분하나요?
 					</div>
 
 					<div class="answer">
-						두 시술은 얼굴을 작게 만드는 시술이라는 공통점이 있으나 타깃이 다릅니다. <br>
-윤곽주사의 경우 불필요한 지방을 분해하여 체외로 배출시키는 시술로, 근육과 지방 복합형 얼굴일 경우 <br>사각턱톡신 시술로는 근육을 이완시켜 턱 근육으로 각진 얼굴을 부드럽게 만들고, 윤곽시술로는 지방을 분해하여 얼굴라인을 형성하는데 시너지효과를 가져올 수 있습니다. 윤곽주사는 양 볼 살 또는 <br>이중 턱에 가장 많이 적용하며, 그 외에 지방이 있는 부위에 시술 가능합니다.
+						좁쌀 여드름은 가장 초기의 여드름으로 하얗고 오돌토돌하게 올라온 여드름입니다. 모공 속에 피지가 쌓여 있기 때문에 잘 없어지지 않으며, 그대로 방치하게 된다면 모공 안에 염증이 생겨 화농성 여드름으로 변하게 됩니다. 화농성 여드름은 쉽게 말해 모공에 막힌 피지 때문에 좁쌀 여드름이 곪아서 생기는 여드름입니다. 때문에 내 피부에 정확한 진단을 통해 이에 맞는 관리 받는 것을 권장합니다.
 					</div>
 				</div>
 			</div>
@@ -908,6 +994,29 @@ catch(Exception e) {
 
     <script>
 
+				function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
+
         let = 0
 
         $(function () {
@@ -978,9 +1087,26 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
+//		 const checkbox = document.getElementById('chk');
+//
+//			 if (checkbox.checked ==('false')) {
+//				alert("옵션을 선택해 주세요!");
+//			} else{
 			var frm1 = document.form;
-			frm1.action = "incart.jsp";
-			frm1.submit();
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+
+			
+
+//			}
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.form;
+			frm1.action = "rezResult.jsp"
+			document.getElementById('button').click();
 
 		}
 
@@ -988,6 +1114,12 @@ catch(Exception e) {
 		function cart1()
 		{
 			alert('장바구니에 해당 시술이 있습니다.');
+		}
+
+		function login()
+		{
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
 		}
 
 

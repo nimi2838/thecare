@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +20,10 @@
 
 
 
-
 <%
+DecimalFormat df = new DecimalFormat("###,###");
+
+
    String myid = (String)session.getAttribute("sid");         
 
 %>
@@ -234,8 +237,21 @@ try {
     </div>
 
 
+
+
+	<form name="cart_fm" method="post" onsubmit="_submit(this); " >
     <div class="search_wrap1">
+	<div class="flex flex-ai-c" style="width: 60%; margin: 0 auto; font-size: 18px;">
+	<input type='checkbox' name='animal' value='selectall' onclick='selectAll(this)' style="width: 18px; height: 18px;" /> <p style=" margin: 0 0 0 10px; font-weight: bold; ">전체 선택</p></div>
+<br />
 	<%
+
+		String jsql1 = "select * from cart where ctNo = ?";
+		PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+		pstmt1.setString(1, ctNo);
+		ResultSet rs1 = pstmt1.executeQuery(); 
+
+		if (rs1.next()) {
 
 
 		String jsql = "select * from cart where ctNo = ?";
@@ -277,15 +293,17 @@ try {
 
 			
         <div class="search_box">
-            <div class="search1">
-			<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
-                <h2><%=name%></h2>
-                <p><%=opname%></p>
-				</a>
+            <div class="search1 flex">
+				<input type="checkbox" name="chk[]" class="chk flex-ai-c" id="chk" value="<%=prdNo%>" style="margin:48px 25px 0 0; width: 18px; height: 18px;" />
+				<input type="hidden" name="field_a[]" class="field_a" value="<%=opNo%>" />
+				<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
+					<h2><%=name%></h2>
+					<p><%=opname%></p>
+					</a>
             </div>
             <div class="search2">
                 <div class="price">
-                    <span><%=opprice%></span>원
+                    <span><%=df.format(opprice)%></span>원
                 </div>
 				<a href=deletecart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">삭제</a>
             </div>
@@ -297,22 +315,77 @@ try {
 	}  // while
 		%>
 
+			<script>
+
+			function selectAll(selectAll)  {
+			  const checkboxes 
+				 = document.querySelectorAll('input[type="checkbox"]');
+			  
+			  checkboxes.forEach((checkbox) => {
+				checkbox.checked = selectAll.checked
+			  })
+			}
+
+			
+			function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
+
+			</script>
+
 
 		<div class="btn_box1" style="width:max-content; margin: 80px auto; color:#fff; font-size:18px; font-weight: 500;">
-			<a href="#" onClick=cart1() style="text-align:center; padding: 20px 55px;
-    background: #ffffff;
-    border: 1px solid #ffc6c6;
-    color: #ff9090;
-    border-radius: 5px; margin: 0px 10px;">전체 시술 예약</a>
-			<a href="#" onClick=cart1() style="text-align:center; padding: 20px 55px;
-    background: #ffa5a5;
-    color: #ffffff;
+			
+			<a href="#" onClick=cart() style="text-align:center; padding: 20px 55px;
+    background: #f89fa8;
+    color: #ffffff; font-weight: bold;
     border-radius: 5px;  margin: 0px 10px;">선택 시술 예약</a>
+		</div>
+<%
+		} // if
+	else {
+
+		%>
+
+
+			<div class="finish">
+			<div class="icon">
+				<i class="fa-solid fa-circle-xmark"></i>
+			</div>
+			  <h1>장바구니가 비었습니다 !</h1>
+			  <p>
+			  </p>
+			  <div class="btn">
+				<a href="guide.jsp">시술 보러가기</a>
+			  </div>
 		</div>
 
 
 
+			<%
+	} //else
+	%>
+
+
     </div>
+	<form>
 
 
 
@@ -428,6 +501,14 @@ scrub:true
 			var frm = document.search;
 			frm.action = "search.jsp";
 			frm.submit();
+		}
+
+			function cart()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.cart_fm;
+			frm1.action = "cartResult.jsp"
+			frm1.submit();
+
 		}
 
 

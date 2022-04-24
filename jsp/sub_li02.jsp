@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
+<%@ page import="java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,11 @@
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<title>상세화면</title>
+
 </head>
+<%
+DecimalFormat df = new DecimalFormat("###,###");
+%>
 
 <%
    String myid = (String)session.getAttribute("sid");         
@@ -307,7 +312,7 @@ try {
 					
 
                     <div class="form1">
-                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
+                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN'); td1();">
                           <tr>
                            <td>시술 옵션
                             <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
@@ -320,7 +325,12 @@ try {
 
 
 						
-							<form name="form" method="post" action="incart1.jsp" onsubmit="_submit(this);" >
+							<form name="form" method="post" onsubmit="_submit(this); " >
+
+							
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
+									<tbody>
+
 							<%
 						String jsql1 = "select * from soption where prdNo = ?";   
 				PreparedStatement pstmt1 = con.prepareStatement(jsql1);
@@ -339,19 +349,16 @@ try {
 
 						%>
 
-									
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-									<tbody>
-											<td>
+									<tr>
+											<td class="td1">
 											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
-											<input type="checkbox" name="chk[]" class="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
 											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
 											</td>
-											<td><%=opname%>      </td>
-												<td><%=opprice%></td>
-										  </tbody>
-									</table>
+											<td class="td2" style=""><%=opname%>                                          </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+										  </tr>
 
 
 					
@@ -360,10 +367,13 @@ try {
 			}
 
 				%>
+					</tbody>
+									</table>
 
 					
 												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
+												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
@@ -383,7 +393,7 @@ try {
 
 				<div>
 				<!-- <input type="text" id="txt_getChkList" style="width: 500px; height:100px; outline:none; border: 0; background: none; font-size: 20px; padding:20px 30px; "> -->
-				<textarea spellcheck = "false" id="txt_getChkList" style="display: none;"></textarea>
+				<textarea spellcheck = "false" id="txt_getChkList" style="display: none; text-align: right;"></textarea>
 				</div>
 
                 <div class="price-wrap">
@@ -403,6 +413,17 @@ try {
 
 			<script language="javascript">
 
+
+				function td1() {
+							const td3 = document.getElementByClass('td3').innerText;
+							var num = td3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementByClass("td3").innerText = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
 
 
 			function _submit(f)
@@ -440,42 +461,7 @@ var sum = 0;
             sum = 0;
         }
 
-//							function itemSum(frm)
-//							{
-//							   var sum = 0;
-//							   var count = frm.field_b.length;
-//							   for(var i=0; i < count; i++ ){
-//								   if( frm.field_b[i].disabled == true ){
-//									sum += parseInt( frm.field_b[i].value);
-//								   }
-//							   }
-//							   frm.total_sum.value = sum;
-//
-//							}
 
-
-	//						function itemSum(frm) {
-	//						   var sum = 0;
-	//							var count = frm.field_b.length;
-	//						   for(var i=0; i < count; i++ ){
-	//							   if (frm.field_b[i].checked==true)
-	//								{
-	//								sum += parseInt(frm.field_b[i].value);
-	//							   }
-	//						   }
-
-				//			   for(let i=0; i<=count; i++){
-				//					let chkbox = document.getElementByName("chk"+[i]);
-				//					if(chkbox.checked){
-				//						total += Number(chkbox.value);
-				//					}
-				//					consol.log(total);
-				//				}
-
-				//				document.getElementByName("total_sum").value = total;
-	//						   frm.total_sum.value = sum;
-	//	
-	//						}
 
 
 							function call() {
@@ -496,11 +482,11 @@ var sum = 0;
 					if(value=="OPEN") {
 						Div.style.visibility="visible";
 						Div.style.display="inline-block";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
 						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
-
 							    
 
 				
@@ -586,7 +572,7 @@ var sum = 0;
                 <div class="btn-box">
 
 
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
+					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
 			
 
 				<a href="#" onClick=rez()>시술 예약하기</a>
@@ -1101,15 +1087,26 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
+//		 const checkbox = document.getElementById('chk');
+//
+//			 if (checkbox.checked ==('false')) {
+//				alert("옵션을 선택해 주세요!");
+//			} else{
 			var frm1 = document.form;
-			frm1.submit();
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+
+			
+
+//			}
 		}
 
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.form;
 			frm1.action = "rezResult.jsp"
-			frm1.submit();
+			document.getElementById('button').click();
 
 		}
 
