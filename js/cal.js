@@ -26,9 +26,10 @@
 	function handleClick(event) {
 		var time = this.innerHTML; // 'hh:mm' 형태로 값이 들어온다 
 		console.log(time)
+		document.res.date.value = time;
 
 		if (checkTime(this)) {
-			this.style.backgroundColor = "#dddddd";
+			this.style.backgroundColor = "#efefef";
 
 		} else {
 			if (event.target.classList[1] === "clicked") {
@@ -47,7 +48,7 @@
 	function init() {
 		for (var i = 0; i < btns.length; i++) {
 			if (checkTime(btns[i])) {
-				btns[i].style.backgroundColor = "#dddddd";
+				btns[i].style.backgroundColor = "#efefef";
 			}
 			btns[i].addEventListener("click", handleClick);
 		}
@@ -85,6 +86,11 @@
 		document.getElementById("calYear").innerText = today.getFullYear(); // @param YYYY월
 		document.getElementById("calMonth").innerText = autoLeftPad((today
 				.getMonth() + 1), 2); // @param MM월
+
+		const colYear = document.getElementById("calYear").innerText;
+		const colmon = document.getElementById("calMonth").innerText;
+
+
 		// 전역변수에 날자를 셋팅한다.
 		calenderChoiceDate = today;
 				
@@ -110,6 +116,7 @@
 		for (let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
 
 			let column = row.insertCell();
+
 
 			// @param 평일( 전월일과 익월일의 데이터 제외 )
 			if (Math.sign(day) == 1 && lastDate.getDate() >= day) {
@@ -156,7 +163,8 @@
 						column.style.backgroundColor = "#FFFFFF";
 						column.style.cursor = "pointer";
 						column.onclick = function() {
-							calendarChoiceDay(this);
+							calendarChoiceDay(this,colYear , colmon);
+
 						}
 					}
 
@@ -165,7 +173,7 @@
 						column.style.backgroundColor = "#FFFFE6";
 						column.style.cursor = "pointer";
 						column.onclick = function() {
-							calendarChoiceDay(this);
+							calendarChoiceDay(this,colYear , colmon);
 						}
 					}
 
@@ -182,7 +190,7 @@
 						column.style.backgroundColor = "#FFFFFF";
 						column.style.cursor = "pointer";
 						column.onclick = function() {
-							calendarChoiceDay(this);
+							calendarChoiceDay(this,colYear , colmon);
 						}
 					}
 				}
@@ -201,7 +209,7 @@
 					column.style.backgroundColor = "#FFFFFF";
 					column.style.cursor = "pointer";
 					column.onclick = function() {
-						calendarChoiceDay(this);
+						calendarChoiceDay(this,colYear , colmon);
 					}
 				}
 			}
@@ -209,13 +217,16 @@
 			dom++;
 
 		}
+		
 	}
 
 	/**
 	 * @brief   날짜 선택
 	 * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
 	 */
-	function calendarChoiceDay(column) {
+	function calendarChoiceDay(column,colYear,colmon) {
+
+
 
 		calenderChoiceDate.setDate(column.innerHTML)
 		for (var i = 0; i < btns.length; i++) {
@@ -234,10 +245,13 @@
 
 		// @param 선택일 체크 표시
 		column.style.backgroundColor = "#FF9999";
-		console.log(column);
+		const colday = column.innerText;
+		console.log(colday);
+		document.res.day1.value = colYear + "." + colmon + "." +colday;
 
 		// @param 선택일 클래스명 변경
 		column.classList.add("choiceDay");
+		
 	}
 
 
@@ -366,108 +380,4 @@
                   newMem.submit(); 
                }
 
-        var swiper = new Swiper(".mySwiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true // 버튼 클릭 여부
-            },
-            autoplay: true,
-            autoplaySpeed: 5000,
-            keyboard: true
-        });
         
-        
-        function SliderBox1__init() {
-            $('.slider-box-1 > .slick').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                responsive: [{
-                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }, {
-                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }],
-        
-                // arrows:true,
-                prevArrow: ".slider-box-1 > .arrows > .btn-left",
-                nextArrow: ".slider-box-1 > .arrows > .btn-right"
-            });
-        }
-        
-        $(function () {
-            SliderBox1__init();
-        });
-        
-        
-        function SliderBox2__init() {
-            $('.slider-box-2 > .slick').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                // responsive: [{
-                //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 2,
-                //         slidesToScroll: 2
-                //     }
-                // }, {
-                //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 1,
-                //         slidesToScroll: 1
-                //     }
-                // }],
-        
-                // arrows:true,
-                prevArrow: ".slider-box-2 > .arrows > .btn-left",
-                nextArrow: ".slider-box-2 > .arrows > .btn-right"
-            });
-        }
-        
-        $(function () {
-            SliderBox2__init();
-        });
-        
-        
-        //         gsap.to('body', {
-        //   scrollTrigger:{
-        //     start:'top 0',
-        //     end:'top 800px',
-        //     trigger:'.top-box2',
-        //     markers: true,
-        //     pin:true
-        //   },
-        // });
-        
-        gsap.to('.top-wrap > .top-box2', {
-            scrollTrigger: {
-                trigger: '.top-wrap',
-                start: 'top -98px',
-                scrub: true
-            },
-            height: '60px',
-            textalign: 'center',
-            top: '0',
-            position: 'fixed',
-            background: '#fff',
-            borderBottom: '1px solid #ccc'
-        });
-
-		
