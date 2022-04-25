@@ -43,8 +43,8 @@ INSERT INTO soption VALUES ('fa03','lip2','입술+입꼬리 필러',149000);
 
 
 
-INSERT INTO soption VALUES ('li01','sa1','턱보톡스 50유닛(메디톡신)',19000);
-INSERT INTO soption VALUES ('li01','sa2','턱보톡스 50유닛<br>(수입-엘레간,제오민)',89000);
+INSERT INTO soption VALUES ('li01','sa1','턱보톡스 50유닛(국산)',19000);
+INSERT INTO soption VALUES ('li01','sa2','턱보톡스 50유닛(수입)',89000);
 
 INSERT INTO soption VALUES ('li02','yun1','윤곽주사 1부위 1회',50000);
 INSERT INTO soption VALUES ('li02','yun2','윤곽주사 1부위 3회',110000);
