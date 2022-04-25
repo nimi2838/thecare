@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page import="java.sql.*" %>
 <html lang="ko">
 
 <head>
@@ -17,7 +18,7 @@
 <%
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
-<body>
+<body onLoad="idFocus()">
 
 
     <div class="top-wrap">
@@ -132,15 +133,76 @@ else{
                         </ul>
                     </div>
                 </li>
+            <%
+	try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+%>
+	<%
+    String jsql2= "SELECT * FROM user WHERE uId=?";
+                    PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+                    pstmt2.setString(1, myid);
+
+                    ResultSet rs2 = pstmt2.executeQuery(); 
+
+
+                    if(rs2.next()) {
+
+    %>
+
+                
             <li class="menu">
                     <a>더 궁금해</a>
                <div>
                         <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+                            <li><a href="#" onclick = custom()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
                         </ul>
                     </div>
                 </li>
+
+                <%
+                    } else {
+                %>
+
+                     
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
+                        <ul>
+                            <li><a href="#" onclick = login()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                    <%
+                } //if-else 아이디 유무
+%>
+           <script>
+		   function login()
+        {
+            alert('로그인 후 이용 가능한 페이지입니다.');
+            document.location.href="login.jsp";
+        }
+		function custom()
+        {
+           
+            document.location.href="custom.jsp";
+        }
+		function themore()
+        {
+            
+            document.location.href="themore.jsp";
+        }
+		   </script>
                <!--  <li class="menu">
                     <a>차별점</a>
                     <div>
@@ -281,13 +343,12 @@ else{
         
                     </table>
                    
-                   <button type="submit"  class="join_btn" value= "회원가입" onClick="checkValue()" style= "cursor: pointer;" >회원가입</button>
-                    </div>
-                    </form>
+                   <button class="join_btn" value = "회원가입" onClick= "checkValue()" style= "cursor: pointer;">회원가입</button>
+                    
+            </form>
                  </div>
               </div>
         </div>
-    </div>
 
     <div class="footer flex flex-jc-c">
         <div class="text">
@@ -299,7 +360,13 @@ else{
           <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
         </div>
      </div> 
+  <%
+    
 
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	 </script>
 

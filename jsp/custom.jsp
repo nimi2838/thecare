@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*" %>
 <html lang="en">
 
 <head>
@@ -15,6 +15,8 @@
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
   <title>맞춤시술</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+ 
 </head>
 
   <%
@@ -114,13 +116,10 @@ else{
                     </td>
                 </form>
             </div>
+       </div>
 
 
 
-
-
-
-        </div>
         <div class="line"></div>
 
 
@@ -135,15 +134,84 @@ else{
                         </ul>
                     </div>
                 </li>
+				<%
+	try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+	 String jsql= "delete from test;";
+	 PreparedStatement pstmt  = con.prepareStatement(jsql);
+	
+
+	 pstmt.executeUpdate();
+
+
+%>
+	<%
+    String jsql2= "SELECT * FROM user WHERE uId=?";
+                    PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+                    pstmt2.setString(1, myid);
+
+                    ResultSet rs2 = pstmt2.executeQuery(); 
+
+
+                    if(rs2.next()) {
+
+    %>
+
+                
             <li class="menu">
                     <a>더 궁금해</a>
                <div>
                         <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+                            <li><a href="#" onclick = custom()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
                         </ul>
                     </div>
                 </li>
+
+                <%
+                    } else {
+                %>
+
+                     
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
+                        <ul>
+                            <li><a href="#" onclick = login()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                    <%
+                } //if-else 아이디 유무
+%>
+           <script>
+		   function login()
+        {
+            alert('로그인 후 이용 가능한 페이지입니다.');
+            document.location.href="login.jsp";
+        }
+		function custom()
+        {
+           
+            document.location.href="custom.jsp";
+        }
+		function themore()
+        {
+            
+            document.location.href="themore.jsp";
+        }
+		   </script>
+
                <!--  <li class="menu">
                     <a>차별점</a>
                     <div>
@@ -192,9 +260,11 @@ else{
                 </div>
             </a>
         </div>
+		
+                  
 
 
-    <div class="survery content">
+    <div class="survery content" >
         <div class="inner">
             <div class="makde">
              
@@ -206,7 +276,7 @@ else{
             </div>
 
 			
-            <form action="custom-2.jsp" method= post>
+            <form id="form" name="form" method= post>
             <div class="wrap">
                 <h1>피부타입 자가진단</h1>
                 
@@ -218,29 +288,31 @@ else{
                         <ul class="qna-wrap">
                             <li>
                                 <div class="check1-1"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" name = "aa1" value= "no1" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-2"> 
-                                    <input type="checkbox" name = "aa1" value= "no" id="q1-2" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" name = "aa1" value= "no1" id="q1-2" onclick = "clickCheck(this)"> 
                                     <label for="q1-2"><p>심하게 당긴다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-3"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-3" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" name = "aa1" value= "yes1" id="q1-3" onclick = "clickCheck(this)"> 
                                     <label for="q1-3"><p>조금 당긴다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-4"> 
-                                    <input type="checkbox" name = "aa1" value= "yes" id="q1-4" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" name = "aa1" value= "yes1" id="q1-4" onclick = "clickCheck(this)"> 
                                     <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
                                 </div>
                             </li>
                         </ul>
+
+					
 
                             <a href="main.html">
                                 <div class="close-test">
@@ -264,7 +336,7 @@ else{
            
             <div class="button">
                
-                <button class="survery-btn next" >다음</button>
+                <input type = "submit" class="survery-btn next" onclick="Check()" value = "다음" >
             </div> 
         </form>
         </div>
@@ -272,44 +344,40 @@ else{
 
 
 
+<%
+    
 
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
 
 
     <script>
 
 	 
  function clickCheck(target) {	
-	 
-
-	
-    document.querySelectorAll(`input[type=checkbox]`)
-        .forEach(el => el.checked = false);
+document.querySelectorAll(`input[type=checkbox]`)
+    .forEach(el => el.checked = false);
 	target.checked = true;
-
-
-
-    
-
-
-
-	
-
-	
-
-
-
+              
 
 }
 
+function Check(num){
+	if ($("input:checkbox[name='aa1']").is(":checked") == false) {
+		alert("적어도 하나는 선택하여 주십시오.");
+		return false;
+		
+	}
 
- 
+	var form = document.getElementById("form");
+	form.action = "custom-2.jsp";
+	form.submit();
 
+                  }
 
-	
-
-
-
-
+    
 function reset() {
     skillGragh.value = resetValue
 }
@@ -442,9 +510,6 @@ function reset() {
           <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
         </div>
      </div>
-    
-
-
     
 
 

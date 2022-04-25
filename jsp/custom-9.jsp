@@ -226,7 +226,7 @@ try {
 
 	 PreparedStatement pstmt1  = con.prepareStatement(jsql1);
 	 pstmt1.setString(1,myid);
-	 pstmt1.setString(2,"no"+8);
+	 pstmt1.setString(2,"num"+8);
 	 pstmt1.setString(3,aa8);
 	
 
@@ -255,7 +255,7 @@ try {
             </div>
 
 			
-            <form action="custom-finish.jsp" method=post>
+            <form id="form" name="form" method=post>
              <div class="wrap">
                 <h1>피부타입 자가진단</h1>
                 
@@ -267,25 +267,25 @@ try {
                         <ul class="qna-wrap">
                             <li>
                                 <div class="check1-1"> 
-                                    <input type="checkbox" id="q1-1" name = "aa9" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-1" name = "aa9" value= "no3" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-1"><p>빨개진다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-2"> 
-                                    <input type="checkbox" id="q1-2" name = "aa9" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-2" name = "aa9" value= "no3" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-2"><p>빨개졌다가 더 짙어진다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-3"> 
-                                    <input type="checkbox" id="q1-3" name = "aa9" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-3" name = "aa9" value= "yes3" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-3"><p>더 짙어진다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-4"> 
-                                    <input type="checkbox" id="q1-4" name = "aa9" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-4" name = "aa9" value= "yes3" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-4"><p>피부가 짙어서<br>더 짙어졌는지 구분이 어렵다</p> </label> 
                                 </div>
                             </li>
@@ -313,7 +313,7 @@ try {
            
             <div class="button">
                 <input type = "button" class="survery-btn prev" value="이전" onClick="history.go(-1)">
-                <button class="survery-btn next">다음</button>
+                <button class="survery-btn next" onclick="Check()">다음</button>
             </div> 
         </form>
         </div>
@@ -346,6 +346,17 @@ function clickCheck(target) {
  
 
 }
+
+function Check(num){
+	if ($("input:checkbox[name='aa9']").is(":checked") == false) {
+		alert("적어도 하나는 선택하여 주십시오.");
+		return false;
+		
+	}
+	var form = document.getElementById("form");
+	form.action = "custom-finish.jsp";
+	form.submit();
+                  }
 function back(){
 
      

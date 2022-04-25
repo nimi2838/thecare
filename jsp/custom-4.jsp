@@ -226,7 +226,7 @@ try {
 
 	 PreparedStatement pstmt1  = con.prepareStatement(jsql1);
 	 pstmt1.setString(1,myid);
-	 pstmt1.setString(2,"no"+3);
+	 pstmt1.setString(2,"num"+3);
 	 pstmt1.setString(3,aa3);
 	
 
@@ -255,7 +255,7 @@ try {
             </div>
 
 			
-            <form action="custom-5.jsp" method=post>
+            <form id="form" name="form" method=post>
             <div class="wrap">
                 <h1>피부타입 자가진단</h1>
                 
@@ -267,25 +267,25 @@ try {
                         <ul class="qna-wrap">
                             <li>
                                 <div class="check1-1"> 
-                                    <input type="checkbox" id="q1-1" name = "aa4" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-1" name = "aa4" value= "no2" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-1"><p>전혀 생기지 않는다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-2"> 
-                                    <input type="checkbox" id="q1-2" name = "aa4" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-2" name = "aa4" value= "no2" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-2"><p>거의 생기지 않는다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-3"> 
-                                    <input type="checkbox" id="q1-3" name = "aa4" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-3" name = "aa4" value= "yes2" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-3"><p>1개월에 1회 이상 있다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-4"> 
-                                    <input type="checkbox" id="q1-4" name = "aa4" value= "yes" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-4" name = "aa4" value= "yes2" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-4"><p>1주일에 1회 이상 있다</p> </label> 
                                 </div>
                             </li>
@@ -313,7 +313,7 @@ try {
            
             <div class="button">
                 <input type = "button" class="survery-btn prev" value="이전" onClick="history.go(-1)">
-                <button class="survery-btn next">다음</button>
+                <button class="survery-btn next" onclick="Check()">다음</button>
             </div> 
         </form>
         </div>
@@ -331,12 +331,7 @@ try {
 
 
     <script>
-reloadDivArea(); //함수 실행
- 
-function reloadDivArea() {
-    $('.survery content').load(location.href+' .survery content');
-}
-	
+
 
 function clickCheck(target) {	
 	 
@@ -351,6 +346,20 @@ function clickCheck(target) {
  
 
 }
+
+
+function Check(num){
+	if ($("input:checkbox[name='aa4']").is(":checked") == false) {
+		alert("적어도 하나는 선택하여 주십시오.");
+		return false;
+		
+	}
+	var form = document.getElementById("form");
+	form.action = "custom-5.jsp";
+	form.submit();
+                  }
+
+
 function back(){
 
      

@@ -15,6 +15,11 @@
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
   <title>맞춤시술</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script> 
+var frm = document.getElementById('queryForm');
+  frm.target = "resultIframe";
+  frm.submit();
+  </script>
 </head>
 
   <%
@@ -227,7 +232,7 @@ try {
 
 	 PreparedStatement pstmt1  = con.prepareStatement(jsql1);
 	 pstmt1.setString(1,myid);
-	 pstmt1.setString(2,"no"+1);
+	 pstmt1.setString(2,"num"+1);
 	 pstmt1.setString(3,aa1);
 	
 
@@ -241,6 +246,7 @@ try {
 	     
  %>
 
+    <div class="survery content" target="iframe1">
 	 
 
 
@@ -255,8 +261,7 @@ try {
 </div>
             </div>
 
-			
-            <form action="custom-3.jsp" method=post>
+            <form id="form" name="form" method=post>
             <div class="wrap">
                 <h1>피부타입 자가진단</h1>
                 
@@ -268,25 +273,25 @@ try {
                         <ul class="qna-wrap">
                             <li>
                                 <div class="check1-1"> 
-                                    <input type="checkbox" id="q1-1" name = "aa2" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-1" name = "aa2" value= "no1" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-1"><p>전혀 아니다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-2"> 
-                                    <input type="checkbox" id="q1-2" name = "aa2" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-2" name = "aa2" value= "no1" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-2"><p>가끔 그렇다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-3"> 
-                                    <input type="checkbox" id="q1-3" name = "aa2" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-3" name = "aa2" value= "yes1" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-3"><p>자주 그렇다</p> </label> 
                                 </div>
                             </li>
                             <li>
                                 <div class="check1-4"> 
-                                    <input type="checkbox" id="q1-4" name = "aa2" value= "no" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <input type="checkbox" id="q1-4" name = "aa2" value= "yes1" id="q1-1" onclick = "clickCheck(this)"> 
                                     <label for="q1-4"><p>항상 그렇다</p> </label> 
                                 </div>
                             </li>
@@ -301,8 +306,7 @@ try {
                 
             </div>
 
-
-			 
+	 
                 
                    
            
@@ -314,7 +318,7 @@ try {
            
             <div class="button">
                 <input type = "button" class="survery-btn prev" value="이전" onClick="history.go(-1)">
-                <button class="survery-btn next">다음</button>
+                <button class="survery-btn next" onclick="Check()">다음</button>
             </div> 
         </form>
         </div>
@@ -333,7 +337,7 @@ try {
 
     <script>
 
-
+ 
 function clickCheck(target) {	
 	 
 
@@ -341,12 +345,19 @@ function clickCheck(target) {
     document.querySelectorAll(`input[type=checkbox]`)
         .forEach(el => el.checked = false);
 	target.checked = true;
-
-
-
- 
-
 }
+
+function Check(num){
+	if ($("input:checkbox[name='aa2']").is(":checked") == false) {
+		alert("적어도 하나는 선택하여 주십시오.");
+		return false;
+		
+	}
+	var form = document.getElementById("form");
+	form.action = "custom-3.jsp";
+	form.submit();
+                  }
+
 function back(){
 
      
