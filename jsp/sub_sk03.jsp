@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
+<%@ page import="java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +9,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_1.css">
+    <link rel="stylesheet" href="css/sub_2.css">
+    <link rel="stylesheet" href="css/sub_clarity.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>상세화면</title>
+	<title>클라리티</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
+<%
+DecimalFormat df = new DecimalFormat("###,###");
+%>
 
 <%
    String myid = (String)session.getAttribute("sid");         
@@ -21,10 +30,7 @@
 
    		int total = 0;
 %>
-
-
 <body>
-
 
 
 
@@ -130,35 +136,27 @@ else{
         <div class="line"></div>
 
 
-        <div class="top-box2">
+         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
 				<li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
+
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -169,14 +167,13 @@ else{
                         </ul>
                     </div>
                 </li>
-
                 
                 <li class="jsp">
                     <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -185,18 +182,19 @@ else{
         </div>
     </div>
 
-	<div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-		<a href="new_view.jsp" alt="최근 본 시술">
-	<div  style="border-radius:50%;z-index:150; width:60px;height:60px; margin-bottom: 10px;">
-			<img src="img/clock.png">
-		</div>
-		</a>
-		<a href="#" alt="맨 위로">
-		<div  style="border-radius:50%;z-index:150; width:60px;height:60px;">
-			<img src="img/up.png">
-		</div>
-		</a>
-	</div>
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 	
@@ -272,8 +270,8 @@ try {
 
 					String pno =  rs.getString("prdNo");	
 					String name =  rs.getString("prdName");
-					int prdprice = rs.getInt("prdPrice");
 					String price =  rs.getString("startprice");	
+
 
 
 
@@ -286,14 +284,13 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>저자극 모공청소 ! 착한 수분필링</p>
+                <p>다양한 색소와 제모, 모세혈관 등 피부고민</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #적은통증 #색소야저리가
                 </div>
             </div>
 
@@ -303,10 +300,11 @@ try {
 
 					
 
+
 					
 
-                    <form name="form1">
-                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
+                    <div class="form1">
+                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN'); td1();">
                           <tr>
                            <td>시술 옵션
                             <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
@@ -314,59 +312,66 @@ try {
                           </tr>
                         </table>
                    
-                        <div id="Div" style="padding: 10px 0 0 0;">
+                        <div id="Div" style="padding: 10px 0 0 0; display: none; ">
+
+
+
 						
-							<form name="form">
+							<form name="form" method="post" action="rezResult.jsp" onsubmit="_submit(this); " >
+
+							
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+									<tbody>
+
 							<%
 						String jsql1 = "select * from soption where prdNo = ?";   
 				PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 				pstmt1.setString(1, no);
-
+				
 				ResultSet rs1 = pstmt1.executeQuery();
-
+				
 			while(rs1.next()) {	
 				
 				String opname = rs1.getString("opName");
+
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
-		
+
+				
+
 						%>
 
-<!-- 
-									<table width="500" border="0" cellspacing="0" cellpadding="0">
-										<tbody>
-									
-												<td>
-												<input type="checkbox" name="chk"  id="<%=opno%>"  class="cb1"  value="<%=opprice%>" onClick="itemSum(this.form);">
-												<label for="<%=opno%>"></label>
-												</td>
-									
-												<td><%=opname%>                                               </td>
-												<td><%=opprice%></td>
-									
-											 
-										</tbody>
-									</table> -->
+									<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-									<tbody>
-											<td width="50"><input name="chkbox" type="checkbox" value="<%=opprice%>"  id="<%=opno%>" onClick="itemSum(this.form);"></td>
-											<td><%=opname%>      </td>
-												<td><%=opprice%></td>
-										  </tbody>
-									</table>
+											</td>
+											<td class="td2" style=""><%=opname%>                                          </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+										  </tr>
 
+
+					
 									<%
+
 			}
 
 				%>
-												<td><input name="total_sum" id="sell3" type="hidden" readonly></td>
+					</tbody>
+									</table>
+
+					
+												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
+												<input type=hidden name = prdNo value="<%=no%>">
 							</form>
 	
-                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();"></div>
+                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
+							</div>
                         </div>
 						
-                       </form>
+                       </div>
 
                 </div>
 
@@ -379,7 +384,7 @@ try {
 
 				<div>
 				<!-- <input type="text" id="txt_getChkList" style="width: 500px; height:100px; outline:none; border: 0; background: none; font-size: 20px; padding:20px 30px; "> -->
-				<textarea spellcheck = "false" id="txt_getChkList" style="display: none;"></textarea>
+				<textarea spellcheck = "false" id="txt_getChkList" style="display: none; text-align: right;"></textarea>
 				</div>
 
                 <div class="price-wrap">
@@ -394,135 +399,190 @@ try {
 
 
 
+
 				
 
-<script language="javascript">
+			<script language="javascript">
 
-				function itemSum(frm)
+				function td1() {
+							const td3 = document.getElementByClass('td3').innerText;
+							var num = td3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementByClass("td3").innerText = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+			function _submit(f)
 				{
-				   var sum = 0;
-				   var count = frm.chkbox.length;
-				   for(var i=0; i < count; i++ ){
-					   if( frm.chkbox[i].checked == true ){
-						sum += parseInt(frm.chkbox[i].value);
-					   }
-				   }
-				   frm.total_sum.value = sum;
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b'][i].disabled=true;
+							}
+						}
+					}
+					return true;
 				}
 
-				
-
-				function call() {
-				const sell3 = document.getElementById('sell3').value;
-                  document.getElementById("result").value = sell3;
-            };
-
-
-
-        function multiSelect(value){
-        if(value=="OPEN") {
-			Div.style.visibility="visible";
-        }else  {
-			Div.style.visibility="hidden";
-			$('#txt_getChkList').attr('style', "display:inline-block;width: 490px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
-	
-			}
-        };
-
-
-		
-
-
-	var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
-	$(document).ready(function() {
-
-		$("input[name=chkbox]").change(function() {
-			// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
-			if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
-			putCheckList();
-		});
-
-		$("#btn_showChkList").click(function() {
-//			if(peopleArr.length == 0) {
-//				$("#txt_getChkList").val("");
-//				alert("체크된 항목이 없습니다.");
-//				return;
-//			}
-
-			var str = "";
-			for (var i = 0; i < peopleArr.length; i++) {
-				str +=  peopleArr[i].name + peopleArr[i].age + "\n";
-			}
-
-			$("#txt_getChkList").val(str);
-
-		}); 
-    });
-
-
-	function putCheckList() {
-	peopleArr = new Array();
-	var idxArr = new Array();
-
-	$("input[name=chkbox]:checked").each(function() {
-		idxArr.push($("input[name=chkbox]").index(this));
-	});
-
-	for (var i = 0; i < idxArr.length; i++) {
-		var obj = new Object();
-		obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
-		obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
-		peopleArr.push(obj);
-	}
-
-}
+var sum = 0;
+        function calc(){ 
+            a = document.getElementsByClassName("chk");
+            for(i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    sum += parseInt(a[i].value);
+                }
+            }
+            document.getElementById("sell3").value = sum;
+            sum = 0;
+        }
 
 
 
-</script>
 
+							function call() {
+							const sell3 = document.getElementById('sell3').value;
+							var num = sell3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementById("result").value = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+
+						
+					function multiSelect(value){
+					if(value=="OPEN") {
+						Div.style.visibility="visible";
+						Div.style.display="inline-block";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #f1f7fb; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+					}else  {
+						Div.style.visibility="hidden";
+						Div.style.display="none";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+							    
 
 				
+						}
+					};
 
 
-				<form name= product method="post">
-				<input type=hidden name = prdNo value="<%=no%>">
+					
+
+
+				var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
+				$(document).ready(function() {
+
+					$("input[class=chk]").change(function() {
+						// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
+				//		if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
+						putCheckList();
+					});
+
+					$("#btn_showChkList").click(function() {
+			//			if(peopleArr.length == 0) {
+			//				$("#txt_getChkList").val("");
+			//				alert("체크된 항목이 없습니다.");
+			//				return;
+			//			}
+
+						var str = "";
+						for (var i = 0; i < peopleArr.length; i++) {
+							str +=  peopleArr[i].name + peopleArr[i].age + "\n";
+						}
+
+						$("#txt_getChkList").val(str);
+
+					}); 
+				});
+
+
+				function putCheckList() {
+				peopleArr = new Array();
+				var idxArr = new Array();
+
+
+				$("input[class=chk]:checked").each(function() {
+					idxArr.push($("input[class=chk]").index(this));
+				});
+
+				for (var i = 0; i < idxArr.length; i++) {
+					var obj = new Object();
+					obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
+					obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
+					peopleArr.push(obj);
+				}
+
+			}
+
+			
+		//					if (document.getElementById("noArray[0]").value= '50000')
+		//					{
+		//						document.getElementById("noArray[0]").value = "yun1";
+		//					} else if (document.getElementById("noArray[1]").value = '110000')
+		//					{
+		//						document.getElementById("noArray[1]").value = "yun2";
+		//					}
+
+
+			</script>
+
+
+
+
+<%
+	String jsql2= "SELECT * FROM user WHERE uId=?";
+					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+					pstmt2.setString(1, myid);
+
+					ResultSet rs2 = pstmt2.executeQuery(); 
+					
+					
+					if(rs2.next()) {
+
+	%>
+
                 <div class="btn-box">
 
-					<%
-
-				String jsql3 = "select * from cart where ctNo =? and prdNo = ?";
-		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, ctNo);
-		pstmt3.setString(2, no);
-		ResultSet rs3 = pstmt3.executeQuery(); 
-		
-
-		if(rs3.next())   
-		{		         
-			%>
-
-			<a href="#" onClick=cart1()>장바구니 담기</a>
-
-
-				<%
-		}
-		else  
-		{
-			%>
 
 					<a href="#" onClick=inCart1()>장바구니 담기</a>
+			
 
+				<a href="#" onClick=rez()>시술 예약하기</a>
+                </div>
+				
 				<%
-		} 
+					} else {
 				%>
 
-				
-			<a href="cart.html">시술 예약하기</a>
+					 <div class="btn-box">
+
+
+					<a href="#" onClick=login()>장바구니 담기</a>
+			
+
+				<a href="#" onClick=login()>시술 예약하기</a>
                 </div>
-				</form>
-				
-				<%
+
+					<%
+				} //if-else 아이디 유무
 
 					
 			}
@@ -534,14 +594,6 @@ try {
     </div>
 
 
-	<%
-			String jsql2 = "select * from surgery where prdNo = ?";   
-				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setString(1, no);
-
-				ResultSet rs2 = pstmt2.executeQuery();
-				rs2.next();
-		%>
 
 
 
@@ -549,101 +601,141 @@ try {
         <div class="sub_con1">
 
             <p> WHAT IS IT?</p>
-            <h1>여드름치료란 ?</h1>
+            <h1>클라리티란 ?</h1>
             <p class="memo" style="line-height: 30px;">
-               아쿠아필은 AHA,BHA 필링 용액을 이용해 피부 트러블을 유발하는 모낭충과 <br>
-모공 속에 있는 노폐물, 피지, 각질을 효과적으로 제거하고<br>
-보습, 진정용액으로 건조해 질 수 있는 피부에 수분을 공급하여 촉촉함을 유지하는 시술입니다.
+                클라리티는 다양한 색소와 제모, 모세혈관 등 피부고민에 맞는 파장을 선택하여 사용할 수 있는 장비로<br>
+자동쿨링기능이 탑재되어 적은 통증으로 시술이 가능합니다.
             </p>
 
 
-            <div class="con_wrap1 flex flex-jc-sb">
+            <div class="con_wrap1 flex" style="justify-content: space-around;">
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/time.png" alt="">
+                        <img src="img/time-p.png" alt="">
                     </div>
                     <h2>시술시간</h2>
-                    <p>30분 이내</p>
+                    <p>5분 이내</p>
                 </div>
 
-                <div class="con_box1">
+                <!-- <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/injection.png" alt="">
+                        <img src="img/injection-b.png" alt="">
                     </div>
                     <h2>마취여부</h2>
-                    <p>없음</p>
-                </div>
+                    <p>연고 마취<br>
+                        (20 - 30분 소요)
+                    </p>
+                </div> -->
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/effect.png" alt="">
+                        <img src="img/effect-p.png" alt="">
                     </div>
                     <h2>회복기간</h2>
                     <p>즉시생활가능</p>
                 </div>
 
-                <div class="con_box1 con_box_11">
+                <!-- <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/downtime.png" alt="">
+                        <img src="img/downtime-b.png" alt="">
                     </div>
                     <h2>유지기간</h2>
-                    <p>2 - 3주</p>
-                </div>
+                    <p>3개월</p>
+                </div> -->
 
             </div>
-
-
-
-			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
-				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
-				<img src ="img/sub_con1.png" style="width:85%;">
-				</div>
-				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								붉고 큰 화농성 여드름이 20개 이상,<br>
-								중등도의 진행성 흉터가 있는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								누적된 자국, 색소침착, 흉터가 많고<br>
-								새로 올라온 여드름이 혼재된 상태
-								</p>
-							</div>
-						</div>
-					</li>
-<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								최근 3개월 이상의 치료에 효과가 없고<br>
-								치료 종료후 1주일 안에 재발하는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-            
-
-
-
         </div>
     </div>
+
+
+    <section id="clarity" class="content">
+        <div class="inner">
+            <div class="title">
+                <p>CLARITY</p>
+                <h1>클라리티</h1>
+            </div>
+
+            <img src="img/sub-clarity.png" alt="" width="660px" height="850px">
+
+            <div class="wrap">
+                <div class="txt">
+                    <p>
+                        클라리티는 최신 듀얼 레이저 시술로
+                        롱펄스 알렉산드라이트(755nm)와<br>
+                        롱펄스 엔디야그 (1064nm)의 두 파장을 가진<br>
+                        복합 레이저 장비로 색소, 혈관, 제모, 리프팅을 한 번에<br>
+                        치료할 수 있는 맞춤식 토탈케어 레이저 시술입니다.     
+                    </p>
+
+                    <div class="txt-t">
+                        <div class="six" data-aos="fade-down"><p>색소잡티</p></div>
+                        <div class="six" data-aos="fade-down"><p>아이스제모</p></div>
+                        <div class="six" data-aos="fade-down"><p>모공탄력</p></div>
+                        <div class="six" data-aos="fade-down"><p>아이스점제거</p></div>
+                        <div class="six" data-aos="fade-down"><p>홍조혈관</p></div>
+                        <div class="six" data-aos="fade-down"><p>리프팅</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="pro" class="content">
+        <div class="inner">
+            <div class="title">
+                <p>CHARACTERISTICS OF CLARITY PRO</p>
+                <h1>클라리티 프로의 특징</h1>
+            </div>
+            <div class="wrap">
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-clarity01.PNG" alt="" width="360px" height="260px">
+                    </div>
+                    <div class="txt">
+                        <h1>알렉스토닝</h1>
+                        <h2>칙칙한 피부를 맑고 투명하게!</h2>
+                        <p>알렉산드라이트 레이저를 이용해 표피층에 있는<br>
+                            색소질환과 기미를 동시에 개선하여 피부를 <br>
+                            깨끗하고 맑게 해주는 새로운 개념의 토닝입니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-clarity02.PNG" alt="" width="360px" height="260px">
+                    </div>
+                    <div class="txt">
+                        <h1>콰트로 & 이너 리프트</h1>
+                        <h2>저하된 피부 탄력 개선 !</h2>
+                        <p>
+                            단계별로 피부 속에 접근하는 콰트로 & 이너 리프트를
+                            통해 넓은 모공과 처진 피부를 쫀쫀하고
+                            탱탱하게 개선할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-clarity03.PNG" alt="" width="360px" height="260px">
+                    </div>
+                    <div class="txt">
+                        <h1>제네시스 안면홍조 케어</h1>
+                        <h2>붉은 얼굴을 개선 !</h2>
+                        <p>
+                            레이저를 조사해 홍조를 유발시키는<br>
+                            혈관을 개선함으로써 항상 붉었던<br>
+                            안면 홍조 케어에 도움을 줍니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
 
 
 
@@ -653,11 +745,13 @@ try {
 	<div class="sub_con_box2-1">
 				<p>PROCEDURE PROCESS</p>
 				<h1>시술과정</h1>
-		<div class="sub_con2-1">
+		<div class="sub_con2-1" data-aos="fade-down">
 			<div class="con2-1 flex flex-jc-c">
 							<div class="box">
 							<div>STEP 1</div>
-							<p>자가세안</p>
+							<p>
+                                맞춤상담
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -667,7 +761,9 @@ try {
 								</div>
 							<div class="box">
 							<div>STEP 2</div>
-							<p>스팀팩</p>
+							<p>
+                                클렌징
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -677,38 +773,29 @@ try {
 								</div>
 							<div class="box">
 							<div>STEP 3</div>
-							<p>각질,피지제거</p>
+							<p>시술</p>
 							</div>
-							<div class="line-box">
-									<div class="line1"></div>
-									<div class="line2"></div>
-								<div class="line3"></div>
-								<div class="line4"></div>
-						</div>
-				<div class="box">
-						<div>STEP 4</div>
-					<p>세정</p>
-					</div>
-						<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 5</div>
-					<p>피부보습</p>
-					</div>
-					<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 6</div>
-					<p>모델링팩</p>
-					</div>
+                            <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 4</div>
+                                <p>모델링팩</p>
+                            </div>
+                            <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 5</div>
+                                <p>스킨케어<br>
+                                    마무리</p>
+                            </div>
 				</div>
 		</div>
 
@@ -727,27 +814,47 @@ try {
             <h1>이런 분께 추천합니다.</h1>
 
             <div class="con_wrap2">
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 1</h6>
                     <hr>
-                    <p>피지 분비량이 많아 잦은 트러블 발생으로 고민인 분</p>
+                    <p>얼룩덜룩한 색소와 기미,주근깨로 고민이신 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 2</h6>
                     <hr>
-                    <p>저자극 필링으로 피부관리를 원하는 분</p>
+                    <p>여드름으로 인한 색소침착이나 혈관이 확장되어 불음증이 있으신 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 3</h6>
                     <hr>
-                    <p>블랙헤드가 고민인 분</p>
+                    <p>홍조나 모세혈관확장증으로 고생하시는 분</p>
+                </div>
+                <div class="con_box2" data-aos="fade-down">
+                    <h6>POINT 4</h6>
+                    <hr>
+                    <p style="border: 0;">넓은 모공과 늘어진 피부탄력
+                        개선을 원하는 분</p>
                 </div>
             </div>
         </div>
     </div>
 
+			
 
+<!-- 	<div class="sub_con_box2_1">
+        <div class="sub_con2_1">
+            
+            <p>RECOMMEND TO CUSTOMERS BELOW</p>
+            <h1>이런 분께 추천합니다.</h1>
 
+            <div class="con_wrap2_1">
+                <div class="img-box" style="width:1000px;">
+                    <img src="img/yytest.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+ -->
 
 
     <div class="sub_con_box3">
@@ -757,25 +864,23 @@ try {
             <h1>효과 및 권장주기</h1>
 
             <div class="img-box">
-                <img src="img/sub_effect02.gif" alt="">
+                <img src="img/sub_effect03.gif" alt="">
             </div>
 
             <ul class="flex flex-jc-c">
                 <li class="flex">
                     <span>1</span>
                     <p style="margin:20px 0; line-height:25px;">
-                        1~2주 간격으로 시술 가능하며, 3회 이상 시술의 시술을 통해 효과를 볼 수 있으며 이후 꾸준한 진행을 권장합니다.
+                        개인의 피부상태에 따라 1~2주 간격으로 진행되며, 3회 이상의 시술을 통해 효과를 볼 수 있습니다.
                     </p>
                 </li>
 
-                <li class="flex">
+                <!-- <li class="flex">
                     <span>2</span>
                     <p style="margin:20px 0; line-height:25px;">
-                       개인의 상태에 따라 효과 및 권장 주기는 다를 수 있습니다.
+                        평균 2~3개월간 유지되므로 지속적인 효과를 원한다면 3개월 이내 재시술을 권장드립니다.
                     </p>
-                </li>
-
-                
+                </li> -->
             </ul>
 
 
@@ -783,7 +888,7 @@ try {
     </div>
 
 
-	  <div class="sub_con_box5">
+	    <div class="sub_con_box5">
         <div class="sub_con5">
 
 			<p>PROCEDURE QUESTIONS</p>
@@ -791,12 +896,12 @@ try {
 
             <div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 홈케어랑 어떤 부분이 차이가 있나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 레이저 시술인데 마취 없이도 통증 걱정 없이 치료받을 수 있나요?
 					</div>
 
-					<div class="answer">
-						더케어에서는 청결하게 소독된 관리 기구와 피부관리 전문 인력이 고객님의 피부 상태를 꼼꼼하게 체크하여 2차 염증이 발생하지 않도록 압출 및 재생 관리를 해주고 있습니다. 아직 압출 준비가 되어있지 않은 여드름을 억지로 짜게 되면 오히려 덧나고 색소침착이 생길 수 있기 때문에 내 피부 상태가 어떠한지 스스로 판단하기 어렵다면 가급적 내원하셔서 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						클라리티는 지능적이고 강력한 특허기술 Intelligent Cooling Device를 탑재하고 있어 거의 모든 시술에서 별도의 마취없이 편안하게 시술받을 수 있습니다.
 					</div>
 				</div>
 			</div>
@@ -804,17 +909,18 @@ try {
 
 			<div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 좁쌀 여드름과 화농성 여드름은 어떻게 구분하나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 알렉산드라이트(755nm)파장이란?
 					</div>
 
-					<div class="answer">
-						좁쌀 여드름은 가장 초기의 여드름으로 하얗고 오돌토돌하게 올라온 여드름입니다. 모공 속에 피지가 쌓여 있기 때문에 잘 없어지지 않으며, 그대로 방치하게 된다면 모공 안에 염증이 생겨 화농성 여드름으로 변하게 됩니다. 화농성 여드름은 쉽게 말해 모공에 막힌 피지 때문에 좁쌀 여드름이 곪아서 생기는 여드름입니다. 때문에 내 피부에 정확한 진단을 통해 이에 맞는 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						수분에 흡수될 가능성이 낮은 특수파장으로, 색소치료 및 홍조개선에 사용되는 파장입니다. 멜라닌 세포에 선택적으로 흡수되므로 색소개선에 용이합니다.
 					</div>
 				</div>
 			</div>
 
 			
+            
         </div>
 
     </div>
@@ -834,28 +940,27 @@ try {
 
             <ul class="con_box2">
                 <li>
-                    시술 후 세안 및 화장은 2~3시간 뒤부터 가능합니다.
+                    시술 후 과음, 사우나/찜질방 출입, 열탕목욕, 격한 운동은 피해주는 것이 좋습니다.
                 </li>
 
                 <li>
-                    시술 후 3~7일 동안 가급적 과음, 사우나/찜질방 출입, 열탕목욕, 격한 운동은 피해주는 것이 좋습니다.
+                    시술 후 간혹 미세한 붉은 기, 화끈거리는 느낌이 있을 수 있으나 곧 완화됩니다.
                 </li>
 
                 <li>
-                    시술 부위를 심하게 문지르거나 자극을 주는건 피해주시는게 좋습니다.<br>
-                    <span>(심한 마사지나 경락은 한 달 동안은 피해주세요)</span>
+                    간혹 시술 후 딱지가 생길 수 있으나 자연 탈락되니 손으로 떼지 않도록 주의해주시기 바랍니다.
                 </li>
 
                 <li>
-                    시술 후 너무 질기거나 딱딱한 음식은 효과 유지기간이 짧아 질 수 있으므로 가급적 피해주는 것이 좋습니다.
+                    건조함이 동반될 수 있으므로 보습제를 자주 사용해주시고, 외출 시 선크림을 반드시 바르는 것이 좋습니다.
                 </li>
 
                 <li>
-                    피부 상태에 따라 멍과 붓기는 발생할 수 있으나 미약한 정도이며, 곧 완화됩니다.
+                    시술 당일 세안, 화장은 가능하지만 스크럽제 사용은 자제해주시고, 필링 시술 등도 피해주시기 바랍니다.
                 </li>
 
                 <li>
-                    시술 후 해당부위 뻐근함이 느껴질 수 있으나 일시적 현상이므로 염려하지 않으셔도 됩니다.
+                    주름개선(레티놀 성분)/화이트닝 등의 기능성 화장품의 사용은 피해주시기 바랍니다.
                 </li>
 
             </ul>
@@ -881,7 +986,7 @@ catch(Exception e) {
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
             <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
@@ -908,14 +1013,43 @@ catch(Exception e) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init();
 
 
 
+        const $topBtn = document.querySelector(".moveTopBtn");
 
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-<script language="javascript">
-
-		
+				function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
 
         let = 0
 
@@ -939,6 +1073,8 @@ catch(Exception e) {
         });
 
 
+
+		
      gsap.to('.top-wrap > .top-box2', {
             scrollTrigger: {
                 trigger: '.top-wrap',
@@ -985,9 +1121,22 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-			var frm1 = document.product;
-			frm1.action = "incart.jsp";
+		 const checkbox = document.getElementById('chk');
+
+			 if (checkbox.checked ==('false')) {
+				alert("옵션을 선택해 주세요!");
+			} else{
+			var frm1 = document.form;
 			frm1.submit();
+			}
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.form;
+			frm1.action = "rezResult.jsp"
+			frm1.submit();
+
 		}
 
 
@@ -995,6 +1144,14 @@ catch(Exception e) {
 		{
 			alert('장바구니에 해당 시술이 있습니다.');
 		}
+
+		function login()
+		{
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
+		}
+
+
 
 
 

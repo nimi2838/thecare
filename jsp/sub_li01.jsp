@@ -9,11 +9,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_1.css">
+    <link rel="stylesheet" href="css/sub_2.css">
+    <link rel="stylesheet" href="css/sub_sa.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>상세화면</title>
+	<title>사각턱보톡스</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <%
@@ -26,8 +30,6 @@ DecimalFormat df = new DecimalFormat("###,###");
 
    		int total = 0;
 %>
-
-
 <body>
 
 
@@ -154,15 +156,7 @@ else{
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
+
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -173,7 +167,6 @@ else{
                         </ul>
                     </div>
                 </li>
-
                 
                 <li class="jsp">
                     <a>소통원해</a>
@@ -291,14 +284,14 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>여드름 압출이 포함된 스킨케어</p>
+                <p>부피가 큰 근육의 사이즈를 감소시켜 슬림한 라인</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #사각턱아 #저리가<br>
+                    #슬림한라인 #갖자
                 </div>
             </div>
 
@@ -325,10 +318,10 @@ try {
 
 
 						
-							<form name="form" method="post" onsubmit="_submit(this); " >
+							<form name="form" method="post" action="rezResult.jsp" onsubmit="_submit(this); " >
 
 							
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 									<tbody>
 
 							<%
@@ -373,7 +366,6 @@ try {
 					
 												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
-												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
@@ -412,7 +404,6 @@ try {
 				
 
 			<script language="javascript">
-
 
 				function td1() {
 							const td3 = document.getElementByClass('td3').innerText;
@@ -482,7 +473,7 @@ var sum = 0;
 					if(value=="OPEN") {
 						Div.style.visibility="visible";
 						Div.style.display="inline-block";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #f1f7fb; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
@@ -572,7 +563,7 @@ var sum = 0;
                 <div class="btn-box">
 
 
-					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
+					<a href="#" onClick=inCart1()>장바구니 담기</a>
 			
 
 				<a href="#" onClick=rez()>시술 예약하기</a>
@@ -611,33 +602,34 @@ var sum = 0;
         <div class="sub_con1">
 
             <p> WHAT IS IT?</p>
-            <h1>여드름치료란 ?</h1>
+            <h1>사각턱보톡스란 ?</h1>
             <p class="memo" style="line-height: 30px;">
-                [여드름관리] 압출+염증주사 - 기기관리 - 모델링팩 <br>[재생관리] 기기관리 - 진정마스크 - 재생광선 - 모델링팩
+                클로스트리디움 보튤리늄 톡신이 주성분으로, 부피가 큰 근육의 사이즈를 감소시켜 슬림한 라인을 만들어주는 시술입니다.
             </p>
 
 
-            <div class="con_wrap1 flex flex-jc-sb">
+            <div class="con_wrap1 flex" style="justify-content: space-around;">
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/time.png" alt="">
+                        <img src="img/time-p.png" alt="">
                     </div>
                     <h2>시술시간</h2>
-                    <p>30 - 40분</p>
+                    <p>5 - 10분 이내</p>
                 </div>
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/injection.png" alt="">
+                        <img src="img/injection-p.png" alt="">
                     </div>
                     <h2>마취여부</h2>
-                    <p>없음</p>
+                    <p>스프레이 마취
+                    </p>
                 </div>
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/effect.png" alt="">
+                        <img src="img/effect-p.png" alt="">
                     </div>
                     <h2>회복기간</h2>
                     <p>즉시생활가능</p>
@@ -645,65 +637,105 @@ var sum = 0;
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/downtime.png" alt="">
+                        <img src="img/downtime-p.png" alt="">
                     </div>
                     <h2>유지기간</h2>
-                    <p>2 - 3주</p>
+                    <p>6 - 8개월</p>
                 </div>
 
             </div>
-
-
-
-			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
-				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
-				<img src ="img/sub_con1.png" style="width:85%;">
-				</div>
-				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								붉고 큰 화농성 여드름이 20개 이상,<br>
-								중등도의 진행성 흉터가 있는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								누적된 자국, 색소침착, 흉터가 많고<br>
-								새로 올라온 여드름이 혼재된 상태
-								</p>
-							</div>
-						</div>
-					</li>
-<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								최근 3개월 이상의 치료에 효과가 없고<br>
-								치료 종료후 1주일 안에 재발하는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-            
-
-
-
         </div>
     </div>
+
+
+
+
+
+    <section id="sa" class="content">
+        <div class="inner">
+
+            <div class="wrap">
+                <div class="title">
+                    <h1>사각턱의 원인은 깨물근(masseter muscle)</h1>
+                </div>
+
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-sa1.jpeg" alt="" width="386px" height="320px">
+                    </div>
+                    <div class="txt">
+                        <h1>깨물근(masseter muscle)</h1>
+                        <p>
+                            손바닥을 귀 앞에 대고 어금니를 꽉 깨물어보면<br>
+                            딱딱하고 불룩하게 튀어나오는데 이 근육이<br>
+                            바로 음식을 씹는 운동을 하는 깨물근입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap">
+                <div class="title">
+                    <h1>효과시기 및 리터치시기</h1>
+                </div>
+
+                <div class="cont">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-sa2.PNG" alt="" width="610px" height="180px">
+                    </div>
+                    <div class="txt">
+                        <div class="txt-left">
+                            <h1>효과시기</h1>
+                            <p>
+                                사각턱보톡스는 <span>시술 수 4주</span> 정도 지나면 턱 근육의<br>
+                                크기가 점차 작아지는 것을 눈으로 확인할 수 있습니다.<br>
+                                5개월부터는 보톡스의 효과가 점차 소실됩니다.
+                            </p>
+                        </div>
+                        <div class="txt-right">
+                            <h1>리터치시기 </h1>
+                            <p>
+                                보톡스 효과를 오래 유지하려면 효과가<br>
+                                떨어지는 <span>4-5개월 후 재시술</span>을 받으면<Br>
+                                그 효과가 더욱 오래 유지됩니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap">
+                <div class="title">
+                    <h1>침샘이 큰 것은 아닌지 확인해보세요</h1>
+                </div>
+
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-sa3.jpg" alt="" width="395px" height="270px">
+                    </div>
+                    <div class="txt">
+                        <p>
+                            침샘비대증이 있는 분들은<br>
+                            사각턱 혹은 턱살이 찐 것으로<br>
+                            오인하는 경우가 많습니다.<br><br>
+
+                            이렇게 잘못 판단하여 사각턱보톡스를 맞을 경우<br>
+                            귀밑샘보다 앞쪽에 있는 깨물근의 부피가 줄어<br>
+                            오히려 침샘이 더욱 도드라져 보이는<br>
+                            역효과를 가져옵니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+ 
+
+    
+
 
 
 
@@ -713,11 +745,13 @@ var sum = 0;
 	<div class="sub_con_box2-1">
 				<p>PROCEDURE PROCESS</p>
 				<h1>시술과정</h1>
-		<div class="sub_con2-1">
+		<div class="sub_con2-1" data-aos="fade-down">
 			<div class="con2-1 flex flex-jc-c">
 							<div class="box">
 							<div>STEP 1</div>
-							<p>맞춤상담</p>
+							<p>
+                                맞춤상담
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -727,7 +761,9 @@ var sum = 0;
 								</div>
 							<div class="box">
 							<div>STEP 2</div>
-							<p>자가세안</p>
+							<p>
+                                사진촬영
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -737,38 +773,28 @@ var sum = 0;
 								</div>
 							<div class="box">
 							<div>STEP 3</div>
-							<p>압출+염증주사</p>
+							<p>디자인</p>
 							</div>
-							<div class="line-box">
-									<div class="line1"></div>
-									<div class="line2"></div>
-								<div class="line3"></div>
-								<div class="line4"></div>
-						</div>
-				<div class="box">
-						<div>STEP 4</div>
-					<p>기기관리</p>
-					</div>
-						<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 5</div>
-					<p>모델링팩</p>
-					</div>
-					<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 6</div>
-					<p>마무리</p>
-					</div>
+                            <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 4</div>
+                                <p>마취 스프레이</p>
+                            </div>
+                            <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 5</div>
+                                <p>시술</p>
+                            </div>
 				</div>
 		</div>
 
@@ -787,20 +813,23 @@ var sum = 0;
             <h1>이런 분께 추천합니다.</h1>
 
             <div class="con_wrap2">
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 1</h6>
                     <hr>
-                    <p>피지가 과도해 압출이 필요한 분</p>
+                    <p>사각턱으로 얼굴이 크고
+                        각져보이는 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 2</h6>
                     <hr>
-                    <p>외부환경 등으로 자극받은 피부에 진정과 재생이 필요한 분</p>
+                    <p>작고 부드러운 얼굴선을
+                        원하는 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 3</h6>
                     <hr>
-                    <p>피지가 과도해 압출이 필요한 분</p>
+                    <p>일상생활에 지장없이 간편하게
+                        V라인을 갖고 싶은 분</p>
                 </div>
             </div>
         </div>
@@ -831,25 +860,24 @@ var sum = 0;
             <h1>효과 및 권장주기</h1>
 
             <div class="img-box">
-                <img src="img/sub_effect01.gif" alt="">
+                <img src="img/sub_effect08.gif" alt="">
             </div>
 
             <ul class="flex flex-jc-c">
                 <li class="flex">
                     <span>1</span>
                     <p style="margin:20px 0; line-height:25px;">
-                        일반적으로 1주 간격으로 진행되며 꾸준한 권리를 권장합니다
+                        시술 2주 후부터 서서히 줄어들기 시작하며 6~8주 내 최대 효과를 확인할 수 있습니다.
                     </p>
                 </li>
 
                 <li class="flex">
                     <span>2</span>
                     <p style="margin:20px 0; line-height:25px;">
-                       개인의 상태에 따라 효과 및 권장 주기는 다를 수 있습니다.
+                        6~8개월에 걸쳐 서서히 원래 사이즈로 되돌아오게 되므로
+                        지속적인 효과를 원한다면 4~5개월 주기로 재시술을 권장드립니다.
                     </p>
                 </li>
-
-                
             </ul>
 
 
@@ -865,12 +893,12 @@ var sum = 0;
 
             <div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 홈케어랑 어떤 부분이 차이가 있나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 내성 걱정될 때 어떤 제품이 좋을까요?
 					</div>
 
-					<div class="answer">
-						더케어에서는 청결하게 소독된 관리 기구와 피부관리 전문 인력이 고객님의 피부 상태를 꼼꼼하게 체크하여 2차 염증이 발생하지 않도록 압출 및 재생 관리를 해주고 있습니다. 아직 압출 준비가 되어있지 않은 여드름을 억지로 짜게 되면 오히려 덧나고 색소침착이 생길 수 있기 때문에 내 피부 상태가 어떠한지 스스로 판단하기 어렵다면 가급적 내원하셔서 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						내성이 걱정되시면 결합 단백질이 없는 제품을 권장해 드립니다. 안정성 면에서는 오랜 기간 동안 전 세계적으로 사용된 독일 멀츠사의 제오민을 추천드립니다.
 					</div>
 				</div>
 			</div>
@@ -878,23 +906,19 @@ var sum = 0;
 
 			<div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 좁쌀 여드름과 화농성 여드름은 어떻게 구분하나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 사각턱톡신과 윤곽주사의 차이점은 뭔가요?
 					</div>
 
-					<div class="answer">
-						좁쌀 여드름은 가장 초기의 여드름으로 하얗고 오돌토돌하게 올라온 여드름입니다. 모공 속에 피지가 쌓여 있기 때문에 잘 없어지지 않으며, 그대로 방치하게 된다면 모공 안에 염증이 생겨 화농성 여드름으로 변하게 됩니다. 화농성 여드름은 쉽게 말해 모공에 막힌 피지 때문에 좁쌀 여드름이 곪아서 생기는 여드름입니다. 때문에 내 피부에 정확한 진단을 통해 이에 맞는 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						두 시술은 얼굴을 작게 만드는 시술이라는 공통점이 있으나 타깃이 다릅니다.
+                        윤곽주사의 경우 불필요한 지방을 분해하여 체외로 배출시키는 시술로, 근육과 지방 복합형 얼굴일 경우 사각턱톡신 시술로는 근육을 이완시켜 턱 근육으로 각진 얼굴을 부드럽게 만들고, 윤곽시술로는 지방을 분해하여 얼굴라인을 형성하는데 시너지효과를 가져올 수 있습니다. 윤곽주사는 양 볼 살 또는 이중 턱에 가장 많이 적용하며, 그 외에 지방이 있는 부위에 시술 가능합니다.
 					</div>
 				</div>
 			</div>
 
 			
-
-
-
-
-
-
+            
         </div>
 
     </div>
@@ -922,8 +946,8 @@ var sum = 0;
                 </li>
 
                 <li>
-                    시술 부위를 심하게 문지르거나 자극을 주는건 피해주시는게 좋습니다.<br>
-                    <span>(심한 마사지나 경락은 한 달 동안은 피해주세요)</span>
+                    시술 부위를 심하게 문지르거나 자극을 주는건 피해주시는게 좋습니다.
+                    <!-- (심한 마사지나 경락은 한 달 동안은 피해주세요) -->
                 </li>
 
                 <li>
@@ -961,7 +985,7 @@ catch(Exception e) {
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
             <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
@@ -988,11 +1012,20 @@ catch(Exception e) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+
+        AOS.init();
+
+
+
+        const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 				function _submit(f)
 				{
@@ -1087,26 +1120,21 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-//		 const checkbox = document.getElementById('chk');
-//
-//			 if (checkbox.checked ==('false')) {
-//				alert("옵션을 선택해 주세요!");
-//			} else{
+		 const checkbox = document.getElementById('chk');
+
+			 if (checkbox.checked ==('false')) {
+				alert("옵션을 선택해 주세요!");
+			} else{
 			var frm1 = document.form;
-
-			frm1.action = "incart1.jsp"
-			document.getElementById('button').click();
-
-			
-
-//			}
+			frm1.submit();
+			}
 		}
 
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.form;
 			frm1.action = "rezResult.jsp"
-			document.getElementById('button').click();
+			frm1.submit();
 
 		}
 

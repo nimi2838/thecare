@@ -9,11 +9,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_2.css">
+    <link rel="stylesheet" href="css/sub_1.css">
+    <link rel="stylesheet" href="css/sub_lip.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>상세화면</title>
+	<title>입꼬리보톡스</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <%
@@ -26,8 +32,6 @@ DecimalFormat df = new DecimalFormat("###,###");
 
    		int total = 0;
 %>
-
-
 <body>
 
 
@@ -154,15 +158,7 @@ else{
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
+
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -173,7 +169,6 @@ else{
                         </ul>
                     </div>
                 </li>
-
                 
                 <li class="jsp">
                     <a>소통원해</a>
@@ -291,14 +286,14 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>여드름 압출이 포함된 스킨케어</p>
+                <p>입꼬리가 올라가도록 모양잡기</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #입꼬리 #내려간사람<br>
+                    #여기로와라
                 </div>
             </div>
 
@@ -325,10 +320,10 @@ try {
 
 
 						
-							<form name="form" method="post" onsubmit="_submit(this); " >
+							<form name="form" method="post" action="rezResult.jsp" onsubmit="_submit(this); " >
 
 							
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 									<tbody>
 
 							<%
@@ -373,7 +368,6 @@ try {
 					
 												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
-												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
@@ -412,7 +406,6 @@ try {
 				
 
 			<script language="javascript">
-
 
 				function td1() {
 							const td3 = document.getElementByClass('td3').innerText;
@@ -482,7 +475,7 @@ var sum = 0;
 					if(value=="OPEN") {
 						Div.style.visibility="visible";
 						Div.style.display="inline-block";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #f1f7fb; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
@@ -572,7 +565,7 @@ var sum = 0;
                 <div class="btn-box">
 
 
-					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
+					<a href="#" onClick=inCart1()>장바구니 담기</a>
 			
 
 				<a href="#" onClick=rez()>시술 예약하기</a>
@@ -611,33 +604,34 @@ var sum = 0;
         <div class="sub_con1">
 
             <p> WHAT IS IT?</p>
-            <h1>여드름치료란 ?</h1>
+            <h1>입꼬리보톡스란 ?</h1>
             <p class="memo" style="line-height: 30px;">
-                [여드름관리] 압출+염증주사 - 기기관리 - 모델링팩 <br>[재생관리] 기기관리 - 진정마스크 - 재생광선 - 모델링팩
+                보톡스를 이용하여 입꼬리를 자연스럽게 올려주어 웃음을 짓지 않아도 입꼬리가 살짝 올라갈 수 있도록 만들어주는 시술입니다.
             </p>
 
 
-            <div class="con_wrap1 flex flex-jc-sb">
+            <!-- <div class="con_wrap1 flex" style="justify-content: space-around;">
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/time.png" alt="">
+                        <img src="img/time-b.png" alt="">
                     </div>
                     <h2>시술시간</h2>
-                    <p>30 - 40분</p>
+                    <p>5 - 10분 이내</p>
                 </div>
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/injection.png" alt="">
+                        <img src="img/injection-b.png" alt="">
                     </div>
                     <h2>마취여부</h2>
-                    <p>없음</p>
+                    <p>스프레이 마취
+                    </p>
                 </div>
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/effect.png" alt="">
+                        <img src="img/effect-b.png" alt="">
                     </div>
                     <h2>회복기간</h2>
                     <p>즉시생활가능</p>
@@ -645,65 +639,103 @@ var sum = 0;
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/downtime.png" alt="">
+                        <img src="img/downtime-b.png" alt="">
                     </div>
                     <h2>유지기간</h2>
-                    <p>2 - 3주</p>
+                    <p>6 - 8개월</p>
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+
+
+
+
+
+    <section id="line" class="content">
+        <div class="inner">
+            <div class="title">
+                <h1>입술라인 황금비율</h1>
+            </div>
+            <div class="wrap">
+
+                <h2>입술의 전체적인 웨이브라인을 살리다 !</h2>
+
+                <div class="pic">
+                    <img src="img/sub-lip.PNG" alt="" width="550px" height="255px">
+                </div>
+
+                <div class="txt">
+                    <p>
+                        윗입술 40%, 아랫입술 60% 정도의 비율이 선호됩니다.<br>
+                        입꼬리보톡스를 통해 원하는 모양으로 입술 라인,<br>
+                        전체적인 볼륨감 교정이 가능합니다.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="lip" class="content">
+        <div class="inner">
+            <div class="title">
+                <h1>"더케어 입꼬리 보톡스는 1:1 맞춤형 디자인을 진행합니다.<br>
+                    시술 직후, 거울을 보면서 변화된 모습을 확인하세요 !"</h1>
+            </div>
+            <div class="wrap">
+                
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-lip1.PNG" alt="" width="390px" height="280px">
+                    </div>
+                    <div class="txt">
+                        <h2>01. 나에게 맞는 입꼬리 디자인</h2>
+                        <p>
+                            입술의 비율과 입꼬리 처짐을 고려하여<br>
+                            나에게 어울리는 입꼬리를 디자인 합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-lip2.PNG" alt="" width="390px" height="280px">
+                    </div>
+                    <div class="txt">
+                        <h2>02. 필러 주입</h2>
+                        <p>
+                            필러를 주입하면서 입꼬리<Br>
+                            처짐의 저항성을 파악합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="con">
+                    <div class="pic">
+                        <img data-aos="fade-down" src="img/sub-lip3.PNG" alt="" width="390px" height="280px">
+                    </div>
+                    <div class="txt">
+                        <h2>03. 입꼬리 올림</h2>
+                        <p>
+                            필러 시술 후 입꼬리 올림이 입술의 실질적<Br>
+                            조직의 비율과 어울리는지 파악합니다.
+                        </p>
+                    </div>
                 </div>
 
             </div>
-
-
-
-			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
-				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
-				<img src ="img/sub_con1.png" style="width:85%;">
-				</div>
-				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								붉고 큰 화농성 여드름이 20개 이상,<br>
-								중등도의 진행성 흉터가 있는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								누적된 자국, 색소침착, 흉터가 많고<br>
-								새로 올라온 여드름이 혼재된 상태
-								</p>
-							</div>
-						</div>
-					</li>
-<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
-						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
-							<div>
-								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
-								최근 3개월 이상의 치료에 효과가 없고<br>
-								치료 종료후 1주일 안에 재발하는 상태
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-            
-
-
-
         </div>
-    </div>
+    </section>
+
+
+ 
+
+    
+
 
 
 
@@ -713,11 +745,13 @@ var sum = 0;
 	<div class="sub_con_box2-1">
 				<p>PROCEDURE PROCESS</p>
 				<h1>시술과정</h1>
-		<div class="sub_con2-1">
+		<div class="sub_con2-1" data-aos="fade-down">
 			<div class="con2-1 flex flex-jc-c">
 							<div class="box">
 							<div>STEP 1</div>
-							<p>맞춤상담</p>
+							<p>
+                                맞춤상담
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -727,7 +761,9 @@ var sum = 0;
 								</div>
 							<div class="box">
 							<div>STEP 2</div>
-							<p>자가세안</p>
+							<p>
+                                마취
+                            </p>
 							</div>
 								<div class="line-box">
 									<div class="line1"></div>
@@ -737,38 +773,28 @@ var sum = 0;
 								</div>
 							<div class="box">
 							<div>STEP 3</div>
-							<p>압출+염증주사</p>
+							<p>디자인</p>
 							</div>
-							<div class="line-box">
-									<div class="line1"></div>
-									<div class="line2"></div>
-								<div class="line3"></div>
-								<div class="line4"></div>
-						</div>
-				<div class="box">
-						<div>STEP 4</div>
-					<p>기기관리</p>
-					</div>
-						<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 5</div>
-					<p>모델링팩</p>
-					</div>
-					<div class="line-box">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-							<div class="line4"></div>
-						</div>
-					<div class="box">
-						<div>STEP 6</div>
-					<p>마무리</p>
-					</div>
+                            <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 4</div>
+                                <p>시술</p>
+                            </div>
+                            <!-- <div class="line-box">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                <div class="line4"></div>
+                            </div>
+                            <div class="box">
+                                <div>STEP 5</div>
+                                <p>시술</p>
+                            </div> -->
 				</div>
 		</div>
 
@@ -787,20 +813,20 @@ var sum = 0;
             <h1>이런 분께 추천합니다.</h1>
 
             <div class="con_wrap2">
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 1</h6>
                     <hr>
-                    <p>피지가 과도해 압출이 필요한 분</p>
+                    <p>쳐진 입꼬리때문에 웃는 모습을 개선하고 싶으신 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 2</h6>
                     <hr>
-                    <p>외부환경 등으로 자극받은 피부에 진정과 재생이 필요한 분</p>
+                    <p>입꼬리가 늘어져 우울해보이는 인상이 고민이신 분</p>
                 </div>
-                <div class="con_box2">
+                <div class="con_box2" data-aos="fade-down">
                     <h6>POINT 3</h6>
                     <hr>
-                    <p>피지가 과도해 압출이 필요한 분</p>
+                    <p>자연스러운 스마일 라인을 원하시는 분</p>
                 </div>
             </div>
         </div>
@@ -831,25 +857,23 @@ var sum = 0;
             <h1>효과 및 권장주기</h1>
 
             <div class="img-box">
-                <img src="img/sub_effect01.gif" alt="">
+                <img src="img/sub_effect07.gif" alt="">
             </div>
 
             <ul class="flex flex-jc-c">
                 <li class="flex">
                     <span>1</span>
                     <p style="margin:20px 0; line-height:25px;">
-                        일반적으로 1주 간격으로 진행되며 꾸준한 권리를 권장합니다
+                        필러의 경우 제품에 따라, 개인에 따라, 시술 부위에 따라 유지기간이 달라집니다.
                     </p>
                 </li>
 
                 <li class="flex">
                     <span>2</span>
                     <p style="margin:20px 0; line-height:25px;">
-                       개인의 상태에 따라 효과 및 권장 주기는 다를 수 있습니다.
+                        입꼬리보톡스는 보통 1~2내 최대효과가 드러나며, 2~3개월 주기로 재시술을 권장합니다.
                     </p>
                 </li>
-
-                
             </ul>
 
 
@@ -865,12 +889,12 @@ var sum = 0;
 
             <div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 홈케어랑 어떤 부분이 차이가 있나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 입꼬리필러와 입술필러의 차이는?
 					</div>
 
-					<div class="answer">
-						더케어에서는 청결하게 소독된 관리 기구와 피부관리 전문 인력이 고객님의 피부 상태를 꼼꼼하게 체크하여 2차 염증이 발생하지 않도록 압출 및 재생 관리를 해주고 있습니다. 아직 압출 준비가 되어있지 않은 여드름을 억지로 짜게 되면 오히려 덧나고 색소침착이 생길 수 있기 때문에 내 피부 상태가 어떠한지 스스로 판단하기 어렵다면 가급적 내원하셔서 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						두 시술은 시술목적에 차이가 있습니다. 입꼬리필러는 입꼬리에 필러를 주입해 입꼬리가 올라가도록 모양을 잡는 시술이며, 입술필러는 주로 입술 중앙부에 필러를 주입하여 입술을 토톰하게 만드는 것이 주 목적인 시술입니다.
 					</div>
 				</div>
 			</div>
@@ -878,23 +902,31 @@ var sum = 0;
 
 			<div class="qna_list">
 				<div class="qna_item">
-					<div class="ques">
-						Q. 좁쌀 여드름과 화농성 여드름은 어떻게 구분하나요?
+					<div class="ques" data-aos="fade-right">
+						Q. 웃을 때 입꼬리가 비대칭인데 이 시술로 완벽히 교정가능할까요 ?
 					</div>
 
-					<div class="answer">
-						좁쌀 여드름은 가장 초기의 여드름으로 하얗고 오돌토돌하게 올라온 여드름입니다. 모공 속에 피지가 쌓여 있기 때문에 잘 없어지지 않으며, 그대로 방치하게 된다면 모공 안에 염증이 생겨 화농성 여드름으로 변하게 됩니다. 화농성 여드름은 쉽게 말해 모공에 막힌 피지 때문에 좁쌀 여드름이 곪아서 생기는 여드름입니다. 때문에 내 피부에 정확한 진단을 통해 이에 맞는 관리 받는 것을 권장합니다.
+					<div class="answer" data-aos="fade-left">
+						사람의 얼굴은 처음부터 완벽한 대칭은 아니기 때문에 100%교정은 어렵습니다만, 충분한 상담을 통해 고객님께 알맞은 시술 방식을 선택하여 최대한 교정을 도와드리고 있습니다.
+					</div>
+				</div>
+			</div>
+
+
+			<div class="qna_list">
+				<div class="qna_item">
+					<div class="ques" data-aos="fade-right">
+						Q. 입꼬리필러와 입꼬리보톡스의 차이는?
+					</div>
+
+					<div class="answer" data-aos="fade-left">
+						꼬리필러는 입술 양 끝에 필러를 주입해 입꼬리가 올라간 듯한 모양을 만드는 시술입니다. 입꼬리보톡스는 입꼬리 내림근을 이완시켜 입꼬리 올림근이 더 잘 움직이도록 하는 효과로, 웃었을 때 자연스럽게 입꼬리가 올라가는 효과를 기대할 수 있습니다.
 					</div>
 				</div>
 			</div>
 
 			
-
-
-
-
-
-
+            
         </div>
 
     </div>
@@ -914,28 +946,31 @@ var sum = 0;
 
             <ul class="con_box2">
                 <li>
-                    시술 후 세안 및 화장은 2~3시간 뒤부터 가능합니다.
+                    시술 후 과음, 사우나/찜질방/수영장 출입, 열탕 목욕, 격한 운동은 피해 주는 것이 좋습니다.
                 </li>
 
                 <li>
-                    시술 후 3~7일 동안 가급적 과음, 사우나/찜질방 출입, 열탕목욕, 격한 운동은 피해주는 것이 좋습니다.
+                    멍이나 붓기, 통증, 이물감이 발생될 수 있으나 대부분 1~2주 이내 완화됩니다.
                 </li>
 
                 <li>
-                    시술 부위를 심하게 문지르거나 자극을 주는건 피해주시는게 좋습니다.<br>
-                    <span>(심한 마사지나 경락은 한 달 동안은 피해주세요)</span>
+                    필러 시술 부위에 압력이 들어가면 모양이 변할 수 있습니다.
                 </li>
 
                 <li>
-                    시술 후 너무 질기거나 딱딱한 음식은 효과 유지기간이 짧아 질 수 있으므로 가급적 피해주는 것이 좋습니다.
+                    해당 시술은 염증 예방 및 처치를 위해 항생제가 처방됩니다.
                 </li>
 
                 <li>
-                    피부 상태에 따라 멍과 붓기는 발생할 수 있으나 미약한 정도이며, 곧 완화됩니다.
+                    기타 불편한 사항이 있을 경우 병원으로 연락주시기 바랍니다.
                 </li>
 
                 <li>
-                    시술 후 해당부위 뻐근함이 느껴질 수 있으나 일시적 현상이므로 염려하지 않으셔도 됩니다.
+                    입술/입꼬리의 경우 빨대를 자주 사용하거나 엎드려 자는 등의 행위는 피해주는 것이 좋습니다.
+                </li>
+
+                <li>
+                    뜨거운 음식이 바로 입술에 닿지 않도록 주의바랍니다.
                 </li>
 
             </ul>
@@ -961,7 +996,7 @@ catch(Exception e) {
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
             <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
@@ -988,11 +1023,20 @@ catch(Exception e) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+
+        AOS.init();
+
+
+
+        const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 				function _submit(f)
 				{
@@ -1087,26 +1131,21 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-//		 const checkbox = document.getElementById('chk');
-//
-//			 if (checkbox.checked ==('false')) {
-//				alert("옵션을 선택해 주세요!");
-//			} else{
+		 const checkbox = document.getElementById('chk');
+
+			 if (checkbox.checked ==('false')) {
+				alert("옵션을 선택해 주세요!");
+			} else{
 			var frm1 = document.form;
-
-			frm1.action = "incart1.jsp"
-			document.getElementById('button').click();
-
-			
-
-//			}
+			frm1.submit();
+			}
 		}
 
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.form;
 			frm1.action = "rezResult.jsp"
-			document.getElementById('button').click();
+			frm1.submit();
 
 		}
 
