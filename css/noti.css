@@ -1,10 +1,8 @@
-
 ::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
 
 html,
 body {
   position: relative;
-  height: 100%;
 }
 
 body {
@@ -182,6 +180,18 @@ a {
   padding: 0 15px 0 15px;
 }
 
+/* .top-wrap>.top-box1>.icon-box>.login {
+  background: red;
+}
+
+.top-wrap>.top-box1>.icon-box>.join {
+  background: blue;
+}
+
+.top-wrap>.top-box1>.icon-box>.cart {
+  background: green;
+} */
+
 .top-wrap>.top-box1>.icon-box>.icon>.line-icon {
   display: flex;
   width: 1px;
@@ -190,6 +200,14 @@ a {
   margin: 1px 0 0 15px;
 }
 
+/* .top-wrap>.top-box1>.icon-box>.icon:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  margin: -10px 40px;
+  background:#707070;
+} */
 
 .top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
   width: 31px;
@@ -289,6 +307,7 @@ a {
   z-index: 10;
 }
 
+/* .top-wrap > .top-box2 > ul>li:hover> div */
 .top-wrap>.top-box2>ul>li:hover>div {
   visibility: visible;
   position: absolute;
@@ -299,6 +318,7 @@ a {
   transition: all .4s;
 }
 
+/* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
 .top-wrap>.top-box2>ul>li:hover>div>ul>li {
   width: 100%;
   padding: 20px 0;
@@ -308,11 +328,8 @@ a {
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
   background: #ffeeee;
-<<<<<<< HEAD
-=======
   /* color: #9869d4; */
 
->>>>>>> 4a0536646cb56a533c30d55df4d2f7fe2a27de1a
 }
 
 
@@ -320,28 +337,9 @@ a {
   border: none;
 }
 
-<<<<<<< HEAD
-=======
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 4a0536646cb56a533c30d55df4d2f7fe2a27de1a
 @media (min-width: 1301px) and  ( max-width:1920px) {
   #header {display: none;}
   .top-wrap>.top-box1 {

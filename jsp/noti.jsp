@@ -11,14 +11,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/review.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <title>전 후 사진</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/noti.css" />
+  <title>공지사항</title>
 </head>
-
 <%
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
+
+
 <body>
 
     <div class="top-wrap">
@@ -500,348 +501,73 @@ else{
         </div>
 
 
-
+    
     <div class="about-ban">
         <div class="text-box">
-            <i>BEFORE & AFTER</i>
+            <i>공지사항</i>
             <div class="sun"></div>
-            <p>치료 전후 달라진 상태를 직접 확인하세요</p>
+            <p>고객님들을 위한 더 케어의<br>다양한 소식들을 만나보세요.</p>
         </div>
     </div>
 
 
 
-
-
-    <section id="review" class="content">
+    
+    <section id="noti" class="content">
         <div class="inner">
             <div class="wrap">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th style="width: 70%;">제목</th>
+                        <th>작성자</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody id="gong">
+                    <tr class="list_tr">
+                        <td style="font-weight: bold;">5</td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-5.html"><p>[ 공지 ] 미성년자 시술 및 관리 동의서</p></a></td>
+                        <td>더 케어</td>
+                        <td>22.03.30</td>
+                    </tr>
+                </tbody>
+                <tbody id="gong">
+                    <tr class="list_tr">
+                        <td style="font-weight: bold;">4</td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-4.html"><p>[ 공지 ] The Care 제증명수수료</p></a></td>
+                        <td>더 케어</td>
+                        <td>22.02.27</td>
+                    </tr>
+                </tbody>
+                <tbody id="gong">
+                    <tr class="list_tr">
+                        <td style="font-weight: bold;">3</td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-3.html"><p>[ 공지 ] 한국 울쎄라 골드스탠다드 프로토콜 개발 참여</p></a></td>
+                        <td>더 케어</td>
+                        <td>22.02.23</td>
+                    </tr>
+                </tbody>
+                <tbody id="gong">
+                    <tr class="list_tr">
+                        <td style="font-weight: bold;">2</td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-2.html"><p>[ 공지 ] 2월 설 연휴 진료일정 안내</p></a> </td>
+                        <td>더 케어</td>
+                        <td>22.01.31</td>
+                    </tr>
+                </tbody>
+                <tbody id="gong">
+                    <tr class="list_tr">
+                        <td style="font-weight: bold;">1</td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-1.html"><p>[ 공지 ] 홈페이지 리뉴얼 안내</p></a> </td>
+                        <td>더 케어</td>
+                        <td>22.01.01</td>
+                    </tr>
+                </tbody>
+                </table>
 
-                <ul class="tab">
-                    <!-- 페이스 -->
-                    <li>
-                        <a href="#" class="menu">페이스</a>
-                        <div class="panel ">
-                            <div class="con"><ul>
-                                <li>
-                                    <div class="top top1">
-                                        <div class="imgs">
-                                            <img src="img/review-f-yun.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.01.05</h1>
-                                                    <h1>22.04.18</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>윤곽주사</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top top1">
-                                        <div class="imgs">
-                                            <img src="img/review-f-face.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.02.15</h1>
-                                                    <h1>22.06.27</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>페이스필러</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top top1">
-                                        <div class="imgs">
-                                            <img src="img/review-f-hi.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.03.07</h1>
-                                                    <h1>22.07.26</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>하이코</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top">
-                                        <div class="imgs">
-                                            <img src="img/review-f-jo.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.05.16</h1>
-                                                    <h1>22.08.12</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>조각주사</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top">
-                                        <div class="imgs">
-                                            <img src="img/review-f-sa.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.06.14</h1>
-                                                    <h1>22.07.25</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>사각턱 보톡스</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top">
-                                        <div class="imgs">
-                                            <img src="img/review-f-sa2.jpg" alt="">
-                                            <div class="bg">
-                                                <div class="bg-txt">
-                                                    <h1>22.09.04</h1>
-                                                    <h1>22.11.15</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="txt">
-                                            <h1>입꼬리 필러</h1>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- 스킨 -->
-
-                    <li>
-                        <a href="#" class="menu">스킨</a>
-                        <div class="panel ">
-                            <div class="con">
-                                <ul>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-s-clarity2.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.01.20</h1>
-                                                        <h1>22.04.27</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>클라리티</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-s-yeo2.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.02.05</h1>
-                                                        <h1>22.06.13</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>여드름 케어</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-s-a.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.03.14</h1>
-                                                        <h1>22.07.16</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>아쿠아필</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-s-yeo.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.05.10</h1>
-                                                        <h1>22.08.08</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>여드름 관리</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-s-clarity.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.09.14</h1>
-                                                        <h1>22.10.25</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>클라리티</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-s-fil.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.09.23</h1>
-                                                        <h1>22.11.18</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>알라딘 필링</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- 바디 -->
-                    <li>
-                        <a href="#" class="menu">바디</a>
-                        <div class="panel ">
-                            <div class="con">
-                                <ul>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-b-girl.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.01.01</h1>
-                                                        <h1>22.04.12</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>걸그룹 주사</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-b-jong2.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.02.11</h1>
-                                                        <h1>22.06.21</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>종아리 보톡스</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top top1">
-                                            <div class="imgs">
-                                                <img src="img/review-b-body.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.03.21</h1>
-                                                        <h1>22.05.26</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>바디 보톡스</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-b-body2.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.05.16</h1>
-                                                        <h1>22.08.19</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>바디 슈링크</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-b-jong.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.06.04</h1>
-                                                        <h1>22.07.20</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>종아리 보톡스</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="top">
-                                            <div class="imgs">
-                                                <img src="img/review-b-girl2.jpg" alt="">
-                                                <div class="bg">
-                                                    <div class="bg-txt">
-                                                        <h1>22.09.12</h1>
-                                                        <h1>22.11.18</h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="txt">
-                                                <h1>걸그룹 주사</h1>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <p>개개인에 따라 시술 후 붓기, 염증 등 부작용이 발생 할 수 있으니 시술과 관련된 주의사항을 충분히 숙지하시기 바랍니다.</p>
             </div>
-
         </div>
     </section>
 
@@ -849,12 +575,6 @@ else{
 
 
 
-
-
-
-
-
-<!-- 푸터 -->
 
     <div class="footer flex flex-jc-c">
         <div class="text">
@@ -880,16 +600,11 @@ else{
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-<!-- Initialize Swiper -->
+
 <script>
 
-    var menu = document.querySelector('.menu');
-    menu.onclick = function() {
-        text.style.color = 'pink';
-    }
 
-
-gsap.to('#header', {
+            gsap.to('#header', {
                 scrollTrigger: {
                     trigger: '#header',
                     start: 'top -98px',
@@ -957,23 +672,9 @@ $('#gnb .last').on('focusout', function(){
 
 });
 
-$(function(){
-    $('#review .menu').on('click', function(e){
-        var i = $(this).parents('li').index();
-        e.preventDefault(); 
-    
-        $('#review .panel').hide();
-        $(this).next('.panel').show();
-        $('#review .tab>li').removeClass('on').eq(i).addClass('on');
-    });
-    $('#review .menu').first().trigger('click');
+        
 
-});
-
-
-
-
-    const $topBtn = document.querySelector(".moveTopBtn");
+const $topBtn = document.querySelector(".moveTopBtn");
 
 // 버튼 클릭 시 맨 위로 이동
 $topBtn.onclick = () => {
@@ -994,20 +695,76 @@ gsap.to('.top-wrap > .top-box2', {
   borderBottom: '1px solid #ccc'
 });
 
+
+            $('#best .tab>li>a').on('click', function(e){
+                var i = $(this).parents('li').index();
+              e.preventDefault();
+
+              $('#best .panel').hide();
+              $(this).next('.panel').show();
+            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
+            });
+
+            $('#best .tab>li>a').first().trigger('click');
+
+
+
+
+    
+            gsap.to('.top-wrap > .top-box2', {
+                scrollTrigger: {
+                    trigger: '.top-wrap',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '61px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff',
+                borderBottom: '1px solid #ccc'
+            });
+    
+            
+    
+    
+     function keyword_check(){
+    
+                  if(document.search.keyword.value==''){ 
+    
+                  alert('검색어를 입력하세요');
+    
+                  document.search.keyword.focus(); 
+    
+                  return false; 
+    
+                  }
+    
+                  else return true;
+    
+                 }
+    
+    
+    
+    
+    
+        function search_form()
+            {
+                var frm = document.search;
+                frm.action = "search.jsp";
+                frm.submit();
+            }
     
 
-gsap.to('.top-wrap > .top-box2', {
-scrollTrigger:{
-trigger:'.top-wrap',
-start:'top -98px',
-scrub:true
-},height:'60px',textalign:'center',top:'0',position:'fixed',background:'white'
-});
+			function login()
+		{
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
+		}
 
 
 
+    </script>
 
-
-</script>
 </body>
 </html>
