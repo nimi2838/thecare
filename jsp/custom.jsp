@@ -225,7 +225,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/비용</a></li>
+                     <li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -314,7 +314,7 @@ else{
 
 					
 
-                            <a href="main.html">
+                            <a href="main.jsp">
                                 <div class="close-test">
                                     <img src="img/test-close.png" alt="">
                                 </div>
@@ -366,7 +366,7 @@ document.querySelectorAll(`input[type=checkbox]`)
 
 function Check(num){
 	if ($("input:checkbox[name='aa1']").is(":checked") == false) {
-		alert("적어도 하나는 선택하여 주십시오.");
+		alert("답변을 선택해주세요.");
 		return false;
 		
 	}

@@ -158,7 +158,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/비용</a></li>
+                     <li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -309,12 +309,12 @@ try {
 
                 <div class = "my_point">
                   <h1>Point</h1>
-                    <p><b style = "color: #b580ff"><%=Point%></b> p</p>
+                    <p><b style = "color: #f89fa8"><%=Point%></b> p</p>
                 </div>
 
                 <div class = "my_coupon">
                     <h1>Coupon</h1>
-                    <p><b style = "color: #b580ff"><%=cnt%></b>장</p>
+                    <p><b style = "color: #f89fa8"><%=cnt%></b>장</p>
                 </div>
 
                

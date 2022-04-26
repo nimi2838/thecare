@@ -157,7 +157,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/비용</a></li>
+                     <li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
