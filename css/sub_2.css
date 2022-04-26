@@ -827,7 +827,7 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     padding: 0 20px;
 }
 
-.sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
+/* .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
     content: "";
     display: block;
     position: absolute;
@@ -836,7 +836,7 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     background: #1f628e;
     left: -50%;
     top: 65%;
-}
+} */
 
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2:first-child:after {
     display: none;
