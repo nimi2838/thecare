@@ -1,6 +1,5 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,20 +13,23 @@
   <link rel="stylesheet" href="css/custom.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
-  <title>����ü�</title>
+  <title>맞춤시술</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+ 
 </head>
 
-<%
-   String myid = (String)session.getAttribute("sid");         
+  <%
+   String myid = (String)session.getAttribute("sid");                                                                           
 %>
-
 <body>
-    
+
+
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-            
-  <%
+
+
+                             <%
    if(myid == null) {
 
 %>
@@ -59,12 +61,12 @@
                     </a>
                 </li>
             </ul>
-			<%
+         <%
 }
 else{
 %>
 
-	<ul class="icon-box">
+   <ul class="icon-box">
                 <li class="icon login">
                     <a href="logout.jsp">
                         <div class="img-box" style= "margin-left: 3px;">
@@ -107,66 +109,137 @@ else{
                 <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
                     method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
                     <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="�˻�� �Է����ּ���." >
+                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
                     </td>
                     <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="�˻�" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
+       </div>
 
-        </div>
+
+
         <div class="line"></div>
 
 
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>ȸ��Ұ�</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">���ɾ��?</a>
-                            </li>
-                            <li><a href="about_2.jsp">���ɾ� �Ƿ���</a></li>
-                            <li><a href="about_3.jsp">���ɾ� ���ô±�</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>�ü��ȳ�</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">�ü��ȳ�</a></li>
-                            <li><a href="review.jsp">���Ļ���</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu">
-                    <a>�ü�����</a>
-                    <div>
-                        <ul>
-                            <li><a href="reservation.jsp">�ü�����</a></li>
-                            <li><a href="change.jsp">����Ȯ��/����/���</a></li>
-                            <li><a href="new_view.jsp">�ֱٺ��ü�</a></li>
-                        </ul>
-                    </div>
-                </li>
+				<%
+	try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+	 String jsql= "delete from test;";
+	 PreparedStatement pstmt  = con.prepareStatement(jsql);
+	
+
+	 pstmt.executeUpdate();
+
+
+%>
+	<%
+    String jsql2= "SELECT * FROM user WHERE uId=?";
+                    PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+                    pstmt2.setString(1, myid);
+
+                    ResultSet rs2 = pstmt2.executeQuery(); 
+
+
+                    if(rs2.next()) {
+
+    %>
+
                 
-                <li class="menu">
-                    <a href="custom.jsp">����ü�</a>
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
+                        <ul>
+                            <li><a href="#" onclick = custom()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="menu">
-                    <a>Ŀ�´�Ƽ</a>
+
+                <%
+                    } else {
+                %>
+
+                     
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
+                        <ul>
+                            <li><a href="#" onclick = login()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                    <%
+                } //if-else 아이디 유무
+%>
+           <script>
+		   function login()
+        {
+            alert('로그인 후 이용 가능한 페이지입니다.');
+            document.location.href="login.jsp";
+        }
+		function custom()
+        {
+           
+            document.location.href="custom.jsp";
+        }
+		function themore()
+        {
+            
+            document.location.href="themore.jsp";
+        }
+		   </script>
+
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
-                            <li><a href="noti.jsp">��������</a></li>
-                            <li><a href="qna.jsp">1:1����</a></li>
-                            <li><a href="event.jsp">�̺�Ʈ</a></li>
+                            <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li> -->
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+                     <li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                
+                <li class="jsp">
+                    <a>소통원해</a>
+                    <div>
+                        <ul>
+                            <li><a href="note.jsp">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -174,19 +247,160 @@ else{
         </div>
     </div>
 
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
+		
+                  
+
+
+    <div class="survery content" >
+        <div class="inner">
+            <div class="makde">
+             
+                <!-- 여기는 막대 
+                여기는 퍼센트 넣어야 함-->
+				<div>
+	<progress value="1" max="100" id="lb"></progress>
+</div>
+            </div>
+
+			
+            <form id="form" name="form" method= post>
+            <div class="wrap">
+                <h1>피부타입 자가진단</h1>
+                
+                    <div class="survery-test">
+                        <div class="qestion">
+                            <h1>Q1</h1>
+                            <p>세안 후 기초 제품을 바르지 않으면 피부 상태는 어떤가요?</p>
+                        </div>
+                        <ul class="qna-wrap">
+                            <li>
+                                <div class="check1-1"> 
+                                    <input type="checkbox" name = "aa1" value= "no1" id="q1-1" onclick = "clickCheck(this)"> 
+                                    <label for="q1-1"><p>각질이 일어나고 거칠다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-2"> 
+                                    <input type="checkbox" name = "aa1" value= "no1" id="q1-2" onclick = "clickCheck(this)"> 
+                                    <label for="q1-2"><p>심하게 당긴다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-3"> 
+                                    <input type="checkbox" name = "aa1" value= "yes1" id="q1-3" onclick = "clickCheck(this)"> 
+                                    <label for="q1-3"><p>조금 당긴다</p> </label> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check1-4"> 
+                                    <input type="checkbox" name = "aa1" value= "yes1" id="q1-4" onclick = "clickCheck(this)"> 
+                                    <label for="q1-4"><p>건조함 없이 촉촉하다</p> </label> 
+                                </div>
+                            </li>
+                        </ul>
+
+					
+
+                            <a href="main.html">
+                                <div class="close-test">
+                                    <img src="img/test-close.png" alt="">
+                                </div>
+                            </a>
+                    </div>
+                
+            </div>
+
+
+			 
+                
+                   
+           
+            <!-- 임시 버튼 -->
+<!--             <div class="button"> -->
+<!--                 <a href="main.html" class="prev">이전</a> -->
+<!--                 <a href="custom-2.html" class="next">다음</a> -->
+<!--             </div> -->
+           
+            <div class="button">
+               
+                <input type = "submit" class="survery-btn next" onclick="Check()" value = "다음" >
+            </div> 
+        </form>
+        </div>
+    </div>
 
 
 
+<%
+    
 
-    <section id="welcome" class="content">
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
+
+
+    <script>
+
+	 
+ function clickCheck(target) {	
+document.querySelectorAll(`input[type=checkbox]`)
+    .forEach(el => el.checked = false);
+	target.checked = true;
+              
+
+}
+
+function Check(num){
+	if ($("input:checkbox[name='aa1']").is(":checked") == false) {
+		alert("적어도 하나는 선택하여 주십시오.");
+		return false;
+		
+	}
+
+	var form = document.getElementById("form");
+	form.action = "custom-2.jsp";
+	form.submit();
+
+                  }
+
+    
+function reset() {
+    skillGragh.value = resetValue
+}
+        $('#best .tab>li>a').on('click', function(e){
+              e.preventDefault();
+              $('#best .panel').hide();
+              $(this).next('.panel').show();
+            });
+
+            $('#best .tab>li>a').first().trigger('click');
+
+    </script>
+
+
+    <!-- <section id="welcome" class="content">
         <header>
         <div class="inner">
                 <div class="header-content">
-                    <h2>�Ǻ�Ÿ���� <br>
-                        �˰������Ű���?</h2>
-                    <p>���� �Ǻ�Ÿ���� �˾ƺ�����!<br>
-                        �������� ��õ�ص帱�Կ�</p>
-                    <a href="custom-test.html">���� �����ϱ�
+                    <h2>피부타입을 <br>
+                        알고싶으신가요?</h2>
+                    <p>나의 피부타입을 알아보세요!<br>
+                        관리법을 추천해드릴게요</p>
+                    <a href="custom-test.html">지금 시작하기
                     </a>
                 </div>
         </div>
@@ -197,7 +411,7 @@ else{
 
 <div class="question">
     <div class="swiper mySwiper">
-        <h2>�Ǻΰ����ϱ� �������?</h2>
+        <h2>피부관리하기 힘드시죠?</h2>
 
         <div class="swiper-wrapper">
 
@@ -205,9 +419,9 @@ else{
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-1.png" alt="" >
-                        <h2>�μ��� �߶�<br>
-                            �Ǻδ���� ��������.</h2>
-                        <p>��**��, 21�� , ���л� </p>
+                        <h2>로션을 발라도<br>
+                            피부당김이 느껴져요.</h2>
+                        <p>정**님, 21세 , 대학생 </p>
                     </div>
                 </div>
             </div>
@@ -216,9 +430,9 @@ else{
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-2.png" alt="" width="60px" height="60px">
-                        <h2>���� ����ũ�� ����<br>
-                            �Ǻΰ� ���������� �ӻ��ؿ�.</h2>
-                        <p>��**��, 25�� , ���л� </p>
+                        <h2>요즘 마스크로 인해<br>
+                            피부가 뒤집어져서 속상해요.</h2>
+                        <p>이**님, 25세 , 대학생 </p>
                     </div>
                 </div>
             </div>
@@ -227,9 +441,9 @@ else{
                 <div class="in">
                     <div class="text-1">
                         <img src="img/custom-icon-3.png" alt="" width="60px" height="60px">
-                        <h2>ȭ���� �ϰ� ���� �ð��� ������<br>
-                            �󱼿� ���бⰡ ��������.</h2>
-                        <p>��**��, 28�� , ������  </p>
+                        <h2>화장을 하고 나서 시간이 지나면<br>
+                            얼굴에 유분기가 많아져요.</h2>
+                        <p>김**님, 28세 , 직장인  </p>
                     </div>
                 </div>
             </div>
@@ -247,22 +461,22 @@ else{
 
         <div class="wrap">
             <div class="thank">
-            <h3>����, �����ƿ�.</h3>
+            <h3>이젠, 괜찮아요.</h3>
             <div>
                 <ul>
                     <li class="test">
                         <h1 >01</h1>
                         <img class="animate__animated animate__flash animate__delay-2s"  src="img/custom-1.png" alt="" width="80px" height="80px" >
-                        <h2>���㼳��</h2>
-                        <p>�� 3��! �����ϰ� üũ�ϰ�<br>
-                            �� ���ο� �´� �Ǻ�Ÿ�� ã�� </p>
+                        <h2>맞춤설문</h2>
+                        <p>딱 3분! 간단하게 체크하고<br>
+                            내 고민에 맞는 피부타입 찾기 </p>
                     </li>
                     <li class="test">
                         <h1>02</h1>
                         <img class="animate__animated animate__shakeX animate__delay-2s" src="img/custom-2.png" alt="" width="80px" height="80px">
-                        <h2>������</h2>
-                        <p>�Ǻ�Ÿ�Կ� �´� ����������<br>
-                         ���ϴ� �Ǻ� ������ </p>
+                        <h2>관리법</h2>
+                        <p>피부타입에 맞는 관리법으로<br>
+                         원하는 피부 가지기 </p>
                     </li>
                 </ul>
             </div>
@@ -274,12 +488,11 @@ else{
 
 <div class="start">
     <div class="wrapper">
-        <h1>���㼳������<br>
-            �Ǻ�Ÿ���� �˾ƺ�����.</h1>
-        <a href="custom-test.html">���� �����ϱ�</a>
+        <h1>맞춤설문으로<br>
+            피부타입을 알아보세요.</h1>
+        <a href="custom-test.html">지금 시작하기</a>
     </div>
-</div>
-
+</div> -->
 
 
 
@@ -289,17 +502,14 @@ else{
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width = "150" alt="" style="margin-bottom: 20px;">
-          <p class = "text1">��ȣ�� : ���ɾ��Ǻΰ� &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   �ּ� : ����Ư���� ���ʱ� ������� 439 ( ��Ƽ���� 4�� )
+            <img src="./img/logo-ft.png" width = "150" alt="" style="margin-bottom: 20px;">
+          <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
         </p>
-          <p>����ڵ�Ϲ�ȣ : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ��ǥ�� : ������ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ��ȭ��ȣ : 02-517-0912
+          <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912
         </p>
           <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
         </div>
      </div>
-    
-
-
     
 
 
@@ -313,6 +523,21 @@ else{
 
 <!-- Initialize Swiper -->
 <script>
+
+gsap.to('.top-wrap > .top-box2', {
+  scrollTrigger: {
+      trigger: '.top-wrap',
+      start: 'top -98px',
+      scrub: true
+  },
+  height: '61px',
+  textalign: 'center',
+  top: '0',
+  position: 'fixed',
+  background: '#fff',
+  borderBottom: '1px solid #ccc'
+});
+
     var swiper = new Swiper(".mySwiper", {
         cssMode: true,
         navigation: {
@@ -321,7 +546,7 @@ else{
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true // ��ư Ŭ�� ����
+            clickable: true // 버튼 클릭 여부
         },
         autoplay: true,
         autoplaySpeed: 5000,

@@ -15,24 +15,29 @@ try {
 		String ctNo = session.getId(); 
 
 		String prdNo = request.getParameter("prdNo");
+		String opNo = request.getParameter("opNo");
 		
 
-		String jsql1 = "select * from cart where ctNo = ? and prdNo=?";
+		String jsql1 = "select * from cart where ctNo = ? and prdNo=? and opNo=?";
       PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 	  pstmt1.setString(1, ctNo);
 	  pstmt1.setString(2, prdNo);
+	  pstmt1.setString(3, opNo);
 
       ResultSet rs1 = pstmt1.executeQuery(); 
-	  rs1.next();
+	  if (rs1.next()) {
 
 
 
-					 String jsql = "delete from cart where ctNo=? and prdNo = ?";   
+					 String jsql = "delete from cart where ctNo=? and prdNo = ? and opNo = ?";   
 					PreparedStatement pstmt = con.prepareStatement(jsql);
 					pstmt.setString(1, ctNo);
 					pstmt.setString(2, prdNo);
+					pstmt.setString(3, opNo);
 					
 					pstmt.executeUpdate();
+
+	  }
 
 					
 

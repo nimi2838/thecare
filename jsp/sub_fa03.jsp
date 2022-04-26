@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
+<%@ page import="java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +9,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_1.css">
+    <link rel="stylesheet" href="css/sub_2.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<title>상세화면</title>
+
 </head>
+<%
+DecimalFormat df = new DecimalFormat("###,###");
+%>
 
 <%
    String myid = (String)session.getAttribute("sid");         
@@ -129,23 +134,23 @@ else{
         <div class="line"></div>
 
 
-        <div class="top-box2">
+         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
 				<li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -174,8 +179,8 @@ else{
                     <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -184,19 +189,19 @@ else{
         </div>
     </div>
 
-	<div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-		<a href="new_view.jsp" alt="최근 본 시술">
-	<div  style="border-radius:50%;z-index:150; width:60px;height:60px; margin-bottom: 10px;">
-			<img src="img/clock.png">
-		</div>
-		</a>
-		<a href="#" alt="맨 위로">
-		<div  style="border-radius:50%;z-index:150; width:60px;height:60px;">
-			<img src="img/up.png">
-		</div>
-		</a>
-	</div>
-
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
 	
@@ -306,8 +311,8 @@ try {
 
 					
 
-                    <form name="form1">
-                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')">
+                    <div class="form1">
+                        <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN'); td1();">
                           <tr>
                            <td>시술 옵션
                             <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
@@ -315,44 +320,67 @@ try {
                           </tr>
                         </table>
                    
-                        <div id="Div" style="padding: 10px 0 0 0;">
+                        <div id="Div" style="padding: 10px 0 0 0; display: none; ">
+
+
+
 						
-							<form name="form">
+							<form name="form" method="post" onsubmit="_submit(this); " >
+
+							
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
+									<tbody>
+
 							<%
 						String jsql1 = "select * from soption where prdNo = ?";   
 				PreparedStatement pstmt1 = con.prepareStatement(jsql1);
 				pstmt1.setString(1, no);
-
+				
 				ResultSet rs1 = pstmt1.executeQuery();
-
+				
 			while(rs1.next()) {	
 				
 				String opname = rs1.getString("opName");
+
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
-		
+
+				
+
 						%>
 
+									<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-									<tbody>
-											<td><input name="chkbox" type="checkbox" value="<%=opprice%>"  id="<%=opno%>" onClick="itemSum(this.form);"></td>
-											<td><%=opname%>      </td>
-												<td><%=opprice%></td>
-										  </tbody>
-									</table>
+											</td>
+											<td class="td2" style=""><%=opname%>                                          </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+										  </tr>
 
+
+					
 									<%
+
 			}
 
 				%>
-												<td><input name="total_sum" id="sell3" type="hidden" readonly></td>
+					</tbody>
+									</table>
+
+					
+												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
+												<input type=hidden name = prdNo value="<%=no%>">
+												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
-                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();"></div>
+                            <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
+							</div>
                         </div>
 						
-                       </form>
+                       </div>
 
                 </div>
 
@@ -365,7 +393,7 @@ try {
 
 				<div>
 				<!-- <input type="text" id="txt_getChkList" style="width: 500px; height:100px; outline:none; border: 0; background: none; font-size: 20px; padding:20px 30px; "> -->
-				<textarea spellcheck = "false" id="txt_getChkList" style="display: none;"></textarea>
+				<textarea spellcheck = "false" id="txt_getChkList" style="display: none; text-align: right;"></textarea>
 				</div>
 
                 <div class="price-wrap">
@@ -380,133 +408,191 @@ try {
 
 
 
+
 				
 
-<script language="javascript">
+			<script language="javascript">
 
-				function itemSum(frm)
+
+				function td1() {
+							const td3 = document.getElementByClass('td3').innerText;
+							var num = td3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementByClass("td3").innerText = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+			function _submit(f)
 				{
-				   var sum = 0;
-				   var count = frm.chkbox.length;
-				   for(var i=0; i < count; i++ ){
-					   if( frm.chkbox[i].checked == true ){
-						sum += parseInt(frm.chkbox[i].value);
-					   }
-				   }
-				   frm.total_sum.value = sum;
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b'][i].disabled=true;
+							}
+						}
+					}
+					return true;
 				}
 
-				
+var sum = 0;
+        function calc(){ 
+            a = document.getElementsByClassName("chk");
+            for(i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    sum += parseInt(a[i].value);
+                }
+            }
+            document.getElementById("sell3").value = sum;
+            sum = 0;
+        }
 
-				function call() {
-				const sell3 = document.getElementById('sell3').value;
-                  document.getElementById("result").value = sell3;
-            };
+
+
+
+							function call() {
+							const sell3 = document.getElementById('sell3').value;
+							var num = sell3;
+
+		//					const cn1 = n1.toString()
+		//					  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+//				.toLocaleString('en')
+							  document.getElementById("result").value = num.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+							
+						};
+
+
+
+						
+					function multiSelect(value){
+					if(value=="OPEN") {
+						Div.style.visibility="visible";
+						Div.style.display="inline-block";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+					}else  {
+						Div.style.visibility="hidden";
+						Div.style.display="none";
+						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+							    
+
+				
+						}
+					};
+
+
+					
+
+
+				var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
+				$(document).ready(function() {
+
+					$("input[class=chk]").change(function() {
+						// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
+				//		if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
+						putCheckList();
+					});
+
+					$("#btn_showChkList").click(function() {
+			//			if(peopleArr.length == 0) {
+			//				$("#txt_getChkList").val("");
+			//				alert("체크된 항목이 없습니다.");
+			//				return;
+			//			}
+
+						var str = "";
+						for (var i = 0; i < peopleArr.length; i++) {
+							str +=  peopleArr[i].name + peopleArr[i].age + "\n";
+						}
+
+						$("#txt_getChkList").val(str);
+
+					}); 
+				});
+
+
+				function putCheckList() {
+				peopleArr = new Array();
+				var idxArr = new Array();
+
+
+				$("input[class=chk]:checked").each(function() {
+					idxArr.push($("input[class=chk]").index(this));
+				});
+
+				for (var i = 0; i < idxArr.length; i++) {
+					var obj = new Object();
+					obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
+					obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
+					peopleArr.push(obj);
+				}
+
+			}
 
 			
-        function multiSelect(value){
-        if(value=="OPEN") {
-			Div.style.visibility="visible";
-        }else  {
-			Div.style.visibility="hidden";
-			$('#txt_getChkList').attr('style', "display:inline-block;width: 490px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
-	
-			}
-        };
+		//					if (document.getElementById("noArray[0]").value= '50000')
+		//					{
+		//						document.getElementById("noArray[0]").value = "yun1";
+		//					} else if (document.getElementById("noArray[1]").value = '110000')
+		//					{
+		//						document.getElementById("noArray[1]").value = "yun2";
+		//					}
 
 
-		
-
-
-	var peopleArr = new Array();	// 체크된 항목을 담기 위한 배열 선언
-	$(document).ready(function() {
-
-		$("input[name=chkbox]").change(function() {
-			// 체크박스 갯수와  체크된 체크박스 갯수 비교 후 불일치시 헤더 체크박스 해제 
-			if($(this).length != $("input[name=chkbox]:checked").length) $("#chkAll").prop("checked", false); 
-			putCheckList();
-		});
-
-		$("#btn_showChkList").click(function() {
-//			if(peopleArr.length == 0) {
-//				$("#txt_getChkList").val("");
-//				alert("체크된 항목이 없습니다.");
-//				return;
-//			}
-
-			var str = "";
-			for (var i = 0; i < peopleArr.length; i++) {
-				str +=  peopleArr[i].name + peopleArr[i].age + "\n";
-			}
-
-			$("#txt_getChkList").val(str);
-
-		}); 
-    });
-
-
-	function putCheckList() {
-	peopleArr = new Array();
-	var idxArr = new Array();
-
-	$("input[name=chkbox]:checked").each(function() {
-		idxArr.push($("input[name=chkbox]").index(this));
-	});
-
-	for (var i = 0; i < idxArr.length; i++) {
-		var obj = new Object();
-		obj.name = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(1).text();
-		obj.age = $("#tbl_peopleList tbody").children().eq(idxArr[i]).children().eq(2).text();
-		peopleArr.push(obj);
-	}
-
-}
-
-</script>
+			</script>
 
 
 
 
+<%
+	String jsql2= "SELECT * FROM user WHERE uId=?";
+					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+					pstmt2.setString(1, myid);
 
+					ResultSet rs2 = pstmt2.executeQuery(); 
+					
+					
+					if(rs2.next()) {
 
-				<form name= product method="post">
-				<input type=hidden name = prdNo value="<%=no%>">
+	%>
+
                 <div class="btn-box">
 
-					<%
 
-				String jsql3 = "select * from cart where ctNo =? and prdNo = ?";
-		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, ctNo);
-		pstmt3.setString(2, no);
-		ResultSet rs3 = pstmt3.executeQuery(); 
-		
+					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
+			
 
-		if(rs3.next())   
-		{		         
-			%>
-
-			<a href="#" onClick=cart1()>장바구니 담기</a>
-
-
+				<a href="#" onClick=rez()>시술 예약하기</a>
+                </div>
+				
 				<%
-		}
-		else  
-		{
-			%>
-
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
-
-				<%
-		} 
+					} else {
 				%>
 
-				
-			<a href="cart.html">시술 예약하기</a>
+					 <div class="btn-box">
+
+
+					<a href="#" onClick=login()>장바구니 담기</a>
+			
+
+				<a href="#" onClick=login()>시술 예약하기</a>
                 </div>
-				</form>
-				
-				<%
+
+					<%
+				} //if-else 아이디 유무
 
 					
 			}
@@ -518,14 +604,6 @@ try {
     </div>
 
 
-	<%
-			String jsql2 = "select * from surgery where prdNo = ?";   
-				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setString(1, no);
-
-				ResultSet rs2 = pstmt2.executeQuery();
-				rs2.next();
-		%>
 
 
 
@@ -916,6 +994,29 @@ catch(Exception e) {
 
     <script>
 
+				function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
+
         let = 0
 
         $(function () {
@@ -986,15 +1087,39 @@ catch(Exception e) {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-			var frm1 = document.product;
-			frm1.action = "incart.jsp";
-			frm1.submit();
+//		 const checkbox = document.getElementById('chk');
+//
+//			 if (checkbox.checked ==('false')) {
+//				alert("옵션을 선택해 주세요!");
+//			} else{
+			var frm1 = document.form;
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+
+			
+
+//			}
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.form;
+			frm1.action = "rezResult.jsp"
+			document.getElementById('button').click();
+
 		}
 
 
 		function cart1()
 		{
 			alert('장바구니에 해당 시술이 있습니다.');
+		}
+
+		function login()
+		{
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
 		}
 
 

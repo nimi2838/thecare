@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 <html lang="ko">
 
 <head>
@@ -12,266 +13,25 @@
   <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/rez.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script type="text/javascript">
-	let calenderChoiceDate; // 칼렌다의 날자를 저장하는 전역변수
-	document.addEventListener("DOMContentLoaded", function() {
-		buildCalendar();
-		init();
-	});
-	var btns = document.getElementsByClassName("btns");
-
-	var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
-	var date = new Date(); // @param 전역 변수, today의 Date를 세어주는 역할
-
-	function checkTime(obj) { // 00:00
-		var time = obj.innerHTML
-
-		var getTime = time.substring(0, 2); // 시간(hh)부분만 저장 
-		var getMinuts = time.substring(3, time.length); // 분(mm)부분만 저장
-
-		var currentDate = new Date();
-
-		calenderChoiceDate.setHours(getTime)
-		calenderChoiceDate.setMinutes(getMinuts)
-		var compareDate = new Date(calenderChoiceDate);
-
-		return compareDate < currentDate
-	}
-
-	function handleClick(event) {
-		var time = this.innerHTML; // 'hh:mm' 형태로 값이 들어온다 
-		console.log(time)
-
-		if (checkTime(this)) {
-			this.style.backgroundColor = "#dddddd";
-
-		} else {
-			if (event.target.classList[1] === "clicked") {
-				event.target.classList.remove("clicked");
-			} else {
-				for (var i = 0; i < btns.length; i++) {
-
-					btns[i].classList.remove("clicked");
-				}
-
-				event.target.classList.add("clicked");
-			}
-		}
-	}
-
-	function init() {
-		for (var i = 0; i < btns.length; i++) {
-			if (checkTime(btns[i])) {
-				btns[i].style.backgroundColor = "#dddddd";
-			}
-			btns[i].addEventListener("click", handleClick);
-		}
-	}
-
-	/**
-	 * @brief   이전달 버튼 클릭
-	 */
-	function prevCalendar() {
-		this.today = new Date(today.getFullYear(), today.getMonth() - 1, today
-				.getDate());
-		buildCalendar(); // @param 전월 캘린더 출력 요청
-	}
-
-	/**
-	 * @brief   다음달 버튼 클릭
-	 */
-	function nextCalendar() {
-		this.today = new Date(today.getFullYear(), today.getMonth() + 1, today
-				.getDate());
-		buildCalendar(); // @param 명월 캘린더 출력 요청
-	}
-
-	/**
-	 * @brief   캘린더 오픈
-	 * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
-	 */
-	function buildCalendar() {
-
-		let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-		let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-
-		let tbCalendar = document.querySelector(".scriptCalendar > tbody");
-
-		document.getElementById("calYear").innerText = today.getFullYear(); // @param YYYY월
-		document.getElementById("calMonth").innerText = autoLeftPad((today
-				.getMonth() + 1), 2); // @param MM월
-		// 전역변수에 날자를 셋팅한다.
-		calenderChoiceDate = today;
-				
-		// @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
-		while (tbCalendar.rows.length > 0) {
-			tbCalendar.deleteRow(tbCalendar.rows.length - 1);
-		}
-
-		// @param 첫번째 개행
-		let row = tbCalendar.insertRow();
-
-		// @param 날짜가 표기될 열의 증가값
-		let dom = 1;
-
-		// @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
-		//               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
-		let daysLength = (Math
-				.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7)
-				- doMonth.getDay();
-
-		// @param 달력 출력
-		// @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
-		for (let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
-
-			let column = row.insertCell();
-
-			// @param 평일( 전월일과 익월일의 데이터 제외 )
-			if (Math.sign(day) == 1 && lastDate.getDate() >= day) {
-
-				// @param 평일 날짜 데이터 삽입
-
-				column.innerText = autoLeftPad(day, 2);				
-
-				// @param 일요일인 경우
-				if (dom % 7 == 1) {
-					column.style.color = "#FF4D4D";
-				}
-
-				// @param 토요일인 경우
-				if (dom % 7 == 0) {
-					column.style.color = "#4D4DFF";
-					row = tbCalendar.insertRow(); // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
-				}
-
-			}
-
-			// @param 평일 전월일과 익월일의 데이터 날짜변경
-			else {
-				let exceptDay = new Date(doMonth.getFullYear(), doMonth
-						.getMonth(), day);
-				column.innerText = autoLeftPad(exceptDay.getDate(), 2);
-				column.style.color = "#A9A9A9";
-			}
-
-			// @brief   전월, 명월 음영처리
-			// @details 현재년과 선택 년도가 같은경우
-			if (today.getFullYear() == date.getFullYear()) {
-
-				// @details 현재월과 선택월이 같은경우
-				if (today.getMonth() == date.getMonth()) {
-
-					// @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
-					if (date.getDate() > day && Math.sign(day) == 1) {
-						column.style.backgroundColor = "#E5E5E5";
-					}
-
-					// @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
-					else if (date.getDate() < day && lastDate.getDate() >= day) {
-						column.style.backgroundColor = "#FFFFFF";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-
-					// @details 현재일인 경우
-					else if (date.getDate() == day) {
-						column.style.backgroundColor = "#FFFFE6";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-
-					// @details 현재월보다 이전인경우
-				} else if (today.getMonth() < date.getMonth()) {
-					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-						column.style.backgroundColor = "#E5E5E5";
-					}
-				}
-
-				// @details 현재월보다 이후인경우
-				else {
-					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-						column.style.backgroundColor = "#FFFFFF";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-				}
-			}
-
-			// @details 선택한년도가 현재년도보다 작은경우
-			else if (today.getFullYear() < date.getFullYear()) {
-				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-					column.style.backgroundColor = "#E5E5E5";
-				}
-			}
-
-			// @details 선택한년도가 현재년도보다 큰경우
-			else {
-				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-					column.style.backgroundColor = "#FFFFFF";
-					column.style.cursor = "pointer";
-					column.onclick = function() {
-						calendarChoiceDay(this);
-					}
-				}
-			}
-
-			dom++;
-
-		}
-	}
-
-	/**
-	 * @brief   날짜 선택
-	 * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
-	 */
-	function calendarChoiceDay(column) {
-
-		calenderChoiceDate.setDate(column.innerHTML)
-		for (var i = 0; i < btns.length; i++) {
-			if (checkTime(btns[i])) {
-				btns[i].style.backgroundColor = "#dddddd";
-			}else{
-				btns[i].style.backgroundColor = "";
-			}
-		}
-		// @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
-		if (document.getElementsByClassName("choiceDay")[0]) {
-			document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
-			document.getElementsByClassName("choiceDay")[0].classList
-					.remove("choiceDay");
-		}
-
-		// @param 선택일 체크 표시
-		column.style.backgroundColor = "#FF9999";
-
-		// @param 선택일 클래스명 변경
-		column.classList.add("choiceDay");
-	}
-
-	/**
-	 * @brief   숫자 두자릿수( 00 ) 변경
-	 * @details 자릿수가 한자리인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
-	 * @param   num     앞에 0을 붙일 숫자 값
-	 * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
-	 */
-	function autoLeftPad(num, digit) {
-		if (String(num).length < digit) {
-			num = new Array(digit - String(num).length + 1).join("0") + num;
-		}
-		return num;
-	}
-</script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+ <script src="cal.js"></script>
   <title>시술예약</title>
-</head>
+  
+<script>
 
+
+
+
+
+
+    </script>
+</head>
 <%
-   String myid = (String)session.getAttribute("sid");                                                                           
+DecimalFormat df = new DecimalFormat("###,###");
+%>
+<%
+   String myid = (String)session.getAttribute("sid");         
+   
 %>
 <body>
 <div class="top-wrap">
@@ -363,49 +123,10 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
 
 
-
-
-
-
-            <!-- 
-                <form accept-charset="utf-8" name="search" align="right" style="margin-right:70px;" method = "get" action ="NextFile.jsp" onsubmit="return keyword_check()" autocomplete=off>
-					<td class="search">
-					  <input class="form" type="text"  name="keyword" placeholder="검색" style="position: absolute;top: 50%;
-					  left: 50%; transform: translate(-50%,-50%);  width: 900px; height: 50px; font-size: 25px; color: white;text-align: left; margin: 0 auto; 
-					  padding: 18px 0 18px 10px; outline: none; display: block; border: 0; border-bottom: 1px solid white; background: rgba(87, 87, 87, 0);
-					   box-shadow: none;">
-					  </td>
-					<td class="schBtn" style="top: 0; left: 10px;">
-					<input  type="image" src="img-1/schBtn.png" alt="검색" onsubmit="search_form()"
-					style="position: absolute;top: 49%;
-					  left: 72%; transform: translate(-49%,-72%); width: 30px; height: 30px;">
-					</td>  
-					</form> -->
-
-
-
-
-
-
-            <!-- <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
-                    <div class="search-form form flex flex-ai-c">
-                      <input type="text" placeholder="검색어를 입력해주세요.">
-                      <a href="#" class="btn-type-1 btn-search">
-                        <div class="img-box">
-                            <img src="img/Search_thin_icon.png" alt="">
-                        </div>
-                      </a>
-                    </div>
-                  </div> -->
 
 
         </div>
@@ -432,15 +153,6 @@ else{
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -468,25 +180,127 @@ else{
     </div>
 
 
+
+	
 <div class = "contents">
 <div class = "inner">
 
-<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">시술예약</h1></div>
-<div class="no_box" style="width:max-content; margin: 20px auto 150px;">
-        <div class="icon" style="width: max-content; margin: 0 auto; padding-top: 180px;">
-		<i class="fa-solid fa-circle-exclamation" style="font-size:150px; color: #999999; margin:0 auto 50px;"></i>
-		</div>
-		<p class="title" style="text-align:center; font-size: 30px; font-weight:bold; color:#c5c5c5; margin:0 0 100px;">장바구니에 담긴 시술이 없습니다.</p>
-			<div style="margin: 50px auto; ">
-			<a href="guide.jsp" style="text-align:center; font-size: 25px; background: #999999; width:100%; padding: 25px 125px; color:#fff; font-weight: bold;">시술 담으러 가기</a>
-			</div>
-			
-    </div>
 
+			<div class = "tit" style = "width: 100%; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">시술예약</h1></div>
+    <div class="no_box" style=" margin: 20px auto 0px;">
+<%
+ try{
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care?characterEncoding=euckr";   
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234";
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
+
+	String ctNo = session.getId(); 
+
+	
+
+			
+
+ int total=0;
+
+			String jsql8 = "SELECT * FROM gocart";
+			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+
+			ResultSet rs8 = pstmt8.executeQuery();
+			if(rs8.next()) {
+
+				String jsql5= "SELECT * FROM gocart WHERE ctNo=?";
+			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+			pstmt5.setString(1, ctNo);
+
+			ResultSet rs5 = pstmt5.executeQuery(); 
+			while(rs5.next()){
+			
+			String merchant_uid = rs5.getString("merchant_uid"); 
+			String opNo = rs5.getString("opNo"); 
+			String prdNo = rs5.getString("prdNo"); 
+
+
+					String jsql4= "SELECT * FROM surgery WHERE prdNo=?";
+					PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+					pstmt4.setString(1, prdNo);
+
+					ResultSet rs4 = pstmt4.executeQuery(); 
+					rs4.next();
+
+					String name = rs4.getString("prdName"); 
+					String price = rs4.getString("startprice"); 
+
+					String jsql3= "SELECT * FROM soption WHERE opNo=?";
+					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+					pstmt3.setString(1, opNo);
+
+					ResultSet rs3 = pstmt3.executeQuery(); 
+					rs3.next();
+
+					String opname = rs3.getString("opName"); 
+					int opprice = rs3.getInt("opPrice"); 
+
+					total = total + opprice;
+			%>
+
+				
+        
+    		<div class="search_box">
+            <div class="search1">
+			<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
+                <h2><%=name%></h2>
+                <p><%=opname%></p>
+				</a>
+            </div>
+            <div class="search2">
+                <div class="price">
+                    <span><%=df.format(opprice) %></span>원
+                </div>
+				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">삭제</a>
+            </div>
+			</div>
+    			
+	<%} //while
+
+	%>
+
+		
+
+		<%
+
+		} else {
+			%>
+
+			<div class="icon" style="width: max-content; margin: 0 auto; padding-top: 20px;">
+			    		<i class="fa-solid fa-circle-exclamation" style="font-size:150px; color: #999999; margin:0 auto 50px;"></i>
+			    		</div>
+			    		<p class="title" style="text-align:center; font-size: 30px; font-weight:bold; color:#c5c5c5; margin:0 0 100px;">주문할 상품이 없습니다.</p>
+			    			<div style="margin: 50px auto 60px; width: max-content;">
+			    			<a href="guide.jsp" style="text-align:center; font-size: 25px; background: #999999; width:100%; padding: 25px 125px; color:#fff; font-weight: bold; margin: 0 auto;">시술 담으러 가기</a>
+			    			</div>
+
+				<%
+
+								}	//if-else gocart 안에 있으면
+				 
+		
+			
+
+				%>
+
+		
+
+    </div>
 <hr>
 
-<form name="res" method=post action=reservationResult.jsp >
-<table class="scriptCalendar" style = "float: left;"  >
+
+
+
+<form name="res" method=post onSubmit="return false;">
+<table class="scriptCalendar" style = "float: left;">
     <thead > 
         <tr>
             <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td>
@@ -509,7 +323,7 @@ else{
 												
 						<ul class="List">
 							<li>
-								<label class = "btns">00:00</label></li>
+								<label class = "btns">10:00</label></li>
 							
 							
 														<li>
@@ -588,13 +402,27 @@ else{
 							</li>
 
 							<li>
-								<label class = "btns">23:59</label>
+								<label class = "btns">18:00</label>
 							</li>
 							</ul>
 					</div>
  
 
+<%
+int total2=0;
+int point2 = 0;
 
+	String jsql6= "SELECT * FROM user WHERE uId=?";
+					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+					pstmt6.setString(1, myid);
+
+					ResultSet rs6 = pstmt6.executeQuery(); 
+					rs6.next();
+
+					int point = rs6.getInt("Point"); 
+
+total2= total;
+%>
 
 					<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
 
@@ -607,9 +435,50 @@ else{
 					
 					
 					<table class="table" style="font-size:10pt; margin-top:30px; width: 100%;  ">
+ 					<tr style="margin: 0 auto;">
+						<td class = "td_tit">
+						선택 요일/시간 : 
+						  <input type="text" name="day1" id="day1" style="width: 95px; cursor: hand;" readonly>
+						<input type="text" name="date" id="date" style="width: 58px; margin-left: 10px; cursor: hand;" readonly>
+
+						<%
+
+
+String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
+			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+			pstmt2.setString(1, ctNo);
+
+			ResultSet rs2 = pstmt2.executeQuery(); 
+			rs2.next();
+			
+			String opNo1 = rs2.getString("opNo"); 
+			String prdNo1 = rs2.getString("prdNo"); 
+
+			String jsql7= "SELECT * FROM gocart WHERE prdNo=?";
+			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
+			pstmt7.setString(1, prdNo1);
+
+			ResultSet rs7 = pstmt7.executeQuery(); 
+			while(rs7.next()){
+				String opNo2 = rs2.getString("opNo"); 
+
+	
+%>
+
+						<input type="hidden" name="opno" value="<%=opNo2%>">
+						<input type="hidden" name="prdno" value="<%=prdNo1%>">
+
+
+						<%
+			}
+							%>
+
+
+						  </td>
+						
+					</tr>
 					                    
 					<tr>
-
                           <td class = "td_tit">
 						  이름 : <input type="text" name="name" class="name" style = "margin-left: 75px;">
 						  </td>
@@ -639,14 +508,575 @@ else{
 					   <tr>
 					  
                              <td class = "td_tit">
-							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3"></textarea> 
+							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="font-size:16px; padding: 5px; outline:none; resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3">없음</textarea> 
 							 </td>
                           
                        </tr>
 
-</table>
+				</table>
 
- <button type="submit"  class="rez_btn" value= "예약" onClick="checkValue()" style= "cursor: pointer;" >예약</button>
+				<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc; margin: 30px 0;" ><h1 style = "font-size: 33px;">가격 정보</h1></div>
+
+
+
+				<table class="price-wrap">
+					<tr>
+									<td>구매금액</td>
+									<td colspan="2" class="margin1"><input type='text' name='sell1' id='sell1' value="<%=total%>">원</td>
+					</tr>
+
+					<%
+						if (point > 0){
+						%>
+
+
+					<tr id="poN">
+									<td>적립금 사용</td>
+
+									<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>
+									<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>"></span>원
+									<input type = "button" class="btn_Point" id="btn_Point" onclick='call();' value="사용">
+									<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
+
+					</tr>
+
+					<tr id="poY" style="visibility: hidden; display:none;">
+									<td>적립금 사용</td>
+
+									<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>
+									<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>" readonly style="background:#ccc;"></span>원
+									<input type = "button" class="btn_Point" id="btn_Point" value="사용">
+									<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
+
+					</tr>
+
+
+					<%
+					if (total > 30000) {	
+					%>
+
+
+					<tr id="couN">
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();">
+											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
+									<%
+											String jsql10 = "select * from user where uId = ?";   
+										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+										pstmt10.setString(1,myid);
+
+										ResultSet rs10 = pstmt10.executeQuery();
+										rs10.next();
+
+										String Coupon = rs10.getString("Coupon"); 
+%>
+
+
+<%
+
+										if(Coupon.contains("c01")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c01");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c02")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c02");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c03")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c03");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c04")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c04");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c05")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c05");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+
+
+
+
+
+											</select>
+
+									</td>
+					</tr>
+
+					<tr id="couY" style="visibility: hidden; display:none;">
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();" style="background: #ccc;">
+											<option value="0"> [ 적립금과 동시 사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+
+										<%
+
+
+					} else {
+						
+					%>
+
+						<tr >
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call1();">
+											<option value="0"> [ 구매금액 3만원 이하사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					}
+					%>
+
+
+
+					<%
+					} else {
+					%>
+
+						<tr id="poN">
+										<td>적립금 사용</td>
+
+										<td class="margin2"><input name='sell5' id='sell5' type='text' value="<%=point%>">p 보유 </td>`
+										<td class="margin3"><span id="result"><input type="text" name="sell3" id="sell3" value="<%=point2%>" readonly style="background:#ccc;"></span>원
+										<input type = "button" class="btn_Point" id="btn_Point" onclick='point_null();' value="사용">
+										<input type = "button" class="btn_reset" id="btn_reset" onclick='re();' value="재선택"></td>
+
+						</tr>
+
+						<%
+					if (total > 30000) {	
+					%>
+
+
+					<tr>
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call2();">
+											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
+										<%
+											String jsql10 = "select * from user where uId = ?";   
+										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+										pstmt10.setString(1,myid);
+
+										ResultSet rs10 = pstmt10.executeQuery();
+										rs10.next();
+
+										String Coupon = rs10.getString("Coupon"); 
+%>
+
+
+<%
+
+										if(Coupon.contains("c01")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c01");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c02")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c02");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c03")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c03");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c04")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c04");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c05")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c05");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					} else {
+						
+					%>
+
+						<tr >
+									<td>보유 쿠폰</td>
+									<td class="margin4" colspan="2">
+									
+										<select name="coupon" id="coupon" onchange="call2();">
+											<option value="0"> [ 구매금액 3만원 이하사용 불가 ] </option>
+									
+											</select>
+
+									</td>
+					</tr>
+
+					<%
+					}
+					%>
+
+				
+
+					<% }
+					%>
+					
+					
+
+					<tr>
+									<td>총 결제금액</td>
+									<td class="margin5" colspan="2">
+									<input name='sell4' id='sell4' type='text' value="<%=df.format(total2)%>" readonly style = "color: red;">
+									<input name='sell6' id='sell6' type='hidden' value="<%=total2%>"readonly>원</td>
+					</tr>
+
+					<!-- df.format(total2) -->
+					
+					
+
+				</table>
+
+
+
+
+
+
+
+				<script>
+
+
+				  function point_null() {
+                alert("보유한 포인트가 없습니다.");
+             }
+
+             function call_null() {
+                document.getElementById('sell3');
+
+                const sell3 = document.getElementById('sell3').value;
+                    document.getElementById("result").innerText = sell3;
+             }
+// location.reload();
+							
+			//				$("#sell4").read(
+
+
+	//							window.onload=function(){
+	//
+	//									var sel4 = document.getElementById('sell4').value;
+	//									document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+	//							}
+	//
+							function call() {  
+								
+							   var se3=document.getElementById('sell3').value;// 사용 포인트
+							   var se5=document.getElementById('sell5').value;  // 보유 포인트
+							   // sell1  구매금액
+							   // sell4 계산 후 금액
+								
+								document.getElementById("sell5").value= <%=point%>;
+
+									if (parseInt(se3) > <%=point%>)
+								   {
+									  alert("포인트를 사용할 수 없습니다" );
+
+									  document.getElementById('sell3').value=document.getElementById('sell5').value;
+								   } else{
+									   
+
+									   if(document.getElementById("sell1").value && document.getElementById("sell4").value  && document.getElementById("sell3").value){
+										 
+										
+
+										document.getElementById('sell4').value =parseInt(document.getElementById('sell1').value) - parseInt(document.getElementById('sell3').value);
+
+
+									  document.getElementById('sell5').value = parseInt(document.getElementById('sell5').value) - parseInt(document.getElementById('sell3').value);
+
+
+
+
+										const sell3 = document.getElementById('sell3').value;
+										document.getElementById("sell3").value= sell3;
+
+										var sel4 = document.getElementById('sell4').value;
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+//document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+										
+
+										
+
+										document.getElementById("couN").style="display: none; visibility:hidden;"
+										document.getElementById("couY").style="display: table-row; visibility:visibility;"
+
+									   }
+
+								   }
+
+							}
+
+							function call1() {  
+										
+										document.getElementById("sell4").value= <%=total2%>;
+
+										document.getElementById('sell4').value = parseInt(document.getElementById('sell4').value) -
+										parseInt(document.getElementById('coupon').value);
+
+										const sell4 = document.getElementById('sell4').value;
+										var sel4 = sell4;
+//										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+
+										document.getElementById("poN").style="display: none; visibility:hidden;"
+										document.getElementById("poY").style="display: table-row; visibility:visibility;"
+
+							}
+
+							function call2() {  
+										
+										document.getElementById("sell4").value= <%=total2%>;
+
+										document.getElementById('sell4').value = parseInt(document.getElementById('sell4').value) -
+										parseInt(document.getElementById('coupon').value);
+
+										const sell4 = document.getElementById('sell4').value;
+										var sel4 = sell4;
+//										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell4").value= sel4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+										document.getElementById("sell6").value= sel4;
+
+
+							}
+
+							function re() {  
+
+										document.getElementById("poN").style="display: table-row; visibility:visibility;"
+										document.getElementById("poY").style="display:none; visibility:hidden;"
+
+										
+										document.getElementById("couN").style="display: table-row; visibility:visibility;"
+										document.getElementById("couY").style="display: none; visibility:hidden;"
+										
+										document.getElementById("sell5").value= <%=point%>;
+										document.getElementById("sell4").value= <%=total2%>;
+										document.getElementById("sell3").value= 0;
+										
+
+							}
+
+
+				</script>
+
+ <button class="rez_btn" value= "예약" onclick="res_null()" style= "cursor: pointer;" >예약</button>
 </form>
 </div>
 </div>
@@ -669,7 +1099,15 @@ else{
 
         
         
+<%
 
+
+    } catch(Exception e) {
+		out.println(e);
+}
+
+
+%>
   
     
         <!-- Swiper JS -->
@@ -679,260 +1117,72 @@ else{
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
         
-        
-        
-        <!-- Initialize Swiper -->
-        
-        <!-- 3. 실행 스크립트 -->
         <script>
-		 function checkValue() 
-               { //   자바스크립트함수 
-                  if (newMem.id.value == "") 
+		function request()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.res;
+			frm1.action = "kakaoPay_test.jsp"
+			frm1.submit();
+
+		}
+
+		function res_null() {
+
+		var frm1 = document.res;
+		frm1.action = "kakaoPay_test.jsp"
+
+			if (res.day1.value == "") 
                   {
-                     alert("아이디를 입력해 주세요!"); 
-                     newMem.id.focus(); 
-                     return; 
+                     alert("날짜를 선택해 주세요!"); 
+					 res.day1.focus();
+                     return false; 
                   }
-
-                  if (newMem.pw.value == "") {
-                     alert("비밀번호를 입력해 주세요!");
-                     newMem.pw.focus();
-                     return;
+			if (res.date.value == "") 
+                  {
+                     alert("시간을 선택해 주세요!"); 
+					 res.date.focus();
+                     return false; 
                   }
-
-                  if (newMem.name.value == "") {
-                     alert("이름을 입력해 주세요!");
-                     newMem.name.focus();
-                     return;
+			if (res.name.value == "") 
+                  {
+                     alert("이름을 입력해 주세요!"); 
+					 res.name.focus();
+                     return false; 
                   }
-
-                  if (newMem.joomin1.value == "") {
-                     alert("주민등록번호 앞자리를 입력해 주세요!");
-                     newMem.joomin1.focus();
-                     return;
+			if (res.phone1.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone1.focus();
+                     return false; 
                   }
-
-                  if (newMem.joomin2.value == "") {
-                     alert("주민등록번호 뒷자리를 입력해 주세요!");
-                     newMem.joomin2.focus();
-                     return;
+			if (res.phone2.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone2.focus();
+                     return false; 
                   }
-
-                  if (newMem.birthyy.value == "") {
-                     alert("태어난 연도를 입력해 주세요!");
-                     newMem.birthyy.focus();
-                     return;
+			if (res.phone3.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!");
+					 res.phone3.focus();
+                     return false; 
                   }
-
-                  if (newMem.birthmm.value == "") {
-                     alert("태어난 달을 입력해 주세요!");
-                     newMem.birthmm.focus();
-                     return;
+			if (res.sex.value == "") 
+                  {
+                     alert("성별을 선택해 주세요!"); 
+					 res.sex.focus();
+                     return false; 
                   }
+			
+			frm1.submit();
 
-                  if (newMem.birthdd.value == "") {
-                     alert("태어난 날짜를 입력해 주세요!");
-                     newMem.birthdd.focus();
-                     return;
-                  }
 
-                  if (newMem.email1.value == "") {
-                     alert("이메일 앞자리를 입력해 주세요!");
-                     newMem.email1.focus();
-                     return;
-                  }
+		}
 
-                  if (newMem.email2.value == "") {
-                     alert("이메일 뒷자리를 입력해 주세요!");
-                     newMem.email2.focus();
-                     return;
-                  }
 
-                  if (newMem.tel.value == "") {
-                     alert("전화번호를 입력해 주세요!");
-                     newMem.tel.focus();
-                     return;
-                  }
 
-                  if (newMem.phone1.value == "") {
-                     alert("휴대폰 앞자리 국번을 입력해 주세요!");
-                     newMem.phone1.focus();
-                     return;
-                  }
 
-                  if (newMem.phone2.value == "") {
-                     alert("휴대폰 중간자리 번호를 입력해 주세요!");
-                     newMem.phone2.focus();
-                     return;
-                  }
-
-                  if (newMem.phone3.value == "") {
-                     alert("휴대폰 끝자리 번호를 입력해 주세요!");
-                     newMem.phone3.focus();
-                     return;
-                  }
-
-                  if(newMem.address1.value == "") {
-		             alert("집주소를 입력해 주세요! - (우편번호검색 버튼 클릭)");
-		             newMem.address1.focus();
-		             return;
-                  }
-
-                  if(newMem.address2.value == "") {
-		             alert("상세주소를 입력해 주세요!");
-		             newMem.address2.focus();
-		             return;
-                  }
-				  if(newMem.sex.value == "") {
-		             alert("성별을 선택해 주세요!");
-		             newMem.sex.focus();
-		             return;
-                  }
-
-                  newMem.submit(); 
-               }
-
-        var swiper = new Swiper(".mySwiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true // 버튼 클릭 여부
-            },
-            autoplay: true,
-            autoplaySpeed: 5000,
-            keyboard: true
-        });
+		</script>
         
-        
-        function SliderBox1__init() {
-            $('.slider-box-1 > .slick').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                responsive: [{
-                    breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }, {
-                    breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }],
-        
-                // arrows:true,
-                prevArrow: ".slider-box-1 > .arrows > .btn-left",
-                nextArrow: ".slider-box-1 > .arrows > .btn-right"
-            });
-        }
-        
-        $(function () {
-            SliderBox1__init();
-        });
-        
-        
-        function SliderBox2__init() {
-            $('.slider-box-2 > .slick').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                // responsive: [{
-                //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 2,
-                //         slidesToScroll: 2
-                //     }
-                // }, {
-                //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                //     settings: {
-                //         slidesToShow: 1,
-                //         slidesToScroll: 1
-                //     }
-                // }],
-        
-                // arrows:true,
-                prevArrow: ".slider-box-2 > .arrows > .btn-left",
-                nextArrow: ".slider-box-2 > .arrows > .btn-right"
-            });
-        }
-        
-        $(function () {
-            SliderBox2__init();
-        });
-        
-        
-        //         gsap.to('body', {
-        //   scrollTrigger:{
-        //     start:'top 0',
-        //     end:'top 800px',
-        //     trigger:'.top-box2',
-        //     markers: true,
-        //     pin:true
-        //   },
-        // });
-        
-        gsap.to('.top-wrap > .top-box2', {
-            scrollTrigger: {
-                trigger: '.top-wrap',
-                start: 'top -98px',
-                scrub: true
-            },
-            height: '60px',
-            textalign: 'center',
-            top: '0',
-            position: 'fixed',
-            background: '#fff',
-            borderBottom: '1px solid #ccc'
-        });
-
-		// 마지막 예약 가능 시간을 체크
-
-	new Date(); 
-	new Date(year, month, day, hours, minutes, seconds, milliseconds); 
-	new Date(milliseconds); 
-	new Date('date');
-
-
-
-	function lastTimeConstraint(toYear, toMonth, toDate, toSecond, callBack) {
-
-		
-
-		const lastTime = document.getElementById("choiceTime").lastElementChild.value;
-
-		const lastHour = lastTime.substring(0, 2);
-
-		const lastMinute = lastTime.substring(2, 4);
-
-		const lastDay = new Date(toYear, toMonth, toDate, lastHour, lastMinute, toSecond);
-
-		callBack(lastDay);
-
-	}
-
-	function isUseDay(strTime, strDay) { 
-		var tHH = Number(strTime.substring(2,4)); 
-		var tMM = Number(strTime.substring(4,6)); 
-		var rYY = Number(strDay.substring(0,4)); 
-		var rMM = Number(strDay.substring(5,7)) - 1; 
-		var rDD = Number(strDay.substring(8,10)); 
-		var currDate = new Date(); 
-		var tDate = new Date(rYY, rMM, rDD, tHH, tMM); 
-	// 입력한 시간이 현재일자 시간 이전이면 
-	false if ( tDate - currDate < 0 ) { return false; } 
-	else { return true; } }
-
-        </script>
         </body>
         </html>

@@ -134,15 +134,76 @@ else{
                         </ul>
                     </div>
                 </li>
-				<li class="menu">
+				<%
+	try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	 String id = session.getId();
+
+%>
+	<%
+    String jsql2= "SELECT * FROM user WHERE uId=?";
+                    PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+                    pstmt2.setString(1, myid);
+
+                    ResultSet rs2 = pstmt2.executeQuery(); 
+
+
+                    if(rs2.next()) {
+
+    %>
+
+                
+            <li class="menu">
                     <a>더 궁금해</a>
-					<div>
+               <div>
                         <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="themore.jsp">더 모어</a></li>
+                            <li><a href="#" onclick = custom()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
                         </ul>
                     </div>
                 </li>
+
+                <%
+                    } else {
+                %>
+
+                     
+            <li class="menu">
+                    <a>더 궁금해</a>
+               <div>
+                        <ul>
+                            <li><a href="#" onclick = login()>더 체크</a></li>
+                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                    <%
+                } //if-else 아이디 유무
+%>
+           <script>
+		   function login()
+        {
+            alert('로그인 후 이용 가능한 페이지입니다.');
+            document.location.href="login.jsp";
+        }
+		function custom()
+        {
+           
+            document.location.href="custom.jsp";
+        }
+		function themore()
+        {
+            
+            document.location.href="themore.jsp";
+        }
+		   </script>
                <!--  <li class="menu">
                     <a>차별점</a>
                     <div>
@@ -169,8 +230,8 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -230,7 +291,7 @@ else{
                                     <ul>
                                         <li>
                                             <div class="top top1">
-                                                <a href="sub_1.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
+                                                <a href="sub_sk02.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>1위</p>
@@ -239,7 +300,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top1">
-                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                                <a href="sub_sk01.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>2위</p>
@@ -248,7 +309,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top1">
-                                                <a href="sub_9.jsp?prdNo=li02" class="yeo" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                                <a href="sub_li02.jsp?prdNo=li02" class="yeo" class="yeo"><img src="img/best-yun.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>3위</p>
@@ -270,7 +331,7 @@ else{
                                     <ul>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_1.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
+                                                <a href="sub_sk02.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>1위</p>
@@ -279,7 +340,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_9.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                                <a href="sub_li02.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>2위</p>
@@ -288,7 +349,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                                <a href="sub_sk01.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>3위</p>
@@ -310,7 +371,7 @@ else{
                                     <ul>
                                         <li>
                                             <div class="top top3">
-                                                <a href="sub_2.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                                <a href="sub_sk01.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>1위</p>
@@ -319,7 +380,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top3">
-                                                <a href="sub_9.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                                <a href="sub_li02.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>2위</p>
@@ -328,7 +389,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top3">
-                                                <a href="sub_8.jsp?prdNo=li01" class="yeo"><img src="img/best-sa.png" alt=""></a>
+                                                <a href="sub_li01.jsp?prdNo=li01" class="yeo"><img src="img/best-sa.png" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>3위</p>
@@ -353,7 +414,7 @@ else{
             <div class="slick">
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a >
                         <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
                         <div class="name">
                             <p>보톡스 전문</p>
@@ -364,7 +425,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a >
                         <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
                         <div class="name">
                         <p>보톡스 전문</p>
@@ -375,7 +436,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a >
                         <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
                         <div class="name">
                         <p>체형 전문</p>
@@ -386,7 +447,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a>
                         <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
                         <div class="name">
                         <p>필러 전문</p>
@@ -397,7 +458,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a >
                         <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
                         <div class="name">
                         <p>레이저 전문</p>
@@ -408,7 +469,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a href="about_2.html">
+                    <a >
                         <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
                         <div class="name">
                         <p>피부 전문</p>
@@ -434,113 +495,134 @@ else{
         </div>
 
 
-	<div class="card-wrap">
+	 <div class="card-wrap">
             <div class="cardtt">
                 <h1>SEASONS</h1>
                 <h4>계절마다 필요한 시술</h4>
             </div>
             
             <div class="card_box card_box1 flex ">
-                <a href="#" class="card1 card">
+                <a href="sub_sk01.jsp?prdNo=sk01" class="card1 card">
                     <div class="text-box">
                         <h1>SPRING</h1>
                         <p>봄</p>
                     </div>
                     <div class="bg">
+                        <h4>
+                            건조해진 공기,<br>
+                            미세먼지로 민감해진 피부엔<br>
+                            <span>아쿠아 필</span>
+                        </h4>
                         <div class="view">GO</div>
                     </div>
                 </a> 
 
-                <a href="#" class="card2 card">
+                <a href="sub_sk02.jsp?prdNo=sk02" class="card2 card">
                     <div class="text-box">
                         <h1>SUMMER</h1>
                         <p>여름</p>
                     </div>
                     <div class="bg">
+                        <h4>
+                            강한 자외선으로<br>
+                            피지와 염증이 과다한 여름엔<br>
+                            <span>여드름 케어</span>
+
+                        </h4>
                         <div class="view">GO</div>
                     </div>
                 </a>
     
-                <a href="#" class="card3 card">
+                <a href="sub_sk03.jsp?prdNo=sk03" class="card3 card">
                     <div class="text-box">
                         <h1>FALL</h1>
                         <p>가을</p>
                     </div>
                     <div class="bg">
+                        <h4>
+                            일교차 크고 건조해<br>
+                            모세혈관이 확장되는 가을엔<br>
+                            <span>클라리티</span>
+                        </h4>
                         <div class="view">GO</div>
                     </div>
                 </a>
     
-                <a href="#" class="card4 card">
+                <a href="sub_li03.jsp?prdNo=li03" class="card4 card">
                     <div class="text-box">
                         <h1>WINTER</h1>
                         <p>겨울</p>
                     </div>
                     <div class="bg">
+                        <h4>
+                            여름보다 기온이 낮아<br>
+                            빠른 회복이 가능한 겨울엔<br>
+                            <span>조각주사</span>
+                        </h4>
                         <div class="view">GO</div>
                     </div>
                 </a>
             </div>
-        </div>'
+        </div>
 
 
 
     <div class="content-f flex">
-
-        <div class="before-box">
-            <h1>BEFORE & AFTER</h1>
-            <p>고객님의 전후모습</p>
-            <div class="slider-box-2">
-
-                <div class="slick">
-                    <div class="item">
-                        <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before-01.jpg);"></div>
-                            <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-01.jpg);"></div>
-                        </a>
+    
+            <div class="before-box">
+                <h1>BEFORE & AFTER</h1>
+                <p>고객님의 전후모습</p>
+                <div class="slider-box-2">
+    
+                    <div class="slick">
+                        <div class="item">
+                            <a href="review.jsp">
+                                <div class="bg1" style="background-image:url(img/main-before-01.jpg);"></div>
+                                <i class="fas fa-chevron-circle-right arr"></i>
+                                <div class="bg2" style="background-image:url(img/main-after-01.jpg);"></div>
+                            </a>
+                        </div>
+    
+                        <div class="item">
+                            <a href="review.jsp">
+                                <div class="bg1" style="background-image:url(img/main-before-02.jpg);"></div>
+                                <i class="fas fa-chevron-circle-right arr"></i>
+                                <div class="bg2" style="background-image:url(img/main-after-02.jpg);"></div>
+                            </a>
+                        </div>
+    
+                        <div class="item">
+                            <a href="review.jsp">
+                                <div class="bg1" style="background-image:url(img/main-before-03.jpg);"></div>
+                                <i class="fas fa-chevron-circle-right arr"></i>
+                                <div class="bg2" style="background-image:url(img/main-after-03.jpg);"></div>
+                            </a>
+                        </div>
+    
                     </div>
-
-                    <div class="item">
-                        <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before-02.jpg);"></div>
-                            <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-02.jpg);"></div>
-                        </a>
+                    <div class="arrows">
+                        <div class="btn-right">
+                            <img src="img/bef_right_icon.png" alt="">
+                        </div>
+                        <div class="btn-left">
+                            <img src="img/bef_left_icon.png" alt="">
+                        </div>
                     </div>
-
-                    <div class="item">
-                        <a href="review.html">
-                            <div class="bg1" style="background-image:url(img/main-before-03.jpg);"></div>
-                            <i class="fas fa-chevron-circle-right arr"></i>
-                            <div class="bg2" style="background-image:url(img/main-after-03.jpg);"></div>
-                        </a>
-                    </div>
-
                 </div>
-                <div class="arrows">
-                    <div class="btn-right">
-                        <img src="img/bef_right_icon.png" alt="">
-                    </div>
-                    <div class="btn-left">
-                        <img src="img/bef_left_icon.png" alt="">
-                    </div>
-                </div>
+    
             </div>
-
+    
+            <div class="noti-box">
+                <h1>EVENT</h1>
+                <p>다양한 혜택이 가득</p>
+                <ul>
+                    <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+                    <li><a href="event.html">[이벤트] 가정의 달 이벤트 ! </a></li>
+                    <li><a href="event.html">[이벤트] 코로나 극복 이벤트 ! </a></li>
+                    <li><a href="event.html">[이벤트] 여름 이벤트 ! </a></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="noti-box">
-            <h1>EVENT</h1>
-            <p>고객님의 전후모습</p>
-            <ul>
-                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
-                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
-                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
-                <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
-            </ul>
-        </div>
-    </div>
 
 
     <div class="map_wrap">
@@ -597,7 +679,7 @@ else{
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width="150" alt="" style="margin-bottom: 20px;">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
             <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
             <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
@@ -615,6 +697,13 @@ else{
 
 
 
+<%
+    
+
+ } catch(Exception e) { 
+		out.println(e);
+}
+%>
 
 
 

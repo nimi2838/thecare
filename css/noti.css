@@ -308,6 +308,11 @@ a {
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
   background: #ffeeee;
+<<<<<<< HEAD
+=======
+  /* color: #9869d4; */
+
+>>>>>>> 4a0536646cb56a533c30d55df4d2f7fe2a27de1a
 }
 
 
@@ -315,6 +320,28 @@ a {
   border: none;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 4a0536646cb56a533c30d55df4d2f7fe2a27de1a
 @media (min-width: 1301px) and  ( max-width:1920px) {
   #header {display: none;}
   .top-wrap>.top-box1 {

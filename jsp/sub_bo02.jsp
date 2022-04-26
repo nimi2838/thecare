@@ -325,58 +325,63 @@ try {
 
 				ResultSet rs1 = pstmt1.executeQuery();
 
+				String noArray[] = new String[5];
+				int priceArray[] = new int[5];
+				int i=0;
+				int j=0;
 			while(rs1.next()) {	
 				
 				String opname = rs1.getString("opName");
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
 
-						%>
+				noArray[i] = opno;
+				priceArray[i] = opprice;
 
+				
+
+						%>
 
 									
 									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 									<tbody>
-											<td><input name="chkbox" type="checkbox" value="<%=opno%>"  id="chk1" onClick="itemSum(this.form);example_1();">
-											<input name="chkbox1" type="checkbox" value="<%=opprice%>"  id="chk2" onClick="itemSum(this.form);" style="display:inline-block; position:relative;"></td>
+											<td><input name="chkbox" type="checkbox" value="<%=opno%>"  id="noArray[i]" onClick="itemSum(this.form);example_1();">
+											<input name="chkbox1" type="checkbox" value="<%=opprice%>"  id="priceArray[i]" onClick="itemSum(this.form);" style="display:inline-block; position:relative;"></td>
 											<td><%=opname%>      </td>
 												<td><%=opprice%></td>
 										  </tbody>
 									</table>
 
-												<script language="javascript">
-
-		//			getElementById('chk3');
-		// 			querySelector('#chk1');
-		//			getElementByName('chkbox');
-					let example1 = document.querySelector('#chk1');
-					let example2 = document.querySelector('#chk2');
-
-					function example_1() {
-					if(example1.checked == true) {
-						example1.checked = true;
-						example2.checked = true;
-						}
-					if(example1.checked == false) {
-							example1.checked = false;
-						example2.checked = false;
-						}
-					   }
-
-					   function example_2() {
-					if(example2.checked == true) {
-						example1.checked = true;
-						}
-						else if(example2.checked == false) {
-						example1.checked = false;
-						}
-					   }
-
-					   </script>
+					
 									<%
+						   i++;
+							j++;
 			}
 
 				%>
+
+					<script language="javascript">
+
+			//			getElementById('chk3');
+			// 			querySelector('#chk1');
+			//			getElementByName('chkbox');
+						let example1 = document.getElementById('noArray[i]');
+						let example2 = document.getElementById('priceArray[i]');
+
+						function example_1() {
+						if(example1.checked == true) {
+							example1.checked = true;
+							example2.checked = true;
+							}
+						if(example1.checked == false) {
+								example1.checked = false;
+							example2.checked = false;
+							}
+						   
+						}
+
+
+					   </script>
 												<td><input name="total_sum" id="sell3" type="hidden" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
 							</form>

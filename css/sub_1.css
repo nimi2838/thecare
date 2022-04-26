@@ -399,7 +399,7 @@ a {
 .sub_con > .sub_text2 {
     width: 48%;
     padding: 110px 30px 50px;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 
@@ -416,6 +416,20 @@ a {
 	background: white;
 }
 
+ .sub_con > .sub_text2 > .option .form1 {
+        font-size: 18px;
+        padding: 10px 0;
+        margin: -2% 0 0 21%;
+        outline: none;
+        background: #ffffff;
+		width: 65%;
+		border: 1px solid #d4dcff;
+    }
+
+	 .sub_con > .sub_text2 > .option .form1 table {
+		margin: 0px auto 0;
+	 }
+
 .sub_con > .sub_text2 > .option  > form td {
     text-align: center;
     position: relative;
@@ -423,7 +437,11 @@ a {
 }
 
 .tab1 td {
-	width:50px;
+	width:55px;
+}
+
+.tab1 td:nth-child(2){
+	width:200px;
 }
 
 .sub_con > .sub_text2 > .option  > form ul { 
@@ -432,32 +450,39 @@ a {
     font-size: 16px;
  }
 
- .sub_con > .sub_text2 > .option  > form ul li {
+ .sub_con > .sub_text2 > .option form  ul li {
     padding: 15px 0 0;
  }
 
 
-.sub_con > .sub_text2 > .option  > form #Div {
+	 .sub_con > .sub_text2 > .option .form1 #Div {
     position:absolute;
     visibility:hidden;
-    font-size:14px;
+    font-size:18px;
     text-align: center;
     background: white;
     border: 1px solid #d4dcff;
     margin: 10px 0 0 -1px;
-    width:300px;
-}
+    width:344px;
+	}
 
-.sub_con > .sub_text2 > .option  > form #Div > div {
+ .sub_con > .sub_text2 > .option .form1  #Div > div {
     padding: 15px 0 10px;
     text-align: center;
+	
 }
 
-.sub_con > .sub_text2 > .option  > form #Div > div input {
+ .sub_con > .sub_text2 > .option .form1  #Div > div input {
     border: 1px solid #e6e6fa;
     background: white;
     padding: 3px 8px;
 }
+
+ .sub_con > .sub_text2 > .option .form1  #Div table {
+	margin: 15px auto 0;
+ }
+
+
 
 
 .sub_con > .sub_text2 > .price-wrap {
@@ -477,6 +502,12 @@ a {
 }
 
 
+input[type="checkbox" i] {
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+}
+
 
 .sub_con > .sub_text2 > .price-wrap > .price-box > .price1 span input {
     color: #ffbb61;
@@ -486,6 +517,7 @@ a {
 
 .sub_con > .sub_text2 .btn-box {
     margin: 50px 0 0 19%;
+	font-size: 18px;
 }
 
 .sub_con > .sub_text2  .btn-box > a{
@@ -1227,7 +1259,8 @@ margin-top: 100px;
         padding: 10px 0;
         margin: -2% 0 0 18%;
         outline: none;
-        border: 1px solid #ecd8d8;
+        background: #ecd8d8;
+		width: 65%;
     }
     
     .sub_con > .sub_text2 > .price-wrap {
