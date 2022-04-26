@@ -559,17 +559,17 @@ a {
 #best .tab>li>.menu3.on{background-color: #f89fa8; color: #fff;}
 
 #best .inner .tab li .menu1{border: 3px solid #B582DC; border-radius: 50px;}
-<<<<<<< HEAD
+
 #best .inner .tab li .menu2{border: 3px solid #1f628e; border-radius: 50px;}
 #best .inner .tab li .menu3{border: 3px solid #f89fa8; border-radius: 50px;}
 #best .inner .tab li .menu1:hover {transition: 0.5s; background: #f4ebff;}
 #best .inner .tab li .menu2:hover {transition: 0.5s; background: #eaf2ff;}
-=======
+
 #best .inner .tab li .menu2{border: 3px solid #A1CDFF; border-radius: 50px;}
 #best .inner .tab li .menu3{border: 3px solid #FFA1A1; border-radius: 50px;}
 #best .inner .tab li .menu1:hover {transition: 0.5s; background: #f6eeff;}
 #best .inner .tab li .menu2:hover {transition: 0.5s; background: #ecf3ff;}
->>>>>>> 4a0536646cb56a533c30d55df4d2f7fe2a27de1a
+
 #best .inner .tab li .menu3:hover {transition: 0.5s; background: #ffecec;}
 
 #best .panel .mini {display: flex; margin-top: 50px;}
@@ -1124,7 +1124,7 @@ color:#fff;
   height: 250px;
   position:relative;
   outline:0; border-radius: 30px;
-  background: rgb(247, 241, 253);
+  background: rgb(239 243 255);
   margin: 0 auto;
 }
 
@@ -1183,7 +1183,7 @@ color:#fff;
 
 .noti-box > ul {
   margin-top: 25px; border-radius: 30px;
-  background: rgb(247, 241, 253);
+  background: rgb(239 243 255);
   padding: 30px 0;
 }
 
