@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/themore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <title>THE MORE</title>
 </head>
 
@@ -72,7 +74,7 @@
                 </div>
     
     
-    
+                
     
     
     
@@ -116,7 +118,7 @@
                         <a>소통원해</a>
                         <div>
                             <ul>
-                                <li><a href="qna.html">기록장</a></li>
+                                <li><a href="note.html">기록장</a></li>
                                 <li><a href="noti.html">공지사항</a></li>
                                 <li><a href="event.html">이벤트</a></li>
                             </ul>
@@ -125,15 +127,130 @@
                 </ul>
             </div>
         </div>
+
+           <!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.html">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
     
-        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-            <a href="#" alt="맨 위로">
-                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.html">케어 라이프</a></li>
+                                        <li><a href="about_3.html">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="custom.html">더 체크</a></li>
+                                        <li><a href="themore.html">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.html">안내/비용</a></li>
+                                        <li><a href="change.html">예약확인/변경/취소</a></li>
+                                        <li><a href="review.html">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="note.html">기록장</a></li>
+                                        <li><a href="noti.html">공지사항</a></li>
+                                        <li><a href="event.html">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="cart.jsp">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+
+
+
+
+
+    
+        <div style="position: fixed; bottom:5%; right:3%;z-index:1;">
+            <a href="" alt="맨 위로">
+                <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:1; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
@@ -158,23 +275,27 @@
                 </div>
 
                 <div class="cont">
-                    <img src="img/tip-1.jpg" alt="" width="500px" height="300px">
-                    <div class="cont-txt">
-                        <p>대기가 차가워지고 건조한<br>
-                    날씨는 우리의 피부를 더욱 상하게 합니다.</p>
+                    <img data-aos="fade-down" src="img/tip-1.jpg" alt="" width="500px" height="300px">
+                    <div class="cont-txt" data-aos="fade-down">
+                        <p>
+                            대기가 차가워지고 건조한<br>
+                            날씨는 우리의 피부를 더욱 상하게 합니다.
+                        </p>
                     </div>
                 </div>
 
                 <div class="conts">
                     <div class="conts-img">
-                        <img src="img/tip-2.jpg" alt="" width="500px" height="300px">
+                        <img data-aos="fade-right" src="img/tip-2.jpg" alt="" width="500px" height="300px">
                     </div>
-                    <div class="conts-txt">
-                        <p>낮과 밤의 일교차가 커,<br>
+                    <div class="conts-txt" data-aos="fade-left">
+                        <p>
+                            낮과 밤의 일교차가 커,<br>
                             피부가 자극받기 쉽기 때문에<br>
                             더욱 각별한 관리를 필요로 하죠.
                         </p>
-                        <p>올바른 피부 관리를 위해서는<br>
+                        <p>
+                            올바른 피부 관리를 위해서는<br>
                             본인의 피부가 어떤 타입인지<br>
                             확실히 알아두는 것이 좋습니다.
                         </p>
@@ -182,15 +303,19 @@
                 </div>
 
                 <div class="cont">
-                    <img src="img/tip-3.png" alt="">
-                    <div class="cont-txt">
-                        <p>바우만 박사의 유전학에서 다루는<br>
+                    <img data-aos="fade-down" src="img/tip-3.png" alt="">
+                    <div class="cont-txt" data-aos="fade-down">
+                        <p>
+                            바우만 박사의 유전학에서 다루는<br>
                             피부의 특성을 바탕으로 3가지 기준으로<br>
-                            피부 유형을 나눴습니다. </p>
+                            피부 유형을 나눴습니다. 
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        
 
 
     
@@ -204,25 +329,29 @@
                         <h2>유수분 밸런스</h2>
                         <div class="you">
                             <div class="box box1">
-                                <p>피지 분비량과 수분 보유랑<br>
+                                <p>
+                                    피지 분비량과 수분 보유랑<br>
                                     모두 적어 거칠고<br>
                                     각질과 주름이 잘 생기는 타입
                                 </p>
                                 <div class="circle circle1">
                                     <h1>D</h1>
-                                    <p>건성<br>
+                                    <p>
+                                        건성<br>
                                         Dry
                                     </p>
                                 </div>
                             </div>
                             <div class="box box2">
-                                <p>피지 분비량이 많아<br>
+                                <p>
+                                    피지 분비량이 많아<br>
                                     번들거리고 여드름이<br>
                                     자주 생기는 타입<br>
                                 </p>
                                 <div class="circle circle2">
                                     <h1>O</h1>
-                                    <p>지성<br>
+                                    <p>
+                                        지성<br>
                                         Oily
                                     </p>
                                 </div>
@@ -234,24 +363,28 @@
                         <h2>피부 민감도 </h2>
                         <div class="you">
                             <div class="box box3">
-                                <p style="margin-top: 30px;">피부가 얇고 섬세해<Br>
+                                <p style="margin-top: 30px;">
+                                    피부가 얇고 섬세해<Br>
                                     외부 자극에 쉽게 반응하는 타입
                                 </p>
                                 <div class="circle circle3">
                                     <h1>S</h1>
-                                    <p>민감성<br>
+                                    <p>
+                                        민감성<br>
                                         Sensitive
                                     </p>
                                 </div>
                             </div>
                             <div class="box box4">
-                                <p>피부 장벽이 견고해<br>
+                                <p>
+                                    피부 장벽이 견고해<br>
                                     외부적인 스트레스에 대해<br>
                                     견디는 힘이 강한 타입<br>
                                 </p>
                                 <div class="circle circle4">
                                     <h1>R</h1>
-                                    <p>저항성<br>
+                                    <p>
+                                        저항성<br>
                                         Resistant
                                     </p>
                                 </div>
@@ -263,7 +396,8 @@
                         <h2>색소 활성도 </h2>
                         <div class="you">
                             <div class="box box5">
-                                <p>멜라닌 활성도가 높아<Br>
+                                <p>
+                                    멜라닌 활성도가 높아<Br>
                                     기미, 주근깨 혹은 잡티 등<br>
                                     눈에 보이는 색소가 많은 타입
                                 </p>
@@ -275,12 +409,14 @@
                                 </div>
                             </div>
                             <div class="box box6">
-                                <p style="margin-top: 30px;">멜라닌 활성도가 낮아<Br>
+                                <p style="margin-top: 30px;">
+                                    멜라닌 활성도가 낮아<Br>
                                     눈에 보이는 색소가 적은 타입
                                 </p>
                                 <div class="circle circle6">
                                     <h1>N</h1>
-                                    <p>비색소성<br>
+                                    <p>
+                                        비색소성<br>
                                         Non-Pigment
                                     </p>
                                 </div>
@@ -521,9 +657,93 @@
         </div>
     
 
+         <!-- Swiper JS -->
+         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+     
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+     
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+
+            AOS.init();
+            
+            gsap.to('#header', {
+                scrollTrigger: {
+                    trigger: '#header',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '90px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff', 
+            });
+
+        $(document).ready(function(){
 
 
-     <script>
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+var win_w = $(window).width();
+
+$(window).on('resize', function(){
+    win_w =$(this).width();
+    if(win_w > 980){
+        $('.gnb_wrap').removeAttr('style');
+    }
+});
+
+
+$('.toggle').on('click', function(){
+    $('.gnb_wrap').fadeToggle();
+});
+
+
+$('#gnb>li').on('mouseenter', function(){
+
+    if(win_w > 980){ 
+        $('.subwrap').stop().hide();
+        $(this).children('.subwrap').stop(true, true).slideDown();
+
+    } else {
+        $('#gnb>li>a').off('click');
+        $('#gnb>li>a').on('click', function(){
+            $('.subwrap').stop().slideUp(); 
+            $(this).next('.subwrap').stop().slideToggle(); 
+        });
+
+    }
+
+});
+$('#header').on('mouseleave', function(){
+    if(win_w>980){
+        $('.subwrap').stop().slideUp();
+    }
+});
+
+$('#gnb>li>a').on('focusin', function(){
+    if(win_w > 980){
+        $(this).next('.subwrap').stop(true, true).slideDown();
+    }
+});
+
+$('#gnb .last').on('focusout', function(){
+    if(win_w > 980){
+        $(this).parents('.subwrap').stop(true, true).slideUp();
+    }
+});
+});
+
          $('#type .tab>li>a').on('click', function(e){
               e.preventDefault();
               $('#type .panel').hide();

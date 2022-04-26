@@ -1,0 +1,62 @@
+::selection { color:rgb(255, 255, 255); background:hsl(207, 100%, 84%); }
+#fff0f2
+#f89fa8
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0; line-height: 20px;
+	margin: 0; text-align: center;
+}
+
+.sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #1f628e;
+    left: -50%;
+    top: 65%; display: none;
+}
+
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 42px 0;
+    padding: 10px 15px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	text-align: center; line-height: 25px;
+}
+
+
+.content{width:100%; padding: 50px 0;  }
+.inner{width:1170px; margin: 0 auto;} 
+.wrap {margin: 0 auto; width: 100%;}
+
+#face {width: 100%; margin-bottom: 150px;}
+#face .wrap {display: flex; align-items: center; width: 100%; position: relative; margin-left: 90px;}
+#face .wrap .pic {width: 40%; }
+#face .wrap .pic img {z-index: 5; position: absolute; top: 30px; left: 30px;}
+#face .wrap .pic .bg >img {z-index: 3; position: absolute; top: 0px; left: 0px;}
+
+#face .wrap .txt {width: 60%; margin-top: 60px;}
+#face .wrap .txt h1{font-size: 35px; margin-bottom: 50px; line-height: 45px;}
+#face .wrap .txt p{font-size: 25px; line-height: 35px;}
+
+
+#care {width: 100%; height: 230px;  background-image: url(../img/sub-fa-bg.jpg);
+    background-repeat: no-repeat; background-size: cover;
+}
+#care .wrap {width: 100%; position: relative;}
+#care .wrap .con {
+    width: 100%; text-align: right; width: 270px;
+    position: absolute; right: 0; top: 100px;
+}
+#care .wrap .con h1 {font-size: 50px; border-left: 2px solid white; color: white;}
+
+#the {margin: 50px 0;}
+#the .wrap .txt {text-align: center; margin-top: 50px;}
+#the .wrap .txt h1 {font-size: 35px; line-height: 50px; margin-bottom: 50px;}
+#the .wrap .txt p {font-size: 23px; line-height: 33px;}

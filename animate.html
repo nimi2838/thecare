@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <!-- 모바일 대응을 위한 뷰포트 기본 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/animate.css">
+  </head>
+  <body>
+    <header>
+      <h1>아래로<br />스크롤해 보면</h1>
+    </header>
+    <main>
+      <section>
+        <div class="sa sa-up">디비전 1</div>
+        <div class="sa sa-up">디비전 2</div>
+        <div class="sa sa-up">디비전 3</div>
+        <div class="sa sa-up">디비전 4</div>
+      </section>
+      <section>
+        <div class="sa sa-up">디비전 5</div>
+        <div class="sa sa-down">디비전 6</div>
+        <div class="sa sa-right">디비전 7</div>
+        <div class="sa sa-left">디비전 8</div>
+      </section>
+      <section>
+        <div class="sa sa-rotateL">디비전 9</div>
+        <div class="sa sa-rotateR">디비전 10</div>
+        <div class="sa sa-scaleUp">디비전 11</div>
+        <div class="sa sa-scaleDown">디비전 12</div>
+      </section>
+    </main>
+
+    <script>
+      // Scroll Animation (sa, 스크롤 애니메이션)
+      const saTriggerMargin = 300;
+      const saElementList = document.querySelectorAll('.sa');
+
+      const saFunc = function() {
+        for (const element of saElementList) {
+          if (!element.classList.contains('show')) {
+            if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+              element.classList.add('show');
+            }
+          }
+        }
+      }
+
+      window.addEventListener('load', saFunc);
+      window.addEventListener('scroll', saFunc);
+    </script>
+  </body>
+</html>

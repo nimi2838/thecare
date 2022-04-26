@@ -1,3 +1,5 @@
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
+
 html,
 body {
   position: relative;
@@ -262,13 +264,6 @@ a {
 
 
 
-
-
-
-
-
-
-
 .top-wrap>.top-box2 {
   margin: 0px auto;
   width: 100%;
@@ -335,7 +330,6 @@ a {
 .top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
   border: none;
 }
-
 
 
 
@@ -451,7 +445,7 @@ a {
   margin: 0 auto;
   position: relative;
 }
-.philosophy > .inner > .human {margin-left: 100px;}
+.philosophy > .inner > .human {}
 
 .philosophy_title{
 text-align: center;
@@ -507,7 +501,7 @@ padding-bottom: 50px;
   width: 100%;
   height: 800px;
   overflow: hidden;
-  margin-top: 950px;
+  margin-top: 150px;
 }
 .thecare_vidio > .inner{
   width: 1280px;
@@ -540,7 +534,7 @@ padding-bottom: 50px;
 
 .thecare_vidio_txt {
   position: absolute;
-  z-index: 5;
+  z-index: 5; width: 100%;
   text-align: center;
   top: 50px;
   left: 50%;
@@ -583,44 +577,21 @@ padding-bottom: 50px;
 
 .cleansing{
   width: 100%;
-  height: 450px;
-  margin: 100px 0;
-  background-color: #fff;
+  height: 500px;
+  margin: 150px 0;
+}
+.cleansing > .inner {width: 1170px;  margin: 0 auto;} 
+.cleansing .wrap > h1 {text-align: center; font-size: 35px;}
 
-}
-
-.cleansing > .inner {
-  width: 1180px;
-  position: relative;
-  margin: 0 auto;
-}
-.cleansing > .inner > h1{
-  font-size: 35px;
-}
-.pyo{
-  width: 50%;
-  float: left;
-  margin-right: 20px;
-  margin-top: 5px;
-  
-}
-
-.pyo_txt{
-  width:40%;
-  float: right;
-  text-align: left;
-  font-size: 20px;
-  line-height: 27px;
-  margin-top : 120px;
-  
-}
+.cleansing .wrap > .clean {display: flex; align-items: center; justify-content: space-around;}
+.cleansing .wrap > .clean > .pyo {width: 50%;}
+.cleansing .wrap > .clean > .pyo_txt {font-size: 20px; width: 40%; line-height: 32px;}
 
 
 /* box_5 */
 
 .box_5{
-  width: 100%; 
-  margin: 100px 0;
+  width: 100%; margin-bottom: 100px;
 }
 
 .box_5 > .inner {
@@ -666,9 +637,7 @@ padding-bottom: 50px;
 }
 
 .box_5_1 > .box_tit > h1{
-  font-size: 36px;
-  
-
+  font-size: 30px;
 }
 
 .box_5_1:hover> .bg{
@@ -709,9 +678,7 @@ padding-bottom: 50px;
 }
 
 .box_5_2 > .box_tit > h1{
-  font-size: 36px;
-  
-
+  font-size: 30px;
 }
 
 .box_5_2:hover> .bg{
@@ -724,8 +691,9 @@ padding-bottom: 50px;
 .box_5_3{
   position: relative;
   margin-top: 30px;
-  background: url("../img/about1_5-3.jpg");
+  background: url("../img/about1_5-3.jpeg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   border-radius: 30px;
   width: 100%;
@@ -752,9 +720,7 @@ padding-bottom: 50px;
 }
 
 .box_5_3 > .box_tit > h1{
-  font-size: 36px;
-  
-
+  font-size: 30px;
 }
 
 .box_5_3:hover> .bg{
@@ -766,7 +732,7 @@ padding-bottom: 50px;
 }
 
 .box_box > p{
-  font-size: 18px;
+  font-size: 19px;
   padding: 15px 35px;
   line-height: 33px;
   text-align: left;
@@ -805,9 +771,7 @@ padding-bottom: 50px;
 }
 
 .box_5_4 > .box_tit > h1{
-  font-size: 36px;
-  
-
+  font-size: 30px;
 }
 
 .box_5_4:hover> .bg{
@@ -849,9 +813,7 @@ padding-bottom: 50px;
 }
 
 .box_5_5 > .box_tit > h1{
-  font-size: 36px;
-  
-
+  font-size: 30px;
 }
 
 .box_5_5:hover> .bg{
@@ -901,10 +863,7 @@ padding-bottom: 50px;
 
 
 @media (min-width:1301px) and  ( max-width:1920px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 1280px;
-	}
+  #header { display: none;}
 
   /* 푸터 */
   .footer {
@@ -920,17 +879,7 @@ padding-bottom: 50px;
   
   
   @media (min-width: 1051px) and ( max-width:1300px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 0px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 204.5px;
-	}
+    #header { display: none;}
 	.swiper-slide>.text-1 {
 	  left: 18%;
 	}
@@ -1077,17 +1026,22 @@ padding-bottom: 50px;
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 0px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 154.8px;
-	}
+    .cleansing .inner {width: 100%;}
+    .cleansing {margin-bottom: 100px;}
+    .cleansing .wrap > .clean > .pyo > img {width: 650px; height: 400px;}
+
+    .box_5 > .inner {width: 80%;}
+    .box_box > p {margin: 0;}
+	
+    #header {display: none;}
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 20px 0px;
+  } 
+
 	.swiper-slide>.text-1 {
 	  top: 24%;
 	  left: 20%;
@@ -1122,6 +1076,10 @@ padding-bottom: 50px;
 	  margin-top: 100px;
 	  background-size: cover;
 	}
+
+  .philosophy_title > h1 {
+    font-size: 35px;
+  }
 	
 	
     /*about_1 */
@@ -1149,16 +1107,14 @@ padding-bottom: 50px;
   
     }
     #box_356824_obj_mask_2{
-      left:15%; 
-      margin-top: 15px;  
+      left:30%; 
+      margin-top: 130px;  
       width:100%;  
       
     }
   
     #mask_subject{
-      font-size:20px;
-      
-      
+      font-size:23px;
     }
     #mask_content{
       font-size:35px;
@@ -1168,9 +1124,7 @@ padding-bottom: 50px;
     }
     
     .small_text{
-      
-      font-size:15px;
-     
+      font-size:20px;
     }
 
      /*intro*/
@@ -1178,7 +1132,7 @@ padding-bottom: 50px;
      .intro {
       width: 100%;
       height:700px;
-      margin-top: 500px;
+      margin-top: 150px;
       background-color: #fff;
     
     }
@@ -1225,7 +1179,12 @@ font-size: 16px;
 }
 
 /* philosophy */
+.philosophy {margin-top: 0;}
 
+.philosophy_3menu > img {
+  width: 80%;
+  margin-left: 100px;
+}
 
 .philosophy > .inner{
   width: 100%;
@@ -1233,12 +1192,12 @@ font-size: 16px;
 
 
 .philosophy_txt{
-  margin: 40px;
+  margin-left: 150px;
 
 
 }
 .philosophy_txt > h1 {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .philosophy_txt > i{
@@ -1249,7 +1208,7 @@ font-size: 16px;
   display: none;
 }
 .philosophy_txt > p {
-  font-size: 17px;
+  font-size: 20px; line-height: 25px;
 }
 
 /* thecare_vidio */
@@ -1283,38 +1242,165 @@ font-size: 16px;
 }
 
 .thecare_vidio_txt > p {
-  font-size: 15px;
+  font-size: 18px;
 
 }
 
 
 .thecare_vidio_img_txt{
-
-  left: 10%;
-  font-size: 17px;
-
+  left: -2%;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 
 .footer {
-  margin-top: 4218px; 
+  margin-top: 3500px; 
 }
   
   }
   
+  .video {position: absolute; top: 65.5%; left: 50%; width:100%; height:100%; z-index:-100;
+    -webkit-transform: translateX(-50%) translateY(-50%);-moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);-o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);}
   
   @media (min-width: 500px) and ( max-width:850px) {
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
+    .cleansing {margin: 50px 0;}
+    .cleansing .wrap > h1 {font-size: 30px;}
+    .cleansing > .inner {width: 100%;}
+    .cleansing .wrap > .clean {flex-direction: column;}
+    .cleansing .wrap > .clean > .pyo {width: 100%;}
+    .cleansing .wrap > .clean > .pyo > img {width: 90%; padding-left: 50px;}
+    .box_5 {margin-top: 200px;}
+    .cleansing .wrap > .clean > .pyo_txt {width: 100%; text-align: center;}
+
+    .box_5 > .inner > h1 {font-size: 25px;}
+    .box_5 > .inner {width: 90%; margin-bottom: 50px;}
+    .box_box > p {margin: 0;}
+    .boxs {flex-direction: column;}
+    .boxs .box_5_1 {width: 100%; margin-bottom: 30px;}
+    .boxs .box_5_2 {width: 100%;}
+    .boxss {flex-direction: column;}
+    .boxss .box_5_4 {width: 100%; margin-bottom: 10px;}
+    .boxss .box_5_5 {width: 100%;}
+
+    .video {top: 58.6%;}
+
+
+    .top-wrap {display: none;}
+    .top-wrap>.top-box2 {display: none;}
+    .top-wrap>.top-box1>.icon-box {display: none;}
+    #header {display: block;}
+    .icon-box {
+        display: flex; position: absolute;
+        bottom: 150px; left: 55px;
+    }
+    .icon-box> li {}
+    .icon-box {
+      float: left;
+    }
+    .icon-box>.icon {
+      padding: 0 0 0 15px ;
+      text-align: center;
+      float: left;
+      display: flex;
+      font-family: 'ChosunSg';
+    }
+    .icon-box>.cart {padding: 0 15px 0 15px;}
+    
+    .icon-box>.icon>.line-icon {
+      display: flex;
+      width: 1px;
+      height: 50px;
+      background:#707070;
+      margin: 1px 0 0 15px;
+    }
+    
+    
+    .icon-box>.icon>a>.img-box {
+      width: 31px;
+      margin-bottom: 4px;
+    }
+    
+    .icon-box>.cart>a>.img-box {
+      width: 33px;
+      margin-bottom: 2px;
+    }
+    #header{left: 0; top: 0; z-index: 5; width: 100%;}
+    #header .toggle{display: block;
+        position: absolute; right: 40px; top: 15px;
+        width: 50px; height: 50px; background-color: transparent;
+        color: #1F628E; font-size: 35px; border: 0;
+    }
   
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 25px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 114.8px;
-	}
+    #header > .inner{background-color: white; margin: 10px 50px; width: 90%;}
+    #header .gnb_wrap{
+        display: none; z-index: 100;
+        position: fixed; right: 0; top: 90px; background-color: #f2f2f2
+        ;width: 300px; height: 100%;
+    }
+    #header .gnb_wrap .global_menu{flex-wrap: wrap; padding: 0 30px}
+    #header .gnb_wrap .global_menu>li{width: 100%; padding : 0 10px}
+    #header .gnb_wrap .global_menu>li:last-of-type{border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 10px;}
+    #header .gnb_wrap .global_menu>li>a{padding: 0px; line-height: 40px;}
+  
+    #gnb{flex-wrap: wrap; }
+    #gnb>li{width: 100%;}
+  
+    /* #gnb>li>.subwrap{position: static;} */
+  
+    #gnb .depth_1{background-color: #1F628D;}
+    #gnb .depth_1>li{width: 100%; margin: 0;}
+    #gnb .depth_1>li>a{padding-left: 40px;}
+  
+  
+    .gnb_wrap .search_wrap {padding: 40px 10px; padding-top: 60px; }
+      .gnb_wrap .search_wrap >.search-box{justify-content: center; align-items: center;}
+      .gnb_wrap .search_wrap >.search-box > .schBtn >input[type=image]  {
+          width: 30px;
+          height: 30px;
+        }
+        
+        .gnb_wrap .search_wrap > .search-box .form {
+            padding: 10px;
+            width: 190px; font-size: 17px; color: #1F628D;
+            border: 0; outline: 0; font-weight: bold;
+            border-bottom: 2px solid #1F628D;
+            background-color:transparent;
+        }
+        
+  
+      
+      
+      #gnb>li>a{
+          display: block; padding: 0 30px;
+          color: #1F628D; font-size: 20px;
+          font-weight: bold; line-height: 70px;
+      }
+      #gnb>li:last-of-type > a{ padding-right: 0;}
+      #gnb>li>.subwrap{
+        display: none; position: absolute; left: 0; top: 100px; 
+        width: 100%; background-color: #333;
+      }
+      
+      #gnb .depth_1{display: flex; flex-wrap: wrap; padding: 10px 0; flex-direction: column;}
+      #gnb .depth_1>li{width: 20%; margin-bottom: 20px;}
+      #gnb .depth_1>li>a{
+          display: block; font-weight: bold;
+          font-size: 18px; line-height: 60px;
+          color: #fff;
+      }
+  
+      #gnb{flex-wrap: wrap; }
+      #gnb>li{width: 100%;}
+      
+      #gnb>li>.subwrap{position: static;}
+      
+      #gnb .depth_1{background-color: #1F628D;} 
+      #gnb .depth_1>li{width: 100%; margin: 0;}
+      #gnb .depth_1>li>a{padding-left: 40px;}
+
 	.swiper-slide>.text-1 {
 	  top: 24%;
 	  left: 20%;
@@ -1443,14 +1529,14 @@ font-size: 16px;
     
       }
       #box_356824_obj_mask_2{
-        left:15%; 
-        margin-top: 2px;  
+        left:13%; 
+        margin-top: 80px;  
         width:100%;  
         
       }
     
       #mask_subject{
-        font-size:15px;
+        font-size:18px;
         margin-top: 1px;
         margin-bottom: 1px;
         padding-top: 3px;
@@ -1459,7 +1545,7 @@ font-size: 16px;
         
       }
       #mask_content{
-        font-size:28px;
+        font-size:30px;
         margin-top: 10px;
         margin-bottom: 20px;
         line-height: 13px;
@@ -1468,7 +1554,7 @@ font-size: 16px;
       .small_text{
         
         padding-top: 8px !important;
-        font-size:14px;
+        font-size:16px;
         line-height: 20px;
        
       }
@@ -1478,15 +1564,17 @@ font-size: 16px;
 /* philosophy */
 
 .philosophy{
-  margin-top: 300px;
+  margin-top: 100px;
 }
 .philosophy > .inner{
   width: 100%;
 }
 
+.philosophy_title > h1 {font-size: 30px;}
+.philosophy_3menu > img {width: 80%; height: 300px; margin-left: 60px;}
 
 .philosophy_txt{
-  margin: 35px;
+  margin: 30px 100px
 
 
 }
@@ -1494,16 +1582,16 @@ font-size: 16px;
   display: none;
 }
 .philosophy_txt > h1 {
-  font-size: 23px;
+  font-size: 20px; line-height: 30px;
 }
 
 .philosophy_txt > i{
-  font-size: 50px;
+  font-size: 40px;
 
 }
 
 .philosophy_txt > p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
@@ -1517,22 +1605,22 @@ font-size: 16px;
   width: 100%;
 }
 .thecare_vidio_txt > h1 {
-  font-size: 30px;
+  font-size: 30px; margin: 0;
 }
 
 .thecare_vidio_txt > p {
-  font-size: 12px;
-
+  font-size: 14px;
+  line-height: 30px;
 }
 
 .thecare_vidio_img{
-  top: 170px;
+  top: 140px;
 }
 
 .thecare_vidio_img_txt{
-  left: 5%;
-  font-size: 10px;
-
+  left: -12%;
+  font-size: 14px;
+  line-height: 20px;
 }
 
   }

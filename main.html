@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>THE CARE</title>
 </head>
 
@@ -72,7 +73,7 @@
                 </div>
     
     
-    
+                
     
     
     
@@ -116,7 +117,7 @@
                         <a>소통원해</a>
                         <div>
                             <ul>
-                                <li><a href="qna.html">기록장</a></li>
+                                <li><a href="note.html">기록장</a></li>
                                 <li><a href="noti.html">공지사항</a></li>
                                 <li><a href="event.html">이벤트</a></li>
                             </ul>
@@ -125,21 +126,141 @@
                 </ul>
             </div>
         </div>
+
+           <!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.html">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
     
-        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.html">케어 라이프</a></li>
+                                        <li><a href="about_3.html">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="custom.html">더 체크</a></li>
+                                        <li><a href="themore.html">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.html">안내/비용</a></li>
+                                        <li><a href="change.html">예약확인/변경/취소</a></li>
+                                        <li><a href="review.html">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="note.html">기록장</a></li>
+                                        <li><a href="noti.html">공지사항</a></li>
+                                        <li><a href="event.html">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="cart.jsp">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+
+
+
+
+
+    
+        <div style="position: fixed; bottom:5%; right:3%;z-index:2;">
             <a href="" alt="맨 위로">
                 <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
     
+
+
+
+
+
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 
@@ -151,9 +272,6 @@
                 <div class="swiper-slide swiper-slide2">
                     <img src="img/banner04.jpg" alt="">
                 </div>
-    
-                
-    
     
             </div>
             <div class="swiper-pagination"></div>
@@ -178,7 +296,7 @@
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con gender">
                                     <ul>
@@ -218,7 +336,7 @@
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con man">
                                     <ul>
@@ -258,7 +376,7 @@
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con woman">
                                     <ul>
@@ -399,7 +517,7 @@
             </div>
             
             <div class="card_box card_box1 flex ">
-                <a href="sub_1.jsp?prdNo=sk01" class="card1 card">
+                <a href="sub_1sk01.jsp?prdNo=sk01" class="card1 card">
                     <div class="text-box">
                         <h1>SPRING</h1>
                         <p>봄</p>
@@ -415,7 +533,7 @@
                     </div>
                 </a> 
 
-                <a href="sub_1.jsp?prdNo=sk02" class="card2 card">
+                <a href="sub_1sk02.jsp?prdNo=sk02" class="card2 card">
                     <div class="text-box">
                         <h1>SUMMER</h1>
                         <p>여름</p>
@@ -431,7 +549,7 @@
                     </div>
                 </a>
     
-                <a href="sub_1.jsp?prdNo=sk03" class="card3 card">
+                <a href="sub_1sk03.jsp?prdNo=sk03" class="card3 card">
                     <div class="text-box">
                         <h1>FALL</h1>
                         <p>가을</p>
@@ -446,7 +564,7 @@
                     </div>
                 </a>
     
-                <a href="sub_10.jsp?prdNo=li03" class="card4 card">
+                <a href="sub_10li03.jsp?prdNo=li03" class="card4 card">
                     <div class="text-box">
                         <h1>WINTER</h1>
                         <p>겨울</p>
@@ -547,7 +665,7 @@
                     <div class="text1">
                         <p class="p1">주소</p>
                         <p class="p2">진로시간안내</p><br><br><br><br><br>
-                        <p class="p3">주차안내</p>
+                        <p class="p3">찾아오시는 길</p>
                     </div>
     
                     <div class="text2">
@@ -565,9 +683,10 @@
                         </p>
     
                         <p class="p6">
-                            병원 건물 주차장 주차 가능<br>
-                            · 건물 내부 주차장 (30분 무료 / 2000cc급 승용차 가능)<br>
-                            · 외부 건물 주차장 (지점 문의)
+                            · 강남역 10번 출구 도보 5분<br>
+                            · 신논현역 6번 출구 도보 5분<br>
+                            · 버스 146번 신논현역.구교보타워사거리 하자 후 도보 141m<br>
+                            · 버스 7007 신논현역.우딩빌딩 하자 후 도보 53m<br>
                         </p>
                     </div>
                 </div>
@@ -618,6 +737,76 @@
         <!-- 3. 실행 스크립트 -->
         <script>
 
+            gsap.to('#header', {
+                scrollTrigger: {
+                    trigger: '#header',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '90px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff', 
+            });
+
+        $(document).ready(function(){
+
+
+var win_w = $(window).width();
+
+$(window).on('resize', function(){
+    win_w =$(this).width();
+    if(win_w > 980){
+        $('.gnb_wrap').removeAttr('style');
+    }
+});
+
+
+$('.toggle').on('click', function(){
+    $('.gnb_wrap').fadeToggle();
+});
+
+
+$('#gnb>li').on('mouseenter', function(){
+
+    if(win_w > 980){ 
+        $('.subwrap').stop().hide();
+        $(this).children('.subwrap').stop(true, true).slideDown();
+
+    } else {
+        $('#gnb>li>a').off('click');
+        $('#gnb>li>a').on('click', function(){
+            $('.subwrap').stop().slideUp(); 
+            $(this).next('.subwrap').stop().slideToggle(); 
+        });
+
+    }
+
+});
+$('#header').on('mouseleave', function(){
+    if(win_w>980){
+        $('.subwrap').stop().slideUp();
+    }
+});
+
+$('#gnb>li>a').on('focusin', function(){
+    if(win_w > 980){
+        $(this).next('.subwrap').stop(true, true).slideDown();
+    }
+});
+
+$('#gnb .last').on('focusout', function(){
+    if(win_w > 980){
+        $(this).parents('.subwrap').stop(true, true).slideUp();
+    }
+});
+
+
+});
+
+        
+
 const $topBtn = document.querySelector(".moveTopBtn");
 
 // 버튼 클릭 시 맨 위로 이동
@@ -641,9 +830,12 @@ gsap.to('.top-wrap > .top-box2', {
 
 
             $('#best .tab>li>a').on('click', function(e){
+                var i = $(this).parents('li').index();
               e.preventDefault();
+
               $('#best .panel').hide();
               $(this).next('.panel').show();
+            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
             });
 
             $('#best .tab>li>a').first().trigger('click');
@@ -706,21 +898,6 @@ gsap.to('.top-wrap > .top-box2', {
                     pauseOnHover: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    // responsive: [{
-                    //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                    //     settings: {
-                    //         slidesToShow: 2,
-                    //         slidesToScroll: 2
-                    //     }
-                    // }, {
-                    //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                    //     settings: {
-                    //         slidesToShow: 1,
-                    //         slidesToScroll: 1
-                    //     }
-                    // }],
-    
-                    // arrows:true,
                     prevArrow: ".slider-box-2 > .arrows > .btn-left",
                     nextArrow: ".slider-box-2 > .arrows > .btn-right"
                 });
@@ -729,17 +906,6 @@ gsap.to('.top-wrap > .top-box2', {
             $(function () {
                 SliderBox2__init();
             });
-    
-    
-            //         gsap.to('body', {
-            //   scrollTrigger:{
-            //     start:'top 0',
-            //     end:'top 800px',
-            //     trigger:'.top-box2',
-            //     markers: true,
-            //     pin:true
-            //   },
-            // });
     
             gsap.to('.top-wrap > .top-box2', {
                 scrollTrigger: {
@@ -755,6 +921,7 @@ gsap.to('.top-wrap > .top-box2', {
                 borderBottom: '1px solid #ccc'
             });
     
+            
     
     
      function keyword_check(){
@@ -777,15 +944,12 @@ gsap.to('.top-wrap > .top-box2', {
     
     
     
-    function search_form()
+        function search_form()
             {
                 var frm = document.search;
                 frm.action = "search.jsp";
                 frm.submit();
             }
-    
-    
-    
     
         </script>
     

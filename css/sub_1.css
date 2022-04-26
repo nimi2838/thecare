@@ -762,7 +762,7 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     width: 70%;
     margin: 100px auto 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2 {
@@ -2252,11 +2252,6 @@ margin-top: 100px;
     margin-left: 20px;
 }
 
-
-
-
-    
-    
 
 
 }

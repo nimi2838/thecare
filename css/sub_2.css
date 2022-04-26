@@ -72,7 +72,7 @@ body {
   font-style: normal;
 }
 
-/* ³ë¸»¶óÀÌÁî */
+/* ï¿½ë¸»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 body,
 ul,
 li {
@@ -793,6 +793,8 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     width: 200px;
     margin: 0 auto;
     line-height: 30px;
+    border-right: 1px solid #ff6f7d;
+    padding: 0 20px;
 }
 
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
@@ -1041,9 +1043,8 @@ margin-top: 100px;
     margin-left: auto;
     margin-right: 90px;
     background-color: #f89fa8;
-	/* #b5ceec #f3a7a7 */
     border-radius: 40px;
-    font-size: 18px;
+    font-size: 20px;
 	text-align: left;
     box-shadow: 0px 1px 7px rgb(0 0 0 / 11%);
     text-align: right;
@@ -1156,7 +1157,7 @@ margin-top: 100px;
 
 
 @media (min-width: 1301px) and  ( max-width:1920px) {
-	/* Å¾¹Ù */
+	/* Å¾ï¿½ï¿½ */
 	.top-wrap>.top-box1 {
 	  width: 1280px;
 	}
@@ -1396,7 +1397,7 @@ margin-top: 100px;
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
-	/* Å¾¹Ù */
+	/* Å¾ï¿½ï¿½ */
 	.top-wrap>.top-box1 {
 	  width: 95%;
 	}
@@ -1864,7 +1865,7 @@ margin-top: 100px;
   
   
   @media (min-width: 500px) and ( max-width:850px) {
-	/* Å¾¹Ù */
+	/* Å¾ï¿½ï¿½ */
 	.top-wrap>.top-box1 {
 	  width: 95%;
 	}
