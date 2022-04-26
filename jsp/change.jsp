@@ -145,7 +145,7 @@ else{
                     <a>더 궁금해</a>
 					<div>
                         <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
+                            <li><a onclick="login();">더 체크</a></li>
 							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
@@ -314,6 +314,9 @@ else{
 
 			Timestamp rezDate = rs2.getTimestamp("rezDate");
 			 String prdNo = rs2.getString("prdNo");
+
+			 
+           String curDate = rezDate.toLocaleString();     //   변수 curDate에  현재시각(년.월.일 시:분:초)을 저장
 			 
 
 
@@ -336,7 +339,7 @@ else{
                 <h3 onClick="expandcontent('sc<%=i%>'); udown();" class="flex flex-jc-sb">
                     <div>
 						<div class="time">
-                        <%=rezDate%>
+                        <%=curDate%>
 						</div>
 						<div class="text2 text21">예약완료</div>
 					</div>
@@ -350,7 +353,7 @@ else{
                     <div class="text3">
                         <div>고객명 : <span class="name"><%=name%></span></div>
                         <div>연락처 : <span class="phone"><%=ordPhone%></span></div>
-                        <div>예약일자 : <span class="time"><%=rezDate%></span></div>
+                        <div>예약일자 : <span class="time"><%=curDate%></span></div>
                         <div>요청사항 : <span class="request"><%=ordMemo%></span></div>
 						<div>예약시술명 : <span class="prdname"><%=prdName%></span>&nbsp
 <%
@@ -383,9 +386,12 @@ else{
 						<div>총 예약금액 : <span class="pay"><%=df.format(Integer.parseInt(ordPay)) %></span></div>
 
                     </div>
-
-
+					<div style="margin: 10px auto; width: max-content;">
+						<a href=cange_custom.jsp?prdNo=<%=prdNo%>&rezNo=<%=rezno%> class="btn" style="border: none; background: #f89fa8; padding: 8px 10px; color: #fff; margin: 0 5px;">예약 변경</a>
+						<a href=rezDelete.jsp?rezNo=<%=rezno%> class="btn" style="border: none; border: 1px solid #f89fa8; padding: 8px 10px; margin: 0 5px;">예약 취소</a>
+					</div>
                 </div>
+				
             </div>
 
 

@@ -299,7 +299,7 @@ else{
 
 
 
-<form name="res" method=post action="kakaoPay_test.jsp">
+<form name="res" method=post onSubmit="return false;">
 <table class="scriptCalendar" style = "float: left;">
     <thead > 
         <tr>
@@ -323,7 +323,7 @@ else{
 												
 						<ul class="List">
 							<li>
-								<label class = "btns">00:00</label></li>
+								<label class = "btns">10:00</label></li>
 							
 							
 														<li>
@@ -402,7 +402,7 @@ else{
 							</li>
 
 							<li>
-								<label class = "btns">23:59</label>
+								<label class = "btns">18:00</label>
 							</li>
 							</ul>
 					</div>
@@ -563,37 +563,28 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 										<select name="coupon" id="coupon" onchange="call1();">
 											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
 									<%
-//											String jsql10 = "select * from user where uId = ?";   
-//										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
-//										pstmt10.setString(1,myid);
-//
-//										ResultSet rs10 = pstmt10.executeQuery();
-//										rs10.next();
-//										String Coupon = rs10.getString("Coupon"); 
-//
-//
-//										String jsql11 = "select * from coupon";   
-//										PreparedStatement pstmt11 = con.prepareStatement(jsql11);
-//
-//										ResultSet rs11 = pstmt11.executeQuery();
-//										rs11.next();
-//										
-//										String cNo1 = rs11.getString("cNo");
-//
-//
-//										String jsql12 = "SELECT * FROM user WHERE Coupon LIKE '%"+cNo1+"%'";   
-//										PreparedStatement pstmt12 = con.prepareStatement(jsql12);
-//
-//										ResultSet rs12 = pstmt12.executeQuery();
-//										while(rs12.next()) {
-//										
+											String jsql10 = "select * from user where uId = ?";   
+										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+										pstmt10.setString(1,myid);
+
+										ResultSet rs10 = pstmt10.executeQuery();
+										rs10.next();
+
+										String Coupon = rs10.getString("Coupon"); 
+%>
 
 
-										String jsql1 = "select * from coupon";   
+<%
+
+										if(Coupon.contains("c01")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
 										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c01");
 	
 										ResultSet rs1 = pstmt1.executeQuery();
-										while(rs1.next()) {
+										rs1.next();
 
 										String cNo = rs1.getString("cNo"); 
 										String cName = rs1.getString("cName");
@@ -601,11 +592,112 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 										%>
 												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
 										
-										<%
-										}
-										
-						//				}
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c02")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c02");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
 										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c03")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c03");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c04")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c04");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c05")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c05");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+
+
+
+
+
 											</select>
 
 									</td>
@@ -623,7 +715,10 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 									</td>
 					</tr>
 
-					<%
+
+										<%
+
+
 					} else {
 						
 					%>
@@ -671,12 +766,29 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 									
 										<select name="coupon" id="coupon" onchange="call2();">
 											<option value="0"> [ 쿠폰을 선택하세요. ] </option>
-									<%
-										String jsql1 = "select * from coupon ";   
-										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										<%
+											String jsql10 = "select * from user where uId = ?";   
+										PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+										pstmt10.setString(1,myid);
 
+										ResultSet rs10 = pstmt10.executeQuery();
+										rs10.next();
+
+										String Coupon = rs10.getString("Coupon"); 
+%>
+
+
+<%
+
+										if(Coupon.contains("c01")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c01");
+	
 										ResultSet rs1 = pstmt1.executeQuery();
-										while(rs1.next()) {
+										rs1.next();
 
 										String cNo = rs1.getString("cNo"); 
 										String cName = rs1.getString("cName");
@@ -684,9 +796,107 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 										%>
 												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
 										
-										<%
-										}
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c02")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c02");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
 										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c03")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c03");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c04")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c04");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
+	
+<%
+
+										if(Coupon.contains("c05")) {
+
+
+										String jsql1 = "select * from coupon where cNo= ?";   
+										PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+										pstmt1.setString(1,"c05");
+	
+										ResultSet rs1 = pstmt1.executeQuery();
+										rs1.next();
+
+										String cNo = rs1.getString("cNo"); 
+										String cName = rs1.getString("cName");
+										String cPoint = rs1.getString("cPoint");
+										%>
+												<option style="height: 30px;" id="cou" value="<%=cPoint%>"><%=cName%></option>
+										
+					<%
+
+										} //if
+%>
+
 											</select>
 
 									</td>
@@ -866,7 +1076,7 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 
 				</script>
 
- <button class="rez_btn" value= "예약" onclick="request()" style= "cursor: pointer;" >예약</button>
+ <button class="rez_btn" value= "예약" onclick="res_null()" style= "cursor: pointer;" >예약</button>
 </form>
 </div>
 </div>
@@ -915,6 +1125,63 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 			frm1.submit();
 
 		}
+
+		function res_null() {
+
+		var frm1 = document.res;
+		frm1.action = "kakaoPay_test.jsp"
+
+			if (res.day1.value == "") 
+                  {
+                     alert("날짜를 선택해 주세요!"); 
+					 res.day1.focus();
+                     return false; 
+                  }
+			if (res.date.value == "") 
+                  {
+                     alert("시간을 선택해 주세요!"); 
+					 res.date.focus();
+                     return false; 
+                  }
+			if (res.name.value == "") 
+                  {
+                     alert("이름을 입력해 주세요!"); 
+					 res.name.focus();
+                     return false; 
+                  }
+			if (res.phone1.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone1.focus();
+                     return false; 
+                  }
+			if (res.phone2.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone2.focus();
+                     return false; 
+                  }
+			if (res.phone3.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!");
+					 res.phone3.focus();
+                     return false; 
+                  }
+			if (res.sex.value == "") 
+                  {
+                     alert("성별을 선택해 주세요!"); 
+					 res.sex.focus();
+                     return false; 
+                  }
+			
+			frm1.submit();
+
+
+		}
+
+
+
+
 		</script>
         
         </body>

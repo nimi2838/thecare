@@ -356,7 +356,7 @@ try {
 			<a href="#" onClick=cart() style="text-align:center; padding: 20px 55px;
     background: #f89fa8;
     color: #ffffff; font-weight: bold;
-    border-radius: 5px;  margin: 0px 10px;">선택 시술 예약</a>
+    border-radius: 5px;  margin: 0px 10px;">시술 예약</a>
 		</div>
 <%
 		} // if

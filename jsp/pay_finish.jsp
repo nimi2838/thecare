@@ -264,49 +264,71 @@ String jsql5 = "UPDATE USER SET Point=? WHERE uId=?";
 
 
 
+										if(coupon.equals("2000")) {
 
-	String jsql7= "SELECT * FROM gocart WHERE prdNo=?";
-			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, prdno);
+										String jsql2 = "UPDATE USER SET Coupon = REPLACE(Coupon, 'c01,' , '' ) WHERE uId=?;";   
+										PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+										pstmt2.setString(1,myid);
+	
+										pstmt2.executeUpdate();
 
-			ResultSet rs7 = pstmt7.executeQuery(); 
-			while(rs7.next()){
-				String opno = rs7.getString("opNo");
-
-	String jsql2 = "insert into rez (rezNo, prdNo, rezDate, opNo) values (?,?,?,?)";
-					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-					pstmt2.setString(1,Integer.toString(oNum));
-					pstmt2.setString(2,prdno);
-					pstmt2.setString(3,day1+date);
-					pstmt2.setString(4,opno);
-
-					pstmt2.executeUpdate();
-
-			}
-
-					String jsql3 = "insert into rezinfo (rezNo, uId, ordDate, ordPhone, ordPay, ordBank,ordCustomer,ordSex,ordMemo) values (?,?,?,?,?,?,?,?,?)";
-					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-					pstmt3.setString(1,Integer.toString(oNum));
-					pstmt3.setString(2,myid);
-					pstmt3.setString(3,sf.format(nowTime));
-					pstmt3.setString(4,phone);
-					pstmt3.setString(5,rvprice);
-					pstmt3.setString(6,"kakaopay");
-					pstmt3.setString(7,name);
-					pstmt3.setString(8,sex);
-					pstmt3.setString(9,memo);
-
-					pstmt3.executeUpdate();
+										} //if
 
 
-
-//			String jsql4 = "DELETE FROM gocart";
-//					PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-//
-//					pstmt4.executeUpdate();
+										if(coupon.equals("5000")) {
 
 
-			
+										String jsql2 = "UPDATE USER SET Coupon = REPLACE(Coupon, 'c02,' ,'') WHERE uId=?;";   
+										PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+										pstmt2.setString(1,myid);
+	
+										pstmt2.executeUpdate();
+
+
+										} //if
+
+
+										if(coupon.equals("10000")) {
+
+
+										String jsql2 = "UPDATE USER SET Coupon = REPLACE(Coupon, 'c03,' ,'') WHERE uId=?;";   
+										PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+										pstmt2.setString(1,myid);
+	
+										pstmt2.executeUpdate();
+
+
+										} //if
+
+
+										if(coupon.equals("30000")) {
+
+
+										String jsql2 = "UPDATE USER SET Coupon = REPLACE(Coupon, 'c04,' ,'') WHERE uId=?;";   
+										PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+										pstmt2.setString(1,myid);
+	
+										pstmt2.executeUpdate();
+
+										} //if
+
+										if(coupon.equals("20000")) {
+
+
+										String jsql2 = "UPDATE USER SET Coupon = REPLACE(Coupon, 'c05,' ,'') WHERE uId=?;";   
+										PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+										pstmt2.setString(1,myid);
+	
+										pstmt2.executeUpdate();
+
+
+										} //if
+
+
+
+
+
+
 
 
 

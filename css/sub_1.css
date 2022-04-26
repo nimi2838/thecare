@@ -450,7 +450,7 @@ a {
     font-size: 16px;
  }
 
- .sub_con > .sub_text2 > .option .form1  ul li {
+ .sub_con > .sub_text2 > .option form  ul li {
     padding: 15px 0 0;
  }
 
@@ -476,7 +476,6 @@ a {
     border: 1px solid #e6e6fa;
     background: white;
     padding: 3px 8px;
-	font-size: 16px;
 }
 
  .sub_con > .sub_text2 > .option .form1  #Div table {

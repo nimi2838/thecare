@@ -134,7 +134,63 @@ else{
         <div class="line"></div>
 
 
-         <div class="top-box2">
+  <%
+   if(myid == null) {
+
+%>
+
+        <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>더 케어</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="menu">
+                    <a>더 궁금해</a>
+					<div>
+                        <ul>
+                            <li><a onclick="login();">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+							<li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a onclick="login();">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                
+                <li class="jsp">
+                    <a>소통원해</a>
+                    <div>
+                        <ul>
+                            <li><a onclick="login();">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+  <%
+  } else { // if else myid=null
+	  %>
+
+		  
+        <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
@@ -154,15 +210,6 @@ else{
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -180,14 +227,20 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+
+
+
+		  <%
+  } // if else myid=null
+		  %>
 
         <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
             <a alt="맨 위로" class="moveTopBtn">
@@ -202,7 +255,6 @@ else{
                 </div>
             </a>
         </div>
-
 
 	
 <%
@@ -345,7 +397,7 @@ try {
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
 
-				
+				if(opprice==50000) {
 
 						%>
 
@@ -356,13 +408,34 @@ try {
 											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
 											</td>
-											<td class="td2" style=""><%=opname%>                                          </td>
-											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+											<td class="td2" style=""><%=opname%>                                              </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td> 
 										  </tr>
 
 
 					
 									<%
+				}
+									else{
+										%>
+
+
+
+										<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
+
+											</td>
+											<td class="td2" style=""><%=opname%>                                             </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+										  </tr>
+
+
+											<%
+
+									} //if-else
 
 			}
 

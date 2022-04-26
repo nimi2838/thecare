@@ -36,7 +36,7 @@ try {
 	String phone1 = request.getParameter("phone1");
 	String phone2 = request.getParameter("phone2");
 	String phone3 = request.getParameter("phone3");
-	String phone = phone1 + phone2 + phone3;
+	String phone = phone1 + "-" + phone2 + "-" + phone3;
 	String sex = request.getParameter("sex");
 	String memo = request.getParameter("memo");
 	String sell3 = request.getParameter("sell3");
@@ -57,19 +57,19 @@ try {
 				String opno = rs7.getString("opNo"); 
 				String merchant_uid = rs7.getString("merchant_uid"); 
 %>
-<input name='opno' type='text' value="<%=opno%>">
+<input name='opno' type='hidden' value="<%=opno%>">
 <%
 			}
 %>
-<input name='prdno' type='text' value="<%=prdno%>">
-<input name='sell6' id='sell6' type='text' value="<%=rvprice%>">
-<input name='day1' type='text' value="<%=day1%>">
-<input name='date' type='text' value="<%=date%>">
-<input name='name' type='text' value="<%=name%>">
-<input name='phone' type='text' value="<%=phone%>">
-<input name='sex' type='text' value="<%=sex%>">
-<input name='memo' type='text' value="<%=memo%>">
-<input name='sell3' type='text' value="<%=sell3%>">
+<input name='prdno' type='hidden' value="<%=prdno%>">
+<input name='sell6' id='sell6' type='hidden' value="<%=rvprice%>">
+<input name='day1' type='hidden' value="<%=day1%>">
+<input name='date' type='hidden' value="<%=date%>">
+<input name='name' type='hidden' value="<%=name%>">
+<input name='phone' type='hidden' value="<%=phone%>">
+<input name='sex' type='hidden' value="<%=sex%>">
+<input name='memo' type='hidden' value="<%=memo%>">
+<input name='sell3' type='hidden' value="<%=sell3%>">
 <input name='coupon' type='text' value="<%=coupon%>">
 </form>
 
