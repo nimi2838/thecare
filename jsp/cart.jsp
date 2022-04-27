@@ -13,26 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/searchno.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>장바구니</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
-
-
-
 
 <%
 DecimalFormat df = new DecimalFormat("###,###");
-
-
-   String myid = (String)session.getAttribute("sid");         
-
+   String myid = (String)session.getAttribute("sid");                                                                           
 %>
-
-
 <body>
-
-
-
 
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
@@ -42,40 +32,231 @@ DecimalFormat df = new DecimalFormat("###,###");
    if(myid == null) {
 
 %>
-            <ul class="icon-box">
-                <li class="icon login">
-                    <a href="login.jsp">
-                        <div class="img-box">
-                            <img src="img/login_icon.png" alt="">
-                        </div>
-                        login
-                    </a>
-                    <div class="line-icon"></div>
+
+	<ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="#" onclick="login();">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+		
+
+	<div class="logo-box flex flex-jc-c">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        </td>
+                    </form>
+                </div>
+
+
+
+
+
+
+        </div>
+        <div class="line"></div>
+
+
+	  <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>더 케어</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="icon join">
-                    <a href="join.jsp">
-                        <div class="img-box">
-                            <img src="img/join_icon.png" alt="">
-                        </div>
-                        join
-                    </a>
-                    <div class="line-icon"></div>
+				<li class="menu">
+                    <a>더 궁금해</a>
+					<div>
+                        <ul>
+                            <li><a href="#" onclick="login();">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="icon cart">
-                    <a href="cart.jsp">
-                        <div class="img-box">
-                            <img src="img/cart_icon.png" alt="">
-                        </div>
-                        cart
-                    </a>
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+							<li><a href="guide.jsp">안내/비용</a></li>
+                            <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                
+                <li class="jsp">
+                    <a>소통원해</a>
+                    <div>
+                        <ul>
+                            <li><a href="#" onclick="login();">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
+        </div>
+    </div>
+
+
+<!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
+    
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.jsp">케어 라이프</a></li>
+                                        <li><a href="about_3.jsp">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="#" onclick="login();">더 체크</a></li>
+                                        <li><a href="themore.jsp">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
+                                        <li><a href="review.jsp">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="#" onclick="login();">기록장</a></li>
+                                        <li><a href="noti.jsp">공지사항</a></li>
+                                        <li><a href="event.jsp">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="#" onclick="login();">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+           
+
+
+
 			<%
 }
 else{
 %>
 
-	<ul class="icon-box">
+<ul class="icon-box">
                 <li class="icon login">
                     <a href="logout.jsp">
                         <div class="img-box" style= "margin-left: 3px;">
@@ -104,27 +285,25 @@ else{
                 </li>
             </ul>
 
-<%
-}
-%>
-            <div class="logo-box flex flex-jc-c">
-                <div class="img-box">
-                    <a href="main.jsp">
-                        <img src="img/logo.png" alt="">
-                    </a>
+
+	<div class="logo-box flex flex-jc-c">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="search_wrap">
-                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
-                    <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
-                    </td>
-                    <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
-                    </td>
-                </form>
-            </div>
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        </td>
+                    </form>
+                </div>
 
 
 
@@ -135,7 +314,10 @@ else{
         <div class="line"></div>
 
 
-         <div class="top-box2">
+
+
+	
+        <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
@@ -155,15 +337,6 @@ else{
                         </ul>
                     </div>
                 </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
@@ -190,6 +363,131 @@ else{
         </div>
     </div>
 
+
+
+
+
+	
+           <!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
+    
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.jsp">케어 라이프</a></li>
+                                        <li><a href="about_3.jsp">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="custom.jsp">더 체크</a></li>
+                                        <li><a href="themore.jsp">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                                        <li><a href="review.jsp">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="note.jsp">기록장</a></li>
+                                        <li><a href="noti.jsp">공지사항</a></li>
+                                        <li><a href="event.jsp">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="logout.jsp">
+                            <div class="img-box">
+                                <img src="img/logout_icon.png" alt="">
+                            </div>
+                            logout
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="mypage.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            mypage
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="cart.jsp">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+
+
+
+<%
+}
+%>
+      
+
+
+
+
         <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
             <a alt="맨 위로" class="moveTopBtn">
                 <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
@@ -203,7 +501,6 @@ else{
                 </div>
             </a>
         </div>
-
 
 <%
 
@@ -241,7 +538,7 @@ try {
 
 	<form name="cart_fm" method="post" onsubmit="_submit(this); " >
     <div class="search_wrap1">
-	<div class="flex flex-ai-c" style="width: 60%; margin: 0 auto; font-size: 18px;">
+	<div class="flex flex-ai-c allchk">
 	<input type='checkbox' name='animal' value='selectall' onclick='selectAll(this)' style="width: 18px; height: 18px;" /> <p style=" margin: 0 0 0 10px; font-weight: bold; ">전체 선택</p></div>
 <br />
 	<%
@@ -426,88 +723,166 @@ try {
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true // 버튼 클릭 여부
-        },
-        autoplay: true,
-        autoplaySpeed: 5000,
-        keyboard: true
-    });
+
+            gsap.to('#header', {
+                scrollTrigger: {
+                    trigger: '#header',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '90px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff', 
+            });
+
+        $(document).ready(function(){
 
 
-    function SliderBox1__init() {
-        $('.slider-box-1 > .slick').slick({
-            autoplay: true,
-            autoplaySpeed: 5000,
-            pauseOnHover: false,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            // arrows:true,
-            prevArrow: ".slider-box-1 > .arrows > .btn-left",
-            nextArrow: ".slider-box-1 > .arrows > .btn-right"
-        });
+var win_w = $(window).width();
+
+$(window).on('resize', function(){
+    win_w =$(this).width();
+    if(win_w > 980){
+        $('.gnb_wrap').removeAttr('style');
     }
-
-    $(function () {
-        SliderBox1__init();
-    });
-
-
-//         gsap.to('body', {
-//   scrollTrigger:{
-//     start:'top 0',
-//     end:'top 800px',
-//     trigger:'.top-box2',
-//     markers: true,
-//     pin:true
-//   },
-// });
-
-gsap.to('.top-wrap > .top-box2', {
-scrollTrigger:{
-trigger:'.top-wrap',
-start:'top -98px',
-scrub:true
-},height:'67px',textalign:'center',top:'0',position:'fixed',background:'white'
 });
 
 
+$('.toggle').on('click', function(){
+    $('.gnb_wrap').fadeToggle();
+});
 
- function keyword_check(){
 
-			  if(document.search.keyword.value==''){ 
+$('#gnb>li').on('mouseenter', function(){
 
-			  alert('검색어를 입력하세요');
+    if(win_w > 980){ 
+        $('.subwrap').stop().hide();
+        $(this).children('.subwrap').stop(true, true).slideDown();
 
-			  document.search.keyword.focus(); 
+    } else {
+        $('#gnb>li>a').off('click');
+        $('#gnb>li>a').on('click', function(){
+            $('.subwrap').stop().slideUp(); 
+            $(this).next('.subwrap').stop().slideToggle(); 
+        });
 
-			  return false; 
+    }
 
-			  }
+});
+$('#header').on('mouseleave', function(){
+    if(win_w>980){
+        $('.subwrap').stop().slideUp();
+    }
+});
 
-			  else return true;
+$('#gnb>li>a').on('focusin', function(){
+    if(win_w > 980){
+        $(this).next('.subwrap').stop(true, true).slideDown();
+    }
+});
 
-			 }
+$('#gnb .last').on('focusout', function(){
+    if(win_w > 980){
+        $(this).parents('.subwrap').stop(true, true).slideUp();
+    }
+});
 
-			 function search_form()
+
+});
+
+        
+
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+gsap.to('.top-wrap > .top-box2', {
+  scrollTrigger: {
+      trigger: '.top-wrap',
+      start: 'top -98px',
+      scrub: true
+  },
+  height: '61px',
+  textalign: 'center',
+  top: '0',
+  position: 'fixed',
+  background: '#fff',
+  borderBottom: '1px solid #ccc'
+});
+
+
+            $('#best .tab>li>a').on('click', function(e){
+                var i = $(this).parents('li').index();
+              e.preventDefault();
+
+              $('#best .panel').hide();
+              $(this).next('.panel').show();
+            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
+            });
+
+            $('#best .tab>li>a').first().trigger('click');
+
+
+
+
+    
+     function keyword_check(){
+    
+                  if(document.search.keyword.value==''){ 
+    
+                  alert('검색어를 입력하세요');
+    
+                  document.search.keyword.focus(); 
+    
+                  return false; 
+    
+                  }
+    
+                  else return true;
+    
+                 }
+    
+    
+    
+    
+    
+        function search_form()
+            {
+                var frm = document.search;
+                frm.action = "search.jsp";
+                frm.submit();
+            }
+    
+
+			function login()
 		{
-			var frm = document.search;
-			frm.action = "search.jsp";
-			frm.submit();
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
 		}
+
+
+
 
 			function cart()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
+
+			var checked = $('#chk').is(':checked');
+
+		if(checked) {
+
 			var frm1 = document.cart_fm;
 			frm1.action = "cartResult.jsp"
 			frm1.submit();
+
+		} else {
+			alert("예약할 시술을 선택해주세요 !");
+		}
+			
 
 		}
 
