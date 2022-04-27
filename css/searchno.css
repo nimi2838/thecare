@@ -3,6 +3,7 @@
 html,
 body {
   position: relative;
+  height: 100%;
 }
 
 body {
@@ -338,6 +339,9 @@ a {
 }
 
 
+
+
+
 .search_wrap1 {
   width: 100%;
   margin-bottom: 100px;
@@ -406,8 +410,11 @@ a {
 
 
 
-@media (min-width: 1301px) and  ( max-width:1920px) {
+
+@media (min-width: 1301px) and (max-width:1920px) {
+
   #header {display: none;}
+  /* 탑바 */
   .top-wrap>.top-box1 {
     width: 1280px;
   }
@@ -417,28 +424,26 @@ a {
 
 
 
-@media (min-width: 1051px) and ( max-width:1300px) {
+@media (min-width: 1051px) and (max-width:1300px) {
+
   #header {display: none;}
+  /* 탑바 */
   .top-wrap>.top-box1 {
     width: 95%;
   }
-
+  
   .top-wrap>.top-box2>ul>li {
     padding: 23px 0px;
   
   }
+
 }
 
 
+@media (min-width: 851px) and (max-width:1050px) {
 
-
-/* 
-1200
-980
- */
-
-@media (min-width: 851px) and ( max-width:1050px) {
   #header {display: none;}
+  /* 탑바 */
   .top-wrap>.top-box1 {
     width: 95%;
   }
@@ -446,15 +451,12 @@ a {
   .top-wrap>.top-box2>ul>li {
     padding: 20px 0px;
   } 
+
+
 }
 
 
-
-
-
-@media (min-width: 500px) and ( max-width:850px) {
-
-
+@media (min-width: 500px) and (max-width:850px) {
   .top-wrap {display: none;}
   .top-wrap>.top-box2 {display: none;}
   .top-wrap>.top-box1>.icon-box {display: none;}
@@ -569,7 +571,22 @@ a {
     #gnb .depth_1>li>a{padding-left: 40px;}
 
 
+  /* 탑바 */
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2 {
+    font-size: 16px;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 22px 0px;
+  } 
+
+
 }
+
 
 
 .about-ban {
@@ -595,7 +612,7 @@ margin: 0 auto;
 }
 
 .about-ban>.text-box>i {
-  font-size: 65px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 100px;
 }
@@ -680,13 +697,9 @@ section .no {
 
 
 .finish {
-	width: 90%;
+	width: 60%;
 	margin: 60px auto 110px;
 	text-align: center;
-}
-
-.new_v {
-	margin: 90px auto 110px;
 }
 
 .finish > .icon > i {
@@ -719,15 +732,6 @@ section .no {
 
 
 
-/* cart */
-
-.search_wrap1 > .allchk {
-	width: 60%;
-    margin: 0 auto;
-    font-size: 18px;
-	}
-
-
 
 
 @media (min-width: 1051px) and (max-width:1300px) {
@@ -746,30 +750,8 @@ section .no {
 
 @media (min-width: 500px) and (max-width:850px) {
   #welcome>.inner>.wrap>.no>img {
-    margin-left: 0%;
+    margin-left: -5%;
   }
-
-  
-.about-ban1 {
-    width: 95%;
-	}
-
-	.search_wrap1 > .allchk{
-	width: 75%;
-	}
-
-	.finish {
-	margin: 115px auto 195px;
-	}
-
-	.finish > .icon > i {
-    font-size: 80px;
-	}
-
-	.finish > h1 {
-    font-size: 35px;
-	}
-
 
 }
 
