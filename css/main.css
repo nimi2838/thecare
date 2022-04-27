@@ -790,13 +790,17 @@ left: 60.5%;
 
 @media (min-width: 500px) and ( max-width:850px) {
   .mini-ban > .text-box > div > p {
+   margin-left: 50px; text-align:left;
     font-size: 25px; line-height: 40px;
     position: static;
   }
   .mini-ban {
   background-position: left;
   }
-  .mini-ban > .text-box > div > a {position: static;}
+  .mini-ban > .text-box > div > a {
+	position: absolute;
+    left: 80px;
+    top: -40px;}
 }
 
 
@@ -1235,8 +1239,8 @@ color:#fff;
   position:absolute;
   top:20px;
   left: 0%;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background-position:center;
   background-size:cover;
 }
@@ -1245,8 +1249,8 @@ color:#fff;
 .slider-box-2 > .slick .item .bg2 {
   position:absolute;
   top:20px;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background-position:center;
   background-size:cover;
 }
@@ -1254,7 +1258,8 @@ color:#fff;
 .slider-box-2 > .slick .item .arr {
   position:absolute;
   top: 35%; z-index: 5;
-  left: 45%;
+  left: 43%;
+  font-size: 40px;
   background-position:center;
   background-size:cover;
 }
