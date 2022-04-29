@@ -70,7 +70,7 @@ try {
 <input name='sex' type='hidden' value="<%=sex%>">
 <input name='memo' type='hidden' value="<%=memo%>">
 <input name='sell3' type='hidden' value="<%=sell3%>">
-<input name='coupon' type='text' value="<%=coupon%>">
+<input name='coupon' type='hidden' value="<%=coupon%>">
 </form>
 
 		<%

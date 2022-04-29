@@ -1,8 +1,19 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
 <%
-	Cookie cookie = new Cookie("id","apple");
-	response.addCookie(cookie);
+
+
+//	Cookie cookie = new Cookie("id","apple");
+//	response.addCookie(cookie);
+
+//  setCookieArray: function( cname, carray, exdays) {
+//	var str = "";
+//	for( var key in carray ){
+//		if(str != "") str += ",";
+//		str += key+","+carray[key];
+//	}
+//	this.setCookie( cname,str,exdays );
+//  };
 %>
 <html lang="ko">
 <head>

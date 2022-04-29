@@ -7,7 +7,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -113,7 +112,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -189,7 +188,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -339,7 +338,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -419,7 +418,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -485,20 +484,20 @@ else{
 
 
 
-
-        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-            <a alt="맨 위로" class="moveTopBtn">
-                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+<div style="position: fixed; bottom:5%; right:3%;z-index:2;">
+            <a href="" alt="맨 위로">
+                <div class="moveTopBtn" style="border-radius:50%;z-index:2; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
+    
 
 
     

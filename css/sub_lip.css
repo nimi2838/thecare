@@ -35,10 +35,10 @@
 .inner{width:1170px; margin: 0 auto;} 
 .wrap {margin: 0 auto; width: 100%;}
 
-#line {width: 100%; background-color: #f1f7fb; height: 600px;}                                   
+#line {width: 100%; background-color: #fff0f2; height: 600px;}                                   
 #line .title {
     text-align: left; width: 255px; height: 50px;
-    border-bottom: 1px solid #4a82a7;
+    border-bottom: 1px solid #ff5151;
 }                                   
 #line .title h1{font-size: 30px; margin-left: 10px;} 
                        
@@ -46,7 +46,7 @@
     width: 80%; display: flex; flex-direction: column; 
     align-items: center; margin-top: 30px;
 }
-#line .wrap h2{font-size: 25px; color: #4a82a7;}
+#line .wrap h2{font-size: 25px; color: #e29b9b;}
 #line .wrap .pic {width: 550px; height: 255px;}
 
 #line .wrap .txt {width: 550px; text-align: center; margin-top: 30px;}
@@ -55,8 +55,8 @@
 
 #lip {width: 100%; margin: 100px 0;}
 #lip .title {
-    margin: 0 auto; width: 80%; border-left: 1px solid #4a82a7;
-    border-right: 1px solid #4a82a7; color: #333;
+    margin: 0 auto; width: 80%; border-left: 1px solid #ff7374;
+    border-right: 1px solid #ff7374; color: #333;
 }
 #lip .title h1 {font-size: 25px; line-height: 40px; text-align: center;}
 
@@ -64,6 +64,6 @@
 #lip .wrap >.con { flex-direction: column; width: 390px; margin-right: 50px; margin-top: 80px;}
 #lip .wrap .con .pic{width: 390px; height: 280px;}
 #lip .wrap .con .txt{width: 390px; text-align: center; margin-top: 30px;}
-#lip .wrap .con .txt h2{font-size: 23px; border-bottom: 1px solid #4a82a7; padding-bottom: 30px;}
+#lip .wrap .con .txt h2{font-size: 23px; border-bottom: 1px solid #ff7374; padding-bottom: 30px;}
 #lip .wrap .con .txt p{font-size: 20px; line-height: 30px;}
 

@@ -398,14 +398,34 @@ a {
 
 .sub_con > .sub_text2 {
     width: 48%;
-    padding: 110px 30px 50px;
+    padding: 00px 0px 50px;
     font-size: 19px;
+	margin-top: 70px;
+}
+
+#txt_getChkList {
+ width: 90%;
+ height:90px; 
+ outline:none; 
+ border: 0;
+ font-size: 20px;
+ line-height:50px; 
+ padding:30px 30px ; 
+ text-rendering: none; 
+ appearance:none;
+ resize: none; 
+ font-weight:bold;
+ color: #555; 
+ font-family: 'ChosunSg';
+ overflow:hidden;
 }
 
 
 .sub_con > .sub_text2 > .option {
     display: flex;
-    margin: 0 0 30px 28px;
+    padding: 40px 30px 28px;
+    background: #fff;
+	margin-bottom: 5px;
 }
 
 .sub_con > .sub_text2 > .option  > form {
@@ -419,7 +439,7 @@ a {
  .sub_con > .sub_text2 > .option .form1 {
         font-size: 18px;
         padding: 10px 0;
-        margin: -2% 0 0 21%;
+        margin: -2% 0 0 20%;
         outline: none;
         background: #ffffff;
 		width: 65%;
@@ -436,8 +456,12 @@ a {
     width: 300px;
 }
 
-.tab1 td {
-	width:55px;
+.tab1 .td1 {
+	width: 20px;
+}
+
+.tab1 .td3 {
+	width:65px;
 }
 
 .tab1 td:nth-child(2){
@@ -467,7 +491,7 @@ a {
 	}
 
  .sub_con > .sub_text2 > .option .form1  #Div > div {
-    padding: 15px 0 10px;
+    padding: 10px 0 10px;
     text-align: center;
 	
 }
@@ -475,7 +499,8 @@ a {
  .sub_con > .sub_text2 > .option .form1  #Div > div input {
     border: 1px solid #e6e6fa;
     background: white;
-    padding: 3px 8px;
+        padding: 7px 30px;
+	font-size: 17px;
 }
 
  .sub_con > .sub_text2 > .option .form1  #Div table {
@@ -491,6 +516,7 @@ a {
     color: #6e6e6e;
     padding: 30px 30px;
     font-size: 20px;
+	margin-top: 2px;
 }
 
 .sub_con > .sub_text2 > .price-wrap > p {
@@ -516,7 +542,7 @@ input[type="checkbox" i] {
 }
 
 .sub_con > .sub_text2 .btn-box {
-    margin: 50px 0 0 19%;
+    margin: 50px 0 0 23%;
 	font-size: 18px;
 }
 
@@ -794,7 +820,7 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     width: 70%;
     margin: 100px auto 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2 {
@@ -1244,14 +1270,18 @@ margin-top: 100px;
     
     .sub_con > .sub_text2 {
         width: 48%;
-        padding: 110px 30px 50px;
-        font-size: 18px;
+    padding: 0px 30px 50px;
+    font-size: 19px;
+    margin-top: 70px;
     }
     
+	#result {
+	    width: 200px;
+	}
     
     .sub_con > .sub_text2 > .option {
         display: flex;
-        margin-left: 18px;
+        margin: 0 0 5px 0;
     }
     
     .sub_con > .sub_text2 > .option .form1 {
@@ -1259,7 +1289,6 @@ margin-top: 100px;
         padding: 10px 0;
         margin: -2% 0 0 18%;
         outline: none;
-        background: #ecd8d8;
 		width: 65%;
     }
     
@@ -1301,13 +1330,10 @@ margin-top: 100px;
     .sub_con > .sub_text2 > .btn-box > a{
         padding: 20px 45px;
         background: #ffffff;
-        border: 1px solid #ffc6c6;
-        color: #ff9090;
         border-radius: 5px;
     }
     
     .sub_con > .sub_text2 > .btn-box > a:last-child{
-        background: #ffa5a5;
         margin-left: 3%;
         color: #ffffff;
     }
@@ -1480,9 +1506,12 @@ margin-top: 100px;
     
     
     .sub_con > .sub_text2 > .option {
-        display: block;
         margin-left: 0px;
     }
+
+	 .sub_con > .sub_text2 > .option > div {
+		width: 80px;
+	 }
     
     .sub_con > .sub_text2 > .option form {
         font-size: 18px;
@@ -1500,7 +1529,11 @@ margin-top: 100px;
         padding: 30px 30px;
         font-size: 20px;
     }
-    
+
+    #result {
+	    width: 100px;
+	}
+
     .sub_con > .sub_text2 > .price-wrap > p {
         margin: 0;
         display: block;
@@ -1531,13 +1564,10 @@ margin-top: 100px;
     .sub_con > .sub_text2 > .btn-box > a{
         padding: 20px 35px;
         background: #ffffff;
-        border: 1px solid #ffc6c6;
-        color: #ff9090;
         border-radius: 5px;
     }
     
     .sub_con > .sub_text2 > .btn-box > a:last-child{
-        background: #ffa5a5;
         margin-left: 2%;
         color: #ffffff;
     }
@@ -2001,13 +2031,10 @@ margin-top: 100px;
     .sub_con > .sub_text2 > .btn-box > a{
         padding: 20px 35px;
         background: #ffffff;
-        border: 1px solid #ffc6c6;
-        color: #ff9090;
         border-radius: 5px;
     }
     
     .sub_con > .sub_text2 > .btn-box > a:last-child{
-        background: #ffa5a5;
         margin-left: 2%;
         color: #ffffff;
     }
@@ -2285,6 +2312,11 @@ margin-top: 100px;
     margin-left: 20px;
 }
 
+
+
+
+    
+    
 
 
 }

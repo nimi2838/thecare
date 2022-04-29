@@ -9,15 +9,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_2.css">
-    <link rel="stylesheet" href="css/sub_li02.css">
+    <link rel="stylesheet" href="css/sub_1.css">
+	<link rel="stylesheet" href="css/sub_li02.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>윤곽주사</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<title>상세화면</title>
 
 </head>
 <%
@@ -30,6 +29,8 @@ DecimalFormat df = new DecimalFormat("###,###");
 
    		int total = 0;
 %>
+
+
 <body>
 
 
@@ -39,12 +40,12 @@ DecimalFormat df = new DecimalFormat("###,###");
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
 
-                             <%
+                        	  <%
    if(myid == null) {
 
 %>
 
-   <ul class="icon-box">
+	<ul class="icon-box">
                     <li class="icon login">
                         <a href="login.jsp">
                             <div class="img-box">
@@ -72,9 +73,9 @@ DecimalFormat df = new DecimalFormat("###,###");
                         </a>
                     </li>
                 </ul>
-      
+		
 
-   <div class="logo-box flex flex-jc-c">
+	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
                         <a href="main.jsp">
                             <img src="img/logo.png" alt="">
@@ -102,7 +103,7 @@ DecimalFormat df = new DecimalFormat("###,###");
         <div class="line"></div>
 
 
-     <div class="top-box2">
+	  <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
@@ -113,12 +114,12 @@ DecimalFormat df = new DecimalFormat("###,###");
                         </ul>
                     </div>
                 </li>
-            <li class="menu">
+				<li class="menu">
                     <a>더 궁금해</a>
-               <div>
+					<div>
                         <ul>
                             <li><a href="#" onclick="login();">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -126,7 +127,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -262,7 +263,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 
 
 
-         <%
+			<%
 }
 else{
 %>
@@ -297,7 +298,7 @@ else{
             </ul>
 
 
-   <div class="logo-box flex flex-jc-c">
+	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
                         <a href="main.jsp">
                             <img src="img/logo.png" alt="">
@@ -327,7 +328,7 @@ else{
 
 
 
-   
+	
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
@@ -339,12 +340,12 @@ else{
                         </ul>
                     </div>
                 </li>
-            <li class="menu">
+				<li class="menu">
                     <a>더 궁금해</a>
-               <div>
+					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -352,7 +353,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -378,7 +379,7 @@ else{
 
 
 
-   
+	
            <!-- 모바일로 -->
            <header id="header">
             <div class="inner">
@@ -499,22 +500,19 @@ else{
 
 
 
-        <div style="position: fixed; bottom:5%; right:3%;z-index:2;">
-            <a href="" alt="맨 위로">
-                <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
-    
-
-
 
 
 	
@@ -610,7 +608,7 @@ try {
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술<br>
+                    #일상생활바로가능 #간편한주사시술 <br>
                     #10분내외 #다른시술과병행가능
                 </div>
             </div>
@@ -638,10 +636,10 @@ try {
 
 
 						
-							<form name="form" method="post" action="rezResult.jsp" onsubmit="_submit(this); " >
+							<form name="form" method="post" onsubmit="_submit(this); " >
 
 							
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
 									<tbody>
 
 							<%
@@ -658,7 +656,7 @@ try {
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
 
-				
+				if(opprice==50000) {
 
 						%>
 
@@ -669,13 +667,34 @@ try {
 											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
 											</td>
-											<td class="td2" style=""><%=opname%>                                          </td>
-											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+											<td class="td2" style=""><%=opname%>                                                 </td>
+											<td class="td3" id = "td3" style="width: 75px;"><%=df.format(opprice) %>원</td> 
 										  </tr>
 
 
 					
 									<%
+				}
+									else{
+										%>
+
+
+
+										<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
+
+											</td>
+											<td class="td2" style=""><%=opname%>                                               </td>
+											<td class="td3" id = "td3" style="width: 75px;"><%=df.format(opprice) %>원</td>
+										  </tr>
+
+
+											<%
+
+									} //if-else
 
 			}
 
@@ -686,6 +705,7 @@ try {
 					
 												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
+												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
@@ -724,6 +744,7 @@ try {
 				
 
 			<script language="javascript">
+
 
 				function td1() {
 							const td3 = document.getElementByClass('td3').innerText;
@@ -793,11 +814,11 @@ var sum = 0;
 					if(value=="OPEN") {
 						Div.style.visibility="visible";
 						Div.style.display="inline-block";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #f1f7fb; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block;");
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block;");
 							    
 
 				
@@ -883,7 +904,7 @@ var sum = 0;
                 <div class="btn-box">
 
 
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
+					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
 			
 
 				<a href="#" onClick=rez()>시술 예약하기</a>
@@ -1271,6 +1292,7 @@ var sum = 0;
 
     </div>
 
+
 	<%
     } 
 catch(Exception e) {
@@ -1313,173 +1335,14 @@ catch(Exception e) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
 
     <script>
 
-	
-            gsap.to('#header', {
-                scrollTrigger: {
-                    trigger: '#header',
-                    start: 'top -98px',
-                    scrub: true
-                },
-                height: '90px',
-                textalign: 'center',
-                top: '0',
-                position: 'fixed',
-                background: '#fff', 
-            });
-
-        $(document).ready(function(){
-
-
-var win_w = $(window).width();
-
-$(window).on('resize', function(){
-    win_w =$(this).width();
-    if(win_w > 980){
-        $('.gnb_wrap').removeAttr('style');
-    }
-});
-
-
-$('.toggle').on('click', function(){
-    $('.gnb_wrap').fadeToggle();
-});
-
-
-$('#gnb>li').on('mouseenter', function(){
-
-    if(win_w > 980){ 
-        $('.subwrap').stop().hide();
-        $(this).children('.subwrap').stop(true, true).slideDown();
-
-    } else {
-        $('#gnb>li>a').off('click');
-        $('#gnb>li>a').on('click', function(){
-            $('.subwrap').stop().slideUp(); 
-            $(this).next('.subwrap').stop().slideToggle(); 
-        });
-
-    }
-
-});
-$('#header').on('mouseleave', function(){
-    if(win_w>980){
-        $('.subwrap').stop().slideUp();
-    }
-});
-
-$('#gnb>li>a').on('focusin', function(){
-    if(win_w > 980){
-        $(this).next('.subwrap').stop(true, true).slideDown();
-    }
-});
-
-$('#gnb .last').on('focusout', function(){
-    if(win_w > 980){
-        $(this).parents('.subwrap').stop(true, true).slideUp();
-    }
-});
-
-
-});
-
-        
-
-const $topBtn = document.querySelector(".moveTopBtn");
-
-// 버튼 클릭 시 맨 위로 이동
-$topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-gsap.to('.top-wrap > .top-box2', {
-  scrollTrigger: {
-      trigger: '.top-wrap',
-      start: 'top -98px',
-      scrub: true
-  },
-  height: '61px',
-  textalign: 'center',
-  top: '0',
-  position: 'fixed',
-  background: '#fff',
-  borderBottom: '1px solid #ccc'
-});
-
-
-            $('#best .tab>li>a').on('click', function(e){
-                var i = $(this).parents('li').index();
-              e.preventDefault();
-
-              $('#best .panel').hide();
-              $(this).next('.panel').show();
-            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
-            });
-
-            $('#best .tab>li>a').first().trigger('click');
-
-
-
-
-    
-            gsap.to('.top-wrap > .top-box2', {
-                scrollTrigger: {
-                    trigger: '.top-wrap',
-                    start: 'top -98px',
-                    scrub: true
-                },
-                height: '61px',
-                textalign: 'center',
-                top: '0',
-                position: 'fixed',
-                background: '#fff',
-                borderBottom: '1px solid #ccc'
-            });
-    
-            
-    
-    
-     function keyword_check(){
-    
-                  if(document.search.keyword.value==''){ 
-    
-                  alert('검색어를 입력하세요');
-    
-                  document.search.keyword.focus(); 
-    
-                  return false; 
-    
-                  }
-    
-                  else return true;
-    
-                 }
-    
-    
-    
-    
-    
-        function search_form()
-            {
-                var frm = document.search;
-                frm.action = "search.jsp";
-                frm.submit();
-            }
-    
-
-			function login()
-		{
-			alert('로그인 후 이용 가능한 페이지입니다.');
-			document.location.href="login.jsp";
-		}
-
-
 
         AOS.init();
-
 
 				function _submit(f)
 				{
@@ -1525,6 +1388,13 @@ gsap.to('.top-wrap > .top-box2', {
             });
         });
 
+
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 
 		
@@ -1574,21 +1444,37 @@ gsap.to('.top-wrap > .top-box2', {
 
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
-		 const checkbox = document.getElementById('chk');
 
-			 if (checkbox.checked ==('false')) {
-				alert("옵션을 선택해 주세요!");
-			} else{
+		var checked = $('#chk').is(':checked');
+
+		if(checked) {
+
 			var frm1 = document.form;
-			frm1.submit();
-			}
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
 		}
 
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
+
+		var checked = $('#chk').is(':checked');
+
+		if(checked) {
+
 			var frm1 = document.form;
 			frm1.action = "rezResult.jsp"
-			frm1.submit();
+			document.getElementById('button').click();
+
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
+
 
 		}
 

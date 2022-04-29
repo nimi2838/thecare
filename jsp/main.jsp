@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>메인페이지</title>
 </head>
@@ -30,40 +30,231 @@
    if(myid == null) {
 
 %>
-            <ul class="icon-box">
-                <li class="icon login">
-                    <a href="login.jsp">
-                        <div class="img-box">
-                            <img src="img/login_icon.png" alt="">
-                        </div>
-                        login
-                    </a>
-                    <div class="line-icon"></div>
+
+	<ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="#" onclick="login();">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+		
+
+	<div class="logo-box flex flex-jc-c">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        </td>
+                    </form>
+                </div>
+
+
+
+
+
+
+        </div>
+        <div class="line"></div>
+
+
+	  <div class="top-box2">
+            <ul class="flex flex-jc-c">
+                <li class="menu">
+                    <a>더 케어</a>
+                    <div>
+                        <ul>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
+                            <li><a href="about_3.jsp">오시는길</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="icon join">
-                    <a href="join.jsp">
-                        <div class="img-box">
-                            <img src="img/join_icon.png" alt="">
-                        </div>
-                        join
-                    </a>
-                    <div class="line-icon"></div>
+				<li class="menu">
+                    <a>더 궁금해</a>
+					<div>
+                        <ul>
+                            <li><a href="#" onclick="login();">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="icon cart">
-                    <a href="cart.jsp">
-                        <div class="img-box">
-                            <img src="img/cart_icon.png" alt="">
-                        </div>
-                        cart
-                    </a>
+                <li class="menu">
+                    <a>케어원해</a>
+                    <div>
+                        <ul>
+							<li><a href="guide.jsp">안내/예약</a></li>
+                            <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                
+                <li class="jsp">
+                    <a>소통원해</a>
+                    <div>
+                        <ul>
+                            <li><a href="#" onclick="login();">기록장</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
+        </div>
+    </div>
+
+
+<!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
+    
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.jsp">케어 라이프</a></li>
+                                        <li><a href="about_3.jsp">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="#" onclick="login();">더 체크</a></li>
+                                        <li><a href="themore.jsp">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
+                                        <li><a href="review.jsp">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="#" onclick="login();">기록장</a></li>
+                                        <li><a href="noti.jsp">공지사항</a></li>
+                                        <li><a href="event.jsp">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="login.jsp">
+                            <div class="img-box">
+                                <img src="img/login_icon.png" alt="">
+                            </div>
+                            login
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="join.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            join
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="#" onclick="login();">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+           
+
+
+
 			<%
 }
 else{
 %>
 
-	<ul class="icon-box">
+<ul class="icon-box">
                 <li class="icon login">
                     <a href="logout.jsp">
                         <div class="img-box" style= "margin-left: 3px;">
@@ -92,27 +283,25 @@ else{
                 </li>
             </ul>
 
-<%
-}
-%>
-            <div class="logo-box flex flex-jc-c">
-                <div class="img-box">
-                    <a href="main.jsp">
-                        <img src="img/logo.png" alt="">
-                    </a>
+
+	<div class="logo-box flex flex-jc-c">
+                    <div class="img-box">
+                        <a href="main.jsp">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="search_wrap">
-                <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
-                    <td class="icon">
-                        <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
-                    </td>
-                    <td class="schBtn">
-                        <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
-                    </td>
-                </form>
-            </div>
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
+                        </td>
+                    </form>
+                </div>
 
 
 
@@ -123,6 +312,9 @@ else{
         <div class="line"></div>
 
 
+
+
+	
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
@@ -134,90 +326,20 @@ else{
                         </ul>
                     </div>
                 </li>
-				<%
-	try {
- 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
-     String DB_ID="skin";  
-     String DB_PASSWORD="1234"; 
- 	 
-	 Class.forName("org.gjt.mm.mysql.Driver"); 
- 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
-
-	 String id = session.getId();
-
-%>
-	<%
-    String jsql2= "SELECT * FROM user WHERE uId=?";
-                    PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-                    pstmt2.setString(1, myid);
-
-                    ResultSet rs2 = pstmt2.executeQuery(); 
-
-
-                    if(rs2.next()) {
-
-    %>
-
-                
-            <li class="menu">
+				<li class="menu">
                     <a>더 궁금해</a>
-               <div>
+					<div>
                         <ul>
-                            <li><a href="#" onclick = custom()>더 체크</a></li>
-                     <li><a href="#" onclick = themore()>더 모어</a></li>
+                            <li><a href="custom.jsp">더 체크</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-
-                <%
-                    } else {
-                %>
-
-                     
-            <li class="menu">
-                    <a>더 궁금해</a>
-               <div>
-                        <ul>
-                            <li><a href="#" onclick = login()>더 체크</a></li>
-                     <li><a href="#" onclick = themore()>더 모어</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                    <%
-                } //if-else 아이디 유무
-%>
-           <script>
-		   function login()
-        {
-            alert('로그인 후 이용 가능한 페이지입니다.');
-            document.location.href="login.jsp";
-        }
-		function custom()
-        {
-           
-            document.location.href="custom.jsp";
-        }
-		function themore()
-        {
-            
-            document.location.href="themore.jsp";
-        }
-		   </script>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -239,19 +361,148 @@ else{
         </div>
     </div>
 
-        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-            <a alt="맨 위로" class="moveTopBtn">
-                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+
+
+
+
+	
+           <!-- 모바일로 -->
+           <header id="header">
+            <div class="inner">
+                <div class="logo-box flex">
+                    <div class="img-box">
+                        <a href="main.html">
+                            <img src="img/logo.png" alt="" width="150px">
+                        </a>
+                    </div>
+    
+                    <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
+    
+                <nav class="gnb_wrap">
+                    <div class="search_wrap">
+                        <form accept-charset="utf-8" name="search" class="search-box flex"
+                            method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                            <td class="icon">
+                                <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                            </td>
+                            <td class="schBtn">
+                                <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                            </td>
+                        </form>
+                    </div>
+                    <ul id="gnb">
+                        <li>
+                            <a href="#">더 케어란</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="about_1.jsp">케어 라이프</a></li>
+                                        <li><a href="about_3.jsp">오시는길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">더 궁금해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="custom.jsp">더 체크</a></li>
+                                        <li><a href="themore.jsp">더 모어</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">케어원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                                        <li><a href="review.jsp">전후사진</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">소통원해</a>
+                            <div class="subwrap">
+                                <div class="inner">
+                                    <ul class="depth_1">
+                                        <li><a href="note.jsp">기록장</a></li>
+                                        <li><a href="noti.jsp">공지사항</a></li>
+                                        <li><a href="event.jsp">이벤트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                   
+                <ul class="icon-box">
+                    <li class="icon login">
+                        <a href="logout.jsp">
+                            <div class="img-box">
+                                <img src="img/logout_icon.png" alt="">
+                            </div>
+                            logout
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon join">
+                        <a href="mypage.jsp">
+                            <div class="img-box">
+                                <img src="img/join_icon.png" alt="">
+                            </div>
+                            mypage
+                        </a>
+                        <div class="line-icon"></div>
+                    </li>
+                    <li class="icon cart">
+                        <a href="cart.jsp">
+                            <div class="img-box">
+                                <img src="img/cart_icon.png" alt="">
+                            </div>
+                            cart
+                        </a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class="line"></div>
+        </header>
+
+
+
+<%
+}
+%>
+      
+
+
+
+<div style="position: fixed; bottom:5%; right:3%;z-index:2;">
+            <a href="" alt="맨 위로">
+                <div class="moveTopBtn" style="border-radius:50%;z-index:2; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
+    
+
+
+
+
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -265,14 +516,17 @@ else{
                     <img src="img/banner04.jpg" alt="">
                 </div>
     
-                
-    
-    
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-	         <section id="best" class="content">
+
+
+
+
+
+
+        <section id="best" class="content">
             <div class="inner">
                 <div class="title">
                     <h2>THE CARE 추천</h2>
@@ -285,7 +539,7 @@ else{
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con gender">
                                     <ul>
@@ -325,7 +579,7 @@ else{
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con man">
                                     <ul>
@@ -353,7 +607,7 @@ else{
                                             </div>
                                             <div class="txt">
                                                 <p>3위</p>
-                                                <h4>아쿠아 필</h4>
+                                                <h4>아쿠아 필링</h4>
                                             </div>
                                         </li>
                                     </ul>
@@ -365,7 +619,7 @@ else{
                             <div class="panel ">
                                 <div class="mini">
                                     <h1>TOP 3</h1>
-                                <img src="img/top.png" alt="" width="50px" height="50px">
+                                <!-- <img src="img/top.png" alt="" width="50px" height="50px"> -->
                                 </div>
                                 <div class="con woman">
                                     <ul>
@@ -375,7 +629,7 @@ else{
                                             </div>
                                             <div class="txt">
                                                 <p>1위</p>
-                                                <h4>아쿠아 필</h4>
+                                                <h4>아쿠아 필링</h4>
                                             </div>
                                         </li>
                                         <li>
@@ -408,13 +662,15 @@ else{
 
 
 
-     <div class="slider-box-1">
+    
+    
+        <div class="slider-box-1">
             <h4>DOCTORS</h4>
             <p>의료진</p>
             <div class="slick">
     
                 <div class="item">
-                    <a >
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum02.png);"></div>
                         <div class="name">
                             <p>보톡스 전문</p>
@@ -425,7 +681,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a >
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum03.png);"></div>
                         <div class="name">
                         <p>보톡스 전문</p>
@@ -436,7 +692,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a >
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum04.png);"></div>
                         <div class="name">
                         <p>체형 전문</p>
@@ -447,7 +703,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a>
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum05.png);"></div>
                         <div class="name">
                         <p>필러 전문</p>
@@ -458,7 +714,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a >
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum07.png);"></div>
                         <div class="name">
                         <p>레이저 전문</p>
@@ -469,7 +725,7 @@ else{
                 </div>
     
                 <div class="item">
-                    <a >
+                    <a href="about_2.jsp">
                         <div class="bg" style="background-image:url(img/doctor_list_thum08.png);"></div>
                         <div class="name">
                         <p>피부 전문</p>
@@ -489,13 +745,15 @@ else{
                     <p>
                     내 피부타입이 궁금하다면?<br>
                     테스트를 통해 알아보세요!
-                    </p><a href="custom-test.jsp">TEST</a>
+                    </p><a href="custom.jsp">TEST</a>
                 </div>
             </div>
         </div>
-
-
-	 <div class="card-wrap">
+        
+       
+    
+    
+        <div class="card-wrap">
             <div class="cardtt">
                 <h1>SEASONS</h1>
                 <h4>계절마다 필요한 시술</h4>
@@ -506,6 +764,7 @@ else{
                     <div class="text-box">
                         <h1>SPRING</h1>
                         <p>봄</p>
+                        
                     </div>
                     <div class="bg">
                         <h4>
@@ -566,8 +825,13 @@ else{
         </div>
 
 
+        
 
-    <div class="content-f flex">
+
+    
+    
+    
+        <div class="content-f flex">
     
             <div class="before-box">
                 <h1>BEFORE & AFTER</h1>
@@ -616,64 +880,61 @@ else{
                 <h1>EVENT</h1>
                 <p>다양한 혜택이 가득</p>
                 <ul>
-                    <li><a href="event.html">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
-                    <li><a href="event.html">[이벤트] 가정의 달 이벤트 ! </a></li>
-                    <li><a href="event.html">[이벤트] 코로나 극복 이벤트 ! </a></li>
-                    <li><a href="event.html">[이벤트] 여름 이벤트 ! </a></li>
+                    <li><a href="event.jsp">[이벤트] 2022년 임인년 검은 호랑이해 이벤트 ! </a></li>
+                    <li><a href="event.jsp">[이벤트] 가정의 달 이벤트 ! </a></li>
+                    <li><a href="event.jsp">[이벤트] 코로나 극복 이벤트 ! </a></li>
+                    <li><a href="event.jsp">[이벤트] 여름 이벤트 ! </a></li>
                 </ul>
             </div>
         </div>
-
-
-    <div class="map_wrap">
-        <div class="bg_box flex">
-            <div class="bg_box1"></div>
-            <div class="bg_box2"></div>
-        </div>
-        <div class="map_box">
-
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2719577905823!2d127.02316621491029!3d37.501503435608285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158e9c7640f%3A0xaa22996c3b700d95!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDqsJXrgqjrjIDroZwgNDM5!5e0!3m2!1sko!2skr!4v1644303822867!5m2!1sko!2skr"
-                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-
-
-        </div>
-
-        <div class="text_box">
-            <h1>THE CARE</h1>
-            <div class="text flex">
-
-                <div class="text1">
-                    <p class="p1">주소</p>
-                    <p class="p2">진로시간안내</p><br><br><br><br><br>
-                    <p class="p3">주차안내</p>
-                </div>
-
-                <div class="text2">
-                    <p class="p4">
-                        서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
-                    </p>
-
-                    <p class="p5">
-                        월 화 목 금 : AM 10:00 ~ PM 08:00<br>
-                        수 요 일 : PM 02:00 ~ PM08:00<br>
-                        토 요 일 : AM 10:00 ~ PM 03:00<br>
-                        점심시간 : PM 01:00 ~ PM 02:00<br>
-                        일요일, 공휴일 휴진<br>
-                        토요일 점심시간 없음.
-                    </p>
-
-                    <p class="p6">
-                        병원 건물 주차장 주차 가능<br>
-                        · 건물 내부 주차장 (30분 무료 / 2000cc급 승용차 가능)<br>
-                        · 외부 건물 주차장 (지점 문의)
-                    </p>
+    
+        <div class="map_wrap">
+            <div class="bg_box flex">
+                <div class="bg_box1"></div>
+                <div class="bg_box2"></div>
+            </div>
+            <div class="map_box">
+    
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2719577905823!2d127.02316621491029!3d37.501503435608285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158e9c7640f%3A0xaa22996c3b700d95!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDqsJXrgqjrjIDroZwgNDM5!5e0!3m2!1sko!2skr!4v1644303822867!5m2!1sko!2skr"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
+            </div>
+    
+            <div class="text_box">
+                <h1>THE CARE</h1>
+                <div class="text flex">
+    
+                    <div class="text1">
+                        <p class="p1">주소</p>
+                        <p class="p2">진로시간안내</p><br><br><br><br><br>
+                        <p class="p3">찾아오시는 길</p>
+                    </div>
+    
+                    <div class="text2">
+                        <p class="p4">
+                            서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+                        </p>
+    
+                        <p class="p5">
+                            월 화 목 금 : AM 10:00 ~ PM 08:00<br>
+                            수 요 일 : PM 02:00 ~ PM08:00<br>
+                            토 요 일 : AM 10:00 ~ PM 03:00<br>
+                            점심시간 : PM 01:00 ~ PM 02:00<br>
+                            일요일, 공휴일 휴진<br>
+                            토요일 점심시간 없음.
+                        </p>
+    
+                        <p class="p6">
+                            · 강남역 10번 출구 도보 5분<br>
+                            · 신논현역 6번 출구 도보 5분<br>
+                            · 버스 146번 신논현역.구교보타워사거리 하자 후 도보 141m<br>
+                            · 버스 7007 신논현역.우딩빌딩 하자 후 도보 53m<br>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
 
 
 
@@ -697,13 +958,6 @@ else{
 
 
 
-<%
-    
-
- } catch(Exception e) { 
-		out.println(e);
-}
-%>
 
 
 
@@ -726,13 +980,110 @@ else{
     <script>
 
 
+            gsap.to('#header', {
+                scrollTrigger: {
+                    trigger: '#header',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '90px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff', 
+            });
+
+        $(document).ready(function(){
+
+
+var win_w = $(window).width();
+
+$(window).on('resize', function(){
+    win_w =$(this).width();
+    if(win_w > 980){
+        $('.gnb_wrap').removeAttr('style');
+    }
+});
+
+
+$('.toggle').on('click', function(){
+    $('.gnb_wrap').fadeToggle();
+});
+
+
+$('#gnb>li').on('mouseenter', function(){
+
+    if(win_w > 980){ 
+        $('.subwrap').stop().hide();
+        $(this).children('.subwrap').stop(true, true).slideDown();
+
+    } else {
+        $('#gnb>li>a').off('click');
+        $('#gnb>li>a').on('click', function(){
+            $('.subwrap').stop().slideUp(); 
+            $(this).next('.subwrap').stop().slideToggle(); 
+        });
+
+    }
+
+});
+$('#header').on('mouseleave', function(){
+    if(win_w>980){
+        $('.subwrap').stop().slideUp();
+    }
+});
+
+$('#gnb>li>a').on('focusin', function(){
+    if(win_w > 980){
+        $(this).next('.subwrap').stop(true, true).slideDown();
+    }
+});
+
+$('#gnb .last').on('focusout', function(){
+    if(win_w > 980){
+        $(this).parents('.subwrap').stop(true, true).slideUp();
+    }
+});
+
+
+});
+
+        
+
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+gsap.to('.top-wrap > .top-box2', {
+  scrollTrigger: {
+      trigger: '.top-wrap',
+      start: 'top -98px',
+      scrub: true
+  },
+  height: '61px',
+  textalign: 'center',
+  top: '0',
+  position: 'fixed',
+  background: '#fff',
+  borderBottom: '1px solid #ccc'
+});
+
+
             $('#best .tab>li>a').on('click', function(e){
+                var i = $(this).parents('li').index();
               e.preventDefault();
+
               $('#best .panel').hide();
               $(this).next('.panel').show();
+            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
             });
 
             $('#best .tab>li>a').first().trigger('click');
+
+
 
 
             var swiper = new Swiper(".mySwiper", {
@@ -790,21 +1141,6 @@ else{
                     pauseOnHover: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    // responsive: [{
-                    //     breakpoint: 1050, // 화면의 넓이가 600px 이상일 때 
-                    //     settings: {
-                    //         slidesToShow: 2,
-                    //         slidesToScroll: 2
-                    //     }
-                    // }, {
-                    //     breakpoint: 850, // 화면의 넓이가 320px 이상일 때 
-                    //     settings: {
-                    //         slidesToShow: 1,
-                    //         slidesToScroll: 1
-                    //     }
-                    // }],
-    
-                    // arrows:true,
                     prevArrow: ".slider-box-2 > .arrows > .btn-left",
                     nextArrow: ".slider-box-2 > .arrows > .btn-right"
                 });
@@ -813,69 +1149,57 @@ else{
             $(function () {
                 SliderBox2__init();
             });
+    
+            gsap.to('.top-wrap > .top-box2', {
+                scrollTrigger: {
+                    trigger: '.top-wrap',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '61px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff',
+                borderBottom: '1px solid #ccc'
+            });
+    
+            
+    
+    
+     function keyword_check(){
+    
+                  if(document.search.keyword.value==''){ 
+    
+                  alert('검색어를 입력하세요');
+    
+                  document.search.keyword.focus(); 
+    
+                  return false; 
+    
+                  }
+    
+                  else return true;
+    
+                 }
+    
+    
+    
+    
+    
+        function search_form()
+            {
+                var frm = document.search;
+                frm.action = "search.jsp";
+                frm.submit();
+            }
+    
 
-        //         gsap.to('body', {
-        //   scrollTrigger:{
-        //     start:'top 0',
-        //     end:'top 800px',
-        //     trigger:'.top-box2',
-        //     markers: true,
-        //     pin:true
-        //   },
-        // });
-
-        gsap.to('.top-wrap > .top-box2', {
-            scrollTrigger: {
-                trigger: '.top-wrap',
-                start: 'top -98px',
-                scrub: true
-            },
-            height: '61px',
-            textalign: 'center',
-            top: '0',
-            position: 'fixed',
-            background: '#fff',
-            borderBottom: '1px solid #ccc'
-        });
-
-
-
- function keyword_check(){
-
-			  if(document.search.keyword.value==''){ 
-
-			  alert('검색어를 입력하세요');
-
-			  document.search.keyword.focus(); 
-
-			  return false; 
-
-			  }
-
-			  else return true;
-
-			 }
-
-
-
-
-
-function search_form()
+			function login()
 		{
-			var frm = document.search;
-			frm.action = "search.jsp";
-			frm.submit();
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
 		}
-
-
-		const $topBtn = document.querySelector(".moveTopBtn");
-
-// 버튼 클릭 시 맨 위로 이동
-$topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-
 
 
 

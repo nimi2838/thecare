@@ -331,13 +331,13 @@ else{
                     
                             <tr class="com_wrap">
                                 <td class="td1">
-                                    <textarea rows="12" cols="210"name="in_content" style="outline: none;"> 댓글을 입력해주세요.</textarea>
+                                    <textarea rows="10" cols="190"name="in_content" style="outline: none; padding: 20px 10px;"> 댓글을 입력해주세요.</textarea>
                                 </td>
                                 <td>
                                     <div class="btn"> 
                                         <input type="button" name="write_submit" value="등   록" OnClick="in_check()" 
                                         class="btn1"
-                                        style="background: white; border: 1px solid #1f628e; padding: 102px 15px; ">
+                                        style="background: white; border: 1px solid #1f628e; padding: 113px 15px; font-size: 18px;">
                                     </div>
                                 </td>
                             </tr> 	 

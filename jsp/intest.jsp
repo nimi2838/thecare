@@ -8,23 +8,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/searchno.css" />
-  <title>검색결과</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="css/searchno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>장바구니</title>
 </head>
-<%
-   String myid = (String)session.getAttribute("sid");                                                                           
-%>
+
+
+
+
 <body>
 
+<%
+   String myid = (String)session.getAttribute("sid");    
+   
+
+    try{
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care?characterEncoding=euckr";   
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234";
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
+
+	 String ctNo = session.getId(); 
+
+
+
+	
+
+	%>
 
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-
-
-                        	  <%
+            
+  <%
    if(myid == null) {
 
 %>
@@ -109,14 +129,13 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
+                    <!-- <a href="searchform.html" class="btn_search">
+                            <div class="img-box">
+                                <img src="img/Search_thin_icon.png" alt="">
+                            </div>
+                        </a> -->
                 </form>
             </div>
-
-
-
-
-
-
 
         </div>
         <div class="line"></div>
@@ -125,50 +144,44 @@ else{
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어</a>
+                    <a>회사소개</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">케어 라이프</a></li>
-                            <li><a href="about_3.jsp">오시는길</a></li>
+                            <li><a href="about_1.jsp">더케어란?</a>
+                            </li>
+                            <li><a href="about_2.jsp">더케어 의료진</a></li>
+                            <li><a href="about_3.jsp">더케어 오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-				<li class="menu">
-                    <a>더 궁금해</a>
-					<div>
-                        <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="themore.jsp">더 모어</a></li>
-                        </ul>
-                    </div>
-                </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
-                    <div>
-                        <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
-                        </ul>
-                    </div>
-                </li> -->
                 <li class="menu">
-                    <a>케어원해</a>
+                    <a>시술안내</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="guide.jsp">시술안내</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
-
-                
-                <li class="jsp">
-                    <a>소통원해</a>
+                <li class="menu">
+                    <a>시술예약</a>
                     <div>
                         <ul>
-                            <li><a href="note.jsp">기록장</a></li>
+                            <li><a href="reservation.jsp">시술예약</a></li>
+                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
+                            <li><a href="new_view.jsp">최근본시술</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">
+                    <a href="custom.jsp">맞춤시술</a>
+                </li>
+                <li class="menu">
+                    <a>커뮤니티</a>
+                    <div>
+                        <ul>
                             <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="qna.jsp">1:1문의</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
@@ -177,108 +190,94 @@ else{
         </div>
     </div>
 
-        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-            <a alt="맨 위로" class="moveTopBtn">
-                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
-                    <img src="img/up.png" width="50px" height="50px">
-                </div>
-            </a>
-            <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
-                        <img src="img/clock.png" width="50px" height="50px">
-                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
-                </div>
-            </a>
-        </div>
 
-<%
- try{
- 	 String DB_URL="jdbc:mysql://localhost:3306/care?characterEncoding=euckr";   
-     String DB_ID="skin";  
-     String DB_PASSWORD="1234";
- 	 
-	 Class.forName("org.gjt.mm.mysql.Driver"); 
- 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
-	request.setCharacterEncoding("euc-kr");
-	String keyword = request.getParameter("keyword");    
 
-    String jsql = "SELECT * FROM surgery WHERE skey LIKE '%"+keyword+"%';";   
-	PreparedStatement pstmt  = con.prepareStatement(jsql);
 
-	ResultSet rs = pstmt.executeQuery();
-
-	%>
 
 
     
-    <div class="about-ban">
-        <div class="text-box">
-            <i>Search</i>
+    <div class="about-ban1">
+        <div class="text-box1">
+			<p class="title">장바구니</p>
             <hr>
-            <p>통합검색</p>
         </div>
     </div>
 
 
     <div class="search_wrap1">
-
-
 	<%
 
-		if (!rs.next()) {
-			%>
+		
+	String a1 = request.getParameter("a1");   
+	String a2 = request.getParameter("a2");   
+	String a3 = request.getParameter("a3");   
+	String a4 = request.getParameter("a4");   
+	String a5 = request.getParameter("a5");   
+	String a6 = request.getParameter("a6");   
+	String a7 = request.getParameter("a7");   
 
- <section id="welcome" class="content">
-        <div class="inner">
-            <div class="wrap">
-                <div class="no">
-                    <img src="img/nodata.png" alt="" width="550px" height="400px">
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
-	<%
 
-		} else {
-	while(rs.next()) {
-			String pno =  rs.getString("prdNo");	
-			String name =  rs.getString("prdName");	
-			String  price =  rs.getString("startprice");
+		while(true) {
+
+			 for(int i=1; i<=7; i++) {
+				 String aa = request.getParameter("a"+i);
+		String jsql = "select * from custom where  quest = ?";
+		PreparedStatement pstmt = con.prepareStatement(jsql);
+		pstmt.setString(1, "Q"+i);
+		ResultSet rs = pstmt.executeQuery(); 
+		rs.next();
+
+
+		 String answer = rs.getString("answer"); 
+
+
+
+			String jsql2= "SELECT * FROM surgery WHERE prdNo=?";
+			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+			pstmt2.setString(1, answer);      
+
+			ResultSet rs2 = pstmt2.executeQuery(); 
+			rs2.next();
+
+			String name = rs2.getString("prdName"); 
+			String memo = rs2.getString("prdMemo"); 
+			String price = rs2.getString("startprice"); 
 %>
 
-
+			
         <div class="search_box">
             <div class="search1">
+			<a href="sub_1.jsp?prdNo=<%=answer%>" class="search_a">
                 <h2><%=name%></h2>
+                <p><%=memo%></p>
+				</a>
             </div>
             <div class="search2">
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
-                <a href="sub_<%=pno%>.jsp?prdNo=<%=pno%>" class="btn">상세보기</a>
+				<a href="deletecart.jsp?prdNo=<%=answer%>" class="btn" style="border: none; background:none;">삭제</a>
             </div>
         </div>
+			
 
 
 		<%
-		}
-	}
-
+	} 
+		break;
+			 } // while
 		%>
+
+
 
 
     </div>
 
 
 
-<%
-    } catch(Exception e) {
-		out.println(e);
-}
-%>
+
 
 
 
@@ -294,7 +293,12 @@ else{
      </div>
     
 
-
+<%
+    } catch(Exception e) {
+		out.println(e);
+}
+   
+%>
     
 
 
@@ -305,52 +309,11 @@ else{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
+
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true // 버튼 클릭 여부
-        },
-        autoplay: true,
-        autoplaySpeed: 5000,
-        keyboard: true
-    });
-
-
-    function SliderBox1__init() {
-        $('.slider-box-1 > .slick').slick({
-            autoplay: true,
-            autoplaySpeed: 5000,
-            pauseOnHover: false,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            // arrows:true,
-            prevArrow: ".slider-box-1 > .arrows > .btn-left",
-            nextArrow: ".slider-box-1 > .arrows > .btn-right"
-        });
-    }
-
-    $(function () {
-        SliderBox1__init();
-    });
-
-
-//         gsap.to('body', {
-//   scrollTrigger:{
-//     start:'top 0',
-//     end:'top 800px',
-//     trigger:'.top-box2',
-//     markers: true,
-//     pin:true
-//   },
-// });
 
 gsap.to('.top-wrap > .top-box2', {
 scrollTrigger:{

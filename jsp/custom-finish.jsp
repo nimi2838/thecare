@@ -156,7 +156,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+                     <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -325,7 +325,7 @@ try {
 			 </div>
 
                         <div class="title-txt">
-                            <img src="img/osp.png" height= "450" alt="">
+                            <img src="img/osp.png" alt="">
                             <h1>영원히 고통받는 총체적 난국 복어</h1>
                         </div>
 
@@ -365,7 +365,7 @@ try {
 			 </div>
 
                         <div class="title-txt">
-                            <img src="img/osn.png" height= "450" alt="">
+                            <img src="img/osn.png" alt="">
                             <h1>햇빛에 쉽게 붉어지고 번들거리는 토마토</h1>
                         </div>
 
@@ -405,7 +405,7 @@ try {
 			 </div>
 
                          <div class="title-txt">
-                            <img src="img/orn.png" height= "450" alt="">
+                            <img src="img/orn.png" alt="">
                             <h1>흠잡을 것 하나 없는 건강한 광채 탱탱볼</h1>
                         </div>
 
@@ -440,7 +440,7 @@ try {
 			 </div>
 
                          <div class="title-txt">
-                            <img src="img/orp.png" height= "450" alt="">
+                            <img src="img/orp.png" alt="">
                             <h1>단점보다 장점이 많고 관리하기 쉬운 알로에</h1>
                         </div>
 
@@ -476,7 +476,7 @@ try {
 			 </div>
 
                          <div class="title-txt">
-                            <img src="img/drp.png" height= "450" alt="">
+                            <img src="img/drp.png" alt="">
                             <h1>여드름 & 모공 하나 보이지 않는 타고난 달걀</h1>
                         </div>
 
@@ -548,7 +548,7 @@ try {
 			 </div>
 
                          <div class="title-txt">
-                            <img src="img/dsn.png" height= "450" alt="">
+                            <img src="img/dsn.png" alt="">
                             <h1>작은 자극에도 쉽게 붉어지는 홍당무</h1>
                         </div>
 
@@ -584,7 +584,7 @@ try {
 			 </div>
 
                          <div class="title-txt">
-                            <img src="img/dsp.png" height= "450" alt="">
+                            <img src="img/dsp.png" alt="">
                             <h1>피부가 좋았던 적이 없는 모태 선인장</h1>
                         </div>
 

@@ -790,17 +790,17 @@ left: 60.5%;
 
 @media (min-width: 500px) and ( max-width:850px) {
   .mini-ban > .text-box > div > p {
-   margin-left: 50px; text-align:left;
-    font-size: 25px; line-height: 40px;
+    font-size: 25px;
+	line-height: 40px;
     position: static;
+	text-align:left;
+	margin-left: 50px;
+	
   }
   .mini-ban {
   background-position: left;
   }
-  .mini-ban > .text-box > div > a {
-	position: absolute;
-    left: 80px;
-    top: -40px;}
+  .mini-ban > .text-box > div > a {position: static;}
 }
 
 
@@ -1132,6 +1132,7 @@ color:#fff;
   outline:0; border-radius: 30px;
   background: rgb(238 243 255);
   margin: 0 auto;
+
 }
 
 .slider-box-2 > .slick .item .bg1 {
@@ -1258,8 +1259,7 @@ color:#fff;
 .slider-box-2 > .slick .item .arr {
   position:absolute;
   top: 35%; z-index: 5;
-  left: 43%;
-  font-size: 40px;
+  left: 45%;
   background-position:center;
   background-size:cover;
 }

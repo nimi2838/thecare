@@ -399,23 +399,26 @@ a {
 .note_box > .con_box > .text-box > .text2 {
     width: 10%;
     position: relative;
+	margin-top: 15px;
 }
 
 .con_box .fa-comment:before {
-    font-size: 83px;
+    font-size: 70px;
     color: #fff0f2;
+	display: flex;
+justify-content: center;align-items: center;
 }
 
-.note_box > .con_box > .text-box > .text2 {
-	margin-top: 10px;
+.note_box > .con_box > .text-box > .text2 > .img-box {
+	width: 50px;
 }
 
 .note_box > .con_box > .text-box > .text2 > .cnt{
     position: absolute;
-    top: 40%;
+    top: 36%;
     left: 35%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 900;
 }
 

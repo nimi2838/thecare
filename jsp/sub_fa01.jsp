@@ -9,16 +9,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sub_1.css">
-    <link rel="stylesheet" href="css/sub_fa01.css">
+    <link rel="stylesheet" href="css/sub_2.css">
+	<link rel="stylesheet" href="css/sub_fa01.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>페이스 필러</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-
+	<title>상세화면</title>
+	
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -32,8 +29,9 @@ DecimalFormat df = new DecimalFormat("###,###");
 
    		int total = 0;
 %>
-<body>
 
+
+<body>
 
 
 
@@ -42,12 +40,12 @@ DecimalFormat df = new DecimalFormat("###,###");
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
 
-                             <%
+                        	  <%
    if(myid == null) {
 
 %>
 
-   <ul class="icon-box">
+	<ul class="icon-box">
                     <li class="icon login">
                         <a href="login.jsp">
                             <div class="img-box">
@@ -75,9 +73,9 @@ DecimalFormat df = new DecimalFormat("###,###");
                         </a>
                     </li>
                 </ul>
-      
+		
 
-   <div class="logo-box flex flex-jc-c">
+	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
                         <a href="main.jsp">
                             <img src="img/logo.png" alt="">
@@ -105,7 +103,7 @@ DecimalFormat df = new DecimalFormat("###,###");
         <div class="line"></div>
 
 
-     <div class="top-box2">
+	  <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
@@ -116,12 +114,12 @@ DecimalFormat df = new DecimalFormat("###,###");
                         </ul>
                     </div>
                 </li>
-            <li class="menu">
+				<li class="menu">
                     <a>더 궁금해</a>
-               <div>
+					<div>
                         <ul>
                             <li><a href="#" onclick="login();">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -129,7 +127,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -265,7 +263,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 
 
 
-         <%
+			<%
 }
 else{
 %>
@@ -300,7 +298,7 @@ else{
             </ul>
 
 
-   <div class="logo-box flex flex-jc-c">
+	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
                         <a href="main.jsp">
                             <img src="img/logo.png" alt="">
@@ -330,7 +328,7 @@ else{
 
 
 
-   
+	
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
@@ -342,12 +340,12 @@ else{
                         </ul>
                     </div>
                 </li>
-            <li class="menu">
+				<li class="menu">
                     <a>더 궁금해</a>
-               <div>
+					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-                     <li><a href="themore.jsp">더 모어</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
@@ -355,7 +353,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -381,7 +379,7 @@ else{
 
 
 
-   
+	
            <!-- 모바일로 -->
            <header id="header">
             <div class="inner">
@@ -502,28 +500,22 @@ else{
 
 
 
-        <div style="position: fixed; bottom:5%; right:3%;z-index:2;">
-            <a href="" alt="맨 위로">
-                <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
-    
 
 
-
-
-
-
-
-
+	
 <%
 
 
@@ -581,7 +573,6 @@ try {
 
 
 
-
     <div class="sub_con_box ">
         <div class="sub_con flex">
 
@@ -610,14 +601,14 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>얼굴의 볼륨과 주름개선이 필요한 부위</p>
+                <p>여드름 압출이 포함된 스킨케어</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #콧대또렷 #이마두툼 <br>
-                    #밋밋한얼굴들아 #여기야
+                    #일상생활바로가능 #간편한주사시술 <br>
+                    #10분내외 #다른시술과병행가능
                 </div>
             </div>
 
@@ -644,10 +635,10 @@ try {
 
 
 						
-							<form name="form" method="post" action="rezResult.jsp" onsubmit="_submit(this); " >
+							<form name="form" method="post" onsubmit="_submit(this); " >
 
 							
-									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+									<table id="tbl_peopleList" class="tab1" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px; border-spacing: 0 4px;">
 									<tbody>
 
 							<%
@@ -664,7 +655,7 @@ try {
 				String opno = rs1.getString("opNo");
 				int opprice = rs1.getInt("opPrice");
 
-				
+				if(opprice==79000) {
 
 						%>
 
@@ -675,13 +666,34 @@ try {
 											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
 
 											</td>
-											<td class="td2" style=""><%=opname%>                                          </td>
-											<td class="td3" id = "td3"><%=df.format(opprice) %></td>
+											<td class="td2" style=""><%=opname%>                                                         </td>
+											<td class="td3" id = "td3"><%=df.format(opprice) %>원</td> 
 										  </tr>
 
 
 					
 									<%
+				}
+									else{
+										%>
+
+
+
+										<tr>
+											<td class="td1">
+											<!-- <input name="chkbox" type="checkbox" value="<%=opprice%>" class="opprice" id="noArray[j]"> -->
+											<input type="checkbox" name="chk[]" class="chk" id="chk" value="<%=opprice%>" onclick="calc();"/>
+											<input type="hidden" name="field_a[]" class="field_a" value="<%=opno%>" />
+
+											</td> 
+											<td class="td2" style=""><%=opname%>                                                    </td>
+											<td class="td3" id = "td3" style="width: 80px;"><%=df.format(opprice) %>원</td>
+										  </tr>
+
+
+											<%
+
+									} //if-else
 
 			}
 
@@ -692,6 +704,7 @@ try {
 					
 												<td><input type=hidden name="total_sum" id="sell3" type="text" readonly></td>
 												<input type=hidden name = prdNo value="<%=no%>">
+												<input type="submit" name="Submit" id="button" value="Submit" style="display: none; " />
 							</form>
 	
                             <div><input type="button" value="확인" id="btn_showChkList" name="btn_showChkList" onClick="multiSelect('CLOSE'); call();">
@@ -730,6 +743,7 @@ try {
 				
 
 			<script language="javascript">
+
 
 				function td1() {
 							const td3 = document.getElementByClass('td3').innerText;
@@ -799,11 +813,11 @@ var sum = 0;
 					if(value=="OPEN") {
 						Div.style.visibility="visible";
 						Div.style.display="inline-block";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #f1f7fb; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block; height: 150px;");
 					}else  {
 						Div.style.visibility="hidden";
 						Div.style.display="none";
-						$('#txt_getChkList').attr('style', "display:inline-block; width: 500px; height:90px; outline:none; border: 0; background: #fff; font-size: 20px; line-height:50px; padding:30px 30px ; text-rendering: none; appearance:none; resize: none; font-weight:bold; color: #555; font-family: 'ChosunSg'; overflow:hidden;");
+						$('#txt_getChkList').attr('style', "display:inline-block; height: 150px;");
 							    
 
 				
@@ -889,7 +903,7 @@ var sum = 0;
                 <div class="btn-box">
 
 
-					<a href="#" onClick=inCart1()>장바구니 담기</a>
+					<a href="#" id="cart_btn" onClick=inCart1()>장바구니 담기</a>
 			
 
 				<a href="#" onClick=rez()>시술 예약하기</a>
@@ -924,6 +938,10 @@ var sum = 0;
 
 
 
+
+
+
+
     <div class="sub_con_box1">
         <div class="sub_con1">
 
@@ -940,7 +958,7 @@ var sum = 0;
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/time-b.png" alt="">
+                        <img src="img/time-p.png" alt="">
                     </div>
                     <h2>시술시간</h2>
                     <p>부위별<br>
@@ -949,7 +967,7 @@ var sum = 0;
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/injection-b.png" alt="">
+                        <img src="img/injection-p.png" alt="">
                     </div>
                     <h2>마취여부</h2>
                     <p>연고 마취<br>
@@ -960,7 +978,7 @@ var sum = 0;
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/effect-b.png" alt="">
+                        <img src="img/effect-p.png" alt="">
                     </div>
                     <h2>회복기간</h2>
                     <p>즉시생활가능</p>
@@ -968,7 +986,7 @@ var sum = 0;
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/downtime-b.png" alt="">
+                        <img src="img/downtime-p.png" alt="">
                     </div>
                     <h2>유지기간</h2>
                     <p>국산 6 - 12개월<br>
@@ -1187,13 +1205,13 @@ var sum = 0;
 
             <ul class="flex flex-jc-c">
                 <li class="flex">
-                    <span>1</span>
+                    <span style="margin: 19px 10px 52px 0;">1</span>
                     <p style="margin:20px 0; line-height:25px;">
                         필러의 경우 개인, 시술 부위, 제품에 따라 유지 기간이 달라지게 되는데 일반적으로 국산 필러는 6~12개월 이내, 수입 필러는 12~18개월간 유지됩니다.
                 </li>
 
                 <li class="flex">
-                    <span>2</span>
+                    <span style="margin: 19px 10px 52px 0;">2</span>
                     <p style="margin:20px 0; line-height:25px;">
                         만약 재시술을 계획하신다면 멍과 부기가 가라앉은 후부터 가능하며 의료진과의 충분한 상담 후 결정하시기 바랍니다.
                     </p>
@@ -1244,7 +1262,7 @@ var sum = 0;
 					</div>
 
 					<div class="answer" data-aos="fade-left">
-						동일한 성분이기는 하나, 전 세계적으로 오랫동안 사용되어 온 수입 필러가 비교적 점탄성이 좋고, 입자에 따른 다양한 종류가 많아 시술 부위에 따라 조금 더 정교한 시술이 가능합니다. 경제적인 측면을 고려하신다면 보급형으로 많이 사용되는 국산 필러 제품을 추천드리고, 비용보다 안전성과 안정성에 조금 더 비중을 두신다면 수입 제품을 추천드립니다.
+						동일한 성분이기는 하나, 전 세계적으로 오랫동안 사용되어 온 수입 필러가 비교적 점탄성이 좋고, 입자에 따른 다양한 종류가 많아 시술 부위에 따라 조금 더 정교한 시술이 가능합니다. 경제적인 측면을 고려하신다면 보급형으로 많이 사용되는 국산 필러 제품을 추천드리고, 예약보다 안전성과 안정성에 조금 더 비중을 두신다면 수입 제품을 추천드립니다.
 					</div>
 				</div>
 			</div>
@@ -1305,6 +1323,7 @@ var sum = 0;
 
     </div>
 
+
 	<%
     } 
 catch(Exception e) {
@@ -1341,17 +1360,96 @@ catch(Exception e) {
 
 
     <!-- 탑바 -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
 
-	
+        AOS.init();
+
+				function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
+
+
+
+
+
+		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+
+		var checked = $('#chk').is(':checked');
+
+		if(checked) {
+
+			var frm1 = document.form;
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+
+		var checked = $('#chk').is(':checked');
+
+		if(checked) {
+
+			var frm1 = document.form;
+			frm1.action = "rezResult.jsp"
+			document.getElementById('button').click();
+
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
+
+
+		}
+
+
+		function cart1()
+		{
+			alert('장바구니에 해당 시술이 있습니다.');
+		}
+
+		function login()
+		{
+			alert('로그인 후 이용 가능한 페이지입니다.');
+			document.location.href="login.jsp";
+		}
+
+
+
+
+
+
             gsap.to('#header', {
                 scrollTrigger: {
                     trigger: '#header',
@@ -1512,142 +1610,7 @@ gsap.to('.top-wrap > .top-box2', {
 
 
 
-        AOS.init();
-
-
-
-
-
-				function _submit(f)
-				{
-					//같이 보낼 값 정리
-					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
-					{
-						if (f.elements['chk[]'].checked==false)
-						{
-							f.elements['field_a[]'].disabled=true;
-							f.elements['field_b[]'].disabled=true;
-						}
-					} else { //다중
-						for (i=0; i<f.elements['chk[]'].length; i++)
-						{
-							if (f.elements['chk[]'][i].checked==false)
-							{
-								f.elements['field_a[]'][i].disabled=true;
-								f.elements['field_b[]'][i].disabled=true;
-							}
-						}
-					}
-					return true;
-				}
-
-        let = 0
-
-        $(function () {
-            $(".plz li").on("click", function () {
-                no = $(this).index() + 1;
-                $(".plz li ").show();
-                $('.plz li ').removeClass('on');
-                $(this).addClass('on');
-
-                $(".ne").hide();
-                if ($('.ne').css('display') == 'none') {
-                    $(".ne" + no).show();
-                } else {
-                    $(".ne").hide();
-                }
-
-
-
-            });
-        });
-
-
-
-		
-     gsap.to('.top-wrap > .top-box2', {
-            scrollTrigger: {
-                trigger: '.top-wrap',
-                start: 'top -98px',
-                scrub: true
-            },
-            height: '61px',
-            textalign: 'center',
-            top: '0',
-            position: 'fixed',
-            background: '#fff',
-            borderBottom: '1px solid #ccc'
-        });
-
-
- function keyword_check(){
-
-			  if(document.search.keyword.value==''){ 
-
-			  alert('검색어를 입력하세요');
-
-			  document.search.keyword.focus(); 
-
-			  return false; 
-
-			  }
-
-			  else return true;
-
-			 }
-
-
-
-		
-
-
-		function search_form()
-		{
-			var frm = document.search;
-			frm.action = "search.jsp";
-			frm.submit();
-		}
-
-
-		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
-		{
-		 const checkbox = document.getElementById('chk');
-
-			 if (checkbox.checked ==('false')) {
-				alert("옵션을 선택해 주세요!");
-			} else{
-			var frm1 = document.form;
-			frm1.submit();
-			}
-		}
-
-		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
-		{
-			var frm1 = document.form;
-			frm1.action = "rezResult.jsp"
-			frm1.submit();
-
-		}
-
-
-		function cart1()
-		{
-			alert('장바구니에 해당 시술이 있습니다.');
-		}
-
-		function login()
-		{
-			alert('로그인 후 이용 가능한 페이지입니다.');
-			document.location.href="login.jsp";
-		}
-
-
-
-
-
-
     </script>
-
 
 
 </body>

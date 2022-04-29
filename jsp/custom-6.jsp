@@ -160,7 +160,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-                     <li><a href="guide.jsp">안내/예약</a></li>
+                     <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -291,7 +291,7 @@ try {
                             </li>
                         </ul>
 
-                          <a href="main.jsp">
+                            <a href="main.jsp">
                                 <div class="close-test">
                                     <img src="img/test-close.png" alt="">
                                 </div>
@@ -350,7 +350,7 @@ function clickCheck(target) {
 
 function Check(num){
 	if ($("input:checkbox[name='aa6']").is(":checked") == false) {
-		alert("답변을 선택해주세요.");
+		alert("답변을 선택해 주세요.");
 		return false;
 		
 	}

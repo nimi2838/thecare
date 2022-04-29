@@ -38,13 +38,13 @@
 #sa {height: auto; margin-bottom: 100px;}
 #sa .wrap{margin-bottom: 50px;}
 #sa .wrap .title{
-    width: 100%; height: 90px; background-color: rgb(255, 101, 101);
+    width: 100%; height: 90px; background-color: #1f628e;
     text-align: center; line-height: 90px; margin: 0; color: white;
 }
 #sa .wrap .title h1 {font-size: 30px;}
 
 #sa .con {
-    width: 100%; height: 430px; background-color: #fff0f2;
+    width: 100%; height: 430px; background-color: #f1f7fb;
     display: flex; justify-content: center; align-items: center;
 }
 #sa .con .pic{width: 40%;}
@@ -56,7 +56,7 @@
 #sa .cont {
     width: 100%; height: 430px; flex-direction: column;
     display: flex; justify-content: center; align-items: center;
-    background-color: #fff0f2;
+    background-color: #f1f7fb;
 }
 #sa .cont .pic {width: 610px; margin: 30px 0;}
 #sa .cont .txt {
@@ -66,11 +66,11 @@
 #sa .cont .txt .txt-left {width: 45%;}
 #sa .cont .txt .txt-left h1{font-size: 27px;}
 #sa .cont .txt .txt-left p{font-size: 20px; line-height: 30px;}
-#sa .cont .txt .txt-left p span{color: #f89fa8;}
+#sa .cont .txt .txt-left p span{color: #0085dc;}
 
 #sa .cont .txt .txt-right {width: 30%;}
 #sa .cont .txt .txt-right h1{font-size: 27px;}
 #sa .cont .txt .txt-right p{font-size: 20px; line-height: 30px;}
-#sa .cont .txt .txt-right p span{color: #f89fa8;}
+#sa .cont .txt .txt-right p span{color: #0085dc;}
 
 

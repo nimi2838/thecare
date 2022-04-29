@@ -16,16 +16,16 @@
   <title>더케어란?</title>
 </head>
 <%
-   String myid = (String)session.getAttribute("sid"); 
-   %>
-
+   String myid = (String)session.getAttribute("sid");                                                                           
+%>
 <body>
 
 
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-            
-  <%
+
+
+                        	  <%
    if(myid == null) {
 
 %>
@@ -73,7 +73,7 @@ else{
                     <div class="line-icon"></div>
                 </li>
                 <li class="icon join">
-                    <a href="join.jsp">
+                    <a href="mypage.jsp">
                         <div class="img-box" style= "margin-left: 8px;">
                             <img src="img/join_icon.png" alt="">
                         </div>
@@ -110,62 +110,64 @@ else{
                     <td class="schBtn">
                         <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 30px; height: 30px;">
                     </td>
-                    <!-- <a href="searchform.html" class="btn_search">
-                            <div class="img-box">
-                                <img src="img/Search_thin_icon.png" alt="">
-                            </div>
-                        </a> -->
                 </form>
             </div>
+
+
+
+
+
 
         </div>
         <div class="line"></div>
 
- <div class="top-box2">
+
+        <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
-                    <a>더 케어란</a>
+                    <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">스토리</a></li>
+                            <li><a href="about_1.jsp">케어 라이프</a></li>
                             <li><a href="about_3.jsp">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
 				<li class="menu">
-                    <a>피부타입</a>
+                    <a>더 궁금해</a>
 					<div>
                         <ul>
                             <li><a href="custom.jsp">더 체크</a></li>
-                            <li><a href="qna.jsp">더 소통</a></li>
+							<li><a href="themore.jsp">더 모어</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu">
-                    <a>시술</a>
+               <!--  <li class="menu">
+                    <a>차별점</a>
                     <div>
                         <ul>
                             <li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <li class="menu">
-                    <a>예약</a>
+                    <a>케어원해</a>
                     <div>
                         <ul>
-                            <li><a href="reservation.jsp">바로예약</a></li>
+							<li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="new_view.jsp">최근본시술</a></li>
+                            <li><a href="review.jsp">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
 
                 
                 <li class="jsp">
-                    <a>커뮤니티</a>
+                    <a>소통원해</a>
                     <div>
                         <ul>
+                            <li><a href="note.jsp">기록장</a></li>
                             <li><a href="noti.jsp">공지사항</a></li>
                             <li><a href="event.jsp">이벤트</a></li>
                         </ul>
@@ -175,6 +177,19 @@ else{
         </div>
     </div>
 
+        <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+                    <img src="img/up.png" width="50px" height="50px">
+                </div>
+            </a>
+            <a href="new_view.jsp" alt="최근 본 시술">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+                        <img src="img/clock.png" width="50px" height="50px">
+                        <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
+                </div>
+            </a>
+        </div>
 
 
     <div class="about-ban">

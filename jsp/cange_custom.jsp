@@ -251,7 +251,7 @@ else{
                 <div class="price">
                     <span><%=df.format(opprice) %></span>원
                 </div>
-				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">삭제</a>
+				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">취소</a>
             </div>
 			</div>
     			

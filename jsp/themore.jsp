@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/themore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>THE MORE</title>
 </head>
@@ -523,7 +525,7 @@ else{
                 </div>
 
                 <div class="cont">
-                    <img src="img/tip-1.jpg" alt="" width="500px" height="300px">
+                    <img data-aos="fade-down" src="img/tip-1.jpg" alt="" width="500px" height="300px">
                     <div class="cont-txt">
                         <p>대기가 차가워지고 건조한<br>
                     날씨는 우리의 피부를 더욱 상하게합니다.</p>
@@ -532,7 +534,7 @@ else{
 
                 <div class="conts">
                     <div class="conts-img">
-                        <img src="img/tip-2.jpg" alt="" width="500px" height="300px">
+                        <img data-aos="fade-right" src="img/tip-2.jpg" alt="" width="500px" height="300px">
                     </div>
                     <div class="conts-txt">
                         <p>낮과 밤의 일교차가 커,<br>
@@ -547,7 +549,7 @@ else{
                 </div>
 
                 <div class="cont">
-                    <img src="img/tip-3.png" alt="">
+                    <img data-aos="fade-down" src="img/tip-3.png" alt="">
                     <div class="cont-txt">
                         <p>바우만 박사의 유전학에서 다루는<br>
                             피부의 특성을 바탕으로 3가지 기준으로<br>
@@ -888,15 +890,18 @@ else{
     
 
 
-
-<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-
+         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+     
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+     
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
+
+        AOS.init();
+
 
             gsap.to('#header', {
                 scrollTrigger: {
