@@ -45,6 +45,25 @@
 #face .wrap .txt h1{font-size: 35px; margin-bottom: 50px; line-height: 45px;}
 #face .wrap .txt p{font-size: 25px; line-height: 35px;}
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #face .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #face .inner {width: 100%;}
+    #face .wrap {margin-left: 0;}
+    #face .wrap .txt {width: 55%; margin-top: 60px; margin-left: 50px;}
+    #face .wrap .txt h1 {font-size: 30px;}
+    #face .wrap .txt p {font-size: 20px;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #face .inner {width: 100%;}
+}
 
 #care {width: 100%; height: 230px;  background-image: url(../img/sub-fa-bg.jpg);
     background-repeat: no-repeat; background-size: cover;
@@ -56,7 +75,41 @@
 }
 #care .wrap .con h1 {font-size: 50px; border-left: 2px solid white; color: white;}
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #care .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #care .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #care .inner {width: 100%;}
+}
+
+
 #the {margin: 50px 0;}
 #the .wrap .txt {text-align: center; margin-top: 50px;}
 #the .wrap .txt h1 {font-size: 35px; line-height: 50px; margin-bottom: 50px;}
 #the .wrap .txt p {font-size: 23px; line-height: 33px;}
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #the .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #the .inner {width: 100%;}
+    #the .wrap .txt h1 {font-size: 30px;}
+    #the .wrap .txt p  {font-size: 20px;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #the .inner {width: 100%;}
+}

@@ -62,3 +62,24 @@
 #line .wrap  .conts .txt {flex-direction: column; width: 30%; text-align: center; margin-right: 100px;}
 #line .wrap  .conts .txt i {font-size: 40px; color: #f89fa8;}
 #line .wrap  .conts .txt p {font-size: 25px; text-align: center; color: #333; line-height: 40px;}
+
+
+    
+    @media (min-width: 1051px) and ( max-width:1300px) {
+        #line .inner {width: 100%;}
+    
+    }
+    
+    
+    @media (min-width: 851px) and ( max-width:1050px) {
+        #line .inner {width: 100%;}
+    
+    }
+    
+    
+    @media (min-width: 500px) and ( max-width:850px) {
+        #line .inner {width: 100%;}
+        #line .title h2 {font-size: 23px;}
+        #line .con .pic {width: 100%;}
+        #line .con .pic img {width: 100%;}
+    }

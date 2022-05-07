@@ -38,6 +38,24 @@
 #girl .wrap .con .txt p {font-size: 20px; color: #333; line-height: 30px; font-weight: bold;}
 
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #girl .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #girl .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #girl .inner {width: 100%;}
+    .bg .txt p {font-size: 20px;}
+}
+
+
 #sel {width: 100%; margin-top: 100px;}
 #sel .title {text-align: center;}
 #sel .title i {font-size: 40px;}
@@ -50,3 +68,20 @@
 
 #sel .pic {margin: 0 auto; width: 700px; margin-bottom: 150px;}
 
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #sel .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #sel .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #sel .inner {width: 100%;}
+    #sel .pic > img {width: 80%; margin-left: 5%;}
+}

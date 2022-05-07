@@ -532,6 +532,26 @@ a {
 
 
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #tip .inner {width: 100%;}
+}
+
+@media (min-width: 851px) and ( max-width:1050px) {
+  #tip .inner {width: 100%;}
+  #tip .conts {flex-direction: column; align-items: center; height: 550px; margin-top: 0;}
+}
+
+@media (min-width: 500px) and ( max-width:850px) {
+  #tip .inner {width: 100%;}
+  #tip .conts {flex-direction: column; align-items: center; height: 550px; margin-top: 0;}
+
+  #tip .title > .title-imgs {right: 15%;}
+  #tip .title > .title-img {left: 15%;}
+
+}
+
+
+
 
 
 #mbti {background-color: #FFFAF6;}
@@ -559,6 +579,26 @@ a {
 
 #mbti .you .box .circle> h1 {color: white; margin: 0; font-size: 65px; margin-top: 15px; font-weight: bold;}
 #mbti .you .box .circle> p {color: white; margin: 0; font-size: 15px; font-weight: bold; line-height: 17px;}
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #mbti .inner {width: 100%;}
+}
+
+@media (min-width: 851px) and ( max-width:1050px) {
+  #mbti .inner {width: 100%;}
+  #mbti .wrap .con {width: 80%;}
+}
+
+@media (min-width: 500px) and ( max-width:850px) {
+  #mbti .inner {width: 100%;}
+  #mbti .wrap .con {width: 80%;}
+  #mbti .you .box > p {font-size: 13px;}
+  #mbti .you .box .p-left {margin-left: 50px;}
+  #mbti .you .box .p-right {margin-right: 50px;}
+  #mbti .wrap .con > h2 {font-size: 25px;}
+}
+
 
 
 .wrap {margin: 0 auto;}
@@ -605,6 +645,28 @@ a {
   padding: 10px 60px; font-size: 18px; font-weight: bold; border-radius: 50px;
 }
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #type .inner {width: 100%;}
+}
+
+@media (min-width: 851px) and ( max-width:1050px) {
+  #type {height: 1000px;}
+  #type .inner {width: 100%;}
+  #type .tab {width: 95%; margin-left: 45px;}
+  #type .tab>li .menu {margin-right: 10px; margin-bottom: 10px;}
+  #type .tab>li>.panel {left: 20%; width: 55%; top: 350px;}
+}
+
+@media (min-width: 500px) and ( max-width:850px) {
+  #type {height: 1200px;}
+  #type .inner {width: 100%;}
+  #type .tab {width: 80%;}
+  #type .tab>li .menu {margin-right: 10px; margin-bottom: 10px; }
+  #type .tab>li>.panel {left: 0%; width: 85%; top: 550px; height: 600px;}
+  #type .tab>li>.panel >.type-txt {width: 90%;}
+
+}
+
 
 #choice {background-color: #FFFAF6;}
 #choice .title {text-align: center; margin-bottom: 50px;}
@@ -614,6 +676,22 @@ a {
 #choice .conts {display: flex; align-items: center;}
 #choice .conts-txt {margin-left: 100px; width: 70%;}
 #choice .conts-txt p{font-size: 18px; line-height: 30px;}
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #choice .inner {width: 100%;}
+}
+
+@media (min-width: 851px) and ( max-width:1050px) {
+  #choice .inner {width: 100%;}
+}
+
+@media (min-width: 500px) and ( max-width:850px) {
+  #choice .inner {width: 100%;}
+  
+  #choice .conts-txt {margin-left: 20px;}
+  #choice .conts-txt h2 {font-size: 18px;}
+  #choice .conts-txt p {font-size: 16px;}
+}
 
 
 /* footer */
