@@ -528,7 +528,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">5</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-5.html"><p>[ 공지 ] 미성년자 시술 및 관리 동의서</p></a></td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-5.jsp"><p>[ 공지 ] 미성년자 시술 및 관리 동의서</p></a></td>
                         <td>더 케어</td>
                         <td>22.03.30</td>
                     </tr>
@@ -536,7 +536,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">4</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-4.html"><p>[ 공지 ] The Care 제증명수수료</p></a></td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-4.jsp"><p>[ 공지 ] The Care 제증명수수료</p></a></td>
                         <td>더 케어</td>
                         <td>22.02.27</td>
                     </tr>
@@ -544,7 +544,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">3</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-3.html"><p>[ 공지 ] 한국 울쎄라 골드스탠다드 프로토콜 개발 참여</p></a></td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-3.jsp"><p>[ 공지 ] 한국 울쎄라 골드스탠다드 프로토콜 개발 참여</p></a></td>
                         <td>더 케어</td>
                         <td>22.02.23</td>
                     </tr>
@@ -552,7 +552,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">2</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-2.html"><p>[ 공지 ] 2월 설 연휴 진료일정 안내</p></a> </td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-2.jsp"><p>[ 공지 ] 2월 설 연휴 진료일정 안내</p></a> </td>
                         <td>더 케어</td>
                         <td>22.01.31</td>
                     </tr>
@@ -560,7 +560,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">1</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-1.html"><p>[ 공지 ] 홈페이지 리뉴얼 안내</p></a> </td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-1.jsp"><p>[ 공지 ] 홈페이지 리뉴얼 안내</p></a> </td>
                         <td>더 케어</td>
                         <td>22.01.01</td>
                     </tr>
