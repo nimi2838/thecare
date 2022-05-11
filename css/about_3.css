@@ -1,7 +1,8 @@
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
+
 html,
 body {
   position: relative;
-  height: 100%;
 }
 
 body {
@@ -12,7 +13,19 @@ body {
   padding: 0;
 }
 
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Mujinjang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Mujinjang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'ChosunSg';
@@ -20,7 +33,6 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
 
 
 @font-face {
@@ -131,6 +143,9 @@ a {
   display: block;
 }
 
+
+
+
 .top-wrap>.top-box1 {
   margin: 20px auto 15px;
   width: 1280px;
@@ -230,7 +245,7 @@ a {
   border-bottom:1px solid transparent;
   transition:width .3s, border-bottom-color .3s;
   background-color:transparent;
-  color:#707070;
+  color:#999;
   margin-right:10px;
   padding:10px;
   display:block;
@@ -239,7 +254,7 @@ a {
 
 .top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
   width:170px;
-  border-bottom-color: #707070;
+  border-bottom-color: #999;
 }
 
 
@@ -258,8 +273,9 @@ a {
 .top-wrap>.top-box2 {
   margin: 0px auto;
   width: 100%;
-  font-size: 18px;
-  color: #707070;
+  font-size: 19px;
+  font-weight:bold;
+  color: #9c9c9c;
   background:white;
   z-index: 100;
   font-family: 'ChosunSg';
@@ -273,15 +289,16 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li {
-  width: 256px;
-  padding: 20px 0px;
+  /* width: 256px; */
+  width: 326px;
+  padding: 21px 0px;
   position: relative;
   transition: all .4s;
 
 }
 
 .top-wrap>.top-box2>ul>li:hover {
-  background: #ffeded;
+  background: #ffeeee;
 }
 
 .top-wrap>.top-box2>ul>li>div {
@@ -295,7 +312,7 @@ a {
   visibility: visible;
   position: absolute;
   left: 0%;
-  margin-top: 20px;
+  margin-top: 22px;
   background: white;
   width: 100%;
   transition: all .4s;
@@ -310,7 +327,9 @@ a {
 }
 
 .top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
-  background: #ffeded;
+  background: #ffeeee;
+  /* color: #9869d4; */
+
 }
 
 
@@ -319,179 +338,55 @@ a {
 }
 
 
-
-
-
-
-
-
-
 @media (min-width: 1301px) and  ( max-width:1920px) {
   #header {display: none;}
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 1280px;
-	}
+  .top-wrap>.top-box1 {
+    width: 1280px;
   }
-  
-  
-  
-  
-  
-  @media (min-width: 1051px) and ( max-width:1300px) {
-    #header {display: none;}
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 70px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 204.5px;
-	}
-	.swiper-slide>.text-1 {
-	  left: 18%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 45px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 14px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 25px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 500px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-	.card-wrap {
-	  padding: 100px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 350px;
-	}
-	
+}
+
+
+
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+  #header {display: none;}
+  .top-wrap>.top-box1 {
+    width: 95%;
+  }
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 23px 0px;
   
   }
-  
-  
-  @media (min-width: 851px) and ( max-width:1050px) {
-    #header {display: none;}
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 45px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 154.8px;
-	}
-	.swiper-slide>.text-1 {
-	  top: 24%;
-	  left: 20%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 35px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 12px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 20px;
-	  margin-top: 30px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	}
-	.slider-box-1 > p {
-	  font-size: 35px;
-	  margin: 50px auto 30px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 400px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-  
-	.mini-ban{
-	  height: 350px;
-	  margin-top: 100px;
-	  background-size: cover;
-	}
-	
-	
-	.mini-ban > .text-box {
-	  padding-top: 55px;
-	}
-	
-	.mini-ban > .text-box > i  {
-	  font-size: 38px;
-	  font-weight: bold;
-	} 
-	
-	.mini-ban > .text-box > p  {
-	  margin-top: 40px;
-	  font-size: 18px;
-	  line-height: 40px;
-	}
-  
-  
-	.card-wrap {
-	  padding: 80px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 200px;
-	}
-  
-	.card-wrap >.card_box > .card > .text-box {
-	  position: absolute;
-	  top: 50%;
-	  left: 10%;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > h1 {
-	  margin-bottom: 20px;
-	  font-size: 23px;
-	  font-weight: 600;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > p {
-	  font-size: 14px;
-	}
-  
-	.card-wrap >.card_box > .card > .bg > .view {
-		font-size: 20px;
-		padding: 5px 15px;
-	}
-  
+}
+
+
+
+
+/* 
+1200
+980
+ */
+
+@media (min-width: 851px) and ( max-width:1050px) {
+  #header {display: none;}
+  .top-wrap>.top-box1 {
+    width: 95%;
   }
-  
-  
-  @media (min-width: 500px) and ( max-width:850px) {
-    
+
+  .top-wrap>.top-box2>ul>li {
+    padding: 20px 0px;
+  } 
+}
+
+
+
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+
+
   .top-wrap {display: none;}
   .top-wrap>.top-box2 {display: none;}
   .top-wrap>.top-box1>.icon-box {display: none;}
@@ -606,114 +501,7 @@ a {
     #gnb .depth_1>li>a{padding-left: 40px;}
 
 
-	/* 탑바 */
-	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
-  
-	.top-wrap>.top-box2>ul>li {
-	  padding: 23px 25px;
-	} 
-	.top-wrap>.top-box2>ul>li:hover>div>ul>li {
-	  width: 114.8px;
-	}
-	.swiper-slide>.text-1 {
-	  top: 24%;
-	  left: 20%;
-	}
-	.swiper-slide>.text-1>h1 {
-	  font-size: 25px;
-	}
-	.swiper-slide>.text-1>p {
-	  font-size: 12px;
-	}
-	.swiper-slide>.text-1>div {
-	  font-size: 18px;
-	  margin-top: 30px;
-	}
-	.slider-box-1 {
-	  margin: 100px auto 50px;
-	  width: 80%;
-	}
-	.slider-box-1 > p {
-	  font-size: 35px;
-	  margin: 50px auto 30px;
-	}
-	.slider-box-1 > .slick .item {
-		height: 400px;
-		position:relative;
-		overflow:hidden;
-		outline:0;
-		margin: 10px;
-	}
-  
-	.slider-box-1 > .slick .item .bg {
-	  background-size:contain;
-	  background-repeat: no-repeat;
-	}
-  
-	.mini-ban{
-	  height: 300px;
-	  margin-top: 100px;
-	  background-size: cover;
-	}
-	
-	
-	.mini-ban > .text-box {
-	  padding-top: 55px;
-	}
-	
-	.mini-ban > .text-box > i  {
-	  font-size: 33px;
-	  font-weight: bold;
-	} 
-	
-	.mini-ban > .text-box > p  {
-	  margin-top: 30px;
-	  font-size: 16px;
-	  line-height: 30px;
-	}
-  
-  
-	.card-wrap {
-	  padding: 80px 0;
-	}
-	
-	.card-wrap > .card_box {
-	  width: 80%;
-	}
-  
-	.card-wrap >.card_box > .card {
-	  height: 200px;
-	}
-  
-	.card-wrap >.card_box > .card > .text-box {
-	  position: absolute;
-	  top: 50%;
-	  left: 10%;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > h1 {
-	  margin-bottom: 5px;
-	  font-size: 23px;
-	  font-weight: 600;
-	}
-  
-	.card-wrap >.card_box2 {
-	  margin-top: 15px;
-	}
-	
-	.card-wrap >.card_box > .card > .text-box > p {
-	  font-size: 14px;
-	  margin-top: 8px;
-	}
-  
-	.card-wrap >.card_box > .card > .bg > .view {
-		font-size: 20px;
-		padding: 5px 15px;
-	}
-  
-  }
+}
 
 
 
