@@ -109,13 +109,127 @@
   
   .logo-box {margin: 0 auto;}
   
+  input[type="text"],input[type="password"]{
+    border: 1px solid #d6d2d2;
+    text-align: center;
+    outline: none;
+    height: 35px;
+    color: #696969;
+   
+  }
   
+  .table{
+    font-size:15px;
+    margin-top:20px;
+    
+  }
+  .table td{
+   
+    padding-bottom: 30px;
+   
+    
+  }
   
+  .td_tit{
+  width:300px;
+    font-size: 16px;
+   
+  }
   
+  .td_img img{
+  margin-left:10px;
+  }
   
+  .btn{
+    line-height: 46px;
+    height: 48px;
+    bordeR: 1px solid #f52334;
+      color: #f52334;
+      padding: 0;
+      min-width: 135px;
+      width: 15%;
+      margin-left: 2%;
+      cursor: pointer;
+      background-color: #fff;
+  }
   
+  select{
+    border-color:#d6d2d2;
+    height: 35px;
+  }
+
+  .up_btn{
+	width:340px;
+	text-align: center;
+	margin: 0 auto;
+	background: #fff0f2;
+	border-radius: 10px; 
+	font: bold 18px/44px 'ChosunSg';
+	
+	color: #4D4D4D;
+	text-align: center;
+	text-decoration: none;
+	outline: 0;
+	display:block;
+	padding: 5px 0;
+	border:0;
+	margin-top: 60px;
+	transition: 0.3s;
+
+  }
+
+    .up_btn:hover{
+	background: #f89fa8;
+
+  color: #fff;
+  }
+
+
+ 
+
+#content {width: 100%; height:110vh; }
+  .inner {width: 80%; margin: 0 auto;}
+  .inner > .title {margin: 0 auto; font-size: 40px; font-weight: bold;padding-top: 50px; text-align: center;}
+/* .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;} */
+ .titleArea {display: flex; justify-content: space-between; margin-top: 20px;}
+ .titleArea > h2 {font-size: 25px; margin-bottom: 50px;}
+ .titleArea .new > a >img {margin-left: 10px;}
+ .titleArea .new > a > p {margin-top: 8px;}
+
   
-  
+.finish {
+	width: 60%;
+	margin: 70px auto 110px;
+	text-align: center;
+}
+
+.finish > .icon > i {
+    font-size: 100px;
+	color: #1f628e;
+}
+
+
+.finish > h1 {
+	font-size: 50px;
+}
+
+.finish > p {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.finish > .btnn > a {
+	background: #1f628e;
+	padding: 10px 20px;
+	font-size: 20px;
+	border-radius: 50px;
+}
+
+.finish > .btnn {
+	margin: 30px 0 0;
+	color: #fff;
+}
+
   @media (min-width: 1301px) and  ( max-width:1920px) {
 	  /* 탑바 */
 	  .top-wrap>.top-box1 {
@@ -123,16 +237,11 @@
 	  }
 	}
 	
-	
-	
-	
-	
 	@media (min-width: 1051px) and ( max-width:1300px) {
-	  /* 탑바 */
-	  
 	.top-wrap>.top-box1 {
-	  width: 95%;
-	}
+	  width: 95%;}
+    
+    .inner{width:100%;} 
 	}
 	
 	
@@ -141,6 +250,7 @@
 	  .top-wrap>.top-box1 {
 	  width: 95%;
 	}
+  .inner{width:100%;} 
   
 	}
 	
@@ -150,56 +260,10 @@
 	   .top-wrap>.top-box1 {
 	  width: 95%;
 	}
+  .inner{width:100%;} 
 	}
 
-
-
-  .content{width:100%; }
-  .inner{width:70%; margin: 0 auto;} 
-  .wrap{width: 80%; height: 100%; margin: 0 auto;}
-  #fine .inner { width: 100%; height: 800px;}
-  #fine .wrap .thank {width: 60%; margin: 0 auto;}
-  #fine .wrap .thank> h1{text-align: center; font-size: 40px; margin: 0 auto; padding-top: 70px;}
-  #fine .wrap .thank> h1 >table {text-align: center;}
-  #fine .wrap .thank> div{margin-top: 60px;}
-  #fine .wrap .thank> div >ul{display: flex; justify-content: space-around; }
-  #fine .wrap .thank> div >ul >li {width: 300px; height: 250px; margin: 0 auto; text-align: center;}
-  #fine .wrap .thank> div >ul .test a .icon{
-      position: relative;
-      margin: 0 auto; width: 130px; height: 130px; border-radius: 100%;
-      border:  2px solid rgb(102, 102, 102);
-    }
-  #fine .wrap .thank> div >ul .test a .icon >img{
-      position: absolute; top: 25px; left: 35px;
-    }
-  #fine .wrap .thank> div >ul .test a >h1{font-size: 30px; font-weight: bold;}
-  #fine .wrap .thank> div > .btn{text-align: center;}
-  #fine .wrap .thank> div > .btn .logout {
-      margin: 0 auto; font-size: 13px; padding: 12px 20px; background-color: #333; color: #fff;
-      border: 0; border-radius: 5px;
-  }
-  .tb {margin: 0 auto; margin-top: 50px;}
-  .tb td {padding-top: 10px;}
-
-
-  @media (min-width: 1051px) and ( max-width:1300px) {
-    .inner{width:100%;} 
-
-  }
   
-  
-  @media (min-width: 851px) and ( max-width:1050px) {
-    .inner{width:100%;} 
-    #fine .wrap .thank {width: 70%; margin: 0 auto;}
-  }
-  
-  
-  @media (min-width: 500px) and ( max-width:850px) {
-    .inner{width:100%;} 
-    #fine .wrap .thank {width: 90%; margin: 0 auto;}
-    #fine .wrap .thank> div >ul .test a >h1{font-size: 25px; font-weight: bold;}
-  }
-
 
 
 
@@ -208,11 +272,11 @@
 /* footer */
 
 .footer {
-	position: fixed; bottom: 0; left: 0;
+
     width: 100%;
-    
+    padding: 60px 0;
     background: rgb(56, 56, 56);
-    padding-top: 30px;
+   
     
   }
   
@@ -231,3 +295,8 @@
   .footer > .text > p {
     font-size: 14px;
   }
+
+
+
+
+

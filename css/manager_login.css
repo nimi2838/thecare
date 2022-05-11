@@ -111,7 +111,30 @@
   
   
   
+  .login_btn{
+   width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background: #fff0f2 ;
+    border-radius: 10px; 
+    font: bold 18px/44px 'ChosunSg';
+    color: #4D4D4D;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    display:block;
+    padding: 5px 0;
+    border:0;
+    margin-top: 10px;
+    transition: 0.3s;
   
+  
+    }
+  
+    .login_btn:hover{
+    background: #f89fa8;
+    color: #fff;
+    }
   
   
   
@@ -168,7 +191,7 @@
 	margin: 0 auto; margin-bottom: 70px; 
   }
   .form {
-	  width: 85%; padding: 15px; border: 1.5px solid #ccc; border-radius: 5px;
+	  width: 100%; padding: 15px; border: 1.5px solid #ccc; border-radius: 5px;
 	  margin-bottom: 20px; color: #333; outline: #FF9292;
 }
   .login-btn {
