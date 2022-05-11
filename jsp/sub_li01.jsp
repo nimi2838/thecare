@@ -1024,7 +1024,7 @@ var sum = 0;
 
                 <div class="cont">
                     <div class="pic">
-                        <img data-aos="fade-down" src="img/sub-sa2.PNG" alt="" width="610px" height="180px">
+                        <img data-aos="fade-down" src="img/sub-sa2.PNG" alt="" >
                     </div>
                     <div class="txt">
                         <div class="txt-left">

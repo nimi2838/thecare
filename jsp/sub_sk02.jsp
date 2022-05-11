@@ -574,7 +574,7 @@ try {
 
 
     <div class="sub_con_box ">
-        <div class="sub_con flex">
+        <div class="sub_con">
 
             <div class="sub_text1">
 
@@ -995,40 +995,40 @@ var sum = 0;
 
 
 			<div class="detail flex" style="width:70%; margin: 50px auto 0;">
-				<div style="margin-left: 0%; margin-right: 1%; width: 45%;">
+				<div>
 				<img src ="img/sub_con1.png" style="width:85%;">
 				</div>
-				<ul style="margin-left: 2%; margin-top: 30px; width: 48%">
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+				<ul >
+					<li>
 						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">01</span>
+							<span>01</span>
 							<div>
-								<h3 style="font-size:25px; margin:20px 0;">KAGS 기준 5단계 이상의 여드름</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								<h3>KAGS 기준 5단계 이상의 여드름</h3>
+								<p>
 								붉고 큰 화농성 여드름이 20개 이상,<br>
 								중등도의 진행성 흉터가 있는 상태
 								</p>
 							</div>
 						</div>
 					</li>
-					<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+					<li>
 						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">02</span>
+							<span>02</span>
 							<div>
-								<h3 style="font-size:25px; margin:20px 0  0 -15px;">여드름 재발이 거듭된 피부</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								<h3>여드름 재발이 거듭된 피부</h3>
+								<p>
 								누적된 자국, 색소침착, 흉터가 많고<br>
 								새로 올라온 여드름이 혼재된 상태
 								</p>
 							</div>
 						</div>
 					</li>
-<li style="padding: 10px 50px; margin: 20px 0; border:1px solid #ddd; border-radius: 25px;">
+<li>
 						<div class="text flex">
-							<span style="font-size:43px; margin-top: 15px; margin-right: 30px;">03</span>
+							<span>03</span>
 							<div>
-								<h3 style="font-size:25px; margin:20px 0 0 -30px;">치료 호전도가 미미한 경우</h3>
-								<p style="font-size:20px; line-height: 28px; text-align:start;">
+								<h3>치료 호전도가 미미한 경우</h3>
+								<p>
 								최근 3개월 이상의 치료에 효과가 없고<br>
 								치료 종료후 1주일 안에 재발하는 상태
 								</p>
@@ -1171,16 +1171,16 @@ var sum = 0;
             </div>
 
             <ul class="flex flex-jc-c">
-                <li class="flex" style="width: 49%;">
-                    <span style="margin: 38px 10px 55px 0;">1</span>
-                    <p style="margin:47px 0; ">
+                <li class="flex">
+                    <span>1</span>
+                    <p>
                         일반적으로 1주 간격으로 진행되며 꾸준한 권리를 권장합니다
                     </p>
                 </li>
 
-                <li class="flex" style="width: 49%; margin-left: 2%;">
-                    <span style="margin: 38px 10px 55px 0;">2</span>
-                    <p style="margin:47px 0;">
+                <li class="flex" >
+                    <span >2</span>
+                    <p >
                        개인의 상태에 따라 효과 및 권장 주기는 다를 수 있습니다.
                     </p>
                 </li>
@@ -1359,7 +1359,7 @@ catch(Exception e) {
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1376,7 +1376,7 @@ catch(Exception e) {
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1388,8 +1388,6 @@ catch(Exception e) {
 			alert("옵션을 선택해주세요 !");
 		}
 			
-
-
 		}
 
 

@@ -58,7 +58,8 @@
     display: flex; justify-content: center; align-items: center;
     background-color: #f1f7fb;
 }
-#sa .cont .pic {width: 610px; margin: 30px 0;}
+#sa .cont .pic {width: 610px;height: 180px; margin: 30px 0;}
+#sa .cont .pic img { width: 100%;  }
 #sa .cont .txt {
     width: 100%; display: flex; justify-content: center; align-items: center;
 }
@@ -73,4 +74,41 @@
 #sa .cont .txt .txt-right p{font-size: 20px; line-height: 30px;}
 #sa .cont .txt .txt-right p span{color: #0085dc;}
 
+@media (min-width: 300px) and ( max-width:850px) {
+	.inner{width:100%; margin: 0 auto;} 
+	.content{width:100%; padding: 50px 0 0;  }
 
+	#sa {height: auto; margin-bottom: 30px;}
+
+	.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 60px 0;
+}
+
+#sa .con {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#sa .wrap{margin-bottom: 0px;}
+
+#sa .con .pic {   width: 80%;    margin: 30px auto;}
+#sa .con .pic img { width: 100%;  }
+
+#sa .con .txt {    width: 80%; margin: 0 auto;}
+
+#sa .cont { height: 450px; }
+#sa .cont .pic {width: 80%; height:100%; margin: 30px 0;}
+#sa .cont .pic img { width: 100%;  }
+
+#sa .cont .txt {
+    width: 100%; display: flex; justify-content: center; align-items: center; padding: 0 40px; box-sizing: border-box;
+}
+#sa .cont .txt .txt-left {width: 49%; box-sizing: border-box;}
+
+#sa .cont .txt .txt-left h1{font-size: 25px;}
+#sa .cont .txt .txt-right {width: 49%; margin-left: 2%; box-sizing: border-box;}
+
+
+
+}

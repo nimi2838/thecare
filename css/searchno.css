@@ -452,7 +452,7 @@ a {
 
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
 
 
   .top-wrap {display: none;}
@@ -501,7 +501,7 @@ a {
       color: #1F628E; font-size: 35px; border: 0;
   }
 
-  #header > .inner{background-color: white; margin: 10px 50px; width: 90%;}
+  #header > .inner{background-color: white; margin: 10px 30px; width: 90%;}
   #header .gnb_wrap{
       display: none; z-index: 100;
       position: fixed; right: 0; top: 90px; background-color: #f2f2f2
@@ -569,6 +569,15 @@ a {
     #gnb .depth_1>li>a{padding-left: 40px;}
 
 
+	
+.search_box {
+  width: 80%;
+}
+
+
+
+
+
 }
 
 
@@ -621,7 +630,7 @@ margin: 0 auto;
 
 
 .about-ban1>.text-box1 {
-	width:80%
+	width:80%;
   padding-top: 80px;
   color: #333;
   font-family: 'GowunDodum-Regular';
@@ -649,7 +658,7 @@ margin:0 auto;
 
 
 
-.inner {
+.winner {
   width: 80%;
   margin: 0 auto;
 }
@@ -674,6 +683,12 @@ section {
 section .no {
   width: 100%;
   margin-bottom: 100px;
+}
+
+section .no img {
+	width: 100%;
+	max-width: 550px;
+	height: auto;
 }
 
 
@@ -744,10 +759,16 @@ section .no {
 }
 
 
-@media (min-width: 500px) and (max-width:850px) {
+@media (min-width: 300px) and (max-width:850px) {
   #welcome>.inner>.wrap>.no>img {
     margin-left: 0%;
   }
+
+	#welcome>.inner>.wrap>.no>img {
+		margin-left: 0%;
+		width: 100%;
+		height: auto;
+	}
 
   
 .about-ban1 {
@@ -769,6 +790,14 @@ section .no {
 	.finish > h1 {
     font-size: 35px;
 	}
+
+	.search_box > .search2 > .price {
+	margin-left: 0px;
+	}
+
+	.search_box > .search2 {
+    padding: 14px 30px;
+}
 
 
 }

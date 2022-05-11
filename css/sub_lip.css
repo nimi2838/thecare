@@ -65,7 +65,7 @@
 }
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
     #line .inner {width: 100%;}
 }
 
@@ -103,6 +103,9 @@
 }
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
     #lip .inner {width: 100%;}
+	#line .title { margin: 0 0 0 20px; }
+	#lip .wrap {width: 100%;display: inline-block; }
+	#lip .wrap >.con { margin: 40px auto 0px;}
 }

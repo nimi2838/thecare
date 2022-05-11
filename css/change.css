@@ -545,7 +545,7 @@ a {
 
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
 
 
   .top-wrap {display: none;}
@@ -660,6 +660,16 @@ a {
     #gnb .depth_1{background-color: #1F628D;} 
     #gnb .depth_1>li{width: 100%; margin: 0;}
     #gnb .depth_1>li>a{padding-left: 40px;}
+
+	.content_wrap1 {
+    width: 60%; margin: 150px auto 40px; 
+	}
+
+	.finish {
+		margin: 180px auto 130px;
+	}
+	
+
 
 
 }

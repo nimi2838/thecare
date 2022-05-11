@@ -1355,11 +1355,10 @@ catch(Exception e) {
 
 
 
-
-		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
+function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1376,7 +1375,7 @@ catch(Exception e) {
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1388,8 +1387,6 @@ catch(Exception e) {
 			alert("옵션을 선택해주세요 !");
 		}
 			
-
-
 		}
 
 

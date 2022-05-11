@@ -1351,32 +1351,33 @@ catch(Exception e) {
 				}
 
 
-function inCart1(){
-	var frm1 = document.form;
-	frm1.action = "incart1.jsp"
-	document.getElementById('button').click();
-}
-
-
-//		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
-//		{
-//		var frm1 = document.form;
-//
-//		if(frm1.elements['chk[]'][i].checked==false) {
-//
-//			
+//		function inCart1(){
+//			var frm1 = document.form;
 //			frm1.action = "incart1.jsp"
 //			document.getElementById('button').click();
-//		} else {
-//			alert("옵션을 선택해주세요 !");
 //		}
-//			
-//		}
+
+		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+
+		var checked = $('.chk').is(':checked');
+
+		if(checked) {
+
+			var frm1 = document.form;
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
+		}
 
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1388,8 +1389,6 @@ function inCart1(){
 			alert("옵션을 선택해주세요 !");
 		}
 			
-
-
 		}
 
 

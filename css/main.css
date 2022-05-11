@@ -609,7 +609,7 @@ a {
 }
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
   #best .inner {width: 80%;}
   #best .content {height: 1000px; background-color: #222;}
   #best .tab>li>.panel {height: auto;}
@@ -788,7 +788,7 @@ left: 60.5%;
 }
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
   .mini-ban > .text-box > div > p {
     font-size: 25px;
 	line-height: 40px;
@@ -959,7 +959,7 @@ left: 60.5%;
 }
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
 
   .card-wrap > .cardtt > h1 {font-size: 50px; width: 230px; margin-left: 50px;}
   .card-wrap > .cardtt > h4 {line-height: 150px; font-size: 20px;}
@@ -1265,7 +1265,7 @@ color:#fff;
 }
 }
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
   
  .content-f {
   flex-direction: column;
@@ -1742,7 +1742,7 @@ color:#fff;
 
 
 
-@media (min-width: 500px) and ( max-width:850px) {
+@media (min-width: 300px) and ( max-width:850px) {
 
   .top-wrap {display: none;}
   .top-wrap>.top-box2 {display: none;}
@@ -1790,7 +1790,7 @@ color:#fff;
       color: #1F628E; font-size: 35px; border: 0;
   }
 
-  #header > .inner{background-color: white; margin: 10px 50px; width: 90%;}
+  #header > .inner{background-color: white; margin: 10px 30px; width: 90%;}
   #header .gnb_wrap{
       display: none; z-index: 100;
       position: fixed; right: 0; top: 90px; background-color: #f2f2f2
@@ -1981,6 +1981,7 @@ color:#fff;
   
  .map_wrap {
   width: 100%;
+  height: 95%;
 }
 
 .map_wrap > .map_box {
@@ -1992,10 +1993,10 @@ color:#fff;
   height: 300px;
 }
 
-.map_wrap > .text_box { width: 100%; left: 0; top: 50%;}
+.map_wrap > .text_box { width: 100%; left: 0; top: 45%;}
 
-.map_wrap > .bg_box > .bg_box1 {height: 800px;}
-.map_wrap > .bg_box > .bg_box2 {height: 800px;}
+.map_wrap > .bg_box > .bg_box1 {height: 950px;}
+.map_wrap > .bg_box > .bg_box2 {height: 950px;}
 
 .map_wrap > .text_box > h1 {
   display: none;

@@ -1037,7 +1037,7 @@ var sum = 0;
                     <p>6~9개월의 간격으로 반복 시술하는 것이 좋습니다.</p>
                 </div>
                 
-                <div class="con">
+                <div class="con con1">
                     <p>시술시간이 짧으며 일상생활로의 복귀도 빠른 편입니다.</p>
                 </div>
             </div>
@@ -1053,7 +1053,7 @@ var sum = 0;
 
                 <div class="cont">
                     <div class="pic" data-aos="fade-down">
-                        <img src="img/gyeo.PNG" alt="" width="350px" height="250px">
+                        <img src="img/gyeo.PNG" alt="">
                     </div>
                     <div class="txt">
                         <p>
@@ -1379,11 +1379,10 @@ catch(Exception e) {
 
 
 
-
-		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
+function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1400,7 +1399,7 @@ catch(Exception e) {
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1412,8 +1411,6 @@ catch(Exception e) {
 			alert("옵션을 선택해주세요 !");
 		}
 			
-
-
 		}
 
 
