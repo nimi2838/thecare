@@ -26,45 +26,55 @@ try {
 	
 	request.setCharacterEncoding("euc-kr");
 
-	String rezNo = request.getParameter("rezNo");
+	String rezno = request.getParameter("rezno");
+	String name = request.getParameter("name");
+	String day1 = request.getParameter("day1");
+	String date = request.getParameter("date");
+	String phone1 = request.getParameter("phone1");
+	String phone2 = request.getParameter("phone2");
+	String phone3 = request.getParameter("phone3");
+	String phone = phone1 + "-" + phone2 + "-" + phone3;
+	String sex = request.getParameter("sex");
+	String memo = request.getParameter("memo");
+
 
 
 	String jsql7= "SELECT * FROM rezinfo WHERE rezNo=?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, rezNo);
+			pstmt7.setString(1, rezno);
 
 			ResultSet rs7 = pstmt7.executeQuery(); 
 			if(rs7.next()){
 
 				
 
-String jsql5 = "delete from rezinfo WHERE rezNo=?";
+String jsql5 = "UPDATE rezinfo SET ordPhone=?, ordMemo=? WHERE rezNo=?";
 					PreparedStatement pstmt5 = con.prepareStatement(jsql5);
-					pstmt5.setString(1,rezNo);
+					pstmt5.setString(1,phone);
+					pstmt5.setString(2,memo);
+					pstmt5.setString(3,rezno);
 
 					pstmt5.executeUpdate();
 
-			
-
-			String jsql6 = "delete from rez WHERE rezNo=?";
+					String jsql6 = "UPDATE rez SET rezDate=? WHERE rezNo=?";
 					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
-					pstmt6.setString(1,rezNo);
+					pstmt6.setString(1,day1+date);
+					pstmt6.setString(2,rezno);
 
 					pstmt6.executeUpdate();
 
-	
-%>
-
-	<script>
-		alter("삭제가 완료되었습니다!");
-	</script>
-
-<%
 
 			}
-		
-			response.sendRedirect("manager_reservations.jsp");    
 
+			%>
+			<script>
+				alert("예약 변경이 완료되었습니다 !");
+			document.location.href="manager_reservations.jsp";
+			</script>
+			
+			<%
+
+			
 
     } catch(Exception e) {
 		out.println(e);

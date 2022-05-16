@@ -719,11 +719,15 @@ width: 100%; border-bottom: 1px solid #ccc;
 }
 
 .scriptCalendar {
-	float: inherit;
+	float: left;
     margin: 10px auto 30px;
 }
 
 .td_tit .name {
+	margin-left: 75px; font-weight: bold;
+}
+
+.td_tit .name1 {
 	margin-left: 75px; font-weight: bold;
 }
 
@@ -987,6 +991,11 @@ width: 100%; border-bottom: 1px solid #ccc;
 
 .td_tit .name {
 	margin-left: 60px; border:none; font-weight: bold;
+}
+
+.scriptCalendar {
+	float: inherit;
+    margin: 10px auto 30px;
 }
 
   

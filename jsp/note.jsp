@@ -503,24 +503,99 @@ else{
 
 
 
+<%
+try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver");  
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
+	
+	request.setCharacterEncoding("euc-kr");
+	%>
+
+		
+   <%
+
+
+		String group_index;
+		int list_index;
+
+		group_index = request.getParameter("group_index");
+		   
+		if (group_index != null) 	
+				list_index = Integer.parseInt(group_index);  
+		else 
+				list_index = 0;    
+
+		String jsql = "select count(*) from board";
+		PreparedStatement pstmt1 = con.prepareStatement(jsql);
+		ResultSet cntRs = pstmt1.executeQuery();	
+
+		cntRs.next();
+		int cnt = cntRs.getInt(1);
+
+		int cntList = cnt/20; 
+		int remainder = cnt%20; 
+		int cntList_1;
+			
+		if (cntList != 0) 
+		{
+			   if (remainder == 0)		
+				  cntList_1 = cntList;          
+			   else                  
+				   cntList_1 = cntList + 1;		  
+		 } 
+		 else 		 
+			  cntList_1 = cntList + 1;
+			   
+		cntRs.close();
+			
+		String jsql2 = "select * from board order by masterid desc, replynum, step, no";
+		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+		ResultSet rs = pstmt2.executeQuery();
+   %>
+
 
     <div class="note_box">
 
         <h1>시술 기록장</h1>
+		<div class="write"><a href="note_write.jsp">글쓰기</a></div>
 
-        <a href="note_detail.jsp" class="con_box">
+		<%
+	if (!rs.wasNull()) 
+	{
+	   for(int i = 0; i < list_index * 20; i++) 
+	      rs.next();
+
+       int cursor = 0;
+       while (rs.next()) 
+	   {
+              int idx = rs.getInt("idx");
+              int no = rs.getInt("no");
+              String subject = rs.getString("subject");
+			  String content = rs.getString("content");
+			  String name = rs.getString("name");
+              String email = rs.getString("email");
+              String ymd = rs.getString("ymd");
+              int readcount = rs.getInt("readcount");
+              int step = rs.getInt("step");
+    %> 	  
+
+        <a href="note_detail.jsp?idx=<%=idx%>" class="con_box">
 
             <div class="img-box">
-                <img src="img/dsp.png" alt="">
+                
             </div>
 
             <div class="text-box">
 
                 <div class="text1">
-                    <h3>윤곽주사 아프네요,,</h3>
+                    <h3><%=subject%></h3>
                     <div class="icon-box">
                         <div class="icon1">
-                           방금 맞고왔는데 아프긴 하지만 벌써 이뻐보이네요
+                           <%=content%>
                         </div>
                     </div>
                 </div>
@@ -530,7 +605,18 @@ else{
                         <i class="fa-solid fa-comment"></i>
                     </div>
                     <div class="cnt">
-                        0
+					<%
+					
+					String jsql3 = "SELECT COUNT(ridx) as ridx FROM reboard WHERE idx=?";
+		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+		pstmt3.setInt(1, idx);
+		ResultSet rs3 = pstmt3.executeQuery();
+				rs3.next();
+
+				int ridx = rs3.getInt("ridx");
+				
+%>
+                        <%=ridx%>
                     </div>
                 </div>
             </div>
@@ -538,98 +624,19 @@ else{
         </a>
         <hr>
 
+ <%
+		 cursor ++;
+         if (cursor >= 20) break; 
+        }   
+    }  
+   %>
 
 
 
-         <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/osn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>하이코 전후차이 ㅜㅜ</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            4개월차고 하이코 했는데 원래 코 끝이 높아지고 복코 좀 개선하려는 게 제 수술 목적이었는데 친구들 마다 콧대가 좀 높아진거 말고는 전코랑 차이가 없다고 하고
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        4
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        <hr>
 
 
-          <a href="note_detail.jsp" class="con_box">
+<!-- 		<div align="center"><font size=2 color=red>현재 페이지 / 총 페이지 &nbsp(<%= list_index + 1 %> / <%= cntList_1 %>)</div> -->
 
-            <div class="img-box">
-                <img src="img/dsn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>손에 땀 이제 안녕</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            손발에 땀이 많아 불편했는데 다한증 보톡스 맞고 훨 나아짐 강추!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        1
-                    </div>
-                </div>
-            </div>
-            
-        </a><hr>
-		
-		
-		  <a href="note_detail.jsp" class="con_box">
-
-            <div class="img-box">
-                <img src="img/orn.png" alt="">
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>사각턱 개빡침ㅡㅡ</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            제목 곧 내용 (ㅈㄱㄴ)
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        5
-                    </div>
-                </div>
-            </div>
-            
-        </a>
     </div>
 
 <!--     <input type="file" id="inputImage">
@@ -637,6 +644,15 @@ else{
     <button id="sendButton">보내기</button>
       
     <img src="" class="uploadImage"> -->
+
+	
+	<%
+    } 
+catch(Exception e) {
+		out.println(e);
+}
+%>
+
 
 
 			 <div class="footer flex flex-jc-c">

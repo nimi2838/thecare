@@ -357,7 +357,8 @@ a {
  .titleArea .new > a > p {margin-top: 8px;}
   
  table {width: 100%; text-align: center; margin-bottom: 100px;}
- thead {width: 100%; font-weight: bold; font-size: 15px;}
+ thead {width: 100%; font-weight: bold; font-size: 18px;}
+ tbody {font-size: 17px;}
  table > thead > tr > th {border-bottom: 1px solid rgb(99, 99, 99); padding: 20px 0;}
 
 

@@ -345,9 +345,17 @@ a {
 }
 
 .note_box > h1 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 	text-align: center;
 	font-size: 35px;
+}
+
+.note_box > .write {
+	float:right; margin-bottom: 20px;
+}
+
+.note_box > .write > a {
+	padding: 10px 15px; background: #f1f1f1;
 }
 
 .note_box > .con_box {

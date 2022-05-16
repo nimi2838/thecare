@@ -336,6 +336,9 @@ a {
   border: none;
 }
 
+input[type="text" i] {
+    font-size: 18px;
+}
 
 
 
@@ -503,12 +506,16 @@ a {
 
 
 	
-.search_box {
-  width: 80%;
+
 }
 
 
+.qna-box {
+	width: 60%;
+    margin: 30px auto 40px;
 }
+
+
 
 
 

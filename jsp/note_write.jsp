@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/note_write.css" />
-    <title>1:1 질문하기</title>
+    <title>기록장 작성</title>
 </head>
 
 <%
@@ -507,54 +507,51 @@ else{
 
     <div class="qna-box">
     <div class="qna-top">
-            <h1>고객센터</h1>
-            <p>1:1문의</p>
+            <h1>기록장 작성</h1>
         </div>
 
 	
-
-	 <br><br>
      <form method="post" action="note_write_process.jsp" name="input" style="margin:50px 0;">
        <div align="center">
 
-        <table width="1200" border="0" cellspacing="2" cellpadding="3" style="font-size:15px;">
+        <table width="1200" border="0" cellspacing="2" cellpadding="3" style="font-size:18px;">
  	   <tr>
- 	      <td style="background: #b5aa9c; padding: 10px 15px;" width="250" >
+ 	      <td style="background: #ffeeee; padding: 10px 15px;" width="250" >
  	         <div  align="center"> 제  목 </div>
  	      </td>
  	      <td>
- 	         <input style="padding: 10px 0;" type="text" size="120" name="in_subject" Maxlength="30">
+ 	         <input style="padding: 10px 15px;" type="text" size="80" name="in_subject" Maxlength="30">
  	      </td>
  	   </tr>
  	   <tr>
- 	      <td style="background: #b5aa9c ; padding: 10px 15px;" width="250">
+ 	      <td style="background: #ffeeee ; padding: 10px 15px;" width="250">
  	         <div align="center"> 작 성 자</div>
  	      </td>
- 	      <td><input style="padding: 10px 0;" type="text" size="120" name="in_name" Maxlength="20"></td>
+ 	      <td><input style="padding: 10px 15px;" type="text" size="80" name="in_name" Maxlength="20"></td>
  	    </tr>
  	   <tr>
- 	      <td style="background: #b5aa9c ; padding: 10px 15px;" width="250">
+ 	      <td style="background: #ffeeee ; padding: 10px 15px;" width="250">
  	         <div align="center"> E-mail</div>
  	      </td>
- 	      <td><input style="padding: 10px 0;" type="text" size="120" name="email" Maxlength="30"></td>
+ 	      <td><input style="padding: 10px 15px;" type="text" size="80" name="email" Maxlength="30"></td>
  	    </tr>
  	   <tr>
- 	      <td style="background: #b5aa9c ; padding: 10px 15px;" width="250">
+ 	      <td style="background: #ffeeee ; padding: 10px 15px;" width="250">
  	         <div  align="center"> 본  문</div>
  	      </td>
- 	      <td><textarea style="padding: 10px 0;" rows="15" cols="121" name="in_content"></textarea></td>
+ 	      <td><textarea style="padding: 10px 15px;     resize: none;" rows="8" cols="106" name="in_content"></textarea></td>
  	    </tr> 	    
  	   <tr>
- 	      <td style="background: #b5aa9c ; padding: 10px 15px;" width="200">
+ 	      <td style="background: #ffeeee ; padding: 10px 15px;" width="200">
  	         <div align="center"> 비밀번호</div>
  	      </td>
- 	      <td><input style="padding: 10px 0;" type="password" name="pwd"></td>
+ 	      <td><input style="padding: 10px 15px;" type="password" name="pwd"></td>
  	    </tr>
  	   <tr>    
                <td colspan="2"> 
                   <div align="center" style="margin-top: 10px;"> 
-                     <input type="button" name="write_submit" value="등   록" OnClick="in_check()" style="background: white; border: 1px solid  #b5aa9c; padding: 10px 15px; margin: 0 5px;">
-          	     <input type="reset" name="reset" value="취   소" onClick="maintogo()" style="background: white; border: 1px solid  #b5aa9c; padding:10px 15px;margin: 0 5px;">
+                     <input type="button" name="write_submit" value="등   록" OnClick="in_check()" style="background: white; border: 1px solid  #ffcbcb; padding: 10px 15px; margin: 0 5px;">
+          	     <input type="reset" name="reset" value="취   소" onClick="maintogo()" style="background: white; border: 1px solid  #ffcbcb; padding:10px 15px;margin: 0 5px;">
         	  </div>
                </td>
             </tr>
@@ -580,25 +577,19 @@ else{
 
 
 
-	  <div class="footer flex flex-jc-c">
-        <div class="logo img-box flex flex-ai-c">
-            <img src="img-1/logo.png" alt="">
-        </div>
-        <div class="text">
-            <p>주소 : 충청남도 천안시 서북구 성환읍 대학로 91</p>
-            <p>전화 : 041-1235-4567 팩스 : 02-1234-1233</p>
-            <p>사업자등록번호123-45-6789 [사업자정보확인] 고객센터1588-1234</p>
-            <p>COPYRIGHT (C) 2021 BIWUDA .ALL RIGHTS RESERVED.</p>
-            <p class="text1">※ 비우다에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서, 무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.</p>
-        </div>
-        <div class="up-icon img-box">
-            <a href="#">
-                <img src="img-1/btn_next.png" alt="">
-            </a>
-        </div>
 
-    
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
+            <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+            </p>
+            <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전화번호 : 02-517-0912
+            </p>
+            <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
     </div>
+
 
 
 
@@ -756,7 +747,36 @@ gsap.to('.top-wrap > .top-box2', {
 		}
 
 
+		 function in_check()
+	  {
+			if (document.input.in_subject.value == "") {
+			  alert("제목을 입력하세요!");
+			  return;
+			}
 
+			if (document.input.in_name.value == "") {
+			  alert("이름을 입력하세요!");
+			  return;
+			}
+
+			if (document.input.pwd.value == "") {
+			  alert("비밀번호를 입력하세요!");
+			  return;
+			}
+
+			if (document.input.in_content.value == "") {
+			  alert("본문을 입력하세요!");
+			  return;
+			}
+
+			document.input.submit();
+		}
+
+
+		
+function maintogo(){
+               history.go(-1);
+             }
 
 
 

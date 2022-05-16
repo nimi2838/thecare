@@ -556,7 +556,8 @@ try {
                         <th>예약일자</th>
                         <th>시술정보</th>
                         <th>요청사항</th>
-						
+						<th>수정</th>
+						<th>삭제</th>
                     </tr>
                 </thead>
                 
@@ -586,8 +587,8 @@ try {
 			rs1.next();
 
 			String rezNo1 =  rs1.getString("rezNo");	
-			String prdNo =  rs1.getString("prdNo");	
-			String rezDate =  rs1.getString("rezDate");	
+	//		String prdNo =  rs1.getString("prdNo");	
+	//		String rezDate =  rs1.getString("rezDate");	
 
 
 				  %>
@@ -596,6 +597,17 @@ try {
 						<td><%=uId%></td>
                         <td><%=ordCustomer%></td>
                         <td><%=ordPhone%></td>
+						<%
+				String jsql2= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+						pstmt2.setString(1, rezNo);
+
+						ResultSet rs2 = pstmt2.executeQuery();	
+						rs2.next();
+
+						String rezDate = rs2.getString("rezDate");
+						String prdNo = rs2.getString("prdNo");
+				  %>
 						<td><%=rezDate%></td>
                         <td><%=prdNo%>
 						<%
@@ -611,7 +623,24 @@ try {
 						  }
 					  %></td>
                         <td><%=ordMemo%></td>
+						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                        <td><a style = "color:red;" onclick="real()">Yes</a></td>
                     </tr>
+
+					<script>
+					
+							function real(){
+							 if(confirm("정말 예약을 취소하시겠습니까 ?"))
+							 {
+							  document.location.href="delete_ManagerRez.jsp?rezNo=<%=rezNo%>"
+							 }
+							 else
+							 {
+							 alert('예약을 유지합니다.');
+							 return false;
+							 }
+							}
+					</script>
 					<%
 	}
 				  %>
@@ -773,8 +802,6 @@ $topBtn.onclick = () => {
 
 
 
-		
-
 
 		function search_form()
 		{
@@ -831,6 +858,11 @@ $topBtn.onclick = () => {
 			alert('로그인 후 이용 가능한 페이지입니다.');
 			document.location.href="login.jsp";
 		}
+
+
+		
+
+		
 
 
 
