@@ -526,7 +526,7 @@ a {
   width: 90%; margin: 0 auto;
 }
 #note .wrap ul li .tit {text-indent: 30px;}
-#note .wrap ul li .tit p {font-size: 18px;}
+#note .wrap ul li .tit p {font-size: 18px; }
 #note .wrap ul li .tit h1 {font-size: 25px;}
 
 #note .wrap .list {}
@@ -561,7 +561,7 @@ a {
 
 #note .wrap .list ul li .comment-write {text-indent: 30px;}
 #note .wrap .list ul li .comment-write h1{font-size: 25px; margin-top: 40px;}
-#note .wrap .list ul li .comment-write .text {display: flex; justify-content: flex-end; height: 80px;}
+#note .wrap .list ul li .comment-write .text {display: flex; justify-content: center; height: 80px;}
 #note .wrap .list ul li .comment-write .btn{
   width: 100px; font-size: 18px; background-color: #fff;
   border: 1px solid rgb(173, 173, 173); cursor: pointer;
@@ -574,6 +574,7 @@ a {
 #note .wrap .list ul li .comment-write .text textarea {
   width:85%; overflow:visible; text-overflow:ellipsis;
   border: 1px solid rgb(173, 173, 173); font-size: 16px;
+  resize: none;
 }
 
 /* 목록으로 */

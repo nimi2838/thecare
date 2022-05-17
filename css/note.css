@@ -519,7 +519,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#note .wrap .list {width: 90%; margin: 0 auto; }
+#note .wrap .list {width: 80%; margin: 0 auto; }
 #note .wrap ul {padding: 50px 0;}
 #note .wrap ul li {border-bottom: 1px solid rgb(173, 173, 173);}
 #note .wrap ul li a {width: 100%; text-indent: 30px; display: flex; align-items: center;}
