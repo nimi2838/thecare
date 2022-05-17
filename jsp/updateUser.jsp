@@ -568,11 +568,7 @@ try {
                 <div class = "tit">
                 <h2>My Page</h2>
                 </div>
-                <div class = "moon1_1">
-                    <h3>1:1 문의</h3>&nbsp;&nbsp;
-                    <div class = "btn1_1">
-                        <a href="my_QnA.jsp">내 문의</a></div>
-                </div>
+                
                 
                <div class = "my_info">
                
@@ -996,7 +992,11 @@ gsap.to('.top-wrap > .top-box2', {
                  }
     
     
-    
+    function zipCheck()
+                 {
+                 	window.open("zipCheck1.jsp", "win", "width=430, height=710, scrollbars=yes, status=yes");
+                 }
+
     
     
         function search_form()
