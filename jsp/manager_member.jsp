@@ -21,7 +21,7 @@
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
             <div class="logo-box ">
                 <div class="img-box">
-                    <a href="manager_main.html">
+                    <a href="manager_main.jsp">
                         <img src="img/logo.png" alt="" width="150px" height="69px">
                     </a>
                 </div>
@@ -99,7 +99,7 @@ try {
 %>
                 <tbody>
                     <tr>
-                        <td><a href="selectDetailMember.jsp?id=<%=id%>"><%=id%></a></td>
+                        <td><%=id%></a></td>
                         <td><%=pw%></td>
                         <td><%=name%></td>
                         <td><%=joomin%></td>

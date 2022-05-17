@@ -579,7 +579,7 @@ PreparedStatement pstmt2  = con.prepareStatement(jsql2);
         <div class = "inner">
             <div class = "join_box" style = "height : 680px">
                 <h1 style = "font-size : 22px; line-height: 31px;">회원가입 이벤트 <br>적립금 2000원이 적립되었습니다!</h1>
-                <form name="newMem" method=post action=userResult.jsp>
+                
                     <table class="table">
         
                        <tr>

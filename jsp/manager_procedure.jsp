@@ -1,4 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +22,7 @@
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
             <div class="logo-box ">
                 <div class="img-box">
-                    <a href="manager_main.html">
+                    <a href="manager_main.jsp">
                         <img src="img/logo.png" alt="" width="150px" height="69px">
                     </a>
                 </div>
@@ -30,7 +32,17 @@
 
     </div>
 
+<%
+try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care"; 
+     String DB_ID="skin";  
+     String DB_PASSWORD="1234"; 
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver");  
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
+    
+%>
 
 
     <section id="content" >
@@ -42,7 +54,7 @@
                 <div class="titleArea">
                     <h2>전체 시술 조회</h2>
                     <div class="new">
-                        <a href="#">
+                        <a href="insertsurgery.jsp">
                             <img src="img/manager-plus.png" alt="" width="30px" height="30px">
                             <p>시술등록</p>
                         </a>
@@ -52,32 +64,72 @@
             <table>
                 <thead>
                     <tr>
-                        <th>카테고리</th>
-                        <th>시술번호</th>
-                        <th>시술이름</th>
-                        <th>시술설명</th>
-                        <th>시술가격</th>
+                        <td>카테고리</td>
+                        <td>시술번호</td>
+                        <td>시술이름</td>
+                        <td>시술가격</td>
+						<td>수정</td>
+						<td>삭제</td>
                     </tr>
                 </thead>
                 
                 <tbody>
+                   <%
+	String jsql = "select * from surgery where prdNo NOT like 'aa'";   
+	PreparedStatement pstmt = con.prepareStatement(jsql);
+
+	ResultSet rs = pstmt.executeQuery();
+	while(rs.next()) {
+
+			String ctgType =  rs.getString("ctgType");	
+			String prdNo =  rs.getString("prdNo");
+			String prdName =  rs.getString("prdName");	
+			String startprice =  rs.getString("startprice");	
+			%>
                     <tr>
-                        <td>카테고리</td>
-                        <td>시술번호</td>
-                        <td>시술이름</td>
-                        <td>시술설명</td>
-                        <td>시술가격</td>
+                        <td><%=ctgType%></td>
+						<td><%=prdNo%></td>
+                        <td><%=prdName%></td>
+                        <td><%=startprice%></td>
+						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>">Yes</a></td>
+                        <td><a style = "color:red;" href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>">Yes</a></td>
                     </tr>
+						<script>
+					
+							function real(){
+							 if(confirm("정말 예약을 취소하시겠습니까?"))
+							 {
+							  document.location.href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>"
+							 }
+							 else
+							 {
+							 alert('예약을 유지합니다.');
+							 return false;
+							 }
+							}
+					</script>
+					<%
+		}  // while문의 끝
+%>
                 </tbody>
             </table>
 
             <a href="manager_main.jsp">
                 <div class="btn">메인</div>
-            </a> 
 
+            </a> 
+<script>
+$('tbody tr').eq(1).remove();
+
+</script>
 
         </div>
     </section>
+<%
+    } catch (Exception e) {
+      out.println(e);	
+}
+%>
 
 
 

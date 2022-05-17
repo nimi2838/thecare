@@ -187,7 +187,7 @@
 
  
 
-#content {width: 100%; height:110vh; }
+#content {width: 100%; }
   .inner {width: 80%; margin: 0 auto;}
   .inner > .title {margin: 0 auto; font-size: 40px; font-weight: bold;padding-top: 50px; text-align: center;}
 /* .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;} */

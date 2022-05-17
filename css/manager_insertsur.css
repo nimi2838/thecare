@@ -1,0 +1,383 @@
+
+  
+  
+  html,
+  body {
+	position: relative;
+	height: 100%;
+  }
+  
+  body {
+	font-family: 'ChosunSg';
+	font-size: 14px;
+	color: #252525;
+	margin: 0;
+	padding: 0;
+  }
+  
+  
+  
+  @font-face {
+	font-family: 'ChosunSg';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+
+  
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
+  /* 노말라이즈 */
+  body,
+  ul,
+  li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  a {
+	color: inherit;
+	text-decoration: none;
+  }
+  
+  .con {
+	width: 1280px;
+	margin: 0 auto;
+  }
+  
+  
+  .flex {
+	display: flex;
+  }
+  
+  .flex-1-0-0 {
+	flex: 1 0 0;
+  }
+  
+  .flex-ai-c {
+	align-items: center;
+  }
+  
+  .flex-ai-sb {
+	align-items: stretch;
+  }
+  
+  .flex-as-c {
+	align-self: center;
+  }
+  
+  .flex-jc-sb {
+	justify-content: space-between;
+  }
+  
+  .flex-jc-c {
+	justify-content: center;
+  }
+  
+  .flex-jc-end {
+	justify-content: end;
+  }
+  
+  .flex-wrap {
+	flex-wrap: wrap;
+  }
+  
+  .block {
+	display: block;
+  }
+  
+  .img-box>img {
+	width: 100%;
+	display: block;
+  }
+  
+  
+  .top-wrap{margin: 0;}
+  .top-wrap>.top-box1 {
+	margin: 0 auto;
+	padding: 13px;
+	width: 1280px;
+  }
+  
+  .line {
+	width: 100%;
+	height: 1px;
+	background: #ccc;
+	display: block;
+  }
+  
+  .logo-box {margin: 0 auto;}
+  
+  
+  
+  .login_btn{
+   width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background: #fff0f2 ;
+    border-radius: 10px; 
+    font: bold 18px/44px 'ChosunSg';
+    color: #4D4D4D;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    display:block;
+    padding: 5px 0;
+    border:0;
+    margin-top: 10px;
+    transition: 0.3s;
+  
+  
+    }
+  
+    .login_btn:hover{
+    background: #f89fa8;
+    color: #fff;
+    }
+  
+  
+  
+  
+  @media (min-width: 1301px) and  ( max-width:1920px) {
+	  /* 탑바 */
+	  .top-wrap>.top-box1 {
+		width: 1280px;
+	  }
+	}
+	
+	
+	
+	
+	
+	@media (min-width: 1051px) and ( max-width:1300px) {
+	  /* 탑바 */
+	  
+	.top-wrap>.top-box1 {
+	  width: 95%;
+	}
+	}
+	
+	
+	@media (min-width: 851px) and ( max-width:1050px) {
+	  /* 탑바 */
+	  .top-wrap>.top-box1 {
+	  width: 95%;
+	}
+  
+	}
+	
+	
+	@media (min-width: 500px) and ( max-width:850px) {
+	  /* 탑바 */
+	   .top-wrap>.top-box1 {
+	  width: 95%;
+	}
+	}
+
+
+
+  .content{width:100%; margin-top: 100px;}
+  .inner{width:50%; margin: 0 auto; } 
+  .wrap {margin-top: 10%;}
+
+  .title {
+	  text-align: center; padding-bottom: 30px;
+	  font-weight: bold; font-size: 45px; color: #FF9B9B;
+	  line-height: 55px;
+}
+  .log-box {
+	 width: 240px; height: 350px;
+	margin: 0 auto; margin-bottom: 70px; 
+  }
+  .form {
+	  width: 100%; padding: 15px; border: 1.5px solid #ccc; border-radius: 5px;
+	  margin-bottom: 20px; color: #333; outline: #FF9292;
+}
+  .login-btn {
+	  width: 100%; padding: 16px; border: 0; background-color: #FF9292; color: #fff;
+	  border-radius: 5px;
+}
+
+
+  @media (min-width: 1051px) and ( max-width:1300px) {
+    .inner{width:100%;} 
+
+  }
+  
+  
+  @media (min-width: 851px) and ( max-width:1050px) {
+    .inner{width:100%;} 
+  }
+  
+  
+  @media (min-width: 500px) and ( max-width:850px) {
+    .inner{width:100%;} 
+  }
+
+
+/* 회원가입 */
+
+.join_main{
+    width: 100%;
+   
+	padding-top: 50px;
+	padding-bottom: 70px;
+    background-color: #fff0f2;
+    ;
+    
+}
+.join_main > .inner {
+	width: 1180px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.join_box{
+    background-color: #fff;
+	width: 500px;
+	
+	margin: 0 auto;
+	padding-bottom: 50px;
+	border-radius: 15px;
+    position: relative;
+	
+}
+
+.join_box > h1 {
+	text-align: center;
+	font-weight:bold;
+	color: #4D4D4D;
+	padding-top: 60px;
+	padding-bottom: 20px;
+    
+	
+}
+.td_img img{
+  cursor: pointer;
+    
+    }
+
+input[type="text"],input[type="password"]{
+  
+  
+  text-align:left;
+  outline: none;
+  display:inline-block;
+  border: 0;
+  border: 1px solid #ACA6A6;
+  margin-top: 8px;
+  padding:8px;
+  margin-bottom:0.5rem;
+  margin-left: 80px;
+  }
+
+  .sel{
+      width: 185px;
+    margin-left: 80px;
+     height: 40px;
+      border: 1px solid #ACA6A6;
+  }
+  .call{
+    width: 80px;
+    margin-left: 30px;
+
+  }
+.checkbtn{
+  margin-bottom: 10px;
+  line-height: 36px; 
+  height: 35px; 
+  border: 1px solid #777;
+  color: #777; 
+  padding: 0; 
+  min-width: 114px;
+  width: 13%; 
+  margin-left: 2%; 
+  cursor: pointer; 
+  background-color: #fff; 
+  font-size : 12px;
+}
+  
+  .btn{
+    line-height: 36px;
+    height: 35px;
+    bordeR: 1px solid #f52334;
+      color: #f52334;
+      padding: 0;
+      min-width: 135px;
+      width: 15%;
+      margin-left: 2%;
+      cursor: pointer;
+      background-color: #fff;
+  }
+  .table{
+    margin: 0 auto;
+    font-size:16px;
+     margin-top:30px;
+    line-height: 34px;
+    
+  }
+
+  
+  .td_tit{
+    text-align: right;
+    padding-left: 58px;
+  }
+
+
+  .join_btn{
+	width:340px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #fff0f2;
+	border-radius: 10px; 
+	font: bold 18px/44px 'ChosunSg';
+	
+	color: #4D4D4D;
+	text-align: center;
+	text-decoration: none;
+	outline: 0;
+	display:block;
+	padding: 5px 0;
+	border:0;
+	margin-top: 40px;
+	transition: 0.3s;
+
+  }
+
+  .join_btn:hover{
+	background: #f89fa8;
+  ;
+
+  color: #fff;
+  }
+
+
+
+/* footer */
+
+.footer {
+	
+    width: 100%;
+    padding: 60px 0;
+    background: rgb(56, 56, 56);
+    padding-top: 30px;
+    
+  }
+  
+  
+  .footer > .text{
+    color: white;
+    text-align: center;
+  
+  }
+  
+  .footer > .text1 {
+    padding-top: 20px;
+  }
+  
+  
+  .footer > .text > p {
+    font-size: 14px;
+  }
