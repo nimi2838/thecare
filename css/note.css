@@ -533,7 +533,7 @@ a {
 
 
 @media (min-width: 1051px) and ( max-width:1300px) {
-  .inner{width:100%;} 
+  .inner{width:90%;} 
 }
 
 

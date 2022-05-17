@@ -1,7 +1,8 @@
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
+
 html,
 body {
   position: relative;
-  height: 100%;
 }
 
 body {
@@ -337,131 +338,6 @@ a {
 }
 
 
-
-
-.note_box {
-    width: 60%;
-    margin: 50px auto 0;
-}
-
-.note_box > h1 {
-    margin-bottom: 50px;
-	text-align: center;
-	font-size: 35px;
-}
-
-.note_box > .con_box {
-    display: flex;
-    width: 100%;
-    margin: 20px 0 30px;
-}
-
-.note_box > .con_box > .img-box {
-    width: 100px;
-    height: 100px;
-    border-radius:50%;
-    margin-right: 60px;
-	border:1px solid #ccc;
-	background-size: cover;
-	background-position: center;
-}
-/* 
-.note_box > .con_box > .img-box > img {
-    
-    
-} */
-
-.note_box > .con_box > .text-box {
-    display: flex;
-    width: 90%;
-}
-
-.note_box > .con_box > .text-box > .text1 {
-    width: 90%;
-    margin-top: 10px;
-}
-
-.note_box > .con_box > .text-box > .text1 > h3 {
-    font-size: 25px;
-    margin-top: 0;
-}
-
-
-.note_box > .con_box > .text-box > .text1 > .icon-box > .icon1 {
-    width: 450px;
-	height: 12px;
-    padding: 8px 5px;
-    margin-right: 15px;
-    font-size: 18px;
-	overflow: hidden;
-}
-
-.note_box > .con_box > .text-box > .text2 {
-    width: 10%;
-    position: relative;
-	margin-top: 15px;
-}
-
-.con_box .fa-comment:before {
-    font-size: 70px;
-    color: #fff0f2;
-	display: flex;
-justify-content: center;align-items: center;
-}
-
-.note_box > .con_box > .text-box > .text2 > .img-box {
-	width: 50px;
-}
-
-.note_box > .con_box > .text-box > .text2 > .cnt{
-    position: absolute;
-    top: 36%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-weight: 900;
-}
-
-
-
-
-    /* footer */
-
-.footer {
-  width: 100%;
-  position: relative;
-  padding: 50px 0;
-  background: rgb(56, 56, 56);
-  margin-top: 150px;
-  z-index: 99;
-}
-
-
-.footer > .text{
-  color: white;
-  text-align: center;
-
-}
-
-.footer > .text1 {
-  padding-top: 20px;
-}
-
-
-.footer > .text > p {
-  font-size: 14px;
-}
- 
-
-
-
-
-
-
-
-
-
-
 @media (min-width: 1301px) and  ( max-width:1920px) {
   #header {display: none;}
   .top-wrap>.top-box1 {
@@ -483,35 +359,6 @@ justify-content: center;align-items: center;
     padding: 23px 0px;
   
   }
-
-  
-    /* footer */
-
-.footer {
-  width: 100%;
-  position: relative;
-  padding: 50px 0;
-  background: rgb(56, 56, 56);
-  margin-top: 150px;
-  z-index: 99;
-}
-
-
-.footer > .text{
-  color: white;
-  text-align: center;
-
-}
-
-.footer > .text1 {
-  padding-top: 20px;
-}
-
-
-.footer > .text > p {
-  font-size: 14px;
-}
-
 }
 
 
@@ -537,7 +384,7 @@ justify-content: center;align-items: center;
 
 
 
-@media (min-width: 300px) and ( max-width:850px) {
+@media (min-width: 500px) and ( max-width:850px) {
 
 
   .top-wrap {display: none;}
@@ -586,7 +433,7 @@ justify-content: center;align-items: center;
       color: #1F628E; font-size: 35px; border: 0;
   }
 
-  #header > .inner{background-color: white; margin: 10px 30px; width: 90%;}
+  #header > .inner{background-color: white; margin: 10px 50px; width: 90%;}
   #header .gnb_wrap{
       display: none; z-index: 100;
       position: fixed; right: 0; top: 90px; background-color: #f2f2f2
@@ -654,211 +501,116 @@ justify-content: center;align-items: center;
     #gnb .depth_1>li>a{padding-left: 40px;}
 
 
-	
-.search_box {
-  width: 80%;
 }
 
 
+.inner{width:1170px; margin: 0 auto;} 
+.content{width:100%; padding: 50px 0;}
 
+#note {width: 100%;}
+#note .inner{}
+#note .inner .title {text-align: center;}
+#note .inner .title h1 {font-size: 35px;}
+#note .inner .title p {font-size: 20px;}
 
+#note .wrap {
+  width: 100%; margin-top: 80px; padding-bottom: 50px;
+  background-image: url(../img/note.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#note .wrap .list {width: 90%; margin: 0 auto; }
+#note .wrap ul {padding: 50px 0;}
+#note .wrap ul li {
+  border-bottom: 1px solid rgb(173, 173, 173);
+  width: 90%; margin: 0 auto;
+}
+#note .wrap ul li .tit {text-indent: 30px;}
+#note .wrap ul li .tit p {font-size: 18px;}
+#note .wrap ul li .tit h1 {font-size: 25px;}
 
+#note .wrap .list {}
+#note .wrap .list ul {}
+#note .wrap .list ul li {}
+#note .wrap .list ul li .tit {text-indent: 30px;}
+#note .wrap .list ul li .tit h1 {font-size: 25px;}
+#note .wrap .list ul li .tit p {}
+
+#note .wrap .list ul li .txt {text-indent: 30px;}
+#note .wrap .list ul li .txt h1 {font-size: 25px; margin-top: 40px;}
+#note .wrap .list ul li .txt p {
+  font-size: 18px; margin: 30px 0; word-break: break-all;
+  text-indent: 0; margin-left: 30px;
+}
+
+#note .wrap .list ul li .comment {text-indent: 30px;}
+#note .wrap .list ul li .comment h1 {font-size: 25px; margin-top: 40px;}
+
+#note .wrap .list ul li .comment ul {padding: 0;}
+#note .wrap .list ul li .comment ul li {
+  display: flex; width: 100%; align-items: center;
+  height: auto; font-size: 18px; margin: 10px 0;
+}
+#note .wrap .list ul li .comment ul li .user {width: 20%;}
+#note .wrap .list ul li .comment ul li .user h1 {font-size: 18px; margin: 0;}
+#note .wrap .list ul li .comment ul li .user-txt {
+  width: 60%; box-sizing: border-box; word-break: break-all;
+  text-indent: 0; line-height: 25px;
+}
+#note .wrap .list ul li .comment ul li .date {width: 18%; text-align: right;}
+
+#note .wrap .list ul li .comment-write {text-indent: 30px;}
+#note .wrap .list ul li .comment-write h1{font-size: 25px; margin-top: 40px;}
+#note .wrap .list ul li .comment-write .text {display: flex; justify-content: flex-end; height: 80px;}
+#note .wrap .list ul li .comment-write .btn{
+  width: 100px; font-size: 18px; background-color: #fff;
+  border: 1px solid rgb(173, 173, 173); cursor: pointer;
+  color: rgb(99, 99, 99); font-weight: bold;
+}
+#note .wrap .list ul li .comment-write .btn:hover {
+  background-color: rgb(245, 245, 245); transition: 0.3s;
+}
+
+#note .wrap .list ul li .comment-write .text textarea {
+  width:85%; overflow:visible; text-overflow:ellipsis;
+  border: 1px solid rgb(173, 173, 173); font-size: 16px;
+}
+
+/* 목록으로 */
+#note .wrap .write {margin: 0 auto; width: 90px; height: 45px; background-color: rgb(255, 255, 255);}
+#note .wrap .write:hover {background-color: rgb(235, 235, 235); transition: 0.3s;}
+#note .wrap .write a {text-align: center; font-weight: bold; line-height: 45px;}
+#note .wrap .write a h1 {font-size:16px;}
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+  .inner{width:90%;} 
 }
 
 
-
-
-
-
-
-.detail_wrap {
-    width: 100%;
-    margin-top: 50px;
-}
-
-.detail_wrap > .detail_box {
-    width: 1170px;
-    margin: 0 auto;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 {
-    width: 100%;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .img-box {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border:1px solid #ccc;
-	background-size: cover;
-	background-position: center;
-    margin: 0 3% 0 0;
-
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .text {
-    width: 80%;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .text > h2 {
-    font-size: 28px;
-    margin-top: 15px;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .text > p {
-    font-size: 18px;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .like {
-    width: 10%;
-    margin: 10px 0 0;
-}
-
-.detail_wrap > .detail_box > .user_box > .user1 > .like > img {
-	width: 60%;
-}
-
-.detail_wrap > .detail_box > .user_box > .user2 {
-    margin-top: 20px;
-}
-
-.detail_wrap > .detail_box > .user_box > .user2 > .item {
- margin: 0 20px 0 0;
- padding: 8px 25px;
- background: #1f628e;
- color: #fff;
- border-radius: 8px;
- font-size: 17px;
+@media (min-width: 851px) and ( max-width:1050px) {
+  .inner{width:90%;} 
 }
 
 
-.detail_wrap > .detail_box > .user_box > .img-wrap > .img-box {
-    width: 400px;
-    height: 350px;
-    margin: 35px 50px 0 0;
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
+@media (min-width: 500px) and ( max-width:850px) {
+  .inner{width:90%; margin:0 auto;}
+  #note .wrap .list ul li .tit {text-indent: 0;}
+
+  #note .wrap .list ul li .txt {text-indent: 0;}
+  #note .wrap .list ul li .txt h1 {font-size: 23px;}
+  #note .wrap .list ul li .txt p {margin-left: 0;}
+
+  #note .wrap .list ul li .comment {text-indent: 0;}
+  #note .wrap .list ul li .comment h1 {font-size: 23px;}
+  #note .wrap .list ul li .comment ul li {width: 100%;}
+  #note .wrap .list ul li .comment ul li .user h1 {text-indent: 0; font-size: 17px;}
+  #note .wrap .list ul li .comment ul li .user-txt { font-size: 17px;}
+  #note .wrap .list ul li .comment ul li .date {width: 20%;}
+  #note .wrap .list ul li .comment ul li .date p { font-size: 15px;}
+
+  #note .wrap .list ul li .comment-write h1 {font-size: 23px; text-indent: 0;}
+  #note .wrap .list ul li .comment-write .text .btn {font-size: 16px;}
 }
-
-
-.detail_wrap > .detail_box > .user_box > .img-wrap > .img-box > img {
-	width: 100%;
-}
-
-.detail_wrap > .detail_box > .user_box > .img-wrap > .img1 > img {
-	width: 126%;
-	margin-left: -85px;
-}
-
-.detail_wrap > .detail_box > .user_box > .img-wrap > .last > img {
-	margin-top: -75px;
-}
-
-
-.detail_wrap > .detail_box > .user_box > .img-wrap > .last {
-    margin: 35px 0px 0 0;
-}
-
-.detail_wrap > .detail_box > .note {
-    margin: 50px 0 0;
-}
-
-.detail_wrap > .detail_box > .note > .title {
-    font-size: 27px;
-}
-
-.detail_wrap > .detail_box > .note > .body {
-    font-size: 18px;
-    margin-top: 20px;
-	line-height: 37px;
-}
-
-.detail_wrap > .detail_box > hr {
-    margin: 40px 0;
-}
-
-.detail_wrap > .detail_box > .price > h1 {
-	font-size: 30px;
-}
-
-.detail_wrap > .detail_box > .comment > h1 {
-    font-size: 30px;
-    margin: 30px 0 0;
-}
-
-.detail_wrap > .detail_box > .comment > .com_list {
-	width: 100%;
-	margin-top: 20px;
-	font-size: 18px;
-}
-
-.detail_wrap > .detail_box > .comment > .com_list tr td:first-child {
-	width: 100px;
-}
-
-.detail_wrap > .detail_box > .comment > .com_list tr td .img-box {
-	width: 70px;
-}
-
-.detail_wrap > .detail_box > .comment > .com_list tr td .com_title {
-	font-size: 22px;
-	margin-bottom: 10px;
-}
-
-.detail_wrap > .detail_box > .comment > .com_list tr td .day {
-	font-size: 20px;
-}
-
-.detail_wrap > .detail_box > .comment hr {
-	margin: 20px 0px;
-}
-
-
-.detail_wrap > .detail_box > .comment > .write_com {
-    width: 100%;
-    font-size: 18px;
-}
-
-.detail_wrap > .detail_box > .comment > .write_com table {
-    width: 100%;
-}
-
-.detail_wrap > .detail_box > .comment > .write_com table tr td textarea {
-    width: 100%;
-    border: 1px solid  #1f628e;
-    resize: none;
-    font-size: 18px;
-
-}
-
-.detail_wrap > .detail_box > .comment > .write_com .com_wrap {
-    width: 100%;
-	font-size: 24px;
-}
-
-.detail_wrap > .detail_box > .comment > .write_com table .com_wrap > .td1 {
-    width: 100%;
-
-}
-
-
-
-.detail_wrap > .detail_box > .comment > .write_com table tr td .btn {
-    margin: -3px -3px 0;
-    
-}
-
-.detail_wrap > .detail_box > .comment > .write_com .user-view img {
-    width: 80px;
-    margin-right: 10px;
-}
-
-.detail_wrap > .detail_box > .comment > .write_com .user-view {
-    font-size: 23px;
-}
-
-
 
 
 
@@ -890,38 +642,37 @@ justify-content: center;align-items: center;
   font-size: 14px;
 }
  
+    /* footer */
+
+.footer {
+  width: 100%;
+  position: relative;
+  padding: 50px 0;
+  background: rgb(56, 56, 56);
+  margin-top: 50px;
+  z-index: 99;
+}
 
 
+.footer > .text{
+  color: white;
+  text-align: center;
+
+}
+
+.footer > .text1 {
+  padding-top: 20px;
+}
 
 
-
-
-
-
-
-
-
-
-@media (min-width: 1301px) and  ( max-width:1920px) {
-    .top-wrap>.top-box1 {
-      width: 1280px;
-    }
-  }
-  
-  
+.footer > .text > p {
+  font-size: 14px;
+}
+ 
   
   
   
   @media (min-width: 1051px) and ( max-width:1300px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
-  
-    .top-wrap>.top-box2>ul>li {
-      padding: 23px 0px;
-    
-    }
-
 
 	
     /* footer */
@@ -953,15 +704,6 @@ justify-content: center;align-items: center;
  
 }
 
-@media (min-width: 851px) and ( max-width:1050px) {
-    .top-wrap>.top-box1 {
-      width: 95%;
-    }
-  
-    .top-wrap>.top-box2>ul>li {
-      padding: 20px 0px;
-    } 
-}
 
 
 
