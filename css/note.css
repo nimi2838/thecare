@@ -522,9 +522,11 @@ a {
 #note .wrap .list {width: 90%; margin: 0 auto; }
 #note .wrap ul {padding: 50px 0;}
 #note .wrap ul li {border-bottom: 1px solid rgb(173, 173, 173);}
-#note .wrap ul li a {text-indent: 30px;}
-#note .wrap ul li a p {font-size: 23px;}
-#note .wrap ul li a h1 {font-size: 19px; margin-bottom: 20px;}
+#note .wrap ul li a {width: 100%; text-indent: 30px; display: flex; align-items: center;}
+#note .wrap ul li a .tit {width: 90%;}
+#note .wrap ul li a .tit p {font-size: 23px;}
+#note .wrap ul li a .tit h1 {font-size: 19px; margin-bottom: 20px;}
+#note .wrap ul li a h2 {width: 10%;}
 
 #note .wrap .write {margin: 0 auto; width: 90px; height: 45px; background-color: rgb(255, 255, 255);}
 #note .wrap .write:hover {background-color: rgb(235, 235, 235); transition: 0.3s;}
