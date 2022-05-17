@@ -1,28 +1,27 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+ <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.text.*" %>
-<%@ page import="java.util.Date" %>
 <html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="css/mypage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/updateUser.css" />
+  <script language="javascript" src="js/js_package.js"> </script>
   
 
   <title>회원정보 변경</title>
 </head>
 
 <%
-	DecimalFormat df = new DecimalFormat("###,###");
    String myid = (String)session.getAttribute("sid");                                                                           
 %>
 <body>
-
 
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
@@ -65,7 +64,7 @@
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.jsp">
+                        <a href="main.html">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -191,7 +190,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                      <li><a href="guide.jsp">안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -288,7 +287,7 @@ else{
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.jsp">
+                        <a href="main.html">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -354,8 +353,8 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -373,7 +372,7 @@ else{
             <div class="inner">
                 <div class="logo-box flex">
                     <div class="img-box">
-                        <a href="main.jsp">
+                        <a href="main.html">
                             <img src="img/logo.png" alt="" width="150px">
                         </a>
                     </div>
@@ -421,7 +420,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">안내/가격</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -504,23 +503,46 @@ else{
 
 
 
-	<%        
-try {        
- 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
-     String DB_ID="skin"; 
+
+
+
+
+
+
+
+
+
+
+
+	<%
+try {
+     String DB_URL="jdbc:mysql://localhost:3306/care";  
+     String DB_ID="skin";  
      String DB_PASSWORD="1234";
- 	 
-	 Class.forName("org.gjt.mm.mysql.Driver");  
- 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
+     
+    Class.forName("org.gjt.mm.mysql.Driver"); 
+    Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+   
+    String key = request.getParameter("id");   
+    String jsql = "select * from user where uId = ?";
+    PreparedStatement pstmt = con.prepareStatement(jsql);
+    pstmt.setString(1,key);
 
-
-	String jsql = "select * from user where uId = ?";
-	PreparedStatement pstmt = con.prepareStatement(jsql);
-	pstmt.setString(1, myid);
-
-	ResultSet rs = pstmt.executeQuery();
+    ResultSet rs = pstmt.executeQuery();
 	rs.next();
+
+    String id = rs.getString("uId");
+    String pw = rs.getString("uPw");
     String name = rs.getString("uName");
+    String joomin = rs.getString("uJoomin");
+    Date birth = rs.getDate("uBirth");
+    String solar = rs.getString("uSolar");
+    String email = rs.getString("uEmail");
+    String phone = rs.getString("uPhone");
+	String zipcode = rs.getString("uZipcode");
+    String address1 = rs.getString("uAddress1");
+	String address2 = rs.getString("uAddress2");
+    String sex = rs.getString("uSex");
 	String Point = rs.getString("Point");
 	String Coupon = rs.getString("Coupon");
 
@@ -533,24 +555,20 @@ try {
 	 ResultSet rs2 = pstmt3.executeQuery();
 	 rs2.next();
 	int cnt = rs2.getInt("cnt");
-
+	
+	
 %>
-
 
 
 
 	 <!-- 마이페이지 배너 -->
 
-       <div class = "mypage_banner">
+        <div class = "mypage_banner">
             <div class = "inner">
                 <div class = "tit">
                 <h2>My Page</h2>
                 </div>
-                <div class = "moon1_1">
-                    
-                    <div class = "btn1_1">
-                        <a href="delete_User.jsp?id=<%=myid%>">회원탈퇴</a></div>
-                </div>
+                
                 
                <div class = "my_info">
                
@@ -559,7 +577,7 @@ try {
 
                 <div class = "my_info_text">
                     <h1><%=name%> 님</h1>
-                    <a href="updateUser.jsp?id=<%=myid%>">회원정보 변경</a>
+                   <a href="updateUser.jsp?id=<%=myid%>">회원정보 변경</a>
                 </div>
 
                 <div class = "my_point">
@@ -572,142 +590,233 @@ try {
                     <p><b style = "color: #f89fa8"><%=cnt%></b>장</p>
                 </div>
 
-
                
             </div>
         </div>
 
-<%
-	String jsql1= "SELECT * FROM rezinfo WHERE uId=?";
-			PreparedStatement pstmt1 = con.prepareStatement(jsql1);
-			pstmt1.setString(1, myid);
 
-			ResultSet rs1 = pstmt1.executeQuery();	
-			if(rs1.next()){
 
-				String rezNo = rs1.getString("rezNo");	
-%>
 
-	<div class = "mypage_title">
+        <div class = "mypage_title">
             <div class = "inner">
-                <h1>시술예약 내역</h1>
-
+                <h1>회원정보 변경</h1>
                 <hr>
-				
-		 <%
-			 int i = 1;
-			 		String jsql7= "SELECT * FROM rezinfo WHERE uId=? ORDER BY rezNo DESC";
-			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, myid);
-
-			ResultSet rs7 = pstmt7.executeQuery();	
-			while(rs7.next()) {
-				 String rezno = rs7.getString("rezNo");
-				String ordDate = rs7.getString("ordDate");
-				String oname = rs7.getString("ordCustomer");
-				String ordPhone = rs7.getString("ordPhone");
-				String ordPay = rs7.getString("ordPay");
-				String ordMemo = rs7.getString("ordMemo");
-
-
-
-
-				String jsql8= "SELECT * FROM rez WHERE rezNo=?";
-			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
-			pstmt8.setString(1, rezno);
-
-			ResultSet rs8 = pstmt8.executeQuery();	
-			rs8.next();
-
-			Timestamp rezDate = rs8.getTimestamp("rezDate");
-			 String prdNo = rs8.getString("prdNo");
-
-			 
-           String curDate = rezDate.toLocaleString();     //   변수 curDate에  현재시각(년.월.일 시:분:초)을 저장
-			 
-
-
-			String jsql9= "SELECT * FROM surgery WHERE prdNo=?";
-			PreparedStatement pstmt9 = con.prepareStatement(jsql9);
-			pstmt9.setString(1, prdNo);
-
-			ResultSet rs9 = pstmt9.executeQuery();	
-			rs9.next();
-
-			 String prdName = rs9.getString("prdName");
-
-			 
-
-
-
-%>
-
-            <div class="switch-box">
-                
-
-                    <div class="text3 flex flex-jc-sb">
-						<div class="text3_1">
-							<div class="prdname"><%=prdName%></div>
-								<div class="option">
-		<%
-								String jsql6= "SELECT * FROM rez WHERE prdNo=? and rezNo=?";
-								PreparedStatement pstmt6 = con.prepareStatement(jsql6);
-								pstmt6.setString(1, prdNo);
-								pstmt6.setString(2, rezno);
-
-								ResultSet rs6 = pstmt6.executeQuery();	
-								while(rs6.next()) {
-								String opNo = rs6.getString("opNo");
-
-								String jsql4= "SELECT * FROM soption WHERE opNo=?";
-								PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-								pstmt4.setString(1, opNo);
-
-								ResultSet rs4 = pstmt4.executeQuery();	
-								rs4.next();
-
-								String opName = rs4.getString("opName");
-
-								%>
-
-								(<%=opName%>)
-								<%
-								}
-								%>
-									</div>
-						
-								
-						
-
-                    </div>
-					<div class="pay"><%=df.format(Integer.parseInt(ordPay)) %></div>
-					</div>
-					
-				
-            </div>
-
-
-			<%
-				i++;
-			} // rs7 while 닫기
-			%>
-
-
             </div>
         </div>
+
+<center>
+ <form name="newMem1" method=post action="updateUserResult.jsp">
+   <table class="table">
+      <tr>
+         <td class="td_tit">아이디</td>
+         <td><input type=hidden name="id" value="<%=id%>"><%=id%></td>
+      </tr>
+      <tr>
+         <td class="td_tit">비밀번호</td>
+         <td><input type=text name="pw" size=40 value="<%=pw%>"></td>
+      </tr>
+      <tr>
+         <td class="td_tit">이름</td>
+         <td><input type=text name="name" size=40 value="<%=name%>"></td>
+      </tr>
+      <tr>
+         <td class="td_tit">주민등록번호</td>
+         <td>
 <%
-			} //if else
-				%>
+          String[ ]  joominArr = joomin.split("-");   
+  // String  joominArr[ ] = joomin.split("-");와 동일
+  // split()함수 안의 인수를 기준으로 문자열들을 각각 분할하여 배열의 요소들에 
+  // 순서대로 저장시킴.  즉, 하이픈(-)을 중심으로 주민번호 앞 6자리와 뒤 7자리를 
+  // 별도의 문자열들로 분리 후, joominArr[0]와 joominArr[1]에 각각 저장시킴
+%>      
+          <input type=text name="joomin1" value="<%=joominArr[0]%>" size="15"> -
+         <input type=text name="joomin2" value="<%=joominArr[1]%>" size="16">
+         </td>
+      </tr>
+
+      <tr>
+         <td class="td_tit">생년월일</td>
+         <td>
+<%
+          String[ ]  birthArr = birth.toString().split("-");  
+//  split()함수는 String 타입에서만 사용가능하므로, toString()메소드를 사용하여 birth의
+//  타입을 Date타입에서 String타입으로 형(type) 변환 후, split()함수를 적용시켜 년,월,일을 분리함.
+//  즉, birthArr[0]에는 "년",  birthArr[1]에는 "월", birthArr[2]에는 "일"이 각각 분리되어 저장됨
+%>      
+          <input type=text name="birthyy" value="<%=birthArr[0]%>" size="7">년
+          <input type=text name="birthmm" value="<%=birthArr[1]%>" size="5">월
+          <input type=text name="birthdd" value="<%=birthArr[2]%>" size="5">일
+<%
+   if (solar.equals("양력"))
+   {
+%>
+            <input type=radio name=solar value="양력" checked>양력
+            <input type=radio name=solar value="음력">음력
+<%
+   }
+   else
+   {
+%>
+            <input type=radio name=solar value="양력">양력
+            <input type=radio name=solar value="음력" checked>음력
+<%
+   }
+%>
+         </td>
+      </tr>
+     <tr>
+			<td class="td_tit">이메일</td>
+			<td>
+<%
+	    	String[ ]  emailArr = email.split("@"); 
+
+
+            String[ ]  emailSelected = new String[6];  
+    	// "selected" 문자열을 저장하기 위한 용도의 배열 생성
+
+			if(emailArr[1].equals("naver.com"))
+			{
+				emailSelected[0] = "selected";
+			}  
+			else if(emailArr[1].equals("hanmail.net"))
+			{
+				emailSelected[1] = "selected";
+			}
+			else if(emailArr[1].equals("daum.net"))
+			{
+				emailSelected[2] = "selected";
+			}
+			else if(emailArr[1].equals("nate.com"))
+			{
+				emailSelected[3] = "selected";
+			}
+			else if(emailArr[1].equals("gmail.com"))
+			{
+				emailSelected[4] = "selected";
+			}
+			else if(emailArr[1].equals("icloud.com"))
+			{
+				emailSelected[5] = "selected";
+			}
+
+%>
+
+		    <input type=text name="email1" value="<%=emailArr[0]%>" size="10">&nbsp;@&nbsp;
+			<select name="email2"  >      
+				<option value="naver" <%=emailSelected[0]%>>naver.com
+				<option value="hanmail" <%=emailSelected[1]%>>hanmail.net
+				<option value="daum" <%=emailSelected[2]%>>daum.net
+				<option value="nate" <%=emailSelected[3]%>>nate.com
+				<option value="gmail" <%=emailSelected[4]%>>gmail.com
+				<option value="icloud" <%=emailSelected[5]%>>icloud.com
+			</select>
+			</td>	
+		</tr>
+     
+
+	   <tr>
+         <td class="td_tit">휴대폰번호</td>
+         <td>
+
+<%
+          String[ ] phoneArr  = phone.split("-");  
+       //  String hpArr[ ]  = phone.split("-"); 와 동일
+       // 하이픈(-)을 중심으로 휴대폰번호 앞자리, 중간자리, 뒷자리를 각각 분리 후
+       // hpArr[0], hpArr[1], hpArr[2]에 각각 저장시킴
+
+         String[ ]  phoneSelected = new String[6];  
+       // "selected" 문자열을 저장하기 위한 용도의 배열 생성
+
+         if(phoneArr[0].equals("010"))
+         {
+            phoneSelected[0] = "selected";
+         }  
+         else if(phoneArr[0].equals("011"))
+         {
+            phoneSelected[1] = "selected";
+         }
+         else if(phoneArr[0].equals("016"))
+         {
+            phoneSelected[2] = "selected";
+         }
+         else if(phoneArr[0].equals("017"))
+         {
+            phoneSelected[3] = "selected";
+         }
+         else if(phoneArr[0].equals("018"))
+         {
+            phoneSelected[4] = "selected";
+         }
+         else if(phoneArr[0].equals("019"))
+         {
+            phoneSelected[5] = "selected";
+         }
+
+%>
+    <span class="pbox">
+         <select name="phone1" >      
+            <option value="010" <%=phoneSelected[0]%>>010
+            <option value="011" <%=phoneSelected[1]%>>011
+            <option value="016" <%=phoneSelected[2]%>>016
+            <option value="017" <%=phoneSelected[3]%>>017
+            <option value="018" <%=phoneSelected[4]%>>018
+            <option value="019" <%=phoneSelected[5]%>>019
+         </select>  
+		 </span>
+    -
+          <input type=text name="phone2" value="<%=phoneArr[1]%>" size="4"> -
+          <input type=text name="phone3" value="<%=phoneArr[2]%>" size="4">
+         </td>   
+      </tr>
+     
+      <tr>
+			<td class = "td_tit">주소</td>
+			<td>
+				<input type="text" name="zipcode" value="<%=zipcode%>" size="12" readonly> 
+				<input type="button" class="btn" value="우편번호검색"
+				 onClick="zipCheck()" style="margin-bottom: 10px;"><br>
+						  
+				<input type="text" name="address1" value="<%=address1%>" size="40" readonly style="margin-bottom: 10px;"><br>
+				<input type="text" name="address2" value="<%=address2%>" size="40">&nbsp(상세주소입력)
+			</td>
+		</tr>
+      
+      <tr>
+         <td class="td_tit">성별</td>
+         <td>
+  <%
+      if(sex.equals("여"))
+      {
+   %>
+            <input type=radio name=sex value="여" checked>여
+            <input type=radio name=sex value="남">남
+   <%
+      }   
+      else
+      {
+    %>
+            <input type=radio name=sex value="여" checked>여
+            <input type=radio name=sex value="남">남
+<%
+   }
+%>            
+         </td>
+      </tr>
+      
+   </table>
+
+ <button type="submit"  class="up_btn" value= "수정하기" onClick="checkValue()" style= "cursor: pointer;" >수정하기</button>
+   </form> 
+
+
+		  </center>
 
 
 
 
-
-
-
-	 <div class="footer flex flex-jc-c">
+        <div class="footer flex flex-jc-c" style = "margin-top: 70px;">
             <div class="text">
-                <img src="./img/logo-ft.png" width = "150" alt="" style="margin-bottom: 20px;">
+                <img src="./img/logo.png" width = "150" alt="" style="margin-bottom: 20px;">
               <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
             </p>
               <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912
@@ -715,7 +824,7 @@ try {
               <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
             </div>
          </div>
-
+        
 		      <%
     } catch (Exception e) {
       out.println(e);   
@@ -724,17 +833,23 @@ try {
 
 
         
-        
-
   
     
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+		
+        
+        
+        
+        <!-- Initialize Swiper -->
+        
+        <!-- 3. 실행 스크립트 -->
+       <script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-
-
-    <script type="text/javascript">
 
             gsap.to('#header', {
                 scrollTrigger: {
@@ -813,6 +928,20 @@ $topBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+gsap.to('.top-wrap > .top-box2', {
+  scrollTrigger: {
+      trigger: '.top-wrap',
+      start: 'top -98px',
+      scrub: true
+  },
+  height: '61px',
+  textalign: 'center',
+  top: '0',
+  position: 'fixed',
+  background: '#fff',
+  borderBottom: '1px solid #ccc'
+});
+
 
             $('#best .tab>li>a').on('click', function(e){
                 var i = $(this).parents('li').index();
@@ -829,6 +958,19 @@ $topBtn.onclick = () => {
 
 
     
+            gsap.to('.top-wrap > .top-box2', {
+                scrollTrigger: {
+                    trigger: '.top-wrap',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '61px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff',
+                borderBottom: '1px solid #ccc'
+            });
     
             
     
@@ -850,7 +992,11 @@ $topBtn.onclick = () => {
                  }
     
     
-    
+    function zipCheck()
+                 {
+                 	window.open("zipCheck1.jsp", "win", "width=430, height=710, scrollbars=yes, status=yes");
+                 }
+
     
     
         function search_form()
@@ -869,141 +1015,6 @@ $topBtn.onclick = () => {
 
 
 
-
-        var enablepersist = "on"
-        var collapseprevious = "yes"
-
-        if (document.getElementById) {
-            document.write('<style type="text/css">')
-            document.write('.switchcontent{display:none;}')
-            document.write('</style>')
-        }
-
-        function getElementbyClass(classname) {
-            ccollect = new Array()
-            var inc = 0
-            var alltags = document.all ? document.all : document.getElementsByTagName("*")
-            for (i = 0; i < alltags.length; i++) {
-                if (alltags[i].className == classname)
-                    ccollect[inc++] = alltags[i]
-            }
-        }
-
-        function contractcontent(omit) {
-            var inc = 0
-            while (ccollect[inc]) {
-                if (ccollect[inc].id != omit)
-                    ccollect[inc].style.display = "none"
-                inc++
-            }
-        }
-
-        function expandcontent(cid) {
-            if (typeof ccollect != "undefined") {
-                if (collapseprevious == "yes")
-                    contractcontent(cid)
-                document.getElementById(cid).style.display = (document.getElementById(cid).style.display != "block") ?
-                    "block" : "none";
-            }
-        }
-
-        function revivecontent() {
-            contractcontent("omitnothing")
-            selectedItem = getselectedItem()
-            selectedComponents = selectedItem.split("|")
-            for (i = 0; i < selectedComponents.length - 1; i++)
-                document.getElementById(selectedComponents[i]).style.display = "block"
-        }
-
-
-
-        function get_cookie(Name) {
-            var search = Name + "="
-            var returnvalue = "";
-            if (document.cookie.length > 0) {
-                offset = document.cookie.indexOf(search)
-                if (offset != -1) {
-                    offset += search.length
-                    end = document.cookie.indexOf(";", offset);
-                    if (end == -1) end = document.cookie.length;
-                    returnvalue = unescape(document.cookie.substring(offset, end))
-                }
-            }
-            return returnvalue;
-        }
-
-
-
-        function getselectedItem() {
-            if (get_cookie(window.location.pathname) != "") {
-                selectedItem = get_cookie(window.location.pathname)
-                return selectedItem
-            } else
-                return ""
-        }
-
-
-
-        function saveswitchstate() {
-            var inc = 0,
-                selectedItem = ""
-            while (ccollect[inc]) {
-                if (ccollect[inc].style.display == "block")
-                    selectedItem += ccollect[inc].id + "|"
-                inc++
-            }
-            document.cookie = window.location.pathname + "=" + selectedItem
-
-        }
-
-
-
-        function do_onload() {
-            getElementbyClass("switchcontent")
-            if (enablepersist == "on" && typeof ccollect != "undefined")
-                revivecontent()
-        }
-
-
-
-
-        if (window.addEventListener)
-            window.addEventListener("load", do_onload, false)
-        else if (window.attachEvent)
-            window.attachEvent("onload", do_onload)
-        else if (document.getElementById)
-            window.onload = do_onload
-
-        if (enablepersist == "on" && document.getElementById)
-            window.onunload = saveswitchstate
-
-
-
-
-	function loadFile(input) {
-    var file = input.files[0];	//선택된 파일 가져오기
-
-    //미리 만들어 놓은 div에 text(파일 이름) 추가
-    var name = document.getElementById('fileName');
-    name.textContent = file.name;
-
-  	//새로운 이미지 div 추가
-    var newImage = document.createElement("img");
-    newImage.setAttribute("class", 'img');
-
-    //이미지 source 가져오기
-    newImage.src = URL.createObjectURL(file);   
-
-    newImage.style.width = "70%";
-    newImage.style.height = "70%";
-    newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
-    newImage.style.objectFit = "contain";
-
-    //이미지를 image-show div에 추가
-    var container = document.getElementById('image-show');
-    container.appendChild(newImage);
-};
-		
-		</script>
+    </script>
         </body>
         </html>

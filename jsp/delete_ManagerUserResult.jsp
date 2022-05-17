@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/manager_del.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
-  <title>관리자</title>
+  <title>회원탈퇴</title>
 </head>
 <body>
     
@@ -73,7 +73,7 @@ try {
 			</div>
 			  <h1>탈퇴가 완료되었습니다!</h1>
 			  <p>
-				예약해주셔서 대단히 감사합니다!<br>
+			
 				더 나은 서비스로 보답하겠습니다.
 			  </p>
 			  <div class="btnn">
