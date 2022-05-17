@@ -557,11 +557,18 @@ try {
 		ResultSet rs = pstmt2.executeQuery();
    %>
 
+<section id="note" class="content">
+    <div class="inner">
+        <div class="title">
+            <h1>기록장</h1>
+            <p>시술 후기를 공유해요</p>
+        </div>
 
-    <div class="note_box">
-
-        <h1>시술 기록장</h1>
-		<div class="write"><a href="note_write.jsp">글쓰기</a></div>
+		
+        <div class="wrap">
+            <div class="list">
+                <ul>
+                   
 
 		<%
 	if (!rs.wasNull()) 
@@ -582,29 +589,13 @@ try {
               int readcount = rs.getInt("readcount");
               int step = rs.getInt("step");
     %> 	  
-
-        <a href="note_detail.jsp?idx=<%=idx%>" class="con_box">
-
-            <div class="img-box">
-                
-            </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3><%=subject%></h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                           <%=content%>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
+					<li>
+                         <a href="note_detail.jsp?idx=<%=idx%>" class="con_box">
+                           <div class="tit">
+                                <p><%=name%>님</p>
+                                <h1><%=subject%></h1>
+                            </div>
+                            <h2>
 					<%
 					
 					String jsql3 = "SELECT COUNT(ridx) as ridx FROM reboard WHERE idx=?";
@@ -616,13 +607,11 @@ try {
 				int ridx = rs3.getInt("ridx");
 				
 %>
-                        <%=ridx%>
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        <hr>
+                        (<%=ridx%>)</h2>
+                        </a>
+                    </li>
+
+
 
  <%
 		 cursor ++;
@@ -637,7 +626,14 @@ try {
 
 <!-- 		<div align="center"><font size=2 color=red>현재 페이지 / 총 페이지 &nbsp(<%= list_index + 1 %> / <%= cntList_1 %>)</div> -->
 
+  </ul>
+            </div>
+            <div class="write">
+                <a href="note_write.jsp"><h1>글쓰기</h1></a>
+            </div>
+        </div>
     </div>
+</section>
 
 <!--     <input type="file" id="inputImage">
     

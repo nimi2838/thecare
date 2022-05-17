@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +11,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/note_detail.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>기록장 상세</title>
 </head>
 <%
-   String myid = (String)session.getAttribute("sid");                                                                           
+   String myid = (String)session.getAttribute("sid");            
+      Date nowTime = new Date();
 %>
 <body>
 
@@ -522,67 +528,49 @@ try {
 		String subject1 = rs3.getString("subject");
 		String name1 = rs3.getString("name");
 		String content1 = rs3.getString("content");
+		String ymd1 = rs3.getString("ymd");
+
 
 	%>
 
 
-    <div class="detail_wrap">
-        <div class="detail_box">
-            <div class="user_box">
-        
-                <div class="user1 flex">
-                    <div class="img-box">
-                    </div>
-                    <div class="text">
-                        <h2><%=name1%></h2>
-                        <p>2022-03-30</p>
-                    </div>
-                </div>
-        
-                <div class="user2 flex">
-                    <div class="item">
-                        #코필러
-                    </div>
-                    <div class="item">
-                        #붓기
-                    </div>
-                    <div class="item">
-                        #보톡스
-                    </div>
-                </div>
-        
-                <div class="img-wrap flex">
-                    <div class="img-box img1">
-        						<img src="img/note5.jpg">
-                    </div>
-                    <div class="img-box">
-        						<img src="img/note6.jpg">
-                    </div>
-                    <div class="img-box last">
-        						<img src="img/note7.jpg">
-                    </div>
-                </div>
+
+    <section id="note" class="content">
+        <div class="inner">
+            <div class="title">
+                <h1>기록장</h1>
+                <p>시술 후기를 공유해요</p>
             </div>
+			
+            <div class="wrap">
+
+                <div class="list">
+                    <ul>
+                        <li>
+                            <div class="tit">
+                                <h1><%=name1%></h1>
+                                <p style="margin-bottom: 30px;"><%=ymd1%></p>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="txt">
+                                <h1><%=subject1%></h1>
+                                <p><%=content1%></p>
+                            </div>
+                        </li>
+
         
-            <div class="note">
-                <div class="title">
-                    <%=subject1%>
-                </div>
-                <div class="body">
-                    <%=content1%>
-                </div>
-            </div>
         
-            <hr>
         
-            <div class="price">
-                <h1>시술 비용</h1>
-            </div>
         
-        			<hr>
-        
-            <div class="comment">
-                <h1>댓글</h1>
+                        <li>
+                            <div class="comment">
+                                <h1>댓글</h1>
+
+<ul>
+								
         
             <%
 
@@ -597,24 +585,14 @@ try {
 			 int ridx = rs2.getInt("ridx");
 			 String content = rs2.getString("content");
 			 String name = rs2.getString("name");
+			 String ymd = rs2.getString("ymd");
 			
 		%>
-        				<table class="com_list">
-        					<tr bgcolor='ffffff'>
-        						<td>
-        						<div class="img-box">  </div>
-        						</td>
-        
-        						<td>
-        						<div class="com_title"><%=name%></div>
-        						<div><%=content%></div>
-        						</td>
-        									  
-        						<td>
-        						<div align="end" class="day">2022-03-30</div>
-        						</td>
-        					</tr>  	
-        				</table>
+        				<li style="border: 0;">
+                                        <div class="user"><h1><%=name%></h1></div>
+                                        <div class="user-txt"><%=content%></div>
+                                        <div class="date"><p><%=ymd%></p></div>
+                                    </li>
 
         
         <%
@@ -623,10 +601,8 @@ try {
         
         
         
-        
-        
-        				<hr>
-
+        </ul>
+                            </div>
 
 
 
@@ -696,47 +672,41 @@ try {
 
 	   String uname = rs5.getString("uName");
    %>    
+   
+                        <li style="border-bottom: 0;">
+                            <form class="comment-write" method="post" action="note_rwrite_process.jsp" name="input" >
+                                <h1>댓글작성</h1>
+                                
+                                <div class="text">
+								<input type="hidden" name="idx" value="<%=idx%>">
+								<input type="hidden" name="in_name" value="<%=uname%>">
 
-	 <br><br>
-	<center><div style="font-size:25px;margin:10px 0 20px"><%= name %> 님의 글에 답변 달기</div></center>
-		  <form method="post" action="note_rwrite_process.jsp" name="input" class="write_com">
-
-        <table border="0" cellspacing="2" cellpadding="3">
-
-		<tr class="user-view">
-                                <td class="flex flex-ai-c">
-                                <input type="hidden" name="idx" value="<%=idx%>">
-        
+                                    <textarea name="in_content" rows=5> 댓글을 입력해주세요.</textarea>
                                     
-									 <input type="text" name="in_name" value="<%=uname%>" style="    border: none;font-size: 20px;"></td>
-                            </tr>
-<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
-                    
-                            <tr class="com_wrap">
-                                <td class="td1">
-                                    <textarea rows="10" cols="190"name="in_content" style="outline: none; padding: 20px 10px;"> 댓글을 입력해주세요.</textarea>
-                                </td>
-                                <td>
-                                    <div class="btn"> 
-                                        <input type="button" name="write_submit" value="등   록" OnClick="in_check()" 
-                                        class="btn1"
-                                        style="background: white; border: 1px solid #1f628e; padding: 113px 15px; font-size: 18px;">
-                                    </div>
-                                </td>
-                            </tr> 	 
-							<tr>    
-                                    <td colspan="2"> 
-                                    
-                                    </td>
-                                </tr>
-                      
-                      </table>
-                      <input type="hidden" name="step" value="step">
-                      <input type="hidden" name="mid" value="mid">
-                      <input type="hidden" name="rnum" value="rnum">  
-				
+                                    <input type="button" name="write_submit" value="등   록" OnClick="in_check()" 
+                                    class="btn">
+                                </div>
+                                
+                                <input type="hidden" name="step" value="<%=step%>">
+                                <input type="hidden" name="mid" value="<%=mid%>">
+                                <input type="hidden" name="rnum" value="<%=rnum%>"> 
+                            </form>
+                        </li>
+            
+                    </ul>
+                </div>
+                
+                <div class="write">
+                    <a href="note.jsp"><h1>목록</h1></a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-        </form>
+
+
+
 
 
 		 
@@ -751,71 +721,6 @@ try {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-
-        
-        
-                <form method="post" action="board-write-process.jsp" name="input" class="write_com">
-             
-                     <table border="0" cellspacing="2" cellpadding="3">
-                    
-                            <tr class="user-view">
-                                <td class="flex flex-ai-c">
-                                <input type="hidden" name="idx" value="idx">
-        
-                                    <img src="img/bok.png" alt="">
-                                    <input type="hidden" name="in_name">
-                                봉조율</td>
-                            </tr>
-							<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
-                    
-                            <tr class="com_wrap">
-                                <td class="td1">
-                                    <textarea rows="10" cols="190"name="in_content" style="outline: none; padding: 20px 10px;"> 댓글을 입력해주세요.</textarea>
-                                </td>
-                                <td>
-                                    <div class="btn"> 
-                                        <input type="button" name="write_submit" value="등   록" OnClick="in_check()" 
-                                        class="btn1"
-                                        style="background: white; border: 1px solid #1f628e; padding: 113px 15px; font-size: 18px;">
-                                    </div>
-                                </td>
-                            </tr> 	 
-                            <tr>    
-                                    <td colspan="2"> 
-                                    
-                                    </td>
-                                </tr>
-                      
-                      </table>
-                      <input type="hidden" name="step" value="step">
-                      <input type="hidden" name="mid" value="mid">
-                      <input type="hidden" name="rnum" value="rnum">  
-             
-             
-                      
-             
-                  
-                   </form> -->
-        
         
         
         

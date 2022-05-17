@@ -14,11 +14,13 @@ try {
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 	
 	request.setCharacterEncoding("euc-kr");
+
 	         
 	int idx =  Integer.parseInt(request.getParameter("idx"));
     String name = request.getParameter("in_name");
     String content = request.getParameter("in_content");
     String ymd = (new java.util.Date()).toLocaleString();         
+	
    
 	String jsql = "select MAX(ridx) from reboard";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -37,12 +39,13 @@ try {
    	
     rs.close();    
 
-	String jsql2 = "insert into reboard (ridx, name,  content, idx) values (?, ?, ?, ?)";
+	String jsql2 = "insert into reboard (ridx, name,  content, idx, ymd) values (?, ?, ?, ?, ?)";
    	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 	pstmt2.setInt(1, ridx);
     pstmt2.setString(2, name);
     pstmt2.setString(3, content);
 	pstmt2.setInt(4, idx);
+	pstmt2.setString(5, ymd);
     	  
 	pstmt2.executeUpdate();
    

@@ -22,6 +22,7 @@ try {
     String pwd = request.getParameter("pwd");
     String ymd = (new java.util.Date()).toLocaleString();         
    
+
 	String jsql = "select MAX(no) from board";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	ResultSet rs = pstmt.executeQuery();
