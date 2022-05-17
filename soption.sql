@@ -29,12 +29,12 @@ INSERT INTO soption VALUES ('sk04','da3','기타부위(코/인중 등)',50000);
 
 INSERT INTO soption VALUES ('fa01','fa1','국산필러 1cc',79000);
 INSERT INTO soption VALUES ('fa01','fa2','애교필러 (국산)',139000);
-INSERT INTO soption VALUES ('fa01','fa3','눈밑필러(수입)',199000);
+INSERT INTO soption VALUES ('fa01','fa3','눈밑필러 (수입)',199000);
 
 
 
 INSERT INTO soption VALUES ('fa02','hi1','하이코',99000);
-INSERT INTO soption VALUES ('fa02','hi2','콧대실+코필러 1회 용량제한없이',139000);
+INSERT INTO soption VALUES ('fa02','hi2','콧대실+코필러 1회',139000);
 
 INSERT INTO soption VALUES ('fa03','lip1','입술필러(국산)',59000);
 INSERT INTO soption VALUES ('fa03','lip2','입술+입꼬리 필러',149000);
@@ -57,8 +57,8 @@ INSERT INTO soption VALUES ('li03','jo2','조각주사 3회',250000);
 
 
 
-INSERT INTO soption VALUES ('bo01','bo1','종아리 200유닛(수입)',99000);
-INSERT INTO soption VALUES ('bo01','bo2','승모근/허벅지/팔뚝 200유닛(수입)',190000);
+INSERT INTO soption VALUES ('bo01','bo1','종아리 200유닛',99000);
+INSERT INTO soption VALUES ('bo01','bo2','승모근/허벅지/팔뚝 200유닛',190000);
 
 
 INSERT INTO soption VALUES ('bo02','bsu','바디슈링크 100샷',40000);

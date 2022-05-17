@@ -446,6 +446,7 @@ a {
         background: #ffffff;
 		width: 65%;
 		border: 1px solid #ffd4d8;
+		position: relative;
     }
 
 	 .sub_con > .sub_text2 > .option .form1 table {

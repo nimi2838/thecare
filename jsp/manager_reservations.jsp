@@ -1,36 +1,38 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@page import="java.util.Date" %>
 <%@ page import="java.text.*" %>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/rez.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- <script src="cal.js"></script>
-  <title>시술예약</title>
-  
-<script>
-
-
-    </script>
+  <link rel="stylesheet" href="css/manager_reservations.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://kit.fontawesome.com/214669976f.js" crossorigin="anonymous"></script>
+  <title>관리자</title>
 </head>
-<%
-DecimalFormat df = new DecimalFormat("###,###");
-%>
+<body>
+    
+    
 <%
    String myid = (String)session.getAttribute("sid");         
    
+
+   		int total = 0;
 %>
+
+
 <body>
+
+
+
+
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
@@ -122,7 +124,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -198,7 +200,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -348,7 +350,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -428,7 +430,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -511,607 +513,367 @@ else{
 
 
 	
-<div class = "contents">
-<div class = "inner">
-
-
-			<div class = "change_tit" ><h1 style = "font-size: 33px;">시술예약</h1></div>
-    <div class="no_box" style=" margin: 20px auto 0px;">
 <%
- try{
- 	 String DB_URL="jdbc:mysql://localhost:3306/care?characterEncoding=euckr";   
+
+
+
+		
+
+try {
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care";  
      String DB_ID="skin";  
-     String DB_PASSWORD="1234";
+     String DB_PASSWORD="1234"; 
  	 
-	 Class.forName("org.gjt.mm.mysql.Driver"); 
+	 Class.forName("org.gjt.mm.mysql.Driver");  
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
+	
+	request.setCharacterEncoding("euc-kr");
 
-	String ctNo = session.getId(); 
 
 
-	String rezNo = request.getParameter("rezNo");
+%>
+
+
+
+
+    <section id="content" >
+        <div class="inner">
+            <h1 class="title">예약관리</h1>
+
+            <div class="wrap">
+
+                <div class="titleArea">
+                    <h2>전체 예약 조회</h2>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>예약번호</th>
+						<th>예약아이디</th>
+                        <th>예약자</th>
+						<th>연락처</th>
+                        <th>예약일자</th>
+                        <th>시술정보</th>
+                        <th>요청사항</th>
+						<th>수정</th>
+						<th>삭제</th>
+                    </tr>
+                </thead>
+                
+                
+              <tbody>
+			  <%
+	String jsql = "select * from rezinfo";   
+	PreparedStatement pstmt = con.prepareStatement(jsql);
+
+	ResultSet rs = pstmt.executeQuery();
+	while(rs.next()) {
+
+			String rezNo =  rs.getString("rezNo");	
+			String uId =  rs.getString("uId");
+			String ordDate =  rs.getString("ordDate");	
+			String ordCustomer =  rs.getString("ordCustomer");	
+			String ordPhone =  rs.getString("ordPhone");	
+			String ordPay =  rs.getString("ordPay");	
+			String ordSex =  rs.getString("ordSex");	
+			String ordBank =  rs.getString("ordBank");
+			String ordMemo =  rs.getString("ordMemo");
+
+			String jsql1 = "select * from rez";   
+			PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+
+			ResultSet rs1 = pstmt1.executeQuery();
+			rs1.next();
+
+			String rezNo1 =  rs1.getString("rezNo");	
+	//		String prdNo =  rs1.getString("prdNo");	
+	//		String rezDate =  rs1.getString("rezDate");	
+
+
+				  %>
+                    <tr>
+                        <td><%=rezNo%></td>
+						<td><%=uId%></td>
+                        <td><%=ordCustomer%></td>
+                        <td><%=ordPhone%></td>
+						<%
+				String jsql2= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+						pstmt2.setString(1, rezNo);
+
+						ResultSet rs2 = pstmt2.executeQuery();	
+						rs2.next();
+
+						String rezDate = rs2.getString("rezDate");
+						String prdNo = rs2.getString("prdNo");
+				  %>
+						<td><%=rezDate%></td>
+                        <td><%=prdNo%>
+						<%
+					  String jsql6= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+						pstmt6.setString(1, rezNo);
+
+						ResultSet rs6 = pstmt6.executeQuery();	
+						while(rs6.next()) {
+							String opNo = rs6.getString("opNo");
+					  %>(<%=opNo%>)
+					  <%
+						  }
+					  %></td>
+                        <td><%=ordMemo%></td>
+						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                        <td><a style = "color:red;" onclick="real()">Yes</a></td>
+                    </tr>
+
+					<script>
+					
+							function real(){
+							 if(confirm("정말 예약을 취소하시겠습니까 ?"))
+							 {
+							  document.location.href="delete_ManagerRez.jsp?rezNo=<%=rezNo%>"
+							 }
+							 else
+							 {
+							 alert('예약을 유지합니다.');
+							 return false;
+							 }
+							}
+					</script>
+					<%
+	}
+				  %>
+                </tbody>
+            </table>
+
+            <a href="manager_main.jsp">
+                <div class="btn">메인</div>
+            </a> 
+
+
+        </div>
+    </section>
+
 	
 
-			
 
- int total=0;
 
 
-				String jsql5= "SELECT * FROM rez WHERE rezNo=?";
-			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
-			pstmt5.setString(1, rezNo);
 
-			ResultSet rs5 = pstmt5.executeQuery(); 
-			while(rs5.next()){
-			
-			String opNo = rs5.getString("opNo"); 
-			String prdNo = rs5.getString("prdNo"); 
+    
 
 
-					String jsql4= "SELECT * FROM surgery WHERE prdNo=?";
-					PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-					pstmt4.setString(1, prdNo);
-
-					ResultSet rs4 = pstmt4.executeQuery(); 
-					rs4.next();
-
-					String name = rs4.getString("prdName"); 
-					String price = rs4.getString("startprice"); 
-
-					String jsql3= "SELECT * FROM soption WHERE opNo=?";
-					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-					pstmt3.setString(1, opNo);
-
-					ResultSet rs3 = pstmt3.executeQuery(); 
-					rs3.next();
-
-					String opname = rs3.getString("opName"); 
-					int opprice = rs3.getInt("opPrice"); 
-
-					total = total + opprice;
-			%>
-
-				
-        
-    		<div class="search_box">
-            <div class="search1">
-			<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
-                <h2><%=name%></h2>
-                <p><%=opname%></p>
-				</a>
-            </div>
-            <div class="search2">
-                <div class="price">
-                    <span><%=df.format(opprice) %></span>원
-                </div>
-				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">취소</a>
-            </div>
-			</div>
-    			
-	<%} //while
-
-	%>
-
-		
-
-		
-			
-		
-
-    </div>
-<hr>
-
-
-
-
-<form name="res" method=post onSubmit="return false;">
-<table class="scriptCalendar" >
-    <thead > 
-        <tr>
-            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td>
-            <td colspan="5">
-                <span id="calYear">YYYY</span>년
-                <span id="calMonth">MM</span>월
-            </td>
-            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;&#62;</td>
-        </tr>
-        <tr>
-            <td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
-
-
-
-<div class="BookingTimeArea" alt="예약시간" >
-												
-						<ul class="List">
-							<li>
-								<label class = "btns">10:00</label></li>
-							
-							
-														<li>
-								<label  class = "btns">10:30</label>
-							</li>
-							
-														<li>
-								<label class = "btns">11:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">11:30</label>
-							</li>
-							
-							
-								
-														
-														<li>
-								<label class = "btns">12:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">12:30</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">13:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">13:30</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">14:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">14:30</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">15:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">15:30</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">16:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">16:30</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">17:00</label>
-							</li>
-							
-							
-														<li>
-								<label class = "btns">17:30</label>
-							</li>
-
-							<li>
-								<label class = "btns">18:00</label>
-							</li>
-							</ul>
-					</div>
- 
-
-<%
-
-String jsql8= "SELECT * FROM rezinfo WHERE rezNo=?";
-			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
-			pstmt8.setString(1, rezNo);
-
-			ResultSet rs8 = pstmt8.executeQuery(); 
-			rs8.next();
-			
-			String uid = rs8.getString("uId"); 
-			String ordDate = rs8.getString("ordDate"); 
-			String ordCustomer = rs8.getString("ordCustomer"); 
-			String ordPhone = rs8.getString("ordPhone"); 
-			String ordSex = rs8.getString("ordSex"); 
-			String ordPay = rs8.getString("ordPay"); 
-
-
-
-
-	String jsql6= "SELECT * FROM user WHERE uId=?";
-					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
-					pstmt6.setString(1, uid);
-
-					ResultSet rs6 = pstmt6.executeQuery(); 
-					rs6.next();
-
-
-%>
-
-					<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
-
-					
-					
-					
-					
-					
-					
-					
-					
-					<table class="table" style="font-size:10pt; margin-top:30px; width: 100%;  ">
-
-					 <tr>
-									<td class = "td_tit">
-									<p style = " position: relative;"> 총 결제금액
-									<input name='sell4' id='sell4' type='text' value="<%=df.format(Integer.parseInt(ordPay))%>" readonly style = "color: red; border: none; font-size: 18px; text-align: end;width: 295px;">원</td>
-					</tr>
-					<tr style="margin: 0 auto;">
-						<td class = "td_tit">
-						기존 요일/시간 : <input type="text" name="orddate" id="orddate" style="width: 280px; cursor: hand; border:none;" readonly value="<%=ordDate%>">
-						</td>
-						</tr>
-
- 					<tr style="margin: 0 auto;">
-						
-
-						<td class = "td_tit">
-						선택 요일/시간 : 
-						  <input type="text" name="day1" id="day1" style="width: 95px; cursor: hand;" readonly>
-						<input type="text" name="date" id="date" style="width: 58px; margin-left: 10px; cursor: hand;" readonly>
-						</td>
-
-						
-
-
-						  
-						
-					</tr>
-					                    
-					<tr>
-                          <td class = "td_tit">
-						  <input type="hidden" name="rezno" style = "margin-left: 75px; " value="<%=rezNo%>">
-						  이름 : <input type="text" name="name" class="name1"   value="<%=ordCustomer%>" readonly>
-						  </td>
-                      </tr>
-					  <tr>
-                          <td class = "td_tit">
-						  연락처 : 
-						  
-<%
-          String[ ] phoneArr  = ordPhone.split("-");  
-       //  String hpArr[ ]  = phone.split("-"); 와 동일
-       // 하이픈(-)을 중심으로 휴대폰번호 앞자리, 중간자리, 뒷자리를 각각 분리 후
-       // hpArr[0], hpArr[1], hpArr[2]에 각각 저장시킴
-
-         String[ ]  phoneSelected = new String[6];  
-       // "selected" 문자열을 저장하기 위한 용도의 배열 생성
-
-         if(phoneArr[0].equals("010"))
-         {
-            phoneSelected[0] = "selected";
-         }  
-         else if(phoneArr[0].equals("011"))
-         {
-            phoneSelected[1] = "selected";
-         }
-         else if(phoneArr[0].equals("016"))
-         {
-            phoneSelected[2] = "selected";
-         }
-         else if(phoneArr[0].equals("017"))
-         {
-            phoneSelected[3] = "selected";
-         }
-         else if(phoneArr[0].equals("018"))
-         {
-            phoneSelected[4] = "selected";
-         }
-         else if(phoneArr[0].equals("019"))
-         {
-            phoneSelected[5] = "selected";
-         }
-
-%>
-    <span class="pbox">
-         <select name="phone1"  style=" width: 75px; margin: 0 10px 0 23px;">      
-            <option value="010" <%=phoneSelected[0]%>>010
-            <option value="011" <%=phoneSelected[1]%>>011
-            <option value="016" <%=phoneSelected[2]%>>016
-            <option value="017" <%=phoneSelected[3]%>>017
-            <option value="018" <%=phoneSelected[4]%>>018
-            <option value="019" <%=phoneSelected[5]%>>019
-         </select>  
-		 </span>
-    -
-          <input type=text name="phone2" value="<%=phoneArr[1]%>" size="4" style=" margin: 0 10px;"> -
-          <input type=text name="phone3" value="<%=phoneArr[2]%>" size="4" style=" margin: 0 10px;">
-         </td>   
-
-                             <!-- <input type="text" name="phone" style = "margin-left: 75px; " value="<%=ordPhone%>"> -->
-                          
-                          </td>
-                       </tr>
-					   <tr>
-                          <td class = "td_tit">
-                             성별 : <input type="text" name="sex" class="sex" style = "margin-left: 75px; border:none; font-weight: bold;"  value="<%=ordSex%>" readonly>
-                          </td>
-                       </tr>
-					   <tr>
-					  
-                             <td class = "td_tit">
-							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="font-size:16px; padding: 5px; outline:none; resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3">없음</textarea> 
-							 </td>
-                          
-                       </tr>
-
-					     
-
-					
-
-				</table>
-
-
-
-
-
-
-
- <button class="rez_btn" value= "예약" onclick="request()" style= "cursor: pointer;" >예약</button>
-</form>
-</div>
-</div>
-
-
-
-
-
-
-	<div class="footer flex flex-jc-c">
-            <div class="text">
-                <img src="./img/logo-ft.png" width = "150" alt="" style="margin-bottom: 20px;">
-              <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
-            </p>
-              <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912
-            </p>
-              <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
-            </div>
-         </div>
-
-        
-        
-<%
-
-
-    } catch(Exception e) {
+	<%
+    } 
+catch(Exception e) {
 		out.println(e);
+}
+%>
+
+
+
+
+
+
+
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
+            <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+            </p>
+            <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전화번호 : 02-517-0912
+            </p>
+            <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+    <!-- 탑바 -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+
+
+
+
+    <script>
+
+
+        AOS.init();
+
+				function _submit(f)
+				{
+					//같이 보낼 값 정리
+					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
+					{
+						if (f.elements['chk[]'].checked==false)
+						{
+							f.elements['field_a[]'].disabled=true;
+							f.elements['field_b[]'].disabled=true;
+						}
+					} else { //다중
+						for (i=0; i<f.elements['chk[]'].length; i++)
+						{
+							if (f.elements['chk[]'][i].checked==false)
+							{
+								f.elements['field_a[]'][i].disabled=true;
+								f.elements['field_b[]'][i].disabled=true;
+							}
+						}
+					}
+					return true;
+				}
+
+        let = 0
+
+        $(function () {
+            $(".plz li").on("click", function () {
+                no = $(this).index() + 1;
+                $(".plz li ").show();
+                $('.plz li ').removeClass('on');
+                $(this).addClass('on');
+
+                $(".ne").hide();
+                if ($('.ne').css('display') == 'none') {
+                    $(".ne" + no).show();
+                } else {
+                    $(".ne").hide();
+                }
+
+
+
+            });
+        });
+
+
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
-%>
-  
-
-  
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
-
-
-<!-- Initialize Swiper -->
-<script>
-
-            gsap.to('#header', {
-                scrollTrigger: {
-                    trigger: '#header',
-                    start: 'top -98px',
-                    scrub: true
-                },
-                height: '90px',
-                textalign: 'center',
-                top: '0',
-                position: 'fixed',
-                background: '#fff', 
-            });
-
-        $(document).ready(function(){
+		
+     gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '61px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
 
 
-		var win_w = $(window).width();
+ function keyword_check(){
 
-		$(window).on('resize', function(){
-			win_w =$(this).width();
-			if(win_w > 980){
-				$('.gnb_wrap').removeAttr('style');
-			}
-		});
+			  if(document.search.keyword.value==''){ 
 
+			  alert('검색어를 입력하세요');
 
-		$('.toggle').on('click', function(){
-			$('.gnb_wrap').fadeToggle();
-		});
+			  document.search.keyword.focus(); 
 
+			  return false; 
 
-		$('#gnb>li').on('mouseenter', function(){
+			  }
 
-			if(win_w > 980){ 
-				$('.subwrap').stop().hide();
-				$(this).children('.subwrap').stop(true, true).slideDown();
+			  else return true;
 
-			} else {
-				$('#gnb>li>a').off('click');
-				$('#gnb>li>a').on('click', function(){
-					$('.subwrap').stop().slideUp(); 
-					$(this).next('.subwrap').stop().slideToggle(); 
-				});
-
-			}
-
-		});
-		$('#header').on('mouseleave', function(){
-			if(win_w>980){
-				$('.subwrap').stop().slideUp();
-			}
-		});
-
-		$('#gnb>li>a').on('focusin', function(){
-			if(win_w > 980){
-				$(this).next('.subwrap').stop(true, true).slideDown();
-			}
-		});
-
-		$('#gnb .last').on('focusout', function(){
-			if(win_w > 980){
-				$(this).parents('.subwrap').stop(true, true).slideUp();
-			}
-		});
+			 }
 
 
-		});
 
-				
 
-		const $topBtn = document.querySelector(".moveTopBtn");
-
-		// 버튼 클릭 시 맨 위로 이동
-		$topBtn.onclick = () => {
-		  window.scrollTo({ top: 0, behavior: "smooth" });
+		function search_form()
+		{
+			var frm = document.search;
+			frm.action = "search.jsp";
+			frm.submit();
 		}
 
-		gsap.to('.top-wrap > .top-box2', {
-		  scrollTrigger: {
-			  trigger: '.top-wrap',
-			  start: 'top -98px',
-			  scrub: true
-		  },
-		  height: '61px',
-		  textalign: 'center',
-		  top: '0',
-		  position: 'fixed',
-		  background: '#fff',
-		  borderBottom: '1px solid #ccc'
-		});
+
+		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+
+		var checked = $('.chk').is(':checked');
+
+		if(checked) {
+
+			var frm1 = document.form;
+
+			frm1.action = "incart1.jsp"
+			document.getElementById('button').click();
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
+		}
+
+		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+
+		var checked = $('.chk').is(':checked');
+
+		if(checked) {
+
+			var frm1 = document.form;
+			frm1.action = "rezResult.jsp"
+			document.getElementById('button').click();
+
+		} else {
+			alert("옵션을 선택해주세요 !");
+		}
+			
 
 
-            $('#best .tab>li>a').on('click', function(e){
-                var i = $(this).parents('li').index();
-              e.preventDefault();
-
-              $('#best .panel').hide();
-              $(this).next('.panel').show();
-            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
-            });
-
-            $('#best .tab>li>a').first().trigger('click');
+		}
 
 
+		function cart1()
+		{
+			alert('장바구니에 해당 시술이 있습니다.');
+		}
 
-
-    
-     function keyword_check(){
-    
-                  if(document.search.keyword.value==''){ 
-    
-                  alert('검색어를 입력하세요');
-    
-                  document.search.keyword.focus(); 
-    
-                  return false; 
-    
-                  }
-    
-                  else return true;
-    
-                 }
-    
-    
-    
-    
-    
-        function search_form()
-            {
-                var frm = document.search;
-                frm.action = "search.jsp";
-                frm.submit();
-            }
-    
-
-			function login()
+		function login()
 		{
 			alert('로그인 후 이용 가능한 페이지입니다.');
 			document.location.href="login.jsp";
 		}
 
 
+		
 
-		function request()              //  "장바구니담기" 버튼을 클릭시 호출
-		{
-			var frm1 = document.res;
-			frm1.action = "cangeResult.jsp"
-			
-			if (res.day1.value == "") 
-                  {
-                     alert("날짜를 선택해 주세요!"); 
-					 res.day1.focus();
-                     return false; 
-                  }
-			if (res.date.value == "") 
-                  {
-                     alert("시간을 선택해 주세요!"); 
-					 res.date.focus();
-                     return false; 
-                  }
-			if (res.name.value == "") 
-                  {
-                     alert("이름을 입력해 주세요!"); 
-					 res.name.focus();
-                     return false; 
-                  }
-			if (res.phone1.value == "") 
-                  {
-                     alert("번호를 입력해 주세요!"); 
-					 res.phone1.focus();
-                     return false; 
-                  }
-			if (res.phone2.value == "") 
-                  {
-                     alert("번호를 입력해 주세요!"); 
-					 res.phone2.focus();
-                     return false; 
-                  }
-			if (res.phone3.value == "") 
-                  {
-                     alert("번호를 입력해 주세요!");
-					 res.phone3.focus();
-                     return false; 
-                  }
-			if (res.sex.value == "") 
-                  {
-                     alert("성별을 선택해 주세요!"); 
-					 res.sex.focus();
-                     return false; 
-                  }
-			
-			frm1.submit();
-			
-		}
-		</script>
-        
-        </body>
-        </html>
+		
+
+
+
+
+
+
+    </script>
+
+
+    
+
+
+</body>
+</html>

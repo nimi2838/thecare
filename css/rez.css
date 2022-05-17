@@ -702,7 +702,16 @@ input[type="text"]{
 	}
 
 .inner .tit {
+width: 100%;
+    border-bottom: 1px solid #ccc;
+    float: inherit;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+
+.ctit {
 width: 100%; border-bottom: 1px solid #ccc;
+    float: left;
 }
 
 .inner .tit h1 {
@@ -710,12 +719,16 @@ width: 100%; border-bottom: 1px solid #ccc;
 }
 
 .scriptCalendar {
-	float: inherit;
+	float: left;
     margin: 10px auto 30px;
 }
 
 .td_tit .name {
-	margin-left: 75px; border:none; font-weight: bold;
+	margin-left: 75px; font-weight: bold;
+}
+
+.td_tit .name1 {
+	margin-left: 75px; font-weight: bold;
 }
 
 
@@ -978,6 +991,11 @@ width: 100%; border-bottom: 1px solid #ccc;
 
 .td_tit .name {
 	margin-left: 60px; border:none; font-weight: bold;
+}
+
+.scriptCalendar {
+	float: inherit;
+    margin: 10px auto 30px;
 }
 
   

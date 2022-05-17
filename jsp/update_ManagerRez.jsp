@@ -784,7 +784,7 @@ String jsql8= "SELECT * FROM rezinfo WHERE rezNo=?";
 					<tr>
                           <td class = "td_tit">
 						  <input type="hidden" name="rezno" style = "margin-left: 75px; " value="<%=rezNo%>">
-						  이름 : <input type="text" name="name" class="name1"   value="<%=ordCustomer%>" readonly>
+						  이름 : <input type="text" name="name" class="name"   value="<%=ordCustomer%>" readonly >
 						  </td>
                       </tr>
 					  <tr>
@@ -1063,7 +1063,7 @@ String jsql8= "SELECT * FROM rezinfo WHERE rezNo=?";
 		function request()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 			var frm1 = document.res;
-			frm1.action = "cangeResult.jsp"
+			frm1.action = "manager_cangeResult.jsp"
 			
 			if (res.day1.value == "") 
                   {
