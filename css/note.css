@@ -546,6 +546,9 @@ a {
 
 @media (min-width: 500px) and ( max-width:850px) {
   .inner{width:90%; margin:0 auto;}
+  #note .wrap ul li a .tit {width: 80%;}
+  #note .wrap ul li a h2 {width: 20%;}
+
 }
 
 
