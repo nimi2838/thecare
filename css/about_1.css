@@ -181,17 +181,6 @@ a {
   padding: 0 15px 0 15px;
 }
 
-/* .top-wrap>.top-box1>.icon-box>.login {
-  background: red;
-}
-
-.top-wrap>.top-box1>.icon-box>.join {
-  background: blue;
-}
-
-.top-wrap>.top-box1>.icon-box>.cart {
-  background: green;
-} */
 
 .top-wrap>.top-box1>.icon-box>.icon>.line-icon {
   display: flex;
@@ -200,16 +189,6 @@ a {
   background:#707070;
   margin: 1px 0 0 15px;
 }
-
-/* .top-wrap>.top-box1>.icon-box>.icon:after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 50px;
-  margin: -10px 40px;
-  background:#707070;
-} */
-
 .top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
   width: 31px;
   margin-bottom: 4px;

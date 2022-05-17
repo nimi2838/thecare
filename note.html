@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="css/note.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>메인페이지</title>
 </head>
 <body>
 
-
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
-
-
+    
             <ul class="icon-box">
                 <li class="icon login">
                     <a href="login.jsp">
@@ -44,17 +45,17 @@
                     </a>
                 </li>
             </ul>
-
+    
             <div class="logo-box flex flex-jc-c">
                 <div class="img-box">
-                    <a href="main.jsp">
+                    <a href="main.html">
                         <img src="img/logo.png" alt="">
                     </a>
                 </div>
             </div>
             <div class="search_wrap">
                 <form accept-charset="utf-8" name="search" class="search-box flex flex-jc-end"
-                    method="get" action="search.jsp" onsubmit=" keyword_check()" autocomplete=off>
+                    method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
                     <td class="icon">
                         <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
                     </td>
@@ -63,237 +64,350 @@
                     </td>
                 </form>
             </div>
-
-
-
-
-
-
+    
+    
+            
+    
+    
+    
         </div>
         <div class="line"></div>
-
-
+    
+    
         <div class="top-box2">
             <ul class="flex flex-jc-c">
                 <li class="menu">
                     <a>더 케어</a>
                     <div>
                         <ul>
-                            <li><a href="about_1.jsp">케어 라이프</a></li>
-                            <li><a href="about_3.jsp">오시는길</a></li>
+                            <li><a href="about_1.html">케어 라이프</a></li>
+                            <li><a href="about_3.html">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-				<li class="menu">
+                <li class="menu">
                     <a>더 궁금해</a>
-					<div>
-                        <ul>
-                            <li><a href="custom.jsp">더 체크</a></li>
-							<li><a href="custom.jsp">더 모어</a></li>
-                        </ul>
-                    </div>
-                </li>
-               <!--  <li class="menu">
-                    <a>차별점</a>
                     <div>
                         <ul>
-                            <li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
+                            <li><a href="custom.html">더 체크</a></li>
+                            <li><a href="themore.html">더 모어</a></li>
                         </ul>
                     </div>
-                </li> -->
+                </li>
                 <li class="menu">
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
-                            <li><a href="change.jsp">예약확인/변경/취소</a></li>
-                            <li><a href="review.jsp">전후사진</a></li>
+                            <li><a href="guide.html">안내/비용</a></li>
+                            <li><a href="change.html">예약확인/변경/취소</a></li>
+                            <li><a href="review.html">전후사진</a></li>
                         </ul>
                     </div>
                 </li>
-
+    
                 
                 <li class="jsp">
                     <a>소통원해</a>
                     <div>
                         <ul>
-                            <li><a href="qna.jsp">기록장</a></li>
-                            <li><a href="noti.jsp">공지사항</a></li>
-                            <li><a href="event.jsp">이벤트</a></li>
+                            <li><a href="note.html">기록장</a></li>
+                            <li><a href="noti.html">공지사항</a></li>
+                            <li><a href="event.html">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-
-    <div style="position: fixed; bottom:5%; right:3%;z-index:150;">
-        <a alt="맨 위로" class="moveTopBtn">
-            <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+    
+       <!-- 모바일로 -->
+       <header id="header">
+        <div class="inner">
+            <div class="logo-box flex">
+                <div class="img-box">
+                    <a href="main.html">
+                        <img src="img/logo.png" alt="" width="150px">
+                    </a>
+                </div>
+    
+                <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+    
+            <nav class="gnb_wrap">
+                <div class="search_wrap">
+                    <form accept-charset="utf-8" name="search" class="search-box flex"
+                        method="get" action="search.jsp" onsubmit="return keyword_check()" autocomplete=off>
+                        <td class="icon">
+                            <input class="form" name="keyword" type="text" placeholder="검색어를 입력해주세요." >
+                        </td>
+                        <td class="schBtn">
+                            <input type="image" src="img/Search_thin_icon.png" alt="검색" onsubmit="search_form()" style="width: 35px; height: 35px;">
+                        </td>
+                    </form>
+                </div>
+                <ul id="gnb">
+                    <li>
+                        <a href="#">더 케어란</a>
+                        <div class="subwrap">
+                            <div class="inner">
+                                <ul class="depth_1">
+                                    <li><a href="about_1.html">케어 라이프</a></li>
+                                    <li><a href="about_3.html">오시는길</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">더 궁금해</a>
+                        <div class="subwrap">
+                            <div class="inner">
+                                <ul class="depth_1">
+                                    <li><a href="custom.html">더 체크</a></li>
+                                    <li><a href="themore.html">더 모어</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">케어원해</a>
+                        <div class="subwrap">
+                            <div class="inner">
+                                <ul class="depth_1">
+                                    <li><a href="guide.html">안내/비용</a></li>
+                                    <li><a href="change.html">예약확인/변경/취소</a></li>
+                                    <li><a href="review.html">전후사진</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">소통원해</a>
+                        <div class="subwrap">
+                            <div class="inner">
+                                <ul class="depth_1">
+                                    <li><a href="note.html">기록장</a></li>
+                                    <li><a href="noti.html">공지사항</a></li>
+                                    <li><a href="event.html">이벤트</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+               
+            <ul class="icon-box">
+                <li class="icon login">
+                    <a href="login.jsp">
+                        <div class="img-box">
+                            <img src="img/login_icon.png" alt="">
+                        </div>
+                        login
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon join">
+                    <a href="join.jsp">
+                        <div class="img-box">
+                            <img src="img/join_icon.png" alt="">
+                        </div>
+                        join
+                    </a>
+                    <div class="line-icon"></div>
+                </li>
+                <li class="icon cart">
+                    <a href="cart.jsp">
+                        <div class="img-box">
+                            <img src="img/cart_icon.png" alt="">
+                        </div>
+                        cart
+                    </a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+        
+        <div class="line"></div>
+    </header>
+    
+    
+    
+    
+    
+    
+    <div style="position: fixed; bottom:5%; right:3%;z-index:2;">
+        <a href="" alt="맨 위로">
+            <div class="moveTopBtn" style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                 <img src="img/up.png" width="50px" height="50px">
             </div>
         </a>
         <a href="new_view.jsp" alt="최근 본 시술">
-            <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
+            <div style="border-radius:50%;z-index:99; width:60px;height:60px; text-align: center; ">
                     <img src="img/clock.png" width="50px" height="50px">
                     <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
             </div>
         </a>
     </div>
+    
+    
 
 
-    <div class="note_box">
-
-        <h1>시술 기록장</h1>
-
-        <a href="note_detail.html" class="con_box">
-
-            <div class="img-box">
-                <img src="" alt="">
+<section id="note" class="content">
+    <div class="inner">
+        <div class="title">
+            <h1>기록장</h1>
+            <p>시술 후기를 공유해요</p>
+        </div>
+        <div class="wrap">
+            <div class="list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p>김조봉님</p>
+                            <h1>윤곽주사 아프네요</h1>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>김조봉님</p>
+                            <h1>윤곽주사 아프네요</h1>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>김조봉님</p>
+                            <h1>윤곽주사 아프네요</h1>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="text-box">
-
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
-                    </div>
-                </div>
+            <div class="write">
+                <a href="note_write.jsp"><h1>글쓰기</h1></a>
             </div>
-            
-        </a>
-        <hr>
+        </div>
+    </div>
+</section>
 
 
 
 
-        <a href="note_detail.html" class="con_box">
-            <div class="img-box">
-                <img src="" alt="">
-            </div>
-            <div class="text-box">
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                    </div>
-                </div>
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
-                    </div>
-                </div>
-            </div>
-        </a>
-        <hr>
-        <a href="note_detail.html" class="con_box">
-            <div class="img-box">
-                <img src="" alt="">
-            </div>
-            <div class="text-box">
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                    </div>
-                </div>
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
-                    </div>
-                </div>
-            </div>
-        </a><hr><a href="note_detail.html" class="con_box">
-            <div class="img-box">
-                <img src="" alt="">
-            </div>
-            <div class="text-box">
-                <div class="text1">
-                    <h3>제목</h3>
-                    <div class="icon-box">
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                        <div class="icon1">
-                            #필러
-                        </div>
-                    </div>
-                </div>
-                <div class="text2">
-                    <div class="img-box">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                    <div class="cnt">
-                        99+
-                    </div>
-                </div>
-            </div>
-        </a>
+
+    <div class="footer flex flex-jc-c">
+        <div class="text">
+            <img src="./img/logo-ft.png" width="150" alt="" style="margin-bottom: 20px;">
+            <p class="text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
+            </p>
+            <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 대표자 : 봉조율
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 전화번호 : 02-517-0912
+            </p>
+            <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
+        </div>
     </div>
 
-    <input type="file" id="inputImage">
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-    <button id="sendButton">보내기</button>
-  
-    <img src="" class="uploadImage">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
+
+
+    <!-- Initialize Swiper -->
+
+    <!-- 3. 실행 스크립트 -->
     <script>
 
-        document.querySelector("#sendButton").addEventListener('click',()=>{
-    
-          let selectFile = document.querySelector("#inputImage").files[0];
-    
-          const file = URL.createObjectURL(selectFile);
-    
-          document.querySelector(".uploadImage").src = file;
-    
-        })
-    
-      </script>
+const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+gsap.to('#header', {
+                scrollTrigger: {
+                    trigger: '#header',
+                    start: 'top -98px',
+                    scrub: true
+                },
+                height: '90px',
+                textalign: 'center',
+                top: '0',
+                position: 'fixed',
+                background: '#fff', 
+            });
+
+        $(document).ready(function(){
+
+
+var win_w = $(window).width();
+
+$(window).on('resize', function(){
+    win_w =$(this).width();
+    if(win_w > 980){
+        $('.gnb_wrap').removeAttr('style');
+    }
+});
+
+
+$('.toggle').on('click', function(){
+    $('.gnb_wrap').fadeToggle();
+});
+
+
+$('#gnb>li').on('mouseenter', function(){
+
+    if(win_w > 980){ 
+        $('.subwrap').stop().hide();
+        $(this).children('.subwrap').stop(true, true).slideDown();
+
+    } else {
+        $('#gnb>li>a').off('click');
+        $('#gnb>li>a').on('click', function(){
+            $('.subwrap').stop().slideUp(); 
+            $(this).next('.subwrap').stop().slideToggle(); 
+        });
+
+    }
+
+});
+$('#header').on('mouseleave', function(){
+    if(win_w>980){
+        $('.subwrap').stop().slideUp();
+    }
+});
+
+$('#gnb>li>a').on('focusin', function(){
+    if(win_w > 980){
+        $(this).next('.subwrap').stop(true, true).slideDown();
+    }
+});
+
+$('#gnb .last').on('focusout', function(){
+    if(win_w > 980){
+        $(this).parents('.subwrap').stop(true, true).slideUp();
+    }
+});
+
+
+});
+        
+
+        gsap.to('.top-wrap > .top-box2', {
+            scrollTrigger: {
+                trigger: '.top-wrap',
+                start: 'top -98px',
+                scrub: true
+            },
+            height: '60px',
+            textalign: 'center',
+            top: '0',
+            position: 'fixed',
+            background: '#fff',
+            borderBottom: '1px solid #ccc'
+        });
+    </script>
 
     </body>
 </html>
