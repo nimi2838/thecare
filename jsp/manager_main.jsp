@@ -87,7 +87,7 @@
                         </li>
                     </ul>
                     <div class="btn">
-                        <a href="logout.jsp" id="logout" class="logout" style="font-size : 16px;">logout</a>
+                        <a href="manager_logout.jsp" id="logout" class="logout" style="font-size : 16px;">logout</a>
 
                     </div>
                 </div>
