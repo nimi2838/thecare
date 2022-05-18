@@ -40,9 +40,7 @@ try {
 	 Class.forName("org.gjt.mm.mysql.Driver");  
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
-     String jsql = "select * from user";   
-	 PreparedStatement  pstmt = con.prepareStatement(jsql);
-	 ResultSet  rs = pstmt.executeQuery();
+     
 %>
 
 
@@ -82,6 +80,10 @@ try {
                 </thead>
 
                 <%
+			 String jsql = "select * from user";   
+	         PreparedStatement  pstmt = con.prepareStatement(jsql);
+	         ResultSet  rs = pstmt.executeQuery();
+
 		while(rs.next()){
 			String id = rs.getString("uId"); 
     		String pw =  rs.getString("uPw");	
@@ -108,12 +110,25 @@ try {
                         <td><%=phone%></td>
                         <td><%=zipcode%><br><%=address1%>(<%=address2%>)</td>
                         <td><%=sex%></td>
-                        <td><%=point%></td>
+                        <td><%=point%>원</td>
                         <td><a style = "color:blue;" href="update_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
-                        <td><a style = "color:red;" href="delete_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
+                        <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
                     </tr>
                 </tbody>
-
+                    <script>
+					
+							function real(){
+							 if(confirm("회원을 삭제하시겠습니까?"))
+							 {
+							  document.location.href="delete_ManagerUser.jsp?uId=<%=id%>"
+							 }
+							 else
+							 {
+							 alert('회원을 유지합니다.');
+							 return false;
+							 }
+							}
+					</script>
 
 				<%
 		}  // while문의 끝
