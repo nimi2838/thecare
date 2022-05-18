@@ -105,7 +105,7 @@
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width = "150" alt="" >
+            <img src="./img/logo-ft.png" width = "150" alt="" >
           <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
         </p>
           <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912

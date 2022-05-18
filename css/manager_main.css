@@ -9,7 +9,7 @@
   
   body {
 	font-family: 'ChosunSg';
-	font-size: 14px;
+	font-size: 16px;
 	color: #252525;
 	margin: 0;
 	padding: 0;
@@ -157,7 +157,7 @@
   .content{width:100%; }
   .inner{width:70%; margin: 0 auto;} 
   .wrap{width: 80%; height: 100%; margin: 0 auto;}
-  #fine .inner { width: 100%; height: 800px;}
+  #fine .inner { width: 100%; height: 650px;}
   #fine .wrap .thank {width: 60%; margin: 0 auto;}
   #fine .wrap .thank> h1{text-align: center; font-size: 40px; margin: 0 auto; padding-top: 70px;}
   #fine .wrap .thank> h1 >table {text-align: center;}
@@ -208,7 +208,7 @@
 /* footer */
 
 .footer {
-	position: fixed; bottom: 0; left: 0;
+	
     width: 100%;
     
     background: rgb(56, 56, 56);
