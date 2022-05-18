@@ -64,12 +64,13 @@ try {
             <table>
                 <thead>
                     <tr>
-                        <td>카테고리</td>
-                        <td>시술번호</td>
-                        <td>시술이름</td>
-                        <td>시술가격</td>
-						<td>수정</td>
-						<td>삭제</td>
+                        <th>카테고리</th>
+                        <th>시술번호</th>
+                        <th>시술이름</th>
+						<th>시술옵션</th>
+                        <th>시술가격</th>
+						<th>수정</th>
+						<th>삭제</th>
                     </tr>
                 </thead>
                 
@@ -85,15 +86,35 @@ try {
 			String prdNo =  rs.getString("prdNo");
 			String prdName =  rs.getString("prdName");	
 			String startprice =  rs.getString("startprice");	
+
 			%>
+						<%
+							String jsql1 = "select * from soption where prdNo = ?";   
+								PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+								pstmt1.setString(1, prdNo);
+								
+								ResultSet rs1 = pstmt1.executeQuery();
+								
+							while(rs1.next()) {
+
+								String opname = rs1.getString("opName");
+								String opno = rs1.getString("opNo");
+								String opprice = rs1.getString("opPrice");
+							%>
+								
                     <tr>
                         <td><%=ctgType%></td>
 						<td><%=prdNo%></td>
                         <td><%=prdName%></td>
-                        <td><%=startprice%></td>
-						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>">Yes</a></td>
-                        <td><a style = "color:red;" href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>">Yes</a></td>
+						<td><%=opname%></td>
+                        <td><%=opprice%></td>
+						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
+                        <td><a style = "color:red;" href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
+						
                     </tr>
+						<%
+	}
+						%>
 						<script>
 					
 							function real(){
@@ -140,7 +161,7 @@ $('tbody tr').eq(1).remove();
 
     <div class="footer flex flex-jc-c">
         <div class="text">
-            <img src="./img/logo.png" width = "150" alt="" >
+            <img src="./img/logo-ft.png" width = "150" alt="" >
           <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
         </p>
           <p>사업자등록번호 : 012-012-00012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       대표자 : 봉조율 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       전화번호 : 02-517-0912

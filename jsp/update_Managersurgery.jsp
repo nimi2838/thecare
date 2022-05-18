@@ -42,18 +42,20 @@ try {
      
     Class.forName("org.gjt.mm.mysql.Driver"); 
     Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+
+	String no = request.getParameter("prdNo");  
+	String ono = request.getParameter("opNo");  
    
     
-    String jsql ="select * from surgery where prdNo NOT like 'aa'";
+    String jsql ="select * from surgery where prdNo=?";
     PreparedStatement pstmt = con.prepareStatement(jsql);
+	pstmt.setString(1, no);
    
 
     ResultSet rs = pstmt.executeQuery();
 	rs.next();
     String ctgType =  rs.getString("ctgType");	
-    String prdNo =  rs.getString("prdNo");
     String prdName =  rs.getString("prdName");	
-    String startprice =  rs.getString("startprice");
 
 
 
@@ -99,15 +101,36 @@ try {
 
       <tr>
          <td class="td_tit">시술번호</td>
-         <td><input type=text name="prdNo" size=40 value="<%=prdNo%>"></td>
+         <td><input type=text name="prdNo" size=40 value="<%=no%>"></td>
       </tr>
       <tr>
          <td class="td_tit">시술이름</td>
          <td><input type=text name="prdName" size=40 value="<%=prdName%>"></td>
       </tr>
-      <tr>
+	  	<%
+							String jsql1 = "select * from soption where prdNo = ?";   
+								PreparedStatement pstmt1 = con.prepareStatement(jsql1);
+								pstmt1.setString(1, no);
+								
+								ResultSet rs1 = pstmt1.executeQuery();
+								
+							rs1.next();
+
+								String opname = rs1.getString("opName");
+								String opno = rs1.getString("opNo");
+								String opprice = rs1.getString("opPrice");
+							%>
+	  <tr>
+         <td class="td_tit">옵션번호</td>
+         <td><input type=text name="opNo" size=40 value="<%=opno%>"></td>
+      </tr>
+	  <tr>
+         <td class="td_tit">옵션이름</td>
+         <td><input type=text name="opNo" size=40 value="<%=opname%>"></td>
+      </tr>
+	  <tr>
          <td class="td_tit">시술가격</td>
-         <td><input type=text name="startprice" size=40 value="<%=startprice%>"></td>
+         <td><input type=text name="opName" size=40 value="<%=opprice%>"></td>
       </tr>
    </table>
 
