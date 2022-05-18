@@ -87,7 +87,7 @@
                         </li>
                     </ul>
                     <div class="btn">
-                        <input type="button" value="LOGOUT" id="logout" class="logout">
+                        <a href="logout.jsp" id="logout" class="logout" style="font-size : 16px;">logout</a>
 
                     </div>
                 </div>
