@@ -126,8 +126,7 @@ try {
 							}
 					</script>
 					<%
-		}  
-	}// while문의 끝
+		}  // while문의 끝
 %>
                 </tbody>
             </table>
@@ -143,10 +142,10 @@ $('tbody tr').eq(1).remove();
 
         </div>
     </section>
-
 <%
     } catch (Exception e) {
       out.println(e);	
+}
 }
 %>
 
