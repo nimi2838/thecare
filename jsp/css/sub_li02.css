@@ -1,0 +1,86 @@
+::selection { color:rgb(255, 255, 255); background:#f89fa8;  }
+#fff0f2
+#f89fa8
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0; line-height: 20px;
+	margin: 0; text-align: center;
+}
+
+.sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #1f628e;
+    left: -50%;
+    top: 65%; display: none;
+}
+
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 42px 0;
+    padding: 10px 15px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	text-align: center; line-height: 25px;
+}
+
+
+.content{width:100%; padding: 50px 0;  }
+.inner{width:1170px; margin: 0 auto;} 
+.wrap {margin: 0 auto; width: 100%;}
+
+#yun {}
+#yun .title {text-align: center;}
+#yun .title h1 {font-size: 30px; line-height: 50px; color: rgb(75, 75, 75);}
+#yun .title p {font-size: 20px; line-height: 35px; margin: 50px 0;}
+
+#yun .vline {width: 100%; text-align: center;}
+#yun .vline i {font-size: 60px; color: #f89fa8;}
+#yun .vline p {font-size: 25px; line-height: 50px; font-weight: bold; color: rgb(75, 75, 75);}
+
+.bg {
+    width: 100%; height: 250px; background-image: url(../img/sub-yun.jpg); 
+    background-size: cover; background-repeat: no-repeat;
+    position: relative;
+}
+.bg .box {
+    position: absolute; top: 80px; right: 380px;
+    width: 100px; height: 5px; background: white;
+}
+.bg p {
+    position: absolute; bottom: 30px; right: 380px; text-align: right;
+    font-size: 25px; line-height: 50px; color: white;
+}
+
+#effect {}
+#effect .wrap {margin: 50px 0; display: flex; justify-content: space-around; align-items: center;}
+#effect .wrap .con {
+    width: 244px; height: 244px; background: #fff0f2; 
+    border: 1px solid #f89fa8; border-radius: 100%; text-align: center;
+}
+#effect .wrap .con h1 {
+    margin: 0 auto; margin-top: 50px;
+    font-size: 25px; width: 115px; height: 40px; 
+    border-bottom: 1px solid #f89fa8; color: #f89fa8;
+}
+#effect .wrap .con p {font-size: 25px; line-height: 40px; }
+
+
+#effect .wrapp {margin-bottom: 100px; display: flex; justify-content: space-around; align-items: center;}
+#effect .wrapp .con {
+    width: 244px; height: 244px; background: #fff0f2; 
+    border: 1px solid #f89fa8; border-radius: 100%; text-align: center;
+}
+#effect .wrapp .con h1 {
+    margin: 0 auto; margin-top: 50px;
+    font-size: 25px; width: 115px; height: 40px; 
+    border-bottom: 1px solid #f89fa8; color: #f89fa8;
+}
+#effect .wrapp .con p {font-size: 25px; line-height: 40px; }
+

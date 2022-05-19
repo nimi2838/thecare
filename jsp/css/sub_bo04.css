@@ -1,0 +1,87 @@
+::selection { color:rgb(255, 255, 255); background:#f89fa8; }
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0; line-height: 20px;
+	margin: 0; text-align: center;
+}
+
+
+.sub_con_box3 > .sub_con3 > ul {width: 90%;}
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 42px 0;
+    padding: 10px 15px;
+    background: white;
+}
+
+.content{width:100%; padding-top: 50px;  }
+.inner{width:1170px; margin: 0 auto;} 
+.wrap {margin: 0 auto; width: 100%;}
+
+.girltitle {width: 100%; text-align: center; margin-bottom: 100px;}
+.girltitle i {font-size: 40px; color: #ff6f7d;}
+.girltitle h1 {font-size: 40px;}
+
+.bg {
+    width: 100%; background: #dcd8d5; display: flex; 
+    justify-content: center; align-items: center; height: 460px;
+}
+.bg .pic {width: 270px; height: 460px;}
+.bg .txt {text-align: center;}
+.bg .txt p {font-size: 23px; line-height: 35px; color: #333; line-height: 40px;}
+
+
+#girl {width: 100%;}
+#girl .wrap {display: flex; justify-content: center; align-items: center; width: 80%; flex-wrap: wrap;}
+#girl .wrap .con {width: 330px; height: 400px;}
+#girl .wrap .con .pic {width: 330px; height: 330px;}
+#girl .wrap .con .txt {width: 100%; text-align: center; height: 70px;}
+#girl .wrap .con .txt p {font-size: 20px; color: #333; line-height: 30px; font-weight: bold;}
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #girl .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #girl .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #girl .inner {width: 100%;}
+    .bg .txt p {font-size: 20px;}
+}
+
+
+#sel {width: 100%; margin-top: 100px;}
+#sel .title {text-align: center;}
+#sel .title i {font-size: 40px;}
+#sel .title p {font-size: 40px;}
+#sel .title p span {color: #ff6f7d; font-weight: bold;}
+
+#sel .title-txt {width: 100%; text-align: center; margin: 80px 0;}
+#sel .title-txt p {font-size: 20px; line-height: 30px;}
+#sel .title-txt p span {font-weight: bold; color: #ff6f7d;}
+
+#sel .pic {margin: 0 auto; width: 700px; margin-bottom: 150px;}
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #sel .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #sel .inner {width: 100%;}
+
+}
+
+
+@media (min-width: 500px) and ( max-width:850px) {
+    #sel .inner {width: 100%;}
+    #sel .pic > img {width: 80%; margin-left: 5%;}
+}

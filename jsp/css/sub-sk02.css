@@ -1,0 +1,65 @@
+::selection { color:rgb(255, 255, 255); background:#1f628e;  }
+#a1bbcc
+#f89fa8
+
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0; line-height: 20px;
+	margin: 0; text-align: center;
+}
+
+.sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #1f628e;
+    left: -50%;
+    top: 65%; display: none;
+}
+
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 42px 0;
+    padding: 10px 15px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	text-align: center; line-height: 25px;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box {
+	padding: 30px 29px; 
+	font-size: 20px;
+}
+
+.sub_con_box3 > .sub_con3 > ul li:last-child {
+    margin-right: 0; width: 60%;
+}
+
+.content{width:100%; padding: 50px 0;  }
+.inner{width:1170px; margin: 0 auto;} 
+.wrap {margin: 0 auto; width: 100%;}
+
+#mogong {background-color:aliceblue;}
+#mogong .txt {text-align: center; width: 800px; margin: 0 auto;}
+#mogong .txt h1 {border-bottom: 2px solid #1f628e; font-size: 35px; padding-bottom: 20px;}
+#mogong h2 {font-size: 30px; text-align: center;}
+#mogong h2 span {color: #1f628e;}
+
+#step {width: 100%; }
+#step .wrap {display: flex; justify-content: center; align-items: center;}
+#step .wrap .con {flex-direction: column; width: 275px; text-align: center;}
+#step .wrap .con h2{
+    font-size: 30px; width: 140px; height: 50px; margin: 30px auto;
+    background: #1f628e; color: white; border-radius: 100px; line-height: 50px;
+}
+#step .wrap .con .pic {width: 272px; height: 376px;}
+
+#step .wrap .con .txt {width: 272px; height: 115px; text-align: center; margin-top: 30px;}
+#step .wrap .con .txt h1 {font-size: 25px; text-align: center; line-height: 35px;}
+#step .wrap .con .txt h1 span{color: #1f628e;}
+
