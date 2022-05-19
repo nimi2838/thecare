@@ -129,11 +129,23 @@ try {
 						ResultSet rs2 = pstmt2.executeQuery();	
 						rs2.next();
 
-						String rezDate = rs2.getString("rezDate");
+						Timestamp rezDate = rs2.getTimestamp("rezDate");
 						String prdNo = rs2.getString("prdNo");
+
+						String curDate = rezDate.toLocaleString();
+
+						
+						String jsql7= "SELECT * FROM surgery WHERE prdNo=?";
+						PreparedStatement pstmt7 = con.prepareStatement(jsql7);
+						pstmt7.setString(1, prdNo);
+
+						ResultSet rs7 = pstmt7.executeQuery();	
+						rs7.next();
+
+						String prdName = rs7.getString("prdName");
 				  %>
-						<td><%=rezDate%></td>
-                        <td><%=prdNo%>
+						<td><%=curDate%></td>
+                        <td class="opname">
 						<%
 					  String jsql6= "SELECT * FROM rez WHERE rezNo=?";
 						PreparedStatement pstmt6 = con.prepareStatement(jsql6);
@@ -142,7 +154,20 @@ try {
 						ResultSet rs6 = pstmt6.executeQuery();	
 						while(rs6.next()) {
 							String opNo = rs6.getString("opNo");
-					  %>(<%=opNo%>)
+
+
+						String jsql8= "SELECT * FROM soption WHERE opNo=?";
+						PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+						pstmt8.setString(1, opNo);
+
+						ResultSet rs8 = pstmt8.executeQuery();	
+						rs8.next();
+
+						String opName = rs8.getString("opName");
+
+							
+					  %>
+					  <%=prdName%>(<%=opName%>) <br>
 					  <%
 						  }
 					  %></td>
@@ -152,11 +177,15 @@ try {
                     </tr>
 
 					<script>
+					var rez = <%=rezNo%>;
+					var prd = <%=prdNo%>;
 					
 							function real(){
 							 if(confirm("정말 예약을 취소하시겠습니까?"))
 							 {
-							  document.location.href="delete_ManagerRez.jsp?rezNo=<%=rezNo%>"
+								 localStorage.setItem('rezNo','rez');
+								  localStorage.setItem('prdNo','prd');
+							  document.location.href="delete_ManagerRez.jsp"
 							 }
 							 else
 							 {
