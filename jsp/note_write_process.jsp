@@ -17,9 +17,7 @@ try {
 	
 	String subject = request.getParameter("in_subject");              
     String name = request.getParameter("in_name");
-    String email = request.getParameter("email");
     String content = request.getParameter("in_content");
-    String pwd = request.getParameter("pwd");
     String ymd = (new java.util.Date()).toLocaleString();         
    
 
@@ -40,20 +38,18 @@ try {
    	
     rs.close();    
 
-	String jsql2 = "insert into board (idx, no, subject, name, email, content, ";
-	jsql2 = jsql2 + "ymd, pwd, masterid, replynum, step) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	String jsql2 = "insert into board (idx, no, subject, name, content, ";
+	jsql2 = jsql2 + "ymd,  masterid, replynum, step) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
    	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 	pstmt2.setInt(1, no);
 	pstmt2.setInt(2, no);
     pstmt2.setString(3, subject);
     pstmt2.setString(4, name);
-    pstmt2.setString(5, email);
-    pstmt2.setString(6, content);
-    pstmt2.setString(7, ymd);
-    pstmt2.setString(8, pwd);
-    pstmt2.setInt(9, no);
-    pstmt2.setInt(10, replynum);
-    pstmt2.setInt(11, step);
+    pstmt2.setString(5, content);
+    pstmt2.setString(6, ymd);
+    pstmt2.setInt(7, no);
+    pstmt2.setInt(8, replynum);
+    pstmt2.setInt(9, step);
     	  
 	pstmt2.executeUpdate();
    

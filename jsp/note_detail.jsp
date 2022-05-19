@@ -637,7 +637,6 @@ try {
 			//대상글의 답변글임을 나타내기 위해 제목 앞에 [Re] 표시
 			String sub =  rs.getString("subject").trim();
             String name = rs.getString("name").trim();
-            String email = rs.getString("email").trim();
             String cont = rs.getString("content").trim();		
         	  //답변글의 각 줄 앞에 ">" 추가하여 대상글임을 표시
 
@@ -657,7 +656,6 @@ try {
 
 			String ymd = rs.getString("ymd");
 			int readcount = rs.getInt("readcount");
-			String pwd = rs.getString("pwd").trim();
 			int mid = rs.getInt("masterid");
             int rnum = rs.getInt("replynum");
             int step = rs.getInt("step");

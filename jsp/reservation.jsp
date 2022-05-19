@@ -757,7 +757,7 @@ int point2 = 0;
 total2= total;
 %>
 
-					<div class = "tit" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
+					<div class = "ctit" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
 
 					
 					

@@ -584,7 +584,6 @@ try {
               String subject = rs.getString("subject");
 			  String content = rs.getString("content");
 			  String name = rs.getString("name");
-              String email = rs.getString("email");
               String ymd = rs.getString("ymd");
               int readcount = rs.getInt("readcount");
               int step = rs.getInt("step");
