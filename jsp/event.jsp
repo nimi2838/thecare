@@ -15,12 +15,11 @@
   <title>이벤트</title>
 </head>
 
-
 <%
-   String myid = (String)session.getAttribute("sid");                                                                           
-%>
+   String myid = (String)session.getAttribute("sid");  
+   %>
 <body>
-
+	
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
@@ -112,7 +111,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -188,7 +187,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">안내/비용</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -338,7 +337,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -418,7 +417,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">안내/비용</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -484,20 +483,21 @@ else{
 
 
 
-<div style="position: fixed; bottom:5%; right:3%;z-index:2;">
-            <a href="" alt="맨 위로">
-                <div class="moveTopBtn" style="border-radius:50%;z-index:2; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
+
+        <div style="position: fixed; bottom:5%; right:3%;z-index:2;">
+            <a alt="맨 위로" class="moveTopBtn">
+                <div  style="border-radius:50%;z-index:150; width:60px;height:55px; margin-bottom: 5px; text-align: center;">
                     <img src="img/up.png" width="50px" height="50px">
                 </div>
             </a>
             <a href="new_view.jsp" alt="최근 본 시술">
-                <div style="border-radius:50%;z-index:2; width:60px;height:60px; text-align: center; ">
+                <div style="border-radius:50%;z-index:150; width:60px;height:60px; text-align: center; ">
                         <img src="img/clock.png" width="50px" height="50px">
                         <br><p style="margin-top: 5px; font-size: 13px; font-weight: bold;">최근본시술</p>
                 </div>
             </a>
         </div>
-    
+
 
 
     
@@ -511,15 +511,15 @@ else{
 
             <div class="wrap">
 
-                <div class="box box1">
+               <div class="box box1">
 
                     <div class="event_img">
                         <img src="img/event0.jpg" alt="">
                         <div class="bg"></div>
                     </div>
                     <div class="event_txt">
-                        <h2 >WELCOME 회원가입 이벤트! </h2> 
-                        <p>※이미지를 클릭해보세요</p>
+                        <h2 > The Care 첫 방문 쿠폰! </h2> 
+                        <p>2022-01-01 ~ 상시 행사 중</p>
                     </div>
                 </div>
 
@@ -531,8 +531,8 @@ else{
                     </div>
 
                     <div class="event_txt">
-                        <h2 >가정의 달 이벤트!</h2>
-                        <p>※이미지를 클릭해보세요</p>
+                        <h2 >가정의 달 쿠폰!</h2>
+                        <p>2022-05-01 ~ 2022-05-31 행사 중</p>
                     </div>
                 </div>
 
@@ -544,8 +544,8 @@ else{
                     </div>
 
                     <div class="event_txt">
-                        <h2 >코로나 극복 이벤트!</h2>
-                        <p>※이미지를 클릭해보세요</p>
+                        <h2 >코로나 극복 쿠폰!</h2>
+                        <p>2022-01-01 ~ 2022-12-31 행사 중</p>
                     </div>
                 </div>
 
@@ -556,11 +556,10 @@ else{
                     </div>
 
                     <div class="event_txt">
-                        <h2 >여름 이벤트!</h2>
-                        <p>※이미지를 클릭해보세요</p>
+                        <h2 >썸머 쿠폰!</h2>
+                        <p>2022-06-01 ~ 2022-08-31 행사 준비 중</p>
                     </div>
                 </div>
-
 
                 
             </div>
@@ -632,15 +631,24 @@ else{
 
 
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-
 <script>
 
+const $topBtn = document.querySelector(".moveTopBtn");
 
-            gsap.to('#header', {
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+     gsap.to('#header', {
                 scrollTrigger: {
                     trigger: '#header',
                     start: 'top -98px',
@@ -708,61 +716,49 @@ $('#gnb .last').on('focusout', function(){
 
 });
 
-        
 
-const $topBtn = document.querySelector(".moveTopBtn");
 
-// 버튼 클릭 시 맨 위로 이동
-$topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+
+
 
 gsap.to('.top-wrap > .top-box2', {
-  scrollTrigger: {
-      trigger: '.top-wrap',
-      start: 'top -98px',
-      scrub: true
-  },
-  height: '61px',
-  textalign: 'center',
-  top: '0',
-  position: 'fixed',
-  background: '#fff',
-  borderBottom: '1px solid #ccc'
+scrollTrigger:{
+trigger:'.top-wrap',
+start:'top -98px',
+scrub:true
+},height:'60px',textalign:'center',top:'0',position:'fixed',background:'white'
 });
 
 
-            $('#best .tab>li>a').on('click', function(e){
-                var i = $(this).parents('li').index();
-              e.preventDefault();
 
-              $('#best .panel').hide();
-              $(this).next('.panel').show();
-            $('#best .tab>li>.menu').removeClass('on').eq(i).addClass('on');
-            });
-
-            $('#best .tab>li>a').first().trigger('click');
+    // swiper-pagination-bullet-active
 
 
+    let no;
 
 
+$(function() {
+    $("#welcome .wrap > .box").on("click", function() {
+        no=$(this).index()+1;
+        $("#welcome .inner .art1_big").hide();
+        $("#welcome .art1_big"+no).show();
+    })
+
+    $(".art1_big_close").on("click", function() {
+        $("#welcome .inner .art1_big").hide();
+    })
     
-            gsap.to('.top-wrap > .top-box2', {
-                scrollTrigger: {
-                    trigger: '.top-wrap',
-                    start: 'top -98px',
-                    scrub: true
-                },
-                height: '61px',
-                textalign: 'center',
-                top: '0',
-                position: 'fixed',
-                background: '#fff',
-                borderBottom: '1px solid #ccc'
-            });
-    
-            
-    
+});
+
+$(".art1 .art1_big").click(function (e) {
+        if (e.target.className != ".modal") {
+          return false;
+        } else {
+          $(".modal").hide();
+        }
+});
+
+
     
      function keyword_check(){
     
@@ -798,6 +794,16 @@ gsap.to('.top-wrap > .top-box2', {
 			document.location.href="login.jsp";
 		}
 
+
+         $('#type .tab>li>a').on('click', function(e){
+              e.preventDefault();
+              $('#type .panel').hide();
+              $(this).next('.panel').show();
+            });
+
+            $('#type .tab>li>a').first().trigger('click');
+
+            
 
 
     </script>

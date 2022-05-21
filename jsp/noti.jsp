@@ -504,9 +504,7 @@ else{
     
     <div class="about-ban">
         <div class="text-box">
-            <i>공지사항</i>
-            <div class="sun"></div>
-            <p>고객님들을 위한 더 케어의<br>다양한 소식들을 만나보세요.</p>
+            <h1>소통원해</h1>
         </div>
     </div>
 
@@ -515,6 +513,7 @@ else{
     
     <section id="noti" class="content">
         <div class="inner">
+            <h1>공지사항</h1>
             <div class="wrap">
                 <table class="table">
                     <thead>

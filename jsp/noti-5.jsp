@@ -501,13 +501,13 @@ else{
         </div>
 
 
-  <div class="about-ban">
+<!--   <div class="about-ban">
         <div class="text-box">
             <i>공지사항</i>
             <div class="sun"></div>
             <p>고객님들을 위한 더 케어의<br>다양한 소식들을 만나보세요.</p>
         </div>
-    </div>
+    </div> -->
 
 
 

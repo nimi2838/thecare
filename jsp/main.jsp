@@ -529,7 +529,7 @@ else{
         <section id="best" class="content">
             <div class="inner">
                 <div class="title">
-                    <h2>THE CARE 추천</h2>
+                    <h2>THE CARE</h2>
                     <p>20대 남녀가 받고 싶어하는 시술은?</p>
                 </div>
                 <div class="wrap">
@@ -585,7 +585,7 @@ else{
                                     <ul>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_sk02.jsp?prdNo=sk02" class="yeo"><img src="img/best-yeo.png" alt=""></a>
+                                                <a href="sub_sk02.jsp?prdNo=sk02" class="yeo"><img src="img/bestm-yeo.jpg" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>1위</p>
@@ -594,7 +594,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_li02.jsp?prdNo=li02" class="yeo"><img src="img/best-yun.png" alt=""></a>
+                                                <a href="sub_li02.jsp?prdNo=li02" class="yeo"><img src="img/bestm-yun.jpg" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>2위</p>
@@ -603,7 +603,7 @@ else{
                                         </li>
                                         <li>
                                             <div class="top top2">
-                                                <a href="sub_sk01.jsp?prdNo=sk01" class="yeo"><img src="img/best-ah.png" alt=""></a>
+                                                <a href="sub_sk01.jsp?prdNo=sk01" class="yeo"><img src="img/bestm-ah.jpg" alt=""></a>
                                             </div>
                                             <div class="txt">
                                                 <p>3위</p>

@@ -557,6 +557,13 @@ try {
 		ResultSet rs = pstmt2.executeQuery();
    %>
 
+
+	<div class="about-ban">
+        <div class="text-box">
+            <h1>소통원해</h1>
+        </div>
+    </div>
+
 <section id="note" class="content">
     <div class="inner">
         <div class="title">
