@@ -488,7 +488,7 @@ a {
 
   .about-ban{
     width: 100%;
-    height: 500px;
+    height: 350px;
     background: url("../img/noti.jpg");
     margin-top: 2px;
   }
@@ -497,32 +497,18 @@ a {
   .about-ban > .text-box {
     text-align: center;
     z-index: 100;
-    padding-top: 120px;
-    color: #fff;
-    
+    color: #fff; 
   }
   
-  .about-ban > .text-box > i  {
-    font-size: 60px;
+  .about-ban > .text-box > h1  {
+    font-size: 50px; margin: 0;
     font-weight: bold;
-    line-height: 100px;
+    line-height: 350px; 
+    letter-spacing: 10px;
   } 
-  .about-ban > .text-box > .sun {
-      margin: 0 auto;
-      width: 80px; height: 3px;
-      background: #fff;
-      margin-top: 30px;
-  }
-
-  .about-ban > .text-box > p  {
-    margin-top: 40px;
-    font-size: 20px;
-    line-height: 30px;
-  }
-
   
 .inner{width:1170px; margin: 0 auto;} 
-.content{width:100%; padding: 100px 0;}
+.content{width:100%; padding: 50px 0;}
 .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;}
 
 .content .title{
@@ -530,17 +516,19 @@ a {
   font-weight: bold; font-size: 28px; color: #ccc;
 }
 
-.table { width: 100%; margin: 0 auto;}
-.table > thead {height: 60px; font-size: 18px; background-color: #f0f0f0; }
-.table > thead th {
+#noti .inner h1 {font-size: 30px;}
+
+#noti .table { width: 100%; margin: 0 auto;}
+#noti .table > thead {height: 60px; font-size: 18px; background-color: #f0f0f0; }
+#noti .table > thead th {
   border-top: 1px solid #797979; 
   border-bottom: 1px solid #797979;
 }
 
-.table > tbody { font-size: 18px;}
-.table > tbody:hover {background-color: #f7f7f7;}
+#noti .table > tbody { font-size: 18px;}
+#noti .table > tbody:hover {background-color: #f7f7f7;}
 
-.table #gong>tr >td {
+#noti .table #gong>tr >td {
   text-align: center; border-bottom: 1px solid #ccc; 
   color: #303030; font-weight: bold;
 }

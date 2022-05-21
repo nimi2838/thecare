@@ -616,10 +616,10 @@ a {
   #best .tab>li>a {padding: 10px 30px;}
   #best .panel .mini h1 {margin: 10px 10px 0 0px;}
 
-  #best .con ul {flex-direction: column; align-items: center;}
-  #best .tab {justify-content: center;}
-  #best .con .top {width: 200px; height: 200px;}
-  #best .yeo > img {width: 200px; height: 200px;}
+  #best .con ul {align-items: center;}
+  #best .tab {justify-content: center; height: 500px;}
+  #best .con .top {width: 120px; height: 120px;}
+  #best .yeo > img {width: 120px; height: 120px;}
 }
 
 
@@ -1874,12 +1874,12 @@ color:#fff;
     margin-top: 30px;
   }
   .slider-box-1 {
-    margin: 592px auto 50px;
+    margin: 100px auto 50px;
     width: 80%;
   }
   .slider-box-1 > p {
     font-size: 35px;
-    margin: 50px auto 30px;
+    margin: 10px auto 30px;
   }
   .slider-box-1 > .slick .item {
       height: 400px;

@@ -503,6 +503,27 @@ a {
 
 }
 
+.about-ban{
+  width: 100%;
+  height: 350px;
+  background: url("../img/noti.jpg");
+  margin-top: 2px;
+}
+
+
+.about-ban > .text-box {
+  text-align: center;
+  z-index: 100;
+  color: #fff; 
+}
+
+.about-ban > .text-box > h1  {
+  font-size: 50px; margin: 0;
+  font-weight: bold;
+  line-height: 350px; 
+  letter-spacing: 10px;
+} 
+
 .inner{width:1170px; margin: 0 auto;} 
 .content{width:100%; padding: 50px 0;}
 /* .wrap{display:flex; justify-content: space-between; flex-flow: row wrap;} */

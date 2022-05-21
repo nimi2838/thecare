@@ -521,7 +521,7 @@ a {
   /* 시작 */
   .about-ban{
     width: 100%;
-    height: 400px;
+    height: 350px;
     background: url("../img/review.jpg");
     margin-top: 2px;
   }
@@ -530,34 +530,23 @@ a {
   .about-ban > .text-box {
     text-align: center;
     z-index: 100;
-    padding-top: 6%;
     color: #fff;
-    
   }
   
-  .about-ban > .text-box > i  {
-    font-size: 60px;
+  .about-ban > .text-box > h1  {
+    font-size: 50px; margin: 0;
     font-weight: bold;
-    line-height: 100px;
+    line-height: 350px; 
+    letter-spacing: 10px;
   } 
-  .about-ban > .text-box > .sun {
-      margin: 0 auto;
-      width: 80px; height: 3px;
-      background: #fff;
-  }
-
-  .about-ban > .text-box > p  {
-    margin-top: 30px;
-    font-size: 25px;
-    line-height: 30px;
-  }
-
-
-
-
+  
   
 .content{width:100%;margin: 100px 0;}
 .inner{width:1170px; margin: 0 auto;} 
+
+#review .inner h1 {font-size: 30px; margin-bottom: 10px;}
+#review .inner p {font-size: 18px; margin-bottom: 50px;}
+
 #review .inner .title{width: 100%; height: 100px; text-align: center; }
 #review .inner .title > h2{font-size: 30px; font-weight: bold; margin: 0; color: rgb(51, 51, 51);}
 #review .inner .title > p{font-size: 18px;}
