@@ -549,6 +549,10 @@ a {
 #note .wrap ul li a .tit h1 {font-size: 19px; margin-bottom: 20px;}
 #note .wrap ul li a h2 {width: 10%;}
 
+#note .wrap ul li a .txt {flex-direction: column;}
+#note .wrap ul li a .txt h2 {width: 100%; margin: 15px 20px;}
+#note .wrap ul li a .txt p {margin: 0;}
+
 #note .wrap .write {margin: 0 auto; width: 90px; height: 45px; background-color: rgb(255, 255, 255);}
 #note .wrap .write:hover {background-color: rgb(235, 235, 235); transition: 0.3s;}
 #note .wrap .write a {text-align: center; font-weight: bold; line-height: 45px;}
