@@ -107,21 +107,23 @@ try {
 						<td><%=prdNo%></td>
                         <td><%=prdName%></td>
 						<td><%=opname%></td>
-                        <td><%=opprice%></td>
+                        <td><%=opprice%>원</td>
 						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
                          <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
                     </tr>
 						<script>
-					
+
 							function real(){
 							 if(confirm("정말 시술을 삭제하시겠습니까?"))
 							 {
-							  document.location.href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>"
+							
+							  document.location.href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>"
 							 }
 							 else
 							 {
 							 alert('시술을 유지합니다.');
 							 return false;
+
 							 }
 							}
 					</script>
