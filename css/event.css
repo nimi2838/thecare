@@ -408,8 +408,43 @@ a {
 .art1 .art1_big .modal .art-inner {width: 100%; height: 100vh;}
 
 .art1 .art1_big .modal img {width: 100%; padding-top: 50px;}
-.art1 .art1_big div>.info {width: 100%; margin-top: 0;}
+.art1 .art1_big div>.info {
+  position: relative;
+  width: 100%; margin-top: 0;
+}
 .art1 .art1_big div>.info >img { width: 100%; padding-top: 0px; height: 50%;}
+.art1 .art1_big div>.info > .cou-0 {
+  position: absolute; bottom: 70px; left: 290px; 
+  width: 130px; height: 40px; text-align: center;
+  background: #fe9a9a; color: white;
+  border: 0; border-radius: 10px; cursor: pointer;
+}
+.art1 .art1_big div>.info > .cou-0 p {font-size: 18px; margin: 0; line-height: 40px;}
+
+.art1 .art1_big div>.info > .cou-1 {
+  position: absolute; bottom: 70px; left: 290px; 
+  width: 130px; height: 40px; text-align: center;
+  background: #feeae1; color: #ff804c;
+  border: 0; border-radius: 10px; cursor: pointer;
+}
+.art1 .art1_big div>.info > .cou-1 p {font-size: 18px; margin: 0; line-height: 40px;}
+
+.art1 .art1_big div>.info > .cou-2 {
+  position: absolute; bottom: 70px; left: 290px; 
+  width: 130px; height: 40px; text-align: center;
+  background: #d74f4f; color: white;
+  border: 0; border-radius: 10px; cursor: pointer;
+}
+.art1 .art1_big div>.info > .cou-2 p {font-size: 18px; margin: 0; line-height: 40px;}
+
+.art1 .art1_big div>.info > .cou-3 {
+  position: absolute; bottom: 70px; left: 290px; 
+  width: 130px; height: 40px; text-align: center;
+  background: #273802; color: white;
+  border: 0; border-radius: 10px; cursor: pointer;
+}
+.art1 .art1_big div>.info > .cou-3 p {font-size: 18px; margin: 0; line-height: 40px;}
+
 
 .art1_big_close {
     font-size: 50px;
@@ -421,8 +456,7 @@ a {
   @media (min-width: 1051px) and ( max-width:1300px) {
     .inner{width:100%;} 
     .wrap{justify-content: space-around;}
-    #welcome .inner .event >h1 { font: bold 50px 'inherit'; margin-bottom: 0; }
-    #welcome .inner .event >p{ font:  20px 'inherit';margin-bottom: 50px;}
+    #welcome .inner .event >h1 {margin-left: 5%; }
 
     .art1 .art1_big .modal {width: 63%;}
     .art1_big_close {right: 140px;}
@@ -433,8 +467,8 @@ a {
   @media (min-width: 851px) and ( max-width:1050px) {
     .inner{width:100%;} 
     .wrap{justify-content: space-around;}
-    #welcome .inner .event >h1 { font: bold 50px 'inherit'; margin-bottom: 0; }
-    #welcome .inner .event >p{ font:  18px 'inherit';margin-bottom: 50px;}
+    #welcome .inner .event >h1 {margin-left: 5%; }
+
     #welcome .box:hover > .bg{height: 73%;}
 
     .art1 .art1_big .modal {width: 80%;}
@@ -445,14 +479,21 @@ a {
   @media (min-width: 500px) and ( max-width:850px) {
     .inner{width:100%;} 
     .wrap{justify-content: space-around; margin-bottom: 0px;}
-    #welcome .inner .event >h1 { font: bold 40px 'inherit'; margin-bottom: 0; }
-    #welcome .inner .event >p{ font:  18px 'inherit';margin-bottom: 50px;}
+    #welcome .inner .event >h1 {margin-left: 5%; }
+
     #welcome .box .event_txt{font-size: small;}
     #welcome .box:hover > .bg{height: 30%;}
     
     .art1 .art1_big .modal {width: 80%;}
     .art1 .art1_big .modal img {padding-top: 160px;}
     .art1_big_close {right: 5px; top: 120px;}
+
+    .art1 .art1_big div>.info > .cou-0 ,
+    .art1 .art1_big div>.info > .cou-1 ,
+    .art1 .art1_big div>.info > .cou-2 ,
+    .art1 .art1_big div>.info > .cou-3 {
+      left: 35%; bottom: 5%;
+    }
 	
   }
 
