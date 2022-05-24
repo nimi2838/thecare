@@ -12,12 +12,6 @@
 
 
 <body>
-<script>
-
-if(localStorage.getItem('uId')){ 
-	var lastData = localStorage.getItem('uId')
-	}
-</script>
 
 <%
 
@@ -32,25 +26,27 @@ try {
 	
 	request.setCharacterEncoding("euc-kr");
 
+	String prdNo = request.getParameter("prdNo");
+	String opNo = request.getParameter("opNo");
 
-String uId = request.getParameter("uId");
 
-	String jsql7= "SELECT * FROM user WHERE uId=?";
+	String jsql7= "SELECT * FROM surgery WHERE prdNo=?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, uId);
+			pstmt7.setString(1, prdNo);
 
 			ResultSet rs7 = pstmt7.executeQuery(); 
 			if(rs7.next()){
 
 				
 
-String jsql5 = "delete from user WHERE uId=?";
-					PreparedStatement pstmt5 = con.prepareStatement(jsql5);
-					pstmt5.setString(1,uId);
 
-					pstmt5.executeUpdate();
+			String jsql6 = "delete from soption WHERE opNo=? and prdNo=?";
+					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+					pstmt6.setString(1,opNo);
+					pstmt6.setString(2,prdNo);
 
-			
+					pstmt6.executeUpdate();
+
 	
 %>
 
@@ -62,7 +58,7 @@ String jsql5 = "delete from user WHERE uId=?";
 
 			}
 		
-			response.sendRedirect("manager_member.jsp");    
+			response.sendRedirect("manager_procedure.jsp");    
 
 
     } catch(Exception e) {

@@ -61,6 +61,12 @@ try {
                     </div>
                 </div>
             </div>
+			<div class="container">
+			  <ul class="tabs flex">
+				<li class="tab-link current" data-tab="tab-1">이름순</li>
+				<li class="tab-link" data-tab="tab-2">시술번호순</li>
+			  </ul>
+
             <table>
                 <thead>
                     <tr>
@@ -74,7 +80,7 @@ try {
                     </tr>
                 </thead>
                 
-                <tbody>
+                <tbody id="tab-0" class="tab-content current">
                    <%
 	String jsql = "select * from surgery where prdNo NOT like 'aa'";   
 	PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -109,39 +115,118 @@ try {
 						<td><%=opname%></td>
                         <td><%=opprice%>원</td>
 						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
-                         <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
+                         <td><a style = "color:red; cursor: pointer;" href="delete_Managersurgery_1.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
                     </tr>
-						<script>
-
-							function real(){
-							 if(confirm("정말 시술을 삭제하시겠습니까?"))
-							 {
-							
-							  document.location.href="delete_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>"
-							 }
-							 else
-							 {
-							 alert('시술을 유지합니다.');
-							 return false;
-
-							 }
-							}
-					</script>
 					<%
 		}  
 	}// while문의 끝
 %>
                 </tbody>
+
+
+
+
+				 <tbody id="tab-1" class="tab-content">
+								   <%
+					String jsql2 = "SELECT * FROM surgery WHERE prdNo NOT LIKE 'aa' ORDER BY prdName ASC";   
+					PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+
+					ResultSet rs2 = pstmt2.executeQuery();
+					while(rs2.next()) {
+
+							String ctgType =  rs2.getString("ctgType");	
+							String prdNo =  rs2.getString("prdNo");
+							String prdName =  rs2.getString("prdName");	
+							String startprice =  rs2.getString("startprice");	
+
+							%>
+										<%
+											String jsql3 = "select * from soption where prdNo = ?";   
+												PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+												pstmt3.setString(1, prdNo);
+												
+												ResultSet rs3 = pstmt3.executeQuery();
+												
+											while(rs3.next()) {
+
+												String opname = rs3.getString("opName");
+												String opno = rs3.getString("opNo");
+												String opprice = rs3.getString("opPrice");
+											%>
+												
+									<tr>
+										<td><%=ctgType%></td>
+										<td><%=prdNo%></td>
+										<td><%=prdName%></td>
+										<td><%=opname%></td>
+										<td><%=opprice%>원</td>
+										<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
+										 <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
+									</tr>
+									<%
+						}  
+					}// while문의 끝
+				%>
+                </tbody>
+
+
+
+				<tbody id="tab-2" class="tab-content">
+                   <%
+	String jsql4 = "select * from surgery where prdNo NOT like 'aa' order by prdNo asc";   
+	PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+
+	ResultSet rs4 = pstmt4.executeQuery();
+	while(rs4.next()) {
+
+			String ctgType =  rs4.getString("ctgType");	
+			String prdNo =  rs4.getString("prdNo");
+			String prdName =  rs4.getString("prdName");	
+			String startprice =  rs4.getString("startprice");	
+
+			%>
+						<%
+							String jsql5 = "select * from soption where prdNo = ?";   
+								PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+								pstmt5.setString(1, prdNo);
+								
+								ResultSet rs5 = pstmt5.executeQuery();
+								
+							while(rs5.next()) {
+
+								String opname = rs5.getString("opName");
+								String opno = rs5.getString("opNo");
+								String opprice = rs5.getString("opPrice");
+							%>
+								
+                    <tr>
+                        <td><%=ctgType%></td>
+						<td><%=prdNo%></td>
+                        <td><%=prdName%></td>
+						<td><%=opname%></td>
+                        <td><%=opprice%>원</td>
+						<td><a style = "color:blue;" href="update_Managersurgery.jsp?prdNo=<%=prdNo%>&opNo=<%=opno%>">Yes</a></td>
+                         <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
+                    </tr>
+					<%
+		}  
+	}// while문의 끝
+%>
+                </tbody>
+
+
+
+
+
             </table>
+
+			</div>
 
             <a href="manager_main.jsp">
                 <div class="btn">메인</div>
 
             </a> 
-<script>
-$('tbody tr').eq(1).remove();
 
-</script>
 
         </div>
     </section>
@@ -172,7 +257,47 @@ $('tbody tr').eq(1).remove();
     
 
 
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+
+		
+
+		$(document).ready(function(){
+  
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
+
+})
+
+
+
+
+
+
+    </script>
+
+
     
+
 
 
 </body>

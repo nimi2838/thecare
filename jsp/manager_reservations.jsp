@@ -70,6 +70,15 @@ try {
                     <h2>전체 예약 조회</h2>
                 </div>
             </div>
+<div class="container">
+  <ul class="tabs flex">
+    <li class="tab-link current" data-tab="tab-1">이름순</li>
+    <li class="tab-link" data-tab="tab-2">아이디순</li>
+    <li class="tab-link" data-tab="tab-3">결제순</li>
+  </ul>
+
+
+
             <table>
                 <thead>
                     <tr>
@@ -79,6 +88,8 @@ try {
 						<th>연락처</th>
                         <th>예약일자</th>
                         <th>시술정보</th>
+						<th>시술가격</th>
+						<th>결제일자</th>
                         <th>요청사항</th>
 						<th>수정</th>
 						<th>삭제</th>
@@ -86,7 +97,7 @@ try {
                 </thead>
                 
                 
-              <tbody>
+              <tbody id="tab-0" class="tab-content current">
 			  <%
 	String jsql = "select * from rezinfo";   
 	PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -171,41 +182,328 @@ try {
 					  <%
 						  }
 					  %></td>
+					  <td><%=ordPay%></td>
+					  <td><%=ordDate.substring(0,14)%></td>
                         <td><%=ordMemo%></td>
 						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
-                        <td><a style = "color:red;" onclick="real()">Yes</a></td>
+                        <td><a style = "color:red;"  href="delete_ManagerRez_1.jsp?rezNo=<%=rezNo%>">Yes</a></td>
                     </tr>
 
-					<script>
-					var rez = <%=rezNo%>;
-					var prd = <%=prdNo%>;
-					
-							function real(){
-							 if(confirm("정말 예약을 취소하시겠습니까?"))
-							 {
-								 localStorage.setItem('rezNo','rez');
-								  localStorage.setItem('prdNo','prd');
-							  document.location.href="delete_ManagerRez.jsp"
-							 }
-							 else
-							 {
-							 alert('예약을 유지합니다.');
-							 return false;
-							 }
-							}
-					</script>
 					<%
 	}
 				  %>
                 </tbody>
+
+
+
+ <tbody id="tab-1" class="tab-content">
+			  <%
+	String jsql20 = "select * from rezinfo order by ordCustomer asc";   
+	PreparedStatement pstmt20 = con.prepareStatement(jsql20);
+
+	ResultSet rs20 = pstmt20.executeQuery();
+	while(rs20.next()) {
+
+			String rezNo =  rs20.getString("rezNo");	
+			String uId =  rs20.getString("uId");
+			String ordDate =  rs20.getString("ordDate");	
+			String ordCustomer =  rs20.getString("ordCustomer");	
+			String ordPhone =  rs20.getString("ordPhone");	
+			String ordPay =  rs20.getString("ordPay");	
+			String ordSex =  rs20.getString("ordSex");	
+			String ordBank =  rs20.getString("ordBank");
+			String ordMemo =  rs20.getString("ordMemo");
+
+			String jsql21 = "select * from rez";   
+			PreparedStatement pstmt21 = con.prepareStatement(jsql21);
+
+			ResultSet rs21 = pstmt21.executeQuery();
+			rs21.next();
+
+			String rezNo1 =  rs21.getString("rezNo");	
+	//		String prdNo =  rs1.getString("prdNo");	
+	//		String rezDate =  rs1.getString("rezDate");	
+
+
+				  %>
+                    <tr>
+                        <td><%=rezNo%></td>
+						<td><%=uId%></td>
+                        <td><%=ordCustomer%></td>
+                        <td><%=ordPhone%></td>
+						<%
+				String jsql22= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt22 = con.prepareStatement(jsql22);
+						pstmt22.setString(1, rezNo);
+
+						ResultSet rs22 = pstmt22.executeQuery();	
+						rs22.next();
+
+						Timestamp rezDate = rs22.getTimestamp("rezDate");
+						String prdNo = rs22.getString("prdNo");
+
+						String curDate = rezDate.toLocaleString();
+
+						
+						String jsql23= "SELECT * FROM surgery WHERE prdNo=?";
+						PreparedStatement pstmt23 = con.prepareStatement(jsql23);
+						pstmt23.setString(1, prdNo);
+
+						ResultSet rs23 = pstmt23.executeQuery();	
+						rs23.next();
+
+						String prdName = rs23.getString("prdName");
+				  %>
+						<td><%=curDate%></td>
+                        <td class="opname">
+						<%
+					  String jsql24= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt24 = con.prepareStatement(jsql24);
+						pstmt24.setString(1, rezNo);
+
+						ResultSet rs24 = pstmt24.executeQuery();	
+						while(rs24.next()) {
+							String opNo = rs24.getString("opNo");
+
+
+						String jsql25= "SELECT * FROM soption WHERE opNo=?";
+						PreparedStatement pstmt25 = con.prepareStatement(jsql25);
+						pstmt25.setString(1, opNo);
+
+						ResultSet rs25 = pstmt25.executeQuery();	
+						rs25.next();
+
+						String opName = rs25.getString("opName");
+
+							
+					  %>
+					  <%=prdName%>(<%=opName%>) <br>
+					  <%
+						  }
+					  %></td>
+					  <td><%=ordPay%></td>
+					  <td><%=ordDate.substring(0,14)%></td>
+                        <td><%=ordMemo%></td>
+						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                        <td><a style = "color:red;"  href="delete_ManagerRez_1.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                    </tr>
+
+					<%
+	}
+				  %>
+                </tbody>
+
+
+
+
+				 <tbody id="tab-2" class="tab-content">
+			  <%
+	String jsql3 = "select * from rezinfo order by uId asc";   
+	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+
+	ResultSet rs3 = pstmt3.executeQuery();
+	while(rs3.next()) {
+
+			String rezNo =  rs3.getString("rezNo");	
+			String uId =  rs3.getString("uId");
+			String ordDate =  rs3.getString("ordDate");	
+			String ordCustomer =  rs3.getString("ordCustomer");	
+			String ordPhone =  rs3.getString("ordPhone");	
+			String ordPay =  rs3.getString("ordPay");	
+			String ordSex =  rs3.getString("ordSex");	
+			String ordBank =  rs3.getString("ordBank");
+			String ordMemo =  rs3.getString("ordMemo");
+
+			String jsql4 = "select * from rez";   
+			PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+
+			ResultSet rs4 = pstmt4.executeQuery();
+			rs4.next();
+
+			String rezNo1 =  rs4.getString("rezNo");	
+	//		String prdNo =  rs1.getString("prdNo");	
+	//		String rezDate =  rs1.getString("rezDate");	
+
+
+				  %>
+                    <tr>
+                        <td><%=rezNo%></td>
+						<td><%=uId%></td>
+                        <td><%=ordCustomer%></td>
+                        <td><%=ordPhone%></td>
+						<%
+				String jsql5= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+						pstmt5.setString(1, rezNo);
+
+						ResultSet rs5 = pstmt5.executeQuery();	
+						rs5.next();
+
+						Timestamp rezDate = rs5.getTimestamp("rezDate");
+						String prdNo = rs5.getString("prdNo");
+
+						String curDate = rezDate.toLocaleString();
+
+						
+						String jsql9= "SELECT * FROM surgery WHERE prdNo=?";
+						PreparedStatement pstmt9 = con.prepareStatement(jsql9);
+						pstmt9.setString(1, prdNo);
+
+						ResultSet rs9 = pstmt9.executeQuery();	
+						rs9.next();
+
+						String prdName = rs9.getString("prdName");
+				  %>
+						<td><%=curDate%></td>
+                        <td class="opname">
+						<%
+					  String jsql10= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt10 = con.prepareStatement(jsql10);
+						pstmt10.setString(1, rezNo);
+
+						ResultSet rs10 = pstmt10.executeQuery();	
+						while(rs10.next()) {
+							String opNo = rs10.getString("opNo");
+
+
+						String jsql11= "SELECT * FROM soption WHERE opNo=?";
+						PreparedStatement pstmt11 = con.prepareStatement(jsql11);
+						pstmt11.setString(1, opNo);
+
+						ResultSet rs11 = pstmt11.executeQuery();	
+						rs11.next();
+
+						String opName = rs11.getString("opName");
+
+							
+					  %>
+					  <%=prdName%>(<%=opName%>) <br>
+					  <%
+						  }
+					  %></td>
+					  <td><%=ordPay%></td>
+					  <td><%=ordDate.substring(0,14)%></td>
+                        <td><%=ordMemo%></td>
+						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                        <td><a style = "color:red;"  href="delete_ManagerRez_1.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                    </tr>
+
+					<%
+	}
+				  %>
+                </tbody>
+
+
+				 <tbody id="tab-3" class="tab-content">
+			  <%
+	String jsql12 = "select * from rezinfo order by ordDate asc";   
+	PreparedStatement pstmt12 = con.prepareStatement(jsql12);
+
+	ResultSet rs12 = pstmt12.executeQuery();
+	while(rs12.next()) {
+
+
+			String rezNo =  rs12.getString("rezNo");	
+			String uId =  rs12.getString("uId");
+			String ordDate =  rs12.getString("ordDate");	
+			String ordCustomer =  rs12.getString("ordCustomer");	
+			String ordPhone =  rs12.getString("ordPhone");	
+			String ordPay =  rs12.getString("ordPay");	
+			String ordSex =  rs12.getString("ordSex");	
+			String ordBank =  rs12.getString("ordBank");
+			String ordMemo =  rs12.getString("ordMemo");
+
+
+			String jsql13 = "select * from rez";   
+			PreparedStatement pstmt13 = con.prepareStatement(jsql13);
+
+			ResultSet rs13 = pstmt13.executeQuery();
+			rs13.next();
+
+			String rezNo1 =  rs13.getString("rezNo");	
+	//		String prdNo =  rs1.getString("prdNo");	
+	//		String rezDate =  rs1.getString("rezDate");	
+
+
+				  %>
+                    <tr>
+                        <td><%=rezNo%></td>
+						<td><%=uId%></td>
+                        <td><%=ordCustomer%></td>
+                        <td><%=ordPhone%></td>
+						<%
+				String jsql14= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt14 = con.prepareStatement(jsql14);
+						pstmt14.setString(1, rezNo);
+
+						ResultSet rs14 = pstmt14.executeQuery();	
+						rs14.next();
+
+						Timestamp rezDate = rs14.getTimestamp("rezDate");
+						String prdNo = rs14.getString("prdNo");
+
+						String curDate = rezDate.toLocaleString();
+
+						
+						String jsql15= "SELECT * FROM surgery WHERE prdNo=?";
+						PreparedStatement pstmt15 = con.prepareStatement(jsql15);
+						pstmt15.setString(1, prdNo);
+
+						ResultSet rs15 = pstmt15.executeQuery();	
+						rs15.next();
+
+						String prdName = rs15.getString("prdName");
+				  %>
+						<td><%=curDate%></td>
+                        <td class="opname">
+						<%
+					  String jsql16= "SELECT * FROM rez WHERE rezNo=?";
+						PreparedStatement pstmt16 = con.prepareStatement(jsql16);
+						pstmt16.setString(1, rezNo);
+
+						ResultSet rs16 = pstmt16.executeQuery();	
+						while(rs16.next()) {
+							String opNo = rs16.getString("opNo");
+
+
+						String jsql17= "SELECT * FROM soption WHERE opNo=?";
+						PreparedStatement pstmt17 = con.prepareStatement(jsql17);
+						pstmt17.setString(1, opNo);
+
+						ResultSet rs17 = pstmt17.executeQuery();	
+						rs17.next();
+
+						String opName = rs17.getString("opName");
+
+							
+					  %>
+					  <%=prdName%>(<%=opName%>) <br>
+					  <%
+						  }
+					  %></td>
+					  <td><%=ordPay%></td>
+					  <td><%=ordDate.substring(0,14)%></td>
+                        <td><%=ordMemo%></td>
+						<td><a style = "color:blue;" href="update_ManagerRez.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                        <td><a style = "color:red;"  href="delete_ManagerRez_1.jsp?rezNo=<%=rezNo%>">Yes</a></td>
+                    </tr>
+
+					<%
+	}
+				  %>
+                </tbody>
+
+
             </table>
+
+			</div>  
 
             <a href="manager_main.jsp">
                 <div class="btn">메인</div>
             </a> 
 
 
-        </div>
+        </div> <!-- <div class="container"> -->
     </section>
 
 	
@@ -252,170 +550,34 @@ catch(Exception e) {
 
 
 
-    <!-- 탑바 -->
+<!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
 
 
 
 
     <script>
 
-
-        AOS.init();
-
-				function _submit(f)
-				{
-					//같이 보낼 값 정리
-					if (typeof(f.elements['chk[]'].length) == 'undefined') //단일
-					{
-						if (f.elements['chk[]'].checked==false)
-						{
-							f.elements['field_a[]'].disabled=true;
-							f.elements['field_b[]'].disabled=true;
-						}
-					} else { //다중
-						for (i=0; i<f.elements['chk[]'].length; i++)
-						{
-							if (f.elements['chk[]'][i].checked==false)
-							{
-								f.elements['field_a[]'][i].disabled=true;
-								f.elements['field_b[]'][i].disabled=true;
-							}
-						}
-					}
-					return true;
-				}
-
-        let = 0
-
-        $(function () {
-            $(".plz li").on("click", function () {
-                no = $(this).index() + 1;
-                $(".plz li ").show();
-                $('.plz li ').removeClass('on');
-                $(this).addClass('on');
-
-                $(".ne").hide();
-                if ($('.ne').css('display') == 'none') {
-                    $(".ne" + no).show();
-                } else {
-                    $(".ne").hide();
-                }
-
-
-
-            });
-        });
-
-
-const $topBtn = document.querySelector(".moveTopBtn");
-
-// 버튼 클릭 시 맨 위로 이동
-$topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-
-		
-     gsap.to('.top-wrap > .top-box2', {
-            scrollTrigger: {
-                trigger: '.top-wrap',
-                start: 'top -98px',
-                scrub: true
-            },
-            height: '61px',
-            textalign: 'center',
-            top: '0',
-            position: 'fixed',
-            background: '#fff',
-            borderBottom: '1px solid #ccc'
-        });
-
-
- function keyword_check(){
-
-			  if(document.search.keyword.value==''){ 
-
-			  alert('검색어를 입력하세요');
-
-			  document.search.keyword.focus(); 
-
-			  return false; 
-
-			  }
-
-			  else return true;
-
-			 }
-
-
-
-
-		function search_form()
-		{
-			var frm = document.search;
-			frm.action = "search.jsp";
-			frm.submit();
-		}
-
-
-		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
-		{
-
-		var checked = $('.chk').is(':checked');
-
-		if(checked) {
-
-			var frm1 = document.form;
-
-			frm1.action = "incart1.jsp"
-			document.getElementById('button').click();
-		} else {
-			alert("옵션을 선택해주세요 !");
-		}
-			
-		}
-
-		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
-		{
-
-		var checked = $('.chk').is(':checked');
-
-		if(checked) {
-
-			var frm1 = document.form;
-			frm1.action = "rezResult.jsp"
-			document.getElementById('button').click();
-
-		} else {
-			alert("옵션을 선택해주세요 !");
-		}
-			
-
-
-		}
-
-
-		function cart1()
-		{
-			alert('장바구니에 해당 시술이 있습니다.');
-		}
-
-		function login()
-		{
-			alert('로그인 후 이용 가능한 페이지입니다.');
-			document.location.href="login.jsp";
-		}
-
-
 		
 
-		
+		$(document).ready(function(){
+  
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
+
+})
 
 
 

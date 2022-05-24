@@ -12,12 +12,6 @@
 
 
 <body>
-<script>
-
-if(localStorage.getItem('uId')){ 
-	var lastData = localStorage.getItem('uId')
-	}
-</script>
 
 <%
 
@@ -32,37 +26,44 @@ try {
 	
 	request.setCharacterEncoding("euc-kr");
 
+	String rezNo = request.getParameter("rezNo");
 
-String uId = request.getParameter("uId");
 
-	String jsql7= "SELECT * FROM user WHERE uId=?";
+	String jsql7= "SELECT * FROM rezinfo WHERE rezNo=?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, uId);
+			pstmt7.setString(1, rezNo);
 
 			ResultSet rs7 = pstmt7.executeQuery(); 
 			if(rs7.next()){
 
 				
 
-String jsql5 = "delete from user WHERE uId=?";
+String jsql5 = "delete from rezinfo WHERE rezNo=?";
 					PreparedStatement pstmt5 = con.prepareStatement(jsql5);
-					pstmt5.setString(1,uId);
+					pstmt5.setString(1,rezNo);
 
 					pstmt5.executeUpdate();
 
 			
+
+			String jsql6 = "delete from rez WHERE rezNo=?";
+					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+					pstmt6.setString(1,rezNo);
+
+					pstmt6.executeUpdate();
+
 	
 %>
 
 	<script>
-		alter("ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!");
+		alter("»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù!");
 	</script>
 
 <%
 
 			}
 		
-			response.sendRedirect("manager_member.jsp");    
+			response.sendRedirect("manager_reservations.jsp");    
 
 
     } catch(Exception e) {

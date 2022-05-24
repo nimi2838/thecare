@@ -62,30 +62,17 @@ try {
             </div>
 
 
-<script> 
-var name = function(url){
-
-	$.ajax({
-		type: 'get',
-		url: "../PricelistDesc",
-		data: "",
-		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
-		success: function(data) {
-			$('#product_list').html(data);
-		},
-		error: function(request, status, error) {
-			alert(error);
-		}
-	});
-};
-
-</script>
+<div class="container">
+			  <ul class="tabs flex">
+				<li class="tab-link current" data-tab="tab-1">이름순</li>
+				<li class="tab-link" data-tab="tab-2">나이순</li>
+				<li class="tab-link" data-tab="tab-3">아이디순</li>
+			  </ul>
 
             <table>
                 <thead>
                     <tr>
                         <th>아이디</th>
-                        <th>비밀번호</th>
                         <th>이름</th>
                         <th>주민번호</th>
                         <th>생년월일</th>
@@ -98,15 +85,16 @@ var name = function(url){
                         <th>삭제</th>
                     </tr>
                 </thead>
-
-                <%
+				
+                
+                <tbody id="tab-0" class="tab-content current">
+				<%
 			 String jsql = "select * from user";   
 	         PreparedStatement  pstmt = con.prepareStatement(jsql);
 	         ResultSet  rs = pstmt.executeQuery();
 
 		while(rs.next()){
 			String id = rs.getString("uId"); 
-    		String pw =  rs.getString("uPw");	
 			String name = rs.getString("uName");
     		String joomin =  rs.getString("uJoomin");	
 			Date birth = rs.getDate("uBirth");
@@ -119,10 +107,9 @@ var name = function(url){
 			String sex = rs.getString("uSex");
 			int point =  rs.getInt("Point");		
 %>
-                <tbody>
+
                     <tr>
                         <td><%=id%></a></td>
-                        <td><%=pw%></td>
                         <td><%=name%></td>
                         <td><%=joomin%></td>
                         <td><%=birth%></td>
@@ -132,28 +119,157 @@ var name = function(url){
                         <td><%=sex%></td>
                         <td><%=point%>원</td>
                         <td><a style = "color:blue;" href="update_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
-                        <td><a style = "color:red; cursor: pointer;" onclick="real()">Yes</a></td>
+                        <td><a style = "color:red; cursor: pointer;" href="delete_ManagerUser_1.jsp?uId=<%=id%>">Yes</a></td>
                     </tr>
-                </tbody>
-                    <script>
+
 					
-							function real(){
-							 if(confirm("회원을 삭제하시겠습니까?"))
-							 {
-							  document.location.href="delete_ManagerUser.jsp?uId=<%=id%>"
-							 }
-							 else
-							 {
-							 alert('회원을 유지합니다.');
-							 return false;
-							 }
-							}
-					</script>
+               
 
 				<%
 		}  // while문의 끝
 %>
+
+	 </tbody>
+
+	 <tbody id="tab-1" class="tab-content">
+				<%
+			 String jsql1 = "SELECT * FROM USER ORDER BY uName ASC";   
+	         PreparedStatement  pstmt1 = con.prepareStatement(jsql1);
+	         ResultSet rs1 = pstmt1.executeQuery();
+
+		while(rs1.next()){
+			String id = rs1.getString("uId"); 
+			String name = rs1.getString("uName");
+    		String joomin =  rs1.getString("uJoomin");	
+			Date birth = rs1.getDate("uBirth");
+    		String solar =  rs1.getString("uSolar");	
+			String email = rs1.getString("uEmail");
+			String phone = rs1.getString("uPhone");
+			String address1 = rs1.getString("uAddress1");
+			String address2 = rs1.getString("uAddress2");
+			String zipcode = rs1.getString("uZipcode");
+			String sex = rs1.getString("uSex");
+			int point =  rs1.getInt("Point");		
+%>
+
+                    <tr>
+                        <td><%=id%></a></td>
+                        <td><%=name%></td>
+                        <td><%=joomin%></td>
+                        <td><%=birth%></td>
+                        <td><%=email%></td>
+                        <td><%=phone%></td>
+                        <td><%=zipcode%><br><%=address1%>(<%=address2%>)</td>
+                        <td><%=sex%></td>
+                        <td><%=point%>원</td>
+                        <td><a style = "color:blue;" href="update_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
+                        <td><a style = "color:red; cursor: pointer;"  href="delete_ManagerUser_1.jsp?uId=<%=id%>">Yes</a></td>
+                    </tr>
+               
+			   
+         
+
+
+				<%
+		}  // while문의 끝
+%>
+
+	 </tbody>
+
+	 <tbody id="tab-2" class="tab-content">
+				<%
+			 String jsql2 = "SELECT * FROM USER ORDER BY uBirth ASC;";   
+	         PreparedStatement  pstmt2 = con.prepareStatement(jsql2);
+	         ResultSet  rs2 = pstmt2.executeQuery();
+
+		while(rs2.next()){
+			String id = rs2.getString("uId"); 
+			String name = rs2.getString("uName");
+    		String joomin =  rs2.getString("uJoomin");	
+			Date birth = rs2.getDate("uBirth");
+    		String solar =  rs2.getString("uSolar");	
+			String email = rs2.getString("uEmail");
+			String phone = rs2.getString("uPhone");
+			String address1 = rs2.getString("uAddress1");
+			String address2 = rs2.getString("uAddress2");
+			String zipcode = rs2.getString("uZipcode");
+			String sex = rs2.getString("uSex");
+			int point =  rs2.getInt("Point");		
+%>
+
+                    <tr>
+                        <td><%=id%></a></td>
+                        <td><%=name%></td>
+                        <td><%=joomin%></td>
+                        <td><%=birth%></td>
+                        <td><%=email%></td>
+                        <td><%=phone%></td>
+                        <td><%=zipcode%><br><%=address1%>(<%=address2%>)</td>
+                        <td><%=sex%></td>
+                        <td><%=point%>원</td>
+                        <td><a style = "color:blue;" href="update_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
+                        <td><a style = "color:red; cursor: pointer;" href="delete_ManagerUser_1.jsp?uId=<%=id%>">Yes</a></td>
+                    </tr>
+               
+
+
+
+				<%
+		}  // while문의 끝
+%>
+
+	 </tbody>
+
+
+	 <tbody id="tab-3" class="tab-content">
+				<%
+			 String jsql3 = "SELECT * FROM USER ORDER BY uId ASC;";   
+	         PreparedStatement  pstmt3 = con.prepareStatement(jsql3);
+	         ResultSet  rs3 = pstmt3.executeQuery();
+
+		while(rs3.next()){
+			String id = rs3.getString("uId"); 
+			String name = rs3.getString("uName");
+    		String joomin =  rs3.getString("uJoomin");	
+			Date birth = rs3.getDate("uBirth");
+    		String solar =  rs3.getString("uSolar");	
+			String email = rs3.getString("uEmail");
+			String phone = rs3.getString("uPhone");
+			String address1 = rs3.getString("uAddress1");
+			String address2 = rs3.getString("uAddress2");
+			String zipcode = rs3.getString("uZipcode");
+			String sex = rs3.getString("uSex");
+			int point =  rs3.getInt("Point");		
+%>
+
+                    <tr>
+                        <td><%=id%></a></td>
+                        <td><%=name%></td>
+                        <td><%=joomin%></td>
+                        <td><%=birth%></td>
+                        <td><%=email%></td>
+                        <td><%=phone%></td>
+                        <td><%=zipcode%><br><%=address1%>(<%=address2%>)</td>
+                        <td><%=sex%></td>
+                        <td><%=point%>원</td>
+                        <td><a style = "color:blue;" href="update_ManagerUser.jsp?id=<%=id%>">Yes</a></td>
+                        <td><a style = "color:red; cursor: pointer;" href="delete_ManagerUser_1.jsp?uId=<%=id%>">Yes</a></td>
+                    </tr>
+
+					
+
+               
+
+				<%
+		}  // while문의 끝
+%>
+
+	 </tbody>
+
+
             </table>
+
+			</div>
 
             <a href="manager_main.jsp">
                 <div class="btn">메인</div>
@@ -188,6 +304,40 @@ var name = function(url){
     
 
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
+
+
+
+    <script>
+
+		
+
+		$(document).ready(function(){
+  
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
+
+})
+
+
+
+
+
+
+    </script>
     
 
 

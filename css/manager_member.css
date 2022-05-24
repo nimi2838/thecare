@@ -9,7 +9,7 @@
   
   body {
 	font-family: 'ChosunSg';
-	font-size: 14px;
+	font-size: 16px;
 	color: #252525;
 	margin: 0;
 	padding: 0;
@@ -121,14 +121,14 @@
  .titleArea .new > a > p {margin-top: 8px;}
   
  table {width: 100%; text-align: center; margin-bottom: 50px;}
- thead {width: 100%; font-weight: bold; font-size: 15px;}
+ thead {width: 100%; font-weight: bold; font-size: 18px;}
  table > thead > tr > th {border-bottom: 1px solid rgb(99, 99, 99); padding: 20px 0;}
 
 
- table > tbody > tr > td {border-bottom: 1px solid #ccc; padding: 20px 0;}
+ table > tbody > tr > td {border-bottom: 1px solid #ccc; padding: 20px 0; font-size: 17px;}
  a > .btn {
    width: 100px; height: 40px; font-weight: bold; 
-   font-size: 18px; text-align: center; background-color: rgb(117, 117, 117); 
+   font-size: 16px; text-align: center; background-color: rgb(117, 117, 117); 
    color: #fff; margin: 0 auto; line-height: 40px; border-radius: 5px;
    transition: 0.5s;
   }
@@ -168,6 +168,25 @@
 	}
 
   
+
+
+
+
+
+.tabs .tab-link {
+	    padding: 5px;
+    background: #eee;
+    margin: 0 5px;
+	cursor: pointer;
+}
+
+  .tab-content{
+  display: none;
+}
+
+.tab-content.current{
+  display:table-row-group;
+}
 
 
 

@@ -35,34 +35,31 @@ try {
 
 String uId = request.getParameter("uId");
 
-	String jsql7= "SELECT * FROM user WHERE uId=?";
-			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
-			pstmt7.setString(1, uId);
-
-			ResultSet rs7 = pstmt7.executeQuery(); 
-			if(rs7.next()){
-
-				
-
-String jsql5 = "delete from user WHERE uId=?";
-					PreparedStatement pstmt5 = con.prepareStatement(jsql5);
-					pstmt5.setString(1,uId);
-
-					pstmt5.executeUpdate();
-
 			
 	
 %>
 
-	<script>
-		alter("ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!");
-	</script>
+	
+                    <script>
+					
+							window.onload = function() {
+							 if(confirm("È¸¿øÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?"))
+							 {
+							  document.location.href="delete_ManagerUser.jsp?uId=<%=uId%>"
+							 }
+							 else
+							 {
+							 alert('È¸¿øÀ» À¯ÁöÇÕ´Ï´Ù.');
+							 document.location.href="manager_member.jsp"
+							 }
+							}
+					</script>
+
+
 
 <%
 
-			}
 		
-			response.sendRedirect("manager_member.jsp");    
 
 
     } catch(Exception e) {
