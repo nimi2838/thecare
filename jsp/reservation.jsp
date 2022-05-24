@@ -906,8 +906,23 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 										String Coupon = rs10.getString("Coupon"); 
 %>
 
+	
 
 <%
+										String jsql11 = "SELECT * FROM USER WHERE uId=? AND  Coupon IS NULL;";   
+										PreparedStatement pstmt11 = con.prepareStatement(jsql11);
+										pstmt11.setString(1,myid);
+	
+										ResultSet rs11 = pstmt11.executeQuery();
+										if(rs11.next()) {
+
+										%>
+												<option style="height: 30px;" id="cou" value="null">사용 가능한 쿠폰이 없습니다.</option>
+										
+<%
+	
+										} //rs11
+										else {
 
 										if(Coupon.contains("c01")) {
 
@@ -1024,6 +1039,8 @@ String jsql2= "SELECT * FROM gocart WHERE ctNo=?";
 					<%
 
 										} //if
+
+										} //rs11 else
 %>
 
 
