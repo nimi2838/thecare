@@ -1,5 +1,6 @@
- <%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 <html lang="ko">
 
 <head>
@@ -9,20 +10,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/21f77d5a02.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/updateUser.css" />
-  <script language="javascript" src="js/js_package.js"> </script>
+  <link rel="stylesheet" href="css/rez.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <script src="cal.js"></script>
+  <title>시술예약</title>
   
+<script>
 
-  <title>회원정보 변경</title>
+
+    </script>
 </head>
-
 <%
-   String myid = (String)session.getAttribute("sid");                                                                           
+DecimalFormat df = new DecimalFormat("###,###");
+%>
+<%
+   String myid = (String)session.getAttribute("sid");         
+   
 %>
 <body>
-
     <div class="top-wrap">
         <div class="top-box1 flex flex-jc-sb flex-ai-c">
 
@@ -114,7 +122,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">시술안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/비용</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -190,7 +198,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                      <li><a href="guide.jsp">시술안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/비용</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -340,7 +348,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">시술안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/비용</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -420,7 +428,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">시술안내/가격</a></li>
+                                        <li><a href="guide.jsp">시술안내/비용</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -502,224 +510,289 @@ else{
         </div>
 
 
+	
+<div class = "contents">
+<div class = "inner">
 
 
-
-
-
-
-
-
-
-
-
-
-	<%
-try {
-     String DB_URL="jdbc:mysql://localhost:3306/care";  
+			<div class = "change_tit" ><h1 style = "font-size: 33px;">시술예약</h1></div>
+    <div class="no_box" style=" margin: 20px auto 0px;">
+<%
+ try{
+ 	 String DB_URL="jdbc:mysql://localhost:3306/care?characterEncoding=euckr";   
      String DB_ID="skin";  
      String DB_PASSWORD="1234";
-     
-    Class.forName("org.gjt.mm.mysql.Driver"); 
-    Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
-   
-    String key = request.getParameter("id");   
-    String jsql = "select * from user where uId = ?";
-    PreparedStatement pstmt = con.prepareStatement(jsql);
-    pstmt.setString(1,key);
+ 	 
+	 Class.forName("org.gjt.mm.mysql.Driver"); 
+ 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
-    ResultSet rs = pstmt.executeQuery();
-	rs.next();
-
-    String id = rs.getString("uId");
-    String pw = rs.getString("uPw");
-    String name = rs.getString("uName");
-    String joomin = rs.getString("uJoomin");
-    Date birth = rs.getDate("uBirth");
-    String solar = rs.getString("uSolar");
-    String email = rs.getString("uEmail");
-    String phone = rs.getString("uPhone");
-	String zipcode = rs.getString("uZipcode");
-    String address1 = rs.getString("uAddress1");
-	String address2 = rs.getString("uAddress2");
-    String sex = rs.getString("uSex");
-	String Point = rs.getString("Point");
-	String Coupon = rs.getString("Coupon");
-
-	String jsql3 = "select count(?) as cnt from user where Coupon =?";
-	 PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-	 pstmt3.setString(1,myid);
-	 pstmt3.setString(2,Coupon);
+	String ctNo = session.getId(); 
 
 
-	 ResultSet rs2 = pstmt3.executeQuery();
-	 rs2.next();
-	int cnt = rs2.getInt("cnt");
+	String rezNo = request.getParameter("rezNo");
 	
-	
-%>
+
+			
+
+ int total=0;
 
 
+				String jsql5= "SELECT * FROM rez WHERE rezNo=?";
+			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+			pstmt5.setString(1, rezNo);
 
-	 <!-- 마이페이지 배너 -->
+			ResultSet rs5 = pstmt5.executeQuery(); 
+			while(rs5.next()){
+			
+			String opNo = rs5.getString("opNo"); 
+			String prdNo = rs5.getString("prdNo"); 
 
-        <div class = "mypage_banner">
-            <div class = "inner">
-                <div class = "tit">
-                <h2>My Page</h2>
-                </div>
-                
-                
-               <div class = "my_info">
-               
-                    <i class="fa-duotone fa-circle-user"></i>
-                </div>
 
-                <div class = "my_info_text">
-                    <h1><%=name%> 님</h1>
-                   <a href="updateUser.jsp?id=<%=myid%>">회원정보 변경</a>
-                </div>
+					String jsql4= "SELECT * FROM surgery WHERE prdNo=?";
+					PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+					pstmt4.setString(1, prdNo);
 
-                <div class = "my_point">
-                  <h1>Point</h1>
-                    <p><b style = "color: #f89fa8"><%=Point%></b> p</p>
-                </div>
+					ResultSet rs4 = pstmt4.executeQuery(); 
+					rs4.next();
 
-                <div class = "my_coupon">
-                    <h1>Coupon</h1>
-                    <p><b style = "color: #f89fa8"><%=cnt%></b>장</p>
-                </div>
+					String name = rs4.getString("prdName"); 
+					String price = rs4.getString("startprice"); 
 
-               
+					String jsql3= "SELECT * FROM soption WHERE opNo=?";
+					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+					pstmt3.setString(1, opNo);
+
+					ResultSet rs3 = pstmt3.executeQuery(); 
+					rs3.next();
+
+					String opname = rs3.getString("opName"); 
+					int opprice = rs3.getInt("opPrice"); 
+
+					total = total + opprice;
+			%>
+
+				
+        
+    		<div class="search_box">
+            <div class="search1">
+			<a href="sub_<%=prdNo%>.jsp?prdNo=<%=prdNo%>" class="search_a">
+                <h2><%=name%></h2>
+                <p><%=opname%></p>
+				</a>
             </div>
-        </div>
-
-
-
-
-        <div class = "mypage_title">
-            <div class = "inner">
-                <h1>회원정보 변경</h1>
-                <hr>
+            <div class="search2">
+                <div class="price">
+                    <span><%=df.format(opprice) %></span>원
+                </div>
+				<a href=deletegocart.jsp?prdNo=<%=prdNo%>&opNo=<%=opNo%> class="btn" style="border: none; background:none;">취소</a>
             </div>
-        </div>
+			</div>
+    			
+	<%} //while
 
-<center>
- <form name="newMem1" method=post action="updateUserResult.jsp">
-   <table class="table">
-      <tr>
-         <td class="td_tit">아이디</td>
-         <td><input type=hidden name="id" value="<%=id%>"><%=id%></td>
-      </tr>
-      <tr>
-         <td class="td_tit">비밀번호</td>
-         <td><input type=text name="pw" size=40 value="<%=pw%>"></td>
-      </tr>
-      <tr>
-         <td class="td_tit">이름</td>
-         <td><input type=text name="name" size=40 value="<%=name%>"></td>
-      </tr>
-      <tr>
-         <td class="td_tit">주민등록번호</td>
-         <td>
-<%
-          String[ ]  joominArr = joomin.split("-");   
-  // String  joominArr[ ] = joomin.split("-");와 동일
-  // split()함수 안의 인수를 기준으로 문자열들을 각각 분할하여 배열의 요소들에 
-  // 순서대로 저장시킴.  즉, 하이픈(-)을 중심으로 주민번호 앞 6자리와 뒤 7자리를 
-  // 별도의 문자열들로 분리 후, joominArr[0]와 joominArr[1]에 각각 저장시킴
-%>      
-          <input type=text name="joomin1" value="<%=joominArr[0]%>" size="15"> -
-         <input type=text name="joomin2" value="<%=joominArr[1]%>" size="16">
-         </td>
-      </tr>
+	%>
 
-      <tr>
-         <td class="td_tit">생년월일</td>
-         <td>
+		
+
+		
+			
+		
+
+    </div>
+<hr>
+
+
+
+
+<form name="res" method=post onSubmit="return false;">
+<table class="scriptCalendar" >
+    <thead > 
+        <tr>
+            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td>
+            <td colspan="5">
+                <span id="calYear">YYYY</span>년
+                <span id="calMonth">MM</span>월
+            </td>
+            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;&#62;</td>
+        </tr>
+        <tr>
+            <td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+
+<div class="BookingTimeArea" alt="예약시간" >
+												
+						<ul class="List">
+							<li>
+								<label class = "btns">10:00</label></li>
+							
+							
+														<li>
+								<label  class = "btns">10:30</label>
+							</li>
+							
+														<li>
+								<label class = "btns">11:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">11:30</label>
+							</li>
+							
+							
+								
+														
+														<li>
+								<label class = "btns">12:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">12:30</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">13:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">13:30</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">14:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">14:30</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">15:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">15:30</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">16:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">16:30</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">17:00</label>
+							</li>
+							
+							
+														<li>
+								<label class = "btns">17:30</label>
+							</li>
+
+							<li>
+								<label class = "btns">18:00</label>
+							</li>
+							</ul>
+					</div>
+ 
+
 <%
-          String[ ]  birthArr = birth.toString().split("-");  
-//  split()함수는 String 타입에서만 사용가능하므로, toString()메소드를 사용하여 birth의
-//  타입을 Date타입에서 String타입으로 형(type) 변환 후, split()함수를 적용시켜 년,월,일을 분리함.
-//  즉, birthArr[0]에는 "년",  birthArr[1]에는 "월", birthArr[2]에는 "일"이 각각 분리되어 저장됨
-%>      
-          <input type=text name="birthyy" value="<%=birthArr[0]%>" size="7">년
-          <input type=text name="birthmm" value="<%=birthArr[1]%>" size="5">월
-          <input type=text name="birthdd" value="<%=birthArr[2]%>" size="5">일
-<%
-   if (solar.equals("양력"))
-   {
+
+String jsql8= "SELECT * FROM rezinfo WHERE rezNo=?";
+			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+			pstmt8.setString(1, rezNo);
+
+			ResultSet rs8 = pstmt8.executeQuery(); 
+			rs8.next();
+			
+			String uid = rs8.getString("uId"); 
+			String ordDate = rs8.getString("ordDate"); 
+			String ordCustomer = rs8.getString("ordCustomer"); 
+			String ordPhone = rs8.getString("ordPhone"); 
+			String ordSex = rs8.getString("ordSex"); 
+			String ordPay = rs8.getString("ordPay"); 
+
+
+
+
+	String jsql6= "SELECT * FROM user WHERE uId=?";
+					PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+					pstmt6.setString(1, uid);
+
+					ResultSet rs6 = pstmt6.executeQuery(); 
+					rs6.next();
+
+
 %>
-            <input type=radio name=solar value="양력" checked>양력
-            <input type=radio name=solar value="음력">음력
+
+					<div class = "tit" style = "width: 100%; float:left; border-bottom: 1px solid #ccc;" ><h1 style = "font-size: 33px;">고객정보 입력</h1></div>
+
+					
+					
+					
+					
+					
+					
+					
+					
+					<table class="table" style="font-size:10pt; margin-top:30px; width: 100%;  ">
+
+					 <tr>
+									<td class = "td_tit">
+									<p style = " position: relative;"> 총 결제금액
+									<input name='sell4' id='sell4' type='text' value="<%=df.format(Integer.parseInt(ordPay))%>" readonly style = "color: red; border: none; font-size: 18px; text-align: end;width: 295px;">원</td>
+					</tr>
+					<tr style="margin: 0 auto;">
+						<td class = "td_tit">
+						기존 요일/시간 : <input type="text" name="orddate" id="orddate" style="width: 280px; cursor: hand; border:none;" readonly value="<%=ordDate%>">
+						</td>
+						</tr>
+
+ 					<tr style="margin: 0 auto;">
+						
+
+						<td class = "td_tit">
+						선택 요일/시간 : 
+						  <input type="text" name="day1" id="day1" style="width: 95px; cursor: hand;" readonly>
+						<input type="text" name="date" id="date" style="width: 58px; margin-left: 10px; cursor: hand;" readonly>
+						</td>
+
+						
+
+
+						  
+						
+					</tr>
+					                    
+					<tr>
+                          <td class = "td_tit">
+						  <input type="hidden" name="rezno" style = "margin-left: 75px; " value="<%=rezNo%>">
+						  이름 : <input type="text" name="name" class="name"   value="<%=ordCustomer%>" readonly >
+						  </td>
+                      </tr>
+					  <tr>
+                          <td class = "td_tit">
+						  연락처 : 
+						  
 <%
-   }
-   else
-   {
-%>
-            <input type=radio name=solar value="양력">양력
-            <input type=radio name=solar value="음력" checked>음력
-<%
-   }
-%>
-         </td>
-      </tr>
-     <tr>
-			<td class="td_tit">이메일</td>
-			<td>
-<%
-	    	String[ ]  emailArr = email.split("@"); 
-
-
-            String[ ]  emailSelected = new String[6];  
-    	// "selected" 문자열을 저장하기 위한 용도의 배열 생성
-
-			if(emailArr[1].equals("naver.com"))
-			{
-				emailSelected[0] = "selected";
-			}  
-			else if(emailArr[1].equals("hanmail.net"))
-			{
-				emailSelected[1] = "selected";
-			}
-			else if(emailArr[1].equals("daum.net"))
-			{
-				emailSelected[2] = "selected";
-			}
-			else if(emailArr[1].equals("nate.com"))
-			{
-				emailSelected[3] = "selected";
-			}
-			else if(emailArr[1].equals("gmail.com"))
-			{
-				emailSelected[4] = "selected";
-			}
-			else if(emailArr[1].equals("icloud.com"))
-			{
-				emailSelected[5] = "selected";
-			}
-
-%>
-
-		    <input type=text name="email1" value="<%=emailArr[0]%>" size="10">&nbsp;@&nbsp;
-			<select name="email2"  >      
-				<option value="naver" <%=emailSelected[0]%>>naver.com
-				<option value="hanmail" <%=emailSelected[1]%>>hanmail.net
-				<option value="daum" <%=emailSelected[2]%>>daum.net
-				<option value="nate" <%=emailSelected[3]%>>nate.com
-				<option value="gmail" <%=emailSelected[4]%>>gmail.com
-				<option value="icloud" <%=emailSelected[5]%>>icloud.com
-			</select>
-			</td>	
-		</tr>
-     
-
-	   <tr>
-         <td class="td_tit">휴대폰번호</td>
-         <td>
-
-<%
-          String[ ] phoneArr  = phone.split("-");  
+          String[ ] phoneArr  = ordPhone.split("-");  
        //  String hpArr[ ]  = phone.split("-"); 와 동일
        // 하이픈(-)을 중심으로 휴대폰번호 앞자리, 중간자리, 뒷자리를 각각 분리 후
        // hpArr[0], hpArr[1], hpArr[2]에 각각 저장시킴
@@ -754,7 +827,7 @@ try {
 
 %>
     <span class="pbox">
-         <select name="phone1" >      
+         <select name="phone1"  style=" width: 75px; margin: 0 10px 0 23px;">      
             <option value="010" <%=phoneSelected[0]%>>010
             <option value="011" <%=phoneSelected[1]%>>011
             <option value="016" <%=phoneSelected[2]%>>016
@@ -764,57 +837,50 @@ try {
          </select>  
 		 </span>
     -
-          <input type=text name="phone2" value="<%=phoneArr[1]%>" size="4"> -
-          <input type=text name="phone3" value="<%=phoneArr[2]%>" size="4">
+          <input type=text name="phone2" value="<%=phoneArr[1]%>" size="4" style=" margin: 0 10px;"> -
+          <input type=text name="phone3" value="<%=phoneArr[2]%>" size="4" style=" margin: 0 10px;">
          </td>   
-      </tr>
-     
-      <tr>
-			<td class = "td_tit">주소</td>
-			<td>
-				<input type="text" name="zipcode" value="<%=zipcode%>" size="12" readonly> 
-				<input type="button" class="btn" value="우편번호검색"
-				 onClick="zipCheck()" style="margin-bottom: 10px;"><br>
-						  
-				<input type="text" name="address1" value="<%=address1%>" size="40" readonly style="margin-bottom: 10px;"><br>
-				<input type="text" name="address2" value="<%=address2%>" size="40">&nbsp(상세주소입력)
-			</td>
-		</tr>
-      
-      <tr>
-         <td class="td_tit">성별</td>
-         <td>
-  <%
-      if(sex.equals("여"))
-      {
-   %>
-            <input type=radio name=sex value="여" checked>여
-            <input type=radio name=sex value="남">남
-   <%
-      }   
-      else
-      {
-    %>
-            <input type=radio name=sex value="여" checked>여
-            <input type=radio name=sex value="남">남
-<%
-   }
-%>            
-         </td>
-      </tr>
-      
-   </table>
 
- <button type="submit"  class="up_btn" value= "수정하기" onClick="checkValue()" style= "cursor: pointer;" >수정하기</button>
-   </form> 
+                             <!-- <input type="text" name="phone" style = "margin-left: 75px; " value="<%=ordPhone%>"> -->
+                          
+                          </td>
+                       </tr>
+					   <tr>
+                          <td class = "td_tit">
+                             성별 : <input type="text" name="sex" class="sex" style = "margin-left: 75px; border:none; font-weight: bold;"  value="<%=ordSex%>" readonly>
+                          </td>
+                       </tr>
+					   <tr>
+					  
+                             <td class = "td_tit">
+							 <p style = " position: relative;">요청사항 :<textarea name = "memo" style="font-size:16px; padding: 5px; outline:none; resize: none;  position: absolute; top:0; left: 115; border-color: #ccc;" cols="45" rows="3">없음</textarea> 
+							 </td>
+                          
+                       </tr>
 
+					     
 
-		  </center>
+					
+
+				</table>
 
 
 
 
-        <div class="footer flex flex-jc-c" style = "margin-top: 70px;">
+
+
+
+ <button class="rez_btn" value= "예약" onclick="request()" style= "cursor: pointer;" >예약</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+	<div class="footer flex flex-jc-c">
             <div class="text">
                 <img src="./img/logo-ft.png" width = "150" alt="" style="margin-bottom: 20px;">
               <p class = "text1">상호명 : 더케어피부과 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   주소 : 서울특별시 서초구 강남대로 439 ( 멀티빌딩 4층 )
@@ -824,32 +890,32 @@ try {
               <p>COPYRIGHT (C) 2022 THE CARE .ALL RIGHTS RESERVED.</p>
             </div>
          </div>
+
         
-		      <%
-    } catch (Exception e) {
-      out.println(e);   
+        
+<%
+
+
+    } catch(Exception e) {
+		out.println(e);
 }
+
+
 %>
-
-
-        
   
-    
-        <!-- Swiper JS -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-		
-        
-        
-        
-        <!-- Initialize Swiper -->
-        
-        <!-- 3. 실행 스크립트 -->
-       <script>
 
+  
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://kit.fontawesome.com/58c5940c20.js" crossorigin="anonymous"></script>
+
+
+<!-- Initialize Swiper -->
+<script>
 
             gsap.to('#header', {
                 scrollTrigger: {
@@ -867,80 +933,80 @@ try {
         $(document).ready(function(){
 
 
-var win_w = $(window).width();
+		var win_w = $(window).width();
 
-$(window).on('resize', function(){
-    win_w =$(this).width();
-    if(win_w > 980){
-        $('.gnb_wrap').removeAttr('style');
-    }
-});
-
-
-$('.toggle').on('click', function(){
-    $('.gnb_wrap').fadeToggle();
-});
+		$(window).on('resize', function(){
+			win_w =$(this).width();
+			if(win_w > 980){
+				$('.gnb_wrap').removeAttr('style');
+			}
+		});
 
 
-$('#gnb>li').on('mouseenter', function(){
-
-    if(win_w > 980){ 
-        $('.subwrap').stop().hide();
-        $(this).children('.subwrap').stop(true, true).slideDown();
-
-    } else {
-        $('#gnb>li>a').off('click');
-        $('#gnb>li>a').on('click', function(){
-            $('.subwrap').stop().slideUp(); 
-            $(this).next('.subwrap').stop().slideToggle(); 
-        });
-
-    }
-
-});
-$('#header').on('mouseleave', function(){
-    if(win_w>980){
-        $('.subwrap').stop().slideUp();
-    }
-});
-
-$('#gnb>li>a').on('focusin', function(){
-    if(win_w > 980){
-        $(this).next('.subwrap').stop(true, true).slideDown();
-    }
-});
-
-$('#gnb .last').on('focusout', function(){
-    if(win_w > 980){
-        $(this).parents('.subwrap').stop(true, true).slideUp();
-    }
-});
+		$('.toggle').on('click', function(){
+			$('.gnb_wrap').fadeToggle();
+		});
 
 
-});
+		$('#gnb>li').on('mouseenter', function(){
 
-        
+			if(win_w > 980){ 
+				$('.subwrap').stop().hide();
+				$(this).children('.subwrap').stop(true, true).slideDown();
 
-const $topBtn = document.querySelector(".moveTopBtn");
+			} else {
+				$('#gnb>li>a').off('click');
+				$('#gnb>li>a').on('click', function(){
+					$('.subwrap').stop().slideUp(); 
+					$(this).next('.subwrap').stop().slideToggle(); 
+				});
 
-// 버튼 클릭 시 맨 위로 이동
-$topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+			}
 
-gsap.to('.top-wrap > .top-box2', {
-  scrollTrigger: {
-      trigger: '.top-wrap',
-      start: 'top -98px',
-      scrub: true
-  },
-  height: '61px',
-  textalign: 'center',
-  top: '0',
-  position: 'fixed',
-  background: '#fff',
-  borderBottom: '1px solid #ccc'
-});
+		});
+		$('#header').on('mouseleave', function(){
+			if(win_w>980){
+				$('.subwrap').stop().slideUp();
+			}
+		});
+
+		$('#gnb>li>a').on('focusin', function(){
+			if(win_w > 980){
+				$(this).next('.subwrap').stop(true, true).slideDown();
+			}
+		});
+
+		$('#gnb .last').on('focusout', function(){
+			if(win_w > 980){
+				$(this).parents('.subwrap').stop(true, true).slideUp();
+			}
+		});
+
+
+		});
+
+				
+
+		const $topBtn = document.querySelector(".moveTopBtn");
+
+		// 버튼 클릭 시 맨 위로 이동
+		$topBtn.onclick = () => {
+		  window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+
+		gsap.to('.top-wrap > .top-box2', {
+		  scrollTrigger: {
+			  trigger: '.top-wrap',
+			  start: 'top -98px',
+			  scrub: true
+		  },
+		  height: '61px',
+		  textalign: 'center',
+		  top: '0',
+		  position: 'fixed',
+		  background: '#fff',
+		  borderBottom: '1px solid #ccc'
+		});
 
 
             $('#best .tab>li>a').on('click', function(e){
@@ -957,23 +1023,6 @@ gsap.to('.top-wrap > .top-box2', {
 
 
 
-    
-            gsap.to('.top-wrap > .top-box2', {
-                scrollTrigger: {
-                    trigger: '.top-wrap',
-                    start: 'top -98px',
-                    scrub: true
-                },
-                height: '61px',
-                textalign: 'center',
-                top: '0',
-                position: 'fixed',
-                background: '#fff',
-                borderBottom: '1px solid #ccc'
-            });
-    
-            
-    
     
      function keyword_check(){
     
@@ -992,11 +1041,7 @@ gsap.to('.top-wrap > .top-box2', {
                  }
     
     
-    function zipCheck()
-                 {
-                 	window.open("zipCheck1.jsp", "win", "width=430, height=710, scrollbars=yes, status=yes");
-                 }
-
+    
     
     
         function search_form()
@@ -1015,6 +1060,58 @@ gsap.to('.top-wrap > .top-box2', {
 
 
 
-    </script>
+		function request()              //  "장바구니담기" 버튼을 클릭시 호출
+		{
+			var frm1 = document.res;
+			frm1.action = "manager_cangeResult.jsp"
+			
+			if (res.day1.value == "") 
+                  {
+                     alert("날짜를 선택해 주세요!"); 
+					 res.day1.focus();
+                     return false; 
+                  }
+			if (res.date.value == "") 
+                  {
+                     alert("시간을 선택해 주세요!"); 
+					 res.date.focus();
+                     return false; 
+                  }
+			if (res.name.value == "") 
+                  {
+                     alert("이름을 입력해 주세요!"); 
+					 res.name.focus();
+                     return false; 
+                  }
+			if (res.phone1.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone1.focus();
+                     return false; 
+                  }
+			if (res.phone2.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!"); 
+					 res.phone2.focus();
+                     return false; 
+                  }
+			if (res.phone3.value == "") 
+                  {
+                     alert("번호를 입력해 주세요!");
+					 res.phone3.focus();
+                     return false; 
+                  }
+			if (res.sex.value == "") 
+                  {
+                     alert("성별을 선택해 주세요!"); 
+					 res.sex.focus();
+                     return false; 
+                  }
+			
+			frm1.submit();
+			
+		}
+		</script>
+        
         </body>
         </html>
