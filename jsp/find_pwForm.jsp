@@ -64,7 +64,7 @@
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -114,7 +114,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -190,7 +190,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -287,7 +287,7 @@ else{
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -340,7 +340,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -353,8 +353,8 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -372,7 +372,7 @@ else{
             <div class="inner">
                 <div class="logo-box flex">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="" width="150px">
                         </a>
                     </div>
@@ -420,7 +420,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
