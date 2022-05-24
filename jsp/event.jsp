@@ -500,15 +500,19 @@ else{
 
 
 
-    
+
+    <div class="about-ban">
+        <div class="text-box">
+            <h1>소통원해</h1>
+        </div>
+    </div>
+
 
     <section id="welcome" class="content">
         <div class="inner">
                 <div class="event">
-                    <h1>EVENT</h1>
-                    <p>이 벤 트</p>
+                    <h1>이 벤 트</h1>
                 </div>
-
             <div class="wrap">
 
                <div class="box box1">
