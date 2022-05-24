@@ -530,12 +530,12 @@ a {
 
 #note {width: 100%;}
 #note .inner{}
-#note .inner .title {text-align: center;}
+#note .inner .title {text-align: left;}
 #note .inner .title h1 {font-size: 35px;}
 #note .inner .title p {font-size: 20px;}
 
 #note .wrap {
-  width: 100%; margin-top: 80px; padding-bottom: 50px;
+  width: 100%; margin-top: 50px; padding-bottom: 50px;
   background-image: url(../img/note.jpg);
   background-repeat: no-repeat;
   background-size: cover;
