@@ -523,7 +523,7 @@ else{
                     </div>
                     <div class="event_txt">
                         <h2 > The Care 첫 방문 쿠폰! </h2> 
-                        <p>2022-01-01 ~ 상시 행사 중</p>
+                        <p>2022-01-01 ~ 상시 <span>행사 중</span></p>
                     </div>
                 </div>
 
@@ -536,7 +536,7 @@ else{
 
                     <div class="event_txt">
                         <h2 >가정의 달 쿠폰!</h2>
-                        <p>2022-05-01 ~ 2022-05-31 행사 중</p>
+                        <p>2022-05-01 ~ 2022-05-31 <span>행사 중</span></p>
                     </div>
                 </div>
 
@@ -549,7 +549,7 @@ else{
 
                     <div class="event_txt">
                         <h2 >코로나 극복 쿠폰!</h2>
-                        <p>2022-01-01 ~ 2022-12-31 행사 중</p>
+                        <p>2022-01-01 ~ 2022-12-31 <span>행사 중</span></p>
                     </div>
                 </div>
 
@@ -561,7 +561,7 @@ else{
 
                     <div class="event_txt">
                         <h2 >썸머 쿠폰!</h2>
-                        <p>2022-06-01 ~ 2022-08-31 행사 준비 중</p>
+                        <p>2022-06-01 ~ 2022-08-31 <span>행사 준비 중</span></p>
                     </div>
                 </div>
 
@@ -577,6 +577,9 @@ else{
                             <img src="img/event0.jpg" alt="">
                             <div class="info">
                                 <img src="img/event-0.jpg" alt="">
+                                <button class="cou-0" type="submit" >
+                                    <p>쿠폰 받기</p>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -588,6 +591,9 @@ else{
                         <img src="img/event1.jpg" alt="">
                         <div class="info"> 
                             <img src="img/event-1.jpg" alt="">
+                            <button class="cou-1" type="submit" >
+                                <p>쿠폰 받기</p>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -598,6 +604,9 @@ else{
                         <img src="img/event2.jpg" alt="">
                         <div class="info">
                             <img src="img/event-2.jpg" alt="">
+                            <button class="cou-2" type="submit" >
+                                <p>쿠폰 받기</p>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -608,6 +617,9 @@ else{
                         <img src="img/event3.jpg" alt="">
                         <div class="info">
                             <img src="img/event-3.jpg" alt="">
+                            <button class="cou-3" type="submit" >
+                                <p>쿠폰 받기</p>
+                            </button>
                         </div>
                     </div>
                 </div>
