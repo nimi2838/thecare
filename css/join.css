@@ -416,6 +416,16 @@ input[type="text"],input[type="password"]{
   margin-bottom:0.5rem;
   
   }
+  .txtdiv{
+    position: relative;
+    margin-left: 30px;
+  }
+  .txtp{
+    position: absolute;
+    font-size: 12px;
+    
+    top:-20;
+  }
 
   select{
       width: 150px;

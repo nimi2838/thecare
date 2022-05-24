@@ -509,17 +509,18 @@ else{
                           <td>
                              <div class="td_img flex flex-ai-c">
                              <input type=text name="id" 
-                             size="20" placeholder="아이디">
+                             size="20" placeholder="아이디" oninput="handleOnInput(this)">
 							 <input type="button" value="아이디 중복확인"
                               onClick="checkID()" style="margin-bottom: 10px; line-height: 36px; height: 35px; border: 1px solid #777;
                               color: #777; padding: 0; min-width: 114px; width: 13%; margin-left: 2%; cursor: pointer; background-color: #fff; font-size : 12px">
                              </div>
+							 <div class = "txtdiv"><p class = "txtp">* 영문, 숫자 입력만 가능합니다.</p></div>
                           </td>
                        </tr>
                        <tr>
                           
                           <td><input type=password name="pw" 
-                            size="35" placeholder="비밀번호" ></td>
+                            size="35" placeholder="비밀번호" style = "margin-top: 20px"></td>
                        </tr>
                        
                        <tr>
@@ -527,16 +528,16 @@ else{
                        </tr>
                        <tr>
                           <td>
-                             <input type=text name=joomin1 size=10 placeholder="주민등록번호" style="display: inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <input type=text name=joomin1 size=10 placeholder="주민등록번호" style="display: inline;" oninput="numOnInput(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              -
-                             <input type=text name=joomin2 size=13 style="display: inline;margin: 0;margin-left: 15px;">
+                             <input type=text name=joomin2 size=13 style="display: inline;margin: 0;margin-left: 15px;" oninput="numOnInput(this)">
                           </td>
                        </tr>
                        <tr>
                           <td>
-                             <input type=text name=birthyy size=1  style="display: inline;">년
-                             <input type=text name=birthmm size=1 style="display: inline;margin: 0;">월
-                             <input type=text name=birthdd size=1  style="display: inline;margin: 0;">일
+                             <input type=text name=birthyy size=1  style="display: inline;" oninput="numOnInput(this)">년
+                             <input type=text name=birthmm size=1 style="display: inline;margin: 0;" oninput="numOnInput(this)">월
+                             <input type=text name=birthdd size=1  style="display: inline;margin: 0;" oninput="numOnInput(this)">일
                              <input type=radio name=solar value="양력" style="margin-left: 15px;"  checked>양력
                              <input type=radio name=solar value="음력">음력
                           </td>
@@ -566,8 +567,8 @@ else{
                                 <option value="019">019
                              </select>
                           </span> &nbsp;&nbsp;&nbsp;-
-                             <input type=text name=phone2 size=5 style="margin: 0; margin-left: 15px;"> &nbsp;&nbsp;&nbsp;-
-                             <input type=text name=phone3 size=5 style="margin: 0; margin-left: 15px;">
+                             <input type=text name=phone2 size=5 style="margin: 0; margin-left: 15px;" oninput="numOnInput(this)"> &nbsp;&nbsp;&nbsp;-
+                             <input type=text name=phone3 size=5 style="margin: 0; margin-left: 15px;" oninput="numOnInput(this)">
                           </td>
                        </tr>
                        <tr>
@@ -607,7 +608,14 @@ else{
  
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	 </script>
-
+<script>
+function handleOnInput(e)  {
+  e.value = e.value.replace(/[^A-Za-z0-9+]/ig, '')
+}
+function numOnInput(e)  {
+  e.value = e.value.replace(/[^0-9+]/ig, '')
+}
+</script>
 	 
             <script language="javascript">
 					
