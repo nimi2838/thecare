@@ -113,7 +113,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -189,7 +189,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -339,7 +339,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -419,7 +419,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -501,7 +501,6 @@ else{
         </div>
 
 
-    
     <div class="about-ban">
         <div class="text-box">
             <h1>소통원해</h1>
@@ -527,7 +526,7 @@ else{
                 <tbody id="gong">
                     <tr class="list_tr">
                         <td style="font-weight: bold;">5</td>
-                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-5.jsp"><p>[ 공지 ] 미성년자 시술 및 관리 동의서</p></a></td>
+                        <td class="je" style="text-align: left; text-indent: 30px;"><a href="noti-5.html"><p>[ 공지 ] 미성년자 시술 및 관리 동의서</p></a></td>
                         <td>더 케어</td>
                         <td>22.03.30</td>
                     </tr>
@@ -569,7 +568,6 @@ else{
             </div>
         </div>
     </section>
-
 
 
 

@@ -113,7 +113,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -189,7 +189,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -339,7 +339,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/비용</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -419,7 +419,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/비용</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -501,46 +501,38 @@ else{
         </div>
 
 
-<!--  <div class="about-ban">
-        <div class="text-box">
-            <i>공지사항</i>
-            <div class="sun"></div>
-            <p>고객님들을 위한 더 케어의<br>다양한 소식들을 만나보세요.</p>
-        </div>
-    </div>
- -->
-
-
-    
     <section id="noti" class="content">
         <div class="inner">
 
             <div class="wrap">
+
                 <div class="tit">
                     <h4>[공지]</h4>
                     <span>홈페이지 리뉴얼 안내</span>
                     <p>2022.01.01</p>
                 </div>
+
                 <div class="txt">
                     <img src="img/noti-1.jpg" alt="">
-
                     <p>안녕하세요 ! <br>
 
                         The Care 홈페이지가 새롭게 리뉴얼 되었습니다.<br>
                         
                         더욱 편리한 사용성과 좋은 정보를 제공하기 위하여 더욱 노력하겠습니다.<br>
                         
-                        감사합니다 ♥ </p>
+                        감사합니다 ♥ 
+                    </p>
                 </div>
+
                 <div class="wow">
                     <div class="mok">
                         <a href="noti.jsp">목록으로</a> 
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
-
 
 
 

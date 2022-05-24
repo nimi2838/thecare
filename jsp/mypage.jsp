@@ -115,7 +115,7 @@
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -191,7 +191,7 @@
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -341,7 +341,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -421,7 +421,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -524,10 +524,11 @@ try {
 	String Point = rs.getString("Point");
 	String Coupon = rs.getString("Coupon");
 
-	String jsql3 = "select count(?) as cnt from user where Coupon =?";
+	String jsql3 = "  SELECT CHAR_LENGTH(?) - CHAR_LENGTH( REPLACE( ? , ',' , '') ) + 1  AS cnt FROM USER WHERE uId=?;";
 	 PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-	 pstmt3.setString(1,myid);
+	 pstmt3.setString(1,Coupon);
 	 pstmt3.setString(2,Coupon);
+	 pstmt3.setString(3,myid);
 
 
 	 ResultSet rs2 = pstmt3.executeQuery();
@@ -596,6 +597,7 @@ try {
 				
 		 <%
 			 int i = 1;
+
 			 		String jsql7= "SELECT * FROM rezinfo WHERE uId=? ORDER BY rezNo DESC";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, myid);
@@ -690,16 +692,38 @@ try {
 			<%
 				i++;
 			} // rs7 while 닫기
+
 			%>
+
+				
+
+
+
+
 
 
             </div>
         </div>
 <%
 			} //if else
-				%>
+			 
+					else {
+					%>
 
+			<div class="finish">
+			<div class="icon">
+				<i class="fa-solid fa-circle-xmark"></i>
+			</div>
+			  <h1>예약된 상품이 없습니다 !</h1>
+			  <p>
+					예약 후 이용해주세요 !
+			  </p>
+			  <div class="btn">
+				<a href="guide.jsp">시술 보러가기</a>
+			  </div>
+		</div>
 
+		<% } %>
 
 
 
