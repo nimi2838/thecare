@@ -508,6 +508,12 @@ else{
     </div>
 
 
+ <%
+   if(myid == null) {
+
+%>
+
+
     <section id="welcome" class="content">
         <div class="inner">
                 <div class="event">
@@ -526,7 +532,7 @@ else{
                             <h2 > The Care 첫 방문 쿠폰! </h2> 
                             <p>2022-01-01 ~ 상시 행사 중</p>
                         </div>
-                        <a class="cou-0" href="">
+                        <a class="cou-0" onclick="login()">
                             <p>쿠폰 받기</p>
                         </a>
                     </div>
@@ -544,7 +550,7 @@ else{
                             <h2 >가정의 달 쿠폰!</h2>
                             <p>2022-05-01 ~ 2022-05-31 행사 중</p>
                         </div>
-                        <a class="cou-1" href="">
+                        <a class="cou-1" onclick="login()">
                             <p>쿠폰 받기</p>
                         </a>
                     </div>
@@ -562,7 +568,7 @@ else{
                             <h2 >코로나 극복 쿠폰!</h2>
                             <p>2022-01-01 ~ 2022-12-31 행사 중</p>
                         </div>
-                        <a class="cou-2" href="">
+                        <a class="cou-2" onclick="login()">
                             <p>쿠폰 받기</p>
                         </a>
                     </div>
@@ -579,7 +585,7 @@ else{
                             <h2 >썸머 쿠폰!</h2>
                             <p>2022-06-01 ~ 2022-08-31 행사 준비 중</p>
                         </div>
-                        <a class="cou-3" href="">
+                        <a class="cou-3" onclick="login()">
                             <p>쿠폰 받기</p>
                         </a>
                     </div>
@@ -634,6 +640,141 @@ else{
         </article>
         </div>
     </section>
+
+	<%
+ } else {
+		%>
+
+<section id="welcome" class="content">
+        <div class="inner">
+                <div class="event">
+                    <h1>이 벤 트</h1>
+                </div>
+            <div class="wrap">
+
+               <div class="box box1">
+
+                    <div class="event_img">
+                        <img src="img/event0.jpg" alt="">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="event_txt">
+                        <div class="event-tit">
+                            <h2 > The Care 첫 방문 쿠폰! </h2> 
+                            <p>2022-01-01 ~ 상시 행사 중</p>
+                        </div>
+                        <a class="cou-0" href="event_add.jsp?Coupon=c01&uId=<%=myid%>">
+                            <p>쿠폰 받기</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box box2" >
+
+                    <div class="event_img">
+                        <img src="img/event1.jpg" alt="">
+                        <div class="bg"></div>
+                    </div>
+
+                    <div class="event_txt">
+                        <div class="event-tit">
+                            <h2 >가정의 달 쿠폰!</h2>
+                            <p>2022-05-01 ~ 2022-05-31 행사 중</p>
+                        </div>
+                        <a class="cou-1" href="event_add.jsp?Coupon=c05&uId=<%=myid%>">
+                            <p>쿠폰 받기</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box box3">
+
+                    <div class="event_img">
+                        <img src="img/event2.jpg" alt="">
+                        <div class="bg"></div>
+                    </div>
+
+                    <div class="event_txt">
+                        <div class="event-tit">
+                            <h2 >코로나 극복 쿠폰!</h2>
+                            <p>2022-01-01 ~ 2022-12-31 행사 중</p>
+                        </div>
+                        <a class="cou-2" href="event_add.jsp?Coupon=c02&uId=<%=myid%>">
+                            <p>쿠폰 받기</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box box4">
+                    <div class="event_img">
+                        <img src="img/event3.jpg" alt="">
+                        <div class="bg"></div>
+                    </div>
+
+                    <div class="event_txt">
+                        <div class="event-tit">
+                            <h2 >썸머 쿠폰!</h2>
+                            <p>2022-06-01 ~ 2022-08-31 행사 준비 중</p>
+                        </div>
+                        <a class="cou-3" href="event_add.jsp?Coupon=c03&uId=<%=myid%>">
+                            <p>쿠폰 받기</p>
+                        </a>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+            <article class="art1">
+
+                <div class="art1_big art1_big1">
+                    <p class="art1_big_close"><i class="far fa-times-circle"></i></p>
+                    <div class="modal">
+                        <div class="art-inner">
+                            <img src="img/event0.jpg" alt="">
+                            <div class="info">
+                                <img src="img/event-0.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big2">
+                    <p class="art1_big_close"><i class="far fa-times-circle"></i></p>
+                    <div class="modal">
+                        <img src="img/event1.jpg" alt="">
+                        <div class="info"> 
+                            <img src="img/event-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big3">
+                    <p class="art1_big_close"><i class="far fa-times-circle"></i></p>
+                    <div class="modal">
+                        <img src="img/event2.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="art1_big art1_big4">
+                    <p class="art1_big_close"><i class="far fa-times-circle"></i></p>
+                    <div class="modal">
+                        <img src="img/event3.jpg" alt="">
+                        <div class="info">
+                            <img src="img/event-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+        </article>
+        </div>
+    </section>
+
+			<%
+	}
+			%>
 
 
 
@@ -817,6 +958,9 @@ $(".art1 .art1_big").click(function (e) {
 			alert('로그인 후 이용 가능한 페이지입니다.');
 			document.location.href="login.jsp";
 		}
+
+
+
 
 
          $('#type .tab>li>a').on('click', function(e){

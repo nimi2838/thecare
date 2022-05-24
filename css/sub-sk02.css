@@ -64,12 +64,138 @@
 #step .wrap .con .txt h1 span{color: #1f628e;}
 
 @media (min-width: 1051px) and ( max-width:1300px) {
+
+
+
 }
 
 
 @media (min-width: 851px) and ( max-width:1050px) {
+.sub_con_box1 > .sub_con1 > .detail {
+    display: inline-block;
+	margin: 0 auto;
+}
+
+.sub_con_box1 > .sub_con1 > .detail > div {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.con_wrap1 > .con_box1 > p {
+    font-size: 17px;
+    width: max-content;
+    max-width: 100px;
+    margin: 17px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1:last-child {
+    padding: 20px 40px;
+    margin-right: 0%;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 {
+    width: 100%;
+    margin: 100px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li:nth-child(1) h3 {
+    font-size: 25px;
+    margin: 20px 0 0 0px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li:nth-child(2) h3 {
+    font-size: 25px;
+    margin: 20px 0 0 -15px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li:nth-child(3) h3 {
+    font-size: 25px;
+    margin: 20px 0 0 -35px;
+}
+
+
+
 }
 
 @media (min-width: 300px) and ( max-width:850px) {
+
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 40px 10px 53px 0;
+}
+
+
+.sub_con_box5 > .sub_con5 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sub_con_box5 > .sub_con5 > .qna_list > .qna_item > .ques {
+    margin-left: 0px;
+}
+
+.sub_con_box5 > .sub_con5 > .qna_list > .qna_item > .answer {
+    width: 263px;
+}
+
+
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 {
+    width: 45%;
+    margin: 100px auto 0;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1 {
+    width: 100px;
+    height: 150px;
+    padding: 25px 45px 10px;
+    margin-right: 1%;
+	margin-top: 20px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li {
+    padding: 10px 30px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail > ul > li > .text > span::after {
+    top: 23%;
+    left: 53%;
+    transform: rotate(90deg);
+    height: 70px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li h3 {
+    font-size: 20px;
+    line-height: 29px;
+    margin: 20px 0 0 -2px;
+}
+
+
+.sub_con_box1 > .sub_con1 > .detail ul li div {
+	display: inline-block;
+}
+
+
+.sub_con_box1 > .sub_con1 > .detail > ul > li > .text > span {
+    position: relative;
+    font-size: 35px;
+    margin-top: 25px;
+    margin-right: 30px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail ul li h3 {
+    font-size: 20px;
+    line-height: 29px;
+    margin: 20px 0 0 -2px;
+}
+
+.sub_con_box3 > .sub_con3 > ul li:last-child {
+    margin-right: 0;
+    width: 95%;
+}
 
 }
