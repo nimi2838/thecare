@@ -1,0 +1,12 @@
+#result {
+    width: 200px;
+}
+
+.option > div {
+    width: 100px;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box {
+    padding: 30px 25px;
+    font-size: 20px;
+}

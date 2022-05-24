@@ -1048,7 +1048,7 @@ var sum = 0;
 				<p>PROCEDURE PROCESS</p>
 				<h1>시술과정</h1>
 		<div class="sub_con2-1" data-aos="fade-down">
-			<div class="con2-1 flex flex-jc-c">
+			<div class="con2-1">
 							<div class="box">
 							<div>STEP 1</div>
 							<p>
@@ -1109,17 +1109,7 @@ var sum = 0;
                                 <div class="line3"></div>
                                 <div class="line4"></div>
                             </div>
-                            <div class="box">
-                                <div>STEP 6</div>
-                                <p>모델링팩
-                                </p>
-                            </div>
-                            <div class="line-box">
-                                <div class="line1"></div>
-                                <div class="line2"></div>
-                                <div class="line3"></div>
-                                <div class="line4"></div>
-                            </div>
+                            
                             <div class="box">
                                 <div>STEP 7</div>
                                 <p>마무리

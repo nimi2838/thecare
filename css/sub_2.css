@@ -407,7 +407,7 @@ a {
 }
 
 #txt_getChkList {
- width: 90%;
+ width: 88.5%;
  height:90px; 
  outline:none; 
  border: 0;
@@ -855,7 +855,7 @@ padding: 20px 40px; margin: 20px 8% 0 0; border:1px solid #ddd; border-radius: 2
     position: absolute;
     width: 1px;
     height: 50px;
-    background: #1f628e;
+    background: #ff7689;
     left: -50%;
     top: 65%;
 }
@@ -1025,7 +1025,7 @@ margin-top: 100px;
 .sub_con_box3 > .sub_con3 > ul li span {
     margin: 42px 10px 42px 0;
     padding: 7px 15px;
-    background: #ccc;
+    background: #fff;
 }
 
 .sub_con_box3 > .sub_con3 > ul li:last-child {
@@ -1221,6 +1221,11 @@ margin-top: 100px;
   
   
 @media (min-width: 1051px) and ( max-width:1300px) {
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 42px 24px 65px 0;
+	}
+
     .top-wrap>.top-box1 {
       width: 95%;
     }
@@ -1276,14 +1281,14 @@ margin-top: 100px;
     
     .sub_con > .sub_text2 {
         width: 48%;
-        padding: 110px 30px 50px;
-        font-size: 18px;
+    padding: 0px 30px 50px;
+    font-size: 19px;
+    margin-top: 70px;
     }
     
     
     .sub_con > .sub_text2 > .option {
         display: flex;
-        margin-left: 18px;
     }
     
     .sub_con > .sub_text2 > .option .form1 {
@@ -1450,6 +1455,7 @@ margin-top: 100px;
 
   
   }
+
   
   
   @media (min-width: 851px) and ( max-width:1050px) {
@@ -1622,7 +1628,6 @@ margin-top: 100px;
     width: 250px;
     height: 150px;
     padding: 20px 40px;
-    background: #faf5f5;
     border-radius: 50%;
     margin-right: 2%;
 }
@@ -1770,7 +1775,6 @@ margin-top: 100px;
 .sub_con_box3 > .sub_con3 > ul li span {
     margin: 30px 10px 30px 0;
     padding: 10px 15px;
-    background: #ecd8d8;
 }
 
 .sub_con_box3 > .sub_con3 > ul li:last-child {
@@ -2409,4 +2413,10 @@ margin-top: 100px;
     
 
 
+}
+
+
+  @media (min-width: 740px) and ( max-width:850px) {
+  .sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box_11 {
+    margin: 0px 0 0 0;
 }
