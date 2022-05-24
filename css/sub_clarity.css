@@ -1,4 +1,4 @@
-::selection { color:rgb(255, 255, 255); background:#f89fa8; }
+::selection { color:rgb(255, 255, 255); background:#1f628e; }
 #fff0f2
 #f89fa8
 
@@ -48,7 +48,7 @@
 #clarity img {position: absolute; top: -100px; left: 10%; width: 660px; height: 950px; }
 
 #clarity .txt {position: absolute; right: 400px;}
-#clarity .txt p{font-size: 18px; font-weight: bold; color: #CB9F76; line-height: 35px; width: 80%; margin: 0 auto;}
+#clarity .txt p{font-size: 18px; font-weight: bold; color: #CB9F76; line-height: 35px; width: 80%; }
 
 #clarity .txt .txt-t {display: flex; flex-direction: row; flex-wrap: wrap; width: 610px; margin-top: 40px;}
 #clarity .txt .txt-t .six{
@@ -57,8 +57,8 @@
     margin-right: 50px; margin-bottom: 30px;
 }
 #clarity .txt .txt-t .six p{
-    font-size: 23px; color: white; margin: 0;
-    text-align: center; line-height: 70px; font-weight: bold;
+    font-size: 23px; color: white; text-align: center;
+    font-weight: bold; margin: 0; width: 250px; line-height: 70px;
 }
 
 
@@ -81,10 +81,29 @@
 #pro .wrap .con .txt p{font-size: 17px; color: #333; line-height: 30px; font-weight: bold;}
 
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+}
 
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    .sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1 > p {width: auto;}
+    .inner {width: 100%;}
+
+    #pro .wrap {width: 100%;}
+    #pro .wrap .con .pic {width: 300px;}
+    #pro .wrap .con .pic >img {width: 300px;}
+
+    #clarity img {left: 0; }
+    #clarity .txt {right: 0; width: 400px;}
+    #clarity .txt p {width: 100%;}
+    #clarity .txt .txt-t {width: 100%}
+    #clarity .txt .txt-t .six {width: 150px;}
+    #clarity .txt .txt-t .six p { font-size: 18px; margin: 0; line-height: 70px; width: 150px;}
+}
 
 @media (min-width: 300px) and ( max-width:850px) {
 
+    #clarity .txt p {margin-left: 15%;}
 
   .inner{width: 100%; margin: 0 auto;} 
   .content{ padding: 0;  }
@@ -93,11 +112,13 @@
 	#clarity { height: 1200px; margin-bottom: 50px;}
 	#clarity img {position: absolute;    top: 135px; left: 10%; width: 400px; height: 510px; }
 	#clarity .txt { margin-top: 550px; right:0; font-size: 17px;}
-	#clarity .txt .txt-t { width: 86%; margin: 40px auto 0; }
-	#clarity .txt .txt-t .six{ width: 180px; height: 65px; border-radius: 100px; 
-    margin-right: 15px; margin-bottom: 20px; }
+	#clarity .txt .txt-t { width: 80%; margin-left: 15%; }
+	#clarity .txt .txt-t .six{ 
+        width: 180px; height: 65px; border-radius: 100px; 
+    margin-right: 15px; margin-bottom: 20px; 
+}
 	#clarity .txt .txt-t .six:nth-child(2n){ margin-left: 15px; }
-	#clarity .txt .txt-t .six p{ margin: 0 auto;}
+	#clarity .txt .txt-t .six p{ margin: 0 auto; line-height: 70px;}
 
 	#pro .wrap { display: inline-block;margin-top: 50px; }
 	#pro .wrap .con{ width: 350px; height: 470px; margin: 0 auto 30px; }

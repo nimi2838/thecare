@@ -20,8 +20,7 @@
 
 
 .sub_con_box3 > .sub_con3 > ul li span {
-    margin: 15px 10px 42px 0;
-    padding: 10px 15px;
+    padding: 20px 15px;
     background: #fff;
     font-weight: bold;
 }
@@ -63,7 +62,16 @@
 
 @media (min-width: 500px) and ( max-width:850px) {
     #face .inner {width: 100%;}
+    #face .wrap {margin-left: 0;}
+    #face .wrap .pic img {width: 300px; height: 450px; top: 10px; left: 10px;}
+    #face .wrap .txt h1 {font-size: 30px;}
+    #face .wrap .txt p {font-size: 20px;}
+    #face .wrap .txt {margin-top: 10px; width: 300px; margin-left: 70px;}
 }
+
+
+
+
 
 #care {width: 100%; height: 230px;  background-image: url(../img/sub-fa-bg.jpg);
     background-repeat: no-repeat; background-size: cover;
@@ -89,6 +97,7 @@
 
 @media (min-width: 500px) and ( max-width:850px) {
     #care .inner {width: 100%;}
+    #care .wrap .con h1 {margin-right: 20px;}
 }
 
 
@@ -112,4 +121,5 @@
 
 @media (min-width: 500px) and ( max-width:850px) {
     #the .inner {width: 100%;}
+    #the .wrap .txt p {font-size: 20px; margin: 0 50px;}
 }

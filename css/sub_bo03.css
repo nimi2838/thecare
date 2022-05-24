@@ -38,16 +38,16 @@
 #jusa {margin-bottom: 100px;}
 #jusa .title{text-align: center;}
 #jusa .title p {font-size: 40px; color: #333;}
-#jusa .title p span {font-weight: bold; color: #1f628e;}
+#jusa .title p span {font-weight: bold; color: #f89fa8;}
 
 #jusa .txt {
     justify-content: center; height: 130px;
     display: flex; align-items: center; width: 70%; 
-    border-bottom: 1px dashed #1f628e; margin: 0 auto;
+    border-bottom: 1px dashed #f89fa8; margin: 0 auto;
 }
 #jusa .txt .txt-t {width: 20%;}
 #jusa .txt .txt-t h1 {
-    width: 90px; height: 80px; border-right: 1px solid #1f628e; 
+    width: 90px; height: 80px; border-right: 1px solid #f89fa8; 
     font-size: 40px; text-align: center; line-height: 80px;
 }
 
@@ -71,4 +71,5 @@
     #jusa .inner {width: 100%;}
     #jusa .txt {width: 90%;}
 	#jusa .txt .txt-t {  margin-right: 15px; }
+    #jusa .txt h1 {font-size: 20px;}
 }

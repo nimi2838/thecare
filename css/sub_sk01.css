@@ -120,12 +120,17 @@ width: 80%;
     font-size: 20px;
 }
 
+.sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1 > p {width: auto;}
+#mogong .inner {width: 100%;}
+#step .inner {width: 100%;}
+#step .wrap {width: 100%;}
+
 }
 
 @media (min-width: 300px) and ( max-width:850px) {
 
 
-  .inner{width:100%; margin: 0 auto;} 
+  .inner{width:90%; margin: 0 auto;} 
 #mogong .txt {text-align: center; width: 100%; margin: 0 auto;}
 #mogong .txt h1 {border-bottom: 2px solid #1f628e; font-size: 30px; padding-bottom: 20px;}
 #mogong h2 {font-size: 25px; text-align: center;}

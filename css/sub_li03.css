@@ -61,3 +61,18 @@
 #jo .con .txt-t {text-align: left;}
 #jo .con .txt-t h1 {font-size: 25px;}
 #jo .con .txt-t p {font-size: 20px;}
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    .inner {width: 100%;}
+}
+
+@media (min-width: 300px) and ( max-width:850px) {
+    .inner {width: 100%;}
+    #jo .title {width: 90%; margin: 0 auto;}
+    #jo .con .txt-t {margin-left: 15px;}
+
+}

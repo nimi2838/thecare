@@ -41,7 +41,7 @@
 #yun .title p {font-size: 20px; line-height: 35px; margin: 50px 0;}
 
 #yun .vline {width: 100%; text-align: center;}
-#yun .vline i {font-size: 60px; color: #f89fa8;}
+#yun .vline i {font-size: 60px; color: #1f628e;}
 #yun .vline p {font-size: 25px; line-height: 50px; font-weight: bold; color: rgb(75, 75, 75);}
 
 .bg {
@@ -61,26 +61,57 @@
 #effect {}
 #effect .wrap {margin: 50px 0; display: flex; justify-content: space-around; align-items: center;}
 #effect .wrap .con {
-    width: 244px; height: 244px; background: #fff0f2; 
-    border: 1px solid #f89fa8; border-radius: 100%; text-align: center;
+    width: 244px; height: 244px; background: #f1f7fb; 
+    border: 2px solid #1f628e; border-radius: 100%; text-align: center;
 }
 #effect .wrap .con h1 {
     margin: 0 auto; margin-top: 50px;
     font-size: 25px; width: 115px; height: 40px; 
-    border-bottom: 1px solid #f89fa8; color: #f89fa8;
+    border-bottom: 1px solid #1f628e; color: #1f628e;
 }
 #effect .wrap .con p {font-size: 25px; line-height: 40px; }
 
 
 #effect .wrapp {margin-bottom: 100px; display: flex; justify-content: space-around; align-items: center;}
 #effect .wrapp .con {
-    width: 244px; height: 244px; background: #fff0f2; 
-    border: 1px solid #f89fa8; border-radius: 100%; text-align: center;
+    width: 244px; height: 244px; background: #f1f7fb; 
+    border: 2px solid #1f628e; border-radius: 100%; text-align: center;
 }
 #effect .wrapp .con h1 {
     margin: 0 auto; margin-top: 50px;
     font-size: 25px; width: 115px; height: 40px; 
-    border-bottom: 1px solid #f89fa8; color: #f89fa8;
+    border-bottom: 1px solid #1f628e; color: #1f628e;
 }
 #effect .wrapp .con p {font-size: 25px; line-height: 40px; }
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+    .inner {width: 100%;}
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    .sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1 > p {width: auto;}
+     .inner {width: 100%;}
+    #yun .title {width: 100%;}
+
+    #effect .wrap {width: 100%;} 
+    #effect .wrapp {width: 100%;} 
+
+    .bg .box {right: 50px;}
+    .bg p {right: 50px;}
+}
+
+@media (min-width: 300px) and ( max-width:850px) {
+    .inner {width: 100%;}
+    #yun .title {width: 90%; margin: 0 auto;}
+
+    .bg .box {right: 50px;}
+    .bg p {right: 50px; line-height: 30px; font-size: 20px;}
+
+    #effect .wrap .con {width: 200px; height: 200px;}
+    #effect .wrapp .con {width: 200px; height: 200px;}
+
+    #effect .wrap .con p {line-height: 30px; font-size: 20px;}
+    #effect .wrapp .con p {line-height: 30px; font-size: 20px;}
+
+}

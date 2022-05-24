@@ -510,7 +510,7 @@ a {
     #gnb>li:last-of-type > a{ padding-right: 0;}
     #gnb>li>.subwrap{
       display: none; position: absolute; left: 0; top: 100px; 
-      width: 100%; background-color: #333;
+      width: 100%; background-color: #1f628d;
     }
     
     #gnb .depth_1{display: flex; flex-wrap: wrap; padding: 10px 0; flex-direction: column;}
@@ -669,7 +669,6 @@ a {
     padding: 30px 20px;
     font-size: 20px;
     transition: .1s;
-    position: relative;
 }
 
 .about1-1>.ne>.row>.box:first-child {
@@ -686,44 +685,22 @@ a {
     margin: 10px 0;
 }
 
+.about1-1>.ne>.row>.box:hover {
+    background: #eeeeee;
+}
 
 .about1-1>.ne>.row>.box .price {
     font-size: 17px;
-    margin-top: 30px;
-   
+    margin: 0;
+    text-align: right;
 }
 
 .about1-1>.ne>.row>.box .price > span {
     color: #FF8080;
 }
 
-/* 버튼 */
-.link > .btnview{
-  position: absolute;
-  width: 90px;
-  height: 40px;
-  background: #ffa6a6;
-  cursor: pointer;
-  color: #fff;
-  border-radius: 7px;
-  right: 20px;
-  bottom: 20px;
-  padding-left: 16.5px;
-  
-}
-.link{
-  font-size: 15px;
-  line-height: 40px;
-  font-weight: bolder;
-  
-}
 
 
-.link > .btnview:hover{
-  transition: all .4s;
-  background: #ff8080;
-  
-}
 /* footer */
 
 .footer {

@@ -1,4 +1,4 @@
-::selection { color:rgb(255, 255, 255); background:#f89fa8;  }
+::selection { color:rgb(255, 255, 255); background:#1f628e;  }
 #fff0f2
 #f89fa8
 
@@ -74,9 +74,19 @@
 #sa .cont .txt .txt-right p{font-size: 20px; line-height: 30px;}
 #sa .cont .txt .txt-right p span{color: #0085dc;}
 
+@media (min-width: 1051px) and ( max-width:1300px) {
+    #sa .inner {width: 90%;}
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    #sa .inner {width: 90%;}
+    #sa .con .pic {width: 50%;}
+}
+
 @media (min-width: 300px) and ( max-width:850px) {
-	.inner{width:100%; margin: 0 auto;} 
-	.content{width:100%; padding: 50px 0 0;  }
+	#sa .inner{width:90%; margin: 0 auto;} 
+	#sa .content{width:90%; padding: 50px 0 0;  }
 
 	#sa {height: auto; margin-bottom: 30px;}
 
@@ -108,7 +118,6 @@
 
 #sa .cont .txt .txt-left h1{font-size: 25px;}
 #sa .cont .txt .txt-right {width: 49%; margin-left: 2%; box-sizing: border-box;}
-
 
 
 }

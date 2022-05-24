@@ -54,5 +54,21 @@
 .sub_con_box3 > .sub_con3 > ul li span {
     margin: 15px 10px 42px 0;
     padding: 10px 15px;
-    background: #ccc;
+    background: #fff;
+}
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+    .inner {width: 100%;}
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+    .inner {width: 100%;}
+}
+
+@media (min-width: 300px) and ( max-width:850px) {
+    .inner {width: 100%;}
+    #point .con p{font-size: 16px;}
+    #bangbup .wrap .cont {flex-direction: column; height: 400px;}
+
 }
