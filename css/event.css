@@ -414,7 +414,7 @@ a {
 }
 .art1 .art1_big div>.info >img { width: 100%; padding-top: 0px; height: 50%;}
 .art1 .art1_big div>.info > .cou-0 {
-  position: absolute; bottom: 70px; left: 290px; 
+  position: absolute; bottom: 70px; left: 250px; 
   width: 130px; height: 40px; text-align: center;
   background: #fe9a9a; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
@@ -422,7 +422,7 @@ a {
 .art1 .art1_big div>.info > .cou-0 p {font-size: 18px; margin: 0; line-height: 40px;}
 
 .art1 .art1_big div>.info > .cou-1 {
-  position: absolute; bottom: 70px; left: 290px; 
+  position: absolute; bottom: 70px; left: 250px; 
   width: 130px; height: 40px; text-align: center;
   background: #feeae1; color: #ff804c;
   border: 0; border-radius: 10px; cursor: pointer;
@@ -430,7 +430,7 @@ a {
 .art1 .art1_big div>.info > .cou-1 p {font-size: 18px; margin: 0; line-height: 40px;}
 
 .art1 .art1_big div>.info > .cou-2 {
-  position: absolute; bottom: 70px; left: 290px; 
+  position: absolute; bottom: 70px; left: 250px; 
   width: 130px; height: 40px; text-align: center;
   background: #d74f4f; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
@@ -438,7 +438,7 @@ a {
 .art1 .art1_big div>.info > .cou-2 p {font-size: 18px; margin: 0; line-height: 40px;}
 
 .art1 .art1_big div>.info > .cou-3 {
-  position: absolute; bottom: 70px; left: 290px; 
+  position: absolute; bottom: 70px; left: 250px; 
   width: 130px; height: 40px; text-align: center;
   background: #273802; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
@@ -448,7 +448,7 @@ a {
 
 .art1_big_close {
     font-size: 50px;
-    position: absolute; top: 30px; right: 500px;
+    position: absolute; top: 30px; right: 480px;
     cursor: pointer; color: rgb(225, 225, 225);
 }
 
@@ -473,6 +473,10 @@ a {
 
     .art1 .art1_big .modal {width: 80%;}
     .art1_big_close {right: 20px;}
+    .art1 .art1_big .modal img {width: 90%; padding-top: 0;}
+    .art1 .art1_big div>.info >img {width: 90%;}
+
+    .art1 .art1_big div>.info > .cou-0  {left: 280px;}
   }
   
   
