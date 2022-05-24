@@ -382,6 +382,7 @@ a {
 
   #welcome .box .event_txt {height: 80px; line-height: 20px;}
   #welcome .box .event_txt > h2 {font-size: 23px ; color: #333;}
+  #welcome .box .event_txt > p > span {color: red;}
 
   #welcome .box >.event_img {}
   #welcome .box >.event_img> .bg{
