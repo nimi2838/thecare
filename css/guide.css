@@ -669,6 +669,7 @@ a {
     padding: 30px 20px;
     font-size: 20px;
     transition: .1s;
+    position: relative;
 }
 
 .about1-1>.ne>.row>.box:first-child {
@@ -685,21 +686,42 @@ a {
     margin: 10px 0;
 }
 
-.about1-1>.ne>.row>.box:hover {
-    background: #eeeeee;
-}
+
 
 .about1-1>.ne>.row>.box .price {
     font-size: 17px;
-    margin: 0;
-    text-align: right;
+    margin-top:30px;
 }
 
 .about1-1>.ne>.row>.box .price > span {
     color: #FF8080;
 }
 
+/* 버튼 */
+.link{
+  position: absolute;
+  font-size: 15px;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  font-weight: bolder;
+  
+}
+.link > .btnview
+{
+  width: 90px;
+  height: 40px;
+  background-color: #fda0a0;
+  border-radius: 7px;
+  padding-left : 16px;
+  line-height: 40px;
+}
 
+.link > .btnview:hover
+{
+  background-color: #ff8080;
+  transition: all .4s;
+}
 
 /* footer */
 
