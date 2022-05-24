@@ -1445,7 +1445,7 @@ $topBtn.onclick = () => {
 		function inCart1()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
@@ -1462,7 +1462,7 @@ $topBtn.onclick = () => {
 		function rez()              //  "장바구니담기" 버튼을 클릭시 호출
 		{
 
-		var checked = $('#chk').is(':checked');
+		var checked = $('.chk').is(':checked');
 
 		if(checked) {
 
