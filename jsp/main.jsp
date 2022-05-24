@@ -738,8 +738,25 @@ else{
             </div>
         </div>
     
-    
+     <%
+   if(myid == null) {
+
+%>
         <div class="mini-ban">
+            <div class="text-box">
+                <div>
+                    <p>
+                    내 피부타입이 궁금하다면?<br>
+                    테스트를 통해 알아보세요!
+                    </p><a href="#" onclick="login();">TEST</a>
+                </div>
+            </div>
+        </div>
+<%
+}
+else{
+%>        
+       <div class="mini-ban">
             <div class="text-box">
                 <div>
                     <p>
@@ -749,10 +766,13 @@ else{
                 </div>
             </div>
         </div>
-        
-       
     
     
+<%
+}
+%>
+      
+
         <div class="card-wrap">
             <div class="cardtt">
                 <h1>SEASONS</h1>
