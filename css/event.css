@@ -410,41 +410,42 @@ a {
 
 .art1 .art1_big .modal img {width: 100%; padding-top: 50px;}
 .art1 .art1_big div>.info {
-  position: relative;
   width: 100%; margin-top: 0;
 }
 .art1 .art1_big div>.info >img { width: 100%; padding-top: 0px; height: 50%;}
-.art1 .art1_big div>.info > .cou-0 {
-  position: absolute; bottom: 70px; left: 250px; 
+
+
+.event_txt {display: flex; width: 100%; align-items: center;}
+.event_txt .event-tit {width: 70%;}
+.event_txt > .cou-0 {
   width: 130px; height: 40px; text-align: center;
   background: #fe9a9a; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
 }
-.art1 .art1_big div>.info > .cou-0 p {font-size: 18px; margin: 0; line-height: 40px;}
+.event_txt > .cou-0 p {font-size: 18px; margin: 0; line-height: 40px;}
 
-.art1 .art1_big div>.info > .cou-1 {
-  position: absolute; bottom: 70px; left: 250px; 
+.event_txt > .cou-1 {
   width: 130px; height: 40px; text-align: center;
   background: #feeae1; color: #ff804c;
   border: 0; border-radius: 10px; cursor: pointer;
 }
-.art1 .art1_big div>.info > .cou-1 p {font-size: 18px; margin: 0; line-height: 40px;}
+.event_txt > .cou-1 p {font-size: 18px; margin: 0; line-height: 40px;}
 
-.art1 .art1_big div>.info > .cou-2 {
-  position: absolute; bottom: 70px; left: 250px; 
+.event_txt > .cou-2 {
   width: 130px; height: 40px; text-align: center;
   background: #d74f4f; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
 }
-.art1 .art1_big div>.info > .cou-2 p {font-size: 18px; margin: 0; line-height: 40px;}
+.event_txt > .cou-2 p {font-size: 18px; margin: 0; line-height: 40px;}
 
-.art1 .art1_big div>.info > .cou-3 {
-  position: absolute; bottom: 70px; left: 250px; 
+.event_txt > .cou-3 {
   width: 130px; height: 40px; text-align: center;
   background: #273802; color: white;
   border: 0; border-radius: 10px; cursor: pointer;
 }
-.art1 .art1_big div>.info > .cou-3 p {font-size: 18px; margin: 0; line-height: 40px;}
+.event_txt > .cou-3 p {font-size: 18px; margin: 0; line-height: 40px;}
+
+
 
 
 .art1_big_close {
