@@ -247,11 +247,12 @@ try {
         <div class="inner">
             <div class="makde">
              
-                <!-- 여기는 막대 
+                 <!-- 여기는 막대 
                 여기는 퍼센트 넣어야 함-->
-				<div>
-	<progress value="45" max="100" id="lb"></progress>
-</div>
+				<div class = "da">
+	<progress value="56" max="100" id="lb"></progress>
+
+<span>5 / 9</span></div>
             </div>
 
 			

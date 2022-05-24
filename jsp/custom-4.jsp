@@ -67,7 +67,7 @@
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -290,7 +290,7 @@ else{
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -356,8 +356,8 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -375,7 +375,7 @@ else{
             <div class="inner">
                 <div class="logo-box flex">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="" width="150px">
                         </a>
                     </div>
@@ -561,9 +561,10 @@ try {
              
                 <!-- 여기는 막대 
                 여기는 퍼센트 넣어야 함-->
-				<div>
-	<progress value="33" max="100" id="lb"></progress>
-</div>
+				<div class = "da">
+	<progress value="45" max="100" id="lb"></progress>
+
+<span>4 / 9</span></div>
             </div>
 
 			

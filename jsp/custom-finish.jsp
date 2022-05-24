@@ -62,7 +62,7 @@
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -285,7 +285,7 @@ else{
 
 	<div class="logo-box flex flex-jc-c">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -351,8 +351,8 @@ else{
                     <div>
                         <ul>
                             <li><a href="note.jsp">기록장</a></li>
-                            <li><a href="noti.html">공지사항</a></li>
-                            <li><a href="event.html">이벤트</a></li>
+                            <li><a href="noti.jsp">공지사항</a></li>
+                            <li><a href="event.jsp">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -370,7 +370,7 @@ else{
             <div class="inner">
                 <div class="logo-box flex">
                     <div class="img-box">
-                        <a href="main.html">
+                        <a href="main.jsp">
                             <img src="img/logo.png" alt="" width="150px">
                         </a>
                     </div>
@@ -697,7 +697,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>여드름 케어</span> - 여드름 진정 및 흉터 지우기</p>
+                                <p><span>클라리티</span> - 붉은 얼굴 개선하기</p>
                             </div>
                         </div>
 
@@ -736,7 +736,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                                <p><span>아쿠아필</span> - 모공 속 노폐물 제거</p>
                             </div>
                         </div>
 						<%
@@ -772,7 +772,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                               <p><span>아쿠아 필</span> - 모공 속 노폐물 제거</p>
                             </div>
                         </div>
 						<%
@@ -808,7 +808,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                               <p><span>클라리티</span> - 저하된 피부 탄력 개선하기</p>
                             </div>
                         </div>
 						<%
@@ -843,7 +843,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                                <p><span>아쿠아필</span> - 보습, 진정용액으로 수분 공급하기</p>
                             </div>
                         </div>
 
@@ -879,7 +879,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                                <p><span>클라리티</span> - 붉은 얼굴 개선하기</p>
                             </div>
                         </div>
 
@@ -915,7 +915,7 @@ try {
                                 <img src="img/chu.png" alt="" width="180px" height="180px">
                             </div>
                             <div class="chu-txt">
-                                <p><span>아쿠아 필</span> - 여드름 진정 및 흉터 지우기</p>
+                               <p><span>아쿠아필</span> - 보습, 진정용액으로 수분 공급하기</p>
                             </div>
                         </div>
 

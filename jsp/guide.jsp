@@ -536,20 +536,20 @@ else{
 
 
 					<div class="box">
-                        <a href="sub_sk02.jsp?prdNo=sk02">
                             <div class="name">여드름케어</div>
                             <p>여드름 압출이 포함된 스킨케어</p>
-                            <div class="price"><span>70,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>70,000</span>원 부터~</div>
+							<a class = "link" href="sub_sk02.jsp?prdNo=sk02"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
 					
                     <div class="box">
-                        <a href="sub_sk01.jsp?prdNo=sk01">
                             <div class="name">아쿠아필</div>
                             <p>저자극 모공청소 ! 착한 수분필링</p>
-                            <div class="price"><span>29,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>29,000</span>원 부터~</div>
+							<a class = "link" href="sub_sk01.jsp?prdNo=sk01"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                 </div>
@@ -558,20 +558,23 @@ else{
 
 
 					<div class="box">
-                        <a href="sub_sk03.jsp?prdNo=sk03">
+                        
                             <div class="name">클라리티</div>
                             <p>주근깨 / 잡티 / 홍조를 개선하는 더케어만의 시그니처 색소 프로그램 </p>
-                            <div class="price"><span>129,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>129,000</span>원 부터~</div>
+							<a class = "link" href="sub_sk03.jsp?prdNo=sk03"><div class = "btnview">자세히 보기</div></a>
+
+                        
                     </div>
 
 					
                     <div class="box">
-                        <a href="sub_sk04.jsp?prdNo=sk04">
+                        
                             <div class="name">다한증 보톡스</div>
                             <p>손/발/겨드랑이를 뽀송뽀송하게! </p>
-                            <div class="price"><span>30,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>30,000</span>원 부터~</div>
+							<a class = "link" href="sub_sk04.jsp?prdNo=sk04"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
                 </div>
@@ -587,19 +590,21 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-                        <a href="sub_fa01.jsp?prdNo=fa01">
+                        
                             <div class="name">페이스필러</div>
                             <p>내 얼굴에 딱 맞는 맞춤형 필러</p>
-                            <div class="price"><span>79,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>79,000</span>원 부터~</div>
+							<a class = "link" href="sub_fa01.jsp?prdNo=fa01"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
                     <div class="box">
-                        <a href="sub_fa02.jsp?prdNo=fa02">
                             <div class="name">하이코</div>
                             <p>비수술적 콧대개선 하이코 (HIKO)</p>
-                            <div class="price"><span>99,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>99,000</span>원 부터~</div>
+							<a class = "link" href="sub_fa02.jsp?prdNo=fa02"><div class = "btnview">자세히 보기</div></a>
+
+                        
                     </div>
 
 
@@ -609,11 +614,11 @@ else{
 
 
 					<div class="box">
-                        <a href="sub_fa03.jsp?prdNo=fa03">
                             <div class="name">입술/입꼬리필러</div>
                             <p>화사한 미소를 위한 입술/입꼬리필러</p>
-                            <div class="price"><span>59,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>59,000</span>원 부터~</div>
+							<a class = "link" href="sub_fa03.jsp?prdNo=fa03"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                 </div>
@@ -626,19 +631,21 @@ else{
                 <div class="row flex">
 
                     <div class="box">
-                      <a href="sub_li01.jsp?prdNo=li01">
+                     
                             <div class="name">사각턱 보톡스</div>
                             <p>발달된 턱 근육을 줄여 갸름한 V라인으로 </p>
-                            <div class="price"><span>19,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>19,000</span>원 부터~</div>
+							<a class = "link" href="sub_li01.jsp?prdNo=li01"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                     <div class="box">
-                        <a href="sub_li02.jsp?prdNo=li02">
+                       
                             <div class="name">윤곽주사</div>
                             <p>미운 볼살, 턱밑살 이젠 안녕! </p>
-                            <div class="price"><span>50,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>50,000</span>원 부터~</div>
+							<a class = "link" href="sub_li02.jsp?prdNo=li02"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                 </div>
@@ -647,11 +654,12 @@ else{
 
 
                     <div class="box">
-                        <a href="sub_li03.jsp?prdNo=li03">
+                        
                             <div class="name">조각주사</div>
                             <p>고농도로 업그레이드된 얼굴지방분해주사</p>
-                            <div class="price"><span>100,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>100,000</span>원 부터~</div>
+							<a class = "link" href="sub_li03.jsp?prdNo=li03"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
                 </div>
@@ -666,22 +674,24 @@ else{
 
                     <div class="box">
 				
-                        <a href="sub_bo01.jsp?prdNo=bo01">
+                        
                             <div class="name">바디 보톡스</div>
                             <p>부위 : 종아리/승모근/허벅지/팔뚝 </p>
-                            <div class="price"><span>99,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>99,000</span>원 부터~</div>
+							<a class = "link" href="sub_bo01.jsp?prdNo=bo01"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
 
 
 
                     <div class="box">
-                        <a href="sub_bo03.jsp?prdNo=bo03">
+             
                             <div class="name">엣지 주사</div>
                             <p>발목/부유방 지방분해 </p>
-                            <div class="price"><span>149,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>149,000</span>원 부터~</div>
+							<a class = "link" href="sub_bo03.jsp?prdNo=bo03"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                 </div>
@@ -690,19 +700,21 @@ else{
 				<div class="row flex">
 
                     <div class="box">
-                        <a href="sub_bo04.jsp?prdNo=bo04">
+                        
                             <div class="name">걸그룹 주사</div>
                             <p>복부/팔뚝/허벅지/종아리의 지방분해시술 </p>
-                            <div class="price"><span>200,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>200,000</span>원 부터~</div>
+							<a class = "link" href="sub_bo04.jsp?prdNo=bo04"><div class = "btnview">자세히 보기</div></a>
+                        
                     </div>
 
                     <div class="box">
-                        <a href="sub_bo02.jsp?prdNo=bo02">
+                        
                             <div class="name">바디슈링크</div>
                             <p>바디탄력개선을 위한 초음파리프팅</p>
-                            <div class="price"><span>40,000</span>원 부터</div>
-                        </a>
+                            <div class="price"><span>40,000</span>원 부터~</div>
+							<a class = "link" href="sub_bo02.jsp?prdNo=bo02"><div class = "btnview">자세히 보기</div></a>
+                       
                     </div>
 
                 </div>

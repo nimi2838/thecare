@@ -529,11 +529,25 @@ a {
 
 /*진행률*/
 #lb {
-  width: 100%;
+  width: 80%;
   height: 50px;
+  margin-left: 50px;
+  
 }
 
+.da{
+  position: relative;
 
+}
+
+.da > span {
+  position: absolute;
+top: 18;
+left : 90%;
+ font-size: 16px;
+ font-weight: bolder;
+ 
+}
 .wrap {margin: 0 auto;}
 .content{width:100%;}
 .inner{width:1170px; margin: 0 auto;} 
