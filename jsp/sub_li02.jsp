@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<title>상세화면</title>
+	<title>윤곽주사</title>
 
 </head>
 <%
@@ -127,7 +127,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -203,7 +203,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -353,7 +353,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -433,7 +433,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -608,7 +608,7 @@ try {
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
+                    #일상생활바로가능 #간편한주사시술<br>
                     #10분내외 #다른시술과병행가능
                 </div>
             </div>
@@ -627,7 +627,7 @@ try {
                           <tr>
                            <td>시술 옵션
                             <input type="button" value="Ⅴ" style="background:none; outline:none; border:none; ">
-                        </td>
+						   </td>
                           </tr>
                         </table>
                    
@@ -735,7 +735,6 @@ try {
                             <span><input id='result' type='text' value="0" style="outline: none; border:none; text-align: right;" readonly></span>원
                         </div>
                     </div>
-                    <p>부가세 10% 별도</p>
                 </div>
 
 
@@ -955,7 +954,7 @@ var sum = 0;
 
                 <div class="con_box1">
                     <div class="img-box">
-                        <img src="img/time-p.png" alt="">
+                        <img src="img/time-b.png" alt="">
                     </div>
                     <h2>시술시간</h2>
                     <p>5 - 10분 이내</p>
@@ -963,7 +962,7 @@ var sum = 0;
 
                 <div class="con_box1 con_box_11">
                     <div class="img-box">
-                        <img src="img/effect-p.png" alt="">
+                        <img src="img/effect-b.png" alt="">
                     </div>
                     <h2>회복기간</h2>
                     <p>즉시생활가능</p>
@@ -1165,23 +1164,8 @@ var sum = 0;
         </div>
     </div>
 
+
 			
-
-<!-- 	<div class="sub_con_box2_1">
-        <div class="sub_con2_1">
-            
-            <p>RECOMMEND TO CUSTOMERS BELOW</p>
-            <h1>이런 분께 추천합니다.</h1>
-
-            <div class="con_wrap2_1">
-                <div class="img-box" style="width:1000px;">
-                    <img src="img/yytest.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
- -->
-
 
     <div class="sub_con_box3">
         <div class="sub_con3">
@@ -1215,7 +1199,7 @@ var sum = 0;
     </div>
 
 
-	    <div class="sub_con_box5">
+	<div class="sub_con_box5">
         <div class="sub_con5">
 
 			<p>PROCEDURE QUESTIONS</p>
@@ -1335,6 +1319,7 @@ catch(Exception e) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
 

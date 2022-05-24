@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<title>다한증보톡스</title>
+	<title>다한증 보톡스</title>
 	
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -127,7 +127,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -203,7 +203,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -353,7 +353,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -433,7 +433,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -603,14 +603,14 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>여드름 압출이 포함된 스킨케어</p>
+                <p>손/발/겨드랑이를 뽀송뽀송하게!</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #일상생활바로가능 #간편한주사시술 #소요시간1시간내외<br>
+					#연고마취 #다른시술과병행가능
                 </div>
             </div>
 
@@ -754,7 +754,6 @@ try {
                             <span><input id='result' type='text' value="0" style="outline: none; border:none; text-align: right;" readonly></span>원
                         </div>
                     </div>
-                    <p>부가세 10% 별도</p>
                 </div>
 
 

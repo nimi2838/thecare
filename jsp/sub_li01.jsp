@@ -127,7 +127,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -203,7 +203,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -353,7 +353,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -433,7 +433,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -602,14 +602,14 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>여드름 압출이 포함된 스킨케어</p>
+                <p>발달된 턱 근육을 줄여 갸름한 V라인으로</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #일상생활바로가능 #간편한주사시술<br>
+					#10분내외 #다른시술과병행가능
                 </div>
             </div>
 
@@ -735,7 +735,6 @@ try {
                             <span><input id='result' type='text' value="0" style="outline: none; border:none; text-align: right;" readonly></span>원
                         </div>
                     </div>
-                    <p>부가세 10% 별도</p>
                 </div>
 
 

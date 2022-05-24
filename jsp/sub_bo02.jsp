@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/guide.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<title>상세화면</title>
+	<title>바디슈링크</title>
 
 </head>
 <%
@@ -126,7 +126,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -202,7 +202,7 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="#" onclick="login();">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -352,7 +352,7 @@ else{
                     <a>케어원해</a>
                     <div>
                         <ul>
-							<li><a href="guide.jsp">안내/예약</a></li>
+							<li><a href="guide.jsp">시술안내/예약</a></li>
                             <li><a href="change.jsp">예약확인/변경/취소</a></li>
                             <li><a href="review.jsp">전후사진</a></li>
                         </ul>
@@ -432,7 +432,7 @@ else{
                             <div class="subwrap">
                                 <div class="inner">
                                     <ul class="depth_1">
-                                        <li><a href="guide.jsp">안내/예약</a></li>
+                                        <li><a href="guide.jsp">시술안내/예약</a></li>
                                         <li><a href="change.jsp">예약확인/변경/취소</a></li>
                                         <li><a href="review.jsp">전후사진</a></li>
                                     </ul>
@@ -601,14 +601,13 @@ try {
 
 
                 <h1><%=name%></h1>
-                <p>여드름 압출이 포함된 스킨케어</p>
+                <p>바디탄력개선을 위한 초음파리프팅</p>
                 <div class="price">
                     <span><%=price%></span>원 부터
                 </div>
                 <hr>
                 <div class="tag">
-                    #일상생활바로가능 #간편한주사시술 <br>
-                    #10분내외 #다른시술과병행가능
+                    #일상생활바로가능 #바디탄력개선 #체형개선
                 </div>
             </div>
 
@@ -714,7 +713,6 @@ try {
                             <span><input id='result' type='text' value="0" style="outline: none; border:none; text-align: right;" readonly></span>원
                         </div>
                     </div>
-                    <p>부가세 10% 별도</p>
                 </div>
 
 
@@ -1192,7 +1190,7 @@ var sum = 0;
 						Q. 바디슈링크가 가능한 부위는?
 					</div>
 
-					<div class="answer" data-aos="fade-left">
+					<div class="answer" data-aos="fade-left" style="max-width: 600px;">
 						복부, 허벅지, 종아리, 팔뚝 등 탄력이 떨어져 고민인 부위에 적용이 가능합니다.
 					</div>
 				</div>
