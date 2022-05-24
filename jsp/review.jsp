@@ -501,20 +501,20 @@ else{
 
 
 
+
+
+
     <div class="about-ban">
         <div class="text-box">
-            <i>BEFORE & AFTER</i>
-            <div class="sun"></div>
-            <p>치료 전후 달라진 상태를 직접 확인하세요</p>
+            <h1>케어원해</h1>
         </div>
     </div>
 
 
-
-
-
     <section id="review" class="content">
         <div class="inner">
+            <h1>전후사진</h1>
+            <p>치료 전후 달라진 상태를 직접 확인하세요</p>
             <div class="wrap">
 
                 <ul class="tab">
