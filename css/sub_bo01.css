@@ -20,7 +20,7 @@
 
 
 .sub_con_box3 > .sub_con3 > ul li span {
-    margin: 15px 10px 42px 0;
+    margin: 15px 10px 58px 0;
     padding: 10px 15px;
     background: #fff;
     font-weight: bold;
@@ -67,7 +67,7 @@
     
     @media (min-width: 1051px) and ( max-width:1300px) {
         #line .inner {width: 100%;}
-    
+
     }
     
     
