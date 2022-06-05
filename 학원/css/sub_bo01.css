@@ -1,0 +1,119 @@
+::selection { color:rgb(255, 255, 255); background:#f89fa8;  }
+#fff0f2
+#f89fa8
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	padding: 25px 0 0; line-height: 20px;
+	margin: 0; text-align: center;
+}
+
+.sub_con_box2 > .sub_con2 > .con_wrap2 > .con_box2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #1f628e;
+    left: -50%;
+    top: 65%; display: none;
+}
+
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 15px 10px 58px 0;
+    padding: 10px 15px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box > p {
+	text-align: center; line-height: 25px;
+}
+
+
+.content{width:100%;  }
+.inner{width:1170px; margin: 0 auto;} 
+.wrap {margin: 0 auto; width: 100%;}
+
+#line {margin: 0 auto;}
+#line .title {text-align: center;}
+#line .title h2 {margin: 0 auto; font-size: 25px; line-height: 40px; color: #333;}
+
+#line .con {width: 100%;}
+#line .con .pic {margin: 50px auto; width: 700px;}
+#line .con .txt {text-align: center; margin: 0 auto;}
+#line .con .txt p {font-size: 20px; line-height: 30px;}
+
+#line .wrap { width: 100%; }
+#line .wrap  .cont {
+    display: flex; justify-content: center; align-items: center; 
+    width: 100%; height: 450px; margin-top: 100px;
+}
+#line .wrap  .cont .pic {width: 50%; width: 360px;}
+#line .wrap  .cont .txt {flex-direction: column; width: 30%; text-align: center; margin-left: 100px;}
+#line .wrap  .cont .txt i {font-size: 40px; color: #f89fa8;}
+#line .wrap  .cont .txt p {font-size: 25px; text-align: center; color: #333; line-height: 40px;}
+
+#line .wrap  .conts {
+    display: flex; justify-content: center; align-items: center; 
+    width: 100%; height: 450px; margin: 100px 0; 
+}
+#line .wrap  .conts .pic {width: 50%; width: 360px;}
+#line .wrap  .conts .txt {flex-direction: column; width: 30%; text-align: center; margin-right: 100px;}
+#line .wrap  .conts .txt i {font-size: 40px; color: #f89fa8;}
+#line .wrap  .conts .txt p {font-size: 25px; text-align: center; color: #333; line-height: 40px;}
+
+
+    
+    @media (min-width: 1051px) and ( max-width:1300px) {
+        #line .inner {width: 100%;}
+
+    }
+    
+    
+    @media (min-width: 851px) and ( max-width:1050px) {
+        #line .inner {width: 100%;}
+    
+    }
+    
+    
+    @media (min-width: 300px) and ( max-width:850px) {
+        #line .inner {width: 100%;}
+        #line .title h2 {font-size: 23px;}
+        #line .con .pic {width: 100%;}
+        #line .con .pic img {width: 100%;}
+		#line .wrap  .cont .pic {width: 350px; margin: 0 auto;}
+		#line .wrap .cont .txt {
+		width: auto;
+		text-align: center;
+		margin-left: auto;
+		}
+		#line .wrap .cont {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		margin-top: 100px;
+		margin: 0 auto;
+		}
+
+
+		#line .wrap .conts {
+			display: inline-block;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			margin: 100px 0;
+		}
+
+		#line .wrap .conts .txt {
+			flex-direction: column;
+			width: auto;
+			text-align: center;
+			margin-right: auto;
+		}
+		#line .wrap .conts .pic {
+			width: 360px;
+			margin: 20px auto 0;
+		}
+    }

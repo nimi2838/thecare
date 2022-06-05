@@ -1,0 +1,229 @@
+#result {
+    width: 200px;
+}
+
+.option > div {
+    width: 100px;
+}
+
+.sub_con_box2-1 > .sub_con2-1 > .con2-1 > .box {
+    padding: 30px 25px;
+    font-size: 20px;
+}
+
+
+@media (min-width: 1051px) and ( max-width:1300px) {
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div > .bg {
+    top: -2%;
+    left: 8%;
+    width: 195px;
+    height: 196px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > h2 {
+    margin: 30px 100px;
+}
+
+}
+
+
+@media (min-width: 851px) and ( max-width:1050px) {
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li > .text > p {
+    font-size: 18px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub > .plus {
+    font-size: 92px;
+    margin-top: 75px;
+}
+
+.con_wrap1 > .con_box1 > p {
+    font-size: 17px;
+    width: max-content;
+    max-width: 100px;
+    margin: 17px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 {
+    width: 90%;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div > .bg {
+    top: -1%;
+    left: 8%;
+    width: 200px;
+    height: 200px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > h2 {
+    margin: 30px 160px;
+}
+
+.sub_con_box2-1 {
+    width: 85%;
+    margin: 0px auto;
+}
+
+.sub_con_box3 > .sub_con3 > ul li span {
+    margin: 30px 10px 75px 0;
+    padding: 10px 15px;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 {
+    width: 100%;
+    margin: 100px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box1:last-child {
+    padding: 20px 40px;
+    margin-right: 0%;
+}
+
+
+
+
+}
+
+@media (min-width: 651px) and ( max-width:850px) {
+
+.con_wrap1 > .con_box1 > p {
+    font-size: 17px;
+    width: max-content;
+    max-width: 80px;
+    margin: 17px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub > .plus {
+    font-size: 90px;
+    margin-top: 85px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 {
+    width: 80%;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li > .text1 > p {
+    font-size: 17px;
+    line-height: 30px;
+    text-align: start;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li > .text > p {
+    font-size: 17px;
+    line-height: 28px;
+    text-align: start;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div img {
+    width: 85%;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div > .bg {
+    position: absolute;
+    top: -2%;
+    left: 5%;
+    width: 182px;
+    height: 184px;
+    border-radius: 50%;
+    background: #fff0f2;
+    z-index: -1;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div p {
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > h2 {
+    margin: 30px 60px;
+}
+
+
+}
+
+@media (min-width: 300px) and ( max-width: 650px) {
+
+.sub_con_box5 > .sub_con5 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sub_con_box5 > .sub_con5 > .qna_list > .qna_item > .ques {
+    margin-left: 0px;
+}
+
+.sub_con_box5 > .sub_con5 > .qna_list > .qna_item > .answer {
+    width: 263px;
+}
+
+
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li {
+    padding: 20px 20px;
+    margin: 20px 13% 0 0;
+}
+
+.con_wrap1 > .con_box1 > p {
+    font-size: 17px;
+    width: max-content;
+    max-width: 80px;
+    margin: 17px auto;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub > .plus {
+    font-size: 90px;
+    margin-top: 85px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 {
+    width: 80%;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li > .text1 > p {
+    font-size: 17px;
+    line-height: 30px;
+    text-align: start;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > ul > li > .text > p {
+    font-size: 17px;
+    line-height: 28px;
+    text-align: start;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div img {
+    width: 85%;
+}
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div > .bg {
+    position: absolute;
+    top: -2%;
+    left: 5%;
+    width: 139px;
+    height: 139px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > .sub2 > div p {
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+.sub_con_box1 > .sub_con1 > .detail6 > h2 {
+    margin: 30px 15px;
+    font-size: 18px;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 {
+    width: 45%;
+}
+
+.sub_con_box1 > .sub_con1 > .con_wrap1 > .con_box_1 {
+    margin: 20px 0 0 0;
+}
+
+
+}

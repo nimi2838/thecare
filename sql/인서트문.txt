@@ -1,0 +1,113 @@
+// surgery 테이블에 넣어줘야함
+
+INSERT INTO surgery VALUES ("test","aa","테스트","아쿠아필링 아쿠아 필 필링 스킨 케어 스킨케어 모낭충 각질여드름 괸리 여드름관리 재생 뾰루지 피부 스킨 케어 스킨케어 염증
+클라리티 주근깨 모공 홍조 피지 각질 수분 보습 잡티 색소 레이저 다한증보톡스 땀 겨드랑이 손 발 보톡스 페이스필러 이목구비 턱 애교 눈밑 필러
+하이코 코 콧대 콧볼 입술입꼬리필러 웃음 사각턱보톡스 근육 턱라인 v라인 V라인 윤곽주사 턱라인 브이라인 V라인 v라인 볼살 턱밑살 턱라인 필러 보톡스 조각주사 얼굴지방분해 
+바디 바디보톡스 종아리 승모근 허벅지 팔뚝 바디슈링크 바디탄력 초음파 리프팅 엣지 엣지주사 부유방 발목 지방분해 걸그룹주사 복부 팔뚝","29,000");
+
+INSERT INTO surgery VALUES ("skin","sk01","아쿠아필","아쿠아필링 아쿠아 필 필링 스킨 케어 스킨케어 모낭충 각질","29,000");
+
+INSERT INTO surgery VALUES ("skin","sk02","여드름관리/재생관리","여드름 괸리 여드름관리 재생 뾰루지 피부 스킨 케어 스킨케어 염증","70,000");
+
+
+INSERT INTO surgery VALUES ("skin","sk03","클라리티","클라리티 주근깨 모공 홍조 피지 각질 수분 보습 잡티 색소 레이저","129,000");
+
+INSERT INTO surgery VALUES ("skin","sk04","다한증보톡스","땀 겨드랑이 손 발 다한증보톡스 보톡스","30,000");
+
+
+
+
+INSERT INTO surgery VALUES ("face","fa01","페이스필러","페이스필러 이목구비 턱 애교 눈밑 필러","79,000");
+
+INSERT INTO surgery VALUES ("face","fa02","하이코","하이코 코 콧대 콧볼 필러","99,000");
+
+
+INSERT INTO surgery VALUES ("face","fa03","입술/입꼬리필러","입술입꼬리필러 웃음","59,000");
+
+
+
+
+INSERT INTO surgery VALUES ("line","li01","사각턱보톡스","사각턱보톡스 근육 턱라인 v라인 V라인","19,000");
+
+
+INSERT INTO surgery VALUES ("line","li02","윤곽주사","윤곽주사 턱라인 브이라인 V라인 v라인 볼살 턱밑살 턱라인 필러 보톡스","50,000");
+
+INSERT INTO surgery VALUES ("line","li03","조각주사","조각주사 얼굴지방분해 브이라인 V라인 v라인 턱밑살 턱라인 필러 보톡스","100,000");
+
+
+
+
+INSERT INTO surgery VALUES ("body","bo01","바디보톡스","바디 바디보톡스 종아리 승모근 허벅지 팔뚝","99,000");
+
+
+INSERT INTO surgery VALUES ("body","bo02","바디슈링크","바디 바디슈링크 바디탄력 초음파 리프팅","40,000");
+
+
+INSERT INTO surgery VALUES ("body","bo03","엣지 주사","바디 엣지 엣지주사 부유방 발목 지방분해","149,000");
+
+
+INSERT INTO surgery VALUES ("body","bo04","걸그룹주사","걸그룹주사 복부 팔뚝 허벅지 종아리 지방분해","200,000");
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+// soption 테이블에 넣어줘야함
+
+INSERT INTO soption VALUES ('sk02','yu1','여드름관리 1회',70000);
+INSERT INTO soption VALUES ('sk02','yu2','여드름관리 3회',180000);
+
+
+INSERT INTO soption VALUES ('sk01','aq1','아쿠아필 1회',29000);
+INSERT INTO soption VALUES ('sk01','aq2','아쿠아필 3회',69000);
+
+
+INSERT INTO soption VALUES ('sk03','cl1','클라리티 1회',129000);
+INSERT INTO soption VALUES ('sk03','cl2','클라리티 3회',300000);
+
+
+INSERT INTO soption VALUES ('sk04','da1','손 발/겨드랑이 50유닛 (국산)',30000);
+INSERT INTO soption VALUES ('sk04','da2','헤어라인(구레나룻포함)',890000);
+INSERT INTO soption VALUES ('sk04','da3','기타부위(코/인중 등)',50000);
+
+
+
+INSERT INTO soption VALUES ('fa01','fa1','국산필러 1cc',79000);
+INSERT INTO soption VALUES ('fa01','fa2','애교필러 (국산)',139000);
+INSERT INTO soption VALUES ('fa01','fa3','눈밑필러 (수입)',199000);
+
+
+
+INSERT INTO soption VALUES ('fa02','hi1','하이코',99000);
+INSERT INTO soption VALUES ('fa02','hi2','콧대실+코필러 1회',139000);
+
+INSERT INTO soption VALUES ('fa03','lip1','입술필러(국산)',59000);
+INSERT INTO soption VALUES ('fa03','lip2','입술+입꼬리 필러',149000);
+
+
+
+
+
+INSERT INTO soption VALUES ('li01','sa1','턱보톡스 50유닛(국산)',19000);
+INSERT INTO soption VALUES ('li01','sa2','턱보톡스 50유닛(수입)',89000);
+
+INSERT INTO soption VALUES ('li02','yun1','윤곽주사 1부위 1회',50000);
+INSERT INTO soption VALUES ('li02','yun2','윤곽주사 1부위 3회',110000);
+
+
+INSERT INTO soption VALUES ('li03','jo1','조각주사 1회',100000);
+INSERT INTO soption VALUES ('li03','jo2','조각주사 3회',250000);
+
+
+
+
+
+INSERT INTO soption VALUES ('bo01','bo1','종아리 200유닛',99000);
+INSERT INTO soption VALUES ('bo01','bo2','승모근/허벅지/팔뚝 200유닛',190000);
+
+
+INSERT INTO soption VALUES ('bo02','bsu','바디슈링크 100샷',40000);
+
+INSERT INTO soption VALUES ('bo03','eg1','엣지주사 1부위 1회',149000);
+INSERT INTO soption VALUES ('bo03','eg2','엣지주사 1부위 3회',399000);
+
+INSERT INTO soption VALUES ('bo04','gr1','걸그룹주사 2주(1부위)',200000);
+INSERT INTO soption VALUES ('bo04','gr2','걸그룹주사 4주(1부위)',500000);

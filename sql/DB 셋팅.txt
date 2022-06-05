@@ -1,0 +1,147 @@
+CREATE TABLE `board` (
+  `idx` int NOT NULL,
+  `no` int DEFAULT NULL,
+  `subject` char(50) DEFAULT NULL,
+  `name` char(20) DEFAULT NULL,
+  `email` char(30) DEFAULT NULL,
+  `content` text,
+  `ymd` char(30) DEFAULT NULL,
+  `readcount` int DEFAULT NULL,
+  `pwd` char(20) DEFAULT NULL,
+  `masterid` int DEFAULT NULL,
+  `replynum` int DEFAULT NULL,
+  `step` int DEFAULT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `bodstate` (
+  `bNo` char(30) DEFAULT NULL,
+  `bName` char(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `cart` (
+  `ctNo` char(30) DEFAULT NULL,
+  `prdNo` char(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `cl_zipcodet` (
+  `zipcode` varchar(7) NOT NULL,
+  `sido` varchar(4) NOT NULL,
+  `gugun` varchar(13) NOT NULL,
+  `dong` varchar(43) NOT NULL,
+  `bunji` varchar(17) NOT NULL,
+  `seq` varchar(5) NOT NULL,
+  PRIMARY KEY (`seq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `coupon` (
+  `cNo` char(10) DEFAULT NULL,
+  `cName` char(100) DEFAULT NULL,
+  `cPoint` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `gocart` (
+  `merchant_uid` varchar(50) DEFAULT NULL,
+  `ctNo` char(40) DEFAULT NULL,
+  `prdNo` char(10) DEFAULT NULL,
+  `opNo` char(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `manager` (
+  `managerId` char(10) NOT NULL,
+  `managerPw` char(10) DEFAULT NULL,
+  PRIMARY KEY (`managerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `newview` (
+  `ctNo` char(40) DEFAULT NULL,
+  `prdNo` char(10) DEFAULT NULL,
+  `added_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `rez` (
+  `rezNo` char(10) DEFAULT NULL,
+  `prdNo` char(10) DEFAULT NULL,
+  `rezDate` datetime DEFAULT NULL,
+  `opNo` char(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `rezinfo` (
+  `rezNo` char(10) NOT NULL,
+  `uId` char(10) DEFAULT NULL,
+  `ordDate` char(30) DEFAULT NULL,
+  `ordPhone` char(20) DEFAULT NULL,
+  `ordPay` char(20) DEFAULT NULL,
+  `ordBank` char(10) DEFAULT NULL,
+  `ordCustomer` char(30) DEFAULT NULL,
+  `ordSex` char(10) DEFAULT NULL,
+  `ordMemo` char(100) DEFAULT NULL,
+  PRIMARY KEY (`rezNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `rezstate` (
+  `rNo` char(30) DEFAULT NULL,
+  `rName` char(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `soption` (
+  `prdNo` char(10) DEFAULT NULL,
+  `opNo` char(10) DEFAULT NULL,
+  `opName` char(50) DEFAULT NULL,
+  `opPrice` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `surgery` (
+  `ctgType` char(15) DEFAULT NULL,
+  `prdNo` char(10) NOT NULL,
+  `prdName` char(50) NOT NULL,
+  `skey` varchar(500) DEFAULT NULL,
+  `startprice` char(50) DEFAULT NULL,
+  PRIMARY KEY (`prdNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `tempcart` (
+  `ctNo` char(30) DEFAULT NULL,
+  `prdNo` char(10) DEFAULT NULL,
+  `ctQty` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `test` (
+  `uId` char(10) DEFAULT NULL,
+  `testNo` char(50) DEFAULT NULL,
+  `YN` char(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user` (
+  `uId` char(10) NOT NULL,
+  `uPw` char(15) NOT NULL,
+  `uName` char(15) NOT NULL,
+  `uJoomin` char(14) DEFAULT NULL,
+  `uBirth` datetime DEFAULT NULL,
+  `uSolar` char(5) DEFAULT NULL,
+  `uEmail` char(30) DEFAULT NULL,
+  `uPhone` char(20) DEFAULT NULL,
+  `uZipcode` char(10) DEFAULT NULL,
+  `uAddress1` char(30) DEFAULT NULL,
+  `uAddress2` char(30) DEFAULT NULL,
+  `uSex` char(3) DEFAULT NULL,
+  `Coupon` char(10) DEFAULT NULL,
+  `Point` int DEFAULT NULL,
+  PRIMARY KEY (`uId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+
+
+
+
+
+
+

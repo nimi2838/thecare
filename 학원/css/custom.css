@@ -1,0 +1,1166 @@
+::selection { color:rgb(255, 255, 255); background:hsl(0, 100%, 84%); }
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: 'ChosunSg';
+  font-size: 14px;
+  color: #252525;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+    font-family: 'BBTreeCB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeCB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mujinjang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Mujinjang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'ChosunSg';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'HeirofLightRegular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeirofLightBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YESMyoungjo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YESMyoungjo-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 노말라이즈 */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.con {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-1-0-0 {
+  flex: 1 0 0;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.flex-ai-sb {
+  align-items: stretch;
+}
+
+.flex-as-c {
+  align-self: center;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-jc-end {
+  justify-content: end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.block {
+  display: block;
+}
+
+.img-box>img {
+  width: 100%;
+  display: block;
+}
+
+
+
+
+.top-wrap>.top-box1 {
+  margin: 20px auto 15px;
+  width: 1280px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  z-index: 10;
+  display: block;
+}
+
+.top-wrap>.top-box1>div,
+.icon-box {
+  width: 33.3%;
+}
+
+.top-wrap>.top-box1>.icon-box {
+  float: left;
+}
+
+.top-wrap>.top-box1>.icon-box>.icon {
+  padding: 0 0 0 15px ;
+  text-align: center;
+  float: left;
+  display: flex;
+  font-family: 'ChosunSg';
+}
+
+.top-wrap>.top-box1>.icon-box>.cart {
+  padding: 0 15px 0 15px;
+}
+
+/* .top-wrap>.top-box1>.icon-box>.login {
+  background: red;
+}
+
+.top-wrap>.top-box1>.icon-box>.join {
+  background: blue;
+}
+
+.top-wrap>.top-box1>.icon-box>.cart {
+  background: green;
+} */
+
+.top-wrap>.top-box1>.icon-box>.icon>.line-icon {
+  display: flex;
+  width: 1px;
+  height: 50px;
+  background:#707070;
+  margin: 1px 0 0 15px;
+}
+
+/* .top-wrap>.top-box1>.icon-box>.icon:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  margin: -10px 40px;
+  background:#707070;
+} */
+
+.top-wrap>.top-box1>.icon-box>.icon>a>.img-box {
+  width: 31px;
+  margin-bottom: 4px;
+}
+
+.top-wrap>.top-box1>.icon-box>.cart>a>.img-box {
+  width: 33px;
+  margin-bottom: 2px;
+}
+
+.top-wrap>.top-box1>.logo-box>.img-box>a>img {
+  width: 150px;
+}
+
+
+
+.top-wrap>.top-box1> .search_wrap >.search-box > .schBtn >input[type=image]  {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+
+
+.top-wrap>.top-box1> .search_wrap > .search-box .form {
+  width:0;
+  padding:0;
+  margin:0;
+  outline:0;
+  border:0;
+  border-bottom:1px solid transparent;
+  transition:width .3s, border-bottom-color .3s;
+  background-color:transparent;
+  color:#999;
+  margin-right:10px;
+  padding:10px;
+  display:block;
+  box-sizing:border-box;
+}
+
+.top-wrap>.top-box1> .search_wrap > .search-box:hover  .form  {
+  width:170px;
+  border-bottom-color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-wrap>.top-box2 {
+  margin: 0px auto;
+  width: 100%;
+  font-size: 19px;
+  font-weight:bold;
+  color: #9c9c9c;
+  background:white;
+  z-index: 100;
+  font-family: 'ChosunSg';
+  text-align: center;
+  height: 60px;
+}
+
+.top-wrap>.top-box2>ul {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.top-wrap>.top-box2>ul>li {
+  /* width: 256px; */
+  width: 326px;
+  padding: 21px 0px;
+  position: relative;
+  transition: all .4s;
+
+}
+
+.top-wrap>.top-box2>ul>li:hover {
+  background: #ffeeee;
+}
+
+.top-wrap>.top-box2>ul>li>div {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+}
+
+/* .top-wrap > .top-box2 > ul>li:hover> div */
+.top-wrap>.top-box2>ul>li:hover>div {
+  visibility: visible;
+  position: absolute;
+  left: 0%;
+  margin-top: 22px;
+  background: white;
+  width: 100%;
+  transition: all .4s;
+}
+
+/* .top-wrap > .top-box2 > ul>li:hover> div > ul > li */
+.top-wrap>.top-box2>ul>li:hover>div>ul>li {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  transition: all .4s;
+}
+
+.top-wrap>.top-box2>ul>li:hover>div>ul>li:hover {
+  background: #ffeeee;
+  /* color: #9869d4; */
+
+}
+
+
+.top-wrap>.top-box2>ul>li>div>ul>li:last-child::after {
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  @media (min-width: 1301px) and  ( max-width:1920px) {
+	  /* 탑바 */
+    #header {display: none;}
+	  .top-wrap>.top-box1 {
+		width: 1280px;
+	  }
+	}
+	
+	
+	
+	
+	
+	@media (min-width: 1051px) and ( max-width:1300px) {
+	  /* 탑바 */
+    #header {display: none;}
+	.top-wrap>.top-box1 {
+	  width: 95%;
+	}
+  
+	.top-wrap>.top-box2>ul>li {
+	  padding: 23px 0px;
+	
+	}
+	
+	  
+	
+	}
+	
+	
+	@media (min-width: 851px) and ( max-width:1050px) {
+	  /* 탑바 */
+    #header {display: none;}
+	  .top-wrap>.top-box1 {
+	  width: 95%;
+	}
+  
+	.top-wrap>.top-box2>ul>li {
+	  padding: 20px 0px;
+	} 
+	  
+	}
+	
+	
+	@media (min-width: 500px) and ( max-width:850px) {
+	  /* 탑바 */
+	   .top-wrap>.top-box1 {
+	  width: 95%;
+	}
+  
+	.top-wrap>.top-box2 {
+	  font-size: 16px;
+	}
+  
+	.top-wrap>.top-box2>ul>li {
+	  padding: 22px 0px;
+	} 
+  .top-wrap {display: none;}
+  .top-wrap>.top-box2 {display: none;}
+  .top-wrap>.top-box1>.icon-box {display: none;}
+  #header {display: block;}
+  .icon-box {
+      display: flex; position: absolute;
+      bottom: 150px; left: 55px;
+  }
+  .icon-box> li {}
+  .icon-box {
+    float: left;
+  }
+  .icon-box>.icon {
+    padding: 0 0 0 15px ;
+    text-align: center;
+    float: left;
+    display: flex;
+    font-family: 'ChosunSg';
+  }
+  .icon-box>.cart {padding: 0 15px 0 15px;}
+  
+  .icon-box>.icon>.line-icon {
+    display: flex;
+    width: 1px;
+    height: 50px;
+    background:#707070;
+    margin: 1px 0 0 15px;
+  }
+  
+  
+  .icon-box>.icon>a>.img-box {
+    width: 31px;
+    margin-bottom: 4px;
+  }
+  
+  .icon-box>.cart>a>.img-box {
+    width: 33px;
+    margin-bottom: 2px;
+  }
+  #header{left: 0; top: 0; z-index: 5; width: 100%;}
+  #header .toggle{display: block;
+      position: absolute; right: 40px; top: 15px;
+      width: 50px; height: 50px; background-color: transparent;
+      color: #1F628E; font-size: 35px; border: 0;
+  }
+
+  #header > .inner{background-color: white; margin: 10px 50px; width: 90%;}
+  #header .gnb_wrap{
+      display: none; z-index: 100;
+      position: fixed; right: 0; top: 90px; background-color: #f2f2f2
+      ;width: 300px; height: 100%;
+  }
+  #header .gnb_wrap .global_menu{flex-wrap: wrap; padding: 0 30px}
+  #header .gnb_wrap .global_menu>li{width: 100%; padding : 0 10px}
+  #header .gnb_wrap .global_menu>li:last-of-type{border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 10px;}
+  #header .gnb_wrap .global_menu>li>a{padding: 0px; line-height: 40px;}
+
+  #gnb{flex-wrap: wrap; }
+  #gnb>li{width: 100%;}
+
+  /* #gnb>li>.subwrap{position: static;} */
+
+  #gnb .depth_1{background-color: #1F628D;}
+  #gnb .depth_1>li{width: 100%; margin: 0;}
+  #gnb .depth_1>li>a{padding-left: 40px;}
+
+
+  .gnb_wrap .search_wrap {padding: 40px 10px; padding-top: 60px; }
+    .gnb_wrap .search_wrap >.search-box{justify-content: center; align-items: center;}
+    .gnb_wrap .search_wrap >.search-box > .schBtn >input[type=image]  {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .gnb_wrap .search_wrap > .search-box .form {
+          padding: 10px;
+          width: 190px; font-size: 17px; color: #1F628D;
+          border: 0; outline: 0; font-weight: bold;
+          border-bottom: 2px solid #1F628D;
+          background-color:transparent;
+      }
+      
+
+    
+    
+    #gnb>li>a{
+        display: block; padding: 0 30px;
+        color: #1F628D; font-size: 20px;
+        font-weight: bold; line-height: 70px;
+    }
+    #gnb>li:last-of-type > a{ padding-right: 0;}
+    #gnb>li>.subwrap{
+      display: none; position: absolute; left: 0; top: 100px; 
+      width: 100%; background-color: #333;
+    }
+    
+    #gnb .depth_1{display: flex; flex-wrap: wrap; padding: 10px 0; flex-direction: column;}
+    #gnb .depth_1>li{width: 20%; margin-bottom: 20px;}
+    #gnb .depth_1>li>a{
+        display: block; font-weight: bold;
+        font-size: 18px; line-height: 60px;
+        color: #fff;
+    }
+
+    #gnb{flex-wrap: wrap; }
+    #gnb>li{width: 100%;}
+    
+    #gnb>li>.subwrap{position: static;}
+    
+    #gnb .depth_1{background-color: #1F628D;} 
+    #gnb .depth_1>li{width: 100%; margin: 0;}
+    #gnb .depth_1>li>a{padding-left: 40px;
+    
+    }
+
+    
+	}
+
+
+
+/*진행률*/
+	#lb {
+  width: 80%;
+  height: 50px;
+  margin-left: 50px;
+  
+}
+
+.da{
+  position: relative;
+
+}
+
+.da > span {
+  position: absolute;
+top: 18;
+left : 90%;
+ font-size: 16px;
+ font-weight: bolder;
+ 
+}
+
+	.wrap {margin: 0 auto;}
+  
+	.content{width:100%;}
+	.inner{width:1170px; margin: 0 auto;} 
+	.survery {  width: 100%; height: 88%;  padding: 1px 0 0px; background-color: rgb(221, 221, 221);}
+	.survery .inner {
+		position: relative; border-radius: 15px; width: 70%;
+	  height: 681px; margin: 0 auto;  background: #fff;
+		box-shadow: 0px 2px 3px 0 rgba(51, 51, 51, 0.315); margin-top: 56px;
+	}
+  
+	.makde {width: 50%; height: 50px;padding-top: 27px;margin: 0 auto;}
+  
+	.wrap > h1{text-align: center; font-weight: bold; color:#ff6e6e; font-size: 35px; margin-top:29px;}
+  
+	.survery-test{height: 90%; margin: 50px auto; width: 75%;}
+	
+	.survery-test .qestion {
+	  height: 76px; border-top: 1px solid rgb(92, 92, 92); border-bottom: 1px solid #ccc; 
+	  display: flex; margin-top: -13px; 
+	}
+	.qestion > h1 {margin: 0; margin-left: 40px; width: 100px; line-height: 77px; color: #494949;}
+	.qestion > p {
+	  margin: 0; width: 600px; font-size: 20px; line-height: 77px; font-weight: bold;
+	  color: #494949;
+	}
+  
+  
+	.qna-wrap {padding: 0; width: 100%; display: flex; height: 80%; margin-top: 50px;}
+	.qna-wrap > li {
+	  margin-right: 50px; margin: 0 auto; }
+	.qna-wrap > li:hover {color: #ff6e6e; font-weight: bold; }
+  
+	.qna-wrap > li > .img {border-radius: 100%;
+	  border: 2px solid #6B6B6B;  width: 180px; height: 180px; margin-top: 40px; border-radius: 100%; width: 215px; height: 215px; }
+	.qna-wrap > li > .img:hover {border: 2px solid #ff6e6e; transition: 0.3s; cursor: pointer;}
+	.qna-wrap > li > .img > img {margin-left: 24%; margin-top: 18%;}
+	.qna-wrap > li > p {text-align: center; font-size: 18px; margin-top: 20px;}
+  
+
+
+
+
+
+
+	.check1-1 {position: relative;} 
+        .check1-1 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0;  
+        }
+        .check1-1 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-1 input[type="checkbox"] + label > p {font-size: 18px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-1 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 180px;  background-size: cover; height: 180px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/1-1.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-1 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/1-1on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-2 {position: relative;} 
+        .check1-2 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-2 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-2 input[type="checkbox"] + label > p {font-size: 18px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-2 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 180px;  background-size: cover; height: 180px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/1-2.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-2 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/1-2on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-3 {position: relative;} 
+        .check1-3 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-3 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+        } 
+        .check1-3 input[type="checkbox"] + label > p {font-size: 18px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-3 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 180px;  background-size: cover; height: 180px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/1-3.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-3 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/1-3on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+    
+        .check1-4 {position: relative;} 
+        .check1-4 input[type="checkbox"] { 
+            /* 실제 체크박스는 화면에서 숨김 */ 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+        }
+        .check1-4 input[type="checkbox"] + label {
+            display: flex; flex-direction: column; position: relative; cursor: pointer; 
+            
+        } 
+        .check1-4 input[type="checkbox"] + label > p {font-size: 18px; font-weight: bold; text-align: center;}
+        /* 가짜 체크박스 */ 
+        .check1-4 input[type="checkbox"] + label:before { 
+            
+            content: ' '; display: inline-block; width: 180px;  background-size: cover; height: 180px; 
+            line-height: 215px; margin: -2px 8px 0 0; text-align: center; vertical-align: middle; 
+            background-image: url(../img/1-4.png); border: 3px solid #6b6b6b; 
+            border-radius : 50%; margin: 0 auto;
+        } 
+        /* 체크박스를 체크했을때 */ 
+        .check1-4 input[type="checkbox"]:checked + label:before { 
+            background-image: url(../img/1-4on.png); background-size: cover; border-color: #ff6e6e; 
+        }
+
+
+
+
+
+
+  
+	/* input[type=checkbox] {width: 215px; height: 215px; display: none;}
+	.label-checkbox {
+	  position: relative; display: inline-block; font-size: 20px; color: #333;
+	  padding-left: 44px; line-height: 20px;
+	}
+	.label-checkbox .input-checkbox+span{
+	  position: absolute; left: 0; top: 50%; margin-top: -12px;
+	  width: 27px; height: 27px;
+	  background:url(../img/test-nocheck.png) no-repeat center;
+	  background-size: 27px; background-position: 50% 50%;
+	}
+	.label-checkbox .input-checkbox:checked+span{
+	  background:url(../img/test-check.png) no-repeat center; 
+	  background-size: 27px; background-position: 50% 50%;
+	} */
+  
+  
+	.button {text-align: center; position: absolute; top: 86%; left :42%;  }
+	.prev {
+		padding: 15px 20px;
+		border-radius: 10px;
+		font-size: 19px;
+		font-weight: bold;
+	}
+	.next {    
+		padding: 15px 20px;
+		border-radius: 10px;
+		font-size: 19px;
+		font-weight: bold;
+	}
+
+
+	.survery-btn {
+	  text-align: center; margin: 0 auto;
+	  width: 100%; height: 55px;  border: none;
+	  font-size: 18px; border-radius: 10px; font-weight: bold;
+	  cursor: pointer;
+	} 
+	.button .prev {width: 150px; height: 55px; color: #7c7c7c; background-color: #FFE4E4;}
+	.button .next {width: 150px; height: 55px; color: white; background: #FF7E7E; margin-left: 30px;}
+	.button .prev:hover {background: #ffc7c7; transition: 0.3s;}
+	.button .next:hover {background: #ffa6a6; transition: 0.3s;}
+  
+  a > .close-test {
+	position: absolute; right: -35px; top: -35px;
+	width: 65px; height: 65px; border-radius: 100%;
+	background-color: rgb(252, 252, 252); border: 1px solid rgb(226, 226, 226);
+	font-size: 30px; font-weight: bold; text-align: center;
+	line-height: 60px; 
+	box-shadow: 0px 3px 5px 0 rgba(155, 155, 155, 0.315);
+  }
+  a > .close-test >img {    
+    width: 15px;
+    height: 15px;
+    top: 22px;
+    position: absolute;
+    left: 25px;
+  }
+  
+
+
+/* 
+  .content{width:100%;height: 90%; }
+  .inner{width:60%; margin: 0 auto; position: relative;} 
+
+  #welcome header {width: 100%; height: 100%;background: url('../img/custom-bg.jpg') no-repeat center; background-size: cover;}
+#welcome .header-content {position: absolute; top: 230px; left: 0; margin: 0 auto; width: 100%; height: 500px;}
+#welcome .header-content  h2 {font-size: 72px; color: #333; font-weight:bolder; line-height: 100px; margin: 0 auto;}
+#welcome .header-content  p {font-size: 23px; color: #333; line-height: 35px; margin-bottom: 55px;}
+#welcome .header-content> a  {
+	  padding: 25px 40px; border-radius: 50px; 
+	  background-color: #FF5E5E; color: #fff; 
+	  text-align: center; font-weight: bold; font-size: 18px;
+	  box-shadow: 0px 5px 10px 0 rgba(51, 51, 51, 0.315);
+	}
+
+
+	
+.question { background-color: #FFF5EE; width: 100%; height: 507px; position: relative;}
+.swiper {height: auto; width: 60%;margin: 0 auto; padding-top: 30px;}
+
+  .swiper>h2 {text-align: center;}
+
+  .swiper-slide {
+	text-align: center; font-size: 18px;
+	align-items: center;width: 100%;height: 100%;
+	margin-bottom: 65px; margin-top: 20px;
+  }
+  
+  .swiper-wrapper {margin-top: 50px;}
+  
+  
+  .swiper-wrapper .swiper-slide .text-1 >h2 {font-size: 48px; font-weight: bold; line-height: 70px; margin-bottom: 0; margin-top: 20px;}
+  
+  .swiper .swiper-pagination-bullet {
+	background: rgba(255, 255, 255, 0);
+	border: 1px solid rgb(8, 8, 8);
+	width: 10px;
+	height: 10px;
+	opacity: 100%;
+  }
+  
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 10px);
+  }
+  
+  .swiper .swiper-pagination-bullet-active {
+	background: rgb(29, 29, 29);
+	opacity: 100%;
+  }
+  .wrap{width: 80%; height: 100%; margin: 0 auto;}
+  #fine .inner { width: 100%; height: 700px;}
+  #fine .wrap .thank> h3{text-align: center; font-size: 25px; margin: 0 auto; padding-top: 100px;}
+  #fine .wrap .thank> div{margin-top: 60px;}
+  #fine .wrap .thank> div >ul{display: flex; justify-content: space-around; }
+  #fine .wrap .thank> div >ul >li {width: 600px; height: 400px; margin: 0 auto; text-align: center;}
+  #fine .wrap .thank> div >ul .test h1{font-size: 50px; font-weight: bold;}
+  #fine .wrap .thank> div >ul .test h2{font-size: 50px; font-weight: bold; margin-bottom: 0px;}
+  #fine .wrap .thank> div >ul .test p{font-size: 24px; line-height: 35px; }
+  
+.start {width: 100%; height: 370px; background-color: #FFE5E5;}
+.start > .wrapper {padding: 70px 0; text-align: center;}
+.start > .wrapper h1{font-size: 40px; font-weight: bold; line-height: 60px; padding-bottom: 50px; margin-top: 0;}
+.start > .wrapper a {
+	padding: 25px 40px; border-radius: 50px; 
+	background-color: #FF5E5E; color: #fff; 
+	text-align: center; font-weight: bold; font-size: 18px;
+	margin-top: 100px;
+	box-shadow: 0px 5px 10px 0 rgba(51, 51, 51, 0.315);
+} */
+
+.animate__shakeX{
+	--animate-duration: 5s;
+	--animation-iteration-count: infinite;
+	--animation-delay: 10s;
+}
+
+.animate__flash{
+	--animate-duration: 5s;
+	--animation-iteration-count: infinite;
+	--animation-delay: 10s;
+}
+
+  @media (min-width: 1051px) and ( max-width:1300px) {
+    .inner{width:100%;} 
+    .wrap{justify-content: space-around;}
+	#welcome .header-content {width: 80%; margin-left: 100px;}
+/* 자가진단 반응형 */
+  
+.qestion > h1 {font-size: 20px; margin-left: 0px;}
+.qestion > p {
+  font-size: 16px; 
+}
+
+.check1-1 input[type="checkbox"] + label:before { 
+          
+  width: 120px;height:  120px; 
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-1 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+
+.check1-2 input[type="checkbox"] + label:before { 
+          
+  width: 120px;height:  120px; 
+
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-2 input[type="checkbox"]:checked + label:before { 
+border-color: #ff6e6e; 
+}
+
+.check1-3 input[type="checkbox"] + label:before { 
+          
+  width: 120px;height:  120px; 
+
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-3 input[type="checkbox"]:checked + label:before { 
+border-color: #ff6e6e; 
+}
+
+.check1-4 input[type="checkbox"] + label:before { 
+          
+  width: 120px;height:  120px; 
+
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-4 input[type="checkbox"]:checked + label:before { 
+border-color: #ff6e6e; 
+}
+.check1-1{
+margin-right: 5px;
+}
+.check1-2{
+margin-right: 5px;
+}
+.check1-3{
+margin-right: 5px;
+}
+.check1-4{
+margin-right: 5px;
+}
+.check1-1 input[type="checkbox"] + label > p{
+font-size: 14px;
+}
+.check1-2 input[type="checkbox"] + label > p{
+font-size: 14px;
+}
+.check1-3 input[type="checkbox"] + label > p{
+font-size: 14px;
+}
+.check1-4 input[type="checkbox"] + label > p{
+font-size: 14px;
+}
+.button .next{
+width: 100px;
+}
+.button{
+left: 35%;
+top: 80%;
+}
+/*자가진단*/
+
+  .survery {
+    height: 100%;
+  }
+  }
+  
+  
+  @media (min-width: 851px) and ( max-width:1050px) {
+    .inner{width:100%;} 
+    .wrap{justify-content: space-around;}
+	#welcome .header-content {width: 80%; margin-left: 100px;}
+  /* 자가진단 반응형 */
+  
+  .qestion > h1 {font-size: 17px; margin-left: 0px;}
+	.qestion > p {
+	  font-size: 15px; 
+   
+	}
+  
+  .check1-1 input[type="checkbox"] + label:before { 
+            
+    width: 105px;height: 105px;
+    
+} 
+.makde {margin: 0 auto;}
+/* 체크박스를 체크했을때 */ 
+.check1-1 input[type="checkbox"]:checked + label:before { 
+    border-color: #ff6e6e; 
+}
+
+.check1-2 input[type="checkbox"] + label:before { 
+            
+  width: 105px;height: 105px; 
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-2 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+
+.check1-3 input[type="checkbox"] + label:before { 
+            
+  width: 105px;height: 105px; 
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-3 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+
+.check1-4 input[type="checkbox"] + label:before { 
+            
+  width: 105px;height: 105px;  
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-4 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+.check1-1{
+  margin-right: 5px;
+}
+.check1-2{
+  margin-right: 5px;
+}
+.check1-3{
+  margin-right: 5px;
+}
+.check1-4{
+  margin-right: 5px;
+}
+.check1-1 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-2 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-3 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-4 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.button .next{
+  width: 100px;
+}
+.button{
+  left: 35%;
+  top: 80%;
+}
+/*자가진단*/
+
+    .survery {
+      height: 100%;
+    }
+  }
+  
+  
+  @media (min-width: 500px) and ( max-width:850px) {
+    /* .inner{width:100%;} 
+    .wrap{justify-content: space-around; margin-bottom: 0px;}
+	#welcome .header-content {width: 100%; margin-left: 50px;}
+	#welcome .header-content  h2 {font-size: 45px; color: #333; font-weight:bolder; line-height: 60px; margin: 0 auto;}
+	#welcome .header-content  p {font-size: 20px; color: #333; line-height: 35px; margin-bottom: 55px;}
+	#welcome .header-content> a  {
+		  padding: 25px 40px; border-radius: 50px; 
+		  background-color: #FF5E5E; color: #fff; 
+		  text-align: center; font-weight: bold; font-size: 18px;
+		}
+	.swiper {width: 100%;}
+	.swiper-wrapper .swiper-slide .text-1 >h2 {font-size: 30px; font-weight: bold; line-height: 50px; margin-bottom: 0; margin-top: 20px;}
+	.swiper-wrapper .swiper-slide .text-1 > p {font-size: 16px;}
+	
+	#fine .wrap .thank> div >ul >li {width: 100%; height: 400px; margin: 0 auto; text-align: center;}
+	#fine .wrap .thank> div >ul .test h1{font-size: 30px; font-weight: bold;}
+	#fine .wrap .thank> div >ul .test h2{font-size: 30px; font-weight: bold; margin-bottom: 0px;}
+	#fine .wrap .thank> div >ul .test p{font-size: 16px; line-height: 20px; }
+
+	.start > .wrapper h1{font-size: 30px; font-weight: bold; line-height: 50px; padding-bottom: 50px; margin-top: 0;} */
+  
+
+
+
+
+/* 자가진단 반응형 */
+.survery-test{
+  width: 80%;
+}
+  .qestion > h1 {font-size: 16px; margin-left: 0px;}
+	.qestion > p {
+	  font-size: 14px; 
+    line-height: 20px;
+    padding-top: 20px;
+	}
+  
+  .check1-1 input[type="checkbox"] + label:before { 
+            
+    width: 90px;height: 90px; 
+    
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-1 input[type="checkbox"]:checked + label:before { 
+    border-color: #ff6e6e; 
+}
+
+.check1-2 input[type="checkbox"] + label:before { 
+            
+  width: 90px;height: 90px; 
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-2 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+
+.check1-3 input[type="checkbox"] + label:before { 
+            
+  width: 90px;height: 90px; 
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-3 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+
+.check1-4 input[type="checkbox"] + label:before { 
+            
+  width: 90px;height: 90px;  
+  
+} 
+/* 체크박스를 체크했을때 */ 
+.check1-4 input[type="checkbox"]:checked + label:before { 
+  border-color: #ff6e6e; 
+}
+.check1-1{
+  margin-right: 5px;
+}
+.check1-2{
+  margin-right: 5px;
+}
+.check1-3{
+  margin-right: 5px;
+}
+.check1-4{
+  margin-right: 5px;
+}
+.check1-1 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-2 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-3 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.check1-4 input[type="checkbox"] + label > p{
+  font-size: 14px;
+}
+.button .next{
+  width: 100px;
+}
+.button{
+  left: 35%;
+  top: 80%;
+}
+/*자가진단*/
+  
+    .survery {
+      height: 100%;
+    }
+  }
+
+
+
+
+
+
+/* footer */
+
+.footer {
+    width: 100%;
+    padding: 50px 0;
+    background: rgb(56, 56, 56);
+    
+    
+  }
+  
+  
+  .footer > .text{
+    color: white;
+    text-align: center;
+  
+  }
+  
+  .footer > .text1 {
+    padding-top: 20px;
+  }
+  
+  
+  .footer > .text > p {
+    font-size: 14px;
+  }
